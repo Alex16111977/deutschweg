@@ -1,491 +1,134 @@
 <!DOCTYPE html>
 <html lang="de">
- <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DeutschWeg — Deutsch A2 jeden Tag</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com" />
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
-   <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-               --green-deep:   #0a5c42;
-               --green-mid:    #1D9E75;
-               --green-light:  #5DCAA5;
-               --green-pale:   #E1F5EE;
-               --green-border: #9FE1CB;
-               --amber-mid:    #BA7517;
-               --amber-pale:   #FAEEDA;
-               --amber-border: #E8C97A;
-               --text-dark:    #1a1a18;
-               --text-mid:     #4a4a46;
-               --text-muted:   #888780;
-               --bg-page:      #f5f3ed;
-               --bg-card:      #ffffff;
-               --bg-section:   #fafaf7;
-               --border:       rgba(0,0,0,0.09);
-               --serif:        'Fraunces', Georgia, serif;
-               --sans:         'DM Sans', sans-serif;
-        }
-
-        body {
-               font-family: var(--sans);
-               background: var(--bg-page);
-               color: var(--text-dark);
-               min-height: 100vh;
-               padding: 2rem 1rem 5rem;
-        }
-
-        .page { max-width: 780px; margin: 0 auto; }
-
-        /* HERO */
-        .hero {
-               position: relative;
-               background: var(--green-deep);
-               border-radius: 20px;
-               padding: 2.5rem 2.5rem 2.2rem;
-               margin-bottom: 1.4rem;
-               overflow: hidden;
-        }
-        .hero::before {
-               content: '';
-               position: absolute;
-               right: -60px; top: -60px;
-               width: 260px; height: 260px;
-               border-radius: 50%;
-               background: rgba(255,255,255,0.05);
-        }
-        .hero::after {
-               content: '';
-               position: absolute;
-               right: 60px; bottom: -80px;
-               width: 180px; height: 180px;
-               border-radius: 50%;
-               background: rgba(255,255,255,0.04);
-        }
-        .hero-badge {
-               display: inline-block;
-               font-size: 11px;
-               font-weight: 500;
-               letter-spacing: 0.08em;
-               text-transform: uppercase;
-               color: var(--green-light);
-               background: rgba(93,202,165,0.15);
-               border: 1px solid rgba(93,202,165,0.3);
-               border-radius: 20px;
-               padding: 4px 14px;
-               margin-bottom: 1.1rem;
-        }
-        .hero h1 {
-               font-family: var(--serif);
-               font-size: clamp(2rem, 5vw, 2.8rem);
-               font-weight: 300;
-               color: #fff;
-               line-height: 1.2;
-               margin-bottom: 0.5rem;
-        }
-        .hero h1 em { font-style: italic; color: var(--green-light); }
-        .hero-sub {
-               font-size: 15px;
-               color: rgba(255,255,255,0.72);
-               line-height: 1.6;
-               max-width: 520px;
-               margin-bottom: 1.8rem;
-        }
-        .hero-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-        .hero-pill {
-               font-size: 12px;
-               color: rgba(255,255,255,0.65);
-               background: rgba(255,255,255,0.1);
-               border-radius: 20px;
-               padding: 5px 13px;
-        }
-        .hero-pill strong { color: #fff; font-weight: 500; }
-
-        /* PROGRESS BANNER */
-        .progress-banner {
-               background: var(--amber-pale);
-               border: 1px solid var(--amber-border);
-               border-radius: 14px;
-               padding: 1.2rem 1.6rem;
-               margin-bottom: 1.2rem;
-               display: flex;
-               align-items: center;
-               gap: 1.2rem;
-               flex-wrap: wrap;
-        }
-        .progress-text { flex: 1; min-width: 180px; }
-        .progress-text strong {
-               display: block;
-               font-size: 14px;
-               font-weight: 600;
-               color: var(--amber-mid);
-               margin-bottom: 3px;
-        }
-        .progress-text p { font-size: 13px; color: var(--text-mid); }
-        .progress-bar-wrap {
-               width: 100%;
-               background: rgba(186,117,23,0.15);
-               border-radius: 8px;
-               height: 6px;
-               margin-top: 10px;
-        }
-        .progress-bar-fill {
-               height: 6px;
-               border-radius: 8px;
-               background: var(--amber-mid);
-               width: 10%;
-        }
-        .progress-count {
-               font-size: 24px;
-               font-weight: 600;
-               color: var(--amber-mid);
-               white-space: nowrap;
-        }
-
-        /* CARD */
-        .card {
-               background: var(--bg-card);
-               border: 1px solid var(--border);
-               border-radius: 16px;
-               padding: 1.6rem 1.8rem;
-               margin-bottom: 1.2rem;
-        }
-        .card-header {
-               display: flex;
-               align-items: center;
-               gap: 12px;
-               margin-bottom: 1.2rem;
-        }
-        .card-num {
-               width: 30px; height: 30px;
-               border-radius: 50%;
-               background: var(--green-deep);
-               color: #fff;
-               font-size: 13px;
-               font-weight: 500;
-               display: flex; align-items: center; justify-content: center;
-               flex-shrink: 0;
-        }
-        .card-title { font-size: 17px; font-weight: 600; color: var(--text-dark); }
-
-        /* HOW IT WORKS */
-        .steps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .steps-list li {
-               display: flex;
-               align-items: flex-start;
-               gap: 12px;
-               font-size: 14px;
-               color: var(--text-mid);
-               padding: 11px 14px;
-               background: var(--bg-section);
-               border: 1px solid var(--border);
-               border-radius: 10px;
-               line-height: 1.5;
-        }
-        .step-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-        .steps-list li strong {
-               display: block;
-               font-size: 14px;
-               font-weight: 500;
-               color: var(--text-dark);
-               margin-bottom: 2px;
-        }
-
-        /* WHY GRID */
-        .why-grid {
-               display: grid;
-               grid-template-columns: 1fr 1fr;
-               gap: 10px;
-        }
-        @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
-        .why-item {
-               padding: 14px 16px;
-               background: var(--green-pale);
-               border: 1px solid var(--green-border);
-               border-radius: 12px;
-        }
-        .why-item .why-icon { font-size: 20px; margin-bottom: 6px; }
-        .why-item strong {
-               display: block;
-               font-size: 13px;
-               font-weight: 600;
-               color: var(--green-deep);
-               margin-bottom: 3px;
-        }
-        .why-item p { font-size: 12.5px; color: var(--text-mid); line-height: 1.5; }
-
-        /* START BUTTON */
-        .start-section { text-align: center; margin-bottom: 1.2rem; }
-        .btn-start {
-               display: inline-flex;
-               align-items: center;
-               gap: 10px;
-               background: var(--green-deep);
-               color: #fff;
-               font-family: var(--sans);
-               font-size: 15px;
-               font-weight: 500;
-               padding: 14px 32px;
-               border-radius: 12px;
-               text-decoration: none;
-               transition: background 0.2s, transform 0.15s;
-        }
-        .btn-start:hover { background: #0d7050; transform: translateY(-1px); }
-
-        /* TOPICS GRID */
-        .topics-grid {
-               display: grid;
-               grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-               gap: 10px;
-        }
-        .topic-card {
-               display: flex;
-               align-items: center;
-               gap: 12px;
-               padding: 13px 16px;
-               background: var(--bg-card);
-               border: 1.5px solid var(--border);
-               border-radius: 12px;
-               text-decoration: none;
-               transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
-        }
-        .topic-card:hover {
-               border-color: var(--green-mid);
-               box-shadow: 0 4px 16px rgba(10,92,66,0.10);
-               transform: translateY(-2px);
-        }
-        .topic-card.done {
-               border-color: var(--green-border);
-               background: var(--green-pale);
-        }
-        .topic-card.done .topic-name { color: var(--green-deep); }
-        .topic-card.active {
-               border-color: var(--green-mid);
-               box-shadow: 0 0 0 3px rgba(29,158,117,0.12);
-        }
-        .topic-emoji { font-size: 22px; flex-shrink: 0; }
-        .topic-info { flex: 1; }
-        .topic-name { font-size: 14px; font-weight: 500; color: var(--text-dark); display: block; }
-        .topic-level { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-        .topic-badge {
-               font-size: 10px;
-               font-weight: 500;
-               padding: 2px 8px;
-               border-radius: 20px;
-               white-space: nowrap;
-        }
-        .done-badge { background: var(--green-pale); color: var(--green-deep); border: 1px solid var(--green-border); }
-        .todo-badge { background: var(--bg-section); color: var(--text-muted); border: 1px solid var(--border); }
-        .next-badge { background: var(--amber-pale); color: var(--amber-mid); border: 1px solid var(--amber-border); }
-
-        /* FOOTER */
-        .footer { text-align: center; margin-top: 2.5rem; font-size: 12px; color: var(--text-muted); }
-      </style>
- </head>
- <body>
-    <div class="page">
-
-         <!-- HERO -->
-         <header class="hero">
-                <div class="hero-badge">Deutsch A2 &rarr; B1 &middot; Jeden Tag lernen</div>div>
-                <h1>Deutsch<em>Weg</em></h1>
-               <p class="hero-sub">Jeden Tag eine neue Seite &mdash; ein Thema, neue W&ouml;rter, ein Text, Grammatik und Gespr&auml;che. Einfach, klar, auf Deutsch.</p>p>
-               <div class="hero-meta">
-                       <span class="hero-pill"><strong>Niveau:</strong> A2 &rarr; B1</span>span>
-                       <span class="hero-pill"><strong>Format:</strong> 1 Seite pro Tag</span>span>
-                       <span class="hero-pill"><strong>Themen:</strong> 10 geplant</span>span>
-               </div>div>
-         </header>header>
-    
-        <!-- PROGRESS -->
-        <div class="progress-banner">
-              <div class="progress-text">
-                      <strong>Unser Fortschritt</strong>
-                      <p>1 von 10 Themen abgeschlossen &middot; weiter so!</p>
-                      <div class="progress-bar-wrap">
-                                <div class="progress-bar-fill"></div>div>
-                      </div>div>
-              </div>div>
-              <div class="progress-count">1 / 10</div>div>
-        </div>div>
-    
-        <!-- HOW IT WORKS -->
-        <div class="card">
-              <div class="card-header">
-                      <div class="card-num">1</div>div>
-                      <span class="card-title">Wie funktioniert das Lernen?</span>span>
-              </div>div>
-              <ul class="steps-list">
-                      <li>
-                                 <span class="step-icon">&#128197;</span>span>
-                                 <div><strong>Ein Thema pro Tag</strong>Jeden Tag &ouml;ffnest du eine neue Seite mit einem Alltagsthema.</div>
-                      </li>
-                <li>
-                  <span class="step-icon">&#128214;</span>span>
-                  <div><strong>Text zum Lesen</strong>Ein kurzer Text auf A2-Niveau &mdash; du liest, verstehst und erz&auml;hlst nach.</div>
-                </li>
-                      <li>
-                                 <span class="step-icon">&#128292;</span>span>
-                                 <div><strong>Neue W&ouml;rter</strong>8&ndash;10 wichtige Vokabeln mit Artikel und Beispiels&auml;tzen.</div>
-                      </li>
-                       <li>
-                                  <span class="step-icon">&#128172;</span>span>
-                                  <div><strong>Fragen zum Sprechen</strong>Antworte auf 6&ndash;8 Fragen &mdash; zuerst mit Notizen, dann frei.</div>
-                       </li>
-                <li>
-                  <span class="step-icon">&#128208;</span>span>
-                  <div><strong>Grammatik &amp; H&ouml;ren</strong>Eine Grammatikregel pro Seite + H&ouml;raufgaben mit A/B/C-Antworten.</div>
-                </li>
-              </ul>ul>
-        </div>
-    
-        <!-- WHY USEFUL -->
-        <div class="card">
-              <div class="card-header">
-                      <div class="card-num">2</div>
-                      <span class="card-title">Warum ist das n&uuml;tzlich?</span>span>
-              </div>
-              <div class="why-grid">
-                      <div class="why-item">
-                                <div class="why-icon">&#9201;</div>
-                                <strong>Kurz &amp; t&auml;glich</strong>
-                                <p>15&ndash;20 Minuten pro Tag reichen. Keine &Uuml;berforderung, aber echte Fortschritte.</p>
-                      </div>
-                      <div class="why-item">
-                                <div class="why-icon">&#128483;</div>
-                                <strong>Echtes Deutsch</strong>
-                                <p>Alltagssprache, kein Lehrbuch-Deutsch. Du lernst, was du wirklich brauchst.</p>
-                      </div>
-                      <div class="why-item">
-                                <div class="why-icon">&#129504;</div>
-                                <strong>Sprechen &uuml;ben</strong>
-                                <p>Jede Seite hat Gespr&auml;chsfragen &mdash; ideal f&uuml;r Tandem-Stunden zu zweit.</p>
-                      </div>
-                      <div class="why-item">
-                                <div class="why-icon">&#128200;</div>
-                                <strong>Wortschatz aufbauen</strong>
-                                <p>10 Themen &times; 10 W&ouml;rter = 100 neue W&ouml;rter. Schritt f&uuml;r Schritt zum B1.</p>
-                      </div>
-              </div>
-        </div>
-    
-        <!-- START BUTTON -->
-        <div class="start-section">
-              <a href="umwelt.html" class="btn-start">Start heute lernen &rarr;</a>a>
-        </div>
-    
-        <!-- TOPICS -->
-        <div class="card">
-              <div class="card-header">
-                      <div class="card-num">3</div>
-                      <span class="card-title">Alle Themen &mdash; A2 &rarr; B1</span>span>
-              </div>
-              <div class="topics-grid">
-              
-                      <a href="umwelt.html" class="topic-card done">
-                                <span class="topic-emoji">&#127807;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Die Umwelt</span>span>
-                                            <span class="topic-level">A2 &middot; Modalverben</span>span>
-                                </div>
-                                <span class="topic-badge done-badge">&#10003; fertig</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card active">
-                                <span class="topic-emoji">&#9992;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Das Reisen</span>span>
-                                            <span class="topic-level">A2 &middot; Perfekt</span>span>
-                                </div>
-                                <span class="topic-badge next-badge">n&auml;chste</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#127829;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Essen &amp; Kochen</span>span>
-                                            <span class="topic-level">A2 &middot; Imperativ</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#127958;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Freizeit</span>span>
-                                            <span class="topic-level">A2 &middot; Pr&auml;teritum</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#128188;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Arbeit &amp; Beruf</span>span>
-                                            <span class="topic-level">A2&ndash;B1 &middot; Konjunktiv II</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#128187;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Internet &amp; Technik</span>span>
-                                            <span class="topic-level">B1 &middot; Relativs&auml;tze</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#128107;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Freunde &amp; Beziehungen</span>span>
-                                            <span class="topic-level">A2 &middot; Adjektivdeklination</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#128106;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Die Familie</span>span>
-                                            <span class="topic-level">A2 &middot; Possessivartikel</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#127973;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Gesundheit</span>span>
-                                            <span class="topic-level">B1 &middot; Wechselpr&auml;positionen</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-                      <a href="#" class="topic-card">
-                                <span class="topic-emoji">&#128250;</span>span>
-                                <div class="topic-info">
-                                            <span class="topic-name">Medien &amp; Nachrichten</span>span>
-                                            <span class="topic-level">B1 &middot; Passiv</span>span>
-                                </div>
-                                <span class="topic-badge todo-badge">bald</span>span>
-                      </a>a>
-              
-              </div>
-        </div>
-    
-        <footer class="footer">DeutschWeg &middot; Niveau A2 &rarr; B1 &middot; T&auml;glich lernen</footer>footer>
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeutschWeg — Deutsch A2 jeden Tag</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-deep: #0a5c42; --green-mid: #1D9E75; --green-light: #5DCAA5;
+      --green-pale: #E1F5EE; --green-border: #9FE1CB;
+      --amber-mid: #BA7517; --amber-pale: #FAEEDA; --amber-border: #E8C97A;
+      --text-dark: #1a1a18; --text-mid: #4a4a46; --text-muted: #888780;
+      --bg-page: #f5f3ed; --bg-card: #ffffff; --bg-section: #fafaf7;
+      --border: rgba(0,0,0,0.09);
+      --serif: 'Fraunces', Georgia, serif; --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--bg-page); color: var(--text-dark); min-height: 100vh; padding: 2rem 1rem 5rem; }
+    .page { max-width: 780px; margin: 0 auto; }
+    .hero { position: relative; background: var(--green-deep); border-radius: 20px; padding: 2.5rem 2.5rem 2.2rem; margin-bottom: 1.4rem; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+    .hero::after { content: ''; position: absolute; right: 60px; bottom: -80px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+    .hero-badge { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-light); background: rgba(93,202,165,0.15); border: 1px solid rgba(93,202,165,0.3); border-radius: 20px; padding: 4px 14px; margin-bottom: 1.1rem; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
+    .hero h1 em { font-style: italic; color: var(--green-light); }
+    .hero-sub { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.6; max-width: 520px; margin-bottom: 1.8rem; }
+    .hero-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .hero-pill { font-size: 12px; color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.1); border-radius: 20px; padding: 5px 13px; }
+    .hero-pill strong { color: #fff; font-weight: 500; }
+    .progress-banner { background: var(--amber-pale); border: 1px solid var(--amber-border); border-radius: 14px; padding: 1.2rem 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+    .progress-text { flex: 1; min-width: 180px; }
+    .progress-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--amber-mid); margin-bottom: 3px; }
+    .progress-text p { font-size: 13px; color: var(--text-mid); }
+    .progress-bar-wrap { width: 100%; background: rgba(186,117,23,0.15); border-radius: 8px; height: 6px; margin-top: 10px; }
+    .progress-bar-fill { height: 6px; border-radius: 8px; background: var(--amber-mid); width: 10%; }
+    .progress-count { font-size: 24px; font-weight: 600; color: var(--amber-mid); white-space: nowrap; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.6rem 1.8rem; margin-bottom: 1.2rem; }
+    .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+    .card-num { width: 30px; height: 30px; border-radius: 50%; background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .card-title { font-size: 17px; font-weight: 600; color: var(--text-dark); }
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .steps-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-mid); padding: 11px 14px; background: var(--bg-section); border: 1px solid var(--border); border-radius: 10px; line-height: 1.5; }
+    .step-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .steps-list li strong { display: block; font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 2px; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
+    .why-item { padding: 14px 16px; background: var(--green-pale); border: 1px solid var(--green-border); border-radius: 12px; }
+    .why-item .why-icon { font-size: 20px; margin-bottom: 6px; }
+    .why-item strong { display: block; font-size: 13px; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+    .why-item p { font-size: 12.5px; color: var(--text-mid); line-height: 1.5; }
+    .start-section { text-align: center; margin-bottom: 1.2rem; }
+    .btn-start { display: inline-flex; align-items: center; gap: 10px; background: var(--green-deep); color: #fff; font-family: var(--sans); font-size: 15px; font-weight: 500; padding: 14px 32px; border-radius: 12px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-start:hover { background: #0d7050; transform: translateY(-1px); }
+    .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+    .topic-card { display: flex; align-items: center; gap: 12px; padding: 13px 16px; background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 12px; text-decoration: none; transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s; }
+    .topic-card:hover { border-color: var(--green-mid); box-shadow: 0 4px 16px rgba(10,92,66,0.10); transform: translateY(-2px); }
+    .topic-card.done { border-color: var(--green-border); background: var(--green-pale); }
+    .topic-card.done .topic-name { color: var(--green-deep); }
+    .topic-card.active { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(29,158,117,0.12); }
+    .topic-emoji { font-size: 22px; flex-shrink: 0; }
+    .topic-info { flex: 1; }
+    .topic-name { font-size: 14px; font-weight: 500; color: var(--text-dark); display: block; }
+    .topic-level { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .topic-badge { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+    .done-badge { background: var(--green-pale); color: var(--green-deep); border: 1px solid var(--green-border); }
+    .todo-badge { background: var(--bg-section); color: var(--text-muted); border: 1px solid var(--border); }
+    .next-badge { background: var(--amber-pale); color: var(--amber-mid); border: 1px solid var(--amber-border); }
+    .footer { text-align: center; margin-top: 2.5rem; font-size: 12px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-badge">Deutsch A2 &rarr; B1 &middot; Jeden Tag lernen</div>
+      <h1>Deutsch<em>Weg</em></h1>
+      <p class="hero-sub">Jeden Tag eine neue Seite &mdash; ein Thema, neue W&ouml;rter, ein Text, Grammatik und Gespr&auml;che.</p>
+      <div class="hero-meta">
+        <span class="hero-pill"><strong>Niveau:</strong> A2 &rarr; B1</span>
+        <span class="hero-pill"><strong>Format:</strong> 1 Seite pro Tag</span>
+        <span class="hero-pill"><strong>Themen:</strong> 10 geplant</span>
+      </div>
+    </header>
+    <div class="progress-banner">
+      <div class="progress-text">
+        <strong>Unser Fortschritt</strong>
+        <p>1 von 10 Themen abgeschlossen &middot; weiter so!</p>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill"></div></div>
+      </div>
+      <div class="progress-count">1 / 10</div>
     </div>
- </body>
-</html
-                       </li>
-                      </li></strong></div></div>
-                      </li></p></strong></strong></em></h1>
- </body>
-   </style></title>
- </head>
+    <div class="card">
+      <div class="card-header"><div class="card-num">1</div><span class="card-title">Wie funktioniert das Lernen?</span></div>
+      <ul class="steps-list">
+        <li><span class="step-icon">&#128197;</span><div><strong>Ein Thema pro Tag</strong>Jeden Tag &ouml;ffnest du eine neue Seite mit einem Alltagsthema.</div></li>
+        <li><span class="step-icon">&#128214;</span><div><strong>Text zum Lesen</strong>Ein kurzer Text auf A2-Niveau &mdash; du liest, verstehst und erz&auml;hlst nach.</div></li>
+        <li><span class="step-icon">&#128292;</span><div><strong>Neue W&ouml;rter</strong>8&ndash;10 wichtige Vokabeln mit Artikel und Beispiels&auml;tzen.</div></li>
+        <li><span class="step-icon">&#128172;</span><div><strong>Fragen zum Sprechen</strong>Antworte auf 6&ndash;8 Fragen &mdash; zuerst mit Notizen, dann frei.</div></li>
+        <li><span class="step-icon">&#128208;</span><div><strong>Grammatik &amp; H&ouml;ren</strong>Eine Grammatikregel pro Seite + H&ouml;raufgaben mit A/B/C-Antworten.</div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-num">2</div><span class="card-title">Warum ist das n&uuml;tzlich?</span></div>
+      <div class="why-grid">
+        <div class="why-item"><div class="why-icon">&#9201;</div><strong>Kurz &amp; t&auml;glich</strong><p>15&ndash;20 Minuten pro Tag reichen. Keine &Uuml;berforderung, aber echte Fortschritte.</p></div>
+        <div class="why-item"><div class="why-icon">&#128483;</div><strong>Echtes Deutsch</strong><p>Alltagssprache, kein Lehrbuch-Deutsch. Du lernst, was du wirklich brauchst.</p></div>
+        <div class="why-item"><div class="why-icon">&#129504;</div><strong>Sprechen &uuml;ben</strong><p>Jede Seite hat Gespr&auml;chsfragen &mdash; ideal f&uuml;r Tandem-Stunden zu zweit.</p></div>
+        <div class="why-item"><div class="why-icon">&#128200;</div><strong>Wortschatz aufbauen</strong><p>10 Themen &times; 10 W&ouml;rter = 100 neue W&ouml;rter. Schritt f&uuml;r Schritt zum B1.</p></div>
+      </div>
+    </div>
+    <div class="start-section">
+      <a href="umwelt.html" class="btn-start">Start heute lernen &rarr;</a>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-num">3</div><span class="card-title">Alle Themen &mdash; A2 &rarr; B1</span></div>
+      <div class="topics-grid">
+        <a href="umwelt.html" class="topic-card done"><span class="topic-emoji">&#127807;</span><div class="topic-info"><span class="topic-name">Die Umwelt</span><span class="topic-level">A2 &middot; Modalverben</span></div><span class="topic-badge done-badge">&#10003; fertig</span></a>
+        <a href="#" class="topic-card active"><span class="topic-emoji">&#9992;</span><div class="topic-info"><span class="topic-name">Das Reisen</span><span class="topic-level">A2 &middot; Perfekt</span></div><span class="topic-badge next-badge">n&auml;chste</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#127829;</span><div class="topic-info"><span class="topic-name">Essen &amp; Kochen</span><span class="topic-level">A2 &middot; Imperativ</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#127958;</span><div class="topic-info"><span class="topic-name">Freizeit</span><span class="topic-level">A2 &middot; Pr&auml;teritum</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#128188;</span><div class="topic-info"><span class="topic-name">Arbeit &amp; Beruf</span><span class="topic-level">A2&ndash;B1 &middot; Konjunktiv II</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#128187;</span><div class="topic-info"><span class="topic-name">Internet &amp; Technik</span><span class="topic-level">B1 &middot; Relativs&auml;tze</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#128107;</span><div class="topic-info"><span class="topic-name">Freunde &amp; Beziehungen</span><span class="topic-level">A2 &middot; Adjektivdeklination</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#128106;</span><div class="topic-info"><span class="topic-name">Die Familie</span><span class="topic-level">A2 &middot; Possessivartikel</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#127973;</span><div class="topic-info"><span class="topic-name">Gesundheit</span><span class="topic-level">B1 &middot; Wechselpr&auml;positionen</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="#" class="topic-card"><span class="topic-emoji">&#128250;</span><div class="topic-info"><span class="topic-name">Medien &amp; Nachrichten</span><span class="topic-level">B1 &middot; Passiv</span></div><span class="topic-badge todo-badge">bald</span></a>
+      </div>
+    </div>
+    <footer class="footer">DeutschWeg &middot; Niveau A2 &rarr; B1 &middot; T&auml;glich lernen</footer>
+  </div>
+</body>
+</html>
