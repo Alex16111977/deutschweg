@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch A2 — Das Reisen</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green-deep:#0a5c42;--green-mid:#1D9E75;--green-light:#5DCAA5;--green-pale:#E1F5EE;--green-border:#9FE1CB;--blue-mid:#378ADD;--blue-pale:#E6F1FB;--amber-mid:#BA7517;--amber-pale:#FAEEDA;--text-dark:#1a1a18;--text-mid:#4a4a46;--text-muted:#888780;--bg-page:#f5f3ed;--bg-card:#ffffff;--bg-section:#fafaf7;--border:rgba(0,0,0,0.09);--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif}
+body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);min-height:100vh;padding:2rem 1rem 4rem}
+.page{max-width:780px;margin:0 auto}
+.hero{position:relative;background:var(--green-deep);border-radius:20px;padding:2.5rem 2.5rem 2rem;margin-bottom:2rem;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(93,202,165,0.12)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:60px;width:180px;height:180px;border-radius:50%;background:rgba(93,202,165,0.07)}
+.hero-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);background:rgba(93,202,165,.15);border:1px solid rgba(93,202,165,.3);border-radius:6px;padding:4px 12px;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(32px,5vw,46px);color:#fff;line-height:1.1;margin-bottom:10px}
+.hero h1 em{font-style:italic;color:var(--green-light)}
+.hero-meta{font-size:13px;color:rgba(255,255,255,.5);display:flex;gap:16px;flex-wrap:wrap}
+.section{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;margin-bottom:1.5rem;overflow:hidden}
+.section-head{display:flex;align-items:center;gap:12px;padding:1rem 1.5rem;background:var(--bg-section);border-bottom:1px solid var(--border)}
+.sec-num{width:30px;height:30px;border-radius:50%;background:var(--green-mid);color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-title{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark)}
+.section-body{padding:1.5rem}
+.qlist{list-style:none;display:flex;flex-direction:column;gap:12px}
+.qlist li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--text-dark);line-height:1.6}
+.qnum{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--green-light);color:var(--green-deep);font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.vocab-tbl{width:100%;border-collapse:collapse}
+.vocab-tbl th{text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);padding:0 10px 10px;border-bottom:2px solid var(--border)}
+.vocab-tbl td{padding:10px;font-size:14px;border-bottom:1px solid var(--border);vertical-align:top}
+.vocab-tbl tr:last-child td{border-bottom:none}
+.vocab-tbl tr:hover td{background:var(--bg-section)}
+.v-art{color:var(--green-mid);font-weight:700}
+.v-word{font-weight:600;color:var(--text-dark)}
+.v-ru{color:var(--text-mid)}
+.v-ex{color:var(--text-muted);font-size:12px;font-style:italic}
+.reading{border-left:3px solid var(--green-light);background:var(--green-pale);border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;font-size:15px;line-height:1.85;color:var(--text-dark)}
+.reading p+p{margin-top:10px}
+.task{background:var(--bg-section);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;font-size:14px;color:var(--text-mid);line-height:1.7}
+.task strong{color:var(--text-dark);font-weight:500}
+.task em{color:var(--green-deep);font-style:italic}
+.grammar-chip{display:inline-block;font-size:12px;font-weight:500;color:#185FA5;background:var(--blue-pale);border-radius:6px;padding:3px 10px;margin-bottom:14px}
+.grammar-note{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;padding:1rem 1.2rem;background:var(--green-pale);border:1px solid var(--green-border);border-radius:10px}
+.grammar-note strong{color:var(--text-dark)}
+.examples{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.examples li{padding:10px 14px;border-left:3px solid var(--blue-mid);background:var(--blue-pale);border-radius:0 8px 8px 0;font-size:15px;line-height:1.5;color:var(--text-dark)}
+.examples li em{display:block;font-size:12px;color:var(--text-muted);font-style:italic;margin-top:2px}
+.divider{height:1px;background:var(--border);margin:1.25rem 0}
+.task-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.aufgabe-box{border:2px dashed var(--green-border);border-radius:14px;padding:1.25rem 1.5rem;background:var(--green-pale)}
+.aufgabe-box .aufgabe-timer{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--green-deep);background:#fff;border:1px solid var(--green-border);border-radius:20px;padding:3px 12px;margin-bottom:12px}
+.aufgabe-box .aufgabe-title{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--green-deep);margin-bottom:10px;line-height:1.4}
+.aufgabe-box .aufgabe-hints{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.aufgabe-box .aufgabe-hints li{font-size:13px;color:var(--text-mid);padding-left:14px;position:relative;line-height:1.5}
+.aufgabe-box .aufgabe-hints li::before{content:'→';position:absolute;left:0;color:var(--green-mid);font-size:12px}
+.dialog-block{background:var(--bg-section);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:10px}
+.dialog-line{display:flex;gap:12px;font-size:14px;color:var(--text-mid);line-height:1.6;margin-bottom:8px}
+.dialog-line:last-child{margin-bottom:0}
+.dialog-speaker{font-weight:700;color:var(--green-deep);min-width:28px;flex-shrink:0}
+.dialog-continue{border:2px dashed var(--green-border);border-radius:10px;padding:1rem;text-align:center;color:var(--text-muted);font-size:13px;font-style:italic}
+.hoer-text{background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:1.1rem 1.3rem;margin-bottom:1rem;font-size:14px;line-height:1.75;color:var(--text-mid)}
+.hoer-badge{display:inline-block;background:#0ea5e9;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 10px;border-radius:20px;margin-bottom:8px}
+details summary{cursor:pointer;font-size:11px;color:var(--green-mid);font-weight:700;text-transform:uppercase;letter-spacing:.5px;list-style:none;margin-top:6px;display:inline-block}
+details summary::-webkit-details-marker{display:none}
+.ans-box{font-size:13px;color:var(--green-deep);margin-top:6px;padding:7px 11px;background:var(--green-pale);border-radius:7px;font-weight:600;border:1px solid var(--green-border)}
+.spiel-box{background:linear-gradient(135deg,#e8f5e9 0%,#f1f8e9 100%);border:1px solid var(--green-border);border-radius:12px;padding:1.2rem 1.4rem}
+.spiel-cards{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.spiel-card{background:#fff;border:2px solid var(--green-border);border-radius:8px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--green-deep)}
+.fehler-item{padding:12px 14px;background:#fff5f5;border:1px solid #fecaca;border-radius:10px;font-size:14px;color:var(--text-dark);margin-bottom:10px}
+.fehler-item:last-child{margin-bottom:0}
+.fehler-num{font-weight:700;color:#dc2626;margin-right:4px}
+.fehler-hint{font-size:11px;color:#9ca3af;margin-top:4px}
+.footer{text-align:center;margin-top:2.5rem;font-size:12px;color:var(--text-muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.footer-line{height:1px;flex:1;background:var(--border)}
+@media(max-width:560px){.hero{padding:1.75rem 1.25rem 1.5rem}.section-body{padding:1.25rem}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hero-tag">Deutsch A2 · Konversation</div>
+  <h1>Das <em>Reisen</em></h1>
+  <div class="hero-meta"><span>Niveau A2</span><span>Sprechen · Lesen · Grammatik</span></div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">1</div><h2 class="sec-title">Warm-up Fragen</h2></div>
+  <div class="section-body">
+    <ul class="qlist">
+      <li><span class="qnum">1</span>Reist du gern? Warum oder warum nicht?</li>
+      <li><span class="qnum">2</span>Wohin bist du zuletzt gereist? (Stadt oder Land)</li>
+      <li><span class="qnum">3</span>Wie reist du lieber — mit dem Zug, mit dem Flugzeug oder mit dem Auto?</li>
+      <li><span class="qnum">4</span>Packst du gerne Koffer, oder ist das stressig für dich?</li>
+      <li><span class="qnum">5</span>Was nimmst du immer auf eine Reise mit?</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">2</div><h2 class="sec-title">Neue Wörter</h2></div>
+  <div class="section-body">
+    <table class="vocab-tbl">
+      <thead><tr><th>Art.</th><th>Wort</th><th>Russisch</th><th>Beispiel</th></tr></thead>
+      <tbody>
+        <tr><td><span class="v-art">der</span></td><td class="v-word">Flughafen</td><td class="v-ru">аэропорт</td><td class="v-ex">Wir fahren zum Flughafen.</td></tr>
+        <tr><td><span class="v-art">der</span></td><td class="v-word">Koffer</td><td class="v-ru">чемодан</td><td class="v-ex">Ich habe einen großen Koffer.</td></tr>
+        <tr><td><span class="v-art">die</span></td><td class="v-word">Reise</td><td class="v-ru">поездка / путешествие</td><td class="v-ex">Die Reise war sehr schön.</td></tr>
+        <tr><td><span class="v-art">das</span></td><td class="v-word">Hotel</td><td class="v-ru">отель</td><td class="v-ex">Wir haben ein Hotel gebucht.</td></tr>
+        <tr><td><span class="v-art">der</span></td><td class="v-word">Zug</td><td class="v-ru">поезд</td><td class="v-ex">Der Zug fährt um 9 Uhr ab.</td></tr>
+        <tr><td><span class="v-art">die</span></td><td class="v-word">Fahrkarte</td><td class="v-ru">билет</td><td class="v-ex">Ich habe eine Fahrkarte gekauft.</td></tr>
+        <tr><td><span class="v-art">der</span></td><td class="v-word">Strand</td><td class="v-ru">пляж</td><td class="v-ex">Am Strand war es warm und sonnig.</td></tr>
+        <tr><td><span class="v-art">die</span></td><td class="v-word">Unterkunft</td><td class="v-ru">жильё / место проживания</td><td class="v-ex">Haben Sie eine Unterkunft reserviert?</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">3</div><h2 class="sec-title">Kurzer Text — Lesen</h2></div>
+  <div class="section-body">
+    <div class="reading">
+      <p>Letzten Sommer bin ich nach Italien gereist. Ich habe eine Fahrkarte für den Zug gekauft. Die Fahrt hat sechs Stunden gedauert.</p>
+      <p>In Italien habe ich ein kleines Hotel gebucht. Das Hotel war in der Nähe vom Strand. Jeden Morgen bin ich schwimmen gegangen. Das Wasser war warm und blau.</p>
+      <p>Die Reise war wirklich wunderbar. Nächstes Jahr möchte ich nach Spanien fahren.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">4</div><h2 class="sec-title">Fragen zum Text</h2></div>
+  <div class="section-body">
+    <ul class="qlist">
+      <li><span class="qnum">1</span><div>Wohin ist die Person gereist?<div style="margin-top:6px"><details><summary>▶ Antwort zeigen</summary><div class="ans-box">Die Person ist nach Italien gereist.</div></details></div></div></li>
+      <li><span class="qnum">2</span><div>Wie ist sie gereist — mit dem Flugzeug oder mit dem Zug?<div style="margin-top:6px"><details><summary>▶ Antwort zeigen</summary><div class="ans-box">Sie ist mit dem Zug gereist.</div></details></div></div></li>
+      <li><span class="qnum">3</span><div>Wie war das Hotel?<div style="margin-top:6px"><details><summary>▶ Antwort zeigen</summary><div class="ans-box">Das Hotel war klein und in der Nähe vom Strand.</div></details></div></div></li>
+      <li><span class="qnum">4</span><div>Was möchte die Person nächstes Jahr machen?<div style="margin-top:6px"><details><summary>▶ Antwort zeigen</summary><div class="ans-box">Sie möchte nach Spanien fahren.</div></details></div></div></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">5</div><h2 class="sec-title">Grammatik im Kontext — Das Perfekt</h2></div>
+  <div class="section-body">
+    <div class="grammar-chip">A2-Grammatik: Vergangenheit im Gespräch</div>
+    <div class="grammar-note">
+      <strong>Perfekt = haben / sein + Partizip II</strong><br><br>
+      <strong>haben + Partizip II</strong> → für die meisten Verben<br>
+      <em>Ich habe ein Hotel gebucht. &nbsp;·&nbsp; Er hat eine Fahrkarte gekauft.</em><br><br>
+      <strong>sein + Partizip II</strong> → für Bewegungsverben<br>
+      <em>Ich bin nach Italien gereist. &nbsp;·&nbsp; Wir sind am Strand spazieren gegangen.</em>
+    </div>
+    <ul class="examples">
+      <li>Ich <strong>habe</strong> eine Fahrkarte <strong>gekauft</strong>.<em>Я купил(а) билет.</em></li>
+      <li>Wir <strong>sind</strong> nach Wien <strong>gefahren</strong>.<em>Мы поехали в Вену.</em></li>
+      <li>Sie <strong>hat</strong> ein Hotel in Barcelona <strong>gebucht</strong>.<em>Она забронировала отель в Барселоне.</em></li>
+    </ul>
+    <div class="divider"></div>
+    <div class="task-label">Aufgabe</div>
+    <div class="aufgabe-box">
+      <div class="aufgabe-timer">✍ Schreiben</div>
+      <div class="aufgabe-title">Schreib 5 Sätze im Perfekt über eine echte oder erfundene Reise.</div>
+      <ul class="aufgabe-hints">
+        <li>Benutze Wörter aus Abschnitt 2</li>
+        <li>Benutze haben und sein</li>
+        <li>Zum Beispiel: Ich habe einen Koffer gepackt. / Wir sind zum Flughafen gefahren.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">6</div><h2 class="sec-title">Mini-Dialog — Fortsetzung schreiben</h2></div>
+  <div class="section-body">
+    <div class="task" style="margin-bottom:12px">Lies den Dialog. Schreib noch <strong>4–6 Zeilen</strong> weiter. Benutze das Perfekt!</div>
+    <div class="dialog-block">
+      <div class="dialog-line"><span class="dialog-speaker">A:</span><span>Hey! Du siehst so braun aus. Warst du im Urlaub?</span></div>
+      <div class="dialog-line"><span class="dialog-speaker">B:</span><span>Ja! Ich bin letzte Woche aus Griechenland zurückgekommen.</span></div>
+      <div class="dialog-line"><span class="dialog-speaker">A:</span><span>Oh, toll! Wie war es dort?</span></div>
+      <div class="dialog-line"><span class="dialog-speaker">B:</span><span>Fantastisch! Das Wetter war super und das Hotel war wirklich schön.</span></div>
+      <div class="dialog-line"><span class="dialog-speaker">A:</span><span>Und wie bist du dahin gefahren?</span></div>
+    </div>
+    <div class="dialog-continue">✏️ Jetzt seid ihr dran! Schreibt den Dialog zu zweit weiter…</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">7</div><h2 class="sec-title">Hörverstehen — Text vorlesen</h2></div>
+  <div class="section-body">
+    <div class="task" style="margin-bottom:12px">Eine Person liest den Text vor. Die andere Person hört zu und beantwortet die Fragen.</div>
+    <div class="hoer-text">
+      <div class="hoer-badge">🔊 Hörtext</div><br>
+      Mein Name ist Jonas. Letztes Jahr habe ich eine tolle Reise gemacht. Ich bin mit dem Zug nach Prag gefahren. Die Fahrt hat nur vier Stunden gedauert. In Prag habe ich in einem kleinen Hotel gewohnt. Ich habe viele alte Gebäude gesehen und leckeres Essen gegessen. Am letzten Tag habe ich Souvenirs für meine Familie gekauft. Die Reise war nicht teuer, aber sehr schön.
+    </div>
+    <ul class="qlist">
+      <li><span class="qnum">1</span><div>Wie ist Jonas nach Prag gefahren, und wie lange hat die Fahrt gedauert?<div style="margin-top:6px"><details><summary>▶ Antwort zeigen</summary><div class="ans-box">Er ist mit dem Zug gefahren. Die Fahrt hat vier Stunden gedauert.</div></details></div></div></li>
+      <li><span class="qnum">2</span><div>Was hat Jonas in Prag gemacht? (Nenne zwei Dinge.)<div style="margin-top:6px"><details><summary>▶ Antwort zeigen</summary><div class="ans-box">Er hat alte Gebäude gesehen und leckeres Essen gegessen.</div></details></div></div></li>
+      <li><span class="qnum">3</span><div>Was hat Jonas am letzten Tag gekauft?<div style="margin-top:6px"><details><summary>▶ Antwort zeigen</summary><div class="ans-box">Er hat Souvenirs für seine Familie gekauft.</div></details></div></div></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">8</div><h2 class="sec-title">Spiel — Ich packe meinen Koffer</h2></div>
+  <div class="section-body">
+    <div class="spiel-box">
+      <div style="font-weight:700;font-size:14px;color:var(--green-deep);margin-bottom:8px">🧳 Für 2 Personen · Wortschatz &amp; Gedächtnis</div>
+      <div style="font-size:13px;color:var(--text-mid);line-height:1.7">
+        Person A sagt: <em>„Ich packe meinen Koffer und nehme… <strong>einen Reisepass</strong> mit."</em><br>
+        Person B wiederholt und fügt hinzu: <em>„…einen Reisepass und… <strong>ein Buch</strong> mit."</em><br>
+        Jede Person fügt ein neues Wort hinzu. Wer vergisst, verliert! 🏆<br>
+        <strong>Tipp:</strong> Benutze den Akkusativ: <em>einen / eine / ein</em>
+      </div>
+      <div style="margin-top:10px;font-size:13px;font-weight:700;color:var(--green-deep)">💡 Starter-Wörter:</div>
+      <div class="spiel-cards">
+        <div class="spiel-card">einen Reisepass</div>
+        <div class="spiel-card">eine Kamera</div>
+        <div class="spiel-card">ein Buch</div>
+        <div class="spiel-card">einen Koffer</div>
+        <div class="spiel-card">eine Sonnenbrille</div>
+        <div class="spiel-card">ein Handtuch</div>
+        <div class="spiel-card">einen Regenschirm</div>
+        <div class="spiel-card">ein Ladekabel</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="sec-num">9</div><h2 class="sec-title">Fehler finden — Korrigiere die Sätze</h2></div>
+  <div class="section-body">
+    <div class="task" style="margin-bottom:14px">In jedem Satz ist <strong>ein Fehler</strong>. Finde ihn und korrigiere ihn!</div>
+    <div class="fehler-item">
+      <span class="fehler-num">①</span> Ich <strong>habe</strong> nach Berlin <em>gegangen</em>.
+      <div class="fehler-hint">💡 „gehen" ist ein Bewegungsverb → haben oder sein?</div>
+      <details><summary>▶ Lösung zeigen</summary><div class="ans-box">✅ Ich <strong>bin</strong> nach Berlin gegangen. → „sein" statt „haben"</div></details>
+    </div>
+    <div class="fehler-item">
+      <span class="fehler-num">②</span> Wir haben ein Hotel <em>gebuckt</em>.
+      <div class="fehler-hint">💡 Was ist die richtige Partizip-II-Form von „buchen"?</div>
+      <details><summary>▶ Lösung zeigen</summary><div class="ans-box">✅ Wir haben ein Hotel <strong>gebucht</strong>. → Partizip II: ge- + Stamm + -t</div></details>
+    </div>
+    <div class="fehler-item">
+      <span class="fehler-num">③</span> Der Zug <strong>hat</strong> um 10 Uhr <em>abgefahren</em>.
+      <div class="fehler-hint">💡 „abfahren" ist ein Bewegungsverb. Welches Hilfsverb braucht man?</div>
+      <details><summary>▶ Lösung zeigen</summary><div class="ans-box">✅ Der Zug <strong>ist</strong> um 10 Uhr abgefahren. → „sein" + Partizip II</div></details>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-line"></div>
+  <span>Deutsch A2 · Thema: Das Reisen · Grammatik: Perfekt</span>
+  <div class="footer-line"></div>
+</div>
+
+</div>
+</body>
+</html>
