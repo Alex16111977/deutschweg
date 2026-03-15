@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch A2 — Die Umwelt</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep:   #0a5c42;
+    --green-mid:    #1D9E75;
+    --green-light:  #5DCAA5;
+    --green-pale:   #E1F5EE;
+    --green-border: #9FE1CB;
+    --blue-mid:     #378ADD;
+    --blue-pale:    #E6F1FB;
+    --amber-mid:    #BA7517;
+    --amber-pale:   #FAEEDA;
+    --text-dark:    #1a1a18;
+    --text-mid:     #4a4a46;
+    --text-muted:   #888780;
+    --bg-page:      #f5f3ed;
+    --bg-card:      #ffffff;
+    --bg-section:   #fafaf7;
+    --border:       rgba(0,0,0,0.09);
+    --serif:        'Fraunces', Georgia, serif;
+    --sans:         'DM Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg-page);
+    color: var(--text-dark);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* ── HERO HEADER ── */
+  .hero {
+    position: relative;
+    background: var(--green-deep);
+    border-radius: 20px;
+    padding: 2.5rem 2.5rem 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(93,202,165,0.12);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 60px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(93,202,165,0.07);
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    background: rgba(93,202,165,0.15);
+    border: 1px solid rgba(93,202,165,0.3);
+    border-radius: 6px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(32px, 5vw, 46px);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green-light);
+  }
+
+  .hero-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+  /* ── SECTION CARDS ── */
+  .section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.5rem;
+    background: var(--bg-section);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sec-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sec-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-dark);
+  }
+
+  .section-body { padding: 1.5rem; }
+
+  /* ── QUESTIONS ── */
+  .qlist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+  .qlist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  .qnum {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--green-light);
+    color: var(--green-deep);
+    font-size: 11px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+
+  /* ── WÖRTER GRID ── */
+  .woerter {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px;
+  }
+
+  .wort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+
+  .art {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    min-width: 26px;
+    text-align: center;
+  }
+
+  .art.der { background: #E6F1FB; color: #185FA5; }
+  .art.die { background: var(--green-pale); color: var(--green-deep); }
+  .art.das { background: var(--amber-pale); color: var(--amber-mid); }
+  .art.v   { background: #FAECE7; color: #993C1D; }
+
+  .wort-label { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+
+  /* ── TEXT BLOCK ── */
+  .reading {
+    border-left: 3px solid var(--green-light);
+    background: var(--green-pale);
+    border-radius: 0 12px 12px 0;
+    padding: 1.25rem 1.5rem;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-dark);
+  }
+
+  .reading p + p { margin-top: 10px; }
+
+  /* ── TASK BOX ── */
+  .task {
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  .task strong { color: var(--text-dark); font-weight: 500; }
+  .task em { color: var(--green-deep); font-style: italic; }
+
+  /* ── GRAMMAR ── */
+  .grammar-chip {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #185FA5;
+    background: var(--blue-pale);
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+
+  .grammar-note {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .grammar-note strong { color: var(--text-dark); font-weight: 500; }
+
+  .examples { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+  .examples li {
+    padding: 10px 14px;
+    border-left: 3px solid var(--blue-mid);
+    background: var(--blue-pale);
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-dark);
+  }
+
+  .examples li em {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .rule-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .rule-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dark);
+    vertical-align: top;
+  }
+
+  .rule-table td:first-child { font-weight: 500; color: var(--green-deep); width: 90px; }
+
+  .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+
+  .task-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  /* ── DISKUSSION ── */
+  .dis-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dis-item:last-child { border-bottom: none; }
+
+  .dis-dot {
+    flex-shrink: 0;
+    margin-top: 4px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--green-mid);
+  }
+
+  .dis-q {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .footer-line { height: 1px; flex: 1; background: var(--border); }
+
+  /* ── WORTLISTE SPRECHEN ── */
+  .woerter-speak {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .wort-speak {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+
+  .wort-speak .wort-de { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+  .wort-speak .wort-use { font-size: 12px; color: var(--text-muted); font-style: italic; }
+
+  /* ── HILFESÄTZE ── */
+  .hilfe-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+  .hilfe-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #FFF8F0;
+    border: 1px solid #FAC775;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.5;
+  }
+
+  .hilfe-icon {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    background: var(--amber-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+  }
+
+  /* ── SATZSTARTER ── */
+  .starter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+  }
+
+  .starter-item {
+    background: var(--blue-pale);
+    border: 1px solid #B5D4F4;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #0C447C;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .starter-item span {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: #378ADD;
+    margin-top: 2px;
+  }
+
+  /* ── MINI-AUFGABE ── */
+  .aufgabe-box {
+    border: 2px dashed var(--green-border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    background: var(--green-pale);
+  }
+
+  .aufgabe-box .aufgabe-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--green-deep);
+    background: #fff;
+    border: 1px solid var(--green-border);
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+  }
+
+  .aufgabe-box .aufgabe-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--green-deep);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .aufgabe-box .aufgabe-hints {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .aufgabe-box .aufgabe-hints li {
+    font-size: 13px;
+    color: var(--text-mid);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .aufgabe-box .aufgabe-hints li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--green-mid);
+    font-size: 12px;
+  }
+
+  /* ── BEISPIELANTWORTEN ── */
+  .beispiel-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .beispiel-list li {
+    position: relative;
+    padding: 12px 14px 12px 42px;
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.65;
+  }
+
+  .beispiel-list li::before {
+    content: attr(data-n);
+    position: absolute;
+    left: 14px;
+    top: 13px;
+    width: 20px; height: 20px;
+    background: var(--green-mid);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .sec-num.amber { background: var(--amber-mid); }
+  .sec-num.blue  { background: var(--blue-mid); }
+  .sec-num.coral { background: #D85A30; }
+
+  /* ── HELPER BLOCKS (inline under main sections) ── */
+  .helper-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber-mid);
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    overflow: hidden;
+  }
+  .helper-section.blue-accent  { border-left-color: var(--blue-mid); }
+  .helper-section.coral-accent { border-left-color: #D85A30; }
+  .helper-section.green-accent { border-left-color: var(--green-mid); }
+
+  .helper-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1.2rem;
+    background: var(--bg-section);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .helper-badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 5px;
+    background: var(--amber-pale);
+    color: var(--amber-mid);
+    flex-shrink: 0;
+  }
+  .helper-badge.blue  { background: var(--blue-pale);  color: #185FA5; }
+  .helper-badge.coral { background: #FAECE7; color: #993C1D; }
+  .helper-badge.green { background: var(--green-pale); color: var(--green-deep); }
+
+  .helper-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--text-dark);
+  }
+
+  .helper-body { padding: 1.1rem 1.25rem; }
+
+  @media (max-width: 560px) { .helper-section { margin-left: 0.75rem; } }
+
+  @media (max-width: 560px) {
+    .hero { padding: 1.75rem 1.25rem 1.5rem; }
+    .section-body { padding: 1.25rem; }
+    .woerter { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Deutsch A2 · Konversation</div>
+    <h1>Die <em>Umwelt</em></h1>
+    <div class="hero-meta">
+      <span>Niveau A2</span>
+      <span>Sprechen · Lesen · Grammatik</span>
+    </div>
+  </div>
+
+  <!-- 1. Fragen zum Sprechen -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num">1</div>
+      <h2 class="sec-title">Fragen zum Sprechen</h2>
+    </div>
+    <div class="section-body">
+      <ul class="qlist">
+        <li><span class="qnum">1</span>Was machst du persönlich für die Umwelt?</li>
+        <li><span class="qnum">2</span>Trennst du deinen Müll zu Hause? Wie machst du das?</li>
+        <li><span class="qnum">3</span>Fährst du oft mit dem Auto oder lieber mit dem Fahrrad oder dem Bus?</li>
+        <li><span class="qnum">4</span>Was ist das größte Umweltproblem in deiner Stadt oder in deinem Land?</li>
+        <li><span class="qnum">5</span>Kaufst du manchmal Bio-Produkte? Warum oder warum nicht?</li>
+        <li><span class="qnum">6</span>Wie war die Natur in deiner Kindheit? Hat sich etwas verändert?</li>
+        <li><span class="qnum">7</span>Was können Kinder für die Umwelt lernen?</li>
+        <li><span class="qnum">8</span>Was soll die Regierung für den Klimaschutz tun?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HILFE: Hilfesätze -->
+  <div class="helper-section">
+    <div class="helper-head">
+      <span class="helper-badge">Hilfe</span>
+      <h3 class="helper-title">Hilfesätze — Wenn du ein Wort nicht weißt</h3>
+    </div>
+    <div class="helper-body">
+      <ul class="hilfe-list">
+        <li><div class="hilfe-icon">?</div><div><strong>Wie sagt man das auf Deutsch?</strong><br><span style="font-size:12px;color:var(--text-muted);">How do you say that in German?</span></div></li>
+        <li><div class="hilfe-icon">!</div><div><strong>Ich weiß das Wort (leider) nicht.</strong><br><span style="font-size:12px;color:var(--text-muted);">I don't know the word, unfortunately.</span></div></li>
+        <li><div class="hilfe-icon">?</div><div><strong>Kannst du das erklären?</strong><br><span style="font-size:12px;color:var(--text-muted);">Can you explain that?</span></div></li>
+        <li><div class="hilfe-icon">~</div><div><strong>Ich meine das Ding, das man benutzt, um …</strong><br><span style="font-size:12px;color:var(--text-muted);">I mean the thing you use to…</span></div></li>
+        <li><div class="hilfe-icon">↻</div><div><strong>Kannst du das bitte wiederholen?</strong><br><span style="font-size:12px;color:var(--text-muted);">Can you please repeat that?</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HILFE: Schritt für Schritt -->
+  <div class="helper-section green-accent">
+    <div class="helper-head">
+      <span class="helper-badge green">Schritt für Schritt</span>
+      <h3 class="helper-title">Weiß ich nicht was sagen — fang hier an!</h3>
+    </div>
+    <div class="helper-body">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Beantworte jede Frage mit <strong>einem Satz</strong>. Das Muster hilft dir:</p>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+
+        <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--green-mid);color:#fff;font-size:12px;font-weight:500;padding:10px 13px;display:flex;align-items:center;justify-content:center;min-width:36px;flex-shrink:0;">1</div>
+          <div style="padding:10px 13px;flex:1;">
+            <div style="font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;">Wo wohnst du?</div>
+            <div style="font-size:12px;color:var(--green-deep);font-style:italic;">→ Ich wohne in einer Stadt / in einem kleinen Dorf.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--green-mid);color:#fff;font-size:12px;font-weight:500;padding:10px 13px;display:flex;align-items:center;justify-content:center;min-width:36px;flex-shrink:0;">2</div>
+          <div style="padding:10px 13px;flex:1;">
+            <div style="font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;">Gibt es viele Autos oder Müll bei dir?</div>
+            <div style="font-size:12px;color:var(--green-deep);font-style:italic;">→ Es gibt (nicht so) viele Autos. / Es gibt leider Müll auf den Straßen.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--green-mid);color:#fff;font-size:12px;font-weight:500;padding:10px 13px;display:flex;align-items:center;justify-content:center;min-width:36px;flex-shrink:0;">3</div>
+          <div style="padding:10px 13px;flex:1;">
+            <div style="font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;">Wie fährst du — Auto, Bus oder Fahrrad?</div>
+            <div style="font-size:12px;color:var(--green-deep);font-style:italic;">→ Ich fahre meistens mit dem Bus / Fahrrad / Auto.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--green-mid);color:#fff;font-size:12px;font-weight:500;padding:10px 13px;display:flex;align-items:center;justify-content:center;min-width:36px;flex-shrink:0;">4</div>
+          <div style="padding:10px 13px;flex:1;">
+            <div style="font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;">Trennst du Müll zu Hause?</div>
+            <div style="font-size:12px;color:var(--green-deep);font-style:italic;">→ Ja, ich trenne den Müll. / Nein, das machen wir nicht.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--green-mid);color:#fff;font-size:12px;font-weight:500;padding:10px 13px;display:flex;align-items:center;justify-content:center;min-width:36px;flex-shrink:0;">5</div>
+          <div style="padding:10px 13px;flex:1;">
+            <div style="font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;">Machst du etwas für die Umwelt?</div>
+            <div style="font-size:12px;color:var(--green-deep);font-style:italic;">→ Ich versuche, … zu … / Das ist schwer für mich, weil …</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="background:var(--green-mid);color:#fff;font-size:12px;font-weight:500;padding:10px 13px;display:flex;align-items:center;justify-content:center;min-width:36px;flex-shrink:0;">6</div>
+          <div style="padding:10px 13px;flex:1;">
+            <div style="font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;">Ist die Umwelt ein wichtiges Thema für dich?</div>
+            <div style="font-size:12px;color:var(--green-deep);font-style:italic;">→ Ich denke, dass die Umwelt sehr wichtig ist.</div>
+          </div>
+        </div>
+
+      </div>
+      <div style="margin-top:10px;background:#fff;border-radius:8px;padding:8px 12px;font-size:12px;color:var(--green-deep);border:1px solid var(--green-border);">
+        6 Fragen = 6 Sätze = ein kleiner Text. Das reicht! ✓
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Neue Wörter -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num">2</div>
+      <h2 class="sec-title">Neue Wörter</h2>
+    </div>
+    <div class="section-body">
+      <div class="woerter">
+        <div class="wort"><span class="art die">die</span><span class="wort-label">Umwelt</span></div>
+        <div class="wort"><span class="art der">der</span><span class="wort-label">Müll</span></div>
+        <div class="wort"><span class="art die">die</span><span class="wort-label">Luftverschmutzung</span></div>
+        <div class="wort"><span class="art das">das</span><span class="wort-label">Recycling</span></div>
+        <div class="wort"><span class="art der">der</span><span class="wort-label">Klimawandel</span></div>
+        <div class="wort"><span class="art die">die</span><span class="wort-label">Energie</span></div>
+        <div class="wort"><span class="art v">Verb</span><span class="wort-label">sparen</span></div>
+        <div class="wort"><span class="art v">Adj.</span><span class="wort-label">umweltfreundlich</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HILFE: Wortliste zum Sprechen -->
+  <div class="helper-section">
+    <div class="helper-head">
+      <span class="helper-badge">+Wörter</span>
+      <h3 class="helper-title">Wortliste zum Sprechen</h3>
+    </div>
+    <div class="helper-body">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Zusätzliche Wörter, die beim Sprechen helfen:</p>
+      <div class="woerter-speak">
+        <div class="wort-speak"><span class="wort-de">die Natur</span><span class="wort-use">→ in der Natur leben</span></div>
+        <div class="wort-speak"><span class="wort-de">schützen</span><span class="wort-use">→ die Umwelt schützen</span></div>
+        <div class="wort-speak"><span class="wort-de">verbrauchen</span><span class="wort-use">→ viel Energie verbrauchen</span></div>
+        <div class="wort-speak"><span class="wort-de">die Pflanze, -n</span><span class="wort-use">→ Pflanzen pflanzen</span></div>
+        <div class="wort-speak"><span class="wort-de">das Wasser</span><span class="wort-use">→ Wasser sparen</span></div>
+        <div class="wort-speak"><span class="wort-de">erneuerbar</span><span class="wort-use">→ erneuerbare Energie</span></div>
+        <div class="wort-speak"><span class="wort-de">wegwerfen</span><span class="wort-use">→ Müll wegwerfen</span></div>
+        <div class="wort-speak"><span class="wort-de">das Problem, -e</span><span class="wort-use">→ ein großes Problem</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Kurzer Text -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num">3</div>
+      <h2 class="sec-title">Kurzer Text — Lesen</h2>
+    </div>
+    <div class="section-body">
+      <div class="reading">
+        <p>Die Umwelt ist sehr wichtig für uns alle. Leider haben wir heute viele Probleme: Die Luft in den Städten ist oft schmutzig, und es gibt zu viel Müll.</p>
+        <p>Viele Menschen versuchen, die Umwelt zu schützen. Sie fahren mit dem Fahrrad statt mit dem Auto. Sie kaufen weniger Plastik und trennen ihren Müll zu Hause.</p>
+        <p>Auch der Klimawandel ist ein großes Problem. Die Temperaturen werden wärmer, und das Wetter ändert sich. Wir müssen Energie sparen und mehr erneuerbare Energie benutzen.</p>
+        <p>Jeder kann etwas tun — auch zu Hause. Zum Beispiel: das Licht ausschalten, kürzere Duschen nehmen oder weniger Fleisch essen. Kleine Schritte helfen der Umwelt sehr.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Fragen zum Text -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num">4</div>
+      <h2 class="sec-title">Fragen zum Text</h2>
+    </div>
+    <div class="section-body">
+      <ul class="qlist">
+        <li><span class="qnum">1</span>Welche Umweltprobleme werden im Text erwähnt?</li>
+        <li><span class="qnum">2</span>Was machen viele Menschen, um die Umwelt zu schützen?</li>
+        <li><span class="qnum">3</span>Was passiert durch den Klimawandel laut dem Text?</li>
+        <li><span class="qnum">4</span>Welche drei Beispiele gibt der Text für Umweltschutz zu Hause?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5. Nacherzählung -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num">5</div>
+      <h2 class="sec-title">Nacherzählung</h2>
+    </div>
+    <div class="section-body">
+      <div class="task">
+        <strong>Aufgabe:</strong> Erzähle den Text mit deinen eigenen Worten nach. Benutze <em>nicht</em> dieselben Sätze wie im Text.<br><br>
+        Antworte auf diese Fragen: <em>Worum geht es im Text? Was können die Menschen tun? Warum ist das wichtig?</em><br><br>
+        Sprich in <strong>4–6 Sätzen</strong>. Du kannst die Wörter aus Abschnitt 2 benutzen.
+      </div>
+    </div>
+  </div>
+
+  <!-- HILFE: Beispielantworten -->
+  <div class="helper-section coral-accent">
+    <div class="helper-head">
+      <span class="helper-badge coral">Beispiel</span>
+      <h3 class="helper-title">Beispielantworten — A2-Niveau</h3>
+    </div>
+    <div class="helper-body">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">So kann man auf A2-Niveau antworten:</p>
+      <ul class="beispiel-list">
+        <li data-n="1">Ich denke, dass der Klimawandel ein sehr großes Problem ist. Die Temperaturen werden wärmer, und das ist nicht gut für die Natur.</li>
+        <li data-n="2">Meiner Meinung nach muss jeder Mensch etwas für die Umwelt tun. Ich zum Beispiel fahre mit dem Fahrrad und kaufe kein Plastik.</li>
+        <li data-n="3">Ich finde es wichtig, dass Kinder in der Schule über die Umwelt lernen. Sie können dann ihren Eltern helfen und gute Gewohnheiten haben.</li>
+        <li data-n="4">Das ist ein Problem, weil wir zu viel Energie verbrauchen. Wir müssen mehr erneuerbare Energie benutzen — zum Beispiel Solar- oder Windenergie.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 6. Grammatik -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num">6</div>
+      <h2 class="sec-title">Grammatik</h2>
+    </div>
+    <div class="section-body">
+      <div class="grammar-chip">Modalverb: müssen + Infinitiv</div>
+      <div class="grammar-note">
+        Mit <strong>müssen</strong> sagen wir, dass etwas notwendig oder sehr wichtig ist. Das Hauptverb steht immer am <strong>Ende des Satzes</strong> im Infinitiv.
+      </div>
+
+      <table class="rule-table">
+        <thead>
+          <tr><th>Person</th><th>Form</th><th>Beispiel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ich</td><td>muss</td><td>Ich muss mehr Wasser sparen.</td></tr>
+          <tr><td>du</td><td>musst</td><td>Du musst den Müll trennen.</td></tr>
+          <tr><td>er/sie/es</td><td>muss</td><td>Er muss mit dem Bus fahren.</td></tr>
+          <tr><td>wir/sie/Sie</td><td>müssen</td><td>Wir müssen die Umwelt schützen.</td></tr>
+        </tbody>
+      </table>
+
+      <ul class="examples">
+        <li>
+          Wir <strong>müssen</strong> mehr Energie <strong>sparen</strong>.
+          <em>We must save more energy.</em>
+        </li>
+        <li>
+          Die Regierung <strong>muss</strong> die Umwelt <strong>schützen</strong>.
+          <em>The government must protect the environment.</em>
+        </li>
+        <li>
+          Man <strong>muss</strong> keinen Plastikbeutel <strong>kaufen</strong>.
+          <em>One must not buy plastic bags.</em>
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+      <div class="task-label">Aufgabe</div>
+      <div class="task">
+        Schreibe <strong>5 eigene Sätze</strong> mit <em>müssen</em> zum Thema Umwelt.<br>
+        Benutze verschiedene Subjekte: <em>ich, du, wir, man, die Menschen, die Regierung …</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Diskussion -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num">7</div>
+      <h2 class="sec-title">Diskussion — Deine Meinung</h2>
+    </div>
+    <div class="section-body">
+      <div class="dis-item">
+        <div class="dis-dot"></div>
+        <div class="dis-q">Glaubst du, dass der Einzelne wirklich etwas für die Umwelt tun kann — oder müssen nur große Unternehmen und Regierungen handeln? Warum?</div>
+      </div>
+      <div class="dis-item">
+        <div class="dis-dot"></div>
+        <div class="dis-q">Bist du bereit, auf etwas zu verzichten — zum Beispiel auf Flugreisen oder Fleisch — um die Umwelt zu schützen? Was ist für dich am schwersten?</div>
+      </div>
+      <div class="dis-item">
+        <div class="dis-dot"></div>
+        <div class="dis-q">Was denkst du: Wird die Umwelt in 20 Jahren besser oder schlechter sein als heute? Begründe deine Antwort.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HILFE: Satzstarter (nach Diskussion) -->
+  <div class="helper-section blue-accent">
+    <div class="helper-head">
+      <span class="helper-badge blue">Satzstarter</span>
+      <h3 class="helper-title">So fängst du an — Deine Meinung sagen</h3>
+    </div>
+    <div class="helper-body">
+      <div class="starter-grid">
+        <div class="starter-item">Ich denke, dass …<span>I think that…</span></div>
+        <div class="starter-item">Meiner Meinung nach …<span>In my opinion…</span></div>
+        <div class="starter-item">Ich glaube, dass …<span>I believe that…</span></div>
+        <div class="starter-item">Ich finde es wichtig, dass …<span>I think it's important that…</span></div>
+        <div class="starter-item">Das ist ein Problem, weil …<span>This is a problem because…</span></div>
+        <div class="starter-item">Zum Beispiel …<span>For example…</span></div>
+        <div class="starter-item">Auf der einen Seite … auf der anderen Seite …<span>On one hand… on the other…</span></div>
+        <div class="starter-item">Ich bin der Meinung, dass …<span>I am of the opinion that…</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HILFE: Mini-Aufgabe -->
+  <div class="helper-section green-accent">
+    <div class="helper-head">
+      <span class="helper-badge green">Aufgabe</span>
+      <h3 class="helper-title">Mini-Aufgabe zum Sprechen</h3>
+    </div>
+    <div class="helper-body">
+      <div class="aufgabe-box">
+        <div class="aufgabe-timer">⏱ 1–2 Minuten</div>
+        <div class="aufgabe-title">Sprich über die Umwelt in deinem Alltag. Was machst du? Was möchtest du ändern?</div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.65;">Sprich frei — ohne Notizen! Du kannst die Wörter und Satzstarter aus dieser Seite benutzen.</p>
+        <ul class="aufgabe-hints">
+          <li>Was ist das größte Umweltproblem für dich?</li>
+          <li>Was machst du schon für die Umwelt?</li>
+          <li>Was ist schwer für dich? Was kannst du (noch) nicht tun?</li>
+          <li>Was möchtest du in Zukunft anders machen?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HÖREN: Audio-Aufgaben -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-num" style="background:#7F77DD;">🎧</div>
+      <h2 class="sec-title">Hören — Wähle die richtige Antwort</h2>
+    </div>
+    <div class="section-body">
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem;">Drücke auf <strong>▶ Abspielen</strong> und wähle dann A, B oder C.</p>
+
+      <!-- Aufgabe 1 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">1</div>
+          <div class="audio-task-label">Was macht Anna NICHT für die Umwelt?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Anna wohnt in einer kleinen Stadt und versucht, umweltfreundlich zu leben. Sie faehrt immer mit dem Fahrrad zur Arbeit und kauft keine Plastikflaschen. Aber sie faehrt zweimal im Jahr mit dem Flugzeug in den Urlaub. Das findet sie selbst nicht so gut.')">▶ Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Sie kauft keine Plastikflaschen.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Sie fährt mit dem Fahrrad.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Sie fliegt nie in den Urlaub.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="✓ Richtig! Anna fliegt zweimal im Jahr — das macht sie selbst nicht glücklich." data-err="✗ Falsch. Hör noch einmal genau: Anna fliegt zweimal im Jahr mit dem Flugzeug. Das ist das Problem."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 2 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">2</div>
+          <div class="audio-task-label">Wie oft und wie lange duscht Maria?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Maria moechte Wasser sparen. Frueher hat sie jeden Tag zwanzig Minuten geduscht. Jetzt duscht sie nur noch jeden zweiten Tag und immer nur fuenf Minuten. Ihr Mann findet das manchmal schwierig, aber er versteht es.')">▶ Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Jeden Tag, drei Minuten.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Jeden zweiten Tag, fünf Minuten.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Zweimal pro Woche, zwanzig Minuten.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="✓ Richtig! Jeden zweiten Tag und nur fünf Minuten — früher waren es zwanzig." data-err="✗ Falsch. Früher hat sie zwanzig Minuten geduscht. Jetzt: jeden zweiten Tag, fünf Minuten."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 3 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">3</div>
+          <div class="audio-task-label">Warum kauft Thomas keine Bio-Produkte mehr?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Thomas hat frueher immer Bio-Produkte gekauft, weil er die Umwelt schuetzen wollte. Aber seit drei Monaten kauft er keine mehr. Bio-Produkte sind sehr teuer, und Thomas hat seinen Job verloren. Er hofft, dass er bald wieder arbeitet.')">▶ Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Weil er die Umwelt nicht mehr wichtig findet.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Weil der Supermarkt keine Bio-Produkte mehr hat.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Weil er seinen Job verloren hat und kein Geld hat.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="✓ Richtig! Thomas hat keinen Job mehr und kann sich Bio nicht leisten." data-err="✗ Falsch. Er findet Bio und Umwelt immer noch wichtig — aber er hat kein Geld mehr dafür."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 4 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">4</div>
+          <div class="audio-task-label">Was ist das Hauptproblem in der Stadt laut dem Text?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'In der Stadt Gruenberg gibt es viele Umweltprobleme. Die Luft ist wegen der vielen Autos schlecht. Es gibt auch zu viel Muell auf den Strassen. Das groesste Problem ist der Fluss. Die Fabrik wirft seit Jahren alte Chemikalien ins Wasser. Die Fische sind fast alle verschwunden.')">▶ Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Die schlechte Luft durch Autos.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Zu viel Müll auf den Straßen.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Die Fabrik verschmutzt den Fluss mit Chemikalien.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="✓ Richtig! Der Text sagt: das GRÖSSTE Problem ist der verschmutzte Fluss." data-err="✗ Falsch. Luft und Müll sind Probleme, aber der Text sagt: das GRÖSSTE Problem ist der Fluss."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 5 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">5</div>
+          <div class="audio-task-label">Was sagt die Familie über das Recycling?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Familie Mueller trennt ihren Muell sehr genau. Die Mutter sortiert Papier, Glas und Plastik. Der Vater bringt die Flaschen zum Container. Aber die Kinder vergessen es oft. Der Sohn wirft manchmal Plastik in den falschen Muellleimer. Die Mutter erklaert ihm, warum das wichtig ist.')">▶ Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Die ganze Familie trennt den Müll sehr gut.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Der Sohn wirft Plastik manchmal in den falschen Eimer.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Der Vater vergisst oft, die Flaschen wegzubringen.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="✓ Richtig! Der Sohn denkt, es ist egal — die Mutter muss es ihm erklären." data-err="✗ Falsch. Der Vater bringt die Flaschen — der SOHN ist das Problem. Er wirft Plastik in den falschen Eimer."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 6 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">6</div>
+          <div class="audio-task-label">Was plant die Stadt Grünberg für die Zukunft?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Die Stadt Gruenberg hat einen neuen Plan. Ab naechstem Jahr sollen alle neuen Busse elektrisch fahren. Die Stadt moechte auch mehr Fahrradwege bauen. Autos sollen in der Stadtmitte weniger fahren duerfen. Das Schwimmbad mit Solarenergie kommt erst in fuenf Jahren.')">▶ Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Elektrische Busse und ein Solarenergie-Schwimmbad — beides ab nächstem Jahr.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Elektrische Busse ab nächstem Jahr, Schwimmbad erst in fünf Jahren.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Mehr Fahrradwege, aber keine elektrischen Busse.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="✓ Richtig! Die Busse kommen nächstes Jahr, aber das Schwimmbad erst in 5 Jahren — kein Geld." data-err="✗ Falsch. Hör genau: elektrische Busse — nächstes Jahr. Schwimmbad — erst in fünf Jahren, weil Geld fehlt."></div>
+        </div>
+      </div>
+
+      <div id="hoeren-result" style="display:none;margin-top:1rem;background:var(--green-pale);border:1px solid var(--green-border);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--green-deep);text-align:center;font-weight:500;"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-line"></div>
+    <span>Deutsch A2 · Thema: Die Umwelt</span>
+    <div class="footer-line"></div>
+  </div>
+
+<style>
+  .audio-task { border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg-card); margin-bottom:12px; }
+  .audio-task-head { display:flex; align-items:center; gap:12px; padding:11px 16px; background:var(--bg-section); border-bottom:1px solid var(--border); }
+  .audio-task-num { width:26px;height:26px;border-radius:50%;background:#7F77DD;color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+  .audio-task-label { font-size:14px;font-weight:500;color:var(--text-dark); }
+  .audio-task-body { padding:14px 16px; }
+  .audio-play-btn { display:inline-flex;align-items:center;gap:8px;background:#7F77DD;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit; }
+  .audio-play-btn:hover { background:#534AB7; }
+  .audio-options { display:flex;flex-direction:column;gap:8px;margin-top:12px; }
+  .audio-opt { display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1.5px solid var(--border);border-radius:9px;cursor:pointer;font-size:14px;color:var(--text-dark);background:var(--bg-card);line-height:1.5; }
+  .audio-opt:hover { border-color:#AFA9EC;background:#EEEDFE; }
+  .audio-opt.correct { border-color:#1D9E75;background:var(--green-pale);color:var(--green-deep);pointer-events:none; }
+  .audio-opt.wrong   { border-color:#E24B4A;background:#FCEBEB;color:#A32D2D;pointer-events:none; }
+  .audio-opt.disabled { pointer-events:none; }
+  .opt-letter { width:22px;height:22px;border-radius:50%;background:#CECBF6;color:#3C3489;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px; }
+  .audio-opt.correct .opt-letter { background:#1D9E75;color:#fff; }
+  .audio-opt.wrong   .opt-letter { background:#E24B4A;color:#fff; }
+  .audio-feedback { margin-top:10px;font-size:13px;padding:8px 12px;border-radius:8px; }
+  .audio-feedback.ok  { background:var(--green-pale);color:var(--green-deep);border:1px solid var(--green-border); }
+  .audio-feedback.err { background:#FCEBEB;color:#A32D2D;border:1px solid #F7C1C1; }
+</style>
+
+<script>
+var hoeren_correct = 0;
+var hoeren_answered = 0;
+var hoeren_total = 6;
+var curBtn = null;
+var audioQueue = [];
+var isPlaying = false;
+
+function splitText(text) {
+  var parts = text.split('. ');
+  var chunks = [], cur = '';
+  for (var i = 0; i < parts.length; i++) {
+    var s = parts[i] + (i < parts.length - 1 ? '.' : '');
+    if (cur.length + s.length > 170 && cur.length > 0) {
+      chunks.push(cur.trim());
+      cur = s;
+    } else {
+      cur = cur ? cur + ' ' + s : s;
+    }
+  }
+  if (cur) chunks.push(cur.trim());
+  return chunks;
+}
+
+function playNext(btn) {
+  if (audioQueue.length === 0 || !isPlaying) {
+    if (btn) { btn.innerHTML = '▶ Noch einmal'; btn.style.background = '#7F77DD'; }
+    isPlaying = false; curBtn = null;
+    return;
+  }
+  var chunk = audioQueue.shift();
+  var url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=de&client=tw-ob&q=' + encodeURIComponent(chunk);
+  var a = new Audio(url);
+  a.play();
+  a.onended = function() { playNext(btn); };
+  a.onerror = function() { playNext(btn); };
+}
+
+function speak(btn, text) {
+  if (isPlaying) {
+    isPlaying = false; audioQueue = [];
+    if (curBtn && curBtn !== btn) { curBtn.innerHTML = '▶ Abspielen'; curBtn.style.background = '#7F77DD'; }
+    if (curBtn === btn) { curBtn = null; btn.innerHTML = '▶ Abspielen'; btn.style.background = '#7F77DD'; return; }
+  }
+  curBtn = btn; isPlaying = true;
+  btn.innerHTML = '⏸ Stopp'; btn.style.background = '#534AB7';
+  audioQueue = splitText(text);
+  playNext(btn);
+}
+
+function choose(el, isCorrect) {
+  var opts = el.parentNode.querySelectorAll('.audio-opt');
+  for (var i = 0; i < opts.length; i++) {
+    if (opts[i].classList.contains('correct') || opts[i].classList.contains('wrong')) return;
+  }
+  for (var i = 0; i < opts.length; i++) { opts[i].style.pointerEvents = 'none'; }
+  var fb = el.parentNode.parentNode.querySelector('.audio-feedback');
+  if (isCorrect) {
+    el.classList.add('correct');
+    fb.textContent = fb.getAttribute('data-ok');
+    fb.className = 'audio-feedback ok';
+    hoeren_correct++;
+  } else {
+    el.classList.add('wrong');
+    for (var i = 0; i < opts.length; i++) {
+      if (opts[i].getAttribute('onclick').indexOf('true') !== -1) { opts[i].classList.add('correct'); break; }
+    }
+    fb.textContent = fb.getAttribute('data-err');
+    fb.className = 'audio-feedback err';
+  }
+  hoeren_answered++;
+  if (hoeren_answered === hoeren_total) {
+    var res = document.getElementById('hoeren-result');
+    var pct = Math.round(hoeren_correct / hoeren_total * 100);
+    res.textContent = (pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪') + ' Ergebnis: ' + hoeren_correct + ' von ' + hoeren_total + ' richtig (' + pct + '%)';
+    res.style.display = 'block';
+  }
+}
+</script>
+
+</div>
+</body>
+</html>
