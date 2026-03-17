@@ -566,10 +566,107 @@
     body { background: #fff; padding: 0; }
     .section { break-inside: avoid; }
   }
+
+  /* ── SITE NAV ── */
+  .site-nav { margin-bottom: 1rem; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0; }
+  .nav-logo { text-decoration: none; font-family: var(--serif); font-size: 20px; font-weight: 300; color: var(--text-dark); }
+  .nav-logo em { font-style: italic; color: var(--green-deep); }
+  .nav-topics-wrap { position: relative; }
+  .nav-topics-btn { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text-mid); background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 8px 16px; cursor: pointer; transition: border-color 0.18s, box-shadow 0.18s; }
+  .nav-topics-btn:hover { border-color: var(--green-mid); box-shadow: 0 2px 8px rgba(10,92,66,0.08); }
+  .nav-chevron { font-size: 10px; margin-left: 4px; display: inline-block; transition: transform 0.2s; }
+  .nav-topics-btn[aria-expanded="true"] .nav-chevron { transform: rotate(180deg); }
+  .nav-dropdown { display: none; position: absolute; top: calc(100% + 8px); right: 0; width: 300px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); z-index: 100; overflow: hidden; }
+  .nav-dropdown.open { display: block; }
+  .nav-dropdown-header { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 14px 16px 8px; }
+  .nav-dropdown-list { list-style: none; padding: 0 8px 8px; max-height: 360px; overflow-y: auto; }
+  .nav-topic-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; text-decoration: none; font-size: 14px; color: var(--text-dark); transition: background 0.15s; border-left: 3px solid transparent; }
+  a.nav-topic-link:hover { background: var(--bg-section); }
+  .nav-topic-link.current { background: var(--green-pale); border-left-color: var(--green-mid); font-weight: 500; }
+  .nav-topic-emoji { font-size: 17px; flex-shrink: 0; width: 24px; text-align: center; }
+  .nav-topic-name { flex: 1; }
+  .nav-topic-check { color: var(--green-mid); font-size: 13px; font-weight: 600; }
+  .nav-topic-link.upcoming { color: var(--text-muted); cursor: default; }
+  .nav-topic-badge { font-size: 11px; color: var(--text-muted); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+  .nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile-menu { display: none; flex-direction: column; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 8px; margin-bottom: 1rem; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-link { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 8px; text-decoration: none; font-size: 14px; color: var(--text-dark); transition: background 0.15s; }
+  .nav-mobile-link:hover { background: var(--bg-section); }
+  .nav-mobile-link.current { background: var(--green-pale); font-weight: 500; color: var(--green-deep); }
+  .nav-mobile-link.disabled { color: var(--text-muted); pointer-events: none; }
+  .nav-mobile-divider { height: 1px; background: var(--border); margin: 4px 8px; }
+  .nav-mobile-heading { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); padding: 8px 12px 2px; }
+  .lesson-nav { display: flex; align-items: stretch; justify-content: space-between; gap: 10px; margin-top: 2rem; margin-bottom: 0.5rem; }
+  .lesson-nav-link { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; text-decoration: none; flex: 1; min-width: 0; transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s; }
+  .lesson-nav-link:hover:not(.disabled) { border-color: var(--green-mid); box-shadow: 0 4px 16px rgba(10,92,66,0.10); transform: translateY(-1px); }
+  .lesson-nav-link.next { flex-direction: row-reverse; text-align: right; }
+  .lesson-nav-link.next .lesson-nav-detail { align-items: flex-end; }
+  .lesson-nav-link.disabled { opacity: 0.4; cursor: default; }
+  .lesson-nav-arrow { font-size: 20px; color: var(--green-mid); flex-shrink: 0; }
+  .lesson-nav-detail { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .lesson-nav-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+  .lesson-nav-title { font-size: 14px; font-weight: 500; color: var(--text-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lesson-nav-all { display: flex; align-items: center; justify-content: center; width: 44px; flex-shrink: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; text-decoration: none; font-size: 20px; color: var(--text-muted); transition: border-color 0.18s, color 0.18s; }
+  .lesson-nav-all:hover { border-color: var(--green-mid); color: var(--green-deep); }
+  @media (max-width: 560px) {
+    .nav-topics-wrap { display: none; }
+    .nav-hamburger { display: flex; }
+    .lesson-nav { flex-direction: column; }
+    .lesson-nav-link.next { flex-direction: row; text-align: left; }
+    .lesson-nav-link.next .lesson-nav-detail { align-items: flex-start; }
+    .lesson-nav-all { width: 100%; padding: 10px; }
+  }
+  @media (min-width: 561px) { .nav-mobile-menu { display: none !important; } }
 </style>
 </head>
 <body>
 <div class="page">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Deutsch<em>Weg</em></a>
+      <div class="nav-topics-wrap">
+        <button class="nav-topics-btn" aria-expanded="false" aria-controls="topics-dropdown">Themen <span class="nav-chevron">&#9662;</span></button>
+        <div class="nav-dropdown" id="topics-dropdown" role="menu">
+          <div class="nav-dropdown-header">Alle Themen &mdash; A2 &rarr; B1</div>
+          <ul class="nav-dropdown-list">
+            <li><a href="umwelt.html" class="nav-topic-link done current" role="menuitem" aria-current="page"><span class="nav-topic-emoji">&#127807;</span><span class="nav-topic-name">Die Umwelt</span><span class="nav-topic-check">&#10003;</span></a></li>
+            <li><a href="reisen.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#9992;</span><span class="nav-topic-name">Das Reisen</span><span class="nav-topic-check">&#10003;</span></a></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127829;</span><span class="nav-topic-name">Essen &amp; Kochen</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127958;</span><span class="nav-topic-name">Freizeit</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128188;</span><span class="nav-topic-name">Arbeit &amp; Beruf</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128187;</span><span class="nav-topic-name">Internet &amp; Technik</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128107;</span><span class="nav-topic-name">Freunde &amp; Beziehungen</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128106;</span><span class="nav-topic-name">Die Familie</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127973;</span><span class="nav-topic-name">Gesundheit</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128250;</span><span class="nav-topic-name">Medien &amp; Nachrichten</span><span class="nav-topic-badge">bald</span></span></li>
+          </ul>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Men&uuml; &ouml;ffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile-menu" aria-hidden="true">
+      <a href="../index.html" class="nav-mobile-link">&#127968; Startseite</a>
+      <div class="nav-mobile-divider"></div>
+      <div class="nav-mobile-heading">Alle Themen</div>
+      <a href="umwelt.html" class="nav-mobile-link current">&#127807; Die Umwelt <span>&#10003;</span></a>
+      <a href="reisen.html" class="nav-mobile-link">&#9992; Das Reisen <span>&#10003;</span></a>
+      <span class="nav-mobile-link disabled">&#127829; Essen &amp; Kochen</span>
+      <span class="nav-mobile-link disabled">&#127958; Freizeit</span>
+      <span class="nav-mobile-link disabled">&#128188; Arbeit &amp; Beruf</span>
+      <span class="nav-mobile-link disabled">&#128187; Internet &amp; Technik</span>
+      <span class="nav-mobile-link disabled">&#128107; Freunde &amp; Beziehungen</span>
+      <span class="nav-mobile-link disabled">&#128106; Die Familie</span>
+      <span class="nav-mobile-link disabled">&#127973; Gesundheit</span>
+      <span class="nav-mobile-link disabled">&#128250; Medien &amp; Nachrichten</span>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <div class="hero">
@@ -1014,6 +1111,24 @@
     </div>
   </div>
 
+  <nav class="lesson-nav" aria-label="Themen-Navigation">
+    <div class="lesson-nav-link prev" style="visibility:hidden">
+      <span class="lesson-nav-arrow">&larr;</span>
+      <span class="lesson-nav-detail">
+        <span class="lesson-nav-label">Vorheriges Thema</span>
+        <span class="lesson-nav-title">—</span>
+      </span>
+    </div>
+    <a href="../index.html" class="lesson-nav-all" title="Alle Themen"><span>&#8943;</span></a>
+    <a href="reisen.html" class="lesson-nav-link next">
+      <span class="lesson-nav-detail">
+        <span class="lesson-nav-label">N&auml;chstes Thema</span>
+        <span class="lesson-nav-title">&#9992; Das Reisen</span>
+      </span>
+      <span class="lesson-nav-arrow">&rarr;</span>
+    </a>
+  </nav>
+
   <div class="footer">
     <div class="footer-line"></div>
     <span>Deutsch A2 · Thema: Die Umwelt</span>
@@ -1120,6 +1235,41 @@ function choose(el, isCorrect) {
     res.style.display = 'block';
   }
 }
+</script>
+
+<script>
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var mobileMenu = document.querySelector('.nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      var isOpen = hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open', isOpen);
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+  var topicsBtn = document.querySelector('.nav-topics-btn');
+  var dropdown = document.querySelector('.nav-dropdown');
+  if (topicsBtn && dropdown) {
+    topicsBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = dropdown.classList.toggle('open');
+      topicsBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('open');
+      topicsBtn.setAttribute('aria-expanded', 'false');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+        dropdown.classList.remove('open');
+        topicsBtn.setAttribute('aria-expanded', 'false');
+        topicsBtn.focus();
+      }
+    });
+  }
+})();
 </script>
 
 </div>
