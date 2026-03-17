@@ -1055,11 +1055,567 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ABSCHNITT 8: ПIДСУМОК / ZUSAMMENFASSUNG -->
+<!-- ABSCHNITT 8: АУДІЮВАННЯ / HÖRVERSTEHEN -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <div>
+      <div class="section-title">Аудіювання 🎧</div>
+      <div class="section-subtitle">5 Hörtexte zum Thema Reisen — слухай, читай, відповідай!</div>
+    </div>
+  </div>
+
+  <div class="voice-picker-wrap">
+    <div class="voice-picker-label">
+      <svg viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg>
+      Голос:
+    </div>
+    <div class="voice-chips" id="voice-chips">
+      <div class="voice-chip active" id="vc-auto">🔄 Авто</div>
+    </div>
+    <button class="voice-test-btn" id="test-btn" onclick="testVoice()">▶ Тест</button>
+  </div>
+
+  <div class="filter-tabs">
+    <div class="filter-tab active" onclick="filterCards('all',this)">Alle</div>
+    <div class="filter-tab" onclick="filterCards('leicht',this)">Leicht</div>
+    <div class="filter-tab" onclick="filterCards('mittel',this)">Mittel</div>
+    <div class="filter-tab" onclick="filterCards('reflexiv',this)">Reflexivverben</div>
+    <div class="filter-tab" onclick="filterCards('dialog',this)">Dialog</div>
+  </div>
+
+  <!-- TRACK 1 -->
+  <div class="audio-card" data-tags="leicht reflexiv">
+    <div class="card-header">
+      <div class="card-img">✈️</div>
+      <div class="card-meta">
+        <div class="card-badges">
+          <span class="badge leicht">Leicht · A2</span>
+          <span class="badge reflexiv">Reflexivverben</span>
+          <span class="badge perfekt">Perfekt</span>
+        </div>
+        <div class="card-title">Emma am Flughafen</div>
+        <div class="card-desc">Emma fliegt zum ersten Mal alleine. Wie bereitet sie sich vor? Was passiert am Flughafen?</div>
+      </div>
+    </div>
+    <div class="player-wrap">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-btn" id="btn-1" onclick="togglePlay(1)">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div class="waveform" id="wave-1">
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div>
+          </div>
+          <span class="player-time" id="time-1">0:00</span>
+          <button class="player-speed" id="speed-1" onclick="changeSpeed(1)">1×</button>
+          <div class="now-playing-badge" id="np-1"><div class="npb-dot"></div>Läuft</div>
+        </div>
+        <div class="progress-wrap" onclick="seekTrack(event,1)">
+          <div class="progress-bg"><div class="progress-fill" id="prog-1"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="transcript-wrap">
+      <button class="transcript-toggle" onclick="toggleTranscript(1)">
+        <span class="transcript-label">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          Transkript: Emma am Flughafen
+        </span>
+        <span class="transcript-arrow" id="tarrow-1">▼</span>
+      </button>
+      <div class="transcript-body" id="tbody-1">
+        <div class="transcript-text" id="ttext-1">
+          <p>Letzten Monat ist Emma zum ersten Mal allein nach Spanien gereist. Sie hatte sich schon wochenlang auf die Reise gefreut und sich sehr gut vorbereitet. Am Abend vor dem Flug hat sie ihren Koffer gepackt und alles sorgfältig kontrolliert.</p>
+          <p>Am nächsten Morgen ist sie früh aufgestanden und hat sich schnell fertig gemacht. Am Flughafen hat sie sich sofort am Schalter angemeldet. Der Flug ist pünktlich abgeflogen und Emma hat sich während des Fluges sehr gut erholt — sie hat gelesen und geschlafen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="questions-wrap">
+      <div class="q-title">📝 Запитання до тексту</div>
+      <div class="q-list">
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">1</span>
+            <span>Wohin ist Emma gereist?</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ Emma ist nach Spanien gereist — zum ersten Mal alleine.</div>
+        </div>
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">2</strong> &nbsp;Was hat Emma am Flughafen zuerst gemacht?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t1q2" value="A"> A) Kaffee getrunken und gewartet</label>
+              <label class="opt-label"><input type="radio" name="t1q2" value="B"> B) Fotos gemacht</label>
+              <label class="opt-label"><input type="radio" name="t1q2" value="C"> C) sich am Schalter angemeldet</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t1q2','C','t1q2-res')">Перевірити</button>
+            <div class="opt-result" id="t1q2-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">3</strong> &nbsp;Was hat Emma während des Fluges gemacht?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t1q3" value="A"> A) Filme geschaut</label>
+              <label class="opt-label"><input type="radio" name="t1q3" value="B"> B) gelesen und geschlafen</label>
+              <label class="opt-label"><input type="radio" name="t1q3" value="C"> C) mit Nachbarn gesprochen</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t1q3','B','t1q3-res')">Перевірити</button>
+            <div class="opt-result" id="t1q3-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">4</span>
+            <span>Welche Reflexivverben hörst du im Text? Nenne drei.</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ sich freuen auf · sich vorbereiten · sich anmelden · sich erholen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRACK 2 -->
+  <div class="audio-card" data-tags="leicht reflexiv">
+    <div class="card-header">
+      <div class="card-img">🏨</div>
+      <div class="card-meta">
+        <div class="card-badges">
+          <span class="badge leicht">Leicht · A2</span>
+          <span class="badge reflexiv">Reflexivverben</span>
+        </div>
+        <div class="card-title">Familie Berger in Wien</div>
+        <div class="card-desc">Ein Wochenendtrip mit der Familie. Regen, Hotel, Hotelpool — und wer ärgert sich?</div>
+      </div>
+    </div>
+    <div class="player-wrap">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-btn" id="btn-2" onclick="togglePlay(2)">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div class="waveform" id="wave-2">
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div>
+          </div>
+          <span class="player-time" id="time-2">0:00</span>
+          <button class="player-speed" id="speed-2" onclick="changeSpeed(2)">1×</button>
+          <div class="now-playing-badge" id="np-2"><div class="npb-dot"></div>Läuft</div>
+        </div>
+        <div class="progress-wrap" onclick="seekTrack(event,2)">
+          <div class="progress-bg"><div class="progress-fill" id="prog-2"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="transcript-wrap">
+      <button class="transcript-toggle" onclick="toggleTranscript(2)">
+        <span class="transcript-label">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          Transkript: Familie Berger in Wien
+        </span>
+        <span class="transcript-arrow" id="tarrow-2">▼</span>
+      </button>
+      <div class="transcript-body" id="tbody-2">
+        <div class="transcript-text">
+          <p>Familie Berger ist nach Wien gefahren. Sie haben online ein Hotel in der Stadtmitte gebucht. Als sie angekommen sind, hat sich die Mutter an der Rezeption angemeldet.</p>
+          <p>Das Zimmer war groß, hell und sehr komfortabel. Am Abend haben sie sich im Restaurant des Hotels ein leckeres Abendessen bestellt. Der Vater hat sich über das Wetter geärgert, weil es den ganzen Tag geregnet hat. Aber die Kinder haben sich trotzdem sehr gefreut, weil sie im Hotelpool schwimmen durften.</p>
+        </div>
+      </div>
+    </div>
+    <div class="questions-wrap">
+      <div class="q-title">📝 Запитання до тексту</div>
+      <div class="q-list">
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">1</strong> &nbsp;Warum hat sich der Vater geärgert?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t2q1" value="A"> A) wegen des Essens</label>
+              <label class="opt-label"><input type="radio" name="t2q1" value="B"> B) wegen des Wetters</label>
+              <label class="opt-label"><input type="radio" name="t2q1" value="C"> C) wegen des Preises</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t2q1','B','t2q1-res')">Перевірити</button>
+            <div class="opt-result" id="t2q1-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">2</strong> &nbsp;Warum haben sich die Kinder gefreut?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t2q2" value="A"> A) wegen der Stadt</label>
+              <label class="opt-label"><input type="radio" name="t2q2" value="B"> B) wegen des guten Essens</label>
+              <label class="opt-label"><input type="radio" name="t2q2" value="C"> C) wegen des Hotelpools</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t2q2','C','t2q2-res')">Перевірити</button>
+            <div class="opt-result" id="t2q2-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">3</span>
+            <span>Was hat die Mutter an der Rezeption gemacht?</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ Die Mutter hat sich an der Rezeption angemeldet. (Reflexivverb: sich anmelden)</div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">4</span>
+            <span>Erkläre: „sich ärgern über" — mit einem eigenen Beispiel.</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ sich ärgern über + Akk. = злитися через / на. Приклад: Ich ärgere mich über die Verspätung.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRACK 3 -->
+  <div class="audio-card" data-tags="mittel reflexiv">
+    <div class="card-header">
+      <div class="card-img">🏰</div>
+      <div class="card-meta">
+        <div class="card-badges">
+          <span class="badge mittel">Mittel · A2+</span>
+          <span class="badge reflexiv">Reflexivverben</span>
+        </div>
+        <div class="card-title">Stadtbesichtigung in Prag</div>
+        <div class="card-desc">Thomas und Lisa verbringen einen freien Tag in Prag. Altstadt, Café, Aussichtspunkt.</div>
+      </div>
+    </div>
+    <div class="player-wrap">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-btn" id="btn-3" onclick="togglePlay(3)">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div class="waveform" id="wave-3">
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div>
+          </div>
+          <span class="player-time" id="time-3">0:00</span>
+          <button class="player-speed" id="speed-3" onclick="changeSpeed(3)">1×</button>
+          <div class="now-playing-badge" id="np-3"><div class="npb-dot"></div>Läuft</div>
+        </div>
+        <div class="progress-wrap" onclick="seekTrack(event,3)">
+          <div class="progress-bg"><div class="progress-fill" id="prog-3"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="transcript-wrap">
+      <button class="transcript-toggle" onclick="toggleTranscript(3)">
+        <span class="transcript-label">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          Transkript: Stadtbesichtigung in Prag
+        </span>
+        <span class="transcript-arrow" id="tarrow-3">▼</span>
+      </button>
+      <div class="transcript-body" id="tbody-3">
+        <div class="transcript-text">
+          <p>Thomas und seine Freundin Lisa haben sich einen freien Tag in Prag genommen. Sie haben sich um neun Uhr morgens vor dem Hotel getroffen und sind zusammen in die Altstadt gegangen. Dort haben sie sich viele alte Gebäude und Kirchen angesehen.</p>
+          <p>Mittags haben sie sich in einem kleinen Café ausgeruht und Kaffee und Kuchen gegessen. Am Nachmittag haben sie sich an einem Aussichtspunkt fotografiert. Der Tag war lang und anstrengend, aber beide haben sich sehr gut unterhalten und wollten am nächsten Tag noch mehr sehen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="questions-wrap">
+      <div class="q-title">📝 Запитання до тексту</div>
+      <div class="q-list">
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">1</strong> &nbsp;Wo haben sich Thomas und Lisa getroffen?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t3q1" value="A"> A) am Bahnhof</label>
+              <label class="opt-label"><input type="radio" name="t3q1" value="B"> B) im Café</label>
+              <label class="opt-label"><input type="radio" name="t3q1" value="C"> C) vor dem Hotel</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t3q1','C','t3q1-res')">Перевірити</button>
+            <div class="opt-result" id="t3q1-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">2</strong> &nbsp;Was haben sie mittags gemacht?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t3q2" value="A"> A) sich in einem Café ausgeruht</label>
+              <label class="opt-label"><input type="radio" name="t3q2" value="B"> B) ein Museum besucht</label>
+              <label class="opt-label"><input type="radio" name="t3q2" value="C"> C) Souvenirs gekauft</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t3q2','A','t3q2-res')">Перевірити</button>
+            <div class="opt-result" id="t3q2-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">3</span>
+            <span>Wie war der Tag für Thomas und Lisa?</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ Der Tag war lang und anstrengend, aber beide haben sich sehr gut unterhalten.</div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">4</span>
+            <span>„sich ansehen" чи „sich anschauen" — у чому різниця?</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ Обидва означають «дивитися / оглядати» — вони взаємозамінні! Wir haben uns die Altstadt angesehen / angeschaut.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRACK 4 -->
+  <div class="audio-card" data-tags="mittel">
+    <div class="card-header">
+      <div class="card-img">🚂</div>
+      <div class="card-meta">
+        <div class="card-badges">
+          <span class="badge mittel">Mittel · A2+</span>
+          <span class="badge reflexiv">Reflexivverben</span>
+          <span class="badge perfekt">Perfekt</span>
+        </div>
+        <div class="card-title">Nina am Bahnhof</div>
+        <div class="card-desc">Nina fährt von München nach Hamburg. Der Zug hat Verspätung — und sie hat einen wichtigen Termin.</div>
+      </div>
+    </div>
+    <div class="player-wrap">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-btn" id="btn-4" onclick="togglePlay(4)">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div class="waveform" id="wave-4">
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div>
+          </div>
+          <span class="player-time" id="time-4">0:00</span>
+          <button class="player-speed" id="speed-4" onclick="changeSpeed(4)">1×</button>
+          <div class="now-playing-badge" id="np-4"><div class="npb-dot"></div>Läuft</div>
+        </div>
+        <div class="progress-wrap" onclick="seekTrack(event,4)">
+          <div class="progress-bg"><div class="progress-fill" id="prog-4"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="transcript-wrap">
+      <button class="transcript-toggle" onclick="toggleTranscript(4)">
+        <span class="transcript-label">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          Transkript: Nina am Bahnhof
+        </span>
+        <span class="transcript-arrow" id="tarrow-4">▼</span>
+      </button>
+      <div class="transcript-body" id="tbody-4">
+        <div class="transcript-text">
+          <p>Nina muss mit dem Zug von München nach Hamburg fahren. Sie hat sich schon gestern online das Ticket gekauft und sich gut vorbereitet. Am Bahnhof hat sie sich auf einer Bank ausgeruht, weil sie früh dort angekommen ist.</p>
+          <p>Dann hat sie sich die Abfahrtszeiten auf der großen Anzeigetafel angesehen. Der Zug hatte leider Verspätung — er ist fünfundzwanzig Minuten später abgefahren. Nina hat sich über die Verspätung geärgert, weil sie einen wichtigen Termin in Hamburg hatte und sich Sorgen machte, zu spät zu kommen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="questions-wrap">
+      <div class="q-title">📝 Запитання до тексту</div>
+      <div class="q-list">
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">1</strong> &nbsp;Von wo nach wo fährt Nina?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t4q1" value="A"> A) von Berlin nach Wien</label>
+              <label class="opt-label"><input type="radio" name="t4q1" value="B"> B) von München nach Hamburg</label>
+              <label class="opt-label"><input type="radio" name="t4q1" value="C"> C) von Hamburg nach München</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t4q1','B','t4q1-res')">Перевірити</button>
+            <div class="opt-result" id="t4q1-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">2</strong> &nbsp;Wie lange hatte der Zug Verspätung?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t4q2" value="A"> A) 10 Minuten</label>
+              <label class="opt-label"><input type="radio" name="t4q2" value="B"> B) 25 Minuten</label>
+              <label class="opt-label"><input type="radio" name="t4q2" value="C"> C) 50 Minuten</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t4q2','B','t4q2-res')">Перевірити</button>
+            <div class="opt-result" id="t4q2-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">3</span>
+            <span>Warum hat sie sich geärgert?</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ Weil sie einen wichtigen Termin in Hamburg hatte und sich Sorgen machte, zu spät zu kommen.</div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">4</span>
+            <span>Скільки зворотних дієслів у цьому тексті? Назви їх.</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ 6 дієслів: sich kaufen (Dat.) · sich vorbereiten · sich ausruhen · sich ansehen · sich ärgern · sich machen (Sorgen)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRACK 5 -->
+  <div class="audio-card" data-tags="mittel dialog">
+    <div class="card-header">
+      <div class="card-img">🇵🇹</div>
+      <div class="card-meta">
+        <div class="card-badges">
+          <span class="badge mittel">Mittel · B1</span>
+          <span class="badge reflexiv">Reflexivverben</span>
+          <span class="badge dialog">Erzählung</span>
+        </div>
+        <div class="card-title">Annas Urlaubserinnerungen</div>
+        <div class="card-desc">Anna zeigt Fotos von Portugal und erzählt. Strand, Restaurants, neue Sprache — wie war es dort?</div>
+      </div>
+    </div>
+    <div class="player-wrap">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-btn" id="btn-5" onclick="togglePlay(5)">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div class="waveform" id="wave-5">
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            <div class="wave-bar"></div><div class="wave-bar"></div>
+          </div>
+          <span class="player-time" id="time-5">0:00</span>
+          <button class="player-speed" id="speed-5" onclick="changeSpeed(5)">1×</button>
+          <div class="now-playing-badge" id="np-5"><div class="npb-dot"></div>Läuft</div>
+        </div>
+        <div class="progress-wrap" onclick="seekTrack(event,5)">
+          <div class="progress-bg"><div class="progress-fill" id="prog-5"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="transcript-wrap">
+      <button class="transcript-toggle" onclick="toggleTranscript(5)">
+        <span class="transcript-label">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          Transkript: Annas Urlaubserinnerungen
+        </span>
+        <span class="transcript-arrow" id="tarrow-5">▼</span>
+      </button>
+      <div class="transcript-body" id="tbody-5">
+        <div class="transcript-text">
+          <p>Anna zeigt ihren Freunden Fotos von ihrer Reise nach Portugal. Sie erinnert sich sehr gern an den Urlaub. Das Wetter war perfekt: jeden Tag Sonne und fast dreißig Grad. Sie hat sich an einem wunderschönen Strand erholt und viel gelesen.</p>
+          <p>Abends hat sie sich in kleinen Restaurants leckere Meeresfrüchte bestellt. Sie hat sich auch mit einheimischen Leuten unterhalten und ein bisschen Portugiesisch gelernt. Nächsten Sommer möchte sie sich wieder eine Reise nach Südeuropa leisten — diesmal vielleicht nach Griechenland.</p>
+        </div>
+      </div>
+    </div>
+    <div class="questions-wrap">
+      <div class="q-title">📝 Запитання до тексту</div>
+      <div class="q-list">
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">1</strong> &nbsp;Wie war das Wetter in Portugal?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t5q1" value="A"> A) bewölkt und kühl</label>
+              <label class="opt-label"><input type="radio" name="t5q1" value="B"> B) sonnig, fast 30 Grad</label>
+              <label class="opt-label"><input type="radio" name="t5q1" value="C"> C) regnerisch</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t5q1','B','t5q1-res')">Перевірити</button>
+            <div class="opt-result" id="t5q1-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <div style="padding:.8rem 1rem .4rem;font-size:14px;color:var(--text-mid);">
+            <strong style="color:var(--text-dark);">2</strong> &nbsp;Was hat Anna abends gemacht?
+          </div>
+          <div style="padding:0 1rem .8rem">
+            <div class="options-list">
+              <label class="opt-label"><input type="radio" name="t5q2" value="A"> A) Museen besucht</label>
+              <label class="opt-label"><input type="radio" name="t5q2" value="B"> B) sich Meeresfrüchte bestellt</label>
+              <label class="opt-label"><input type="radio" name="t5q2" value="C"> C) im Hotel geblieben</label>
+            </div>
+            <button class="check-btn" onclick="checkOpt('t5q2','B','t5q2-res')">Перевірити</button>
+            <div class="opt-result" id="t5q2-res"></div>
+          </div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">3</span>
+            <span>Wohin möchte Anna nächsten Sommer fahren?</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ Sie möchte wieder nach Südeuropa reisen — vielleicht nach Griechenland.</div>
+        </div>
+        <div class="q-item">
+          <button class="q-question" onclick="toggleQ(this)">
+            <span class="q-num">4</span>
+            <span>„sich etwas leisten" — що це означає? Наведи приклад.</span>
+            <span class="q-toggle">▶</span>
+          </button>
+          <div class="q-answer">✅ sich leisten = дозволити собі щось (фінансово або за часом). Ich kann mir eine Reise leisten. = Я можу дозволити собі подорож.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 9: ПIДСУМОК / ZUSAMMENFASSUNG -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="section-card summary-card">
   <div class="section-header">
-    <div class="section-num">8</div>
+    <div class="section-num">9</div>
     <div class="section-title">Підсумок — Що ти сьогодні вивчила? ✅</div>
   </div>
   <div class="summary-grid">
@@ -1071,10 +1627,13 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
       <div class="summary-stat-num">8</div>
       <div class="summary-stat-label">Запитань</div>
     </div>
-
     <div class="summary-stat">
       <div class="summary-stat-num">6</div>
       <div class="summary-stat-label">Граматичних вправ</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">5</div>
+      <div class="summary-stat-label">Höraufgaben</div>
     </div>
   </div>
 
@@ -1239,6 +1798,216 @@ function showFb(el, type, msg) {
 }
 
 
+// ─── GOOGLE TRANSLATE TTS ENGINE (Hörverstehen) ─────
+const TEXTS = {
+  1: `Letzten Monat ist Emma zum ersten Mal allein nach Spanien gereist. Sie hatte sich schon wochenlang auf die Reise gefreut und sich sehr gut vorbereitet. Am Abend vor dem Flug hat sie ihren Koffer gepackt und alles sorgfältig kontrolliert. Am nächsten Morgen ist sie früh aufgestanden und hat sich schnell fertig gemacht. Am Flughafen hat sie sich sofort am Schalter angemeldet. Der Flug ist pünktlich abgeflogen und Emma hat sich während des Fluges sehr gut erholt.`,
+  2: `Familie Berger ist nach Wien gefahren. Sie haben online ein Hotel in der Stadtmitte gebucht. Als sie angekommen sind, hat sich die Mutter an der Rezeption angemeldet. Das Zimmer war gross, hell und sehr komfortabel. Am Abend haben sie sich im Restaurant des Hotels ein leckeres Abendessen bestellt. Der Vater hat sich über das Wetter geärgert, weil es den ganzen Tag geregnet hat. Aber die Kinder haben sich sehr gefreut, weil sie im Hotelpool schwimmen durften.`,
+  3: `Thomas und seine Freundin Lisa haben sich einen freien Tag in Prag genommen. Sie haben sich um neun Uhr morgens vor dem Hotel getroffen und sind zusammen in die Altstadt gegangen. Dort haben sie sich viele alte Gebäude angesehen. Mittags haben sie sich in einem kleinen Café ausgeruht und Kaffee getrunken. Am Nachmittag haben sie sich an einem Aussichtspunkt fotografiert. Beide haben sich sehr gut unterhalten.`,
+  4: `Nina fährt mit dem Zug von München nach Hamburg. Sie hat sich das Ticket schon gestern online gekauft. Am Bahnhof hat sie sich auf einer Bank ausgeruht, weil sie früh dort angekommen ist. Dann hat sie sich die Abfahrtszeiten auf der Anzeigetafel angesehen. Der Zug hatte leider Verspätung. Nina hat sich über die Verspätung geärgert, weil sie einen wichtigen Termin hatte.`,
+  5: `Anna zeigt ihren Freunden Fotos von ihrer Reise nach Portugal. Sie erinnert sich sehr gern an den Urlaub. Das Wetter war perfekt und fast dreißig Grad warm. Sie hat sich an einem Strand erholt und viel gelesen. Abends hat sie sich in kleinen Restaurants leckere Meeresfrüchte bestellt. Sie hat sich auch mit einheimischen Leuten unterhalten. Nächsten Sommer möchte sie nach Griechenland reisen.`
+};
+
+function splitChunks(text) {
+  var maxLen = 140;
+  var parts = text.replace(/\.\s+/g, '.\n').replace(/!\s+/g, '!\n').replace(/\?\s+/g, '?\n').split('\n');
+  var chunks = [], cur = '';
+  for (var i = 0; i < parts.length; i++) {
+    var s = parts[i].trim();
+    if (!s) continue;
+    var candidate = cur ? cur + ' ' + s : s;
+    if (candidate.length <= maxLen) {
+      cur = candidate;
+    } else {
+      if (cur) chunks.push(cur);
+      if (s.length <= maxLen) {
+        cur = s;
+      } else {
+        var sub = s.replace(/,\s+/g, ',\n').split('\n');
+        cur = '';
+        for (var j = 0; j < sub.length; j++) {
+          var p = sub[j].trim();
+          var c2 = cur ? cur + ' ' + p : p;
+          if (c2.length <= maxLen) { cur = c2; }
+          else { if (cur) chunks.push(cur); cur = p; }
+        }
+      }
+    }
+  }
+  if (cur) chunks.push(cur.trim());
+  return chunks.filter(function(c){ return c.length > 0; });
+}
+
+var CHUNKS = {};
+for (var _n = 1; _n <= 5; _n++) CHUNKS[_n] = splitChunks(TEXTS[_n]);
+
+function gttsUrl(text) {
+  return 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=de&q=' + encodeURIComponent(text);
+}
+
+var currentN = null;
+var currentAudio = null;
+var progTimers = {};
+var currentChunkIdx = { 1:0, 2:0, 3:0, 4:0, 5:0 };
+var speeds = { 1:1, 2:1, 3:1, 4:1, 5:1 };
+
+function togglePlay(n) {
+  if (currentAudio && !currentAudio.paused && currentN === n) {
+    currentAudio.pause();
+    clearInterval(progTimers[n]);
+    setPlaying(n, false);
+    currentN = null;
+    return;
+  }
+  if (currentAudio && currentN !== n) {
+    currentAudio.pause();
+    clearInterval(progTimers[currentN]);
+    setPlaying(currentN, false);
+  }
+  currentN = n;
+  setPlaying(n, true);
+  playChunk(n, currentChunkIdx[n]);
+}
+
+function playChunk(n, idx) {
+  var chunks = CHUNKS[n];
+  if (idx >= chunks.length) {
+    setPlaying(n, false);
+    clearInterval(progTimers[n]);
+    currentChunkIdx[n] = 0;
+    document.getElementById('prog-' + n).style.width = '0%';
+    document.getElementById('time-' + n).textContent = '0:00';
+    return;
+  }
+  var audio = new Audio();
+  currentAudio = audio;
+  audio.playbackRate = speeds[n] || 1;
+  audio.addEventListener('canplaythrough', function() {
+    audio.play().catch(function(){});
+  }, { once: true });
+  audio.addEventListener('ended', function() {
+    currentChunkIdx[n] = idx + 1;
+    var prog = (currentChunkIdx[n] / chunks.length) * 100;
+    document.getElementById('prog-' + n).style.width = prog + '%';
+    if (currentN === n) setTimeout(function(){ playChunk(n, idx+1); }, 60);
+  });
+  audio.addEventListener('error', function() {
+    currentChunkIdx[n] = idx + 1;
+    if (currentN === n) setTimeout(function(){ playChunk(n, idx+1); }, 200);
+  });
+  audio.src = gttsUrl(chunks[idx]);
+  clearInterval(progTimers[n]);
+  progTimers[n] = setInterval(function() {
+    if (!currentAudio || currentN !== n) return;
+    var donePct = (currentChunkIdx[n] / chunks.length) * 100;
+    var dur = currentAudio.duration;
+    var ct = currentAudio.currentTime || 0;
+    var chunkPct = (dur && !isNaN(dur) && dur > 0) ? (ct / dur) / chunks.length * 100 : 0;
+    var total = Math.min(100, donePct + chunkPct);
+    document.getElementById('prog-' + n).style.width = total + '%';
+    var avgCharMs = 90;
+    var totalMs = TEXTS[n].length * avgCharMs;
+    var elapsedMs = Math.round(total / 100 * totalMs);
+    document.getElementById('time-' + n).textContent = msToTime(elapsedMs) + ' / ' + msToTime(totalMs);
+  }, 200);
+}
+
+function setPlaying(n, on) {
+  var btn = document.getElementById('btn-' + n);
+  var wave = document.getElementById('wave-' + n);
+  var np = document.getElementById('np-' + n);
+  if (btn) btn.classList.toggle('playing', on);
+  if (wave) wave.classList.toggle('active', on);
+  if (np) np.classList.toggle('show', on);
+}
+
+function msToTime(ms) {
+  var s = Math.floor(ms / 1000), m = Math.floor(s / 60), sc = s % 60;
+  return m + ':' + (sc < 10 ? '0' : '') + sc;
+}
+
+var speedOpts = [0.75, 1, 1.25];
+function changeSpeed(n) {
+  var idx = speedOpts.indexOf(speeds[n]);
+  speeds[n] = speedOpts[(idx + 1) % speedOpts.length];
+  document.getElementById('speed-' + n).textContent = speeds[n] + 'x';
+  if (currentAudio && currentN === n) currentAudio.playbackRate = speeds[n];
+}
+
+function seekTrack(e, n) {
+  var bg = e.currentTarget.querySelector('.progress-bg');
+  var pct = Math.max(0, Math.min(1, (e.clientX - bg.getBoundingClientRect().left) / bg.offsetWidth));
+  var targetIdx = Math.floor(pct * CHUNKS[n].length);
+  if (currentAudio) { currentAudio.pause(); currentAudio.src = ''; }
+  clearInterval(progTimers[n]);
+  currentChunkIdx[n] = Math.min(targetIdx, CHUNKS[n].length - 1);
+  document.getElementById('prog-' + n).style.width = (pct * 100) + '%';
+  currentN = n;
+  setPlaying(n, true);
+  playChunk(n, currentChunkIdx[n]);
+}
+
+function buildVoicePicker() {
+  var c = document.getElementById('voice-chips');
+  if (!c) return;
+  c.innerHTML =
+    '<div class="voice-chip active">🌐 Google Translate DE</div>' +
+    '<div style="font-size:12px;color:var(--text-muted);align-self:center;">Людський голос від Google — завантажується онлайн</div>';
+}
+
+function testVoice() {
+  var btn = document.getElementById('test-btn');
+  if (currentAudio && !currentAudio.paused) {
+    currentAudio.pause();
+    if (btn) { btn.textContent = '▶ Тест'; btn.classList.remove('testing'); }
+    return;
+  }
+  var a = new Audio(gttsUrl('Hallo! Ich lerne Deutsch. Das macht mir viel Spass!'));
+  currentAudio = a;
+  if (btn) { btn.textContent = '⏹ Stop'; btn.classList.add('testing'); }
+  a.play().catch(function(){});
+  a.onended = a.onerror = function() {
+    if (btn) { btn.textContent = '▶ Тест'; btn.classList.remove('testing'); }
+  };
+}
+
+function toggleTranscript(n) {
+  var b = document.getElementById('tbody-' + n);
+  var a = document.getElementById('tarrow-' + n);
+  if (!b) return;
+  var open = b.classList.toggle('open');
+  if (a) a.textContent = open ? '▲' : '▼';
+}
+
+function toggleQ(btn) {
+  var ans = btn.nextElementSibling;
+  var tog = btn.querySelector('.q-toggle');
+  if (!ans) return;
+  var open = ans.classList.toggle('open');
+  if (tog) tog.textContent = open ? '▼' : '▶';
+}
+
+function checkOpt(name, correct, resultId) {
+  var sel = document.querySelector('input[name="' + name + '"]:checked');
+  var res = document.getElementById(resultId);
+  if (!res) return;
+  if (!sel) { res.className = 'opt-result show fail'; res.textContent = '⚠ Вибери відповідь!'; return; }
+  var ok = sel.value === correct;
+  res.className = 'opt-result show ' + (ok ? 'ok' : 'fail');
+  res.textContent = ok ? '✅ Правильно!' : '❌ Неправильно. Відповідь: ' + correct;
+}
+
+function filterCards(tag, btn) {
+  document.querySelectorAll('.filter-tab').forEach(function(t){ t.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.audio-card').forEach(function(c){
+    var tags = c.getAttribute('data-tags') || '';
+    c.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+  });
+}
+
+setTimeout(buildVoicePicker, 50);
+
+// ─── HÖRVERSTEHEN (legacy) ─────────────────────
 function checkHoer(n, correct) {
   const qCount = correct.length;
   let right = 0;
