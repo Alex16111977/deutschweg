@@ -1162,49 +1162,66 @@ var hoeren_correct = 0;
 var hoeren_answered = 0;
 var hoeren_total = 6;
 var curBtn = null;
-var audioQueue = [];
-var isPlaying = false;
+var isSpeaking = false;
+var deVoice = null;
 
-function splitText(text) {
-  var parts = text.split('. ');
-  var chunks = [], cur = '';
-  for (var i = 0; i < parts.length; i++) {
-    var s = parts[i] + (i < parts.length - 1 ? '.' : '');
-    if (cur.length + s.length > 170 && cur.length > 0) {
-      chunks.push(cur.trim());
-      cur = s;
-    } else {
-      cur = cur ? cur + ' ' + s : s;
+/* Find the best German voice — prefer natural/enhanced voices */
+function findDeVoice() {
+  if (deVoice) return deVoice;
+  var voices = speechSynthesis.getVoices();
+  var german = voices.filter(function(v) { return v.lang && v.lang.replace('_','-').indexOf('de') === 0; });
+  if (german.length === 0) return null;
+  /* Prefer voices with "Anna", "Petra", "Helena", or names that suggest a natural female voice */
+  var preferred = ['Anna', 'Petra', 'Helena', 'Marlene', 'Vicki', 'Google'];
+  for (var p = 0; p < preferred.length; p++) {
+    for (var i = 0; i < german.length; i++) {
+      if (german[i].name.indexOf(preferred[p]) !== -1) { deVoice = german[i]; return deVoice; }
     }
   }
-  if (cur) chunks.push(cur.trim());
-  return chunks;
+  deVoice = german[0];
+  return deVoice;
 }
 
-function playNext(btn) {
-  if (audioQueue.length === 0 || !isPlaying) {
-    if (btn) { btn.innerHTML = '▶ Noch einmal'; btn.style.background = '#7F77DD'; }
-    isPlaying = false; curBtn = null;
-    return;
-  }
-  var chunk = audioQueue.shift();
-  var url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=de&client=tw-ob&q=' + encodeURIComponent(chunk);
-  var a = new Audio(url);
-  a.play();
-  a.onended = function() { playNext(btn); };
-  a.onerror = function() { playNext(btn); };
-}
+/* Load voices (async on some browsers) */
+if (speechSynthesis.getVoices().length) findDeVoice();
+speechSynthesis.addEventListener('voiceschanged', findDeVoice);
 
 function speak(btn, text) {
-  if (isPlaying) {
-    isPlaying = false; audioQueue = [];
+  /* If already speaking, stop */
+  if (isSpeaking) {
+    speechSynthesis.cancel();
+    isSpeaking = false;
     if (curBtn && curBtn !== btn) { curBtn.innerHTML = '▶ Abspielen'; curBtn.style.background = '#7F77DD'; }
     if (curBtn === btn) { curBtn = null; btn.innerHTML = '▶ Abspielen'; btn.style.background = '#7F77DD'; return; }
   }
-  curBtn = btn; isPlaying = true;
+
+  curBtn = btn; isSpeaking = true;
   btn.innerHTML = '⏸ Stopp'; btn.style.background = '#534AB7';
-  audioQueue = splitText(text);
-  playNext(btn);
+
+  /* Replace "ae", "oe", "ue" back to umlauts for proper pronunciation */
+  var clean = text.replace(/ae/g, 'ä').replace(/oe/g, 'ö').replace(/ue/g, 'ü')
+                   .replace(/Ae/g, 'Ä').replace(/Oe/g, 'Ö').replace(/Ue/g, 'Ü');
+
+  var utter = new SpeechSynthesisUtterance(clean);
+  utter.lang = 'de-DE';
+  utter.rate = 0.9;   /* slightly slower for learners */
+  utter.pitch = 1.05;
+
+  var voice = findDeVoice();
+  if (voice) utter.voice = voice;
+
+  utter.onend = function() {
+    isSpeaking = false;
+    btn.innerHTML = '▶ Noch einmal'; btn.style.background = '#7F77DD';
+    curBtn = null;
+  };
+  utter.onerror = function() {
+    isSpeaking = false;
+    btn.innerHTML = '▶ Abspielen'; btn.style.background = '#7F77DD';
+    curBtn = null;
+  };
+
+  speechSynthesis.speak(utter);
 }
 
 function choose(el, isCorrect) {
