@@ -1798,117 +1798,97 @@ function showFb(el, type, msg) {
 }
 
 
-// ─── GOOGLE TRANSLATE TTS ENGINE (Hörverstehen) ─────
+// ─── WEB SPEECH API ENGINE (Hörverstehen) ─────
 const TEXTS = {
   1: `Letzten Monat ist Emma zum ersten Mal allein nach Spanien gereist. Sie hatte sich schon wochenlang auf die Reise gefreut und sich sehr gut vorbereitet. Am Abend vor dem Flug hat sie ihren Koffer gepackt und alles sorgfältig kontrolliert. Am nächsten Morgen ist sie früh aufgestanden und hat sich schnell fertig gemacht. Am Flughafen hat sie sich sofort am Schalter angemeldet. Der Flug ist pünktlich abgeflogen und Emma hat sich während des Fluges sehr gut erholt.`,
-  2: `Familie Berger ist nach Wien gefahren. Sie haben online ein Hotel in der Stadtmitte gebucht. Als sie angekommen sind, hat sich die Mutter an der Rezeption angemeldet. Das Zimmer war gross, hell und sehr komfortabel. Am Abend haben sie sich im Restaurant des Hotels ein leckeres Abendessen bestellt. Der Vater hat sich über das Wetter geärgert, weil es den ganzen Tag geregnet hat. Aber die Kinder haben sich sehr gefreut, weil sie im Hotelpool schwimmen durften.`,
+  2: `Familie Berger ist nach Wien gefahren. Sie haben online ein Hotel in der Stadtmitte gebucht. Als sie angekommen sind, hat sich die Mutter an der Rezeption angemeldet. Das Zimmer war groß, hell und sehr komfortabel. Am Abend haben sie sich im Restaurant des Hotels ein leckeres Abendessen bestellt. Der Vater hat sich über das Wetter geärgert, weil es den ganzen Tag geregnet hat. Aber die Kinder haben sich sehr gefreut, weil sie im Hotelpool schwimmen durften.`,
   3: `Thomas und seine Freundin Lisa haben sich einen freien Tag in Prag genommen. Sie haben sich um neun Uhr morgens vor dem Hotel getroffen und sind zusammen in die Altstadt gegangen. Dort haben sie sich viele alte Gebäude angesehen. Mittags haben sie sich in einem kleinen Café ausgeruht und Kaffee getrunken. Am Nachmittag haben sie sich an einem Aussichtspunkt fotografiert. Beide haben sich sehr gut unterhalten.`,
   4: `Nina fährt mit dem Zug von München nach Hamburg. Sie hat sich das Ticket schon gestern online gekauft. Am Bahnhof hat sie sich auf einer Bank ausgeruht, weil sie früh dort angekommen ist. Dann hat sie sich die Abfahrtszeiten auf der Anzeigetafel angesehen. Der Zug hatte leider Verspätung. Nina hat sich über die Verspätung geärgert, weil sie einen wichtigen Termin hatte.`,
   5: `Anna zeigt ihren Freunden Fotos von ihrer Reise nach Portugal. Sie erinnert sich sehr gern an den Urlaub. Das Wetter war perfekt und fast dreißig Grad warm. Sie hat sich an einem Strand erholt und viel gelesen. Abends hat sie sich in kleinen Restaurants leckere Meeresfrüchte bestellt. Sie hat sich auch mit einheimischen Leuten unterhalten. Nächsten Sommer möchte sie nach Griechenland reisen.`
 };
 
-function splitChunks(text) {
-  var maxLen = 140;
-  var parts = text.replace(/\.\s+/g, '.\n').replace(/!\s+/g, '!\n').replace(/\?\s+/g, '?\n').split('\n');
-  var chunks = [], cur = '';
-  for (var i = 0; i < parts.length; i++) {
-    var s = parts[i].trim();
-    if (!s) continue;
-    var candidate = cur ? cur + ' ' + s : s;
-    if (candidate.length <= maxLen) {
-      cur = candidate;
-    } else {
-      if (cur) chunks.push(cur);
-      if (s.length <= maxLen) {
-        cur = s;
-      } else {
-        var sub = s.replace(/,\s+/g, ',\n').split('\n');
-        cur = '';
-        for (var j = 0; j < sub.length; j++) {
-          var p = sub[j].trim();
-          var c2 = cur ? cur + ' ' + p : p;
-          if (c2.length <= maxLen) { cur = c2; }
-          else { if (cur) chunks.push(cur); cur = p; }
-        }
-      }
+var deVoice = null;
+function findDeVoice() {
+  if (deVoice) return deVoice;
+  var voices = speechSynthesis.getVoices();
+  var german = voices.filter(function(v) { return v.lang && v.lang.replace('_','-').indexOf('de') === 0; });
+  if (german.length === 0) return null;
+  var preferred = ['Anna', 'Petra', 'Helena', 'Marlene', 'Vicki', 'Google'];
+  for (var p = 0; p < preferred.length; p++) {
+    for (var i = 0; i < german.length; i++) {
+      if (german[i].name.indexOf(preferred[p]) !== -1) { deVoice = german[i]; return deVoice; }
     }
   }
-  if (cur) chunks.push(cur.trim());
-  return chunks.filter(function(c){ return c.length > 0; });
+  deVoice = german[0];
+  return deVoice;
 }
-
-var CHUNKS = {};
-for (var _n = 1; _n <= 5; _n++) CHUNKS[_n] = splitChunks(TEXTS[_n]);
-
-function gttsUrl(text) {
-  return 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=de&q=' + encodeURIComponent(text);
-}
+if (speechSynthesis.getVoices().length) findDeVoice();
+speechSynthesis.addEventListener('voiceschanged', findDeVoice);
 
 var currentN = null;
-var currentAudio = null;
+var currentUtter = null;
 var progTimers = {};
-var currentChunkIdx = { 1:0, 2:0, 3:0, 4:0, 5:0 };
 var speeds = { 1:1, 2:1, 3:1, 4:1, 5:1 };
 
 function togglePlay(n) {
-  if (currentAudio && !currentAudio.paused && currentN === n) {
-    currentAudio.pause();
+  if (speechSynthesis.speaking && currentN === n) {
+    speechSynthesis.cancel();
     clearInterval(progTimers[n]);
     setPlaying(n, false);
     currentN = null;
     return;
   }
-  if (currentAudio && currentN !== n) {
-    currentAudio.pause();
+  if (speechSynthesis.speaking && currentN !== n) {
+    speechSynthesis.cancel();
     clearInterval(progTimers[currentN]);
     setPlaying(currentN, false);
   }
   currentN = n;
   setPlaying(n, true);
-  playChunk(n, currentChunkIdx[n]);
+  speakText(n);
 }
 
-function playChunk(n, idx) {
-  var chunks = CHUNKS[n];
-  if (idx >= chunks.length) {
-    setPlaying(n, false);
-    clearInterval(progTimers[n]);
-    currentChunkIdx[n] = 0;
-    document.getElementById('prog-' + n).style.width = '0%';
-    document.getElementById('time-' + n).textContent = '0:00';
-    return;
-  }
-  var audio = new Audio();
-  currentAudio = audio;
-  audio.playbackRate = speeds[n] || 1;
-  audio.addEventListener('canplaythrough', function() {
-    audio.play().catch(function(){});
-  }, { once: true });
-  audio.addEventListener('ended', function() {
-    currentChunkIdx[n] = idx + 1;
-    var prog = (currentChunkIdx[n] / chunks.length) * 100;
-    document.getElementById('prog-' + n).style.width = prog + '%';
-    if (currentN === n) setTimeout(function(){ playChunk(n, idx+1); }, 60);
-  });
-  audio.addEventListener('error', function() {
-    currentChunkIdx[n] = idx + 1;
-    if (currentN === n) setTimeout(function(){ playChunk(n, idx+1); }, 200);
-  });
-  audio.src = gttsUrl(chunks[idx]);
+function speakText(n) {
+  var text = TEXTS[n];
+  var utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  utter.rate = speeds[n] || 1;
+  utter.pitch = 1.05;
+  var voice = findDeVoice();
+  if (voice) utter.voice = voice;
+  currentUtter = utter;
+
+  var startTime = Date.now();
+  var avgCharMs = 75 / (speeds[n] || 1);
+  var totalMs = text.length * avgCharMs;
+
   clearInterval(progTimers[n]);
   progTimers[n] = setInterval(function() {
-    if (!currentAudio || currentN !== n) return;
-    var donePct = (currentChunkIdx[n] / chunks.length) * 100;
-    var dur = currentAudio.duration;
-    var ct = currentAudio.currentTime || 0;
-    var chunkPct = (dur && !isNaN(dur) && dur > 0) ? (ct / dur) / chunks.length * 100 : 0;
-    var total = Math.min(100, donePct + chunkPct);
-    document.getElementById('prog-' + n).style.width = total + '%';
-    var avgCharMs = 90;
-    var totalMs = TEXTS[n].length * avgCharMs;
-    var elapsedMs = Math.round(total / 100 * totalMs);
-    document.getElementById('time-' + n).textContent = msToTime(elapsedMs) + ' / ' + msToTime(totalMs);
+    if (!speechSynthesis.speaking || currentN !== n) return;
+    var elapsed = Date.now() - startTime;
+    var pct = Math.min(100, (elapsed / totalMs) * 100);
+    document.getElementById('prog-' + n).style.width = pct + '%';
+    document.getElementById('time-' + n).textContent = msToTime(elapsed) + ' / ' + msToTime(totalMs);
   }, 200);
+
+  utter.onend = function() {
+    clearInterval(progTimers[n]);
+    document.getElementById('prog-' + n).style.width = '100%';
+    document.getElementById('time-' + n).textContent = msToTime(totalMs) + ' / ' + msToTime(totalMs);
+    setTimeout(function() {
+      setPlaying(n, false);
+      document.getElementById('prog-' + n).style.width = '0%';
+      document.getElementById('time-' + n).textContent = '0:00';
+      currentN = null;
+    }, 1200);
+  };
+  utter.onerror = function() {
+    clearInterval(progTimers[n]);
+    setPlaying(n, false);
+    currentN = null;
+  };
+
+  speechSynthesis.speak(utter);
 }
 
 function setPlaying(n, on) {
@@ -1930,44 +1910,47 @@ function changeSpeed(n) {
   var idx = speedOpts.indexOf(speeds[n]);
   speeds[n] = speedOpts[(idx + 1) % speedOpts.length];
   document.getElementById('speed-' + n).textContent = speeds[n] + 'x';
-  if (currentAudio && currentN === n) currentAudio.playbackRate = speeds[n];
 }
 
 function seekTrack(e, n) {
-  var bg = e.currentTarget.querySelector('.progress-bg');
-  var pct = Math.max(0, Math.min(1, (e.clientX - bg.getBoundingClientRect().left) / bg.offsetWidth));
-  var targetIdx = Math.floor(pct * CHUNKS[n].length);
-  if (currentAudio) { currentAudio.pause(); currentAudio.src = ''; }
+  /* Seek not supported with Speech API — restart from beginning */
+  speechSynthesis.cancel();
   clearInterval(progTimers[n]);
-  currentChunkIdx[n] = Math.min(targetIdx, CHUNKS[n].length - 1);
-  document.getElementById('prog-' + n).style.width = (pct * 100) + '%';
+  document.getElementById('prog-' + n).style.width = '0%';
+  document.getElementById('time-' + n).textContent = '0:00';
   currentN = n;
   setPlaying(n, true);
-  playChunk(n, currentChunkIdx[n]);
+  speakText(n);
 }
 
 function buildVoicePicker() {
   var c = document.getElementById('voice-chips');
   if (!c) return;
+  var voice = findDeVoice();
+  var name = voice ? voice.name : 'Systemstimme';
   c.innerHTML =
-    '<div class="voice-chip active">🌐 Google Translate DE</div>' +
-    '<div style="font-size:12px;color:var(--text-muted);align-self:center;">Людський голос від Google — завантажується онлайн</div>';
+    '<div class="voice-chip active">🗣 ' + name + '</div>' +
+    '<div style="font-size:12px;color:var(--text-muted);align-self:center;">Натуральний голос браузера — працює офлайн</div>';
 }
 
 function testVoice() {
   var btn = document.getElementById('test-btn');
-  if (currentAudio && !currentAudio.paused) {
-    currentAudio.pause();
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
     if (btn) { btn.textContent = '▶ Тест'; btn.classList.remove('testing'); }
     return;
   }
-  var a = new Audio(gttsUrl('Hallo! Ich lerne Deutsch. Das macht mir viel Spass!'));
-  currentAudio = a;
+  var utter = new SpeechSynthesisUtterance('Hallo! Ich lerne Deutsch. Das macht mir viel Spaß!');
+  utter.lang = 'de-DE';
+  utter.rate = 0.9;
+  utter.pitch = 1.05;
+  var voice = findDeVoice();
+  if (voice) utter.voice = voice;
   if (btn) { btn.textContent = '⏹ Stop'; btn.classList.add('testing'); }
-  a.play().catch(function(){});
-  a.onended = a.onerror = function() {
+  utter.onend = utter.onerror = function() {
     if (btn) { btn.textContent = '▶ Тест'; btn.classList.remove('testing'); }
   };
+  speechSynthesis.speak(utter);
 }
 
 function toggleTranscript(n) {
