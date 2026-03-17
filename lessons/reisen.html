@@ -342,6 +342,26 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 .filter-tab.active{background:var(--green-deep);border-color:var(--green-deep);color:#fff}
 .filter-tab:hover:not(.active){border-color:var(--green-mid);color:var(--green-mid)}
 
+/* ── SECTION MOSAIC NAV ── */
+.mosaic-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;padding:0}
+.mosaic-tile{flex:1 1 calc(33.33% - 8px);min-width:100px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;text-decoration:none;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+.mosaic-tile:hover{border-color:var(--green-mid);box-shadow:0 4px 16px rgba(10,92,66,.1);transform:translateY(-2px)}
+.mosaic-tile.active{border-color:var(--green-mid);background:var(--green-pale)}
+.mosaic-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.mosaic-icon.vocab{background:#E1F5EE;color:#0a5c42}
+.mosaic-icon.speak{background:#E6F1FB;color:#378ADD}
+.mosaic-icon.read{background:#FFF3E0;color:#E65100}
+.mosaic-icon.question{background:#FCE4EC;color:#C2185B}
+.mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
+.mosaic-icon.dialog{background:#E0F7FA;color:#00838F}
+.mosaic-icon.practice{background:#FFF8E1;color:#F9A825}
+.mosaic-icon.listen{background:#EDE7F6;color:#5E35B1}
+.mosaic-icon.summary{background:#E8F5E9;color:#2E7D32}
+.mosaic-info{min-width:0}
+.mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
+.mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mosaic-tile:hover .mosaic-label{color:var(--green-deep)}
+
 /* Responsive */
 @media(max-width:560px){
   body{padding:1rem .6rem 3rem}
@@ -355,6 +375,9 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   .transcript-body{padding:0 1rem 1.2rem}
   .questions-wrap{padding:0 1rem 1.2rem}
   .voice-picker-wrap{flex-direction:column;align-items:flex-start}
+  .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
+  .mosaic-icon{width:30px;height:30px;font-size:15px}
+  .mosaic-label{font-size:12px}
 }
 </style>
 </head>
@@ -376,10 +399,50 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   </div>
 </header>
 
+<!-- ── SECTION MOSAIC ── -->
+<nav class="mosaic-nav" id="mosaic-nav">
+  <a class="mosaic-tile" href="#s-vocab">
+    <div class="mosaic-icon vocab">🔤</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 1</div><div class="mosaic-label">Нові слова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-speak">
+    <div class="mosaic-icon speak">💬</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 2</div><div class="mosaic-label">Розмова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-read">
+    <div class="mosaic-icon read">📖</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 3</div><div class="mosaic-label">Читання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-question">
+    <div class="mosaic-icon question">❓</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 4</div><div class="mosaic-label">Запитання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-grammar">
+    <div class="mosaic-icon grammar">📐</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 5</div><div class="mosaic-label">Граматика</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-dialog">
+    <div class="mosaic-icon dialog">🎭</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">Діалог</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-practice">
+    <div class="mosaic-icon practice">🧠</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">Практика</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-listen">
+    <div class="mosaic-icon listen">🎧</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 8</div><div class="mosaic-label">Аудіювання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-summary">
+    <div class="mosaic-icon summary">✅</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 9</div><div class="mosaic-label">Підсумок</div></div>
+  </a>
+</nav>
+
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 1: NEUE WÖRTER (ZUERST!) -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-vocab">
   <div class="section-header">
     <div class="section-num">1</div>
     <div>
@@ -459,7 +522,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 2: FRAGEN ZUM SPRECHEN (ZUERST, KOMPLEXER) -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-speak">
   <div class="section-header">
     <div class="section-num">2</div>
     <div>
@@ -483,7 +546,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 3: TEXT ZUM LESEN (KOMPLEXER) -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-read">
   <div class="section-header">
     <div class="section-num">3</div>
     <div>
@@ -503,7 +566,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 4: FRAGEN ZUM TEXT -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-question">
   <div class="section-header">
     <div class="section-num">4</div>
     <div>
@@ -566,7 +629,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 5: GRAMMATIK — REFLEXIVVERBEN -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-grammar">
   <div class="section-header">
     <div class="section-num">5</div>
     <div>
@@ -862,7 +925,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 6: VOLLSTÄNDIGER DIALOG -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-dialog">
   <div class="section-header">
     <div class="section-num">6</div>
     <div>
@@ -961,7 +1024,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 7: REFLEXIVVERBEN + REISEN PRAXIS -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-practice">
   <div class="section-header">
     <div class="section-num">7</div>
     <div>
@@ -1057,7 +1120,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 8: АУДІЮВАННЯ / HÖRVERSTEHEN -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card">
+<section class="section-card" id="s-listen">
   <div class="section-header">
     <div class="section-num">8</div>
     <div>
@@ -1613,7 +1676,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 9: ПIДСУМОК / ZUSAMMENFASSUNG -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card summary-card">
+<section class="section-card summary-card" id="s-summary">
   <div class="section-header">
     <div class="section-num">9</div>
     <div class="section-title">Підсумок — Що ти сьогодні вивчила? ✅</div>
@@ -2011,6 +2074,36 @@ function checkHoer(n, correct) {
     res.textContent = `❌ ${right} з ${qCount} правильних. Послухай текст ще раз і спробуй!`;
   }
 }
+
+// ── MOSAIC NAV ACTIVE HIGHLIGHT ──
+(function(){
+  var tiles = document.querySelectorAll('.mosaic-tile');
+  var sections = [];
+  tiles.forEach(function(t){
+    var id = t.getAttribute('href');
+    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el});}
+  });
+  function updateActive(){
+    var scrollY=window.scrollY+120;
+    var active=null;
+    for(var i=sections.length-1;i>=0;i--){
+      if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
+    }
+    tiles.forEach(function(t){t.classList.remove('active');});
+    if(active)active.tile.classList.add('active');
+  }
+  window.addEventListener('scroll',updateActive,{passive:true});
+  updateActive();
+  // smooth scroll
+  tiles.forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var id=t.getAttribute('href');
+      var el=document.querySelector(id);
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
 </script>
 </body>
 </html>

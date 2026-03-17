@@ -623,6 +623,29 @@
     .lesson-nav-all { width: 100%; padding: 10px; }
   }
   @media (min-width: 561px) { .nav-mobile-menu { display: none !important; } }
+/* ── SECTION MOSAIC NAV ── */
+.mosaic-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;padding:0}
+.mosaic-tile{flex:1 1 calc(33.33% - 8px);min-width:100px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;text-decoration:none;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+.mosaic-tile:hover{border-color:var(--green-mid);box-shadow:0 4px 16px rgba(10,92,66,.1);transform:translateY(-2px)}
+.mosaic-tile.active{border-color:var(--green-mid);background:var(--green-pale)}
+.mosaic-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.mosaic-icon.speak{background:#E6F1FB;color:#378ADD}
+.mosaic-icon.vocab{background:#E1F5EE;color:#0a5c42}
+.mosaic-icon.read{background:#FFF3E0;color:#E65100}
+.mosaic-icon.question{background:#FCE4EC;color:#C2185B}
+.mosaic-icon.retell{background:#F3E5F5;color:#8E24AA}
+.mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
+.mosaic-icon.discuss{background:#E0F7FA;color:#00838F}
+.mosaic-icon.listen{background:#EDE7F6;color:#5E35B1}
+.mosaic-info{min-width:0}
+.mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
+.mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mosaic-tile:hover .mosaic-label{color:var(--green-deep)}
+@media(max-width:560px){
+  .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
+  .mosaic-icon{width:30px;height:30px;font-size:15px}
+  .mosaic-label{font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -678,8 +701,44 @@
     </div>
   </div>
 
+<!-- ── SECTION MOSAIC ── -->
+<nav class="mosaic-nav" id="mosaic-nav">
+  <a class="mosaic-tile" href="#s-speak">
+    <div class="mosaic-icon speak">💬</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 1</div><div class="mosaic-label">Sprechen</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-vocab">
+    <div class="mosaic-icon vocab">🔤</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 2</div><div class="mosaic-label">Neue Wörter</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-read">
+    <div class="mosaic-icon read">📖</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 3</div><div class="mosaic-label">Lesen</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-question">
+    <div class="mosaic-icon question">❓</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 4</div><div class="mosaic-label">Fragen</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-retell">
+    <div class="mosaic-icon retell">🔁</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 5</div><div class="mosaic-label">Nacherzählung</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-grammar">
+    <div class="mosaic-icon grammar">📐</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 6</div><div class="mosaic-label">Grammatik</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-discuss">
+    <div class="mosaic-icon discuss">🗣</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 7</div><div class="mosaic-label">Diskussion</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-listen">
+    <div class="mosaic-icon listen">🎧</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 8</div><div class="mosaic-label">Hören</div></div>
+  </a>
+</nav>
+
   <!-- 1. Fragen zum Sprechen -->
-  <div class="section">
+  <div class="section" id="s-speak">
     <div class="section-head">
       <div class="sec-num">1</div>
       <h2 class="sec-title">Fragen zum Sprechen</h2>
@@ -781,7 +840,7 @@
   </div>
 
   <!-- 2. Neue Wörter -->
-  <div class="section">
+  <div class="section" id="s-vocab">
     <div class="section-head">
       <div class="sec-num">2</div>
       <h2 class="sec-title">Neue Wörter</h2>
@@ -822,7 +881,7 @@
   </div>
 
   <!-- 3. Kurzer Text -->
-  <div class="section">
+  <div class="section" id="s-read">
     <div class="section-head">
       <div class="sec-num">3</div>
       <h2 class="sec-title">Kurzer Text — Lesen</h2>
@@ -838,7 +897,7 @@
   </div>
 
   <!-- 4. Fragen zum Text -->
-  <div class="section">
+  <div class="section" id="s-question">
     <div class="section-head">
       <div class="sec-num">4</div>
       <h2 class="sec-title">Fragen zum Text</h2>
@@ -854,7 +913,7 @@
   </div>
 
   <!-- 5. Nacherzählung -->
-  <div class="section">
+  <div class="section" id="s-retell">
     <div class="section-head">
       <div class="sec-num">5</div>
       <h2 class="sec-title">Nacherzählung</h2>
@@ -886,7 +945,7 @@
   </div>
 
   <!-- 6. Grammatik -->
-  <div class="section">
+  <div class="section" id="s-grammar">
     <div class="section-head">
       <div class="sec-num">6</div>
       <h2 class="sec-title">Grammatik</h2>
@@ -934,7 +993,7 @@
   </div>
 
   <!-- 7. Diskussion -->
-  <div class="section">
+  <div class="section" id="s-discuss">
     <div class="section-head">
       <div class="sec-num">7</div>
       <h2 class="sec-title">Diskussion — Deine Meinung</h2>
@@ -997,7 +1056,7 @@
   </div>
 
   <!-- HÖREN: Audio-Aufgaben -->
-  <div class="section">
+  <div class="section" id="s-listen">
     <div class="section-head">
       <div class="sec-num" style="background:#7F77DD;">🎧</div>
       <h2 class="sec-title">Hören — Wähle die richtige Antwort</h2>
@@ -1164,15 +1223,15 @@ var hoeren_total = 6;
 var curBtn = null;
 var isSpeaking = false;
 var deVoice = null;
+var speakQueue = [];
+var keepAlive = null;
 
-/* Find the best German voice — prefer natural/enhanced voices */
+/* Find the best German voice */
 function findDeVoice() {
-  if (deVoice) return deVoice;
   var voices = speechSynthesis.getVoices();
   var german = voices.filter(function(v) { return v.lang && v.lang.replace('_','-').indexOf('de') === 0; });
   if (german.length === 0) return null;
-  /* Prefer voices with "Anna", "Petra", "Helena", or names that suggest a natural female voice */
-  var preferred = ['Anna', 'Petra', 'Helena', 'Marlene', 'Vicki', 'Google'];
+  var preferred = ['Helena', 'Anna', 'Petra', 'Marlene', 'Vicki', 'Google'];
   for (var p = 0; p < preferred.length; p++) {
     for (var i = 0; i < german.length; i++) {
       if (german[i].name.indexOf(preferred[p]) !== -1) { deVoice = german[i]; return deVoice; }
@@ -1182,17 +1241,60 @@ function findDeVoice() {
   return deVoice;
 }
 
-/* Load voices (async on some browsers) */
-if (speechSynthesis.getVoices().length) findDeVoice();
-speechSynthesis.addEventListener('voiceschanged', findDeVoice);
+/* Load voices — must re-check each time since voices load async */
+speechSynthesis.addEventListener('voiceschanged', function() { deVoice = null; findDeVoice(); });
+findDeVoice();
+
+/* Split text into short sentences for reliable playback */
+function splitSentences(text) {
+  var parts = text.replace(/\.\s+/g, '.|').replace(/!\s+/g, '!|').replace(/\?\s+/g, '?|').split('|');
+  return parts.map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 0; });
+}
+
+function speakNext(btn) {
+  if (speakQueue.length === 0 || !isSpeaking) {
+    clearInterval(keepAlive);
+    isSpeaking = false;
+    speakQueue = [];
+    if (btn) { btn.innerHTML = '▶ Noch einmal'; btn.style.background = '#7F77DD'; }
+    curBtn = null;
+    return;
+  }
+
+  var sentence = speakQueue.shift();
+  var utter = new SpeechSynthesisUtterance(sentence);
+  utter.lang = 'de-DE';
+  utter.rate = 0.88;
+  utter.pitch = 1.05;
+
+  /* Re-find voice each time (Safari loses voice reference) */
+  var voice = deVoice || findDeVoice();
+  if (voice) utter.voice = voice;
+
+  utter.onend = function() {
+    if (isSpeaking) speakNext(btn);
+  };
+  utter.onerror = function() {
+    if (isSpeaking) speakNext(btn);
+  };
+
+  speechSynthesis.speak(utter);
+}
 
 function speak(btn, text) {
-  /* If already speaking, stop */
-  if (isSpeaking) {
-    speechSynthesis.cancel();
+  /* Stop if already playing */
+  speechSynthesis.cancel();
+  clearInterval(keepAlive);
+
+  if (isSpeaking && curBtn === btn) {
     isSpeaking = false;
-    if (curBtn && curBtn !== btn) { curBtn.innerHTML = '▶ Abspielen'; curBtn.style.background = '#7F77DD'; }
-    if (curBtn === btn) { curBtn = null; btn.innerHTML = '▶ Abspielen'; btn.style.background = '#7F77DD'; return; }
+    speakQueue = [];
+    btn.innerHTML = '▶ Abspielen'; btn.style.background = '#7F77DD';
+    curBtn = null;
+    return;
+  }
+  if (curBtn && curBtn !== btn) {
+    curBtn.innerHTML = '▶ Abspielen'; curBtn.style.background = '#7F77DD';
   }
 
   curBtn = btn; isSpeaking = true;
@@ -1202,26 +1304,17 @@ function speak(btn, text) {
   var clean = text.replace(/ae/g, 'ä').replace(/oe/g, 'ö').replace(/ue/g, 'ü')
                    .replace(/Ae/g, 'Ä').replace(/Oe/g, 'Ö').replace(/Ue/g, 'Ü');
 
-  var utter = new SpeechSynthesisUtterance(clean);
-  utter.lang = 'de-DE';
-  utter.rate = 0.9;   /* slightly slower for learners */
-  utter.pitch = 1.05;
+  speakQueue = splitSentences(clean);
 
-  var voice = findDeVoice();
-  if (voice) utter.voice = voice;
+  /* Chrome bug workaround: pause/resume every 10s to prevent audio cutoff */
+  keepAlive = setInterval(function() {
+    if (speechSynthesis.speaking && !speechSynthesis.paused) {
+      speechSynthesis.pause();
+      speechSynthesis.resume();
+    }
+  }, 10000);
 
-  utter.onend = function() {
-    isSpeaking = false;
-    btn.innerHTML = '▶ Noch einmal'; btn.style.background = '#7F77DD';
-    curBtn = null;
-  };
-  utter.onerror = function() {
-    isSpeaking = false;
-    btn.innerHTML = '▶ Abspielen'; btn.style.background = '#7F77DD';
-    curBtn = null;
-  };
-
-  speechSynthesis.speak(utter);
+  speakNext(btn);
 }
 
 function choose(el, isCorrect) {
@@ -1286,6 +1379,34 @@ function choose(el, isCorrect) {
       }
     });
   }
+})();
+// ── MOSAIC NAV ACTIVE HIGHLIGHT ──
+(function(){
+  var tiles = document.querySelectorAll('.mosaic-tile');
+  var sections = [];
+  tiles.forEach(function(t){
+    var id = t.getAttribute('href');
+    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el});}
+  });
+  function updateActive(){
+    var scrollY=window.scrollY+120;
+    var active=null;
+    for(var i=sections.length-1;i>=0;i--){
+      if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
+    }
+    tiles.forEach(function(t){t.classList.remove('active');});
+    if(active)active.tile.classList.add('active');
+  }
+  window.addEventListener('scroll',updateActive,{passive:true});
+  updateActive();
+  tiles.forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var id=t.getAttribute('href');
+      var el=document.querySelector(id);
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
 })();
 </script>
 
