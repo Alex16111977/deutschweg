@@ -343,6 +343,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 .filter-tab:hover:not(.active){border-color:var(--green-mid);color:var(--green-mid)}
 
 /* ── SECTION MOSAIC NAV ── */
+/* ── SECTION MOSAIC NAV ── */
 .mosaic-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;padding:0}
 .mosaic-tile{flex:1 1 calc(33.33% - 8px);min-width:100px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;text-decoration:none;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden}
 .mosaic-tile:hover{border-color:var(--green-mid);box-shadow:0 4px 16px rgba(10,92,66,.1);transform:translateY(-2px)}
@@ -362,6 +363,18 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 .mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mosaic-tile:hover .mosaic-label{color:var(--green-deep)}
 
+/* ── STICKY PROGRESS BAR ── */
+.sticky-bar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;justify-content:center;transform:translateY(-100%);transition:transform .3s ease;pointer-events:none}
+.sticky-bar.visible{transform:translateY(0);pointer-events:auto}
+.sticky-pip{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s;border:2px solid transparent;background:var(--bg-section);position:relative;flex-shrink:0;text-decoration:none}
+.sticky-pip:hover{transform:scale(1.15);border-color:var(--green-border)}
+.sticky-pip.active{border-color:var(--green-mid);background:var(--green-pale);transform:scale(1.1);box-shadow:0 2px 8px rgba(29,158,117,.25)}
+.sticky-pip .pip-tooltip{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--green-deep);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+.sticky-pip:hover .pip-tooltip{opacity:1}
+.sticky-pip .pip-tooltip::before{content:'';position:absolute;top:-4px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid var(--green-deep)}
+.sticky-divider{width:1px;height:20px;background:var(--border);flex-shrink:0;margin:0 2px}
+.sticky-current{font-size:12px;font-weight:600;color:var(--green-deep);margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+
 /* Responsive */
 @media(max-width:560px){
   body{padding:1rem .6rem 3rem}
@@ -378,10 +391,29 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
   .mosaic-icon{width:30px;height:30px;font-size:15px}
   .mosaic-label{font-size:12px}
+  .sticky-pip{width:30px;height:30px;font-size:13px;border-radius:8px}
+  .sticky-current{display:none}
+  .sticky-divider{display:none}
 }
 </style>
 </head>
 <body>
+
+<!-- ── STICKY PROGRESS BAR ── -->
+<div class="sticky-bar" id="sticky-bar">
+  <a class="sticky-pip" href="#s-vocab" data-section="s-vocab">🔤<span class="pip-tooltip">Нові слова</span></a>
+  <a class="sticky-pip" href="#s-speak" data-section="s-speak">💬<span class="pip-tooltip">Розмова</span></a>
+  <a class="sticky-pip" href="#s-read" data-section="s-read">📖<span class="pip-tooltip">Читання</span></a>
+  <a class="sticky-pip" href="#s-question" data-section="s-question">❓<span class="pip-tooltip">Запитання</span></a>
+  <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Граматика</span></a>
+  <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
+  <a class="sticky-pip" href="#s-practice" data-section="s-practice">🧠<span class="pip-tooltip">Практика</span></a>
+  <a class="sticky-pip" href="#s-listen" data-section="s-listen">🎧<span class="pip-tooltip">Аудіювання</span></a>
+  <a class="sticky-pip" href="#s-summary" data-section="s-summary">✅<span class="pip-tooltip">Підсумок</span></a>
+  <div class="sticky-divider"></div>
+  <span class="sticky-current" id="sticky-current"></span>
+</div>
+
 <div class="page">
 
 <a href="https://alex16111977.github.io/deutschweg/" class="nav-back">DeutschWeg — Усі теми</a>
@@ -2075,31 +2107,60 @@ function checkHoer(n, correct) {
   }
 }
 
-// ── MOSAIC NAV ACTIVE HIGHLIGHT ──
+// ── MOSAIC NAV + STICKY BAR ──
 (function(){
   var tiles = document.querySelectorAll('.mosaic-tile');
+  var pips = document.querySelectorAll('.sticky-pip');
+  var stickyBar = document.getElementById('sticky-bar');
+  var mosaicNav = document.getElementById('mosaic-nav');
+  var stickyCurrent = document.getElementById('sticky-current');
+  var labels = {};
+  tiles.forEach(function(t){ var h=t.getAttribute('href'); if(h) labels[h]=t.querySelector('.mosaic-label').textContent; });
+
   var sections = [];
   tiles.forEach(function(t){
     var id = t.getAttribute('href');
-    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el});}
+    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el,id:id});}
   });
+
   function updateActive(){
     var scrollY=window.scrollY+120;
     var active=null;
     for(var i=sections.length-1;i>=0;i--){
       if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
     }
+    // mosaic tiles
     tiles.forEach(function(t){t.classList.remove('active');});
     if(active)active.tile.classList.add('active');
+    // sticky pips
+    pips.forEach(function(p){p.classList.remove('active');});
+    if(active){
+      pips.forEach(function(p){if(p.getAttribute('href')===active.id)p.classList.add('active');});
+      if(stickyCurrent) stickyCurrent.textContent=labels[active.id]||'';
+    }
+    // show/hide sticky bar
+    if(mosaicNav && stickyBar){
+      var mosaicBottom = mosaicNav.getBoundingClientRect().bottom;
+      stickyBar.classList.toggle('visible', mosaicBottom < 0);
+    }
   }
+
   window.addEventListener('scroll',updateActive,{passive:true});
   updateActive();
-  // smooth scroll
+
+  // smooth scroll for mosaic tiles
   tiles.forEach(function(t){
     t.addEventListener('click',function(e){
       e.preventDefault();
-      var id=t.getAttribute('href');
-      var el=document.querySelector(id);
+      var el=document.querySelector(t.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  // smooth scroll for sticky pips
+  pips.forEach(function(p){
+    p.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(p.getAttribute('href'));
       if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
     });
   });
