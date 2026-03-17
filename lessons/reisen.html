@@ -19,8 +19,39 @@
   --border:rgba(0,0,0,0.09);
   --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif
 }
-body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);min-height:100vh;padding:2rem 1rem 4rem}
-.page{max-width:780px;margin:0 auto}
+body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);min-height:100vh;padding:2rem 1rem 4rem;position:relative}
+.page{max-width:780px;margin:0 auto;position:relative}
+
+/* ── AURORA ANIMATED BACKGROUND ── */
+.aurora{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-2;overflow:hidden}
+.aurora-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:auroraMove 12s ease-in-out infinite alternate}
+.aurora-blob:nth-child(1){width:500px;height:500px;background:linear-gradient(135deg,#5DCAA5,#1D9E75);top:-10%;left:-5%;animation-duration:14s}
+.aurora-blob:nth-child(2){width:400px;height:400px;background:linear-gradient(135deg,#378ADD,#7C4DBC);top:40%;right:-8%;animation-delay:-4s;animation-duration:16s}
+.aurora-blob:nth-child(3){width:350px;height:350px;background:linear-gradient(135deg,#E91E8C,#BA7517);bottom:-5%;left:20%;animation-delay:-8s;animation-duration:18s}
+@keyframes auroraMove{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(60px,-40px) rotate(15deg) scale(1.1)}66%{transform:translate(-40px,50px) rotate(-10deg) scale(.9)}100%{transform:translate(30px,20px) rotate(5deg) scale(1.05)}}
+
+/* ── FLOATING EMOJI ── */
+.emoji-float{position:fixed;pointer-events:none;z-index:-1;font-size:24px;opacity:0;animation:emojiRise linear infinite}
+@keyframes emojiRise{0%{opacity:0;transform:translateY(0) rotate(0deg) scale(.5)}10%{opacity:.15}50%{opacity:.12}90%{opacity:.05}100%{opacity:0;transform:translateY(-100vh) rotate(360deg) scale(1)}}
+
+/* ── SECTION CARD ENHANCEMENTS ── */
+.section-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;border:1.5px solid var(--border)}
+.section-card:hover{box-shadow:0 12px 40px rgba(10,92,66,.1);transform:translateY(-3px);border-color:var(--green-border)}
+.section-card .section-num{transition:transform .3s ease,box-shadow .3s ease}
+.section-card:hover .section-num{transform:scale(1.15) rotate(-5deg);box-shadow:0 4px 12px rgba(10,92,66,.25)}
+
+/* ── GLOW EFFECT ON SUMMARY ── */
+.summary-card{animation:summaryPulse 4s ease-in-out infinite;border:none}
+@keyframes summaryPulse{0%,100%{box-shadow:0 4px 20px rgba(10,92,66,.15)}50%{box-shadow:0 8px 40px rgba(29,158,117,.3)}}
+
+/* ── SCROLL REVEAL ── */
+.section-card,.mosaic-nav{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.section-card.revealed,.mosaic-nav.revealed{opacity:1;transform:translateY(0)}
+.section-card:nth-child(even).revealed{transition-delay:.1s}
+
+/* ── SECTION DIVIDERS ── */
+.section-card+.section-card::before{content:'';display:block;width:40px;height:3px;background:linear-gradient(90deg,var(--green-light),var(--green-mid));border-radius:3px;margin:-0.7rem auto 0;opacity:0;transition:opacity .5s}
+.section-card.revealed+.section-card.revealed::before{opacity:.5}
 
 /* Hero */
 .hero{position:relative;background:var(--green-deep);border-radius:20px;padding:2.5rem 2.5rem 2rem;margin-bottom:2rem;overflow:hidden}
@@ -398,6 +429,13 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 </style>
 </head>
 <body>
+
+<!-- ── AURORA BACKGROUND ── -->
+<div class="aurora">
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+</div>
 
 <!-- ── STICKY PROGRESS BAR ── -->
 <div class="sticky-bar" id="sticky-bar">
@@ -2106,6 +2144,42 @@ function checkHoer(n, correct) {
     res.textContent = `❌ ${right} з ${qCount} правильних. Послухай текст ще раз і спробуй!`;
   }
 }
+
+// ── SCROLL REVEAL ──
+(function(){
+  var els = document.querySelectorAll('.section-card, .mosaic-nav');
+  els.forEach(function(el){
+    var rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight + 60) el.classList.add('revealed');
+  });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('revealed');observer.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(el){if(!el.classList.contains('revealed'))observer.observe(el);});
+})();
+
+// ── FLOATING EMOJI ──
+(function(){
+  var emojis = ['✈','🧳','🗺','🏖','🚂','🌍','🎒','🛫','⛵','🏔','🌴','🗼','🎫','🧭','🌅'];
+  var maxEmoji = 12;
+  function spawnEmoji(){
+    if(document.querySelectorAll('.emoji-float').length >= maxEmoji) return;
+    var el = document.createElement('div');
+    el.className = 'emoji-float';
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = (Math.random()*90+5)+'%';
+    el.style.bottom = '-40px';
+    el.style.fontSize = (18+Math.random()*16)+'px';
+    el.style.animationDuration = (12+Math.random()*18)+'s';
+    el.style.animationDelay = (Math.random()*2)+'s';
+    document.body.appendChild(el);
+    setTimeout(function(){el.remove();},(14+20)*1000);
+  }
+  for(var i=0;i<5;i++) setTimeout(spawnEmoji, i*800);
+  setInterval(spawnEmoji, 3000);
+})();
 
 // ── MOSAIC NAV + STICKY BAR ──
 (function(){
