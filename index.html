@@ -3,76 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DeutschWeg — Deutsch A2 jeden Tag</title>
+  <title>DeutschWeg — Dein Weg zur deutschen Sprache</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --green-deep: #0a5c42; --green-mid: #1D9E75; --green-light: #5DCAA5;
       --green-pale: #E1F5EE; --green-border: #9FE1CB;
       --amber-mid: #BA7517; --amber-pale: #FAEEDA; --amber-border: #E8C97A;
+      --violet: #7C5CFC; --violet-pale: #F0ECFF; --violet-border: #C4B8FF;
+      --rose: #E8506A; --rose-pale: #FFF0F2; --rose-border: #F5B8C2;
       --text-dark: #1a1a18; --text-mid: #4a4a46; --text-muted: #888780;
       --bg-page: #f5f3ed; --bg-card: #ffffff; --bg-section: #fafaf7;
       --border: rgba(0,0,0,0.09);
       --serif: 'Fraunces', Georgia, serif; --sans: 'DM Sans', sans-serif;
     }
-    body { font-family: var(--sans); background: var(--bg-page); color: var(--text-dark); min-height: 100vh; padding: 2rem 1rem 5rem; }
-    .page { max-width: 780px; margin: 0 auto; }
-    .hero { position: relative; background: var(--green-deep); border-radius: 20px; padding: 2.5rem 2.5rem 2.2rem; margin-bottom: 1.4rem; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.05); }
-    .hero::after { content: ''; position: absolute; right: 60px; bottom: -80px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.04); }
-    .hero-badge { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-light); background: rgba(93,202,165,0.15); border: 1px solid rgba(93,202,165,0.3); border-radius: 20px; padding: 4px 14px; margin-bottom: 1.1rem; }
-    .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
-    .hero h1 em { font-style: italic; color: var(--green-light); }
-    .hero-sub { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.6; max-width: 520px; margin-bottom: 1.8rem; }
-    .hero-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    .hero-pill { font-size: 12px; color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.1); border-radius: 20px; padding: 5px 13px; }
-    .hero-pill strong { color: #fff; font-weight: 500; }
-    .progress-banner { background: var(--amber-pale); border: 1px solid var(--amber-border); border-radius: 14px; padding: 1.2rem 1.6rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
-    .progress-text { flex: 1; min-width: 180px; }
-    .progress-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--amber-mid); margin-bottom: 3px; }
-    .progress-text p { font-size: 13px; color: var(--text-mid); }
-    .progress-bar-wrap { width: 100%; background: rgba(186,117,23,0.15); border-radius: 8px; height: 6px; margin-top: 10px; }
-    .progress-bar-fill { height: 6px; border-radius: 8px; background: var(--amber-mid); width: 20%; }
-    .progress-count { font-size: 24px; font-weight: 600; color: var(--amber-mid); white-space: nowrap; }
-    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.6rem 1.8rem; margin-bottom: 1.2rem; }
-    .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
-    .card-num { width: 30px; height: 30px; border-radius: 50%; background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .card-title { font-size: 17px; font-weight: 600; color: var(--text-dark); }
-    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .steps-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-mid); padding: 11px 14px; background: var(--bg-section); border: 1px solid var(--border); border-radius: 10px; line-height: 1.5; }
-    .step-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .steps-list li strong { display: block; font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 2px; }
-    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
-    .why-item { padding: 14px 16px; background: var(--green-pale); border: 1px solid var(--green-border); border-radius: 12px; }
-    .why-item .why-icon { font-size: 20px; margin-bottom: 6px; }
-    .why-item strong { display: block; font-size: 13px; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
-    .why-item p { font-size: 12.5px; color: var(--text-mid); line-height: 1.5; }
-    .start-section { text-align: center; margin-bottom: 1.2rem; }
-    .btn-start { display: inline-flex; align-items: center; gap: 10px; background: var(--green-deep); color: #fff; font-family: var(--sans); font-size: 15px; font-weight: 500; padding: 14px 32px; border-radius: 12px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .btn-start:hover { background: #0d7050; transform: translateY(-1px); }
-    .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
-    .topic-card { display: flex; align-items: center; gap: 12px; padding: 13px 16px; background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 12px; text-decoration: none; transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s; }
-    .topic-card:hover { border-color: var(--green-mid); box-shadow: 0 4px 16px rgba(10,92,66,0.10); transform: translateY(-2px); }
-    .topic-card.done { border-color: var(--green-border); background: var(--green-pale); }
-    .topic-card.done .topic-name { color: var(--green-deep); }
-    .topic-card.active { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(29,158,117,0.12); }
-    .topic-emoji { font-size: 22px; flex-shrink: 0; }
-    .topic-info { flex: 1; }
-    .topic-name { font-size: 14px; font-weight: 500; color: var(--text-dark); display: block; }
-    .topic-level { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-    .topic-badge { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
-    .done-badge { background: var(--green-pale); color: var(--green-deep); border: 1px solid var(--green-border); }
-    .todo-badge { background: var(--bg-section); color: var(--text-muted); border: 1px solid var(--border); }
-    .next-badge { background: var(--amber-pale); color: var(--amber-mid); border: 1px solid var(--amber-border); }
-    .footer { text-align: center; margin-top: 2.5rem; font-size: 12px; color: var(--text-muted); }
-    /* ── SITE NAV ── */
-    .site-nav { margin-bottom: 1rem; }
+    body { font-family: var(--sans); background: var(--bg-page); color: var(--text-dark); min-height: 100vh; padding: 0; overflow-x: hidden; }
+    .page { max-width: 820px; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+
+    /* ── NAV ── */
+    .site-nav { margin-bottom: 1.2rem; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0; }
-    .nav-logo { text-decoration: none; font-family: var(--serif); font-size: 20px; font-weight: 300; color: var(--text-dark); }
+    .nav-logo { text-decoration: none; font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--text-dark); }
     .nav-logo em { font-style: italic; color: var(--green-deep); }
     .nav-topics-wrap { position: relative; }
     .nav-topics-btn { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text-mid); background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 8px 16px; cursor: pointer; transition: border-color 0.18s, box-shadow 0.18s; }
@@ -106,10 +60,118 @@
     .nav-mobile-heading { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); padding: 8px 12px 2px; }
     @media (max-width: 560px) { .nav-topics-wrap { display: none; } .nav-hamburger { display: flex; } }
     @media (min-width: 561px) { .nav-mobile-menu { display: none !important; } }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; border-radius: 24px; padding: 3rem 2.8rem 2.8rem; margin-bottom: 1.6rem; overflow: hidden;
+      background: linear-gradient(135deg, #0a5c42 0%, #0d7050 40%, #1D9E75 100%);
+    }
+    .hero::before { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+    .hero::after { content: ''; position: absolute; left: -40px; bottom: -100px; width: 240px; height: 240px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+    .hero-badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-light); background: rgba(93,202,165,0.15); border: 1px solid rgba(93,202,165,0.3); border-radius: 20px; padding: 5px 16px; margin-bottom: 1.2rem; animation: fadeInDown 0.6s ease-out; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 300; color: #fff; line-height: 1.15; margin-bottom: 0.7rem; animation: fadeInDown 0.6s ease-out 0.1s both; }
+    .hero h1 em { font-style: italic; color: #B8F0D8; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.78); line-height: 1.65; max-width: 540px; margin-bottom: 2rem; animation: fadeInDown 0.6s ease-out 0.2s both; }
+    .hero-stats { display: flex; gap: 1.4rem; flex-wrap: wrap; animation: fadeInDown 0.6s ease-out 0.3s both; }
+    .hero-stat { background: rgba(255,255,255,0.1); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 14px 20px; min-width: 130px; }
+    .hero-stat-num { font-size: 28px; font-weight: 700; color: #fff; display: block; line-height: 1; margin-bottom: 4px; }
+    .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.65); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── WORD OF THE DAY ── */
+    .wort-card {
+      position: relative; background: linear-gradient(135deg, var(--violet-pale), #fff 60%); border: 1.5px solid var(--violet-border);
+      border-radius: 20px; padding: 1.8rem 2rem; margin-bottom: 1.4rem; overflow: hidden;
+    }
+    .wort-card::after { content: 'W'; position: absolute; right: -10px; bottom: -20px; font-family: var(--serif); font-size: 140px; font-weight: 600; color: rgba(124,92,252,0.06); line-height: 1; pointer-events: none; }
+    .wort-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--violet); margin-bottom: 0.8rem; }
+    .wort-word { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 400; color: var(--text-dark); margin-bottom: 0.3rem; }
+    .wort-word .article { color: var(--violet); font-weight: 300; }
+    .wort-trans { font-size: 15px; color: var(--text-mid); margin-bottom: 1rem; }
+    .wort-example { font-size: 14px; color: var(--text-mid); background: rgba(124,92,252,0.06); border-radius: 10px; padding: 12px 16px; line-height: 1.6; font-style: italic; }
+    .wort-example strong { font-style: normal; color: var(--violet); }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      background: linear-gradient(135deg, var(--rose-pale), #fff 60%); border: 1.5px solid var(--rose-border);
+      border-radius: 20px; padding: 2rem 2.2rem; margin-bottom: 1.4rem; text-align: center;
+    }
+    .quote-icon { font-size: 32px; margin-bottom: 0.8rem; display: block; color: var(--rose); }
+    .quote-text { font-family: var(--serif); font-size: clamp(1.1rem, 3vw, 1.4rem); font-weight: 300; font-style: italic; color: var(--text-dark); line-height: 1.6; max-width: 500px; margin: 0 auto 0.6rem; }
+    .quote-author { font-size: 13px; color: var(--text-muted); }
+
+    /* ── PROGRESS ── */
+    .progress-banner { background: var(--amber-pale); border: 1.5px solid var(--amber-border); border-radius: 18px; padding: 1.4rem 1.8rem; margin-bottom: 1.4rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+    .progress-text { flex: 1; min-width: 180px; }
+    .progress-text strong { display: block; font-size: 15px; font-weight: 600; color: var(--amber-mid); margin-bottom: 4px; }
+    .progress-text p { font-size: 13px; color: var(--text-mid); }
+    .progress-bar-wrap { width: 100%; background: rgba(186,117,23,0.15); border-radius: 8px; height: 7px; margin-top: 10px; overflow: hidden; }
+    .progress-bar-fill { height: 7px; border-radius: 8px; background: linear-gradient(90deg, var(--amber-mid), #D4952A); width: 0%; transition: width 1.2s ease-out; }
+    .progress-count { font-size: 28px; font-weight: 700; color: var(--amber-mid); white-space: nowrap; }
+
+    /* ── CARDS ── */
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 1.8rem 2rem; margin-bottom: 1.4rem; }
+    .card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 1.4rem; }
+    .card-num { width: 32px; height: 32px; border-radius: 50%; background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .card-title { font-size: 18px; font-weight: 600; color: var(--text-dark); }
+
+    /* ── HOW IT WORKS ── */
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .steps-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: var(--text-mid); padding: 14px 16px; background: var(--bg-section); border: 1px solid var(--border); border-radius: 12px; line-height: 1.55; transition: transform 0.15s, box-shadow 0.15s; }
+    .steps-list li:hover { transform: translateX(4px); box-shadow: -4px 0 0 var(--green-mid); }
+    .step-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .steps-list li strong { display: block; font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 3px; }
+
+    /* ── TOPICS ── */
+    .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+    .topic-card { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 14px; text-decoration: none; transition: border-color 0.18s, box-shadow 0.18s, transform 0.2s; }
+    .topic-card:hover { border-color: var(--green-mid); box-shadow: 0 6px 20px rgba(10,92,66,0.10); transform: translateY(-3px); }
+    .topic-card.done { border-color: var(--green-border); background: var(--green-pale); }
+    .topic-card.done .topic-name { color: var(--green-deep); }
+    .topic-emoji { font-size: 24px; flex-shrink: 0; }
+    .topic-info { flex: 1; }
+    .topic-name { font-size: 14px; font-weight: 600; color: var(--text-dark); display: block; }
+    .topic-level { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .topic-badge { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+    .done-badge { background: var(--green-pale); color: var(--green-deep); border: 1px solid var(--green-border); }
+    .todo-badge { background: var(--bg-section); color: var(--text-muted); border: 1px solid var(--border); }
+
+    /* ── CTA ── */
+    .cta-section { text-align: center; padding: 2rem 0 1rem; }
+    .btn-start { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--green-deep), var(--green-mid)); color: #fff; font-family: var(--sans); font-size: 16px; font-weight: 600; padding: 16px 36px; border-radius: 14px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(10,92,66,0.25); }
+    .btn-start:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(10,92,66,0.3); }
+    .btn-start-arrow { font-size: 20px; transition: transform 0.2s; }
+    .btn-start:hover .btn-start-arrow { transform: translateX(4px); }
+
+    /* ── TIP ── */
+    .tip-card {
+      background: linear-gradient(135deg, #FFF9EC, #fff 60%); border: 1.5px solid var(--amber-border);
+      border-radius: 18px; padding: 1.6rem 2rem; margin-bottom: 1.4rem; display: flex; gap: 16px; align-items: flex-start;
+    }
+    .tip-icon { font-size: 28px; flex-shrink: 0; }
+    .tip-title { font-size: 15px; font-weight: 600; color: var(--amber-mid); margin-bottom: 4px; }
+    .tip-text { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    .footer { text-align: center; margin-top: 2rem; padding: 1.6rem 0; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+    .footer-heart { color: var(--rose); }
+
+    @media (max-width: 480px) {
+      .hero { padding: 2rem 1.6rem 1.8rem; }
+      .hero-stats { gap: 0.8rem; }
+      .hero-stat { min-width: 100px; padding: 10px 14px; }
+      .wort-card, .quote-section, .tip-card, .card { padding: 1.4rem 1.2rem; }
+    }
   </style>
 </head>
 <body>
   <div class="page">
+    <!-- NAV -->
     <nav class="site-nav">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">Deutsch<em>Weg</em></a>
@@ -149,51 +211,76 @@
         <span class="nav-mobile-link disabled">&#128250; Medien &amp; Nachrichten</span>
       </div>
     </nav>
+
+    <!-- HERO -->
     <header class="hero">
-      <div class="hero-badge">Deutsch A2 &rarr; B1 &middot; Jeden Tag lernen</div>
-      <h1>Deutsch<em>Weg</em></h1>
-      <p class="hero-sub">Jeden Tag eine neue Seite &mdash; ein Thema, neue W&ouml;rter, ein Text, Grammatik und Gespr&auml;che.</p>
-      <div class="hero-meta">
-        <span class="hero-pill"><strong>Niveau:</strong> A2 &rarr; B1</span>
-        <span class="hero-pill"><strong>Format:</strong> 1 Seite pro Tag</span>
-        <span class="hero-pill"><strong>Themen:</strong> 10 geplant</span>
+      <div class="hero-badge">Willkommen bei DeutschWeg</div>
+      <h1>Lerne Deutsch.<br><em>Jeden Tag ein Schritt weiter.</em></h1>
+      <p class="hero-sub">Keine langen Lektionen, kein Stress. Einfach jeden Tag eine Seite &ouml;ffnen &mdash; lesen, neue W&ouml;rter lernen, sprechen &uuml;ben. So kommst du Schritt f&uuml;r Schritt von A2 zu B1.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-num">10</span><span class="hero-stat-label">Themen</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">100+</span><span class="hero-stat-label">neue W&ouml;rter</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">15 min</span><span class="hero-stat-label">pro Tag</span></div>
       </div>
     </header>
-    <div class="progress-banner">
+
+    <!-- WORD OF THE DAY -->
+    <div class="wort-card fade-in">
+      <div class="wort-label">Wort des Tages</div>
+      <div class="wort-word"><span class="article">die </span>Sehnsucht</div>
+      <div class="wort-trans">&#127988; longing, yearning &mdash; ein tiefes Gef&uuml;hl, etwas zu wollen</div>
+      <div class="wort-example">&laquo;Ich habe <strong>Sehnsucht</strong> nach dem Meer &mdash; ich will wieder ans Wasser.&raquo;</div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="quote-section fade-in">
+      <span class="quote-icon">&ldquo;</span>
+      <p class="quote-text">Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt.</p>
+      <p class="quote-author">&mdash; Ludwig Wittgenstein</p>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-banner fade-in">
       <div class="progress-text">
-        <strong>Unser Fortschritt</strong>
-        <p>2 von 10 Themen abgeschlossen &middot; weiter so!</p>
-        <div class="progress-bar-wrap"><div class="progress-bar-fill"></div></div>
+        <strong>Dein Fortschritt</strong>
+        <p>2 von 10 Themen abgeschlossen &mdash; weiter so!</p>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" data-target="20"></div></div>
       </div>
       <div class="progress-count">2 / 10</div>
     </div>
-    <div class="card">
-      <div class="card-header"><div class="card-num">1</div><span class="card-title">Wie funktioniert das Lernen?</span></div>
-      <ul class="steps-list">
-        <li><span class="step-icon">&#128197;</span><div><strong>Ein Thema pro Tag</strong>Jeden Tag &ouml;ffnest du eine neue Seite mit einem Alltagsthema.</div></li>
-        <li><span class="step-icon">&#128214;</span><div><strong>Text zum Lesen</strong>Ein kurzer Text auf A2-Niveau &mdash; du liest, verstehst und erz&auml;hlst nach.</div></li>
-        <li><span class="step-icon">&#128292;</span><div><strong>Neue W&ouml;rter</strong>8&ndash;10 wichtige Vokabeln mit Artikel und Beispiels&auml;tzen.</div></li>
-        <li><span class="step-icon">&#128172;</span><div><strong>Fragen zum Sprechen</strong>Antworte auf 6&ndash;8 Fragen &mdash; zuerst mit Notizen, dann frei.</div></li>
-        <li><span class="step-icon">&#128208;</span><div><strong>Grammatik &amp; H&ouml;ren</strong>Eine Grammatikregel pro Seite + H&ouml;raufgaben mit A/B/C-Antworten.</div></li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-header"><div class="card-num">2</div><span class="card-title">Warum ist das n&uuml;tzlich?</span></div>
-      <div class="why-grid">
-        <div class="why-item"><div class="why-icon">&#9201;</div><strong>Kurz &amp; t&auml;glich</strong><p>15&ndash;20 Minuten pro Tag reichen. Keine &Uuml;berforderung, aber echte Fortschritte.</p></div>
-        <div class="why-item"><div class="why-icon">&#128483;</div><strong>Echtes Deutsch</strong><p>Alltagssprache, kein Lehrbuch-Deutsch. Du lernst, was du wirklich brauchst.</p></div>
-        <div class="why-item"><div class="why-icon">&#129504;</div><strong>Sprechen &uuml;ben</strong><p>Jede Seite hat Gespr&auml;chsfragen &mdash; ideal f&uuml;r Tandem-Stunden zu zweit.</p></div>
-        <div class="why-item"><div class="why-icon">&#128200;</div><strong>Wortschatz aufbauen</strong><p>10 Themen &times; 10 W&ouml;rter = 100 neue W&ouml;rter. Schritt f&uuml;r Schritt zum B1.</p></div>
+
+    <!-- TIP -->
+    <div class="tip-card fade-in">
+      <div class="tip-icon">&#128161;</div>
+      <div>
+        <div class="tip-title">Tipp des Tages</div>
+        <div class="tip-text">Lies den Text laut vor! So trainierst du gleichzeitig Lesen, Aussprache und Intonation. Wenn du einen Satz nicht verstehst, lies ihn noch einmal &mdash; langsamer.</div>
       </div>
     </div>
-    <div class="start-section">
-      <a href="lessons/umwelt.html" class="btn-start">Start heute lernen &rarr;</a>
+
+    <!-- HOW IT WORKS -->
+    <div class="card fade-in">
+      <div class="card-header"><div class="card-num">1</div><span class="card-title">So funktioniert DeutschWeg</span></div>
+      <ul class="steps-list">
+        <li><span class="step-icon">&#128197;</span><div><strong>W&auml;hle ein Thema</strong>Jedes Thema ist eine komplette Lektion: Text, Vokabeln, Grammatik und Gespr&auml;chsfragen.</div></li>
+        <li><span class="step-icon">&#128214;</span><div><strong>Lies den Text</strong>Ein kurzer, einfacher Text auf A2-Niveau. Versuch ihn zuerst allein zu verstehen.</div></li>
+        <li><span class="step-icon">&#128292;</span><div><strong>Lerne neue W&ouml;rter</strong>8&ndash;10 wichtige Vokabeln mit Artikel, Plural und Beispiels&auml;tzen aus dem Alltag.</div></li>
+        <li><span class="step-icon">&#128172;</span><div><strong>Sprich &uuml;ber das Thema</strong>Beantworte die Fragen &mdash; erst mit Notizen, dann frei. Am besten zu zweit!</div></li>
+        <li><span class="step-icon">&#128208;</span><div><strong>Verstehe die Grammatik</strong>Eine Regel pro Seite, einfach erkl&auml;rt mit Beispielen, die du sofort benutzen kannst.</div></li>
+      </ul>
     </div>
-    <div class="card">
-      <div class="card-header"><div class="card-num">3</div><span class="card-title">Alle Themen &mdash; A2 &rarr; B1</span></div>
+
+    <!-- CTA -->
+    <div class="cta-section fade-in">
+      <a href="lessons/umwelt.html" class="btn-start">Jetzt starten <span class="btn-start-arrow">&rarr;</span></a>
+    </div>
+
+    <!-- TOPICS -->
+    <div class="card fade-in">
+      <div class="card-header"><div class="card-num">2</div><span class="card-title">Alle Themen</span></div>
       <div class="topics-grid">
-        <a href="lessons/umwelt.html" class="topic-card done"><span class="topic-emoji">&#127807;</span><div class="topic-info"><span class="topic-name">Die Umwelt</span><span class="topic-level">A2 &middot; Modalverben</span></div><span class="topic-badge done-badge">&#10003; fertig</span></a>
-        <a href="lessons/reisen.html" class="topic-card done"><span class="topic-emoji">&#9992;</span><div class="topic-info"><span class="topic-name">Das Reisen</span><span class="topic-level">A2 &middot; Perfekt</span></div><span class="topic-badge done-badge">&#10003; fertig</span></a>
+        <a href="lessons/umwelt.html" class="topic-card done"><span class="topic-emoji">&#127807;</span><div class="topic-info"><span class="topic-name">Die Umwelt</span><span class="topic-level">A2 &middot; Modalverben</span></div><span class="topic-badge done-badge">&#10003;</span></a>
+        <a href="lessons/reisen.html" class="topic-card done"><span class="topic-emoji">&#9992;</span><div class="topic-info"><span class="topic-name">Das Reisen</span><span class="topic-level">A2 &middot; Perfekt</span></div><span class="topic-badge done-badge">&#10003;</span></a>
         <a href="#" class="topic-card"><span class="topic-emoji">&#127829;</span><div class="topic-info"><span class="topic-name">Essen &amp; Kochen</span><span class="topic-level">A2 &middot; Imperativ</span></div><span class="topic-badge todo-badge">bald</span></a>
         <a href="#" class="topic-card"><span class="topic-emoji">&#127958;</span><div class="topic-info"><span class="topic-name">Freizeit</span><span class="topic-level">A2 &middot; Pr&auml;teritum</span></div><span class="topic-badge todo-badge">bald</span></a>
         <a href="#" class="topic-card"><span class="topic-emoji">&#128188;</span><div class="topic-info"><span class="topic-name">Arbeit &amp; Beruf</span><span class="topic-level">A2&ndash;B1 &middot; Konjunktiv II</span></div><span class="topic-badge todo-badge">bald</span></a>
@@ -204,10 +291,13 @@
         <a href="#" class="topic-card"><span class="topic-emoji">&#128250;</span><div class="topic-info"><span class="topic-name">Medien &amp; Nachrichten</span><span class="topic-level">B1 &middot; Passiv</span></div><span class="topic-badge todo-badge">bald</span></a>
       </div>
     </div>
-    <footer class="footer">DeutschWeg &middot; Niveau A2 &rarr; B1 &middot; T&auml;glich lernen</footer>
+
+    <footer class="footer">DeutschWeg &mdash; Dein Weg zur deutschen Sprache <span class="footer-heart">&hearts;</span></footer>
   </div>
+
   <script>
   (function() {
+    /* Nav dropdown */
     var hamburger = document.querySelector('.nav-hamburger');
     var mobileMenu = document.querySelector('.nav-mobile-menu');
     if (hamburger && mobileMenu) {
@@ -237,6 +327,31 @@
           topicsBtn.focus();
         }
       });
+    }
+
+    /* Fade-in on scroll */
+    var faders = document.querySelectorAll('.fade-in');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    faders.forEach(function(el) { observer.observe(el); });
+
+    /* Animated progress bar */
+    var bar = document.querySelector('.progress-bar-fill');
+    if (bar) {
+      var target = bar.getAttribute('data-target') || '20';
+      var progressObserver = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          bar.style.width = target + '%';
+          progressObserver.unobserve(bar);
+        }
+      }, { threshold: 0.5 });
+      progressObserver.observe(bar);
     }
   })();
   </script>
