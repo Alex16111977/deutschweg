@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch A2 — Essen &amp; Kochen</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep:   #0a5c42;
+    --green-mid:    #1D9E75;
+    --green-light:  #5DCAA5;
+    --green-pale:   #E1F5EE;
+    --green-border: #9FE1CB;
+    --blue-mid:     #378ADD;
+    --blue-pale:    #E6F1FB;
+    --amber-mid:    #BA7517;
+    --amber-pale:   #FAEEDA;
+    --text-dark:    #1a1a18;
+    --text-mid:     #4a4a46;
+    --text-muted:   #888780;
+    --bg-page:      #f5f3ed;
+    --bg-card:      #ffffff;
+    --bg-section:   #fafaf7;
+    --border:       rgba(0,0,0,0.09);
+    --serif:        'Fraunces', Georgia, serif;
+    --sans:         'DM Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg-page);
+    color: var(--text-dark);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+    position: relative;
+  }
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ── AURORA ANIMATED BACKGROUND ── */
+  .aurora{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-2;overflow:hidden}
+  .aurora-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:auroraMove 12s ease-in-out infinite alternate}
+  .aurora-blob:nth-child(1){width:500px;height:500px;background:linear-gradient(135deg,#5DCAA5,#1D9E75);top:-10%;left:-5%;animation-duration:14s}
+  .aurora-blob:nth-child(2){width:400px;height:400px;background:linear-gradient(135deg,#E65100,#BA7517);top:40%;right:-8%;animation-delay:-4s;animation-duration:16s}
+  .aurora-blob:nth-child(3){width:350px;height:350px;background:linear-gradient(135deg,#C2185B,#7C4DBC);bottom:-5%;left:20%;animation-delay:-8s;animation-duration:18s}
+  @keyframes auroraMove{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(60px,-40px) rotate(15deg) scale(1.1)}66%{transform:translate(-40px,50px) rotate(-10deg) scale(.9)}100%{transform:translate(30px,20px) rotate(5deg) scale(1.05)}}
+
+  /* ── FLOATING EMOJI ── */
+  .emoji-float{position:fixed;pointer-events:none;z-index:-1;font-size:24px;opacity:0;animation:emojiRise linear infinite}
+  @keyframes emojiRise{0%{opacity:0;transform:translateY(0) rotate(0deg) scale(.5)}10%{opacity:.15}50%{opacity:.12}90%{opacity:.05}100%{opacity:0;transform:translateY(-100vh) rotate(360deg) scale(1)}}
+
+  /* ── SECTION CARD ENHANCEMENTS ── */
+  .section{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+  .section:hover{box-shadow:0 12px 40px rgba(10,92,66,.1);transform:translateY(-3px)}
+  .section .sec-num{transition:transform .3s ease,box-shadow .3s ease}
+  .section:hover .sec-num{transform:scale(1.15) rotate(-5deg);box-shadow:0 4px 12px rgba(10,92,66,.25)}
+
+  /* ── SCROLL REVEAL ── */
+  .section,.mosaic-nav,.helper-section{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .section.revealed,.mosaic-nav.revealed,.helper-section.revealed{opacity:1;transform:translateY(0)}
+  .section:nth-child(even).revealed{transition-delay:.1s}
+
+  /* ── HERO HEADER ── */
+  .hero {
+    position: relative;
+    background: var(--green-deep);
+    border-radius: 20px;
+    padding: 2.5rem 2.5rem 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(93,202,165,0.12);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 60px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(93,202,165,0.07);
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    background: rgba(93,202,165,0.15);
+    border: 1px solid rgba(93,202,165,0.3);
+    border-radius: 6px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(32px, 5vw, 46px);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green-light);
+  }
+  .hero-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+  /* ── SECTION CARDS ── */
+  .section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.5rem;
+    background: var(--bg-section);
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-dark);
+  }
+  .section-body { padding: 1.5rem; }
+
+  /* ── QUESTIONS ── */
+  .qlist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .qlist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+  .qnum {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--green-light);
+    color: var(--green-deep);
+    font-size: 11px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+
+  /* ── WÖRTER GRID ── */
+  .woerter {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px;
+  }
+  .wort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+  .art {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    min-width: 26px;
+    text-align: center;
+  }
+  .art.der { background: #E6F1FB; color: #185FA5; }
+  .art.die { background: var(--green-pale); color: var(--green-deep); }
+  .art.das { background: var(--amber-pale); color: var(--amber-mid); }
+  .art.v   { background: #FAECE7; color: #993C1D; }
+  .wort-label { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+
+  /* ── VOCAB TABLE (reisen style) ── */
+  .vocab-table{width:100%;border-collapse:collapse;font-size:14px}
+  .vocab-table thead tr{background:var(--green-pale);border-radius:8px}
+  .vocab-table th{padding:8px 12px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--green-deep)}
+  .vocab-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+  .vocab-table tbody tr:last-child td{border-bottom:none}
+  .vocab-table tbody tr:hover{background:var(--bg-section)}
+  .vocab-art{color:var(--text-muted);font-size:12px;font-style:italic}
+  .vocab-word{font-weight:600;color:var(--text-dark)}
+  .vocab-ru{color:var(--text-mid)}
+  .vocab-ex{color:var(--text-muted);font-style:italic;font-size:13px}
+  .vocab-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;margin-left:4px}
+  .vocab-badge.verb{background:var(--blue-pale);color:var(--blue-mid)}
+  .vocab-badge.noun{background:var(--green-pale);color:var(--green-deep)}
+
+  /* ── TEXT BLOCK ── */
+  .reading {
+    border-left: 3px solid var(--green-light);
+    background: var(--green-pale);
+    border-radius: 0 12px 12px 0;
+    padding: 1.25rem 1.5rem;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-dark);
+  }
+  .reading p + p { margin-top: 10px; }
+
+  /* ── TASK BOX ── */
+  .task {
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+  .task strong { color: var(--text-dark); font-weight: 500; }
+  .task em { color: var(--green-deep); font-style: italic; }
+
+  /* ── GRAMMAR ── */
+  .grammar-chip {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #185FA5;
+    background: var(--blue-pale);
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+  .grammar-note {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .grammar-note strong { color: var(--text-dark); font-weight: 500; }
+  .grammar-note code {
+    font-family: monospace;
+    background: rgba(55,138,221,0.15);
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: #1a5fa8;
+    font-size: 13px;
+  }
+  .examples { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .examples li {
+    padding: 10px 14px;
+    border-left: 3px solid var(--blue-mid);
+    background: var(--blue-pale);
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-dark);
+  }
+  .examples li em {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 2px;
+  }
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .rule-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .rule-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dark);
+    vertical-align: top;
+  }
+  .rule-table td:first-child { font-weight: 500; color: var(--green-deep); width: 180px; }
+  .rule-table code {
+    font-family: monospace;
+    background: rgba(55,138,221,0.15);
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: #1a5fa8;
+    font-size: 13px;
+  }
+  .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+  .task-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  /* ── GRAMMAR CASE BOX ── */
+  .case-box {
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 12px;
+  }
+  .case-box-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--blue-mid);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .case-box p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+  .case-box p:last-child { margin-bottom: 0; }
+  .case-box strong { color: var(--text-dark); }
+  .case-box code {
+    font-family: monospace;
+    background: rgba(55,138,221,0.15);
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: #1a5fa8;
+    font-size: 13px;
+  }
+
+  /* ── DISKUSSION ── */
+  .dis-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+  }
+  .dis-item:last-child { border-bottom: none; }
+  .dis-dot {
+    flex-shrink: 0;
+    margin-top: 4px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--green-mid);
+  }
+  .dis-q {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .footer-line { height: 1px; flex: 1; background: var(--border); }
+
+  /* ── WORTLISTE SPRECHEN ── */
+  .woerter-speak {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .wort-speak {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+  .wort-speak .wort-de { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+  .wort-speak .wort-use { font-size: 12px; color: var(--text-muted); font-style: italic; }
+
+  /* ── HILFESÄTZE ── */
+  .hilfe-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .hilfe-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #FFF8F0;
+    border: 1px solid #FAC775;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.5;
+  }
+  .hilfe-icon {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    background: var(--amber-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+  }
+
+  /* ── SATZSTARTER ── */
+  .starter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+  }
+  .starter-item {
+    background: var(--blue-pale);
+    border: 1px solid #B5D4F4;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #0C447C;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .starter-item span {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: #378ADD;
+    margin-top: 2px;
+  }
+
+  /* ── MINI-AUFGABE ── */
+  .aufgabe-box {
+    border: 2px dashed var(--green-border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    background: var(--green-pale);
+  }
+  .aufgabe-box .aufgabe-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--green-deep);
+    background: #fff;
+    border: 1px solid var(--green-border);
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+  }
+  .aufgabe-box .aufgabe-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--green-deep);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .aufgabe-box .aufgabe-hints {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .aufgabe-box .aufgabe-hints li {
+    font-size: 13px;
+    color: var(--text-mid);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .aufgabe-box .aufgabe-hints li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--green-mid);
+    font-size: 12px;
+  }
+
+  /* ── BEISPIELANTWORTEN ── */
+  .beispiel-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .beispiel-list li {
+    position: relative;
+    padding: 12px 14px 12px 42px;
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.65;
+  }
+  .beispiel-list li::before {
+    content: attr(data-n);
+    position: absolute;
+    left: 14px;
+    top: 13px;
+    width: 20px; height: 20px;
+    background: var(--green-mid);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .sec-num.amber { background: var(--amber-mid); }
+  .sec-num.blue  { background: var(--blue-mid); }
+  .sec-num.coral { background: #D85A30; }
+
+  /* ── HELPER BLOCKS ── */
+  .helper-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber-mid);
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    overflow: hidden;
+  }
+  .helper-section.blue-accent  { border-left-color: var(--blue-mid); }
+  .helper-section.coral-accent { border-left-color: #D85A30; }
+  .helper-section.green-accent { border-left-color: var(--green-mid); }
+  .helper-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1.2rem;
+    background: var(--bg-section);
+    border-bottom: 1px solid var(--border);
+  }
+  .helper-badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 5px;
+    background: var(--amber-pale);
+    color: var(--amber-mid);
+    flex-shrink: 0;
+  }
+  .helper-badge.blue  { background: var(--blue-pale);  color: #185FA5; }
+  .helper-badge.coral { background: #FAECE7; color: #993C1D; }
+  .helper-badge.green { background: var(--green-pale); color: var(--green-deep); }
+  .helper-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--text-dark);
+  }
+  .helper-body { padding: 1.1rem 1.25rem; }
+
+  @media (max-width: 560px) { .helper-section { margin-left: 0.75rem; } }
+
+  @media (max-width: 560px) {
+    .hero { padding: 1.75rem 1.25rem 1.5rem; }
+    .section-body { padding: 1.25rem; }
+    .woerter { grid-template-columns: 1fr 1fr; }
+    .vocab-table .vocab-ex { display: none; }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .section { break-inside: avoid; }
+  }
+
+  /* ── SITE NAV ── */
+  .site-nav { margin-bottom: 1rem; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0; }
+  .nav-logo { text-decoration: none; font-family: var(--serif); font-size: 20px; font-weight: 300; color: var(--text-dark); }
+  .nav-logo em { font-style: italic; color: var(--green-deep); }
+  .nav-topics-wrap { position: relative; }
+  .nav-topics-btn { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text-mid); background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 8px 16px; cursor: pointer; transition: border-color 0.18s, box-shadow 0.18s; }
+  .nav-topics-btn:hover { border-color: var(--green-mid); box-shadow: 0 2px 8px rgba(10,92,66,0.08); }
+  .nav-chevron { font-size: 10px; margin-left: 4px; display: inline-block; transition: transform 0.2s; }
+  .nav-topics-btn[aria-expanded="true"] .nav-chevron { transform: rotate(180deg); }
+  .nav-dropdown { display: none; position: absolute; top: calc(100% + 8px); right: 0; width: 300px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); z-index: 100; overflow: hidden; }
+  .nav-dropdown.open { display: block; }
+  .nav-dropdown-header { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 14px 16px 8px; }
+  .nav-dropdown-list { list-style: none; padding: 0 8px 8px; max-height: 360px; overflow-y: auto; }
+  .nav-topic-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; text-decoration: none; font-size: 14px; color: var(--text-dark); transition: background 0.15s; border-left: 3px solid transparent; }
+  a.nav-topic-link:hover { background: var(--bg-section); }
+  .nav-topic-link.current { background: var(--green-pale); border-left-color: var(--green-mid); font-weight: 500; }
+  .nav-topic-emoji { font-size: 17px; flex-shrink: 0; width: 24px; text-align: center; }
+  .nav-topic-name { flex: 1; }
+  .nav-topic-check { color: var(--green-mid); font-size: 13px; font-weight: 600; }
+  .nav-topic-link.upcoming { color: var(--text-muted); cursor: default; }
+  .nav-topic-badge { font-size: 11px; color: var(--text-muted); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+  .nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile-menu { display: none; flex-direction: column; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 8px; margin-bottom: 1rem; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-link { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 8px; text-decoration: none; font-size: 14px; color: var(--text-dark); transition: background 0.15s; }
+  .nav-mobile-link:hover { background: var(--bg-section); }
+  .nav-mobile-link.current { background: var(--green-pale); font-weight: 500; color: var(--green-deep); }
+  .nav-mobile-link.disabled { color: var(--text-muted); pointer-events: none; }
+  .nav-mobile-divider { height: 1px; background: var(--border); margin: 4px 8px; }
+  .nav-mobile-heading { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); padding: 8px 12px 2px; }
+  .lesson-nav { display: flex; align-items: stretch; justify-content: space-between; gap: 10px; margin-top: 2rem; margin-bottom: 0.5rem; }
+  .lesson-nav-link { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; text-decoration: none; flex: 1; min-width: 0; transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s; }
+  .lesson-nav-link:hover:not(.disabled) { border-color: var(--green-mid); box-shadow: 0 4px 16px rgba(10,92,66,0.10); transform: translateY(-1px); }
+  .lesson-nav-link.next { flex-direction: row-reverse; text-align: right; }
+  .lesson-nav-link.next .lesson-nav-detail { align-items: flex-end; }
+  .lesson-nav-link.disabled { opacity: 0.4; cursor: default; }
+  .lesson-nav-arrow { font-size: 20px; color: var(--green-mid); flex-shrink: 0; }
+  .lesson-nav-detail { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .lesson-nav-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+  .lesson-nav-title { font-size: 14px; font-weight: 500; color: var(--text-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lesson-nav-all { display: flex; align-items: center; justify-content: center; width: 44px; flex-shrink: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; text-decoration: none; font-size: 20px; color: var(--text-muted); transition: border-color 0.18s, color 0.18s; }
+  .lesson-nav-all:hover { border-color: var(--green-mid); color: var(--green-deep); }
+  @media (max-width: 560px) {
+    .nav-topics-wrap { display: none; }
+    .nav-hamburger { display: flex; }
+    .lesson-nav { flex-direction: column; }
+    .lesson-nav-link.next { flex-direction: row; text-align: left; }
+    .lesson-nav-link.next .lesson-nav-detail { align-items: flex-start; }
+    .lesson-nav-all { width: 100%; padding: 10px; }
+  }
+  @media (min-width: 561px) { .nav-mobile-menu { display: none !important; } }
+
+  /* ── SECTION MOSAIC NAV ── */
+  .mosaic-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;padding:0}
+  .mosaic-tile{flex:1 1 calc(33.33% - 8px);min-width:100px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;text-decoration:none;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+  .mosaic-tile:hover{border-color:var(--green-mid);box-shadow:0 4px 16px rgba(10,92,66,.1);transform:translateY(-2px)}
+  .mosaic-tile.active{border-color:var(--green-mid);background:var(--green-pale)}
+  .mosaic-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  .mosaic-icon.speak{background:#E6F1FB;color:#378ADD}
+  .mosaic-icon.vocab{background:#E1F5EE;color:#0a5c42}
+  .mosaic-icon.read{background:#FFF3E0;color:#E65100}
+  .mosaic-icon.question{background:#FCE4EC;color:#C2185B}
+  .mosaic-icon.retell{background:#F3E5F5;color:#8E24AA}
+  .mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
+  .mosaic-icon.discuss{background:#E0F7FA;color:#00838F}
+  .mosaic-icon.listen{background:#EDE7F6;color:#5E35B1}
+  .mosaic-info{min-width:0}
+  .mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
+  .mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mosaic-tile:hover .mosaic-label{color:var(--green-deep)}
+
+  /* ── STICKY PROGRESS BAR ── */
+  .sticky-bar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;justify-content:center;transform:translateY(-100%);transition:transform .3s ease;pointer-events:none}
+  .sticky-bar.visible{transform:translateY(0);pointer-events:auto}
+  .sticky-pip{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s;border:2px solid transparent;background:var(--bg-section);position:relative;flex-shrink:0;text-decoration:none}
+  .sticky-pip:hover{transform:scale(1.15);border-color:var(--green-border)}
+  .sticky-pip.active{border-color:var(--green-mid);background:var(--green-pale);transform:scale(1.1);box-shadow:0 2px 8px rgba(29,158,117,.25)}
+  .sticky-pip .pip-tooltip{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--green-deep);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+  .sticky-pip:hover .pip-tooltip{opacity:1}
+  .sticky-pip .pip-tooltip::before{content:'';position:absolute;top:-4px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid var(--green-deep)}
+  .sticky-divider{width:1px;height:20px;background:var(--border);flex-shrink:0;margin:0 2px}
+  .sticky-current{font-size:12px;font-weight:600;color:var(--green-deep);margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+
+  @media(max-width:560px){
+    .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
+    .mosaic-icon{width:30px;height:30px;font-size:15px}
+    .mosaic-label{font-size:12px}
+    .sticky-pip{width:30px;height:30px;font-size:13px;border-radius:8px}
+    .sticky-current{display:none}
+    .sticky-divider{display:none}
+  }
+
+  /* ── AUDIO TASKS ── */
+  .audio-task { border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg-card); margin-bottom:12px; }
+  .audio-task-head { display:flex; align-items:center; gap:12px; padding:11px 16px; background:var(--bg-section); border-bottom:1px solid var(--border); }
+  .audio-task-num { width:26px;height:26px;border-radius:50%;background:#7F77DD;color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+  .audio-task-label { font-size:14px;font-weight:500;color:var(--text-dark); }
+  .audio-task-body { padding:14px 16px; }
+  .audio-play-btn { display:inline-flex;align-items:center;gap:8px;background:#7F77DD;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit; }
+  .audio-play-btn:hover { background:#534AB7; }
+  .audio-options { display:flex;flex-direction:column;gap:8px;margin-top:12px; }
+  .audio-opt { display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1.5px solid var(--border);border-radius:9px;cursor:pointer;font-size:14px;color:var(--text-dark);background:var(--bg-card);line-height:1.5; }
+  .audio-opt:hover { border-color:#AFA9EC;background:#EEEDFE; }
+  .audio-opt.correct { border-color:#1D9E75;background:var(--green-pale);color:var(--green-deep);pointer-events:none; }
+  .audio-opt.wrong   { border-color:#E24B4A;background:#FCEBEB;color:#A32D2D;pointer-events:none; }
+  .audio-opt.disabled { pointer-events:none; }
+  .opt-letter { width:22px;height:22px;border-radius:50%;background:#CECBF6;color:#3C3489;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px; }
+  .audio-opt.correct .opt-letter { background:#1D9E75;color:#fff; }
+  .audio-opt.wrong   .opt-letter { background:#E24B4A;color:#fff; }
+  .audio-feedback { margin-top:10px;font-size:13px;padding:8px 12px;border-radius:8px; }
+  .audio-feedback.ok  { background:var(--green-pale);color:var(--green-deep);border:1px solid var(--green-border); }
+  .audio-feedback.err { background:#FCEBEB;color:#A32D2D;border:1px solid #F7C1C1; }
+
+  /* ── QA LIST (collapsible answers) ── */
+  .qa-list{display:flex;flex-direction:column;gap:10px}
+  .qa-item{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .qa-question{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;font-size:14px;line-height:1.5;color:var(--text-mid);background:var(--bg-section);cursor:pointer;user-select:none}
+  .qa-question:hover{background:#f0ede5}
+  .qa-qnum{font-weight:700;color:var(--green-deep);flex-shrink:0;min-width:22px}
+  .qa-qtext{flex:1}
+  .qa-toggle{font-size:12px;color:var(--text-muted);flex-shrink:0;margin-left:auto;padding-top:1px;transition:transform .2s}
+  .qa-answer{display:none;padding:10px 14px 12px 48px;font-size:13px;color:var(--text-dark);background:#fff;border-top:1px solid var(--border);line-height:1.6}
+  .qa-answer.open{display:block}
+  .qa-answer strong{color:var(--green-deep)}
+
+  /* ── EXERCISES ── */
+  .ex-block{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px}
+  .ex-header{background:var(--green-pale);padding:10px 14px;font-size:13px;font-weight:600;color:var(--green-deep);display:flex;align-items:center;gap:8px}
+  .ex-header .ex-num{width:22px;height:22px;border-radius:50%;background:var(--green-deep);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ex-body{padding:12px 14px;background:#fff}
+  .ex-task{font-size:14px;color:var(--text-mid);margin-bottom:10px;line-height:1.5;font-style:italic}
+  .ex-items{display:flex;flex-direction:column;gap:8px}
+  .ex-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5}
+  .ex-item label{cursor:pointer;color:var(--text-mid)}
+  .ex-item input[type=radio]{accent-color:var(--green-mid);margin-top:2px}
+  .ex-feedback{margin-top:10px;font-size:13px;padding:8px 12px;border-radius:8px;display:none}
+  .ex-feedback.show{display:block}
+  .ex-feedback.ok{background:var(--green-pale);color:var(--green-deep)}
+  .ex-feedback.fail{background:#FDECEA;color:#C0392B}
+  .ex-btn{margin-top:10px;padding:7px 16px;background:var(--green-mid);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .15s}
+  .ex-btn:hover{background:var(--green-deep)}
+  .blank-sentence{font-size:15px;line-height:2;color:var(--text-dark);margin-bottom:10px}
+  .blank-input{display:inline-block;border:none;border-bottom:2px solid var(--green-border);background:transparent;font-size:15px;font-family:var(--sans);color:var(--green-deep);padding:0 4px;min-width:90px;outline:none;text-align:center}
+  .blank-input:focus{border-color:var(--green-mid)}
+  .blank-input.correct-input{border-color:var(--green-mid);background:var(--green-pale);border-radius:4px}
+  .blank-input.wrong-input{border-color:#C0392B;background:#FDECEA;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ── AURORA BACKGROUND ── -->
+<div class="aurora">
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+</div>
+
+<!-- ── STICKY PROGRESS BAR ── -->
+<div class="sticky-bar" id="sticky-bar">
+  <a class="sticky-pip" href="#s-vocab" data-section="s-vocab">&#128292;<span class="pip-tooltip">Neue W&ouml;rter</span></a>
+  <a class="sticky-pip" href="#s-speak" data-section="s-speak">&#128172;<span class="pip-tooltip">Sprechen</span></a>
+  <a class="sticky-pip" href="#s-read" data-section="s-read">&#128214;<span class="pip-tooltip">Lesen</span></a>
+  <a class="sticky-pip" href="#s-question" data-section="s-question">&#10067;<span class="pip-tooltip">Fragen</span></a>
+  <a class="sticky-pip" href="#s-retell" data-section="s-retell">&#128257;<span class="pip-tooltip">Nacherz&auml;hlung</span></a>
+  <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">&#128208;<span class="pip-tooltip">Grammatik</span></a>
+  <a class="sticky-pip" href="#s-discuss" data-section="s-discuss">&#128483;<span class="pip-tooltip">Diskussion</span></a>
+  <a class="sticky-pip" href="#s-listen" data-section="s-listen">&#127911;<span class="pip-tooltip">H&ouml;ren</span></a>
+  <div class="sticky-divider"></div>
+  <span class="sticky-current" id="sticky-current"></span>
+</div>
+
+<div class="page">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Deutsch<em>Weg</em></a>
+      <div class="nav-topics-wrap">
+        <button class="nav-topics-btn" aria-expanded="false" aria-controls="topics-dropdown">Themen <span class="nav-chevron">&#9662;</span></button>
+        <div class="nav-dropdown" id="topics-dropdown" role="menu">
+          <div class="nav-dropdown-header">Alle Themen &mdash; A2 &rarr; B1</div>
+          <ul class="nav-dropdown-list">
+            <li><a href="umwelt.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#127807;</span><span class="nav-topic-name">Die Umwelt</span><span class="nav-topic-check">&#10003;</span></a></li>
+            <li><a href="reisen.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#9992;</span><span class="nav-topic-name">Das Reisen</span><span class="nav-topic-check">&#10003;</span></a></li>
+            <li><a href="kochen.html" class="nav-topic-link done current" role="menuitem" aria-current="page"><span class="nav-topic-emoji">&#127829;</span><span class="nav-topic-name">Essen &amp; Kochen</span><span class="nav-topic-check">&#10003;</span></a></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127958;</span><span class="nav-topic-name">Freizeit</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128188;</span><span class="nav-topic-name">Arbeit &amp; Beruf</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128187;</span><span class="nav-topic-name">Internet &amp; Technik</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128107;</span><span class="nav-topic-name">Freunde &amp; Beziehungen</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128106;</span><span class="nav-topic-name">Die Familie</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127973;</span><span class="nav-topic-name">Gesundheit</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128250;</span><span class="nav-topic-name">Medien &amp; Nachrichten</span><span class="nav-topic-badge">bald</span></span></li>
+          </ul>
+        </div>
+      </div>
+      <button class="nav-hamburger" aria-label="Men&uuml; &ouml;ffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile-menu" aria-hidden="true">
+      <a href="../index.html" class="nav-mobile-link">&#127968; Startseite</a>
+      <div class="nav-mobile-divider"></div>
+      <div class="nav-mobile-heading">Alle Themen</div>
+      <a href="umwelt.html" class="nav-mobile-link">&#127807; Die Umwelt <span>&#10003;</span></a>
+      <a href="reisen.html" class="nav-mobile-link">&#9992; Das Reisen <span>&#10003;</span></a>
+      <a href="kochen.html" class="nav-mobile-link current">&#127829; Essen &amp; Kochen <span>&#10003;</span></a>
+      <span class="nav-mobile-link disabled">&#127958; Freizeit</span>
+      <span class="nav-mobile-link disabled">&#128188; Arbeit &amp; Beruf</span>
+      <span class="nav-mobile-link disabled">&#128187; Internet &amp; Technik</span>
+      <span class="nav-mobile-link disabled">&#128107; Freunde &amp; Beziehungen</span>
+      <span class="nav-mobile-link disabled">&#128106; Die Familie</span>
+      <span class="nav-mobile-link disabled">&#127973; Gesundheit</span>
+      <span class="nav-mobile-link disabled">&#128250; Medien &amp; Nachrichten</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Deutsch A2 &middot; Konversation</div>
+    <h1>Essen &amp; <em>Kochen</em></h1>
+    <div class="hero-meta">
+      <span>Niveau A2</span>
+      <span>Sprechen &middot; Lesen &middot; Grammatik</span>
+    </div>
+  </div>
+
+<!-- ── SECTION MOSAIC ── -->
+<nav class="mosaic-nav" id="mosaic-nav">
+  <a class="mosaic-tile" href="#s-vocab">
+    <div class="mosaic-icon vocab">&#128292;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 1</div><div class="mosaic-label">Neue W&ouml;rter</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-speak">
+    <div class="mosaic-icon speak">&#128172;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 2</div><div class="mosaic-label">Sprechen</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-read">
+    <div class="mosaic-icon read">&#128214;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 3</div><div class="mosaic-label">Lesen</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-question">
+    <div class="mosaic-icon question">&#10067;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 4</div><div class="mosaic-label">Fragen</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-retell">
+    <div class="mosaic-icon retell">&#128257;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 5</div><div class="mosaic-label">Nacherz&auml;hlung</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-grammar">
+    <div class="mosaic-icon grammar">&#128208;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 6</div><div class="mosaic-label">Grammatik</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-discuss">
+    <div class="mosaic-icon discuss">&#128483;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 7</div><div class="mosaic-label">Diskussion</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-listen">
+    <div class="mosaic-icon listen">&#127911;</div>
+    <div class="mosaic-info"><div class="mosaic-step">Schritt 8</div><div class="mosaic-label">H&ouml;ren</div></div>
+  </a>
+</nav>
+
+  <!-- 1. Neue W&ouml;rter -->
+  <div class="section" id="s-vocab">
+    <div class="section-head">
+      <div class="sec-num">1</div>
+      <h2 class="sec-title">Neue W&ouml;rter</h2>
+    </div>
+    <div class="section-body">
+      <table class="vocab-table">
+        <thead>
+          <tr><th>Artikel</th><th>Wort</th><th>&Uuml;bersetzung</th><th>Beispiel</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="vocab-art">das</td>
+            <td><span class="vocab-word">Gericht, -e</span><span class="vocab-badge noun">Nomen</span></td>
+            <td class="vocab-ru">блюдо</td>
+            <td class="vocab-ex">Mein Lieblingsgericht ist Pasta mit Pilzen und K&auml;se.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">die</td>
+            <td><span class="vocab-word">Zutat, -en</span><span class="vocab-badge noun">Nomen</span></td>
+            <td class="vocab-ru">інгредієнт</td>
+            <td class="vocab-ex">F&uuml;r dieses Rezept braucht man nur f&uuml;nf Zutaten.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">der</td>
+            <td><span class="vocab-word">Geschmack</span><span class="vocab-badge noun">Nomen</span></td>
+            <td class="vocab-ru">смак</td>
+            <td class="vocab-ex">Der Geschmack von frischem Brot ist einfach wunderbar.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">die</td>
+            <td><span class="vocab-word">Pfanne, -n</span><span class="vocab-badge noun">Nomen</span></td>
+            <td class="vocab-ru">сковорідка</td>
+            <td class="vocab-ex">Brate die Zwiebeln in einer hei&szlig;en Pfanne mit etwas &Ouml;l.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">der</td>
+            <td><span class="vocab-word">Topf, T&ouml;pfe</span><span class="vocab-badge noun">Nomen</span></td>
+            <td class="vocab-ru">каструля</td>
+            <td class="vocab-ex">Koch das Wasser in einem gro&szlig;en Topf und gib die Nudeln hinein.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">das</td>
+            <td><span class="vocab-word">Rezept, -e</span><span class="vocab-badge noun">Nomen</span></td>
+            <td class="vocab-ru">рецепт</td>
+            <td class="vocab-ex">Ich habe das Rezept von meiner Oma &mdash; es ist schon 50 Jahre alt!</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">die</td>
+            <td><span class="vocab-word">Mahlzeit, -en</span><span class="vocab-badge noun">Nomen</span></td>
+            <td class="vocab-ru">прийом їжі</td>
+            <td class="vocab-ex">Das Mittagessen ist f&uuml;r mich die wichtigste Mahlzeit am Tag.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">&mdash;</td>
+            <td><span class="vocab-word">braten</span><span class="vocab-badge verb">Verb</span></td>
+            <td class="vocab-ru">смажити</td>
+            <td class="vocab-ex">Ich brate das Fleisch zehn Minuten auf jeder Seite.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">&mdash;</td>
+            <td><span class="vocab-word">schneiden</span><span class="vocab-badge verb">Verb</span></td>
+            <td class="vocab-ru">різати</td>
+            <td class="vocab-ex">Schneide die Tomaten in kleine St&uuml;cke und gib sie in die Sch&uuml;ssel.</td>
+          </tr>
+          <tr>
+            <td class="vocab-art">&mdash;</td>
+            <td><span class="vocab-word">w&uuml;rzen</span><span class="vocab-badge verb">Verb</span></td>
+            <td class="vocab-ru">приправляти</td>
+            <td class="vocab-ex">W&uuml;rze die Suppe mit Salz, Pfeffer und ein bisschen Paprika.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 2. Fragen zum Sprechen -->
+  <div class="section" id="s-speak">
+    <div class="section-head">
+      <div class="sec-num">2</div>
+      <h2 class="sec-title">Fragen zum Sprechen</h2>
+    </div>
+    <div class="section-body">
+      <ul class="qlist">
+        <li><span class="qnum">1</span>Was isst du am liebsten? Hast du ein Lieblingsgericht?</li>
+        <li><span class="qnum">2</span>Kochst du oft zu Hause oder isst du lieber im Restaurant?</li>
+        <li><span class="qnum">3</span>Wer kocht bei dir zu Hause? Kochst du manchmal selbst?</li>
+        <li><span class="qnum">4</span>Was ist ein typisches Gericht in deinem Land? Beschreibe es.</li>
+        <li><span class="qnum">5</span>Fr&uuml;hst&uuml;ckst du jeden Morgen? Was isst du normalerweise zum Fr&uuml;hst&uuml;ck?</li>
+        <li><span class="qnum">6</span>Isst du gern Fleisch oder bist du Vegetarier/Veganer? Warum?</li>
+        <li><span class="qnum">7</span>Hast du schon einmal ein deutsches Gericht probiert? Was war das?</li>
+        <li><span class="qnum">8</span>Welches Essen magst du gar nicht? Warum?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. Kurzer Text -->
+  <div class="section" id="s-read">
+    <div class="section-head">
+      <div class="sec-num">3</div>
+      <h2 class="sec-title">Kurzer Text &mdash; Lesen</h2>
+    </div>
+    <div class="section-body">
+      <div class="reading">
+        <p>In Deutschland isst man normalerweise dreimal am Tag: zum Fr&uuml;hst&uuml;ck, zum Mittagessen und zum Abendessen. Das Fr&uuml;hst&uuml;ck ist f&uuml;r viele Deutsche sehr wichtig. Sie essen Brot oder Br&ouml;tchen mit K&auml;se, Wurst oder Marmelade und trinken dazu Kaffee oder Tee. Am Wochenende fr&uuml;hst&uuml;cken viele Familien zusammen und nehmen sich mehr Zeit. Dann gibt es auch Eier, Joghurt, M&uuml;sli und frisches Obst.</p>
+        <p>Das Mittagessen ist oft die Hauptmahlzeit. Viele Familien kochen dann ein warmes Gericht &mdash; zum Beispiel Kartoffeln mit Gem&uuml;se und Fleisch oder Fisch. Wer arbeitet, isst oft in der Kantine oder in einem Restaurant. Manche Leute bringen sich auch Essen von zu Hause mit &mdash; das spart Geld und ist oft ges&uuml;nder.</p>
+        <p>Am Abend essen viele Deutsche kalt: Brot mit K&auml;se, Wurst und Salat. Das nennt man &laquo;Abendbrot&raquo;. Aber nat&uuml;rlich kochen manche Leute auch am Abend warm &mdash; besonders wenn die ganze Familie zusammen isst. Beliebt sind zum Beispiel Suppen, Aufläufe oder einfache Nudelgerichte.</p>
+        <p>Typische deutsche Gerichte sind zum Beispiel Schnitzel, Bratwurst, Kartoffelsalat, Sauerbraten und Sp&auml;tzle. In S&uuml;ddeutschland isst man gerne Knödel und Schweinebraten, im Norden eher Fisch und Labskaus. Jede Region hat ihre eigenen Spezialit&auml;ten.</p>
+        <p>Aber die deutsche K&uuml;che hat sich in den letzten Jahren stark ver&auml;ndert. Viele Deutsche essen heute gerne international: Pizza, Pasta, Sushi, D&ouml;ner, Curry oder Pho. In den gro&szlig;en St&auml;dten findet man Restaurants aus der ganzen Welt. Au&szlig;erdem gibt es immer mehr Vegetarier und Veganer. Sie kochen ohne Fleisch und benutzen pflanzliche Zutaten wie Tofu, Linsen oder Kichererbsen.</p>
+        <p>Kochen ist f&uuml;r viele Deutsche ein beliebtes Hobby geworden. Im Internet und auf YouTube gibt es Tausende von Rezepten. Kochsendungen im Fernsehen sind sehr popul&auml;r. Und immer mehr junge Leute gehen in Kochkurse, um neue Gerichte zu lernen. Essen verbindet &mdash; und gemeinsam kochen macht besonders viel Spa&szlig;.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Fragen zum Text -->
+  <div class="section" id="s-question">
+    <div class="section-head">
+      <div class="sec-num">4</div>
+      <h2 class="sec-title">Fragen zum Text</h2>
+    </div>
+    <div class="section-body">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Спочатку спробуй сам(а), потім клікни &laquo;Відповідь&raquo;!</p>
+      <div class="qa-list">
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleAnswer(this)">
+            <span class="qa-qnum">1</span>
+            <span class="qa-qtext">Was essen die Deutschen normalerweise zum Fr&uuml;hst&uuml;ck?</span>
+            <span class="qa-toggle">&#9654; Відповідь</span>
+          </div>
+          <div class="qa-answer">Die Deutschen essen zum Fr&uuml;hst&uuml;ck <strong>Brot oder Br&ouml;tchen mit K&auml;se, Wurst oder Marmelade</strong> und trinken Kaffee oder Tee. Am Wochenende gibt es auch Eier, Joghurt, M&uuml;sli und frisches Obst.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleAnswer(this)">
+            <span class="qa-qnum">2</span>
+            <span class="qa-qtext">Welche Mahlzeit ist in Deutschland oft die Hauptmahlzeit?</span>
+            <span class="qa-toggle">&#9654; Відповідь</span>
+          </div>
+          <div class="qa-answer"><strong>Das Mittagessen</strong> ist oft die Hauptmahlzeit. Viele Familien kochen dann ein warmes Gericht, z.&thinsp;B. Kartoffeln mit Gem&uuml;se und Fleisch.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleAnswer(this)">
+            <span class="qa-qnum">3</span>
+            <span class="qa-qtext">Was bedeutet &laquo;Abendbrot&raquo;?</span>
+            <span class="qa-toggle">&#9654; Відповідь</span>
+          </div>
+          <div class="qa-answer">&laquo;Abendbrot&raquo; bedeutet, dass man am Abend <strong>kalt isst: Brot mit K&auml;se, Wurst und Salat</strong>. Es ist kein warmes Gericht.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleAnswer(this)">
+            <span class="qa-qnum">4</span>
+            <span class="qa-qtext">Welche typischen deutschen Gerichte nennt der Text? Nenne mindestens vier.</span>
+            <span class="qa-toggle">&#9654; Відповідь</span>
+          </div>
+          <div class="qa-answer">Der Text nennt: <strong>Schnitzel, Bratwurst, Kartoffelsalat, Sauerbraten und Sp&auml;tzle</strong>. In S&uuml;ddeutschland auch Kn&ouml;del und Schweinebraten, im Norden Fisch und Labskaus.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleAnswer(this)">
+            <span class="qa-qnum">5</span>
+            <span class="qa-qtext">Warum sagt der Text, dass das Essen in Deutschland &laquo;international&raquo; geworden ist?</span>
+            <span class="qa-toggle">&#9654; Відповідь</span>
+          </div>
+          <div class="qa-answer">Weil viele Deutsche heute gerne <strong>Pizza, Pasta, Sushi, D&ouml;ner, Curry oder Pho</strong> essen. In den gro&szlig;en St&auml;dten findet man Restaurants aus der ganzen Welt.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleAnswer(this)">
+            <span class="qa-qnum">6</span>
+            <span class="qa-qtext">Was hat sich in den letzten Jahren in der deutschen K&uuml;che ver&auml;ndert?</span>
+            <span class="qa-toggle">&#9654; Відповідь</span>
+          </div>
+          <div class="qa-answer">Es gibt <strong>immer mehr Vegetarier und Veganer</strong>, die pflanzliche Zutaten wie Tofu, Linsen oder Kichererbsen benutzen. Au&szlig;erdem ist <strong>Kochen ein beliebtes Hobby</strong> geworden &mdash; viele schauen Kochvideos und gehen in Kochkurse.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Nacherz&auml;hlung -->
+  <div class="section" id="s-retell">
+    <div class="section-head">
+      <div class="sec-num">5</div>
+      <h2 class="sec-title">Nacherz&auml;hlung</h2>
+    </div>
+    <div class="section-body">
+      <div class="task">
+        <strong>Aufgabe:</strong> Erz&auml;hle den Text mit deinen eigenen Worten nach. Benutze <em>nicht</em> dieselben S&auml;tze wie im Text.<br><br>
+        Antworte auf diese Fragen: <em>Wie essen die Deutschen? Was sind typische Gerichte? Was hat sich ver&auml;ndert?</em><br><br>
+        Sprich in <strong>4&ndash;6 S&auml;tzen</strong>. Du kannst die W&ouml;rter aus Abschnitt 2 benutzen.
+      </div>
+    </div>
+  </div>
+
+  <!-- HILFE: Beispielantworten (collapsible) -->
+  <div class="helper-section coral-accent">
+    <div class="helper-head" style="cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none';this.querySelector('.helper-toggle').textContent=b.style.display==='none'?'▶ Показати':'▼ Сховати';">
+      <span class="helper-badge coral">Beispiel</span>
+      <h3 class="helper-title">Beispielantworten &mdash; A2-Niveau</h3>
+      <span class="helper-toggle" style="margin-left:auto;font-size:12px;color:var(--text-muted);">&#9654; Показати</span>
+    </div>
+    <div class="helper-body" style="display:none;">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">So kann man auf A2-Niveau antworten:</p>
+      <ul class="beispiel-list">
+        <li data-n="1">Der Text erz&auml;hlt &uuml;ber das Essen in Deutschland. Die Deutschen essen dreimal am Tag &mdash; morgens, mittags und abends.</li>
+        <li data-n="2">Zum Fr&uuml;hst&uuml;ck essen die Deutschen Brot mit K&auml;se oder Marmelade. Das Mittagessen ist meistens warm &mdash; zum Beispiel Kartoffeln mit Fleisch.</li>
+        <li data-n="3">Am Abend essen viele kalt &mdash; das nennt man &laquo;Abendbrot&raquo;. Aber manche kochen auch warm.</li>
+        <li data-n="4">In Deutschland gibt es viele typische Gerichte, aber die Deutschen essen auch gern internationales Essen wie Pizza oder Sushi.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 6. Grammatik -->
+  <div class="section" id="s-grammar">
+    <div class="section-head">
+      <div class="sec-num blue">6</div>
+      <h2 class="sec-title">Граматика: дієслова з прийменниками 📐</h2>
+    </div>
+    <div class="section-body">
+      <div class="grammar-chip">Verben mit Pr&auml;positionen &amp; Pronominaladverbien (darauf, dar&uuml;ber, wor&uuml;ber &hellip;)</div>
+
+      <!-- Крок 1 -->
+      <div class="case-box">
+        <div class="case-box-title">🔷 Крок 1 &mdash; Що таке дієслова з прийменниками?</div>
+        <p>Багато німецьких дієслів вимагають після себе <strong>фіксований прийменник</strong> &mdash; як і в українській. Наприклад: <strong>сподіватися на</strong> щось, <strong>говорити про</strong> щось, <strong>думати про</strong> когось.</p>
+        <p>У німецькій: <code>hoffen auf</code> (сподіватися на), <code>sprechen &uuml;ber</code> (говорити про), <code>denken an</code> (думати про). Ці комбінації потрібно <strong>вчити напам'ять</strong> &mdash; прийменники не збігаються з українськими!</p>
+      </div>
+
+      <div class="grammar-note">
+        <strong>Але увага:</strong> коли після прийменника стоїть <strong>неживий об'єкт</strong> (річ, ідея, погода...), в німецькій використовують особливі форми: <code>da(r)+прийменник</code> і <code>wo(r)+прийменник</code>. Розглянемо всі 6 випадків:
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Випадок 1 -->
+      <div class="case-box">
+        <div class="case-box-title">Випадок 1: Дієслово + прийменник + іменник</div>
+        <p>Все як звичайно &mdash; дієслово, потім прийменник, потім іменник.</p>
+      </div>
+      <ul class="examples">
+        <li>Ich <strong>hoffe auf</strong> gutes Wetter. <em>(Я сподіваюся на гарну погоду.)</em></li>
+        <li>Ich <strong>spreche &uuml;ber</strong> meine Reise. <em>(Я говорю про свою подорож.)</em></li>
+      </ul>
+
+      <!-- Випадок 2 -->
+      <div class="case-box">
+        <div class="case-box-title">Випадок 2: Дієслово + прийменник + займенник (ЖИВЕ)</div>
+        <p>Коли мова про <strong>людину</strong> (живу істоту), використовуємо звичайний займенник після прийменника &mdash; як в українській.</p>
+      </div>
+      <ul class="examples">
+        <li>Ich <strong>hoffe auf</strong> sie. <em>(Я сподіваюся на неї &mdash; на подругу.)</em></li>
+        <li>Ich <strong>spreche &uuml;ber</strong> ihn. <em>(Я говорю про нього &mdash; про друга.)</em></li>
+      </ul>
+
+      <!-- Випадок 3 -->
+      <div class="case-box" style="background:var(--blue-pale);border-color:#b8d4f0;">
+        <div class="case-box-title" style="color:var(--blue-mid);">Випадок 3: Дієслово + da(r)+прийменник (НЕЖИВЕ) ⚡</div>
+        <p>Коли мова про <strong>річ, ідею, погоду</strong> (щось неживе!), ми <strong>не можемо</strong> сказати <em>auf es, &uuml;ber es</em>. Замість цього використовуємо <code>da + прийменник</code>. Якщо прийменник починається на голосну (auf, &uuml;ber, an...), додаємо <strong>r</strong>: <code>dar+auf</code>, <code>dar+&uuml;ber</code>.</p>
+      </div>
+      <table class="rule-table">
+        <thead>
+          <tr><th>Прийменник</th><th>da(r)+форма</th><th>Приклад</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>auf</td><td><code>darauf</code></td><td>Ich hoffe <strong>darauf</strong>. (на гарну погоду)</td></tr>
+          <tr><td>&uuml;ber</td><td><code>dar&uuml;ber</code></td><td>Ich spreche <strong>dar&uuml;ber</strong>. (про їжу)</td></tr>
+          <tr><td>an</td><td><code>daran</code></td><td>Ich denke <strong>daran</strong>. (про рецепт)</td></tr>
+          <tr><td>mit</td><td><code>damit</code></td><td>Ich bin <strong>damit</strong> zufrieden. (стравою)</td></tr>
+          <tr><td>f&uuml;r</td><td><code>daf&uuml;r</code></td><td>Ich bin <strong>daf&uuml;r</strong>. (за план)</td></tr>
+          <tr><td>von</td><td><code>davon</code></td><td>Ich tr&auml;ume <strong>davon</strong>. (про подорож)</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Випадок 4 -->
+      <div class="case-box">
+        <div class="case-box-title">Випадок 4: Питання про ЖИВЕ &rarr; прийменник + wen/wem</div>
+        <p>Питання про <strong>людину</strong>: починаємо з прийменника + <code>wen</code> (Akk.) або <code>wem</code> (Dat.).</p>
+      </div>
+      <ul class="examples">
+        <li><strong>Auf wen</strong> hoffst du? <em>(На кого ти сподіваєшся?)</em></li>
+        <li><strong>&Uuml;ber wen</strong> sprichst du? <em>(Про кого ти говориш?)</em></li>
+        <li><strong>Mit wem</strong> triffst du dich? <em>(З ким ти зустрічаєшся?)</em></li>
+      </ul>
+
+      <!-- Випадок 5 -->
+      <div class="case-box" style="background:var(--blue-pale);border-color:#b8d4f0;">
+        <div class="case-box-title" style="color:var(--blue-mid);">Випадок 5: Питання про НЕЖИВЕ &rarr; wo(r)+прийменник ⚡</div>
+        <p>Питання про <strong>річ</strong>: використовуємо <code>wo + прийменник</code>. Якщо прийменник на голосну &mdash; додаємо <strong>r</strong>: <code>wor+auf</code>, <code>wor+&uuml;ber</code>.</p>
+      </div>
+      <table class="rule-table">
+        <thead>
+          <tr><th>Прийменник</th><th>wo(r)+форма</th><th>Приклад</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>auf</td><td><code>worauf</code></td><td><strong>Worauf</strong> hoffst du? (На що?)</td></tr>
+          <tr><td>&uuml;ber</td><td><code>wor&uuml;ber</code></td><td><strong>Wor&uuml;ber</strong> sprichst du? (Про що?)</td></tr>
+          <tr><td>an</td><td><code>woran</code></td><td><strong>Woran</strong> denkst du? (Про що думаєш?)</td></tr>
+          <tr><td>mit</td><td><code>womit</code></td><td><strong>Womit</strong> bist du zufrieden?</td></tr>
+          <tr><td>f&uuml;r</td><td><code>wof&uuml;r</code></td><td><strong>Wof&uuml;r</strong> interessierst du dich?</td></tr>
+          <tr><td>von</td><td><code>wovon</code></td><td><strong>Wovon</strong> tr&auml;umst du?</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Випадок 6 -->
+      <div class="case-box" style="background:var(--amber-pale);border-color:#e5c882;">
+        <div class="case-box-title" style="color:var(--amber-mid);">Випадок 6: da(r)+прийменник + підрядне речення (dass, ob, wie...)</div>
+        <p>Коли після дієслова з прийменником йде <strong>ціле підрядне речення</strong> (з dass, ob, wie, was тощо), використовуємо <code>da(r)+прийменник</code> як &laquo;тримач місця&raquo;. Дієслово в підрядному реченні йде в <strong>кінець</strong>!</p>
+      </div>
+      <ul class="examples">
+        <li>Ich hoffe <strong>darauf</strong>, <strong>dass</strong> du morgen <strong>kommst</strong>. <em>(Я сподіваюся на те, що ти прийдеш завтра.)</em></li>
+        <li>Ich spreche <strong>dar&uuml;ber</strong>, <strong>was</strong> wir morgen <strong>kochen</strong>. <em>(Я говорю про те, що ми завтра будемо готувати.)</em></li>
+        <li>Ich denke <strong>daran</strong>, <strong>ob</strong> das Rezept gut <strong>ist</strong>. <em>(Я думаю про те, чи рецепт хороший.)</em></li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <!-- Підсумок -->
+      <div class="grammar-note" style="background:var(--green-pale);border-radius:10px;padding:14px 16px;">
+        <strong>📌 Головне правило &mdash; запам'ятай!</strong><br><br>
+        &#x2022; <strong>Живе (людина)</strong> &rarr; прийменник + займенник: <em>auf sie, &uuml;ber ihn</em> / питання: <em>auf wen? mit wem?</em><br>
+        &#x2022; <strong>Неживе (річ)</strong> &rarr; <code>da(r)+прийменник</code>: <em>darauf, dar&uuml;ber</em> / питання: <code>wo(r)+прийменник</code>: <em>worauf? wor&uuml;ber?</em>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════ ВПРАВИ ══════ -->
+      <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;">Вправи</div>
+
+      <!-- Вправа 1: Вибір da(r)- чи wo(r)- -->
+      <div class="ex-block" id="gram-ex1">
+        <div class="ex-header"><span class="ex-num">1</span> Вибери правильну форму</div>
+        <div class="ex-body">
+          <div class="ex-task">Клікни на правильну відповідь:</div>
+
+          <div class="ex-items">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">1. &mdash; _______ freust du dich? &mdash; Auf den Urlaub!</p>
+            <label class="ex-item"><input type="radio" name="g1" value="correct"> <span>Worauf</span></label>
+            <label class="ex-item"><input type="radio" name="g1" value="wrong"> <span>Darauf</span></label>
+            <label class="ex-item"><input type="radio" name="g1" value="wrong"> <span>Auf wen</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">2. Ich denke oft _______ , wie lecker Omas Suppe war.</p>
+            <label class="ex-item"><input type="radio" name="g2" value="wrong"> <span>woran</span></label>
+            <label class="ex-item"><input type="radio" name="g2" value="correct"> <span>daran</span></label>
+            <label class="ex-item"><input type="radio" name="g2" value="wrong"> <span>an ihn</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">3. &mdash; _______ sprichst du? &mdash; &Uuml;ber meinen Bruder.</p>
+            <label class="ex-item"><input type="radio" name="g3" value="wrong"> <span>Wor&uuml;ber</span></label>
+            <label class="ex-item"><input type="radio" name="g3" value="wrong"> <span>Dar&uuml;ber</span></label>
+            <label class="ex-item"><input type="radio" name="g3" value="correct"> <span>&Uuml;ber wen</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">4. Das neue Restaurant ist toll. Ich bin sehr _______ zufrieden.</p>
+            <label class="ex-item"><input type="radio" name="g4" value="wrong"> <span>womit</span></label>
+            <label class="ex-item"><input type="radio" name="g4" value="correct"> <span>damit</span></label>
+            <label class="ex-item"><input type="radio" name="g4" value="wrong"> <span>mit ihm</span></label>
+          </div>
+
+          <button class="ex-btn" onclick="checkGramEx('gram-ex1','gex1-fb')">Перевірити</button>
+          <div class="ex-feedback" id="gex1-fb"></div>
+        </div>
+      </div>
+
+      <!-- Вправа 2: Заповни пропуски -->
+      <div class="ex-block" id="gram-ex2">
+        <div class="ex-header"><span class="ex-num">2</span> Заповни пропуски</div>
+        <div class="ex-body">
+          <div class="ex-task">Впиши правильну форму (darauf, dar&uuml;ber, daran, daf&uuml;r, davon, damit, worauf, wor&uuml;ber, woran, wof&uuml;r, wovon, womit):</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="blank-sentence">1. Ich tr&auml;ume <input class="blank-input" id="gb1" placeholder="?" data-answer="davon"> , einmal nach Japan zu fliegen.</div>
+            <div class="blank-sentence">2. &mdash; <input class="blank-input" id="gb2" placeholder="?" data-answer="Wof&uuml;r"> interessierst du dich? &mdash; F&uuml;r italienische K&uuml;che.</div>
+            <div class="blank-sentence">3. Er hat lange <input class="blank-input" id="gb3" placeholder="?" data-answer="dar&uuml;ber"> gesprochen, dass er vegan kochen will.</div>
+            <div class="blank-sentence">4. <input class="blank-input" id="gb4" placeholder="?" data-answer="Woran"> denkst du gerade? &mdash; An das Rezept f&uuml;r morgen.</div>
+            <div class="blank-sentence">5. Meine Mutter kocht super. Ich bin sehr <input class="blank-input" id="gb5" placeholder="?" data-answer="damit"> zufrieden.</div>
+            <div class="blank-sentence">6. Wir freuen uns <input class="blank-input" id="gb6" placeholder="?" data-answer="darauf"> , dass du am Samstag zum Essen kommst.</div>
+          </div>
+          <button class="ex-btn" onclick="checkBlanksGram()">Перевірити</button>
+          <div class="ex-feedback" id="gex2-fb"></div>
+        </div>
+      </div>
+
+      <!-- Вправа 3: Живе чи неживе? -->
+      <div class="ex-block" id="gram-ex3">
+        <div class="ex-header"><span class="ex-num">3</span> Живе чи неживе? Вибери правильний варіант</div>
+        <div class="ex-body">
+          <div class="ex-task">У кожному реченні вибери, яка форма правильна:</div>
+
+          <div class="ex-items">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">1. Ich warte _______ . (auf meinen Freund)</p>
+            <label class="ex-item"><input type="radio" name="g5" value="correct"> <span>auf ihn</span></label>
+            <label class="ex-item"><input type="radio" name="g5" value="wrong"> <span>darauf</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">2. Ich warte _______ . (auf den Bus)</p>
+            <label class="ex-item"><input type="radio" name="g6" value="wrong"> <span>auf ihn</span></label>
+            <label class="ex-item"><input type="radio" name="g6" value="correct"> <span>darauf</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">3. &mdash; _______ &auml;rgerst du dich? &mdash; &Uuml;ber das schlechte Essen.</p>
+            <label class="ex-item"><input type="radio" name="g7" value="wrong"> <span>&Uuml;ber wen</span></label>
+            <label class="ex-item"><input type="radio" name="g7" value="correct"> <span>Wor&uuml;ber</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">4. Ich erinnere mich gern _______ . (an meine Gro&szlig;mutter)</p>
+            <label class="ex-item"><input type="radio" name="g8" value="correct"> <span>an sie</span></label>
+            <label class="ex-item"><input type="radio" name="g8" value="wrong"> <span>daran</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">5. Ich freue mich _______ , dass die Party am Samstag ist.</p>
+            <label class="ex-item"><input type="radio" name="g9" value="wrong"> <span>auf sie</span></label>
+            <label class="ex-item"><input type="radio" name="g9" value="correct"> <span>darauf</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">6. _______ hast du Angst? &mdash; Vor dem Zahnarzt.</p>
+            <label class="ex-item"><input type="radio" name="g10" value="correct"> <span>Vor wem</span></label>
+            <label class="ex-item"><input type="radio" name="g10" value="wrong"> <span>Wovor</span></label>
+          </div>
+
+          <button class="ex-btn" onclick="checkGramEx('gram-ex3','gex3-fb')">Перевірити</button>
+          <div class="ex-feedback" id="gex3-fb"></div>
+        </div>
+      </div>
+
+      <!-- Вправа 4: Переклади речення -->
+      <div class="ex-block" id="gram-ex4">
+        <div class="ex-header"><span class="ex-num">4</span> Переклади на німецьку (письмово)</div>
+        <div class="ex-body">
+          <div class="ex-task">Напиши речення німецькою. Використай da(r)+прийменник або wo(r)+прийменник де потрібно:</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:14px;">
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:10px;padding:12px 14px;">
+              <p style="font-size:14px;color:var(--text-dark);margin-bottom:4px;"><strong>1.</strong> Я мрію про це. (про подорож)</p>
+              <p style="font-size:12px;color:var(--text-muted);font-style:italic;">Hinweis: tr&auml;umen von + Dat.</p>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:10px;padding:12px 14px;">
+              <p style="font-size:14px;color:var(--text-dark);margin-bottom:4px;"><strong>2.</strong> Про що ти думаєш? (denken an)</p>
+              <p style="font-size:12px;color:var(--text-muted);font-style:italic;">Hinweis: неживий об'єкт &rarr; wo(r)+...</p>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:10px;padding:12px 14px;">
+              <p style="font-size:14px;color:var(--text-dark);margin-bottom:4px;"><strong>3.</strong> Я сподіваюся на те, що погода буде гарна.</p>
+              <p style="font-size:12px;color:var(--text-muted);font-style:italic;">Hinweis: hoffen auf + da(r)... , dass ...</p>
+            </div>
+            <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:10px;padding:12px 14px;">
+              <p style="font-size:14px;color:var(--text-dark);margin-bottom:4px;"><strong>4.</strong> На кого ти чекаєш? &mdash; На мою сестру.</p>
+              <p style="font-size:12px;color:var(--text-muted);font-style:italic;">Hinweis: warten auf + Akk. (людина!)</p>
+            </div>
+          </div>
+          <div style="cursor:pointer;font-size:13px;color:var(--green-mid);font-weight:500;" onclick="var s=document.getElementById('gram-ex4-sol');s.style.display=s.style.display==='none'?'block':'none';this.textContent=s.style.display==='none'?'▶ Показати відповіді':'▼ Сховати відповіді';">&#9654; Показати відповіді</div>
+          <div id="gram-ex4-sol" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.8;color:var(--green-deep);">
+            <strong>1.</strong> Ich tr&auml;ume <strong>davon</strong>.<br>
+            <strong>2.</strong> <strong>Woran</strong> denkst du?<br>
+            <strong>3.</strong> Ich hoffe <strong>darauf</strong>, dass das Wetter sch&ouml;n wird.<br>
+            <strong>4.</strong> <strong>Auf wen</strong> wartest du? &mdash; Auf meine Schwester.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 7. Diskussion -->
+  <div class="section" id="s-discuss">
+    <div class="section-head">
+      <div class="sec-num">7</div>
+      <h2 class="sec-title">Diskussion &mdash; Deine Meinung</h2>
+    </div>
+    <div class="section-body">
+      <div class="dis-item">
+        <div class="dis-dot"></div>
+        <div class="dis-q">Denkst du, dass gesundes Essen teurer ist als ungesundes? Was ist deine Erfahrung?</div>
+      </div>
+      <div class="dis-item">
+        <div class="dis-dot"></div>
+        <div class="dis-q">Findest du es wichtig, dass man selbst kochen kann, oder ist es okay, immer Essen zu bestellen? Warum?</div>
+      </div>
+      <div class="dis-item">
+        <div class="dis-dot"></div>
+        <div class="dis-q">Isst man in deinem Land anders als in Deutschland? Was ist gleich, was ist anders?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HILFE: Satzstarter -->
+  <div class="helper-section blue-accent">
+    <div class="helper-head">
+      <span class="helper-badge blue">Satzstarter</span>
+      <h3 class="helper-title">So f&auml;ngst du an &mdash; Deine Meinung sagen</h3>
+    </div>
+    <div class="helper-body">
+      <div class="starter-grid">
+        <div class="starter-item">Ich denke, dass &hellip;<span>I think that&hellip;</span></div>
+        <div class="starter-item">Meiner Meinung nach &hellip;<span>In my opinion&hellip;</span></div>
+        <div class="starter-item">Ich glaube, dass &hellip;<span>I believe that&hellip;</span></div>
+        <div class="starter-item">Ich finde es wichtig, dass &hellip;<span>I think it&rsquo;s important that&hellip;</span></div>
+        <div class="starter-item">Bei uns isst man &hellip;<span>In our country we eat&hellip;</span></div>
+        <div class="starter-item">Im Vergleich zu Deutschland &hellip;<span>Compared to Germany&hellip;</span></div>
+        <div class="starter-item">F&uuml;r mich ist es wichtig, dass &hellip;<span>For me it&rsquo;s important that&hellip;</span></div>
+        <div class="starter-item">Ich bin der Meinung, dass &hellip;<span>I am of the opinion that&hellip;</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HILFE: Mini-Aufgabe -->
+  <div class="helper-section green-accent">
+    <div class="helper-head">
+      <span class="helper-badge green">Aufgabe</span>
+      <h3 class="helper-title">Mini-Aufgabe zum Sprechen</h3>
+    </div>
+    <div class="helper-body">
+      <div class="aufgabe-box">
+        <div class="aufgabe-timer">&#9201; 1&ndash;2 Minuten</div>
+        <div class="aufgabe-title">Beschreibe dein Lieblingsgericht. Was ist es? Wie macht man es? Warum magst du es?</div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.65;">Sprich frei &mdash; ohne Notizen! Du kannst die W&ouml;rter und Satzstarter aus dieser Seite benutzen.</p>
+        <ul class="aufgabe-hints">
+          <li>Wie hei&szlig;t das Gericht?</li>
+          <li>Welche Zutaten braucht man?</li>
+          <li>Wie bereitet man es zu? (schneiden, kochen, braten &hellip;)</li>
+          <li>Warum schmeckt es dir so gut?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- H&Ouml;REN: Audio-Aufgaben -->
+  <div class="section" id="s-listen">
+    <div class="section-head">
+      <div class="sec-num" style="background:#7F77DD;">&#127911;</div>
+      <h2 class="sec-title">H&ouml;ren &mdash; W&auml;hle die richtige Antwort</h2>
+    </div>
+    <div class="section-body">
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem;">Dr&uuml;cke auf <strong>&#9654; Abspielen</strong> und w&auml;hle dann A, B oder C.</p>
+
+      <!-- Aufgabe 1 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">1</div>
+          <div class="audio-task-label">Was kocht die Familie heute Abend?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Heute Abend kocht die Familie Mueller zusammen. Die Mutter moechte Spaghetti mit Tomatensauce machen. Der Vater schneidet die Zwiebeln und den Knoblauch. Die Kinder helfen beim Salat. Die Mutter sagt: Das wird ein leckeres Abendessen!')">&#9654; Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Pizza mit Salat.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Spaghetti mit Tomatensauce.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Schnitzel mit Kartoffeln.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="&#10003; Richtig! Die Mutter m&ouml;chte Spaghetti mit Tomatensauce machen." data-err="&#10007; Falsch. H&ouml;r noch einmal: Die Mutter m&ouml;chte Spaghetti mit Tomatensauce machen."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 2 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">2</div>
+          <div class="audio-task-label">Warum kann Markus nicht gut kochen?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Markus ist Student und wohnt allein. Er kann nicht gut kochen, weil seine Mutter frueher immer fuer ihn gekocht hat. Jetzt muss er alles selbst machen. Er schaut oft Kochvideos im Internet und versucht, einfache Gerichte zu lernen. Gestern hat er zum ersten Mal Pfannkuchen gemacht.')">&#9654; Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Weil er kein Internet hat.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Weil er keine K&uuml;che hat.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Weil seine Mutter fr&uuml;her immer f&uuml;r ihn gekocht hat.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="&#10003; Richtig! Seine Mutter hat fr&uuml;her immer gekocht &mdash; er hat es nie gelernt." data-err="&#10007; Falsch. H&ouml;r genau: Er kann nicht gut kochen, weil seine Mutter fr&uuml;her immer f&uuml;r ihn gekocht hat."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 3 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">3</div>
+          <div class="audio-task-label">Was bestellt Lisa im Restaurant?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Lisa geht mit einer Freundin ins Restaurant. Sie schaut die Speisekarte an. Es gibt Fisch, Steak und verschiedene Salate. Lisa ist Vegetarierin, deshalb bestellt sie einen grossen Salat mit Kaese und Brot. Ihre Freundin nimmt das Steak mit Pommes.')">&#9654; Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Fisch mit Reis.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Steak mit Pommes.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Einen Salat mit K&auml;se und Brot.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="&#10003; Richtig! Lisa ist Vegetarierin und bestellt einen Salat mit K&auml;se und Brot." data-err="&#10007; Falsch. Lisa ist Vegetarierin! Sie bestellt einen Salat mit K&auml;se und Brot. Das Steak bestellt ihre Freundin."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 4 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">4</div>
+          <div class="audio-task-label">Was ist das Problem beim Backen?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Frau Weber moechte einen Kuchen backen. Sie hat Mehl, Zucker und Butter. Aber dann merkt sie: Es gibt keine Eier mehr! Sie fragt ihre Nachbarin, ob sie drei Eier haben kann. Die Nachbarin gibt ihr fuenf Eier und sagt: Ich moechte gern ein Stueck von deinem Kuchen probieren!')">&#9654; Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">A</span><span>Es gibt keine Eier mehr.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Sie hat keinen Zucker.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Der Ofen ist kaputt.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="&#10003; Richtig! Es gibt keine Eier &mdash; aber die Nachbarin hilft." data-err="&#10007; Falsch. Sie hat Mehl, Zucker und Butter &mdash; aber keine Eier!"></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 5 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">5</div>
+          <div class="audio-task-label">Was ist das Lieblingsgericht von Tom?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'Toms Lieblingsgericht ist Kartoffelsuppe. Seine Grossmutter hat sie frueher jeden Sonntag gekocht. Die Suppe war immer mit Wuerstchen und frischen Kraeutern. Heute kocht Tom die Suppe selbst, aber er sagt: Sie schmeckt nie so gut wie bei Oma. Trotzdem kocht er sie jede Woche.')">&#9654; Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Bratwurst mit Sauerkraut.</span></div>
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Kartoffelsuppe mit W&uuml;rstchen.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Schnitzel mit Kartoffelsalat.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="&#10003; Richtig! Tom liebt Kartoffelsuppe &mdash; das Rezept von seiner Oma." data-err="&#10007; Falsch. Toms Lieblingsgericht ist Kartoffelsuppe mit W&uuml;rstchen &mdash; das Rezept seiner Gro&szlig;mutter."></div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 6 -->
+      <div class="audio-task">
+        <div class="audio-task-head">
+          <div class="audio-task-num">6</div>
+          <div class="audio-task-label">Was lernt man im Kochkurs?</div>
+        </div>
+        <div class="audio-task-body">
+          <button class="audio-play-btn" onclick="speak(this, 'In der Volkshochschule gibt es einen Kochkurs fuer Anfaenger. Dort lernt man, wie man einfache Gerichte kocht: Suppen, Salate und Nudelgerichte. Der Kurs dauert sechs Wochen und findet jeden Mittwoch statt. Am Ende bekommt jeder Teilnehmer ein kleines Kochbuch mit allen Rezepten aus dem Kurs.')">&#9654; Abspielen</button>
+          <div class="audio-options">
+            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">A</span><span>Einfache Gerichte: Suppen, Salate, Nudeln.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Nur Desserts und Kuchen.</span></div>
+            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Internationale K&uuml;che: Sushi und Curry.</span></div>
+          </div>
+          <div class="audio-feedback" data-ok="&#10003; Richtig! Im Kurs lernt man einfache Gerichte: Suppen, Salate und Nudelgerichte." data-err="&#10007; Falsch. Der Kurs ist f&uuml;r Anf&auml;nger: Suppen, Salate und Nudelgerichte &mdash; nichts Kompliziertes."></div>
+        </div>
+      </div>
+
+      <div id="hoeren-result" style="display:none;margin-top:1rem;background:var(--green-pale);border:1px solid var(--green-border);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--green-deep);text-align:center;font-weight:500;"></div>
+    </div>
+  </div>
+
+  <nav class="lesson-nav" aria-label="Themen-Navigation">
+    <a href="reisen.html" class="lesson-nav-link prev">
+      <span class="lesson-nav-arrow">&larr;</span>
+      <span class="lesson-nav-detail">
+        <span class="lesson-nav-label">Vorheriges Thema</span>
+        <span class="lesson-nav-title">&#9992; Das Reisen</span>
+      </span>
+    </a>
+    <a href="../index.html" class="lesson-nav-all" title="Alle Themen"><span>&#8943;</span></a>
+    <div class="lesson-nav-link next disabled">
+      <span class="lesson-nav-detail">
+        <span class="lesson-nav-label">N&auml;chstes Thema</span>
+        <span class="lesson-nav-title">&#127958; Freizeit &mdash; bald</span>
+      </span>
+      <span class="lesson-nav-arrow">&rarr;</span>
+    </div>
+  </nav>
+
+  <div class="footer">
+    <div class="footer-line"></div>
+    <span>Deutsch A2 &middot; Thema: Essen &amp; Kochen</span>
+    <div class="footer-line"></div>
+  </div>
+
+<script>
+var hoeren_correct = 0;
+var hoeren_answered = 0;
+var hoeren_total = 6;
+var curBtn = null;
+var isSpeaking = false;
+var deVoice = null;
+var speakQueue = [];
+var keepAlive = null;
+
+function findDeVoice() {
+  var voices = speechSynthesis.getVoices();
+  var german = voices.filter(function(v) { return v.lang && v.lang.replace('_','-').indexOf('de') === 0; });
+  if (german.length === 0) return null;
+  var preferred = ['Helena', 'Anna', 'Petra', 'Marlene', 'Vicki', 'Google'];
+  for (var p = 0; p < preferred.length; p++) {
+    for (var i = 0; i < german.length; i++) {
+      if (german[i].name.indexOf(preferred[p]) !== -1) { deVoice = german[i]; return deVoice; }
+    }
+  }
+  deVoice = german[0];
+  return deVoice;
+}
+
+speechSynthesis.addEventListener('voiceschanged', function() { deVoice = null; findDeVoice(); });
+findDeVoice();
+
+function splitSentences(text) {
+  var parts = text.replace(/\.\s+/g, '.|').replace(/!\s+/g, '!|').replace(/\?\s+/g, '?|').split('|');
+  return parts.map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 0; });
+}
+
+function speakNext(btn) {
+  if (speakQueue.length === 0 || !isSpeaking) {
+    clearInterval(keepAlive);
+    isSpeaking = false;
+    speakQueue = [];
+    if (btn) { btn.innerHTML = '&#9654; Noch einmal'; btn.style.background = '#7F77DD'; }
+    curBtn = null;
+    return;
+  }
+  var sentence = speakQueue.shift();
+  var utter = new SpeechSynthesisUtterance(sentence);
+  utter.lang = 'de-DE';
+  utter.rate = 0.88;
+  utter.pitch = 1.05;
+  var voice = deVoice || findDeVoice();
+  if (voice) utter.voice = voice;
+  utter.onend = function() { if (isSpeaking) speakNext(btn); };
+  utter.onerror = function() { if (isSpeaking) speakNext(btn); };
+  speechSynthesis.speak(utter);
+}
+
+function speak(btn, text) {
+  speechSynthesis.cancel();
+  clearInterval(keepAlive);
+  if (isSpeaking && curBtn === btn) {
+    isSpeaking = false;
+    speakQueue = [];
+    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
+    curBtn = null;
+    return;
+  }
+  if (curBtn && curBtn !== btn) {
+    curBtn.innerHTML = '&#9654; Abspielen'; curBtn.style.background = '#7F77DD';
+  }
+  curBtn = btn; isSpeaking = true;
+  btn.innerHTML = '&#9208; Stopp'; btn.style.background = '#534AB7';
+  var clean = text.replace(/ae/g, '\u00e4').replace(/oe/g, '\u00f6').replace(/ue/g, '\u00fc')
+                   .replace(/Ae/g, '\u00c4').replace(/Oe/g, '\u00d6').replace(/Ue/g, '\u00dc');
+  speakQueue = splitSentences(clean);
+  keepAlive = setInterval(function() {
+    if (speechSynthesis.speaking && !speechSynthesis.paused) {
+      speechSynthesis.pause();
+      speechSynthesis.resume();
+    }
+  }, 10000);
+  speakNext(btn);
+}
+
+function choose(el, isCorrect) {
+  var opts = el.parentNode.querySelectorAll('.audio-opt');
+  for (var i = 0; i < opts.length; i++) {
+    if (opts[i].classList.contains('correct') || opts[i].classList.contains('wrong')) return;
+  }
+  for (var i = 0; i < opts.length; i++) { opts[i].style.pointerEvents = 'none'; }
+  var fb = el.parentNode.parentNode.querySelector('.audio-feedback');
+  if (isCorrect) {
+    el.classList.add('correct');
+    fb.textContent = fb.getAttribute('data-ok');
+    fb.className = 'audio-feedback ok';
+    hoeren_correct++;
+  } else {
+    el.classList.add('wrong');
+    for (var i = 0; i < opts.length; i++) {
+      if (opts[i].getAttribute('onclick').indexOf('true') !== -1) { opts[i].classList.add('correct'); break; }
+    }
+    fb.textContent = fb.getAttribute('data-err');
+    fb.className = 'audio-feedback err';
+  }
+  hoeren_answered++;
+  if (hoeren_answered === hoeren_total) {
+    var res = document.getElementById('hoeren-result');
+    var pct = Math.round(hoeren_correct / hoeren_total * 100);
+    res.textContent = (pct >= 80 ? '\uD83C\uDF89' : pct >= 50 ? '\uD83D\uDC4D' : '\uD83D\uDCAA') + ' Ergebnis: ' + hoeren_correct + ' von ' + hoeren_total + ' richtig (' + pct + '%)';
+    res.style.display = 'block';
+  }
+}
+
+function toggleAnswer(el) {
+  var ans = el.nextElementSibling;
+  var tog = el.querySelector('.qa-toggle');
+  if (ans.classList.contains('open')) {
+    ans.classList.remove('open');
+    tog.textContent = '\u25B6 Відповідь';
+  } else {
+    ans.classList.add('open');
+    tog.textContent = '\u25BC Закрити';
+  }
+}
+
+function checkGramEx(blockId, fbId) {
+  var block = document.getElementById(blockId);
+  var items = block.querySelectorAll('.ex-items');
+  var correct = 0;
+  var total = items.length;
+  for (var i = 0; i < items.length; i++) {
+    var selected = items[i].querySelector('input:checked');
+    if (selected) {
+      var label = selected.closest('.ex-item') || selected.parentElement;
+      if (selected.value === 'correct') { correct++; label.style.color = 'var(--green-deep)'; label.style.fontWeight = '600'; }
+      else { label.style.color = '#C0392B'; }
+    }
+  }
+  var fb = document.getElementById(fbId);
+  fb.className = 'ex-feedback show ' + (correct === total ? 'ok' : 'fail');
+  fb.textContent = correct === total ? '\uD83C\uDF89 Все правильно! ' + correct + '/' + total : '\uD83D\uDCAA Правильно: ' + correct + ' з ' + total + '. Спробуй ще раз!';
+}
+
+function checkBlanksGram() {
+  var ids = ['gb1','gb2','gb3','gb4','gb5','gb6'];
+  var correct = 0;
+  for (var i = 0; i < ids.length; i++) {
+    var el = document.getElementById(ids[i]);
+    var answer = el.getAttribute('data-answer').toLowerCase();
+    var userVal = el.value.trim().toLowerCase();
+    if (userVal === answer) {
+      el.className = 'blank-input correct-input';
+      correct++;
+    } else {
+      el.className = 'blank-input wrong-input';
+    }
+  }
+  var fb = document.getElementById('gex2-fb');
+  fb.className = 'ex-feedback show ' + (correct === ids.length ? 'ok' : 'fail');
+  fb.textContent = correct === ids.length ? '\uD83C\uDF89 Все правильно! ' + correct + '/' + ids.length : '\uD83D\uDCAA Правильно: ' + correct + ' з ' + ids.length + '. Спробуй ще раз!';
+}
+</script>
+
+<script>
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var mobileMenu = document.querySelector('.nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      var isOpen = hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open', isOpen);
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+  var topicsBtn = document.querySelector('.nav-topics-btn');
+  var dropdown = document.querySelector('.nav-dropdown');
+  if (topicsBtn && dropdown) {
+    topicsBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = dropdown.classList.toggle('open');
+      topicsBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('open');
+      topicsBtn.setAttribute('aria-expanded', 'false');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+        dropdown.classList.remove('open');
+        topicsBtn.setAttribute('aria-expanded', 'false');
+        topicsBtn.focus();
+      }
+    });
+  }
+})();
+
+// ── SCROLL REVEAL ──
+(function(){
+  var els = document.querySelectorAll('.section, .mosaic-nav, .helper-section');
+  els.forEach(function(el){
+    var rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight + 60) el.classList.add('revealed');
+  });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('revealed');observer.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(el){if(!el.classList.contains('revealed'))observer.observe(el);});
+})();
+
+// ── FLOATING EMOJI ──
+(function(){
+  var emojis = ['\uD83C\uDF5D','\uD83C\uDF73','\uD83E\uDD57','\uD83C\uDF54','\uD83C\uDF55','\uD83E\uDDC1','\uD83C\uDF70','\uD83E\uDD52','\uD83C\uDF45','\uD83E\uDD5A','\uD83C\uDF5E','\uD83E\uDDC0','\uD83C\uDF72','\uD83E\uDD6B','\uD83C\uDF5B'];
+  var maxEmoji = 12;
+  function spawnEmoji(){
+    if(document.querySelectorAll('.emoji-float').length >= maxEmoji) return;
+    var el = document.createElement('div');
+    el.className = 'emoji-float';
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = (Math.random()*90+5)+'%';
+    el.style.bottom = '-40px';
+    el.style.fontSize = (18+Math.random()*16)+'px';
+    el.style.animationDuration = (12+Math.random()*18)+'s';
+    el.style.animationDelay = (Math.random()*2)+'s';
+    document.body.appendChild(el);
+    setTimeout(function(){el.remove();},(14+20)*1000);
+  }
+  for(var i=0;i<5;i++) setTimeout(spawnEmoji, i*800);
+  setInterval(spawnEmoji, 3000);
+})();
+
+// ── MOSAIC NAV + STICKY BAR ──
+(function(){
+  var tiles = document.querySelectorAll('.mosaic-tile');
+  var pips = document.querySelectorAll('.sticky-pip');
+  var stickyBar = document.getElementById('sticky-bar');
+  var mosaicNav = document.getElementById('mosaic-nav');
+  var stickyCurrent = document.getElementById('sticky-current');
+  var labels = {};
+  tiles.forEach(function(t){ var h=t.getAttribute('href'); if(h) labels[h]=t.querySelector('.mosaic-label').textContent; });
+
+  var sections = [];
+  tiles.forEach(function(t){
+    var id = t.getAttribute('href');
+    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el,id:id});}
+  });
+
+  function updateActive(){
+    var scrollY=window.scrollY+120;
+    var active=null;
+    for(var i=sections.length-1;i>=0;i--){
+      if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
+    }
+    tiles.forEach(function(t){t.classList.remove('active');});
+    if(active)active.tile.classList.add('active');
+    pips.forEach(function(p){p.classList.remove('active');});
+    if(active){
+      pips.forEach(function(p){if(p.getAttribute('href')===active.id)p.classList.add('active');});
+      if(stickyCurrent) stickyCurrent.textContent=labels[active.id]||'';
+    }
+    if(mosaicNav && stickyBar){
+      var mosaicBottom = mosaicNav.getBoundingClientRect().bottom;
+      stickyBar.classList.toggle('visible', mosaicBottom < 0);
+    }
+  }
+
+  window.addEventListener('scroll',updateActive,{passive:true});
+  updateActive();
+
+  tiles.forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(t.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  pips.forEach(function(p){
+    p.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(p.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+
+</div>
+</body>
+</html>

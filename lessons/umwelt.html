@@ -323,6 +323,44 @@
 
   .rule-table td:first-child { font-weight: 500; color: var(--green-deep); width: 90px; }
 
+  /* ── GRAM BOXES (step-by-step grammar) ── */
+  .gram-box {
+    background: var(--blue-pale); border: 1.5px solid #b8d4f0; border-radius: 14px;
+    padding: 1.4rem 1.6rem; margin-bottom: 12px;
+  }
+  .gram-title { font-size: 15px; font-weight: 600; color: #185FA5; margin-bottom: 10px; }
+  .gram-rule { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+  .gram-rule strong { color: var(--text-dark); }
+  .gram-rule code { background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  .gram-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+  .gram-table th { text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); padding: 6px 8px; border-bottom: 2px solid rgba(0,0,0,0.12); }
+  .gram-table td { padding: 7px 8px; border-bottom: 1px solid rgba(0,0,0,0.07); color: var(--text-dark); }
+  .gram-table td:first-child { font-weight: 500; }
+  .modal-highlight { color: #185FA5; font-weight: 700; }
+
+  .ex-block { background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+  .ex-header { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: var(--bg-section); border-bottom: 1px solid var(--border); font-size: 14px; font-weight: 600; color: var(--text-dark); }
+  .ex-num { width: 26px; height: 26px; border-radius: 50%; background: var(--green-deep); color: #fff; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ex-body { padding: 16px; }
+  .ex-task { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+  .ex-items { display: flex; flex-direction: column; gap: 6px; }
+  .ex-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--bg-section); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+  .ex-item:hover { background: var(--green-pale); border-color: var(--green-border); }
+  .ex-item input { accent-color: var(--green-mid); }
+  .ex-item.correct { background: var(--green-pale); border-color: var(--green-mid); }
+  .ex-item.wrong { background: #fdecea; border-color: #e57373; }
+  .ex-btn { margin-top: 12px; padding: 8px 20px; background: var(--green-deep); color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+  .ex-btn:hover { background: var(--green-mid); }
+  .ex-feedback { margin-top: 10px; font-size: 13px; padding: 8px 12px; border-radius: 8px; display: none; }
+  .ex-feedback.show { display: block; }
+  .ex-feedback.ok { background: var(--green-pale); color: var(--green-deep); }
+  .ex-feedback.fail { background: #fdecea; color: #c62828; }
+  .blank-sentence { font-size: 14px; color: var(--text-dark); line-height: 2; }
+  .blank-input { width: 70px; padding: 3px 8px; border: 1.5px solid var(--border); border-radius: 6px; font-size: 13px; text-align: center; transition: border-color 0.15s; }
+  .blank-input:focus { outline: none; border-color: var(--green-mid); }
+  .blank-input.correct { border-color: var(--green-mid); background: var(--green-pale); }
+  .blank-input.wrong { border-color: #e57373; background: #fdecea; }
+
   .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
 
   .task-label {
@@ -723,7 +761,7 @@
           <ul class="nav-dropdown-list">
             <li><a href="umwelt.html" class="nav-topic-link done current" role="menuitem" aria-current="page"><span class="nav-topic-emoji">&#127807;</span><span class="nav-topic-name">Die Umwelt</span><span class="nav-topic-check">&#10003;</span></a></li>
             <li><a href="reisen.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#9992;</span><span class="nav-topic-name">Das Reisen</span><span class="nav-topic-check">&#10003;</span></a></li>
-            <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127829;</span><span class="nav-topic-name">Essen &amp; Kochen</span><span class="nav-topic-badge">bald</span></span></li>
+            <li><a href="kochen.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#127829;</span><span class="nav-topic-name">Essen &amp; Kochen</span><span class="nav-topic-check">&#10003;</span></a></li>
             <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127958;</span><span class="nav-topic-name">Freizeit</span><span class="nav-topic-badge">bald</span></span></li>
             <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128188;</span><span class="nav-topic-name">Arbeit &amp; Beruf</span><span class="nav-topic-badge">bald</span></span></li>
             <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128187;</span><span class="nav-topic-name">Internet &amp; Technik</span><span class="nav-topic-badge">bald</span></span></li>
@@ -742,7 +780,7 @@
       <div class="nav-mobile-heading">Alle Themen</div>
       <a href="umwelt.html" class="nav-mobile-link current">&#127807; Die Umwelt <span>&#10003;</span></a>
       <a href="reisen.html" class="nav-mobile-link">&#9992; Das Reisen <span>&#10003;</span></a>
-      <span class="nav-mobile-link disabled">&#127829; Essen &amp; Kochen</span>
+      <a href="kochen.html" class="nav-mobile-link">&#127829; Essen &amp; Kochen <span>&#10003;</span></a>
       <span class="nav-mobile-link disabled">&#127958; Freizeit</span>
       <span class="nav-mobile-link disabled">&#128188; Arbeit &amp; Beruf</span>
       <span class="nav-mobile-link disabled">&#128187; Internet &amp; Technik</span>
@@ -1013,43 +1051,322 @@
       <h2 class="sec-title">Grammatik</h2>
     </div>
     <div class="section-body">
-      <div class="grammar-chip">Modalverb: müssen + Infinitiv</div>
+      <div class="grammar-chip">Модальні дієслова — Modalverben</div>
       <div class="grammar-note">
-        Mit <strong>müssen</strong> sagen wir, dass etwas notwendig oder sehr wichtig ist. Das Hauptverb steht immer am <strong>Ende des Satzes</strong> im Infinitiv.
+        Модальні дієслова — це такі слова як <strong>хотіти, могти, мусити</strong> і т.д. У німецькій мові їх <strong>шість</strong>. Головне дієслово завжди стоїть в <strong>кінці речення в інфінітиві</strong>.<br>
+        Для кращого розуміння розглянемо ці дієслова <strong>попарно</strong>.
       </div>
 
-      <table class="rule-table">
-        <thead>
-          <tr><th>Person</th><th>Form</th><th>Beispiel</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>ich</td><td>muss</td><td>Ich muss mehr Wasser sparen.</td></tr>
-          <tr><td>du</td><td>musst</td><td>Du musst den Müll trennen.</td></tr>
-          <tr><td>er/sie/es</td><td>muss</td><td>Er muss mit dem Bus fahren.</td></tr>
-          <tr><td>wir/sie/Sie</td><td>müssen</td><td>Wir müssen die Umwelt schützen.</td></tr>
-        </tbody>
-      </table>
+      <!-- ── BLOCK 1: müssen vs sollen ── -->
+      <div class="gram-box">
+        <div class="gram-title">🔷 Крок 1 — müssen vs sollen (бути повинним)</div>
+        <div class="gram-rule">
+          Обидва дієслова перекладаються як <strong>«повинен / мусити»</strong>, але різниця важлива!<br><br>
 
-      <ul class="examples">
-        <li>
-          Wir <strong>müssen</strong> mehr Energie <strong>sparen</strong>.
-          <em>We must save more energy.</em>
-        </li>
-        <li>
-          Die Regierung <strong>muss</strong> die Umwelt <strong>schützen</strong>.
-          <em>The government must protect the environment.</em>
-        </li>
-        <li>
-          Man <strong>muss</strong> keinen Plastikbeutel <strong>kaufen</strong>.
-          <em>One must not buy plastic bags.</em>
-        </li>
-      </ul>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div style="background:var(--green-pale);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.7;">
+              <strong style="color:var(--green-deep);">müssen</strong> — це <strong>твоє власне</strong> відчуття обов'язку чи необхідності.<br><br>
+              <em>Ich <span class="modal-highlight">muss</span> mein Zimmer aufräumen.</em><br>
+              Я мушу прибрати свою кімнату. (Я сам так вважаю)
+            </div>
+            <div style="background:var(--amber-pale);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.7;">
+              <strong style="color:var(--amber-mid);">sollen</strong> — <strong>хтось інший</strong> сказав, що ти маєш це зробити.<br><br>
+              <em>Ich <span class="modal-highlight">soll</span> keine Tabletten nehmen.</em><br>
+              Я маю не приймати таблетки. (Лікар так сказав)
+            </div>
+          </div>
+
+          <div style="background:rgba(29,158,117,0.08);border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7;">
+            💡 <strong>Запам'ятай:</strong> <code>sollen</code> — ти передаєш чиїсь слова, знімаєш із себе відповідальність.<br>
+            Лікар каже: <em>«Sie <strong>müssen</strong> Tabletten nehmen.»</em><br>
+            Ти переказуєш: <em>«Der Arzt sagt, ich <strong>soll</strong> Tabletten nehmen.»</em><br>
+            В українській мові такої різниці немає — обидва перекладаються як «повинен».
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BLOCK 2: können vs dürfen ── -->
+      <div class="gram-box" style="background:#f0e8ff;border-color:#c9b0e8;">
+        <div class="gram-title" style="color:#7C4DBC;">🔷 Крок 2 — können vs dürfen (могти)</div>
+        <div class="gram-rule">
+          Обидва перекладаються як <strong>«могти»</strong>, але між ними є чітка різниця:<br><br>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #c9b0e8;font-size:13px;line-height:1.7;">
+              <strong style="color:#7C4DBC;">können</strong> — <strong>фізична здатність</strong> або вміння.<br><br>
+              <em>Ich <span class="modal-highlight">kann</span> Gitarre spielen.</em><br>
+              Я вмію грати на гітарі.<br><br>
+              <em>Ich <span class="modal-highlight">kann</span> ins Kino gehen.</em><br>
+              Я можу піти в кіно. (Маю можливість)
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #c9b0e8;font-size:13px;line-height:1.7;">
+              <strong style="color:#7C4DBC;">dürfen</strong> — наявність <strong>дозволу</strong>.<br><br>
+              <em>Hier <span class="modal-highlight">darf</span> man nicht parken.</em><br>
+              Тут не можна паркуватися. (Знак забороняє)<br><br>
+              <em><span class="modal-highlight">Darf</span> ich hier rauchen?</em><br>
+              Чи можна тут курити? (Чи дозволено?)
+            </div>
+          </div>
+
+          <div style="background:rgba(124,92,252,0.08);border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7;">
+            💡 <strong>Простий приклад — паркування:</strong><br>
+            Є місце, але знак «заборонено» → <em>Hier <strong>darf</strong> ich nicht parken.</em> (немає дозволу)<br>
+            Дозволено, але немає вільних місць → <em>Hier <strong>kann</strong> ich nicht parken.</em> (немає фізичної можливості)
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BLOCK 3: wollen vs möchten ── -->
+      <div class="gram-box" style="background:var(--rose-pale);border-color:var(--rose-border);">
+        <div class="gram-title" style="color:var(--rose);">🔷 Крок 3 — wollen vs möchten (хотіти)</div>
+        <div class="gram-rule">
+          Обидва перекладаються як <strong>«хотіти»</strong>, але відрізняються ввічливістю:<br><br>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid var(--rose-border);font-size:13px;line-height:1.7;">
+              <strong style="color:var(--rose);">wollen</strong> — <strong>бажання</strong>, просте «хочу».<br><br>
+              <em>Ich <span class="modal-highlight">will</span> ein neues Handy.</em><br>
+              Я хочу новий телефон.<br><br>
+              <em>Ich <span class="modal-highlight">will</span> nach Spanien fahren.</em><br>
+              Я хочу поїхати в Іспанію.
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid var(--rose-border);font-size:13px;line-height:1.7;">
+              <strong style="color:var(--rose);">möchten</strong> — <strong>ввічливе прохання</strong>, «хотілося б».<br><br>
+              <em>Ich <span class="modal-highlight">möchte</span> einen Tee, bitte.</em><br>
+              Я хотіла б чай, будь ласка.<br><br>
+              <em>Ich <span class="modal-highlight">möchte</span> bestellen.</em><br>
+              Я хотіла б замовити.
+            </div>
+          </div>
+
+          <div style="background:rgba(232,80,106,0.08);border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7;">
+            💡 <strong>Коротко:</strong> <code>wollen</code> — «я хочу!» (нікого ні про що не прошу). <code>möchten</code> — «мені б хотілося…» (ввічливе прохання, чекаю, що мені допоможуть).
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BLOCK 4: Повна таблиця відмінювання ── -->
+      <div class="gram-box" style="background:var(--amber-pale);border-color:#e5c882;">
+        <div class="gram-title" style="color:var(--amber-mid);">🔷 Крок 4 — Повна таблиця відмінювання (Konjugation)</div>
+        <div class="gram-rule">
+          Множина (wir, ihr, sie/Sie) відмінюється як звичайні дієслова. Однина (ich, du, er/sie/es) — <strong>змінює кореневу голосну</strong>, і це треба просто запам'ятати.<br><br>
+          <strong>Важливо:</strong> форми <code>ich</code> та <code>er/sie/es</code> — <strong>завжди однакові</strong> (без закінчення -t)!<br><br>
+
+          <div style="overflow-x:auto;">
+            <table class="gram-table" style="min-width:520px;">
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th style="color:var(--green-deep);">müssen</th>
+                  <th style="color:var(--amber-mid);">sollen</th>
+                  <th style="color:#7C4DBC;">können</th>
+                  <th style="color:#7C4DBC;">dürfen</th>
+                  <th style="color:var(--rose);">wollen</th>
+                  <th style="color:var(--rose);">möchten</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>ich</strong></td>
+                  <td><span class="modal-highlight">muss</span></td>
+                  <td>soll</td>
+                  <td><span class="modal-highlight">kann</span></td>
+                  <td><span class="modal-highlight">darf</span></td>
+                  <td><span class="modal-highlight">will</span></td>
+                  <td>möchte</td>
+                </tr>
+                <tr>
+                  <td><strong>du</strong></td>
+                  <td>musst</td>
+                  <td>sollst</td>
+                  <td>kannst</td>
+                  <td>darfst</td>
+                  <td>willst</td>
+                  <td>möchtest</td>
+                </tr>
+                <tr style="background:rgba(0,0,0,0.03);">
+                  <td><strong>er/sie/es</strong></td>
+                  <td><span class="modal-highlight">muss</span></td>
+                  <td>soll</td>
+                  <td><span class="modal-highlight">kann</span></td>
+                  <td><span class="modal-highlight">darf</span></td>
+                  <td><span class="modal-highlight">will</span></td>
+                  <td>möchte</td>
+                </tr>
+                <tr>
+                  <td><strong>wir</strong></td>
+                  <td>müssen</td>
+                  <td>sollen</td>
+                  <td>können</td>
+                  <td>dürfen</td>
+                  <td>wollen</td>
+                  <td>möchten</td>
+                </tr>
+                <tr>
+                  <td><strong>ihr</strong></td>
+                  <td>müsst</td>
+                  <td>sollt</td>
+                  <td>könnt</td>
+                  <td>dürft</td>
+                  <td>wollt</td>
+                  <td>möchtet</td>
+                </tr>
+                <tr style="background:rgba(0,0,0,0.03);">
+                  <td><strong>sie/Sie</strong></td>
+                  <td>müssen</td>
+                  <td>sollen</td>
+                  <td>können</td>
+                  <td>dürfen</td>
+                  <td>wollen</td>
+                  <td>möchten</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="background:rgba(186,117,23,0.1);border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7;margin-top:8px;">
+            💡 <strong>Лайфхак:</strong> <code>ich</code> = <code>er/sie/es</code> (завжди!). Не додавай <strong>-t</strong> до третьої особи — це найчастіша помилка!<br>
+            ✅ Er <strong>muss</strong> &nbsp;·&nbsp; ❌ <del>Er musst</del>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BLOCK 5: Правило побудови речення ── -->
+      <div class="gram-box" style="background:#f5f3ed;border-color:var(--border);">
+        <div class="gram-title" style="color:var(--text-dark);">🔷 Крок 5 — Побудова речення з модальним дієсловом</div>
+        <div class="gram-rule" style="font-size:14px;line-height:2;">
+          <strong>Головне правило:</strong> модальне дієслово стоїть на <strong>другому місці</strong> (відмінюється), а основне дієслово — в <strong>кінці речення в інфінітиві</strong>.<br><br>
+
+          <code style="font-size:14px;">Subjekt + <span style="color:var(--green-deep);font-weight:700;">Modalverb</span> + … + <span style="color:#185FA5;font-weight:700;">Infinitiv</span></code><br><br>
+
+          <strong>Приклади:</strong><br>
+          <code>Ich <span style="color:var(--green-deep);font-weight:600;">muss</span> mehr Wasser <span style="color:#185FA5;font-weight:600;">sparen</span>.</code> &mdash; Я мушу більше економити воду.<br>
+          <code>Du <span style="color:var(--green-deep);font-weight:600;">kannst</span> gut Deutsch <span style="color:#185FA5;font-weight:600;">sprechen</span>.</code> &mdash; Ти вмієш добре говорити німецькою.<br>
+          <code>Man <span style="color:var(--green-deep);font-weight:600;">darf</span> hier nicht <span style="color:#185FA5;font-weight:600;">rauchen</span>.</code> &mdash; Тут не можна курити.<br>
+          <code>Wir <span style="color:var(--green-deep);font-weight:600;">wollen</span> die Natur <span style="color:#185FA5;font-weight:600;">schützen</span>.</code> &mdash; Ми хочемо захищати природу.<br><br>
+
+          <strong>У питанні</strong> — модальне дієслово йде на перше місце:<br>
+          <code><span style="color:var(--green-deep);font-weight:600;">Musst</span> du morgen <span style="color:#185FA5;font-weight:600;">arbeiten</span>?</code> &mdash; Ти мусиш завтра працювати?
+        </div>
+      </div>
+
+      <!-- ── BLOCK 6: Приклади з теми Umwelt ── -->
+      <div class="gram-box" style="background:var(--green-pale);border-color:var(--green-border);">
+        <div class="gram-title">🔷 Крок 6 — Модальні дієслова на тему «Die Umwelt»</div>
+        <div class="gram-rule">
+          <table class="gram-table">
+            <thead>
+              <tr><th>Дієслово</th><th>Приклад</th><th>Переклад</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>müssen</strong></td><td>Wir <strong>müssen</strong> mehr Energie sparen.</td><td>Ми мусимо більше економити енергію.</td></tr>
+              <tr><td><strong>sollen</strong></td><td>Die Regierung <strong>soll</strong> mehr für die Umwelt tun.</td><td>Уряд повинен (кажуть) робити більше для довкілля.</td></tr>
+              <tr><td><strong>können</strong></td><td>Jeder <strong>kann</strong> etwas für die Natur tun.</td><td>Кожен може щось зробити для природи.</td></tr>
+              <tr><td><strong>dürfen</strong></td><td>Man <strong>darf</strong> hier keinen Müll wegwerfen.</td><td>Тут не можна (заборонено) викидати сміття.</td></tr>
+              <tr><td><strong>wollen</strong></td><td>Ich <strong>will</strong> weniger Plastik benutzen.</td><td>Я хочу менше використовувати пластик.</td></tr>
+              <tr><td><strong>möchten</strong></td><td>Ich <strong>möchte</strong> mehr über Recycling lernen.</td><td>Я хотіла б більше дізнатися про переробку.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Вправа 1: Вибери правильне модальне дієслово ── -->
+      <div class="ex-block" id="modal-ex1">
+        <div class="ex-header"><span class="ex-num">1</span> Вибери правильне модальне дієслово</div>
+        <div class="ex-body">
+          <div class="ex-task">Яке дієслово підходить до ситуації?</div>
+
+          <div class="ex-items">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">1. Im Park ist ein Schild: «Hunde verboten». → Man ___ hier keine Hunde mitbringen.</p>
+            <label class="ex-item"><input type="radio" name="m1" value="wrong"> <span>kann</span></label>
+            <label class="ex-item"><input type="radio" name="m1" value="correct"> <span>darf</span></label>
+            <label class="ex-item"><input type="radio" name="m1" value="wrong"> <span>muss</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">2. Mein Arzt hat mir gesagt, ich ___ mehr Wasser trinken.</p>
+            <label class="ex-item"><input type="radio" name="m2" value="wrong"> <span>will</span></label>
+            <label class="ex-item"><input type="radio" name="m2" value="wrong"> <span>muss</span></label>
+            <label class="ex-item"><input type="radio" name="m2" value="correct"> <span>soll</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">3. Ich spiele seit 5 Jahren Klavier. Ich ___ gut spielen.</p>
+            <label class="ex-item"><input type="radio" name="m3" value="correct"> <span>kann</span></label>
+            <label class="ex-item"><input type="radio" name="m3" value="wrong"> <span>darf</span></label>
+            <label class="ex-item"><input type="radio" name="m3" value="wrong"> <span>soll</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">4. Im Restaurant: «Ich ___ einen Kaffee, bitte.»</p>
+            <label class="ex-item"><input type="radio" name="m4" value="wrong"> <span>will</span></label>
+            <label class="ex-item"><input type="radio" name="m4" value="correct"> <span>möchte</span></label>
+            <label class="ex-item"><input type="radio" name="m4" value="wrong"> <span>muss</span></label>
+          </div>
+
+          <button class="ex-btn" onclick="checkModalEx1()">Перевірити</button>
+          <div class="ex-feedback" id="modal-ex1-fb"></div>
+        </div>
+      </div>
+
+      <!-- ── Вправа 2: Заповни пропуски правильною формою ── -->
+      <div class="ex-block" id="modal-ex2">
+        <div class="ex-header"><span class="ex-num">2</span> Заповни пропуски правильною формою модального дієслова</div>
+        <div class="ex-body">
+          <div class="ex-task">Впиши правильну форму (muss, kann, darf, soll, will, möchte і т.д.):</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="blank-sentence">1. Er <input class="blank-input" id="mb1" placeholder="?" style="width:80px;"> heute nicht arbeiten. Er ist krank. <em style="color:var(--text-muted);font-size:12px;">(können)</em></div>
+            <div class="blank-sentence">2. Wir <input class="blank-input" id="mb2" placeholder="?" style="width:80px;"> die Umwelt schützen! <em style="color:var(--text-muted);font-size:12px;">(müssen)</em></div>
+            <div class="blank-sentence">3. <input class="blank-input" id="mb3" placeholder="?" style="width:80px;"> ich hier fotografieren? <em style="color:var(--text-muted);font-size:12px;">(dürfen)</em></div>
+            <div class="blank-sentence">4. Meine Mutter sagt, ich <input class="blank-input" id="mb4" placeholder="?" style="width:80px;"> mehr Obst essen. <em style="color:var(--text-muted);font-size:12px;">(sollen)</em></div>
+            <div class="blank-sentence">5. Die Kinder <input class="blank-input" id="mb5" placeholder="?" style="width:80px;"> im Park spielen. <em style="color:var(--text-muted);font-size:12px;">(wollen)</em></div>
+            <div class="blank-sentence">6. Ich <input class="blank-input" id="mb6" placeholder="?" style="width:80px;"> einen Tee, bitte. <em style="color:var(--text-muted);font-size:12px;">(möchten)</em></div>
+          </div>
+          <button class="ex-btn" onclick="checkModalEx2()">Перевірити</button>
+          <div class="ex-feedback" id="modal-ex2-fb"></div>
+        </div>
+      </div>
+
+      <!-- ── Вправа 3: müssen чи sollen? können чи dürfen? ── -->
+      <div class="ex-block" id="modal-ex3">
+        <div class="ex-header"><span class="ex-num">3</span> müssen чи sollen? können чи dürfen?</div>
+        <div class="ex-body">
+          <div class="ex-task">Вибери правильне дієслово:</div>
+
+          <div class="ex-items">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">1. Ich bin müde. Ich ___ schlafen. <em style="font-size:12px;color:var(--text-muted);">(сам відчуваю потребу)</em></p>
+            <label class="ex-item"><input type="radio" name="p1" value="correct"> <span>muss</span></label>
+            <label class="ex-item"><input type="radio" name="p1" value="wrong"> <span>soll</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">2. Der Trainer sagt, wir ___ mehr trainieren. <em style="font-size:12px;color:var(--text-muted);">(тренер сказав)</em></p>
+            <label class="ex-item"><input type="radio" name="p2" value="wrong"> <span>müssen</span></label>
+            <label class="ex-item"><input type="radio" name="p2" value="correct"> <span>sollen</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">3. Ich spreche drei Sprachen. Ich ___ gut kommunizieren. <em style="font-size:12px;color:var(--text-muted);">(вміння)</em></p>
+            <label class="ex-item"><input type="radio" name="p3" value="correct"> <span>kann</span></label>
+            <label class="ex-item"><input type="radio" name="p3" value="wrong"> <span>darf</span></label>
+          </div>
+
+          <div class="ex-items" style="margin-top:14px;">
+            <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">4. In der Bibliothek ___ man nicht laut sprechen. <em style="font-size:12px;color:var(--text-muted);">(правило)</em></p>
+            <label class="ex-item"><input type="radio" name="p4" value="wrong"> <span>kann</span></label>
+            <label class="ex-item"><input type="radio" name="p4" value="correct"> <span>darf</span></label>
+          </div>
+
+          <button class="ex-btn" onclick="checkModalEx3()">Перевірити</button>
+          <div class="ex-feedback" id="modal-ex3-fb"></div>
+        </div>
+      </div>
 
       <div class="divider"></div>
       <div class="task-label">Aufgabe</div>
       <div class="task">
-        Schreibe <strong>5 eigene Sätze</strong> mit <em>müssen</em> zum Thema Umwelt.<br>
-        Benutze verschiedene Subjekte: <em>ich, du, wir, man, die Menschen, die Regierung …</em>
+        Schreibe <strong>6 eigene Sätze</strong> zum Thema Umwelt &mdash; einen Satz mit jedem Modalverb:<br>
+        <em>müssen, sollen, können, dürfen, wollen, möchten</em>
       </div>
     </div>
   </div>
@@ -1406,6 +1723,69 @@ function choose(el, isCorrect) {
     res.textContent = (pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪') + ' Ergebnis: ' + hoeren_correct + ' von ' + hoeren_total + ' richtig (' + pct + '%)';
     res.style.display = 'block';
   }
+}
+</script>
+
+<script>
+/* ── Modal verb exercises ── */
+function checkModalEx1() {
+  var groups = ['m1','m2','m3','m4'];
+  var correct = 0;
+  groups.forEach(function(name) {
+    var radios = document.querySelectorAll('input[name="'+name+'"]');
+    radios.forEach(function(r) {
+      var label = r.parentElement;
+      label.classList.remove('correct','wrong');
+      if (r.checked) {
+        if (r.value === 'correct') { label.classList.add('correct'); correct++; }
+        else { label.classList.add('wrong'); }
+      }
+    });
+  });
+  var fb = document.getElementById('modal-ex1-fb');
+  fb.classList.add('show');
+  if (correct === groups.length) { fb.className = 'ex-feedback show ok'; fb.textContent = '✅ Чудово! Все правильно!'; }
+  else { fb.className = 'ex-feedback show fail'; fb.textContent = '❌ ' + correct + ' з ' + groups.length + ' правильно. Спробуй ще!'; }
+}
+
+function checkModalEx2() {
+  var answers = {mb1:'kann',mb2:'müssen',mb3:'Darf',mb4:'soll',mb5:'wollen',mb6:'möchte'};
+  var alts = {mb3:['darf']};
+  var correct = 0;
+  var total = Object.keys(answers).length;
+  for (var id in answers) {
+    var inp = document.getElementById(id);
+    var val = inp.value.trim();
+    var isCorrect = val.toLowerCase() === answers[id].toLowerCase();
+    if (alts[id]) { alts[id].forEach(function(a){ if(val.toLowerCase()===a) isCorrect=true; }); }
+    inp.classList.remove('correct','wrong');
+    if (isCorrect) { inp.classList.add('correct'); correct++; }
+    else if (val) { inp.classList.add('wrong'); }
+  }
+  var fb = document.getElementById('modal-ex2-fb');
+  fb.classList.add('show');
+  if (correct === total) { fb.className = 'ex-feedback show ok'; fb.textContent = '✅ Супер! Все правильно!'; }
+  else { fb.className = 'ex-feedback show fail'; fb.textContent = '❌ ' + correct + ' з ' + total + ' правильно. Спробуй ще!'; }
+}
+
+function checkModalEx3() {
+  var groups = ['p1','p2','p3','p4'];
+  var correct = 0;
+  groups.forEach(function(name) {
+    var radios = document.querySelectorAll('input[name="'+name+'"]');
+    radios.forEach(function(r) {
+      var label = r.parentElement;
+      label.classList.remove('correct','wrong');
+      if (r.checked) {
+        if (r.value === 'correct') { label.classList.add('correct'); correct++; }
+        else { label.classList.add('wrong'); }
+      }
+    });
+  });
+  var fb = document.getElementById('modal-ex3-fb');
+  fb.classList.add('show');
+  if (correct === groups.length) { fb.className = 'ex-feedback show ok'; fb.textContent = '✅ Відмінно! Ти розумієш різницю!'; }
+  else { fb.className = 'ex-feedback show fail'; fb.textContent = '❌ ' + correct + ' з ' + groups.length + ' правильно. Спробуй ще!'; }
 }
 </script>
 

@@ -120,6 +120,50 @@
     .card-num { width: 32px; height: 32px; border-radius: 50%; background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .card-title { font-size: 18px; font-weight: 600; color: var(--text-dark); }
 
+    /* ── GRAMMAR HUB ── */
+    .grammar-hub { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 1.8rem 2rem; margin-bottom: 1.4rem; }
+    .grammar-hub-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+    .grammar-hub-icon { font-size: 28px; }
+    .grammar-hub-title { font-size: 18px; font-weight: 600; color: var(--text-dark); }
+    .grammar-hub-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+    .grammar-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .grammar-link {
+      display: flex; align-items: center; gap: 14px; padding: 14px 16px;
+      background: var(--bg-section); border: 1.5px solid var(--border); border-radius: 12px;
+      text-decoration: none; transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+    }
+    .grammar-link:hover { border-color: var(--violet); box-shadow: 0 4px 16px rgba(124,92,252,0.10); transform: translateX(4px); }
+    .grammar-link-icon { font-size: 22px; flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--violet-pale); border-radius: 10px; }
+    .grammar-link-info { flex: 1; }
+    .grammar-link-name { font-size: 15px; font-weight: 600; color: var(--text-dark); display: block; }
+    .grammar-link-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .grammar-link-badge { font-size: 11px; font-weight: 600; color: var(--violet); background: var(--violet-pale); border: 1px solid var(--violet-border); padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+    .grammar-link-arrow { color: var(--violet); font-size: 16px; margin-left: 4px; transition: transform 0.2s; }
+    .grammar-link:hover .grammar-link-arrow { transform: translateX(3px); }
+
+    /* ── DIALOG HUB ── */
+    .dialog-hub { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 1.8rem 2rem; margin-bottom: 1.4rem; }
+    .dialog-hub-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+    .dialog-hub-icon { font-size: 28px; }
+    .dialog-hub-title { font-size: 18px; font-weight: 600; color: var(--text-dark); }
+    .dialog-hub-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+    .dialog-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .dialog-link {
+      display: flex; align-items: center; gap: 14px; padding: 14px 16px;
+      background: var(--bg-section); border: 1.5px solid var(--border); border-radius: 12px;
+      text-decoration: none; transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+    }
+    .dialog-link:hover { border-color: var(--rose); box-shadow: 0 4px 16px rgba(232,80,106,0.10); transform: translateX(4px); }
+    .dialog-link-icon { font-size: 22px; flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--rose-pale); border-radius: 10px; }
+    .dialog-link-info { flex: 1; }
+    .dialog-link-name { font-size: 15px; font-weight: 600; color: var(--text-dark); display: block; }
+    .dialog-link-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .dialog-link-roles { display: flex; gap: 6px; margin-top: 6px; }
+    .dialog-link-role { font-size: 11px; color: var(--text-mid); background: var(--rose-pale); border: 1px solid var(--rose-border); padding: 2px 8px; border-radius: 12px; }
+    .dialog-link-badge { font-size: 11px; font-weight: 600; color: var(--rose); background: var(--rose-pale); border: 1px solid var(--rose-border); padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+    .dialog-link-arrow { color: var(--rose); font-size: 16px; margin-left: 4px; transition: transform 0.2s; }
+    .dialog-link:hover .dialog-link-arrow { transform: translateX(3px); }
+
     /* ── HOW IT WORKS ── */
     .steps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .steps-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: var(--text-mid); padding: 14px 16px; background: var(--bg-section); border: 1px solid var(--border); border-radius: 12px; line-height: 1.55; transition: transform 0.15s, box-shadow 0.15s; }
@@ -182,7 +226,7 @@
             <ul class="nav-dropdown-list">
               <li><a href="lessons/umwelt.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#127807;</span><span class="nav-topic-name">Die Umwelt</span><span class="nav-topic-check">&#10003;</span></a></li>
               <li><a href="lessons/reisen.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#9992;</span><span class="nav-topic-name">Das Reisen</span><span class="nav-topic-check">&#10003;</span></a></li>
-              <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127829;</span><span class="nav-topic-name">Essen &amp; Kochen</span><span class="nav-topic-badge">bald</span></span></li>
+              <li><a href="lessons/kochen.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#127829;</span><span class="nav-topic-name">Essen &amp; Kochen</span><span class="nav-topic-check">&#10003;</span></a></li>
               <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#127958;</span><span class="nav-topic-name">Freizeit</span><span class="nav-topic-badge">bald</span></span></li>
               <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128188;</span><span class="nav-topic-name">Arbeit &amp; Beruf</span><span class="nav-topic-badge">bald</span></span></li>
               <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128187;</span><span class="nav-topic-name">Internet &amp; Technik</span><span class="nav-topic-badge">bald</span></span></li>
@@ -201,7 +245,7 @@
         <div class="nav-mobile-heading">Alle Themen</div>
         <a href="lessons/umwelt.html" class="nav-mobile-link">&#127807; Die Umwelt <span>&#10003;</span></a>
         <a href="lessons/reisen.html" class="nav-mobile-link">&#9992; Das Reisen <span>&#10003;</span></a>
-        <span class="nav-mobile-link disabled">&#127829; Essen &amp; Kochen</span>
+        <a href="lessons/kochen.html" class="nav-mobile-link">&#127829; Essen &amp; Kochen <span>&#10003;</span></a>
         <span class="nav-mobile-link disabled">&#127958; Freizeit</span>
         <span class="nav-mobile-link disabled">&#128188; Arbeit &amp; Beruf</span>
         <span class="nav-mobile-link disabled">&#128187; Internet &amp; Technik</span>
@@ -243,10 +287,10 @@
     <div class="progress-banner fade-in">
       <div class="progress-text">
         <strong>Dein Fortschritt</strong>
-        <p>2 von 10 Themen abgeschlossen &mdash; weiter so!</p>
-        <div class="progress-bar-wrap"><div class="progress-bar-fill" data-target="20"></div></div>
+        <p>3 von 10 Themen abgeschlossen &mdash; weiter so!</p>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" data-target="30"></div></div>
       </div>
-      <div class="progress-count">2 / 10</div>
+      <div class="progress-count">3 / 10</div>
     </div>
 
     <!-- TIP -->
@@ -256,6 +300,76 @@
         <div class="tip-title">Tipp des Tages</div>
         <div class="tip-text">Lies den Text laut vor! So trainierst du gleichzeitig Lesen, Aussprache und Intonation. Wenn du einen Satz nicht verstehst, lies ihn noch einmal &mdash; langsamer.</div>
       </div>
+    </div>
+
+    <!-- GRAMMAR HUB -->
+    <div class="grammar-hub fade-in">
+      <div class="grammar-hub-header">
+        <span class="grammar-hub-icon">&#128208;</span>
+        <span class="grammar-hub-title">Grammatik</span>
+      </div>
+      <p class="grammar-hub-sub">Alle Grammatikthemen, die bereits auf der Seite verf&uuml;gbar sind:</p>
+      <ul class="grammar-list">
+        <li>
+          <a href="lessons/umwelt.html#s-grammar" class="grammar-link">
+            <span class="grammar-link-icon">&#127807;</span>
+            <div class="grammar-link-info">
+              <span class="grammar-link-name">Modalverben (m&uuml;ssen, k&ouml;nnen, d&uuml;rfen, sollen, wollen, m&ouml;chten)</span>
+              <span class="grammar-link-desc">Alle 6 Modalverben mit Konjugation &amp; &Uuml;bungen &mdash; Lektion: Die Umwelt</span>
+            </div>
+            <span class="grammar-link-badge">A2</span>
+            <span class="grammar-link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="lessons/reisen.html#s-grammar" class="grammar-link">
+            <span class="grammar-link-icon">&#9992;</span>
+            <div class="grammar-link-info">
+              <span class="grammar-link-name">Reflexivverben (sich + Verb)</span>
+              <span class="grammar-link-desc">Зворотні дієслова &mdash; Lektion: Das Reisen</span>
+            </div>
+            <span class="grammar-link-badge">A2</span>
+            <span class="grammar-link-arrow">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="lessons/kochen.html#s-grammar" class="grammar-link">
+            <span class="grammar-link-icon">&#127829;</span>
+            <div class="grammar-link-info">
+              <span class="grammar-link-name">Verben mit Pr&auml;positionen &amp; Pronominaladverbien</span>
+              <span class="grammar-link-desc">darauf, dar&uuml;ber, worauf, wor&uuml;ber &mdash; Lektion: Essen &amp; Kochen</span>
+            </div>
+            <span class="grammar-link-badge">A2</span>
+            <span class="grammar-link-arrow">&rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- DIALOGE -->
+    <div class="dialog-hub fade-in">
+      <div class="dialog-hub-header">
+        <span class="dialog-hub-icon">&#127917;</span>
+        <span class="dialog-hub-title">Dialoge</span>
+      </div>
+      <p class="dialog-hub-sub">Alle Dialoge aus den Lektionen &mdash; lies sie zu zweit und &uuml;be das Sprechen:</p>
+      <ul class="dialog-list">
+        <li>
+          <a href="lessons/reisen.html#s-dialog" class="dialog-link">
+            <span class="dialog-link-icon">&#9992;</span>
+            <div class="dialog-link-info">
+              <span class="dialog-link-name">Reise nach Wien planen</span>
+              <span class="dialog-link-desc">Anna und Ben planen zusammen eine Reise &mdash; Lektion: Das Reisen</span>
+              <div class="dialog-link-roles">
+                <span class="dialog-link-role">&#128100; Anna</span>
+                <span class="dialog-link-role">&#128100; Ben</span>
+              </div>
+            </div>
+            <span class="dialog-link-badge">A2</span>
+            <span class="dialog-link-arrow">&rarr;</span>
+          </a>
+        </li>
+      </ul>
     </div>
 
     <!-- HOW IT WORKS -->
@@ -281,7 +395,7 @@
       <div class="topics-grid">
         <a href="lessons/umwelt.html" class="topic-card done"><span class="topic-emoji">&#127807;</span><div class="topic-info"><span class="topic-name">Die Umwelt</span><span class="topic-level">A2 &middot; Modalverben</span></div><span class="topic-badge done-badge">&#10003;</span></a>
         <a href="lessons/reisen.html" class="topic-card done"><span class="topic-emoji">&#9992;</span><div class="topic-info"><span class="topic-name">Das Reisen</span><span class="topic-level">A2 &middot; Perfekt</span></div><span class="topic-badge done-badge">&#10003;</span></a>
-        <a href="#" class="topic-card"><span class="topic-emoji">&#127829;</span><div class="topic-info"><span class="topic-name">Essen &amp; Kochen</span><span class="topic-level">A2 &middot; Imperativ</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="lessons/kochen.html" class="topic-card done"><span class="topic-emoji">&#127829;</span><div class="topic-info"><span class="topic-name">Essen &amp; Kochen</span><span class="topic-level">A2 &middot; Pronominaladverbien</span></div><span class="topic-badge done-badge">&#10003;</span></a>
         <a href="#" class="topic-card"><span class="topic-emoji">&#127958;</span><div class="topic-info"><span class="topic-name">Freizeit</span><span class="topic-level">A2 &middot; Pr&auml;teritum</span></div><span class="topic-badge todo-badge">bald</span></a>
         <a href="#" class="topic-card"><span class="topic-emoji">&#128188;</span><div class="topic-info"><span class="topic-name">Arbeit &amp; Beruf</span><span class="topic-level">A2&ndash;B1 &middot; Konjunktiv II</span></div><span class="topic-badge todo-badge">bald</span></a>
         <a href="#" class="topic-card"><span class="topic-emoji">&#128187;</span><div class="topic-info"><span class="topic-name">Internet &amp; Technik</span><span class="topic-level">B1 &middot; Relativs&auml;tze</span></div><span class="topic-badge todo-badge">bald</span></a>
