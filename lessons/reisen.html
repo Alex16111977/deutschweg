@@ -1931,97 +1931,77 @@ function showFb(el, type, msg) {
 }
 
 
-// ─── WEB SPEECH API ENGINE (Hörverstehen) ─────
-const TEXTS = {
-  1: `Letzten Monat ist Emma zum ersten Mal allein nach Spanien gereist. Sie hatte sich schon wochenlang auf die Reise gefreut und sich sehr gut vorbereitet. Am Abend vor dem Flug hat sie ihren Koffer gepackt und alles sorgfältig kontrolliert. Am nächsten Morgen ist sie früh aufgestanden und hat sich schnell fertig gemacht. Am Flughafen hat sie sich sofort am Schalter angemeldet. Der Flug ist pünktlich abgeflogen und Emma hat sich während des Fluges sehr gut erholt.`,
-  2: `Familie Berger ist nach Wien gefahren. Sie haben online ein Hotel in der Stadtmitte gebucht. Als sie angekommen sind, hat sich die Mutter an der Rezeption angemeldet. Das Zimmer war groß, hell und sehr komfortabel. Am Abend haben sie sich im Restaurant des Hotels ein leckeres Abendessen bestellt. Der Vater hat sich über das Wetter geärgert, weil es den ganzen Tag geregnet hat. Aber die Kinder haben sich sehr gefreut, weil sie im Hotelpool schwimmen durften.`,
-  3: `Thomas und seine Freundin Lisa haben sich einen freien Tag in Prag genommen. Sie haben sich um neun Uhr morgens vor dem Hotel getroffen und sind zusammen in die Altstadt gegangen. Dort haben sie sich viele alte Gebäude angesehen. Mittags haben sie sich in einem kleinen Café ausgeruht und Kaffee getrunken. Am Nachmittag haben sie sich an einem Aussichtspunkt fotografiert. Beide haben sich sehr gut unterhalten.`,
-  4: `Nina fährt mit dem Zug von München nach Hamburg. Sie hat sich das Ticket schon gestern online gekauft. Am Bahnhof hat sie sich auf einer Bank ausgeruht, weil sie früh dort angekommen ist. Dann hat sie sich die Abfahrtszeiten auf der Anzeigetafel angesehen. Der Zug hatte leider Verspätung. Nina hat sich über die Verspätung geärgert, weil sie einen wichtigen Termin hatte.`,
-  5: `Anna zeigt ihren Freunden Fotos von ihrer Reise nach Portugal. Sie erinnert sich sehr gern an den Urlaub. Das Wetter war perfekt und fast dreißig Grad warm. Sie hat sich an einem Strand erholt und viel gelesen. Abends hat sie sich in kleinen Restaurants leckere Meeresfrüchte bestellt. Sie hat sich auch mit einheimischen Leuten unterhalten. Nächsten Sommer möchte sie nach Griechenland reisen.`
+// ─── MP3 AUDIO ENGINE (Hörverstehen) ─────
+var AUDIO_FILES = {
+  1: '../audio/reisen-1.mp3',
+  2: '../audio/reisen-2.mp3',
+  3: '../audio/reisen-3.mp3',
+  4: '../audio/reisen-4.mp3',
+  5: '../audio/reisen-5.mp3'
 };
 
-var deVoice = null;
-function findDeVoice() {
-  if (deVoice) return deVoice;
-  var voices = speechSynthesis.getVoices();
-  var german = voices.filter(function(v) { return v.lang && v.lang.replace('_','-').indexOf('de') === 0; });
-  if (german.length === 0) return null;
-  var preferred = ['Anna', 'Petra', 'Helena', 'Marlene', 'Vicki', 'Google'];
-  for (var p = 0; p < preferred.length; p++) {
-    for (var i = 0; i < german.length; i++) {
-      if (german[i].name.indexOf(preferred[p]) !== -1) { deVoice = german[i]; return deVoice; }
-    }
-  }
-  deVoice = german[0];
-  return deVoice;
-}
-if (speechSynthesis.getVoices().length) findDeVoice();
-speechSynthesis.addEventListener('voiceschanged', findDeVoice);
-
 var currentN = null;
-var currentUtter = null;
+var currentAudio = null;
 var progTimers = {};
 var speeds = { 1:1, 2:1, 3:1, 4:1, 5:1 };
 
 function togglePlay(n) {
-  if (speechSynthesis.speaking && currentN === n) {
-    speechSynthesis.cancel();
+  if (currentAudio && currentN === n) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
     clearInterval(progTimers[n]);
     setPlaying(n, false);
     currentN = null;
+    currentAudio = null;
     return;
   }
-  if (speechSynthesis.speaking && currentN !== n) {
-    speechSynthesis.cancel();
+  if (currentAudio && currentN !== n) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
     clearInterval(progTimers[currentN]);
     setPlaying(currentN, false);
   }
   currentN = n;
   setPlaying(n, true);
-  speakText(n);
+  playTrack(n);
 }
 
-function speakText(n) {
-  var text = TEXTS[n];
-  var utter = new SpeechSynthesisUtterance(text);
-  utter.lang = 'de-DE';
-  utter.rate = speeds[n] || 1;
-  utter.pitch = 1.05;
-  var voice = findDeVoice();
-  if (voice) utter.voice = voice;
-  currentUtter = utter;
+function playTrack(n) {
+  var audio = new Audio(AUDIO_FILES[n]);
+  audio.playbackRate = speeds[n] || 1;
+  currentAudio = audio;
 
-  var startTime = Date.now();
-  var avgCharMs = 75 / (speeds[n] || 1);
-  var totalMs = text.length * avgCharMs;
+  audio.onloadedmetadata = function() {
+    var totalMs = audio.duration * 1000;
+    clearInterval(progTimers[n]);
+    progTimers[n] = setInterval(function() {
+      if (!currentAudio || currentN !== n) return;
+      var elapsed = audio.currentTime * 1000;
+      var pct = Math.min(100, (elapsed / totalMs) * 100);
+      document.getElementById('prog-' + n).style.width = pct + '%';
+      document.getElementById('time-' + n).textContent = msToTime(elapsed) + ' / ' + msToTime(totalMs);
+    }, 200);
+  };
 
-  clearInterval(progTimers[n]);
-  progTimers[n] = setInterval(function() {
-    if (!speechSynthesis.speaking || currentN !== n) return;
-    var elapsed = Date.now() - startTime;
-    var pct = Math.min(100, (elapsed / totalMs) * 100);
-    document.getElementById('prog-' + n).style.width = pct + '%';
-    document.getElementById('time-' + n).textContent = msToTime(elapsed) + ' / ' + msToTime(totalMs);
-  }, 200);
-
-  utter.onend = function() {
+  audio.onended = function() {
     clearInterval(progTimers[n]);
     document.getElementById('prog-' + n).style.width = '100%';
-    document.getElementById('time-' + n).textContent = msToTime(totalMs) + ' / ' + msToTime(totalMs);
     setTimeout(function() {
       setPlaying(n, false);
       document.getElementById('prog-' + n).style.width = '0%';
       document.getElementById('time-' + n).textContent = '0:00';
       currentN = null;
+      currentAudio = null;
     }, 1200);
   };
-  utter.onerror = function() {
+  audio.onerror = function() {
     clearInterval(progTimers[n]);
     setPlaying(n, false);
     currentN = null;
+    currentAudio = null;
   };
 
-  speechSynthesis.speak(utter);
+  audio.play();
 }
 
 function setPlaying(n, on) {
@@ -2043,47 +2023,49 @@ function changeSpeed(n) {
   var idx = speedOpts.indexOf(speeds[n]);
   speeds[n] = speedOpts[(idx + 1) % speedOpts.length];
   document.getElementById('speed-' + n).textContent = speeds[n] + 'x';
+  if (currentAudio && currentN === n) {
+    currentAudio.playbackRate = speeds[n];
+  }
 }
 
 function seekTrack(e, n) {
-  /* Seek not supported with Speech API — restart from beginning */
-  speechSynthesis.cancel();
-  clearInterval(progTimers[n]);
-  document.getElementById('prog-' + n).style.width = '0%';
-  document.getElementById('time-' + n).textContent = '0:00';
-  currentN = n;
-  setPlaying(n, true);
-  speakText(n);
+  if (!currentAudio || currentN !== n) {
+    currentN = n;
+    setPlaying(n, true);
+    playTrack(n);
+    return;
+  }
+  var bar = e.currentTarget;
+  var rect = bar.getBoundingClientRect();
+  var pct = (e.clientX - rect.left) / rect.width;
+  currentAudio.currentTime = currentAudio.duration * pct;
 }
 
 function buildVoicePicker() {
   var c = document.getElementById('voice-chips');
   if (!c) return;
-  var voice = findDeVoice();
-  var name = voice ? voice.name : 'Systemstimme';
   c.innerHTML =
-    '<div class="voice-chip active">🗣 ' + name + '</div>' +
-    '<div style="font-size:12px;color:var(--text-muted);align-self:center;">Натуральний голос браузера — працює офлайн</div>';
+    '<div class="voice-chip active">&#128483; Katja (Neural)</div>' +
+    '<div style="font-size:12px;color:var(--text-muted);align-self:center;">Microsoft Neural TTS &mdash; натуральний німецький голос</div>';
 }
 
 function testVoice() {
   var btn = document.getElementById('test-btn');
-  if (speechSynthesis.speaking) {
-    speechSynthesis.cancel();
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    currentAudio = null;
     if (btn) { btn.textContent = '▶ Тест'; btn.classList.remove('testing'); }
     return;
   }
-  var utter = new SpeechSynthesisUtterance('Hallo! Ich lerne Deutsch. Das macht mir viel Spaß!');
-  utter.lang = 'de-DE';
-  utter.rate = 0.9;
-  utter.pitch = 1.05;
-  var voice = findDeVoice();
-  if (voice) utter.voice = voice;
+  var audio = new Audio('../audio/reisen-test.mp3');
+  currentAudio = audio;
   if (btn) { btn.textContent = '⏹ Stop'; btn.classList.add('testing'); }
-  utter.onend = utter.onerror = function() {
+  audio.onended = audio.onerror = function() {
     if (btn) { btn.textContent = '▶ Тест'; btn.classList.remove('testing'); }
+    currentAudio = null;
   };
-  speechSynthesis.speak(utter);
+  audio.play();
 }
 
 function toggleTranscript(n) {

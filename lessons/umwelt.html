@@ -1450,7 +1450,7 @@
           <div class="audio-task-label">Was macht Anna NICHT für die Umwelt?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Anna wohnt in einer kleinen Stadt und versucht, umweltfreundlich zu leben. Sie faehrt immer mit dem Fahrrad zur Arbeit und kauft keine Plastikflaschen. Aber sie faehrt zweimal im Jahr mit dem Flugzeug in den Urlaub. Das findet sie selbst nicht so gut.')">▶ Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/umwelt-1.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Sie kauft keine Plastikflaschen.</span></div>
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Sie fährt mit dem Fahrrad.</span></div>
@@ -1467,7 +1467,7 @@
           <div class="audio-task-label">Wie oft und wie lange duscht Maria?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Maria moechte Wasser sparen. Frueher hat sie jeden Tag zwanzig Minuten geduscht. Jetzt duscht sie nur noch jeden zweiten Tag und immer nur fuenf Minuten. Ihr Mann findet das manchmal schwierig, aber er versteht es.')">▶ Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/umwelt-2.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Jeden Tag, drei Minuten.</span></div>
             <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Jeden zweiten Tag, fünf Minuten.</span></div>
@@ -1484,7 +1484,7 @@
           <div class="audio-task-label">Warum kauft Thomas keine Bio-Produkte mehr?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Thomas hat frueher immer Bio-Produkte gekauft, weil er die Umwelt schuetzen wollte. Aber seit drei Monaten kauft er keine mehr. Bio-Produkte sind sehr teuer, und Thomas hat seinen Job verloren. Er hofft, dass er bald wieder arbeitet.')">▶ Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/umwelt-3.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Weil er die Umwelt nicht mehr wichtig findet.</span></div>
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Weil der Supermarkt keine Bio-Produkte mehr hat.</span></div>
@@ -1501,7 +1501,7 @@
           <div class="audio-task-label">Was ist das Hauptproblem in der Stadt laut dem Text?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'In der Stadt Gruenberg gibt es viele Umweltprobleme. Die Luft ist wegen der vielen Autos schlecht. Es gibt auch zu viel Muell auf den Strassen. Das groesste Problem ist der Fluss. Die Fabrik wirft seit Jahren alte Chemikalien ins Wasser. Die Fische sind fast alle verschwunden.')">▶ Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/umwelt-4.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Die schlechte Luft durch Autos.</span></div>
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Zu viel Müll auf den Straßen.</span></div>
@@ -1518,7 +1518,7 @@
           <div class="audio-task-label">Was sagt die Familie über das Recycling?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Familie Mueller trennt ihren Muell sehr genau. Die Mutter sortiert Papier, Glas und Plastik. Der Vater bringt die Flaschen zum Container. Aber die Kinder vergessen es oft. Der Sohn wirft manchmal Plastik in den falschen Muellleimer. Die Mutter erklaert ihm, warum das wichtig ist.')">▶ Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/umwelt-5.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Die ganze Familie trennt den Müll sehr gut.</span></div>
             <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Der Sohn wirft Plastik manchmal in den falschen Eimer.</span></div>
@@ -1535,7 +1535,7 @@
           <div class="audio-task-label">Was plant die Stadt Grünberg für die Zukunft?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Die Stadt Gruenberg hat einen neuen Plan. Ab naechstem Jahr sollen alle neuen Busse elektrisch fahren. Die Stadt moechte auch mehr Fahrradwege bauen. Autos sollen in der Stadtmitte weniger fahren duerfen. Das Schwimmbad mit Solarenergie kommt erst in fuenf Jahren.')">▶ Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/umwelt-6.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Elektrische Busse und ein Solarenergie-Schwimmbad — beides ab nächstem Jahr.</span></div>
             <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Elektrische Busse ab nächstem Jahr, Schwimmbad erst in fünf Jahren.</span></div>
@@ -1600,100 +1600,35 @@ var hoeren_correct = 0;
 var hoeren_answered = 0;
 var hoeren_total = 6;
 var curBtn = null;
-var isSpeaking = false;
-var deVoice = null;
-var speakQueue = [];
-var keepAlive = null;
+var curAudio = null;
 
-/* Find the best German voice */
-function findDeVoice() {
-  var voices = speechSynthesis.getVoices();
-  var german = voices.filter(function(v) { return v.lang && v.lang.replace('_','-').indexOf('de') === 0; });
-  if (german.length === 0) return null;
-  var preferred = ['Helena', 'Anna', 'Petra', 'Marlene', 'Vicki', 'Google'];
-  for (var p = 0; p < preferred.length; p++) {
-    for (var i = 0; i < german.length; i++) {
-      if (german[i].name.indexOf(preferred[p]) !== -1) { deVoice = german[i]; return deVoice; }
-    }
-  }
-  deVoice = german[0];
-  return deVoice;
-}
-
-/* Load voices — must re-check each time since voices load async */
-speechSynthesis.addEventListener('voiceschanged', function() { deVoice = null; findDeVoice(); });
-findDeVoice();
-
-/* Split text into short sentences for reliable playback */
-function splitSentences(text) {
-  var parts = text.replace(/\.\s+/g, '.|').replace(/!\s+/g, '!|').replace(/\?\s+/g, '?|').split('|');
-  return parts.map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 0; });
-}
-
-function speakNext(btn) {
-  if (speakQueue.length === 0 || !isSpeaking) {
-    clearInterval(keepAlive);
-    isSpeaking = false;
-    speakQueue = [];
-    if (btn) { btn.innerHTML = '▶ Noch einmal'; btn.style.background = '#7F77DD'; }
+function playAudio(btn) {
+  if (curAudio && curBtn === btn) {
+    curAudio.pause();
+    curAudio.currentTime = 0;
+    curAudio = null;
+    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
     curBtn = null;
     return;
   }
-
-  var sentence = speakQueue.shift();
-  var utter = new SpeechSynthesisUtterance(sentence);
-  utter.lang = 'de-DE';
-  utter.rate = 0.88;
-  utter.pitch = 1.05;
-
-  /* Re-find voice each time (Safari loses voice reference) */
-  var voice = deVoice || findDeVoice();
-  if (voice) utter.voice = voice;
-
-  utter.onend = function() {
-    if (isSpeaking) speakNext(btn);
-  };
-  utter.onerror = function() {
-    if (isSpeaking) speakNext(btn);
-  };
-
-  speechSynthesis.speak(utter);
-}
-
-function speak(btn, text) {
-  /* Stop if already playing */
-  speechSynthesis.cancel();
-  clearInterval(keepAlive);
-
-  if (isSpeaking && curBtn === btn) {
-    isSpeaking = false;
-    speakQueue = [];
-    btn.innerHTML = '▶ Abspielen'; btn.style.background = '#7F77DD';
-    curBtn = null;
-    return;
+  if (curAudio) {
+    curAudio.pause();
+    curAudio.currentTime = 0;
+    if (curBtn) { curBtn.innerHTML = '&#9654; Abspielen'; curBtn.style.background = '#7F77DD'; }
   }
-  if (curBtn && curBtn !== btn) {
-    curBtn.innerHTML = '▶ Abspielen'; curBtn.style.background = '#7F77DD';
-  }
-
-  curBtn = btn; isSpeaking = true;
-  btn.innerHTML = '⏸ Stopp'; btn.style.background = '#534AB7';
-
-  /* Replace "ae", "oe", "ue" back to umlauts for proper pronunciation */
-  var clean = text.replace(/ae/g, 'ä').replace(/oe/g, 'ö').replace(/ue/g, 'ü')
-                   .replace(/Ae/g, 'Ä').replace(/Oe/g, 'Ö').replace(/Ue/g, 'Ü');
-
-  speakQueue = splitSentences(clean);
-
-  /* Chrome bug workaround: pause/resume every 10s to prevent audio cutoff */
-  keepAlive = setInterval(function() {
-    if (speechSynthesis.speaking && !speechSynthesis.paused) {
-      speechSynthesis.pause();
-      speechSynthesis.resume();
-    }
-  }, 10000);
-
-  speakNext(btn);
+  var src = btn.getAttribute('data-audio');
+  curAudio = new Audio(src);
+  curBtn = btn;
+  btn.innerHTML = '&#9208; Stopp'; btn.style.background = '#534AB7';
+  curAudio.onended = function() {
+    btn.innerHTML = '&#9654; Noch einmal'; btn.style.background = '#7F77DD';
+    curBtn = null; curAudio = null;
+  };
+  curAudio.onerror = function() {
+    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
+    curBtn = null; curAudio = null;
+  };
+  curAudio.play();
 }
 
 function choose(el, isCorrect) {

@@ -1413,7 +1413,7 @@
           <div class="audio-task-label">Was kocht die Familie heute Abend?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Heute Abend kocht die Familie Mueller zusammen. Die Mutter moechte Spaghetti mit Tomatensauce machen. Der Vater schneidet die Zwiebeln und den Knoblauch. Die Kinder helfen beim Salat. Die Mutter sagt: Das wird ein leckeres Abendessen!')">&#9654; Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/kochen-1.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Pizza mit Salat.</span></div>
             <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Spaghetti mit Tomatensauce.</span></div>
@@ -1430,7 +1430,7 @@
           <div class="audio-task-label">Warum kann Markus nicht gut kochen?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Markus ist Student und wohnt allein. Er kann nicht gut kochen, weil seine Mutter frueher immer fuer ihn gekocht hat. Jetzt muss er alles selbst machen. Er schaut oft Kochvideos im Internet und versucht, einfache Gerichte zu lernen. Gestern hat er zum ersten Mal Pfannkuchen gemacht.')">&#9654; Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/kochen-2.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Weil er kein Internet hat.</span></div>
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Weil er keine K&uuml;che hat.</span></div>
@@ -1447,7 +1447,7 @@
           <div class="audio-task-label">Was bestellt Lisa im Restaurant?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Lisa geht mit einer Freundin ins Restaurant. Sie schaut die Speisekarte an. Es gibt Fisch, Steak und verschiedene Salate. Lisa ist Vegetarierin, deshalb bestellt sie einen grossen Salat mit Kaese und Brot. Ihre Freundin nimmt das Steak mit Pommes.')">&#9654; Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/kochen-3.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Fisch mit Reis.</span></div>
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Steak mit Pommes.</span></div>
@@ -1464,7 +1464,7 @@
           <div class="audio-task-label">Was ist das Problem beim Backen?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Frau Weber moechte einen Kuchen backen. Sie hat Mehl, Zucker und Butter. Aber dann merkt sie: Es gibt keine Eier mehr! Sie fragt ihre Nachbarin, ob sie drei Eier haben kann. Die Nachbarin gibt ihr fuenf Eier und sagt: Ich moechte gern ein Stueck von deinem Kuchen probieren!')">&#9654; Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/kochen-4.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">A</span><span>Es gibt keine Eier mehr.</span></div>
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Sie hat keinen Zucker.</span></div>
@@ -1481,7 +1481,7 @@
           <div class="audio-task-label">Was ist das Lieblingsgericht von Tom?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'Toms Lieblingsgericht ist Kartoffelsuppe. Seine Grossmutter hat sie frueher jeden Sonntag gekocht. Die Suppe war immer mit Wuerstchen und frischen Kraeutern. Heute kocht Tom die Suppe selbst, aber er sagt: Sie schmeckt nie so gut wie bei Oma. Trotzdem kocht er sie jede Woche.')">&#9654; Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/kochen-5.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Bratwurst mit Sauerkraut.</span></div>
             <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Kartoffelsuppe mit W&uuml;rstchen.</span></div>
@@ -1498,7 +1498,7 @@
           <div class="audio-task-label">Was lernt man im Kochkurs?</div>
         </div>
         <div class="audio-task-body">
-          <button class="audio-play-btn" onclick="speak(this, 'In der Volkshochschule gibt es einen Kochkurs fuer Anfaenger. Dort lernt man, wie man einfache Gerichte kocht: Suppen, Salate und Nudelgerichte. Der Kurs dauert sechs Wochen und findet jeden Mittwoch statt. Am Ende bekommt jeder Teilnehmer ein kleines Kochbuch mit allen Rezepten aus dem Kurs.')">&#9654; Abspielen</button>
+          <button class="audio-play-btn" data-audio="../audio/kochen-6.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
           <div class="audio-options">
             <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">A</span><span>Einfache Gerichte: Suppen, Salate, Nudeln.</span></div>
             <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Nur Desserts und Kuchen.</span></div>
@@ -1541,79 +1541,35 @@ var hoeren_correct = 0;
 var hoeren_answered = 0;
 var hoeren_total = 6;
 var curBtn = null;
-var isSpeaking = false;
-var deVoice = null;
-var speakQueue = [];
-var keepAlive = null;
+var curAudio = null;
 
-function findDeVoice() {
-  var voices = speechSynthesis.getVoices();
-  var german = voices.filter(function(v) { return v.lang && v.lang.replace('_','-').indexOf('de') === 0; });
-  if (german.length === 0) return null;
-  var preferred = ['Helena', 'Anna', 'Petra', 'Marlene', 'Vicki', 'Google'];
-  for (var p = 0; p < preferred.length; p++) {
-    for (var i = 0; i < german.length; i++) {
-      if (german[i].name.indexOf(preferred[p]) !== -1) { deVoice = german[i]; return deVoice; }
-    }
-  }
-  deVoice = german[0];
-  return deVoice;
-}
-
-speechSynthesis.addEventListener('voiceschanged', function() { deVoice = null; findDeVoice(); });
-findDeVoice();
-
-function splitSentences(text) {
-  var parts = text.replace(/\.\s+/g, '.|').replace(/!\s+/g, '!|').replace(/\?\s+/g, '?|').split('|');
-  return parts.map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 0; });
-}
-
-function speakNext(btn) {
-  if (speakQueue.length === 0 || !isSpeaking) {
-    clearInterval(keepAlive);
-    isSpeaking = false;
-    speakQueue = [];
-    if (btn) { btn.innerHTML = '&#9654; Noch einmal'; btn.style.background = '#7F77DD'; }
-    curBtn = null;
-    return;
-  }
-  var sentence = speakQueue.shift();
-  var utter = new SpeechSynthesisUtterance(sentence);
-  utter.lang = 'de-DE';
-  utter.rate = 0.88;
-  utter.pitch = 1.05;
-  var voice = deVoice || findDeVoice();
-  if (voice) utter.voice = voice;
-  utter.onend = function() { if (isSpeaking) speakNext(btn); };
-  utter.onerror = function() { if (isSpeaking) speakNext(btn); };
-  speechSynthesis.speak(utter);
-}
-
-function speak(btn, text) {
-  speechSynthesis.cancel();
-  clearInterval(keepAlive);
-  if (isSpeaking && curBtn === btn) {
-    isSpeaking = false;
-    speakQueue = [];
+function playAudio(btn) {
+  if (curAudio && curBtn === btn) {
+    curAudio.pause();
+    curAudio.currentTime = 0;
+    curAudio = null;
     btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
     curBtn = null;
     return;
   }
-  if (curBtn && curBtn !== btn) {
-    curBtn.innerHTML = '&#9654; Abspielen'; curBtn.style.background = '#7F77DD';
+  if (curAudio) {
+    curAudio.pause();
+    curAudio.currentTime = 0;
+    if (curBtn) { curBtn.innerHTML = '&#9654; Abspielen'; curBtn.style.background = '#7F77DD'; }
   }
-  curBtn = btn; isSpeaking = true;
+  var src = btn.getAttribute('data-audio');
+  curAudio = new Audio(src);
+  curBtn = btn;
   btn.innerHTML = '&#9208; Stopp'; btn.style.background = '#534AB7';
-  var clean = text.replace(/ae/g, '\u00e4').replace(/oe/g, '\u00f6').replace(/ue/g, '\u00fc')
-                   .replace(/Ae/g, '\u00c4').replace(/Oe/g, '\u00d6').replace(/Ue/g, '\u00dc');
-  speakQueue = splitSentences(clean);
-  keepAlive = setInterval(function() {
-    if (speechSynthesis.speaking && !speechSynthesis.paused) {
-      speechSynthesis.pause();
-      speechSynthesis.resume();
-    }
-  }, 10000);
-  speakNext(btn);
+  curAudio.onended = function() {
+    btn.innerHTML = '&#9654; Noch einmal'; btn.style.background = '#7F77DD';
+    curBtn = null; curAudio = null;
+  };
+  curAudio.onerror = function() {
+    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
+    curBtn = null; curAudio = null;
+  };
+  curAudio.play();
 }
 
 function choose(el, isCorrect) {
