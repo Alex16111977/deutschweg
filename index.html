@@ -120,6 +120,42 @@
     .card-num { width: 32px; height: 32px; border-radius: 50%; background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .card-title { font-size: 18px; font-weight: 600; color: var(--text-dark); }
 
+    /* ── STRATEGY CARDS ── */
+    .strategy-section { margin-bottom: 1.4rem; }
+    .strategy-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+    .strategy-header-icon { font-size: 28px; }
+    .strategy-header-title { font-size: 18px; font-weight: 600; color: var(--text-dark); }
+    .strategy-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+    .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .strategy-card {
+      position: relative; background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 1.4rem 1.4rem 1.2rem; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; overflow: hidden;
+    }
+    .strategy-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .strategy-card.s-words { border-color: var(--green-border); }
+    .strategy-card.s-words:hover { border-color: var(--green-mid); box-shadow: 0 8px 24px rgba(29,158,117,0.12); }
+    .strategy-card.s-grammar { border-color: var(--violet-border); }
+    .strategy-card.s-grammar:hover { border-color: var(--violet); box-shadow: 0 8px 24px rgba(124,92,252,0.12); }
+    .strategy-card.s-think { border-color: var(--amber-border); }
+    .strategy-card.s-think:hover { border-color: var(--amber-mid); box-shadow: 0 8px 24px rgba(186,117,23,0.12); }
+    .strategy-card.s-build { border-color: var(--rose-border); }
+    .strategy-card.s-build:hover { border-color: var(--rose); box-shadow: 0 8px 24px rgba(232,80,106,0.12); }
+    .strategy-card.s-speak { border-color: var(--green-border); background: linear-gradient(135deg, var(--green-pale), #fff 60%); }
+    .strategy-card.s-speak:hover { border-color: var(--green-mid); box-shadow: 0 8px 24px rgba(29,158,117,0.15); }
+    .strategy-card.s-full { grid-column: 1 / -1; }
+    .strategy-emoji { font-size: 28px; margin-bottom: 0.6rem; display: block; }
+    .strategy-title { font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 0.4rem; }
+    .strategy-text { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+    .strategy-steps { list-style: none; margin-top: 0.5rem; }
+    .strategy-steps li { font-size: 13px; color: var(--text-mid); padding: 3px 0; padding-left: 18px; position: relative; line-height: 1.5; }
+    .strategy-steps li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; }
+    .s-words .strategy-steps li::before { background: var(--green-mid); }
+    .s-grammar .strategy-steps li::before { background: var(--violet); }
+    .s-think .strategy-steps li::before { background: var(--amber-mid); }
+    .s-build .strategy-steps li::before { background: var(--rose); }
+    .s-speak .strategy-steps li::before { background: var(--green-deep); }
+    @media (max-width: 560px) { .strategy-grid { grid-template-columns: 1fr; } .strategy-card.s-full { grid-column: auto; } }
+
     /* ── GRAMMAR HUB ── */
     .grammar-hub { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 1.8rem 2rem; margin-bottom: 1.4rem; }
     .grammar-hub-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
@@ -299,6 +335,79 @@
       <div>
         <div class="tip-title">Tipp des Tages</div>
         <div class="tip-text">Lies den Text laut vor! So trainierst du gleichzeitig Lesen, Aussprache und Intonation. Wenn du einen Satz nicht verstehst, lies ihn noch einmal &mdash; langsamer.</div>
+      </div>
+    </div>
+
+    <!-- STRATEGY: How to really learn German -->
+    <div class="strategy-section fade-in">
+      <div class="strategy-header">
+        <span class="strategy-header-icon">&#127919;</span>
+        <span class="strategy-header-title">Wie lernst du richtig?</span>
+      </div>
+      <p class="strategy-sub">5 Strategien, die dir helfen, Deutsch nicht nur zu lernen &mdash; sondern wirklich zu sprechen.</p>
+      <div class="strategy-grid">
+
+        <div class="strategy-card s-words">
+          <span class="strategy-emoji">&#129504;</span>
+          <div class="strategy-title">W&ouml;rter f&uuml;r immer merken</div>
+          <div class="strategy-text">Vergiss nicht &mdash; wiederhole richtig!</div>
+          <ul class="strategy-steps">
+            <li>Lerne neue W&ouml;rter immer im Kontext &mdash; nie einzeln</li>
+            <li>Schreib zu jedem Wort einen eigenen Satz aus deinem Leben</li>
+            <li>Wiederhole am selben Tag, nach 1 Tag, nach 3 Tagen, nach 7 Tagen</li>
+            <li>Kleb Post-its mit deutschen W&ouml;rtern auf Dinge in deiner Wohnung</li>
+          </ul>
+        </div>
+
+        <div class="strategy-card s-grammar">
+          <span class="strategy-emoji">&#128208;</span>
+          <div class="strategy-title">Grammatik verstehen &amp; behalten</div>
+          <div class="strategy-text">Nicht auswendig lernen &mdash; verstehen und benutzen!</div>
+          <ul class="strategy-steps">
+            <li>Lerne eine Regel &mdash; dann mach sofort 5 eigene Beispiele</li>
+            <li>Erkl&auml;re die Regel dir selbst laut auf Deutsch</li>
+            <li>Verbinde Grammatik mit echten Situationen, nicht mit Tabellen</li>
+            <li>Mach Fehler &mdash; und lerne daraus, statt Angst zu haben</li>
+          </ul>
+        </div>
+
+        <div class="strategy-card s-think">
+          <span class="strategy-emoji">&#128173;</span>
+          <div class="strategy-title">Auf Deutsch denken lernen</div>
+          <div class="strategy-text">H&ouml;r auf zu &uuml;bersetzen &mdash; fang an zu denken!</div>
+          <ul class="strategy-steps">
+            <li>Beschreibe Dinge um dich herum auf Deutsch: &laquo;Das ist ein Tisch. Er ist braun.&raquo;</li>
+            <li>Denk an deinen Tag auf Deutsch: &laquo;Ich stehe auf. Ich trinke Kaffee.&raquo;</li>
+            <li>Wenn du ein Wort nicht wei&szlig;t &mdash; erkl&auml;re es auf Deutsch, statt zu &uuml;bersetzen</li>
+            <li>Schau deutsche Videos und h&ouml;re Podcasts &mdash; ohne Untertitel</li>
+          </ul>
+        </div>
+
+        <div class="strategy-card s-build">
+          <span class="strategy-emoji">&#128295;</span>
+          <div class="strategy-title">Selbst S&auml;tze bauen</div>
+          <div class="strategy-text">Du musst nicht perfekt sprechen &mdash; du musst anfangen!</div>
+          <ul class="strategy-steps">
+            <li>Nimm ein Verb und bau 5 verschiedene S&auml;tze damit</li>
+            <li>Benutze die Struktur: Subjekt + Verb + Erg&auml;nzung &mdash; so einfach wie m&ouml;glich</li>
+            <li>&Auml;ndere einen Satz: andere Person, andere Zeit, andere Frage</li>
+            <li>Schreib jeden Tag 3 S&auml;tze &uuml;ber deinen Tag</li>
+          </ul>
+        </div>
+
+        <div class="strategy-card s-speak s-full">
+          <span class="strategy-emoji">&#128483;</span>
+          <div class="strategy-title">Endlich anfangen zu sprechen</div>
+          <div class="strategy-text">Sprechen lernt man nur durch Sprechen. Hier sind konkrete Schritte:</div>
+          <ul class="strategy-steps">
+            <li>Lies jeden Text laut vor &mdash; deine Zunge muss sich an die Laute gew&ouml;hnen</li>
+            <li>Sprich mit dir selbst: erz&auml;hle, was du gerade machst, auf Deutsch</li>
+            <li>Nimm dich auf und h&ouml;r dir zu &mdash; du wirst schnell besser</li>
+            <li>&Uuml;be Dialoge mit einem Partner oder sprich die Rollen allein</li>
+            <li>Hab keine Angst vor Fehlern &mdash; jeder Fehler bringt dich weiter!</li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
