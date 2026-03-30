@@ -698,7 +698,6 @@
 .mosaic-icon.retell{background:#F3E5F5;color:#8E24AA}
 .mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
 .mosaic-icon.discuss{background:#E0F7FA;color:#00838F}
-.mosaic-icon.listen{background:#EDE7F6;color:#5E35B1}
 .mosaic-info{min-width:0}
 .mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
 .mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -744,7 +743,6 @@
   <a class="sticky-pip" href="#s-retell" data-section="s-retell">🔁<span class="pip-tooltip">Nacherzählung</span></a>
   <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Grammatik</span></a>
   <a class="sticky-pip" href="#s-discuss" data-section="s-discuss">🗣<span class="pip-tooltip">Diskussion</span></a>
-  <a class="sticky-pip" href="#s-listen" data-section="s-listen">🎧<span class="pip-tooltip">Hören</span></a>
   <div class="sticky-divider"></div>
   <span class="sticky-current" id="sticky-current"></span>
 </div>
@@ -830,10 +828,6 @@
   <a class="mosaic-tile" href="#s-discuss">
     <div class="mosaic-icon discuss">🗣</div>
     <div class="mosaic-info"><div class="mosaic-step">Schritt 7</div><div class="mosaic-label">Diskussion</div></div>
-  </a>
-  <a class="mosaic-tile" href="#s-listen">
-    <div class="mosaic-icon listen">🎧</div>
-    <div class="mosaic-info"><div class="mosaic-step">Schritt 8</div><div class="mosaic-label">Hören</div></div>
   </a>
 </nav>
 
@@ -1434,121 +1428,6 @@
     </div>
   </div>
 
-  <!-- HÖREN: Audio-Aufgaben -->
-  <div class="section" id="s-listen">
-    <div class="section-head">
-      <div class="sec-num" style="background:#7F77DD;">🎧</div>
-      <h2 class="sec-title">Hören — Wähle die richtige Antwort</h2>
-    </div>
-    <div class="section-body">
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem;">Drücke auf <strong>▶ Abspielen</strong> und wähle dann A, B oder C.</p>
-
-      <!-- Aufgabe 1 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">1</div>
-          <div class="audio-task-label">Was macht Anna NICHT für die Umwelt?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/umwelt-1.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Sie kauft keine Plastikflaschen.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Sie fährt mit dem Fahrrad.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Sie fliegt nie in den Urlaub.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="✓ Richtig! Anna fliegt zweimal im Jahr — das macht sie selbst nicht glücklich." data-err="✗ Falsch. Hör noch einmal genau: Anna fliegt zweimal im Jahr mit dem Flugzeug. Das ist das Problem."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 2 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">2</div>
-          <div class="audio-task-label">Wie oft und wie lange duscht Maria?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/umwelt-2.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Jeden Tag, drei Minuten.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Jeden zweiten Tag, fünf Minuten.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Zweimal pro Woche, zwanzig Minuten.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="✓ Richtig! Jeden zweiten Tag und nur fünf Minuten — früher waren es zwanzig." data-err="✗ Falsch. Früher hat sie zwanzig Minuten geduscht. Jetzt: jeden zweiten Tag, fünf Minuten."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 3 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">3</div>
-          <div class="audio-task-label">Warum kauft Thomas keine Bio-Produkte mehr?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/umwelt-3.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Weil er die Umwelt nicht mehr wichtig findet.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Weil der Supermarkt keine Bio-Produkte mehr hat.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Weil er seinen Job verloren hat und kein Geld hat.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="✓ Richtig! Thomas hat keinen Job mehr und kann sich Bio nicht leisten." data-err="✗ Falsch. Er findet Bio und Umwelt immer noch wichtig — aber er hat kein Geld mehr dafür."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 4 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">4</div>
-          <div class="audio-task-label">Was ist das Hauptproblem in der Stadt laut dem Text?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/umwelt-4.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Die schlechte Luft durch Autos.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Zu viel Müll auf den Straßen.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Die Fabrik verschmutzt den Fluss mit Chemikalien.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="✓ Richtig! Der Text sagt: das GRÖSSTE Problem ist der verschmutzte Fluss." data-err="✗ Falsch. Luft und Müll sind Probleme, aber der Text sagt: das GRÖSSTE Problem ist der Fluss."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 5 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">5</div>
-          <div class="audio-task-label">Was sagt die Familie über das Recycling?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/umwelt-5.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Die ganze Familie trennt den Müll sehr gut.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Der Sohn wirft Plastik manchmal in den falschen Eimer.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Der Vater vergisst oft, die Flaschen wegzubringen.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="✓ Richtig! Der Sohn denkt, es ist egal — die Mutter muss es ihm erklären." data-err="✗ Falsch. Der Vater bringt die Flaschen — der SOHN ist das Problem. Er wirft Plastik in den falschen Eimer."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 6 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">6</div>
-          <div class="audio-task-label">Was plant die Stadt Grünberg für die Zukunft?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/umwelt-6.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Elektrische Busse und ein Solarenergie-Schwimmbad — beides ab nächstem Jahr.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Elektrische Busse ab nächstem Jahr, Schwimmbad erst in fünf Jahren.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Mehr Fahrradwege, aber keine elektrischen Busse.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="✓ Richtig! Die Busse kommen nächstes Jahr, aber das Schwimmbad erst in 5 Jahren — kein Geld." data-err="✗ Falsch. Hör genau: elektrische Busse — nächstes Jahr. Schwimmbad — erst in fünf Jahren, weil Geld fehlt."></div>
-        </div>
-      </div>
-
-      <div id="hoeren-result" style="display:none;margin-top:1rem;background:var(--green-pale);border:1px solid var(--green-border);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--green-deep);text-align:center;font-weight:500;"></div>
-    </div>
-  </div>
-
   <nav class="lesson-nav" aria-label="Themen-Navigation">
     <div class="lesson-nav-link prev" style="visibility:hidden">
       <span class="lesson-nav-arrow">&larr;</span>
@@ -1572,94 +1451,6 @@
     <span>Deutsch A2 · Thema: Die Umwelt</span>
     <div class="footer-line"></div>
   </div>
-
-<style>
-  .audio-task { border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg-card); margin-bottom:12px; }
-  .audio-task-head { display:flex; align-items:center; gap:12px; padding:11px 16px; background:var(--bg-section); border-bottom:1px solid var(--border); }
-  .audio-task-num { width:26px;height:26px;border-radius:50%;background:#7F77DD;color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-  .audio-task-label { font-size:14px;font-weight:500;color:var(--text-dark); }
-  .audio-task-body { padding:14px 16px; }
-  .audio-play-btn { display:inline-flex;align-items:center;gap:8px;background:#7F77DD;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit; }
-  .audio-play-btn:hover { background:#534AB7; }
-  .audio-options { display:flex;flex-direction:column;gap:8px;margin-top:12px; }
-  .audio-opt { display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1.5px solid var(--border);border-radius:9px;cursor:pointer;font-size:14px;color:var(--text-dark);background:var(--bg-card);line-height:1.5; }
-  .audio-opt:hover { border-color:#AFA9EC;background:#EEEDFE; }
-  .audio-opt.correct { border-color:#1D9E75;background:var(--green-pale);color:var(--green-deep);pointer-events:none; }
-  .audio-opt.wrong   { border-color:#E24B4A;background:#FCEBEB;color:#A32D2D;pointer-events:none; }
-  .audio-opt.disabled { pointer-events:none; }
-  .opt-letter { width:22px;height:22px;border-radius:50%;background:#CECBF6;color:#3C3489;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px; }
-  .audio-opt.correct .opt-letter { background:#1D9E75;color:#fff; }
-  .audio-opt.wrong   .opt-letter { background:#E24B4A;color:#fff; }
-  .audio-feedback { margin-top:10px;font-size:13px;padding:8px 12px;border-radius:8px; }
-  .audio-feedback.ok  { background:var(--green-pale);color:var(--green-deep);border:1px solid var(--green-border); }
-  .audio-feedback.err { background:#FCEBEB;color:#A32D2D;border:1px solid #F7C1C1; }
-</style>
-
-<script>
-var hoeren_correct = 0;
-var hoeren_answered = 0;
-var hoeren_total = 6;
-var curBtn = null;
-var curAudio = null;
-
-function playAudio(btn) {
-  if (curAudio && curBtn === btn) {
-    curAudio.pause();
-    curAudio.currentTime = 0;
-    curAudio = null;
-    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
-    curBtn = null;
-    return;
-  }
-  if (curAudio) {
-    curAudio.pause();
-    curAudio.currentTime = 0;
-    if (curBtn) { curBtn.innerHTML = '&#9654; Abspielen'; curBtn.style.background = '#7F77DD'; }
-  }
-  var src = btn.getAttribute('data-audio');
-  curAudio = new Audio(src);
-  curBtn = btn;
-  btn.innerHTML = '&#9208; Stopp'; btn.style.background = '#534AB7';
-  curAudio.onended = function() {
-    btn.innerHTML = '&#9654; Noch einmal'; btn.style.background = '#7F77DD';
-    curBtn = null; curAudio = null;
-  };
-  curAudio.onerror = function() {
-    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
-    curBtn = null; curAudio = null;
-  };
-  curAudio.play();
-}
-
-function choose(el, isCorrect) {
-  var opts = el.parentNode.querySelectorAll('.audio-opt');
-  for (var i = 0; i < opts.length; i++) {
-    if (opts[i].classList.contains('correct') || opts[i].classList.contains('wrong')) return;
-  }
-  for (var i = 0; i < opts.length; i++) { opts[i].style.pointerEvents = 'none'; }
-  var fb = el.parentNode.parentNode.querySelector('.audio-feedback');
-  if (isCorrect) {
-    el.classList.add('correct');
-    fb.textContent = fb.getAttribute('data-ok');
-    fb.className = 'audio-feedback ok';
-    hoeren_correct++;
-  } else {
-    el.classList.add('wrong');
-    for (var i = 0; i < opts.length; i++) {
-      if (opts[i].getAttribute('onclick').indexOf('true') !== -1) { opts[i].classList.add('correct'); break; }
-    }
-    fb.textContent = fb.getAttribute('data-err');
-    fb.className = 'audio-feedback err';
-  }
-  hoeren_answered++;
-  if (hoeren_answered === hoeren_total) {
-    var res = document.getElementById('hoeren-result');
-    var pct = Math.round(hoeren_correct / hoeren_total * 100);
-    res.textContent = (pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪') + ' Ergebnis: ' + hoeren_correct + ' von ' + hoeren_total + ' richtig (' + pct + '%)';
-    res.style.display = 'block';
-  }
-}
-</script>
 
 <script>
 /* ── Modal verb exercises ── */

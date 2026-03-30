@@ -675,7 +675,6 @@
   .mosaic-icon.retell{background:#F3E5F5;color:#8E24AA}
   .mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
   .mosaic-icon.discuss{background:#E0F7FA;color:#00838F}
-  .mosaic-icon.listen{background:#EDE7F6;color:#5E35B1}
   .mosaic-info{min-width:0}
   .mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
   .mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -701,27 +700,6 @@
     .sticky-current{display:none}
     .sticky-divider{display:none}
   }
-
-  /* ── AUDIO TASKS ── */
-  .audio-task { border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg-card); margin-bottom:12px; }
-  .audio-task-head { display:flex; align-items:center; gap:12px; padding:11px 16px; background:var(--bg-section); border-bottom:1px solid var(--border); }
-  .audio-task-num { width:26px;height:26px;border-radius:50%;background:#7F77DD;color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-  .audio-task-label { font-size:14px;font-weight:500;color:var(--text-dark); }
-  .audio-task-body { padding:14px 16px; }
-  .audio-play-btn { display:inline-flex;align-items:center;gap:8px;background:#7F77DD;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit; }
-  .audio-play-btn:hover { background:#534AB7; }
-  .audio-options { display:flex;flex-direction:column;gap:8px;margin-top:12px; }
-  .audio-opt { display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1.5px solid var(--border);border-radius:9px;cursor:pointer;font-size:14px;color:var(--text-dark);background:var(--bg-card);line-height:1.5; }
-  .audio-opt:hover { border-color:#AFA9EC;background:#EEEDFE; }
-  .audio-opt.correct { border-color:#1D9E75;background:var(--green-pale);color:var(--green-deep);pointer-events:none; }
-  .audio-opt.wrong   { border-color:#E24B4A;background:#FCEBEB;color:#A32D2D;pointer-events:none; }
-  .audio-opt.disabled { pointer-events:none; }
-  .opt-letter { width:22px;height:22px;border-radius:50%;background:#CECBF6;color:#3C3489;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px; }
-  .audio-opt.correct .opt-letter { background:#1D9E75;color:#fff; }
-  .audio-opt.wrong   .opt-letter { background:#E24B4A;color:#fff; }
-  .audio-feedback { margin-top:10px;font-size:13px;padding:8px 12px;border-radius:8px; }
-  .audio-feedback.ok  { background:var(--green-pale);color:var(--green-deep);border:1px solid var(--green-border); }
-  .audio-feedback.err { background:#FCEBEB;color:#A32D2D;border:1px solid #F7C1C1; }
 
   /* ── QA LIST (collapsible answers) ── */
   .qa-list{display:flex;flex-direction:column;gap:10px}
@@ -776,7 +754,6 @@
   <a class="sticky-pip" href="#s-retell" data-section="s-retell">&#128257;<span class="pip-tooltip">Nacherz&auml;hlung</span></a>
   <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">&#128208;<span class="pip-tooltip">Grammatik</span></a>
   <a class="sticky-pip" href="#s-discuss" data-section="s-discuss">&#128483;<span class="pip-tooltip">Diskussion</span></a>
-  <a class="sticky-pip" href="#s-listen" data-section="s-listen">&#127911;<span class="pip-tooltip">H&ouml;ren</span></a>
   <div class="sticky-divider"></div>
   <span class="sticky-current" id="sticky-current"></span>
 </div>
@@ -862,10 +839,6 @@
   <a class="mosaic-tile" href="#s-discuss">
     <div class="mosaic-icon discuss">&#128483;</div>
     <div class="mosaic-info"><div class="mosaic-step">Schritt 7</div><div class="mosaic-label">Diskussion</div></div>
-  </a>
-  <a class="mosaic-tile" href="#s-listen">
-    <div class="mosaic-icon listen">&#127911;</div>
-    <div class="mosaic-info"><div class="mosaic-step">Schritt 8</div><div class="mosaic-label">H&ouml;ren</div></div>
   </a>
 </nav>
 
@@ -1397,121 +1370,6 @@
     </div>
   </div>
 
-  <!-- H&Ouml;REN: Audio-Aufgaben -->
-  <div class="section" id="s-listen">
-    <div class="section-head">
-      <div class="sec-num" style="background:#7F77DD;">&#127911;</div>
-      <h2 class="sec-title">H&ouml;ren &mdash; W&auml;hle die richtige Antwort</h2>
-    </div>
-    <div class="section-body">
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem;">Dr&uuml;cke auf <strong>&#9654; Abspielen</strong> und w&auml;hle dann A, B oder C.</p>
-
-      <!-- Aufgabe 1 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">1</div>
-          <div class="audio-task-label">Was kocht die Familie heute Abend?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/kochen-1.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Pizza mit Salat.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Spaghetti mit Tomatensauce.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Schnitzel mit Kartoffeln.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="&#10003; Richtig! Die Mutter m&ouml;chte Spaghetti mit Tomatensauce machen." data-err="&#10007; Falsch. H&ouml;r noch einmal: Die Mutter m&ouml;chte Spaghetti mit Tomatensauce machen."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 2 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">2</div>
-          <div class="audio-task-label">Warum kann Markus nicht gut kochen?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/kochen-2.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Weil er kein Internet hat.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Weil er keine K&uuml;che hat.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Weil seine Mutter fr&uuml;her immer f&uuml;r ihn gekocht hat.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="&#10003; Richtig! Seine Mutter hat fr&uuml;her immer gekocht &mdash; er hat es nie gelernt." data-err="&#10007; Falsch. H&ouml;r genau: Er kann nicht gut kochen, weil seine Mutter fr&uuml;her immer f&uuml;r ihn gekocht hat."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 3 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">3</div>
-          <div class="audio-task-label">Was bestellt Lisa im Restaurant?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/kochen-3.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Fisch mit Reis.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Steak mit Pommes.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">C</span><span>Einen Salat mit K&auml;se und Brot.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="&#10003; Richtig! Lisa ist Vegetarierin und bestellt einen Salat mit K&auml;se und Brot." data-err="&#10007; Falsch. Lisa ist Vegetarierin! Sie bestellt einen Salat mit K&auml;se und Brot. Das Steak bestellt ihre Freundin."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 4 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">4</div>
-          <div class="audio-task-label">Was ist das Problem beim Backen?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/kochen-4.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">A</span><span>Es gibt keine Eier mehr.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Sie hat keinen Zucker.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Der Ofen ist kaputt.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="&#10003; Richtig! Es gibt keine Eier &mdash; aber die Nachbarin hilft." data-err="&#10007; Falsch. Sie hat Mehl, Zucker und Butter &mdash; aber keine Eier!"></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 5 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">5</div>
-          <div class="audio-task-label">Was ist das Lieblingsgericht von Tom?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/kochen-5.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">A</span><span>Bratwurst mit Sauerkraut.</span></div>
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">B</span><span>Kartoffelsuppe mit W&uuml;rstchen.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Schnitzel mit Kartoffelsalat.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="&#10003; Richtig! Tom liebt Kartoffelsuppe &mdash; das Rezept von seiner Oma." data-err="&#10007; Falsch. Toms Lieblingsgericht ist Kartoffelsuppe mit W&uuml;rstchen &mdash; das Rezept seiner Gro&szlig;mutter."></div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 6 -->
-      <div class="audio-task">
-        <div class="audio-task-head">
-          <div class="audio-task-num">6</div>
-          <div class="audio-task-label">Was lernt man im Kochkurs?</div>
-        </div>
-        <div class="audio-task-body">
-          <button class="audio-play-btn" data-audio="../audio/kochen-6.mp3" onclick="playAudio(this)">&#9654; Abspielen</button>
-          <div class="audio-options">
-            <div class="audio-opt" onclick="choose(this, true)"><span class="opt-letter">A</span><span>Einfache Gerichte: Suppen, Salate, Nudeln.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">B</span><span>Nur Desserts und Kuchen.</span></div>
-            <div class="audio-opt" onclick="choose(this, false)"><span class="opt-letter">C</span><span>Internationale K&uuml;che: Sushi und Curry.</span></div>
-          </div>
-          <div class="audio-feedback" data-ok="&#10003; Richtig! Im Kurs lernt man einfache Gerichte: Suppen, Salate und Nudelgerichte." data-err="&#10007; Falsch. Der Kurs ist f&uuml;r Anf&auml;nger: Suppen, Salate und Nudelgerichte &mdash; nichts Kompliziertes."></div>
-        </div>
-      </div>
-
-      <div id="hoeren-result" style="display:none;margin-top:1rem;background:var(--green-pale);border:1px solid var(--green-border);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--green-deep);text-align:center;font-weight:500;"></div>
-    </div>
-  </div>
-
   <nav class="lesson-nav" aria-label="Themen-Navigation">
     <a href="reisen.html" class="lesson-nav-link prev">
       <span class="lesson-nav-arrow">&larr;</span>
@@ -1537,70 +1395,6 @@
   </div>
 
 <script>
-var hoeren_correct = 0;
-var hoeren_answered = 0;
-var hoeren_total = 6;
-var curBtn = null;
-var curAudio = null;
-
-function playAudio(btn) {
-  if (curAudio && curBtn === btn) {
-    curAudio.pause();
-    curAudio.currentTime = 0;
-    curAudio = null;
-    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
-    curBtn = null;
-    return;
-  }
-  if (curAudio) {
-    curAudio.pause();
-    curAudio.currentTime = 0;
-    if (curBtn) { curBtn.innerHTML = '&#9654; Abspielen'; curBtn.style.background = '#7F77DD'; }
-  }
-  var src = btn.getAttribute('data-audio');
-  curAudio = new Audio(src);
-  curBtn = btn;
-  btn.innerHTML = '&#9208; Stopp'; btn.style.background = '#534AB7';
-  curAudio.onended = function() {
-    btn.innerHTML = '&#9654; Noch einmal'; btn.style.background = '#7F77DD';
-    curBtn = null; curAudio = null;
-  };
-  curAudio.onerror = function() {
-    btn.innerHTML = '&#9654; Abspielen'; btn.style.background = '#7F77DD';
-    curBtn = null; curAudio = null;
-  };
-  curAudio.play();
-}
-
-function choose(el, isCorrect) {
-  var opts = el.parentNode.querySelectorAll('.audio-opt');
-  for (var i = 0; i < opts.length; i++) {
-    if (opts[i].classList.contains('correct') || opts[i].classList.contains('wrong')) return;
-  }
-  for (var i = 0; i < opts.length; i++) { opts[i].style.pointerEvents = 'none'; }
-  var fb = el.parentNode.parentNode.querySelector('.audio-feedback');
-  if (isCorrect) {
-    el.classList.add('correct');
-    fb.textContent = fb.getAttribute('data-ok');
-    fb.className = 'audio-feedback ok';
-    hoeren_correct++;
-  } else {
-    el.classList.add('wrong');
-    for (var i = 0; i < opts.length; i++) {
-      if (opts[i].getAttribute('onclick').indexOf('true') !== -1) { opts[i].classList.add('correct'); break; }
-    }
-    fb.textContent = fb.getAttribute('data-err');
-    fb.className = 'audio-feedback err';
-  }
-  hoeren_answered++;
-  if (hoeren_answered === hoeren_total) {
-    var res = document.getElementById('hoeren-result');
-    var pct = Math.round(hoeren_correct / hoeren_total * 100);
-    res.textContent = (pct >= 80 ? '\uD83C\uDF89' : pct >= 50 ? '\uD83D\uDC4D' : '\uD83D\uDCAA') + ' Ergebnis: ' + hoeren_correct + ' von ' + hoeren_total + ' richtig (' + pct + '%)';
-    res.style.display = 'block';
-  }
-}
-
 function toggleAnswer(el) {
   var ans = el.nextElementSibling;
   var tog = el.querySelector('.qa-toggle');
