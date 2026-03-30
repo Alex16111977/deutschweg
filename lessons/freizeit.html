@@ -420,7 +420,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   <a class="sticky-pip" href="#s-question" data-section="s-question">❓<span class="pip-tooltip">Запитання</span></a>
   <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Граматика</span></a>
   <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
-  <a class="sticky-pip" href="#s-practice" data-section="s-practice">🧠<span class="pip-tooltip">Практика</span></a>
+  <a class="sticky-pip" href="#s-book" data-section="s-book">📗<span class="pip-tooltip">З підручника</span></a>
   <a class="sticky-pip" href="#s-listen" data-section="s-listen">🎧<span class="pip-tooltip">Аудіювання</span></a>
   <a class="sticky-pip" href="#s-summary" data-section="s-summary">✅<span class="pip-tooltip">Підсумок</span></a>
   <div class="sticky-divider"></div>
@@ -435,10 +435,11 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <header class="hero">
   <div class="hero-label">Thema 4 · A2 → B1</div>
   <h1 class="hero-title">🎯 Die <em>Freizeit</em></h1>
-  <p class="hero-subtitle">Neue Wörter · Lesetext · Konversation · Adjektivdeklination · Hörverstehen</p>
+  <p class="hero-subtitle">Neue Wörter · Lesetext · Konversation · Adjektivdeklination (Nom., Akk., Dat.) · Hörverstehen</p>
   <div class="hero-tags">
     <span class="hero-tag">A2-Niveau</span>
     <span class="hero-tag accent">Grammatik: Adjektivdeklination</span>
+    <span class="hero-tag accent">Вправи з підручника (Kap. 36-37)</span>
     <span class="hero-tag">10 neue Wörter</span>
     <span class="hero-tag">5 Höraufgaben 🔊</span>
   </div>
@@ -470,9 +471,9 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
     <div class="mosaic-icon dialog">🎭</div>
     <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">Діалог</div></div>
   </a>
-  <a class="mosaic-tile" href="#s-practice">
-    <div class="mosaic-icon practice">🧠</div>
-    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">Практика</div></div>
+  <a class="mosaic-tile" href="#s-book">
+    <div class="mosaic-icon grammar">📗</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">З підручника</div></div>
   </a>
   <a class="mosaic-tile" href="#s-listen">
     <div class="mosaic-icon listen">🎧</div>
@@ -836,134 +837,6 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
     </div>
   </div>
 
-  <!-- Ex 1: Choose the correct adjective ending -->
-  <div class="ex-block" id="ex1">
-    <div class="ex-header"><span class="ex-num">1</span> Вибери правильне закінчення прикметника</div>
-    <div class="ex-body">
-      <div class="ex-task">Клікни на правильну відповідь:</div>
-      <div class="ex-items">
-        <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">Das ist ein interessant___ Hobby.</p>
-        <label class="ex-item"><input type="radio" name="ex1a" value="wrong"> <span>-e</span></label>
-        <label class="ex-item"><input type="radio" name="ex1a" value="correct"> <span>-es</span></label>
-        <label class="ex-item"><input type="radio" name="ex1a" value="wrong"> <span>-er</span></label>
-      </div>
-      <div class="ex-items" style="margin-top:12px;">
-        <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">Wir haben die spannend___ Veranstaltung besucht.</p>
-        <label class="ex-item"><input type="radio" name="ex1b" value="correct"> <span>-e</span></label>
-        <label class="ex-item"><input type="radio" name="ex1b" value="wrong"> <span>-en</span></label>
-        <label class="ex-item"><input type="radio" name="ex1b" value="wrong"> <span>-es</span></label>
-      </div>
-      <div class="ex-items" style="margin-top:12px;">
-        <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">Er spielt in einer stark___ Mannschaft.</p>
-        <label class="ex-item"><input type="radio" name="ex1c" value="wrong"> <span>-e</span></label>
-        <label class="ex-item"><input type="radio" name="ex1c" value="correct"> <span>-en</span></label>
-        <label class="ex-item"><input type="radio" name="ex1c" value="wrong"> <span>-er</span></label>
-      </div>
-      <button class="ex-btn" onclick="checkEx1()">Перевірити</button>
-      <div class="ex-feedback" id="ex1-fb"></div>
-    </div>
-  </div>
-
-  <!-- Ex 2: Fill in the blanks -->
-  <div class="ex-block" id="ex2">
-    <div class="ex-header"><span class="ex-num">2</span> Заповни пропуски правильним закінченням</div>
-    <div class="ex-body">
-      <div class="ex-task">Впиши правильне закінчення прикметника:</div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div class="blank-sentence">1. Der gemütlich<input class="blank-input" id="b1" placeholder="?" style="min-width:40px"> Abend war sehr schön.</div>
-        <div class="blank-sentence">2. Sie hat ein kreativ<input class="blank-input" id="b2" placeholder="?" style="min-width:40px"> Hobby gefunden.</div>
-        <div class="blank-sentence">3. Mit gut<input class="blank-input" id="b3" placeholder="?" style="min-width:40px"> Freunden macht alles Spaß.</div>
-        <div class="blank-sentence">4. Ich suche einen sportlich<input class="blank-input" id="b4" placeholder="?" style="min-width:40px"> Verein.</div>
-        <div class="blank-sentence">5. Aktiv<input class="blank-input" id="b5" placeholder="?" style="min-width:40px"> Menschen leben gesünder.</div>
-      </div>
-      <button class="ex-btn" onclick="checkEx2()">Перевірити</button>
-      <div class="ex-feedback" id="ex2-fb"></div>
-    </div>
-  </div>
-
-  <!-- Ex 3: Choose the correct sentence -->
-  <div class="ex-block" id="ex3">
-    <div class="ex-header"><span class="ex-num">3</span> Вибери правильне речення</div>
-    <div class="ex-body">
-      <div class="ex-task">Яке речення граматично правильне?</div>
-      <p style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px;">Запитання A:</p>
-      <div class="ex-items">
-        <label class="ex-item"><input type="radio" name="ex3a" value="wrong"> <span>Das war ein tolles Erlebnis mit die netten Leute.</span></label>
-        <label class="ex-item"><input type="radio" name="ex3a" value="correct"> <span>Das war ein tolles Erlebnis mit den netten Leuten.</span></label>
-        <label class="ex-item"><input type="radio" name="ex3a" value="wrong"> <span>Das war ein tolles Erlebnis mit der netten Leuten.</span></label>
-      </div>
-      <p style="font-size:14px;font-weight:600;color:var(--text-dark);margin-top:12px;margin-bottom:8px;">Запитання B:</p>
-      <div class="ex-items">
-        <label class="ex-item"><input type="radio" name="ex3b" value="wrong"> <span>Ein geselliges Mensch braucht viele Freunde.</span></label>
-        <label class="ex-item"><input type="radio" name="ex3b" value="wrong"> <span>Ein gesellige Mensch braucht viele Freunde.</span></label>
-        <label class="ex-item"><input type="radio" name="ex3b" value="correct"> <span>Ein geselliger Mensch braucht viele Freunde.</span></label>
-      </div>
-      <button class="ex-btn" onclick="checkEx3()">Перевірити</button>
-      <div class="ex-feedback" id="ex3-fb"></div>
-    </div>
-  </div>
-
-  <!-- Ex 4: Build sentences -->
-  <div class="ex-block" id="ex4">
-    <div class="ex-header"><span class="ex-num">4</span> Склади речення — розстав слова по порядку</div>
-    <div class="ex-body">
-      <div class="ex-task">Постав слова у правильному порядку та запиши речення:</div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div>
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Wörter: <strong>besucht / eine / hat / beliebte / er / Veranstaltung</strong></p>
-          <input type="text" style="width:100%;border:1.5px solid var(--green-border);border-radius:8px;padding:8px 12px;font-size:14px;font-family:var(--sans);outline:none;color:var(--text-dark)" id="sent1" placeholder="Напиши речення тут...">
-          <button class="ex-btn secondary" style="margin-top:6px;" onclick="checkSent1()">Перевірити</button>
-          <div id="sent1-fb" class="ex-feedback"></div>
-        </div>
-        <div>
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Wörter: <strong>spielen / in / starken / wir / einer / Mannschaft</strong></p>
-          <input type="text" style="width:100%;border:1.5px solid var(--green-border);border-radius:8px;padding:8px 12px;font-size:14px;font-family:var(--sans);outline:none;color:var(--text-dark)" id="sent2" placeholder="Напиши речення тут...">
-          <button class="ex-btn secondary" style="margin-top:6px;" onclick="checkSent2()">Перевірити</button>
-          <div id="sent2-fb" class="ex-feedback"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ex 5: Find the error -->
-  <div class="ex-block" id="ex5">
-    <div class="ex-header"><span class="ex-num">5</span> Знайди помилку — закінчення прикметників</div>
-    <div class="ex-body">
-      <div class="ex-task">У кожному реченні є помилка з закінченням прикметника. Знайди її!</div>
-      <div class="fehler-list">
-        <div class="fehler-item">
-          <div class="fehler-sentence">Er trinkt gern warmer Tee am Abend.</div>
-          <div class="fehler-hint">💡 Який артикль тут мається на увазі? Чи є артикль? Без артикля — сильне відмінювання (Akk.).</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution"><strong>Er trinkt gern warmen Tee am Abend.</strong> → Akk. M без артикля: закінчення -en (від den).</div>
-        </div>
-        <div class="fehler-item">
-          <div class="fehler-sentence">Die kleine Kind spielt im Park.</div>
-          <div class="fehler-hint">💡 Який рід у слова Kind? Який артикль правильний?</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution"><strong>Das kleine Kind spielt im Park.</strong> → Kind — Neutrum (das), не die! Тип 1, Nom. N: -e.</div>
-        </div>
-        <div class="fehler-item">
-          <div class="fehler-sentence">Ich habe einen interessanter Film gesehen.</div>
-          <div class="fehler-hint">💡 Akk. M з неозначеним артиклем — яке закінчення?</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution"><strong>Ich habe einen interessanten Film gesehen.</strong> → Akk. M: einen → прикметник отримує -en.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ex 6: Writing task -->
-  <div class="aufgabe-box">
-    <div class="aufgabe-title">✍ Завдання 6 — Письмо з прикметниками</div>
-    <div class="aufgabe-task">Напиши 5–6 речень про своє дозвілля. Використай мінімум 5 різних прикметників з правильними закінченнями!</div>
-    <ul class="aufgabe-hints">
-      <li>sportlich · kreativ · gesellig · spannend · langweilig</li>
-      <li>beliebt · aktiv · gemütlich · toll · interessant</li>
-      <li>Спробуй використати всі три типи: з der/die/das, з ein/eine, без артикля</li>
-      <li>Beispiel: <em>Am Samstag besuche ich einen großen Sportverein...</em></li>
-    </ul>
-  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
@@ -1053,104 +926,201 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ABSCHNITT 7: GRAMMATIK AUF PRAXIS -->
+<!-- ABSCHNITT 8: ВПРАВИ З ПІДРУЧНИКА (Grammatik aktiv A1-B1, Kap. 36-37) -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card" id="s-practice">
+<section class="section-card" id="s-book">
   <div class="section-header">
     <div class="section-num">7</div>
     <div>
-      <div class="section-title">Граматика на практиці 🧠</div>
-      <div class="section-subtitle">Adjektivdeklination + Freizeit — комбіновані завдання</div>
+      <div class="section-title">Вправи з підручника 📗</div>
+      <div class="section-subtitle">Grammatik aktiv A1-B1 — Kapitel 36 & 37: Adjektivdeklination</div>
     </div>
   </div>
 
-  <!-- Match -->
-  <div class="ex-block">
-    <div class="ex-header"><span class="ex-num">A</span> Тип відмінювання → правильне закінчення</div>
+  <!-- ── Üb 1: Nom def/indef (Kap. 36, Üb. 1) ── -->
+  <div class="ex-block" id="bk-ex1">
+    <div class="ex-header"><span class="ex-num">1</span> Adjektive im Nominativ — Ergänze die Endungen (Kap. 36)</div>
     <div class="ex-body">
-      <div class="ex-task">Визнач тип відмінювання та вибери правильне закінчення:</div>
+      <div class="ex-task">Доповни закінчення прикметників у Nominativ. Зліва — означений артикль (Typ 1), справа — неозначений (Typ 2/3):</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <div>
-          <p style="font-size:14px;font-weight:600;margin-bottom:6px;">der interessant___ Verein (Nom. M, Тип 1) =</p>
-          <div class="ex-items">
-            <label class="ex-item"><input type="radio" name="m1" value="correct"> <span>-e (der interessante Verein)</span></label>
-            <label class="ex-item"><input type="radio" name="m1" value="wrong"> <span>-er (der interessanter Verein)</span></label>
-            <label class="ex-item"><input type="radio" name="m1" value="wrong"> <span>-en (der interessanten Verein)</span></label>
-          </div>
-        </div>
-        <div>
-          <p style="font-size:14px;font-weight:600;margin-bottom:6px;">ein toll___ Erlebnis (Nom. N, Тип 2) =</p>
-          <div class="ex-items">
-            <label class="ex-item"><input type="radio" name="m2" value="wrong"> <span>-e (ein tolle Erlebnis)</span></label>
-            <label class="ex-item"><input type="radio" name="m2" value="wrong"> <span>-er (ein toller Erlebnis)</span></label>
-            <label class="ex-item"><input type="radio" name="m2" value="correct"> <span>-es (ein tolles Erlebnis)</span></label>
-          </div>
-        </div>
-        <div>
-          <p style="font-size:14px;font-weight:600;margin-bottom:6px;">mit kalt___ Wasser (Dat. N, Тип 3) =</p>
-          <div class="ex-items">
-            <label class="ex-item"><input type="radio" name="m3" value="wrong"> <span>-en (mit kalten Wasser)</span></label>
-            <label class="ex-item"><input type="radio" name="m3" value="correct"> <span>-em (mit kaltem Wasser)</span></label>
-            <label class="ex-item"><input type="radio" name="m3" value="wrong"> <span>-er (mit kalter Wasser)</span></label>
-          </div>
-        </div>
+        <div class="blank-sentence">1. Ist das der nett<input class="blank-input" id="bk1-1" placeholder="?" style="min-width:35px"> Lehrer? — Ja, das ist ein nett<input class="blank-input" id="bk1-2" placeholder="?" style="min-width:35px"> Lehrer.</div>
+        <div class="blank-sentence">2. Ist das die neu<input class="blank-input" id="bk1-3" placeholder="?" style="min-width:35px"> Tasche? — Ja, das ist eine neu<input class="blank-input" id="bk1-4" placeholder="?" style="min-width:35px"> Tasche.</div>
+        <div class="blank-sentence">3. Ist das das bequem<input class="blank-input" id="bk1-5" placeholder="?" style="min-width:35px"> Sofa? — Ja, das ist ein bequem<input class="blank-input" id="bk1-6" placeholder="?" style="min-width:35px"> Sofa.</div>
+        <div class="blank-sentence">4. Sind das die günstig<input class="blank-input" id="bk1-7" placeholder="?" style="min-width:35px"> Tassen? — Ja, das sind günstig<input class="blank-input" id="bk1-8" placeholder="?" style="min-width:35px"> Tassen.</div>
+        <div class="blank-sentence">5. Ist das der gut<input class="blank-input" id="bk1-9" placeholder="?" style="min-width:35px"> Herd? — Ja, das ist ein gut<input class="blank-input" id="bk1-10" placeholder="?" style="min-width:35px"> Herd.</div>
+        <div class="blank-sentence">6. Ist das das intelligent<input class="blank-input" id="bk1-11" placeholder="?" style="min-width:35px"> Kind? — Ja, das ist ein intelligent<input class="blank-input" id="bk1-12" placeholder="?" style="min-width:35px"> Kind.</div>
+        <div class="blank-sentence">7. Sind das die dumm<input class="blank-input" id="bk1-13" placeholder="?" style="min-width:35px"> Leute? — Ja, das sind dumm<input class="blank-input" id="bk1-14" placeholder="?" style="min-width:35px"> Leute.</div>
       </div>
-      <button class="ex-btn" onclick="checkMatch()">Перевірити</button>
-      <div class="ex-feedback" id="match-fb"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="ex-btn" onclick="checkBkEx1()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswers('bk1-ans')">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk1-fb"></div>
+      <div class="bk-answers" id="bk1-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;">
+        <strong>Відповіді:</strong><br>
+        1. nett<strong>e</strong> / nett<strong>er</strong> · 2. neu<strong>e</strong> / neu<strong>e</strong> · 3. bequem<strong>e</strong> / bequem<strong>es</strong> · 4. günstig<strong>en</strong> / günstig<strong>e</strong> · 5. gut<strong>e</strong> / gut<strong>er</strong> · 6. intelligent<strong>e</strong> / intelligent<strong>es</strong> · 7. dumm<strong>en</strong> / dumm<strong>e</strong>
+      </div>
     </div>
   </div>
 
-  <!-- Fill blanks with Freizeit context -->
-  <div class="ex-block">
-    <div class="ex-header"><span class="ex-num">B</span> Заповни пропуски — дозвілля з прикметниками</div>
+  <!-- ── Üb 2: Akk def/indef (Kap. 36, Üb. 2) ── -->
+  <div class="ex-block" id="bk-ex2">
+    <div class="ex-header"><span class="ex-num">2</span> Adjektive im Akkusativ — Ergänze die Endungen (Kap. 36)</div>
     <div class="ex-body">
-      <div class="ex-task">Доповни речення правильним закінченням прикметника:</div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <div class="blank-sentence">1. Wir besuchen einen beliebt<input class="blank-input" id="lt1" placeholder="?" style="min-width:40px"> Sportverein. (Akk. M, Тип 2)</div>
-        <div class="blank-sentence">2. Die gesellig<input class="blank-input" id="lt2" placeholder="?" style="min-width:40px"> Nachbarn haben eine Party organisiert. (Nom. Pl, Тип 1)</div>
-        <div class="blank-sentence">3. Nach langweilig<input class="blank-input" id="lt3" placeholder="?" style="min-width:40px"> Arbeit gehe ich ins Kino. (Dat. F, Тип 3)</div>
-        <div class="blank-sentence">4. Das war ein unvergesslich<input class="blank-input" id="lt4" placeholder="?" style="min-width:40px"> Erlebnis! (Nom. N, Тип 2)</div>
-        <div class="blank-sentence">5. In dem gemütlich<input class="blank-input" id="lt5" placeholder="?" style="min-width:40px"> Café trinken wir Kaffee. (Dat. N, Тип 1)</div>
+      <div class="ex-task">Доповни закінчення прикметників у Akkusativ:</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1. Ich suche ein bequem<input class="blank-input" id="bk2-1" placeholder="?" style="min-width:35px"> Sofa. — Kaufst du das bequem<input class="blank-input" id="bk2-2" placeholder="?" style="min-width:35px"> Sofa?</div>
+        <div class="blank-sentence">2. Ich suche eine groß<input class="blank-input" id="bk2-3" placeholder="?" style="min-width:35px"> Tasche. — Kaufst du die groß<input class="blank-input" id="bk2-4" placeholder="?" style="min-width:35px"> Tasche?</div>
+        <div class="blank-sentence">3. Ich suche schön<input class="blank-input" id="bk2-5" placeholder="?" style="min-width:35px"> Schuhe. — Kaufst du die schön<input class="blank-input" id="bk2-6" placeholder="?" style="min-width:35px"> Schuhe?</div>
+        <div class="blank-sentence">4. Ich suche einen gut<input class="blank-input" id="bk2-7" placeholder="?" style="min-width:35px"> Kühlschrank. — Kaufst du den gut<input class="blank-input" id="bk2-8" placeholder="?" style="min-width:35px"> Kühlschrank?</div>
       </div>
-      <button class="ex-btn" onclick="checkLuecke()">Перевірити</button>
-      <div class="ex-feedback" id="lt-fb"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="ex-btn" onclick="checkBkEx2()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswers('bk2-ans')">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk2-fb"></div>
+      <div class="bk-answers" id="bk2-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;">
+        <strong>Відповіді:</strong><br>
+        1. bequem<strong>es</strong> / bequem<strong>e</strong> · 2. groß<strong>e</strong> / groß<strong>e</strong> · 3. schön<strong>e</strong> / schön<strong>en</strong> · 4. gut<strong>en</strong> / gut<strong>en</strong>
+      </div>
     </div>
   </div>
 
-  <!-- Translate -->
-  <div class="ex-block">
-    <div class="ex-header"><span class="ex-num">C</span> Перекладіть на німецьку</div>
+  <!-- ── Üb 3: Im Kleidungsgeschäft (Kap. 36, Üb. 4) ── -->
+  <div class="ex-block" id="bk-ex3">
+    <div class="ex-header"><span class="ex-num">3</span> Im Kleidungsgeschäft — Nominativ oder Akkusativ? (Kap. 36)</div>
     <div class="ex-body">
-      <div class="ex-task">Перекладіть речення з прикметниками. Клікни «Рішення», щоб порівняти свою відповідь.</div>
-      <div class="fehler-list">
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Вона має креативне хобі.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Sie hat ein kreatives Hobby.</div>
-        </div>
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Ми граємо в сильній команді.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Wir spielen in einer starken Mannschaft.</div>
-        </div>
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Активний спорт корисний для здоров'я.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Aktiver Sport ist gut für die Gesundheit.</div>
-        </div>
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Я шукаю цікавий захід на вихідні.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Ich suche eine interessante Veranstaltung am Wochenende.</div>
-        </div>
+      <div class="ex-task">Доповни закінчення прикметників у діалозі:</div>
+      <div class="text-block" style="border-left-color:var(--blue-mid);font-size:14px;line-height:2;">
+        <p><strong>Kundin:</strong> Ich suche einen rot<input class="blank-input" id="bk3-1" placeholder="?" style="min-width:30px"> Rock.</p>
+        <p><strong>Verkäuferin:</strong> Hm, einen rot<input class="blank-input" id="bk3-2" placeholder="?" style="min-width:30px"> Rock. Wie finden Sie den kurz<input class="blank-input" id="bk3-3" placeholder="?" style="min-width:30px"> rot<input class="blank-input" id="bk3-4" placeholder="?" style="min-width:30px"> Rock hier?</p>
+        <p><strong>Kundin:</strong> Wow! Der kurz<input class="blank-input" id="bk3-5" placeholder="?" style="min-width:30px"> Rock sieht schick aus! Und die weiß<input class="blank-input" id="bk3-6" placeholder="?" style="min-width:30px"> Bluse hier auch!</p>
+        <p><strong>Verkäuferin:</strong> Vielleicht sollten Sie lieber eine gelb<input class="blank-input" id="bk3-7" placeholder="?" style="min-width:30px"> Bluse nehmen. Gelb ist sehr modern.</p>
+        <p><strong>Kundin:</strong> Okay, ich nehme die gelb<input class="blank-input" id="bk3-8" placeholder="?" style="min-width:30px"> Bluse. Und ich suche noch ein schön<input class="blank-input" id="bk3-9" placeholder="?" style="min-width:30px"> Kleid.</p>
+        <p><strong>Verkäuferin:</strong> Schauen Sie mal. Wie finden Sie das blau<input class="blank-input" id="bk3-10" placeholder="?" style="min-width:30px"> Kleid hier?</p>
+        <p><strong>Kundin:</strong> Das gefällt mir nicht. Aber das schwarz<input class="blank-input" id="bk3-11" placeholder="?" style="min-width:30px"> Kleid da ist toll!</p>
+        <p><strong>Verkäuferin:</strong> Sie brauchen dann noch schwarz<input class="blank-input" id="bk3-12" placeholder="?" style="min-width:30px"> Schuhe.</p>
+        <p><strong>Kundin:</strong> Ich ziehe die rot<input class="blank-input" id="bk3-13" placeholder="?" style="min-width:30px"> Schuhe an. Das sieht super aus!</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="ex-btn" onclick="checkBkEx3()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswers('bk3-ans')">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk3-fb"></div>
+      <div class="bk-answers" id="bk3-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;">
+        <strong>Відповіді:</strong><br>
+        rot<strong>en</strong> · rot<strong>en</strong> · kurz<strong>en</strong> · rot<strong>en</strong> · kurz<strong>e</strong> · weiß<strong>e</strong> · gelb<strong>e</strong> · gelb<strong>e</strong> · schön<strong>es</strong> · blau<strong>e</strong> · schwarz<strong>e</strong> · schwarz<strong>e</strong> · rot<strong>en</strong>
       </div>
     </div>
   </div>
+
+  <!-- ── Üb 4: Brief Nom/Akk (Kap. 36, Üb. 5) ── -->
+  <div class="ex-block" id="bk-ex4">
+    <div class="ex-header"><span class="ex-num">4</span> Ein Brief — Nominativ oder Akkusativ? (Kap. 36)</div>
+    <div class="ex-body">
+      <div class="ex-task">Доповни закінчення прикметників у листі. Увага: після іменника (предикативно) закінчення НЕ потрібне — залиш поле порожнім!</div>
+      <div class="text-block" style="border-left-color:var(--green-mid);font-size:14px;line-height:2;">
+        <p>Lieber Takao,</p>
+        <p>wir haben eine neu<input class="blank-input" id="bk4-1" placeholder="?" style="min-width:30px"> Wohnung! Sie liegt im Zentrum und ist nicht so teuer<input class="blank-input" id="bk4-2" placeholder="—" style="min-width:20px">. Wir haben ein groß<input class="blank-input" id="bk4-3" placeholder="?" style="min-width:30px"> Wohnzimmer, einen klein<input class="blank-input" id="bk4-4" placeholder="?" style="min-width:30px"> Flur, eine modern<input class="blank-input" id="bk4-5" placeholder="?" style="min-width:30px"> Küche und zwei schön<input class="blank-input" id="bk4-6" placeholder="?" style="min-width:30px"> Schlafzimmer. Hoffentlich ist ein Schlafzimmer bald ein süß<input class="blank-input" id="bk4-7" placeholder="?" style="min-width:30px"> Kinderzimmer!</p>
+        <p>Für das Wohnzimmer wollen wir neu<input class="blank-input" id="bk4-8" placeholder="?" style="min-width:30px"> Möbel kaufen. Komm und besuche uns!</p>
+        <p>Viele Grüße,<br><em>Dorothea</em></p>
+      </div>
+      <div style="margin-top:10px;background:var(--amber-pale);border-radius:8px;padding:8px 12px;font-size:13px;">
+        💡 <strong>Підказка:</strong> Коли прикметник стоїть <strong>після іменника</strong> (предикативно), закінчення НЕ потрібне: <em>Die Wohnung ist teuer</em> (не: teuer<del>e</del>).
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="ex-btn" onclick="checkBkEx4()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswers('bk4-ans')">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk4-fb"></div>
+      <div class="bk-answers" id="bk4-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;">
+        <strong>Відповіді:</strong><br>
+        neu<strong>e</strong> · teuer (без закінч.) · groß<strong>es</strong> · klein<strong>en</strong> · modern<strong>e</strong> · schön<strong>e</strong> · süß<strong>es</strong> · neu<strong>e</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Üb 5: Party Dativ (Kap. 37, Üb. 3) ── -->
+  <div class="ex-block" id="bk-ex5">
+    <div class="ex-header"><span class="ex-num">5</span> Eine Party — Adjektive im Dativ (Kap. 37)</div>
+    <div class="ex-body">
+      <div class="ex-task">Доповни закінчення прикметників у Dativ. Зліва — з неозначеним, справа — з означеним/присвійним артиклем:</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1. Ich komme mit einem nett<input class="blank-input" id="bk5-1" placeholder="?" style="min-width:30px"> Freund. — Kommst du mit deinem neu<input class="blank-input" id="bk5-2" placeholder="?" style="min-width:30px"> Freund?</div>
+        <div class="blank-sentence">2. Sie kommt mit einer spanisch<input class="blank-input" id="bk5-3" placeholder="?" style="min-width:30px"> Freundin. — Kommt sie mit der schön<input class="blank-input" id="bk5-4" placeholder="?" style="min-width:30px"> Frau aus Spanien?</div>
+        <div class="blank-sentence">3. Er kommt mit neu<input class="blank-input" id="bk5-5" placeholder="?" style="min-width:30px"> Nachbarn. — Kommt er mit den neu<input class="blank-input" id="bk5-6" placeholder="?" style="min-width:30px"> Nachbarn aus Frankfurt?</div>
+        <div class="blank-sentence">4. Wir kommen mit einem klein<input class="blank-input" id="bk5-7" placeholder="?" style="min-width:30px"> Kind. — Kommt ihr mit eurem klein<input class="blank-input" id="bk5-8" placeholder="?" style="min-width:30px"> Kind?</div>
+        <div class="blank-sentence">5. Sie kommt mit einem sympathisch<input class="blank-input" id="bk5-9" placeholder="?" style="min-width:30px"> Mann. — Kommt sie mit dem sympathisch<input class="blank-input" id="bk5-10" placeholder="?" style="min-width:30px"> Mann aus Rom?</div>
+        <div class="blank-sentence">6. Ich komme mit vier klein<input class="blank-input" id="bk5-11" placeholder="?" style="min-width:30px"> Hunden. — Nein, du kannst nicht mit den klein<input class="blank-input" id="bk5-12" placeholder="?" style="min-width:30px"> Hunden kommen!</div>
+      </div>
+      <div style="margin-top:10px;background:var(--blue-pale);border-radius:8px;padding:8px 12px;font-size:13px;">
+        💡 <strong>Dativ-Tipp:</strong> Im Dativ haben Adjektive IMMER die Endung <strong>-en</strong> — egal welcher Artikel!
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="ex-btn" onclick="checkBkEx5()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswers('bk5-ans')">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk5-fb"></div>
+      <div class="bk-answers" id="bk5-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;">
+        <strong>Відповіді:</strong> У Dativ — завжди <strong>-en</strong>!<br>
+        1. nett<strong>en</strong> / neu<strong>en</strong> · 2. spanisch<strong>en</strong> / schön<strong>en</strong> · 3. neu<strong>en</strong> / neu<strong>en</strong> · 4. klein<strong>en</strong> / klein<strong>en</strong> · 5. sympathisch<strong>en</strong> / sympathisch<strong>en</strong> · 6. klein<strong>en</strong> / klein<strong>en</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Üb 6: Einladung gemischt (Kap. 37, Üb. 4) ── -->
+  <div class="ex-block" id="bk-ex6">
+    <div class="ex-header"><span class="ex-num">6</span> Eine Einladung — Nom., Akk. oder Dativ? (Kap. 37)</div>
+    <div class="ex-body">
+      <div class="ex-task">Доповни закінчення у листі-запрошенні. Визнач відмінок! Предикативно — без закінчення (залиш порожнім).</div>
+      <div class="text-block" style="border-left-color:var(--purple-mid);font-size:14px;line-height:2;">
+        <p>Liebe Yvonne,</p>
+        <p>am nächst<input class="blank-input" id="bk6-1" placeholder="?" style="min-width:30px"> Samstag mache ich eine groß<input class="blank-input" id="bk6-2" placeholder="?" style="min-width:30px"> Party. Ich feiere in einem schön<input class="blank-input" id="bk6-3" placeholder="?" style="min-width:30px"> Restaurant und lade alle meine gut<input class="blank-input" id="bk6-4" placeholder="?" style="min-width:30px"> Freunde ein. Also musst du kommen! Du kannst auch deinen neu<input class="blank-input" id="bk6-5" placeholder="?" style="min-width:30px"> Freund mitbringen.</p>
+        <p>Ich mache ein groß<input class="blank-input" id="bk6-6" placeholder="?" style="min-width:30px"> Fest, weil ich einen ganz toll<input class="blank-input" id="bk6-7" placeholder="?" style="min-width:30px"> Job gefunden habe!</p>
+        <p>Am erst<input class="blank-input" id="bk6-8" placeholder="?" style="min-width:30px"> Juni beginne ich meine neu<input class="blank-input" id="bk6-9" placeholder="?" style="min-width:30px"> Arbeit bei einer sehr bekannt<input class="blank-input" id="bk6-10" placeholder="?" style="min-width:30px"> Firma hier in Düsseldorf. Ich glaube, mein neu<input class="blank-input" id="bk6-11" placeholder="?" style="min-width:30px"> Chef ist nett<input class="blank-input" id="bk6-12" placeholder="—" style="min-width:20px">, ich habe ein gut<input class="blank-input" id="bk6-13" placeholder="?" style="min-width:30px"> Gehalt und vor allem eine interessant<input class="blank-input" id="bk6-14" placeholder="?" style="min-width:30px"> Arbeit.</p>
+        <p>Bis Samstag um 20 Uhr!</p>
+        <p>Viele Grüße,<br><em>Alexandra</em></p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="ex-btn" onclick="checkBkEx6()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswers('bk6-ans')">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk6-fb"></div>
+      <div class="bk-answers" id="bk6-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;">
+        <strong>Відповіді:</strong><br>
+        nächst<strong>en</strong> (Dat.) · groß<strong>e</strong> (Akk. F) · schön<strong>en</strong> (Dat. N) · gut<strong>en</strong> (Akk. Pl.) · neu<strong>en</strong> (Akk. M) · groß<strong>es</strong> (Akk. N) · toll<strong>en</strong> (Akk. M) · erst<strong>en</strong> (Dat.) · neu<strong>e</strong> (Akk. F) · bekannt<strong>en</strong> (Dat. F) · neu<strong>er</strong> (Nom. M) · nett (предик.) · gut<strong>es</strong> (Akk. N) · interessant<strong>e</strong> (Akk. F)
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Üb 7: Märchen gemischt (Kap. 37, Üb. 5) ── -->
+  <div class="ex-block" id="bk-ex7">
+    <div class="ex-header"><span class="ex-num">7</span> Ein Märchen — Nom., Akk. oder Dativ? (Kap. 37)</div>
+    <div class="ex-body">
+      <div class="ex-task">Доповни закінчення прикметників у казці. Усі три відмінки змішані! Предикативно — без закінчення (залиш порожнім).</div>
+      <div class="text-block" style="border-left-color:var(--amber-mid);font-size:14px;line-height:2;">
+        <p>Es war einmal ein sehr schön<input class="blank-input" id="bk7-1" placeholder="?" style="min-width:30px"> Mädchen. Es lebte in einem groß<input class="blank-input" id="bk7-2" placeholder="?" style="min-width:30px"> Schloss mit seiner lieb<input class="blank-input" id="bk7-3" placeholder="?" style="min-width:30px"> Mutter und seinem reich<input class="blank-input" id="bk7-4" placeholder="?" style="min-width:30px"> Vater. Es hatte alles, aber es war einsam<input class="blank-input" id="bk7-5" placeholder="—" style="min-width:20px">.</p>
+        <p>Eines Tages machte die jung<input class="blank-input" id="bk7-6" placeholder="?" style="min-width:30px"> Frau einen lang<input class="blank-input" id="bk7-7" placeholder="?" style="min-width:30px"> Spaziergang durch den groß<input class="blank-input" id="bk7-8" placeholder="?" style="min-width:30px"> Schlosspark, denn das Wetter war wunderbar<input class="blank-input" id="bk7-9" placeholder="—" style="min-width:20px">. Da traf sie einen sehr attraktiv<input class="blank-input" id="bk7-10" placeholder="?" style="min-width:30px"> jung<input class="blank-input" id="bk7-11" placeholder="?" style="min-width:30px"> Mann.</p>
+        <p>Es war ein Prinz. Der Prinz sprach sofort mit der schön<input class="blank-input" id="bk7-12" placeholder="?" style="min-width:30px"> jung<input class="blank-input" id="bk7-13" placeholder="?" style="min-width:30px"> Frau. Sie fand den jung<input class="blank-input" id="bk7-14" placeholder="?" style="min-width:30px"> Mann sehr schön<input class="blank-input" id="bk7-15" placeholder="—" style="min-width:20px">. Er war ein groß<input class="blank-input" id="bk7-16" placeholder="?" style="min-width:30px">, sportlich<input class="blank-input" id="bk7-17" placeholder="?" style="min-width:30px"> Mann. Sie verliebten sich.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="ex-btn" onclick="checkBkEx7()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswers('bk7-ans')">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk7-fb"></div>
+      <div class="bk-answers" id="bk7-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;">
+        <strong>Відповіді:</strong><br>
+        schön<strong>es</strong> (Nom. N) · groß<strong>en</strong> (Dat. N) · lieb<strong>en</strong> (Dat. F) · reich<strong>en</strong> (Dat. M) · einsam (предик.) · jung<strong>e</strong> (Nom. F) · lang<strong>en</strong> (Akk. M) · groß<strong>en</strong> (Akk. M) · wunderbar (предик.) · attraktiv<strong>en</strong> (Akk. M) · jung<strong>en</strong> (Akk. M) · schön<strong>en</strong> (Dat. F) · jung<strong>en</strong> (Dat. F) · jung<strong>en</strong> (Akk. M) · schön (предик.) · groß<strong>er</strong> (Nom. M) · sportlich<strong>er</strong> (Nom. M)
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ABSCHNITT 8: HÖRVERSTEHEN -->
+<!-- ABSCHNITT 9: HÖRVERSTEHEN -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="section-card" id="s-listen">
   <div class="section-header">
@@ -1667,7 +1637,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ABSCHNITT 9: ПІДСУМОК -->
+<!-- ABSCHNITT 10: ПІДСУМОК -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="section-card summary-card" id="s-summary">
   <div class="section-header">
@@ -1684,7 +1654,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
       <div class="summary-stat-label">Запитань</div>
     </div>
     <div class="summary-stat">
-      <div class="summary-stat-num">6</div>
+      <div class="summary-stat-num">16</div>
       <div class="summary-stat-label">Граматичних вправ</div>
     </div>
     <div class="summary-stat">
@@ -1698,6 +1668,13 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
     <span class="summary-verb-chip">Тип 1: der/die/das → -e / -en</span>
     <span class="summary-verb-chip">Тип 2: ein/eine/mein → -er/-es/-e / -en</span>
     <span class="summary-verb-chip">Тип 3: без артикля → закінчення артикля</span>
+  </div>
+
+  <p style="color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;margin-bottom:.5rem;margin-top:1rem;">Dativ-правило:</p>
+  <div class="summary-verbs">
+    <span class="summary-verb-chip">Dativ: прикметник ЗАВЖДИ -en</span>
+    <span class="summary-verb-chip">mit einem netten Freund</span>
+    <span class="summary-verb-chip">mit der schönen Frau</span>
   </div>
 
   <p style="color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;margin-bottom:.5rem;margin-top:1rem;">Важливі прикметники:</p>
@@ -1722,7 +1699,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   </div>
 </section>
 
-<footer class="footer-tag">DeutschWeg · Рівень A2 → B1 · Тема 4: Freizeit · Граматика: Adjektivdeklination</footer>
+<footer class="footer-tag">DeutschWeg · Рівень A2 → B1 · Тема 4: Freizeit · Граматика: Adjektivdeklination (Nom., Akk., Dat.)</footer>
 
 </div><!-- /page -->
 
@@ -1757,92 +1734,95 @@ function toggleHoerText(n) {
 }
 
 // ─── GRAMMAR EXERCISES ───────────────────────────
-function checkEx1() {
-  const a = document.querySelector('input[name="ex1a"]:checked');
-  const b = document.querySelector('input[name="ex1b"]:checked');
-  const c = document.querySelector('input[name="ex1c"]:checked');
-  const fb = document.getElementById('ex1-fb');
-  if (!a || !b || !c) { showFb(fb, 'fail', 'Bitte alle drei Fragen beantworten!'); return; }
-  const ok = a.value === 'correct' && b.value === 'correct' && c.value === 'correct';
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Все правильно! ein Hobby (N) → -es · die Veranstaltung (Akk. F) → -e · in einer Mannschaft (Dat. F) → -en'
-    : '❌ Підказка: ein + Nom. N → -es · die + Akk. F → -e · einer + Dat. F → -en');
+// ─── BOOK EXERCISES (Grammatik aktiv, Kap. 36-37: Adjektivdeklination) ───
+function showBkAnswers(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
-
-const blank_answers = { b1:'e', b2:'es', b3:'en', b4:'en', b5:'e' };
-function checkEx2() {
-  let right = 0, total = 5;
-  Object.keys(blank_answers).forEach(id => {
-    const inp = document.getElementById(id);
-    const val = inp.value.trim().toLowerCase();
-    const correct = blank_answers[id];
+function checkBkGeneric(answers, fbId, threshold) {
+  var right = 0, total = Object.keys(answers).length;
+  Object.keys(answers).forEach(function(id) {
+    var inp = document.getElementById(id);
+    if (!inp) return;
+    var val = inp.value.trim().toLowerCase();
+    var correct = answers[id].toLowerCase();
     if (val === correct) { inp.classList.add('correct-input'); inp.classList.remove('wrong-input'); right++; }
     else { inp.classList.add('wrong-input'); inp.classList.remove('correct-input'); }
   });
-  const fb = document.getElementById('ex2-fb');
-  showFb(fb, right === total ? 'ok' : 'fail',
-    right === total
-      ? '✅ Відмінно! Всі ' + total + ' правильні!'
-      : right + ' з ' + total + ' правильних. Відповіді: -e · -es · -en · -en · -e');
+  var fb = document.getElementById(fbId);
+  var thr = threshold || Math.ceil(total * 0.8);
+  showFb(fb, right >= thr ? 'ok' : 'fail',
+    right >= thr
+      ? '✅ ' + right + '/' + total + ' правильних!' + (right < total ? ' Перевір виділені.' : ' Ідеально!')
+      : right + '/' + total + ' правильних. Перевір виділені поля.');
 }
 
-function checkEx3() {
-  const a = document.querySelector('input[name="ex3a"]:checked');
-  const b = document.querySelector('input[name="ex3b"]:checked');
-  const fb = document.getElementById('ex3-fb');
-  if (!a || !b) { showFb(fb, 'fail', 'Bitte beide Fragen beantworten!'); return; }
-  const ok = a.value === 'correct' && b.value === 'correct';
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Правильно! mit + Dat. Pl → den netten Leuten · ein + Nom. M → geselliger Mensch'
-    : '❌ A: mit + Dativ Pl = den netten Leuten · B: ein Mensch (M) → ein geselliger Mensch (-er)');
+// Üb 1: Nominativ def/indef (Kap. 36)
+// e, er, e, e, e, es, en, e, e, er, e, es, en, e
+function checkBkEx1() {
+  checkBkGeneric({
+    'bk1-1':'e','bk1-2':'er','bk1-3':'e','bk1-4':'e',
+    'bk1-5':'e','bk1-6':'es','bk1-7':'en','bk1-8':'e',
+    'bk1-9':'e','bk1-10':'er','bk1-11':'e','bk1-12':'es',
+    'bk1-13':'en','bk1-14':'e'
+  }, 'bk1-fb');
 }
 
-function checkSent1() {
-  const val = document.getElementById('sent1').value.trim().toLowerCase();
-  const fb = document.getElementById('sent1-fb');
-  const ok = val.includes('beliebte') && val.includes('veranstaltung') && val.includes('besucht');
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Чудово! Зразок: „Er hat eine beliebte Veranstaltung besucht."'
-    : '💡 Musterantwort: „Er hat eine beliebte Veranstaltung besucht." — eine + Akk. F → -e');
+// Üb 2: Akkusativ indef/def (Kap. 36)
+// es, e, e, e, e, en, en, en
+function checkBkEx2() {
+  checkBkGeneric({
+    'bk2-1':'es','bk2-2':'e','bk2-3':'e','bk2-4':'e',
+    'bk2-5':'e','bk2-6':'en','bk2-7':'en','bk2-8':'en'
+  }, 'bk2-fb');
 }
 
-function checkSent2() {
-  const val = document.getElementById('sent2').value.trim().toLowerCase();
-  const fb = document.getElementById('sent2-fb');
-  const ok = val.includes('starken') && val.includes('mannschaft') && val.includes('spielen');
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Правильно! Зразок: „Wir spielen in einer starken Mannschaft."'
-    : '💡 Musterantwort: „Wir spielen in einer starken Mannschaft." — einer + Dat. F → -en');
+// Üb 3: Im Kleidungsgeschäft (Kap. 36)
+// en, en, en, en, e, e, e, e, es, e, e, e, en
+function checkBkEx3() {
+  checkBkGeneric({
+    'bk3-1':'en','bk3-2':'en','bk3-3':'en','bk3-4':'en',
+    'bk3-5':'e','bk3-6':'e','bk3-7':'e','bk3-8':'e',
+    'bk3-9':'es','bk3-10':'e','bk3-11':'e','bk3-12':'e','bk3-13':'en'
+  }, 'bk3-fb');
 }
 
-function checkMatch() {
-  const m1 = document.querySelector('input[name="m1"]:checked');
-  const m2 = document.querySelector('input[name="m2"]:checked');
-  const m3 = document.querySelector('input[name="m3"]:checked');
-  const fb = document.getElementById('match-fb');
-  if (!m1 || !m2 || !m3) { showFb(fb,'fail','Bitte alle beantworten!'); return; }
-  const ok = m1.value === 'correct' && m2.value === 'correct' && m3.value === 'correct';
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Усе правильно! Тип 1: -e · Тип 2: -es · Тип 3: -em'
-    : '❌ Перевір: der + Nom. M → -e · ein + Nom. N → -es · ohne Artikel + Dat. N → -em');
+// Üb 4: Brief Nom/Akk (Kap. 36) — empty string for predikativ
+function checkBkEx4() {
+  checkBkGeneric({
+    'bk4-1':'e','bk4-2':'','bk4-3':'es','bk4-4':'en',
+    'bk4-5':'e','bk4-6':'e','bk4-7':'es','bk4-8':'e'
+  }, 'bk4-fb');
 }
 
-const lt_answers = { lt1:'en', lt2:'en', lt3:'er', lt4:'es', lt5:'en' };
-function checkLuecke() {
-  let right = 0;
-  ['lt1','lt2','lt3','lt4','lt5'].forEach(function(id) {
-    const inp = document.getElementById(id);
-    const val = inp.value.trim().toLowerCase();
-    const correct = lt_answers[id];
-    if (val === correct) { inp.classList.add('correct-input'); inp.classList.remove('wrong-input'); right++; }
-    else { inp.classList.add('wrong-input'); inp.classList.remove('correct-input'); }
-  });
-  const fb = document.getElementById('lt-fb');
-  const solutions = '-en · -en · -er · -es · -en';
-  showFb(fb, right >= 4 ? 'ok' : 'fail',
-    right >= 4
-      ? '✅ ' + right + '/5 правильних!' + (right < 5 ? ' Майже ідеально!' : ' Ідеально!')
-      : right + '/5 правильних. Відповіді: ' + solutions);
+// Üb 5: Party Dativ (Kap. 37) — all -en
+function checkBkEx5() {
+  checkBkGeneric({
+    'bk5-1':'en','bk5-2':'en','bk5-3':'en','bk5-4':'en',
+    'bk5-5':'en','bk5-6':'en','bk5-7':'en','bk5-8':'en',
+    'bk5-9':'en','bk5-10':'en','bk5-11':'en','bk5-12':'en'
+  }, 'bk5-fb');
+}
+
+// Üb 6: Einladung gemischt (Kap. 37)
+function checkBkEx6() {
+  checkBkGeneric({
+    'bk6-1':'en','bk6-2':'e','bk6-3':'en','bk6-4':'en',
+    'bk6-5':'en','bk6-6':'es','bk6-7':'en','bk6-8':'en',
+    'bk6-9':'e','bk6-10':'en','bk6-11':'er','bk6-12':'',
+    'bk6-13':'es','bk6-14':'e'
+  }, 'bk6-fb');
+}
+
+// Üb 7: Märchen gemischt (Kap. 37)
+function checkBkEx7() {
+  checkBkGeneric({
+    'bk7-1':'es','bk7-2':'en','bk7-3':'en','bk7-4':'en',
+    'bk7-5':'','bk7-6':'e','bk7-7':'en','bk7-8':'en',
+    'bk7-9':'','bk7-10':'en','bk7-11':'en','bk7-12':'en',
+    'bk7-13':'en','bk7-14':'en','bk7-15':'','bk7-16':'er','bk7-17':'er'
+  }, 'bk7-fb');
 }
 
 function showFb(el, type, msg) {
