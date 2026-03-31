@@ -209,139 +209,6 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 
 .info-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--text-muted);background:var(--bg-section);border:1px solid var(--border);border-radius:12px;padding:4px 10px;margin-bottom:1rem}
 
-/* ── AUDIO CARD ── */
-.audio-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:1.5rem;transition:box-shadow .2s}
-.audio-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
-.card-header{display:flex;align-items:flex-start;gap:1rem;padding:1.4rem 1.5rem 1rem}
-.card-img{width:72px;height:72px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--green-pale);display:flex;align-items:center;justify-content:center;font-size:28px}
-.card-meta{flex:1;min-width:0}
-.card-badges{display:flex;gap:.4rem;margin-bottom:.5rem;flex-wrap:wrap}
-.badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:20px}
-.badge.leicht{background:var(--green-pale);color:var(--green-mid)}
-.badge.mittel{background:var(--blue-pale);color:var(--blue-mid)}
-.badge.infinitiv{background:var(--purple-pale);color:var(--purple-mid)}
-.badge.perfekt{background:#fff3e0;color:#e65100}
-.badge.dialog{background:#fce4ec;color:#c2185b}
-.card-title{font-family:var(--serif);font-weight:300;font-size:19px;color:var(--text-dark);line-height:1.25;margin-bottom:.3rem}
-.card-desc{font-size:13px;color:var(--text-muted);line-height:1.5}
-
-/* ── PLAYER ── */
-.player-wrap{padding:.5rem 1.5rem 1rem}
-.player{background:var(--bg-section);border:1px solid var(--border);border-radius:12px;padding:.9rem 1.1rem}
-.player-controls{display:flex;align-items:center;gap:.9rem}
-.play-btn{width:42px;height:42px;border-radius:50%;background:var(--green-deep);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;position:relative}
-.play-btn:hover{background:var(--green-mid);transform:scale(1.05)}
-.play-btn svg{width:16px;height:16px;fill:#fff;margin-left:2px}
-.play-btn.playing{background:var(--green-mid)}
-.play-btn.playing svg.icon-play{display:none}
-.play-btn.playing svg.icon-pause{display:block!important}
-.play-btn svg.icon-pause{display:none}
-
-/* Waveform animation */
-.waveform{display:flex;align-items:center;gap:2.5px;height:28px;flex:1}
-.wave-bar{width:3px;border-radius:2px;background:var(--green-border);transition:background .3s}
-.waveform.active .wave-bar{background:var(--green-mid)}
-.wave-bar:nth-child(1){animation:none;height:6px}
-.wave-bar:nth-child(2){height:10px}
-.wave-bar:nth-child(3){height:18px}
-.wave-bar:nth-child(4){height:24px}
-.wave-bar:nth-child(5){height:28px}
-.wave-bar:nth-child(6){height:22px}
-.wave-bar:nth-child(7){height:14px}
-.wave-bar:nth-child(8){height:20px}
-.wave-bar:nth-child(9){height:26px}
-.wave-bar:nth-child(10){height:18px}
-.wave-bar:nth-child(11){height:12px}
-.wave-bar:nth-child(12){height:8px}
-.wave-bar:nth-child(13){height:16px}
-.wave-bar:nth-child(14){height:22px}
-.wave-bar:nth-child(15){height:14px}
-.wave-bar:nth-child(16){height:10px}
-.wave-bar:nth-child(17){height:18px}
-.wave-bar:nth-child(18){height:24px}
-.wave-bar:nth-child(19){height:16px}
-.wave-bar:nth-child(20){height:8px}
-
-@keyframes wavePulse {
-  0%,100%{transform:scaleY(1);opacity:.7}
-  50%{transform:scaleY(1.6);opacity:1}
-}
-.waveform.active .wave-bar:nth-child(odd){animation:wavePulse .6s ease-in-out infinite}
-.waveform.active .wave-bar:nth-child(even){animation:wavePulse .6s ease-in-out .3s infinite}
-.waveform.active .wave-bar:nth-child(3n){animation:wavePulse .8s ease-in-out .15s infinite}
-
-.player-time{font-size:12px;color:var(--text-muted);white-space:nowrap;font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
-.player-speed{font-size:11px;color:var(--text-muted);background:#fff;border:1px solid var(--border);border-radius:6px;padding:3px 7px;cursor:pointer;font-family:var(--sans);transition:all .15s;white-space:nowrap}
-.player-speed:hover{border-color:var(--green-mid);color:var(--green-mid)}
-
-/* Progress bar */
-.progress-wrap{margin-top:.6rem;cursor:pointer}
-.progress-bg{height:4px;background:var(--green-border);border-radius:2px;position:relative;overflow:hidden}
-.progress-fill{height:100%;background:var(--green-mid);border-radius:2px;width:0%;transition:width .1s linear}
-
-/* ── TRANSCRIPT ── */
-.transcript-wrap{border-top:1px solid var(--border)}
-.transcript-toggle{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;cursor:pointer;user-select:none;background:none;border:none;width:100%;font-family:var(--sans);transition:background .1s}
-.transcript-toggle:hover{background:#f8f5ef}
-.transcript-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);display:flex;align-items:center;gap:.5rem}
-.transcript-label svg{width:14px;height:14px;fill:var(--green-mid)}
-.transcript-arrow{font-size:12px;color:var(--text-muted);transition:transform .2s}
-.transcript-body{display:none;padding:0 1.5rem 1.5rem}
-.transcript-body.open{display:block}
-.transcript-text{font-size:15px;line-height:1.9;color:var(--text-dark);background:var(--bg-section);border-radius:10px;padding:1.1rem 1.3rem;border-left:3px solid var(--green-light)}
-.transcript-text p{margin-bottom:.8rem}
-.transcript-text p:last-child{margin-bottom:0}
-
-/* word highlight */
-.w{display:inline;border-radius:3px;transition:background .1s}
-.w.lit{background:rgba(29,158,117,.2);color:var(--green-deep)}
-
-/* ── QUESTIONS (audio) ── */
-.questions-wrap{padding:0 1.5rem 1.5rem}
-.q-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.8rem;margin-top:.5rem}
-.q-list{display:flex;flex-direction:column;gap:.5rem}
-.q-item{background:var(--bg-section);border:1px solid var(--border);border-radius:10px;overflow:hidden}
-.q-question{display:flex;align-items:flex-start;gap:.6rem;padding:.8rem 1rem;font-size:14px;line-height:1.5;color:var(--text-mid);cursor:pointer;user-select:none;border:none;width:100%;background:none;font-family:var(--sans);text-align:left;transition:background .1s}
-.q-question:hover{background:#f0ede5}
-.q-num{font-weight:700;color:var(--green-deep);flex-shrink:0;font-size:13px;min-width:18px}
-.q-toggle{font-size:11px;color:var(--text-muted);flex-shrink:0;margin-left:auto;padding-top:1px}
-.q-answer{display:none;padding:.6rem 1rem .8rem 2.2rem;font-size:13px;color:var(--green-deep);font-weight:600;border-top:1px solid var(--border);background:#fff;line-height:1.5}
-.q-answer.open{display:block}
-
-/* ── OPTIONS (A/B/C) ── */
-.options-list{display:flex;flex-direction:column;gap:.4rem;margin:.4rem 0 .6rem}
-.opt-label{display:flex;align-items:flex-start;gap:.6rem;font-size:13px;color:var(--text-mid);cursor:pointer;padding:.4rem .6rem;border-radius:6px;transition:background .1s;line-height:1.4}
-.opt-label:hover{background:var(--bg-section)}
-.opt-label input{accent-color:var(--green-mid);margin-top:1px;flex-shrink:0}
-.check-btn{margin-top:.4rem;padding:6px 14px;background:var(--green-mid);color:#fff;border:none;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .15s}
-.check-btn:hover{background:var(--green-deep)}
-.opt-result{margin-top:.5rem;font-size:12px;padding:6px 10px;border-radius:7px;display:none;line-height:1.4}
-.opt-result.show{display:block}
-.opt-result.ok{background:var(--green-pale);color:var(--green-deep)}
-.opt-result.fail{background:var(--red-pale);color:var(--red-mid)}
-.opt-result.partial{background:#fff3e0;color:#e65100}
-
-/* ── STATUS BADGE playing ── */
-.now-playing-badge{display:none;align-items:center;gap:.4rem;font-size:11px;font-weight:600;color:var(--green-mid);text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;background:var(--green-pale);border-radius:20px}
-.now-playing-badge.show{display:flex}
-.npb-dot{width:7px;height:7px;border-radius:50%;background:var(--green-mid);animation:blink 1s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-
-/* ── VOICE PICKER ── */
-.voice-picker-wrap{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1rem 1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:.8rem}
-.voice-picker-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);display:flex;align-items:center;gap:.4rem;white-space:nowrap}
-.voice-picker-label svg{width:14px;height:14px;fill:var(--green-mid);flex-shrink:0}
-.voice-chips{display:flex;flex-wrap:wrap;gap:.4rem;flex:1}
-.voice-chip{padding:5px 13px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--text-mid);transition:all .15s;user-select:none;white-space:nowrap}
-.voice-chip:hover{border-color:var(--green-mid);color:var(--green-mid)}
-.voice-chip.active{background:var(--green-deep);border-color:var(--green-deep);color:#fff}
-.voice-chip.female{border-left:3px solid #e91e8c}
-.voice-chip.female.active{background:linear-gradient(135deg,#0a5c42,#1a6b7a)}
-.voice-chip.male{border-left:3px solid var(--green-mid)}
-.voice-chip.robot{border-left:3px solid var(--blue-mid)}
-.voice-test-btn{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid var(--green-border);background:var(--green-pale);color:var(--green-deep);transition:all .15s;white-space:nowrap;flex-shrink:0}
-.voice-test-btn:hover{background:var(--green-mid);color:#fff;border-color:var(--green-mid)}
-.voice-test-btn.testing{background:var(--green-mid);color:#fff;border-color:var(--green-mid)}
 
 /* ── FILTER TABS ── */
 .filter-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
@@ -388,12 +255,6 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   .vocab-table .vocab-ex{display:none}
   .hero{padding:1.8rem 1.4rem 1.5rem}
   .role-tip{flex-wrap:wrap}
-  .card-header{flex-direction:column;gap:.6rem}
-  .card-img{width:100%;height:120px;border-radius:8px;font-size:40px}
-  .player-wrap{padding:.3rem 1rem .8rem}
-  .transcript-body{padding:0 1rem 1.2rem}
-  .questions-wrap{padding:0 1rem 1.2rem}
-  .voice-picker-wrap{flex-direction:column;align-items:flex-start}
   .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
   .mosaic-icon{width:30px;height:30px;font-size:15px}
   .mosaic-label{font-size:12px}
@@ -420,7 +281,7 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   <a class="sticky-pip" href="#s-question" data-section="s-question">❓<span class="pip-tooltip">Запитання</span></a>
   <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Граматика</span></a>
   <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
-  <a class="sticky-pip" href="#s-practice" data-section="s-practice">🧠<span class="pip-tooltip">Практика</span></a>
+  <a class="sticky-pip" href="#s-book" data-section="s-book">📗<span class="pip-tooltip">З підручника</span></a>
   <a class="sticky-pip" href="#s-summary" data-section="s-summary">✅<span class="pip-tooltip">Підсумок</span></a>
   <div class="sticky-divider"></div>
   <span class="sticky-current" id="sticky-current"></span>
@@ -468,9 +329,9 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
     <div class="mosaic-icon dialog">🎭</div>
     <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">Діалог</div></div>
   </a>
-  <a class="mosaic-tile" href="#s-practice">
-    <div class="mosaic-icon practice">🧠</div>
-    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">Практика</div></div>
+  <a class="mosaic-tile" href="#s-book">
+    <div class="mosaic-icon grammar">📗</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">З підручника</div></div>
   </a>
   <a class="mosaic-tile" href="#s-summary">
     <div class="mosaic-icon summary">✅</div>
@@ -840,130 +701,6 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
     </div>
   </div>
 
-  <!-- Ex 1: zu + Infinitiv or dass-Satz? -->
-  <div class="ex-block" id="ex1">
-    <div class="ex-header"><span class="ex-num">1</span> zu + Infinitiv чи dass-Satz?</div>
-    <div class="ex-body">
-      <div class="ex-task">Вибери правильний варіант:</div>
-      <div class="ex-items">
-        <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">Ich hoffe, die Prüfung ___.</p>
-        <label class="ex-item"><input type="radio" name="ex1a" value="correct"> <span>zu bestehen</span></label>
-        <label class="ex-item"><input type="radio" name="ex1a" value="wrong"> <span>dass ich bestehe</span></label>
-      </div>
-      <div class="ex-items" style="margin-top:12px;">
-        <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">Ich hoffe, ___ du die Prüfung bestehst.</p>
-        <label class="ex-item"><input type="radio" name="ex1b" value="wrong"> <span>zu</span></label>
-        <label class="ex-item"><input type="radio" name="ex1b" value="correct"> <span>dass</span></label>
-      </div>
-      <div class="ex-items" style="margin-top:12px;">
-        <p style="font-size:14px;color:var(--text-dark);margin-bottom:8px;">Es ist wichtig, einen guten Lebenslauf ___.</p>
-        <label class="ex-item"><input type="radio" name="ex1c" value="correct"> <span>zu haben</span></label>
-        <label class="ex-item"><input type="radio" name="ex1c" value="wrong"> <span>dass man hat</span></label>
-      </div>
-      <button class="ex-btn" onclick="checkEx1()">Перевірити</button>
-      <div class="ex-feedback" id="ex1-fb"></div>
-    </div>
-  </div>
-
-  <!-- Ex 2: Fill blanks -->
-  <div class="ex-block" id="ex2">
-    <div class="ex-header"><span class="ex-num">2</span> Заповни пропуски — zu + Infinitiv</div>
-    <div class="ex-body">
-      <div class="ex-task">Впиши правильну форму з zu + Infinitiv:</div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div class="blank-sentence">1. Ich versuche, jeden Tag pünktlich zu <input class="blank-input" id="b1" placeholder="?" style="min-width:100px">. (kommen)</div>
-        <div class="blank-sentence">2. Er hat vergessen, den Lebenslauf mit<input class="blank-input" id="b2" placeholder="?" style="min-width:100px">. (mitbringen → mit_zu_bringen)</div>
-        <div class="blank-sentence">3. Es ist schwer, eine gute Arbeit zu <input class="blank-input" id="b3" placeholder="?" style="min-width:100px">. (finden)</div>
-        <div class="blank-sentence">4. Sie plant, sich bei Siemens zu <input class="blank-input" id="b4" placeholder="?" style="min-width:100px">. (bewerben)</div>
-        <div class="blank-sentence">5. Ich habe Angst, den Job zu <input class="blank-input" id="b5" placeholder="?" style="min-width:100px">. (verlieren)</div>
-      </div>
-      <button class="ex-btn" onclick="checkEx2()">Перевірити</button>
-      <div class="ex-feedback" id="ex2-fb"></div>
-    </div>
-  </div>
-
-  <!-- Ex 3: um...zu vs. damit -->
-  <div class="ex-block" id="ex3">
-    <div class="ex-header"><span class="ex-num">3</span> um...zu чи damit?</div>
-    <div class="ex-body">
-      <div class="ex-task">Вибери правильне речення:</div>
-      <p style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px;">Запитання A:</p>
-      <div class="ex-items">
-        <label class="ex-item"><input type="radio" name="ex3a" value="correct"> <span>Ich lerne Deutsch, um in Deutschland zu arbeiten.</span></label>
-        <label class="ex-item"><input type="radio" name="ex3a" value="wrong"> <span>Ich lerne Deutsch, damit ich in Deutschland zu arbeiten.</span></label>
-      </div>
-      <p style="font-size:14px;font-weight:600;color:var(--text-dark);margin-top:12px;margin-bottom:8px;">Запитання B:</p>
-      <div class="ex-items">
-        <label class="ex-item"><input type="radio" name="ex3b" value="wrong"> <span>Er spricht langsam, um ich ihn zu verstehen.</span></label>
-        <label class="ex-item"><input type="radio" name="ex3b" value="correct"> <span>Er spricht langsam, damit ich ihn verstehe.</span></label>
-      </div>
-      <button class="ex-btn" onclick="checkEx3()">Перевірити</button>
-      <div class="ex-feedback" id="ex3-fb"></div>
-    </div>
-  </div>
-
-  <!-- Ex 4: Build sentences -->
-  <div class="ex-block" id="ex4">
-    <div class="ex-header"><span class="ex-num">4</span> Склади речення — розстав слова по порядку</div>
-    <div class="ex-body">
-      <div class="ex-task">Постав слова у правильному порядку та запиши речення:</div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div>
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Wörter: <strong>zu / Deutsch / arbeiten / um / lerne / in / ich / Deutschland</strong></p>
-          <input type="text" style="width:100%;border:1.5px solid var(--green-border);border-radius:8px;padding:8px 12px;font-size:14px;font-family:var(--sans);outline:none;color:var(--text-dark)" id="sent1" placeholder="Напиши речення тут...">
-          <button class="ex-btn secondary" style="margin-top:6px;" onclick="checkSent1()">Перевірити</button>
-          <div id="sent1-fb" class="ex-feedback"></div>
-        </div>
-        <div>
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Wörter: <strong>ohne / er / verabschieden / ging / zu / sich / weg</strong></p>
-          <input type="text" style="width:100%;border:1.5px solid var(--green-border);border-radius:8px;padding:8px 12px;font-size:14px;font-family:var(--sans);outline:none;color:var(--text-dark)" id="sent2" placeholder="Напиши речення тут...">
-          <button class="ex-btn secondary" style="margin-top:6px;" onclick="checkSent2()">Перевірити</button>
-          <div id="sent2-fb" class="ex-feedback"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ex 5: Find the error -->
-  <div class="ex-block" id="ex5">
-    <div class="ex-header"><span class="ex-num">5</span> Знайди помилку — Fehler finden</div>
-    <div class="ex-body">
-      <div class="ex-task">У кожному реченні є помилка з інфінітивною конструкцією. Знайди її!</div>
-      <div class="fehler-list">
-        <div class="fehler-item">
-          <div class="fehler-sentence">Ich versuche, pünktlich kommen.</div>
-          <div class="fehler-hint">💡 Що тут відсутнє перед інфінітивом?</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution"><strong>Ich versuche, pünktlich zu kommen.</strong> → Після versuchen потрібен zu + Infinitiv.</div>
-        </div>
-        <div class="fehler-item">
-          <div class="fehler-sentence">Er lernt Deutsch, um er in Deutschland arbeiten kann.</div>
-          <div class="fehler-hint">💡 Чи потрібен підмет після um? Де має стояти дієслово?</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution"><strong>Er lernt Deutsch, um in Deutschland zu arbeiten.</strong> → У конструкції um...zu підмет не повторюється, дієслово стоїть в інфінітиві з zu.</div>
-        </div>
-        <div class="fehler-item">
-          <div class="fehler-sentence">Sie hat den Vertrag unterschrieben, ohne ihn lesen.</div>
-          <div class="fehler-hint">💡 Що пропущено в конструкції ohne...zu?</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution"><strong>Sie hat den Vertrag unterschrieben, ohne ihn zu lesen.</strong> → ohne ... zu + Infinitiv — zu обов'язковий!</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ex 6: Writing task -->
-  <div class="aufgabe-box">
-    <div class="aufgabe-title">✍ Завдання 6 — Письмо з інфінітивними конструкціями</div>
-    <div class="aufgabe-task">Напиши 5 речень про свої кар'єрні плани. Використай усі 4 типи інфінітивних конструкцій!</div>
-    <ul class="aufgabe-hints">
-      <li>1 речення з <strong>zu + Infinitiv</strong>: Ich plane, ... zu ...</li>
-      <li>1 речення з <strong>um...zu</strong>: Ich lerne ..., um ... zu ...</li>
-      <li>1 речення з <strong>ohne...zu</strong>: Ich möchte nicht ..., ohne ... zu ...</li>
-      <li>1 речення з <strong>(an)statt...zu</strong>: Anstatt ..., möchte ich ...</li>
-      <li>1 вільне речення на тему Beruf з будь-якою інфінітивною конструкцією</li>
-    </ul>
-  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
@@ -973,188 +710,357 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   <div class="section-header">
     <div class="section-num">6</div>
     <div>
-      <div class="section-title">Повний діалог 🎭</div>
-      <div class="section-subtitle">Читайте вдвох — Особа А і Особа Б читають по черзі</div>
+      <div class="section-title">Діалог — Vorstellungsgespräch 🎭</div>
+      <div class="section-subtitle">Відповідай сам(а) — партнер читає питання, ти думаєш відповідь</div>
     </div>
   </div>
+
   <div class="role-tip">
-    <span class="role-badge a">👤 Herr Müller — Personalchef</span>
-    <span class="role-badge b">👤 Frau Kowalenko — Bewerberin</span>
+    <span class="role-badge a">👤 Herr Müller — Personalchef <em style="font-weight:400">(партнер читає)</em></span>
+    <span class="role-badge b">💬 Du — Bewerberin/Bewerber <em style="font-weight:400">(ти відповідаєш)</em></span>
   </div>
-  <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;font-style:italic;">Тема: Frau Kowalenko hat ein Vorstellungsgespräch bei einer deutschen Firma.</p>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-style:italic;">Ти прийшов(ла) на Vorstellungsgespräch у німецьку фірму. Партнер грає роль Herr Müller і читає його репліки вголос. Ти відповідаєш своїми словами — підказки допоможуть!</p>
 
   <div class="dialog-card">
+
+    <!-- 1 -->
     <div class="dialog-line">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Guten Tag, Frau Kowalenko! Schön, Sie kennenzulernen. Bitte setzen Sie sich.</span>
+      <span class="dialog-text">Guten Tag! Schön, dass Sie gekommen sind. Bitte setzen Sie sich.</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Guten Tag, Herr Müller! Vielen Dank für die Einladung zum Vorstellungsgespräch.</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Привітайся і подякуй за запрошення</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Guten Tag, Herr Müller! Vielen Dank für die Einladung zum Vorstellungsgespräch.</div>
+      </div>
     </div>
-    <div class="dialog-line">
+
+    <!-- 2 -->
+    <div class="dialog-line" style="margin-top:10px;">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Erzählen Sie mir bitte kurz etwas über sich. Was haben Sie bisher beruflich gemacht?</span>
+      <span class="dialog-text">Erzählen Sie mir bitte kurz etwas über sich. Woher kommen Sie und was haben Sie bisher gemacht?</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Ich komme aus der Ukraine und lebe seit zwei Jahren in Deutschland. In der Ukraine habe ich als Marketingmanagerin gearbeitet. Hier habe ich eine Ausbildung als Bürokauffrau gemacht, um meine Qualifikationen anzupassen.</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви країну, скільки ти в Німеччині, попередню роботу або навчання</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich komme aus der Ukraine und lebe seit zwei Jahren in Deutschland. Ich habe eine Ausbildung als Bürokauffrau gemacht, um meine Chancen auf dem Arbeitsmarkt zu verbessern.</div>
+      </div>
     </div>
-    <div class="dialog-line">
+
+    <!-- 3 -->
+    <div class="dialog-line" style="margin-top:10px;">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Das klingt gut. Warum haben Sie sich um diese Stelle bei uns beworben?</span>
+      <span class="dialog-text">Warum haben Sie sich um diese Stelle bei uns beworben?</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Ich habe mich beworben, um in einem internationalen Team zu arbeiten. Ihre Firma ist bekannt dafür, Arbeitnehmer aus verschiedenen Ländern zu beschäftigen.</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Використай <strong>um...zu</strong>: <em>„Ich habe mich beworben, um ... zu ..."</em></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich habe mich beworben, um in einem internationalen Team zu arbeiten und neue Erfahrungen zu sammeln.</div>
+      </div>
     </div>
-    <div class="dialog-line">
+
+    <!-- 4 -->
+    <div class="dialog-line" style="margin-top:10px;">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Das stimmt. Was sind Ihre größten Stärken?</span>
+      <span class="dialog-text">Was sind Ihre größten Stärken?</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Ich bin es gewohnt, selbstständig zu arbeiten. Außerdem bin ich sehr organisiert. Ich versuche immer, meine Aufgaben pünktlich zu erledigen, ohne die Qualität zu vernachlässigen.</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви 2–3 якості + <strong>zu + Inf</strong>: <em>„Ich versuche immer, ... zu ..."</em> / <em>„ohne ... zu ..."</em></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich bin sehr organisiert und versuche immer, meine Aufgaben pünktlich zu erledigen, ohne die Qualität zu vernachlässigen. Außerdem bin ich es gewohnt, selbstständig zu arbeiten.</div>
+      </div>
     </div>
-    <div class="dialog-line">
+
+    <!-- 5 -->
+    <div class="dialog-line" style="margin-top:10px;">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Sehr schön. Haben Sie auch Erfahrung mit Buchhaltung?</span>
+      <span class="dialog-text">Haben Sie Erfahrung mit Computerprogrammen oder anderen technischen Tools?</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Ja, während meiner Ausbildung habe ich gelernt, mit verschiedenen Buchhaltungsprogrammen umzugehen. Anstatt nur Theorie zu lernen, haben wir viel praktisch gearbeitet.</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Ja/Nein + що саме. Спробуй <strong>anstatt...zu</strong> або <strong>ohne...zu</strong></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ja, während meiner Ausbildung habe ich gelernt, mit verschiedenen Programmen umzugehen. Anstatt nur Theorie zu lernen, haben wir viel praktisch gearbeitet.</div>
+      </div>
     </div>
-    <div class="dialog-line">
+
+    <!-- 6 -->
+    <div class="dialog-line" style="margin-top:10px;">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Und was sind Ihre Gehaltsvorstellungen?</span>
+      <span class="dialog-text">Was sind Ihre Gehaltsvorstellungen?</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Ich hoffe, ein marktübliches Gehalt zu bekommen. Für mich ist es aber auch wichtig, gute Entwicklungsmöglichkeiten zu haben.</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Використай <strong>hoffen + zu</strong>: <em>„Ich hoffe, ... zu bekommen"</em> + що ще важливо для тебе</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich hoffe, ein marktübliches Gehalt zu bekommen. Für mich ist es aber auch wichtig, gute Entwicklungsmöglichkeiten zu haben.</div>
+      </div>
     </div>
-    <div class="dialog-line">
+
+    <!-- 7 -->
+    <div class="dialog-line" style="margin-top:10px;">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Das können wir Ihnen anbieten. Wann könnten Sie bei uns anfangen?</span>
+      <span class="dialog-text">Wann könnten Sie bei uns anfangen?</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Ich könnte ab nächstem Monat anfangen, ohne Probleme. Ich freue mich sehr über diese Möglichkeit!</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви дату або місяць: <em>„Ich könnte ab ... anfangen"</em></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich könnte ab nächstem Monat anfangen. Ich freue mich sehr darauf, in Ihrem Team zu arbeiten!</div>
+      </div>
     </div>
-    <div class="dialog-line">
+
+    <!-- 8 -->
+    <div class="dialog-line" style="margin-top:10px;">
       <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Wunderbar! Wir melden uns nächste Woche bei Ihnen. Vielen Dank, dass Sie heute gekommen sind!</span>
+      <span class="dialog-text">Sehr gut! Haben Sie noch Fragen an uns?</span>
     </div>
-    <div class="dialog-line">
-      <span class="dialog-speaker b">K:</span>
-      <span class="dialog-text">Vielen Dank, Herr Müller! Es war mir eine Freude, Sie kennenzulernen.</span>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Постав своє запитання! Наприклад: про команду, про завдання, про навчання</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ja, ich hätte eine Frage: Wie groß ist das Team, in dem ich arbeiten würde? Und gibt es Möglichkeiten, sich weiterzubilden?</div>
+      </div>
     </div>
-  </div>
-  <div class="aufgabe-box" style="margin-top:12px;">
-    <div class="aufgabe-title">✍ Після діалогу</div>
-    <div class="aufgabe-task">Дай коротку відповідь німецькою:</div>
-    <ul class="aufgabe-hints">
-      <li>Warum hat sich Frau Kowalenko um diese Stelle beworben?</li>
-      <li>Welche Infinitivsätze findest du im Dialog? Nenne mindestens fünf.</li>
-      <li>Was sind Frau Kowalenkos Stärken?</li>
-      <li>Знайди всі чотири типи інфінітивних конструкцій у діалозі!</li>
-    </ul>
+
+    <!-- End -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Wunderbar! Wir melden uns in den nächsten Tagen bei Ihnen. Vielen Dank!</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Подякуй і попрощайся</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Vielen Dank, Herr Müller! Es war mir eine Freude. Ich freue mich darauf, von Ihnen zu hören!</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ABSCHNITT 7: GRAMMATIK AUF PRAXIS -->
+<!-- ABSCHNITT 7: ВПРАВИ З ПІДРУЧНИКА -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="section-card" id="s-practice">
+<section class="section-card" id="s-book">
   <div class="section-header">
     <div class="section-num">7</div>
     <div>
-      <div class="section-title">Граматика на практиці 🧠</div>
-      <div class="section-subtitle">Infinitivsätze + Beruf — комбіновані завдання</div>
+      <div class="section-title">Вправи з підручника 📗</div>
+      <div class="section-subtitle">Grammatik aktiv A1-B1 — Kapitel 68, 69 & 74: Infinitivsätze</div>
     </div>
   </div>
 
-  <!-- Match -->
-  <div class="ex-block">
-    <div class="ex-header"><span class="ex-num">A</span> Визнач тип інфінітивної конструкції</div>
+  <!-- ── Üb 1: Sätze mit Infinitiv mit zu (Kap. 68, Üb. 3) ── -->
+  <div class="ex-block" id="bk-ex1">
+    <div class="ex-header"><span class="ex-num">1</span> Schreiben Sie die Sätze mit Infinitiv mit zu (Kap. 68)</div>
     <div class="ex-body">
-      <div class="ex-task">Визнач, який тип інфінітивної конструкції використано:</div>
+      <div class="ex-task">Напиши речення з zu + Infinitiv за поданими словами:</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">1. <strong>Ich habe keine Chance, werden · Millionär</strong></p>
+          <input type="text" class="blank-input" id="bk1-1" placeholder="Напиши речення..." style="width:100%;min-width:unset;">
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">2. <strong>Ich versuche, freundlich sein · zu allen Leuten</strong></p>
+          <input type="text" class="blank-input" id="bk1-2" placeholder="Напиши речення..." style="width:100%;min-width:unset;">
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">3. <strong>Er vergisst immer, aufmachen · das Fenster</strong></p>
+          <input type="text" class="blank-input" id="bk1-3" placeholder="Напиши речення..." style="width:100%;min-width:unset;">
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">4. <strong>Es ist gefährlich, gehen · spazieren · nachts · im Park</strong></p>
+          <input type="text" class="blank-input" id="bk1-4" placeholder="Напиши речення..." style="width:100%;min-width:unset;">
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">5. <strong>Wir haben Zeit, gehen · mit mir · ins Café</strong></p>
+          <input type="text" class="blank-input" id="bk1-5" placeholder="Напиши речення..." style="width:100%;min-width:unset;">
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswersB(1)">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk1-fb"></div>
+      <div id="bk1-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:2;">
+        <strong>Зразкові відповіді:</strong><br>
+        1. Ich habe keine Chance, Millionär zu werden.<br>
+        2. Ich versuche, zu allen Leuten freundlich zu sein.<br>
+        3. Er vergisst immer, das Fenster aufzumachen.<br>
+        4. Es ist gefährlich, nachts im Park spazieren zu gehen.<br>
+        5. Wir haben Zeit, mit mir ins Café zu gehen.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Üb 2: Infinitiv mit zu oder dass? (Kap. 68, Üb. 6) ── -->
+  <div class="ex-block" id="bk-ex2">
+    <div class="ex-header"><span class="ex-num">2</span> Eltern und Kinder — Infinitiv mit zu oder dass? (Kap. 68)</div>
+    <div class="ex-body">
+      <div class="ex-task">Вибери: zu + Infinitiv (однаковий підмет) чи dass-Satz (різні підмети)?</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
         <div>
-          <p style="font-size:14px;font-weight:600;margin-bottom:6px;">Ich lerne Deutsch, um eine Stelle zu finden.</p>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">1. Ich habe das Glück, <em>(drei Kinder haben)</em></p>
           <div class="ex-items">
-            <label class="ex-item"><input type="radio" name="m1" value="wrong"> <span>zu + Infinitiv</span></label>
-            <label class="ex-item"><input type="radio" name="m1" value="correct"> <span>um...zu + Infinitiv</span></label>
-            <label class="ex-item"><input type="radio" name="m1" value="wrong"> <span>ohne...zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-1" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-1" value="dass"> <span>dass-Satz</span></label>
           </div>
         </div>
         <div>
-          <p style="font-size:14px;font-weight:600;margin-bottom:6px;">Er hat gekündigt, ohne eine neue Stelle zu haben.</p>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">2. Ich habe das Glück, <em>(meine drei Kinder gesund sind)</em></p>
           <div class="ex-items">
-            <label class="ex-item"><input type="radio" name="m2" value="wrong"> <span>um...zu + Infinitiv</span></label>
-            <label class="ex-item"><input type="radio" name="m2" value="wrong"> <span>(an)statt...zu + Infinitiv</span></label>
-            <label class="ex-item"><input type="radio" name="m2" value="correct"> <span>ohne...zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-2" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-2" value="dass"> <span>dass-Satz</span></label>
           </div>
         </div>
         <div>
-          <p style="font-size:14px;font-weight:600;margin-bottom:6px;">Anstatt zu arbeiten, schaut er Videos.</p>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">3. Wir haben den Traum, <em>(unsere Kinder berühmt und reich werden)</em></p>
           <div class="ex-items">
-            <label class="ex-item"><input type="radio" name="m3" value="wrong"> <span>ohne...zu + Infinitiv</span></label>
-            <label class="ex-item"><input type="radio" name="m3" value="correct"> <span>(an)statt...zu + Infinitiv</span></label>
-            <label class="ex-item"><input type="radio" name="m3" value="wrong"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-3" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-3" value="dass"> <span>dass-Satz</span></label>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">4. Meine Nachbarin hat keine Zeit, <em>(sich um ihre Kinder kümmern)</em></p>
+          <div class="ex-items">
+            <label class="ex-item"><input type="radio" name="bk2-4" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-4" value="dass"> <span>dass-Satz</span></label>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">5. Ich schlage ihr vor, <em>(ihre kleine Tochter morgen zu mir kommen)</em></p>
+          <div class="ex-items">
+            <label class="ex-item"><input type="radio" name="bk2-5" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-5" value="dass"> <span>dass-Satz</span></label>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">6. Hier hat sie die Chance, <em>(in Ruhe die Hausaufgaben machen)</em></p>
+          <div class="ex-items">
+            <label class="ex-item"><input type="radio" name="bk2-6" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-6" value="dass"> <span>dass-Satz</span></label>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">7. Ich hoffe, <em>(bei den Hausaufgaben helfen können)</em></p>
+          <div class="ex-items">
+            <label class="ex-item"><input type="radio" name="bk2-7" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-7" value="dass"> <span>dass-Satz</span></label>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:14px;color:var(--text-dark);margin-bottom:5px;">8. Ich hoffe, <em>(meine Nachbarin bald weniger arbeiten muss)</em></p>
+          <div class="ex-items">
+            <label class="ex-item"><input type="radio" name="bk2-8" value="zu"> <span>zu + Infinitiv</span></label>
+            <label class="ex-item"><input type="radio" name="bk2-8" value="dass"> <span>dass-Satz</span></label>
           </div>
         </div>
       </div>
-      <button class="ex-btn" onclick="checkMatch()">Перевірити</button>
-      <div class="ex-feedback" id="match-fb"></div>
-    </div>
-  </div>
-
-  <!-- Fill blanks with Beruf context -->
-  <div class="ex-block">
-    <div class="ex-header"><span class="ex-num">B</span> Заповни пропуски — робота з інфінітивними конструкціями</div>
-    <div class="ex-body">
-      <div class="ex-task">Доповни речення правильним словом (um, ohne, anstatt, zu):</div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <div class="blank-sentence">1. Er schreibt eine Bewerbung, <input class="blank-input" id="lt1" placeholder="?" style="min-width:60px"> eine neue Stelle zu finden.</div>
-        <div class="blank-sentence">2. Sie hat den Vertrag unterschrieben, <input class="blank-input" id="lt2" placeholder="?" style="min-width:60px"> ihn zu lesen.</div>
-        <div class="blank-sentence">3. <input class="blank-input" id="lt3" placeholder="?" style="min-width:70px"> zu arbeiten, surft er im Internet.</div>
-        <div class="blank-sentence">4. Ich versuche, pünktlich <input class="blank-input" id="lt4" placeholder="?" style="min-width:40px"> kommen.</div>
-        <div class="blank-sentence">5. Er ging nach Hause, <input class="blank-input" id="lt5" placeholder="?" style="min-width:60px"> sich zu verabschieden.</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+        <button class="ex-btn" onclick="checkBkEx2()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswersB(2)">📖 Відповіді</button>
       </div>
-      <button class="ex-btn" onclick="checkLuecke()">Перевірити</button>
-      <div class="ex-feedback" id="lt-fb"></div>
-    </div>
-  </div>
-
-  <!-- Translate -->
-  <div class="ex-block">
-    <div class="ex-header"><span class="ex-num">C</span> Перекладіть на німецьку</div>
-    <div class="ex-body">
-      <div class="ex-task">Перекладіть речення з інфінітивними конструкціями. Клікни «Рішення», щоб порівняти свою відповідь.</div>
-      <div class="fehler-list">
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Я вчу німецьку, щоб знайти роботу в Німеччині.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Ich lerne Deutsch, um eine Arbeit in Deutschland zu finden.</div>
-        </div>
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Він звільнився, не знайшовши нової роботи.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Er hat gekündigt, ohne eine neue Arbeit zu finden.</div>
-        </div>
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Замість того, щоб відпочивати, вона працює.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Anstatt sich auszuruhen, arbeitet sie.</div>
-        </div>
-        <div class="fehler-item">
-          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;">🇺🇦 Важливо мати хороший Lebenslauf.</div>
-          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Показати рішення</button>
-          <div class="fehler-solution">Es ist wichtig, einen guten Lebenslauf zu haben.</div>
-        </div>
+      <div class="ex-feedback" id="bk2-fb"></div>
+      <div id="bk2-ans" style="display:none;margin-top:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px;font-size:13px;line-height:2;">
+        <strong>Відповіді:</strong><br>
+        1. <strong>zu + Inf</strong>: drei Kinder zu haben · 2. <strong>dass</strong>: dass meine drei Kinder gesund sind<br>
+        3. <strong>dass</strong>: dass unsere Kinder berühmt und reich werden · 4. <strong>zu + Inf</strong>: sich um ihre Kinder zu kümmern<br>
+        5. <strong>dass</strong>: dass ihre kleine Tochter morgen zu mir kommt · 6. <strong>zu + Inf</strong>: in Ruhe die Hausaufgaben zu machen<br>
+        7. <strong>zu + Inf</strong>: bei den Hausaufgaben helfen zu können · 8. <strong>dass</strong>: dass meine Nachbarin bald weniger arbeiten muss
       </div>
     </div>
   </div>
+
+  <!-- ── Üb 3: Mit oder ohne zu? (Kap. 69, Üb. 2) ── -->
+  <div class="ex-block" id="bk-ex3">
+    <div class="ex-header"><span class="ex-num">3</span> Infinitiv mit oder ohne zu? — Ergänzen Sie (Kap. 69)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши <strong>zu</strong> або залиш пропуск <strong>—</strong> (Modalverben, lassen, sehen, hören → без zu!):</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1a. Es ist verboten, hier <input class="blank-input" id="bk3-1" placeholder="zu/—" style="min-width:45px"> essen. &nbsp;|&nbsp; 1b. Man darf hier nicht <input class="blank-input" id="bk3-2" placeholder="zu/—" style="min-width:45px"> essen.</div>
+        <div class="blank-sentence">2a. Ich will heute Abend <input class="blank-input" id="bk3-3" placeholder="zu/—" style="min-width:45px"> kochen. &nbsp;|&nbsp; 2b. Ich habe Lust, heute Abend <input class="blank-input" id="bk3-4" placeholder="zu/—" style="min-width:45px"> kochen.</div>
+        <div class="blank-sentence">3a. Er erlaubt seiner Tochter, den Film <input class="blank-input" id="bk3-5" placeholder="zu/—" style="min-width:45px"> sehen. &nbsp;|&nbsp; 3b. Er lässt seine Tochter den Film <input class="blank-input" id="bk3-6" placeholder="zu/—" style="min-width:45px"> sehen.</div>
+        <div class="blank-sentence">4a. Wir gehen am Sonntag <input class="blank-input" id="bk3-7" placeholder="zu/—" style="min-width:45px"> tanzen. &nbsp;|&nbsp; 4b. Wir haben vor, am Sonntag tanzen <input class="blank-input" id="bk3-8" placeholder="zu/—" style="min-width:45px"> gehen.</div>
+        <div class="blank-sentence">5a. Ich finde es schön, ihn <input class="blank-input" id="bk3-9" placeholder="zu/—" style="min-width:45px"> sehen. &nbsp;|&nbsp; 5b. Ich sehe ihn <input class="blank-input" id="bk3-10" placeholder="zu/—" style="min-width:45px"> kommen.</div>
+        <div class="blank-sentence">6a. Sie hört ihren Nachbarn Klavier <input class="blank-input" id="bk3-11" placeholder="zu/—" style="min-width:45px"> spielen. &nbsp;|&nbsp; 6b. Ich liebe es, dich Klavier spielen <input class="blank-input" id="bk3-12" placeholder="zu/—" style="min-width:45px"> hören.</div>
+      </div>
+      <div style="margin-top:10px;background:var(--blue-pale);border-radius:8px;padding:8px 12px;font-size:13px;">
+        💡 <strong>Правило:</strong> після <em>müssen, können, dürfen, möchten, sollen, wollen, lassen, sehen, hören, gehen</em> → <strong>без zu</strong>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+        <button class="ex-btn" onclick="checkBkEx3()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswersB(3)">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk3-fb"></div>
+    </div>
+  </div>
+
+  <!-- ── Üb 4: Marias Leben um...zu oder damit (Kap. 74, Üb. 4) ── -->
+  <div class="ex-block" id="bk-ex4">
+    <div class="ex-header"><span class="ex-num">4</span> Marias Leben — um...zu oder damit? (Kap. 74)</div>
+    <div class="ex-body">
+      <div class="ex-task">Доповни: <strong>um...zu</strong> (одна особа) або <strong>damit</strong> (різні особи)?</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1. Maria lernt Deutsch, <input class="blank-input" id="bk4-1" placeholder="um...zu / damit" style="min-width:120px"> in Deutschland <strong>zu arbeiten</strong>. <em style="color:var(--text-muted);font-size:12px;">(Maria самa)</em></div>
+        <div class="blank-sentence">2. Sie macht jetzt ein Praktikum, <input class="blank-input" id="bk4-2" placeholder="um...zu / damit" style="min-width:120px"> den Beruf <strong>kennenzulernen</strong>. <em style="color:var(--text-muted);font-size:12px;">(Maria сама)</em></div>
+        <div class="blank-sentence">3. Sie arbeitet viel, <input class="blank-input" id="bk4-3" placeholder="um...zu / damit" style="min-width:120px"> der Chef zufrieden ist. <em style="color:var(--text-muted);font-size:12px;">(інша особа!)</em></div>
+        <div class="blank-sentence">4. Abends geht sie in die Disko, <input class="blank-input" id="bk4-4" placeholder="um...zu / damit" style="min-width:120px"> ihren Traummann <strong>zu finden</strong>. <em style="color:var(--text-muted);font-size:12px;">(Maria сама)</em></div>
+        <div class="blank-sentence">5. Sie möchte bald heiraten, <input class="blank-input" id="bk4-5" placeholder="um...zu / damit" style="min-width:120px"> ihre Mutter glücklich ist. <em style="color:var(--text-muted);font-size:12px;">(інша особа!)</em></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+        <button class="ex-btn" onclick="checkBkEx4()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswersB(4)">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk4-fb"></div>
+    </div>
+  </div>
+
+  <!-- ── Üb 5: damit oder weil? (Kap. 74, Üb. 5) ── -->
+  <div class="ex-block" id="bk-ex5">
+    <div class="ex-header"><span class="ex-num">5</span> Wozu oder warum? — damit oder weil? (Kap. 74)</div>
+    <div class="ex-body">
+      <div class="ex-task">Доповни: <strong>damit</strong> (мета) або <strong>weil</strong> (причина)?</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1. Lisa geht ins Ausland, <input class="blank-input" id="bk5-1" placeholder="damit/weil" style="min-width:80px"> ihre Tochter dort die Schule beginnt und die Sprache lernt.</div>
+        <div class="blank-sentence">2. Tina geht ins Ausland, <input class="blank-input" id="bk5-2" placeholder="damit/weil" style="min-width:80px"> sie dort eine Arbeitsstelle gefunden hat.</div>
+        <div class="blank-sentence">3. Mireille lernt Deutsch, <input class="blank-input" id="bk5-3" placeholder="damit/weil" style="min-width:80px"> ihr Mann Deutscher ist.</div>
+        <div class="blank-sentence">4. Anna lernt Deutsch, <input class="blank-input" id="bk5-4" placeholder="damit/weil" style="min-width:80px"> sie mit ihren deutschen Nachbarn sprechen kann.</div>
+        <div class="blank-sentence">5. Karem macht die Prüfung, <input class="blank-input" id="bk5-5" placeholder="damit/weil" style="min-width:80px"> er weiß, was er kann.</div>
+        <div class="blank-sentence">6. Nicolas macht eine Prüfung, <input class="blank-input" id="bk5-6" placeholder="damit/weil" style="min-width:80px"> er sie für seine Arbeit braucht.</div>
+        <div class="blank-sentence">7. Ich trage eine Brille, <input class="blank-input" id="bk5-7" placeholder="damit/weil" style="min-width:80px"> meine Augen schlecht sind.</div>
+        <div class="blank-sentence">8. Du trägst eine Brille, <input class="blank-input" id="bk5-8" placeholder="damit/weil" style="min-width:80px"> du intelligent aussiehst.</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+        <button class="ex-btn" onclick="checkBkEx5()">Перевірити</button>
+        <button class="ex-btn secondary" onclick="showBkAnswersB(5)">📖 Відповіді</button>
+      </div>
+      <div class="ex-feedback" id="bk5-fb"></div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
@@ -1242,94 +1148,123 @@ function toggleFehler(btn) {
 }
 
 // ─── GRAMMAR EXERCISES ───────────────────────────
-function checkEx1() {
-  var a = document.querySelector('input[name="ex1a"]:checked');
-  var b = document.querySelector('input[name="ex1b"]:checked');
-  var c = document.querySelector('input[name="ex1c"]:checked');
-  var fb = document.getElementById('ex1-fb');
-  if (!a || !b || !c) { showFb(fb, 'fail', 'Bitte alle drei Fragen beantworten!'); return; }
-  var ok = a.value === 'correct' && b.value === 'correct' && c.value === 'correct';
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Все правильно! Однаковий підмет → zu + Inf · Різні підмети → dass · Es ist wichtig → zu + Inf'
-    : '❌ Підказка: Однаковий підмет → zu + Infinitiv · Різні підмети → dass-Satz · Es ist wichtig + zu + Inf');
+// ─── BOOK EXERCISES (Grammatik aktiv, Kap. 68, 69, 74) ───
+var BK_SHOWN_B = {};
+
+// Üb 1 — text inputs, model answers in hidden div
+function showBkAnswersB(n) {
+  if (n === 1) {
+    var el = document.getElementById('bk1-ans');
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    return;
+  }
+  if (n === 2) {
+    var el2 = document.getElementById('bk2-ans');
+    var show = !BK_SHOWN_B[2];
+    BK_SHOWN_B[2] = show;
+    el2.style.display = show ? 'block' : 'none';
+    // fill radios
+    var correct2 = ['zu','dass','dass','zu','dass','zu','zu','dass'];
+    for (var i = 1; i <= 8; i++) {
+      var radios = document.querySelectorAll('input[name="bk2-' + i + '"]');
+      radios.forEach(function(r) {
+        if (show) r.checked = (r.value === correct2[i-1]);
+        else r.checked = false;
+      });
+    }
+    return;
+  }
+  var BK_ANS = {
+    3: {'bk3-1':'zu','bk3-2':'—','bk3-3':'—','bk3-4':'zu','bk3-5':'zu','bk3-6':'—','bk3-7':'—','bk3-8':'zu','bk3-9':'zu','bk3-10':'—','bk3-11':'—','bk3-12':'zu'},
+    4: {'bk4-1':'um...zu','bk4-2':'um...zu','bk4-3':'damit','bk4-4':'um...zu','bk4-5':'damit'},
+    5: {'bk5-1':'damit','bk5-2':'weil','bk5-3':'weil','bk5-4':'damit','bk5-5':'weil','bk5-6':'weil','bk5-7':'weil','bk5-8':'damit'}
+  };
+  var answers = BK_ANS[n];
+  if (!answers) return;
+  if (BK_SHOWN_B[n]) {
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = ''; inp.style.background=''; inp.style.color=''; inp.style.fontWeight=''; inp.style.borderColor='';
+    });
+    BK_SHOWN_B[n] = false;
+  } else {
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = answers[id];
+      inp.style.background='#d4edda'; inp.style.color='#155724'; inp.style.fontWeight='700'; inp.style.borderColor='#28a745';
+    });
+    BK_SHOWN_B[n] = true;
+  }
 }
 
-var blank_answers = { b1:'kommen', b2:'zubringen', b3:'finden', b4:'bewerben', b5:'verlieren' };
-function checkEx2() {
-  var right = 0, total = 5;
-  Object.keys(blank_answers).forEach(function(id) {
-    var inp = document.getElementById(id);
-    var val = inp.value.trim().toLowerCase();
-    var correct = blank_answers[id];
-    if (val === correct) { inp.classList.add('correct-input'); inp.classList.remove('wrong-input'); right++; }
-    else { inp.classList.add('wrong-input'); inp.classList.remove('correct-input'); }
-  });
-  var fb = document.getElementById('ex2-fb');
-  showFb(fb, right === total ? 'ok' : 'fail',
-    right === total
-      ? '✅ Відмінно! Всі ' + total + ' правильні!'
-      : right + ' з ' + total + ' правильних. Відповіді: kommen · zubringen · finden · bewerben · verlieren');
-}
-
-function checkEx3() {
-  var a = document.querySelector('input[name="ex3a"]:checked');
-  var b = document.querySelector('input[name="ex3b"]:checked');
-  var fb = document.getElementById('ex3-fb');
-  if (!a || !b) { showFb(fb, 'fail', 'Bitte beide Fragen beantworten!'); return; }
-  var ok = a.value === 'correct' && b.value === 'correct';
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Правильно! Однаковий підмет → um...zu · Різні підмети → damit'
-    : '❌ A: Однаковий підмет (ich...ich) → um...zu ✅ · B: Різні підмети (er...ich) → damit ✅');
-}
-
-function checkSent1() {
-  var val = document.getElementById('sent1').value.trim().toLowerCase();
-  var fb = document.getElementById('sent1-fb');
-  var ok = val.includes('um') && val.includes('zu arbeiten') && val.includes('deutsch');
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Чудово! Зразок: „Ich lerne Deutsch, um in Deutschland zu arbeiten."'
-    : '💡 Musterantwort: „Ich lerne Deutsch, um in Deutschland zu arbeiten."');
-}
-
-function checkSent2() {
-  var val = document.getElementById('sent2').value.trim().toLowerCase();
-  var fb = document.getElementById('sent2-fb');
-  var ok = val.includes('ohne') && val.includes('zu verabschieden') && val.includes('ging');
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Правильно! Зразок: „Er ging weg, ohne sich zu verabschieden."'
-    : '💡 Musterantwort: „Er ging weg, ohne sich zu verabschieden."');
-}
-
-function checkMatch() {
-  var m1 = document.querySelector('input[name="m1"]:checked');
-  var m2 = document.querySelector('input[name="m2"]:checked');
-  var m3 = document.querySelector('input[name="m3"]:checked');
-  var fb = document.getElementById('match-fb');
-  if (!m1 || !m2 || !m3) { showFb(fb,'fail','Bitte alle beantworten!'); return; }
-  var ok = m1.value === 'correct' && m2.value === 'correct' && m3.value === 'correct';
-  showFb(fb, ok ? 'ok' : 'fail', ok
-    ? '✅ Усе правильно! um...zu · ohne...zu · (an)statt...zu'
-    : '❌ Перевір: 1) um = мета · 2) ohne = без · 3) anstatt = замість');
-}
-
-var lt_answers = { lt1:'um', lt2:'ohne', lt3:'anstatt', lt4:'zu', lt5:'ohne' };
-function checkLuecke() {
+// Üb 2 — radio check
+function checkBkEx2() {
+  var correct = ['zu','dass','dass','zu','dass','zu','zu','dass'];
   var right = 0;
-  ['lt1','lt2','lt3','lt4','lt5'].forEach(function(id) {
+  for (var i = 1; i <= 8; i++) {
+    var sel = document.querySelector('input[name="bk2-' + i + '"]:checked');
+    if (sel && sel.value === correct[i-1]) right++;
+  }
+  var fb = document.getElementById('bk2-fb');
+  showFb(fb, right === 8 ? 'ok' : 'fail',
+    right === 8 ? '✅ Відмінно! Всі 8 правильні!'
+    : right + '/8 правильних. Підказка: однаковий підмет → zu, різні → dass');
+}
+
+// Üb 3 — fill zu/—
+function checkBkEx3() {
+  var correct = {'bk3-1':'zu','bk3-2':'—','bk3-3':'—','bk3-4':'zu','bk3-5':'zu','bk3-6':'—','bk3-7':'—','bk3-8':'zu','bk3-9':'zu','bk3-10':'—','bk3-11':'—','bk3-12':'zu'};
+  var right = 0, total = 12;
+  Object.keys(correct).forEach(function(id) {
     var inp = document.getElementById(id);
-    var val = inp.value.trim().toLowerCase();
-    var correct = lt_answers[id];
-    // Accept statt as alternative for anstatt
-    var isCorrect = (val === correct) || (correct === 'anstatt' && val === 'statt');
-    if (isCorrect) { inp.classList.add('correct-input'); inp.classList.remove('wrong-input'); right++; }
+    if (!inp) return;
+    var val = inp.value.trim();
+    var ok = val === correct[id] || (correct[id]==='—' && (val==='' || val==='-' || val==='—'));
+    if (ok) { inp.classList.add('correct-input'); inp.classList.remove('wrong-input'); right++; }
     else { inp.classList.add('wrong-input'); inp.classList.remove('correct-input'); }
   });
-  var fb = document.getElementById('lt-fb');
-  var solutions = 'um · ohne · anstatt · zu · ohne';
-  showFb(fb, right >= 4 ? 'ok' : 'fail',
-    right >= 4
-      ? '✅ ' + right + '/5 правильних!' + (right < 5 ? ' Майже ідеально!' : ' Ідеально!')
-      : right + '/5 правильних. Відповіді: ' + solutions);
+  var fb = document.getElementById('bk3-fb');
+  showFb(fb, right===total?'ok':'fail',
+    right===total ? '✅ Ідеально! '+total+'/'+total
+    : right+'/'+total+' правильних. Підказка: після Modalverb/lassen/sehen/hören — без zu');
+}
+
+// Üb 4 — fill um...zu/damit
+function checkBkEx4() {
+  var correct = {'bk4-1':'um...zu','bk4-2':'um...zu','bk4-3':'damit','bk4-4':'um...zu','bk4-5':'damit'};
+  var right = 0, total = 5;
+  Object.keys(correct).forEach(function(id) {
+    var inp = document.getElementById(id);
+    if (!inp) return;
+    var val = inp.value.trim().toLowerCase().replace(/\s+/g,'');
+    var c = correct[id].toLowerCase().replace(/\s+/g,'');
+    var ok = val===c || (c==='um...zu' && (val==='um..zu'||val==='umzu'||val.startsWith('um')));
+    if (ok) { inp.classList.add('correct-input'); inp.classList.remove('wrong-input'); right++; }
+    else { inp.classList.add('wrong-input'); inp.classList.remove('correct-input'); }
+  });
+  var fb = document.getElementById('bk4-fb');
+  showFb(fb, right===total?'ok':'fail',
+    right===total ? '✅ Відмінно! Всі 5 правильні!'
+    : right+'/5 правильних. Відповіді: um...zu · um...zu · damit · um...zu · damit');
+}
+
+// Üb 5 — fill damit/weil
+function checkBkEx5() {
+  var correct = {'bk5-1':'damit','bk5-2':'weil','bk5-3':'weil','bk5-4':'damit','bk5-5':'weil','bk5-6':'weil','bk5-7':'weil','bk5-8':'damit'};
+  var right = 0, total = 8;
+  Object.keys(correct).forEach(function(id) {
+    var inp = document.getElementById(id);
+    if (!inp) return;
+    var val = inp.value.trim().toLowerCase();
+    if (val===correct[id]) { inp.classList.add('correct-input'); inp.classList.remove('wrong-input'); right++; }
+    else { inp.classList.add('wrong-input'); inp.classList.remove('correct-input'); }
+  });
+  var fb = document.getElementById('bk5-fb');
+  showFb(fb, right===total?'ok':'fail',
+    right===total ? '✅ Ідеально! 8/8!'
+    : right+'/8. Відповіді: damit · weil · weil · damit · weil · weil · weil · damit');
 }
 
 function showFb(el, type, msg) {

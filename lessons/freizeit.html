@@ -287,13 +287,12 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 <header class="hero">
   <div class="hero-label">Thema 4 · A2 → B1</div>
   <h1 class="hero-title">🎯 Die <em>Freizeit</em></h1>
-  <p class="hero-subtitle">Neue Wörter · Lesetext · Konversation · Adjektivdeklination (Nom., Akk., Dat.) · Hörverstehen</p>
+  <p class="hero-subtitle">Neue Wörter · Lesetext · Konversation · Adjektivdeklination (Nom., Akk., Dat.)</p>
   <div class="hero-tags">
     <span class="hero-tag">A2-Niveau</span>
     <span class="hero-tag accent">Grammatik: Adjektivdeklination</span>
     <span class="hero-tag accent">Вправи з підручника (Kap. 36-37)</span>
     <span class="hero-tag">10 neue Wörter</span>
-    <span class="hero-tag">5 Höraufgaben 🔊</span>
   </div>
 </header>
 
@@ -960,10 +959,6 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
       <div class="summary-stat-num">16</div>
       <div class="summary-stat-label">Граматичних вправ</div>
     </div>
-    <div class="summary-stat">
-      <div class="summary-stat-num">5</div>
-      <div class="summary-stat-label">Höraufgaben</div>
-    </div>
   </div>
 
   <p style="color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;margin-bottom:.5rem;">Три типи відмінювання прикметників:</p>
@@ -1031,10 +1026,6 @@ function toggleFehler(btn) {
   }
 }
 
-function toggleHoerText(n) {
-  const t = document.getElementById('hoer-text-' + n);
-  t.classList.toggle('visible');
-}
 
 // ─── GRAMMAR EXERCISES ───────────────────────────
 // ─── BOOK EXERCISES (Grammatik aktiv, Kap. 36-37: Adjektivdeklination) ───
@@ -1047,18 +1038,33 @@ var BK_ANSWERS = {
   6:  {'bk6-1':'en','bk6-2':'e','bk6-3':'en','bk6-4':'en','bk6-5':'en','bk6-6':'es','bk6-7':'en','bk6-8':'en','bk6-9':'e','bk6-10':'en','bk6-11':'er','bk6-12':'','bk6-13':'es','bk6-14':'e'},
   7:  {'bk7-1':'es','bk7-2':'en','bk7-3':'en','bk7-4':'en','bk7-5':'','bk7-6':'e','bk7-7':'en','bk7-8':'en','bk7-9':'','bk7-10':'en','bk7-11':'en','bk7-12':'en','bk7-13':'en','bk7-14':'en','bk7-15':'','bk7-16':'er','bk7-17':'er'}
 };
+var BK_SHOWN = {};
 function showBkAnswers(n) {
   var answers = BK_ANSWERS[n];
   if (!answers) return;
-  Object.keys(answers).forEach(function(id) {
-    var inp = document.getElementById(id);
-    if (!inp) return;
-    inp.value = answers[id] || '—';
-    inp.style.background = '#d4edda';
-    inp.style.color = '#155724';
-    inp.style.fontWeight = '700';
-    inp.style.borderColor = '#28a745';
-  });
+  if (BK_SHOWN[n]) {
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = '';
+      inp.style.background = '';
+      inp.style.color = '';
+      inp.style.fontWeight = '';
+      inp.style.borderColor = '';
+    });
+    BK_SHOWN[n] = false;
+  } else {
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = answers[id] || '—';
+      inp.style.background = '#d4edda';
+      inp.style.color = '#155724';
+      inp.style.fontWeight = '700';
+      inp.style.borderColor = '#28a745';
+    });
+    BK_SHOWN[n] = true;
+  }
 }
 function checkBkGeneric(answers, fbId, threshold) {
   var right = 0, total = Object.keys(answers).length;
