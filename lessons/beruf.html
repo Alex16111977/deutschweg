@@ -280,8 +280,8 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   <a class="sticky-pip" href="#s-read" data-section="s-read">📖<span class="pip-tooltip">Читання</span></a>
   <a class="sticky-pip" href="#s-question" data-section="s-question">❓<span class="pip-tooltip">Запитання</span></a>
   <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Граматика</span></a>
-  <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
   <a class="sticky-pip" href="#s-book" data-section="s-book">📗<span class="pip-tooltip">З підручника</span></a>
+  <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
   <a class="sticky-pip" href="#s-summary" data-section="s-summary">✅<span class="pip-tooltip">Підсумок</span></a>
   <div class="sticky-divider"></div>
   <span class="sticky-current" id="sticky-current"></span>
@@ -325,13 +325,13 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
     <div class="mosaic-icon grammar">📐</div>
     <div class="mosaic-info"><div class="mosaic-step">Крок 5</div><div class="mosaic-label">Граматика</div></div>
   </a>
-  <a class="mosaic-tile" href="#s-dialog">
-    <div class="mosaic-icon dialog">🎭</div>
-    <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">Діалог</div></div>
-  </a>
   <a class="mosaic-tile" href="#s-book">
     <div class="mosaic-icon grammar">📗</div>
-    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">З підручника</div></div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">З підручника</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-dialog">
+    <div class="mosaic-icon dialog">🎭</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">Діалог</div></div>
   </a>
   <a class="mosaic-tile" href="#s-summary">
     <div class="mosaic-icon summary">✅</div>
@@ -704,170 +704,11 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ABSCHNITT 6: DIALOG -->
-<!-- ═══════════════════════════════════════════════ -->
-<section class="section-card" id="s-dialog">
-  <div class="section-header">
-    <div class="section-num">6</div>
-    <div>
-      <div class="section-title">Діалог — Vorstellungsgespräch 🎭</div>
-      <div class="section-subtitle">Відповідай сам(а) — партнер читає питання, ти думаєш відповідь</div>
-    </div>
-  </div>
-
-  <div class="role-tip">
-    <span class="role-badge a">👤 Herr Müller — Personalchef <em style="font-weight:400">(партнер читає)</em></span>
-    <span class="role-badge b">💬 Du — Bewerberin/Bewerber <em style="font-weight:400">(ти відповідаєш)</em></span>
-  </div>
-  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-style:italic;">Ти прийшов(ла) на Vorstellungsgespräch у німецьку фірму. Партнер грає роль Herr Müller і читає його репліки вголос. Ти відповідаєш своїми словами — підказки допоможуть!</p>
-
-  <div class="dialog-card">
-
-    <!-- 1 -->
-    <div class="dialog-line">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Guten Tag! Schön, dass Sie gekommen sind. Bitte setzen Sie sich.</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Привітайся і подякуй за запрошення</div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Guten Tag, Herr Müller! Vielen Dank für die Einladung zum Vorstellungsgespräch.</div>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Erzählen Sie mir bitte kurz etwas über sich. Woher kommen Sie und was haben Sie bisher gemacht?</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви країну, скільки ти в Німеччині, попередню роботу або навчання</div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Ich komme aus der Ukraine und lebe seit zwei Jahren in Deutschland. Ich habe eine Ausbildung als Bürokauffrau gemacht, um meine Chancen auf dem Arbeitsmarkt zu verbessern.</div>
-      </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Warum haben Sie sich um diese Stelle bei uns beworben?</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Використай <strong>um...zu</strong>: <em>„Ich habe mich beworben, um ... zu ..."</em></div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Ich habe mich beworben, um in einem internationalen Team zu arbeiten und neue Erfahrungen zu sammeln.</div>
-      </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Was sind Ihre größten Stärken?</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви 2–3 якості + <strong>zu + Inf</strong>: <em>„Ich versuche immer, ... zu ..."</em> / <em>„ohne ... zu ..."</em></div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Ich bin sehr organisiert und versuche immer, meine Aufgaben pünktlich zu erledigen, ohne die Qualität zu vernachlässigen. Außerdem bin ich es gewohnt, selbstständig zu arbeiten.</div>
-      </div>
-    </div>
-
-    <!-- 5 -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Haben Sie Erfahrung mit Computerprogrammen oder anderen technischen Tools?</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Ja/Nein + що саме. Спробуй <strong>anstatt...zu</strong> або <strong>ohne...zu</strong></div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Ja, während meiner Ausbildung habe ich gelernt, mit verschiedenen Programmen umzugehen. Anstatt nur Theorie zu lernen, haben wir viel praktisch gearbeitet.</div>
-      </div>
-    </div>
-
-    <!-- 6 -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Was sind Ihre Gehaltsvorstellungen?</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Використай <strong>hoffen + zu</strong>: <em>„Ich hoffe, ... zu bekommen"</em> + що ще важливо для тебе</div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Ich hoffe, ein marktübliches Gehalt zu bekommen. Für mich ist es aber auch wichtig, gute Entwicklungsmöglichkeiten zu haben.</div>
-      </div>
-    </div>
-
-    <!-- 7 -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Wann könnten Sie bei uns anfangen?</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви дату або місяць: <em>„Ich könnte ab ... anfangen"</em></div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Ich könnte ab nächstem Monat anfangen. Ich freue mich sehr darauf, in Ihrem Team zu arbeiten!</div>
-      </div>
-    </div>
-
-    <!-- 8 -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Sehr gut! Haben Sie noch Fragen an uns?</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Постав своє запитання! Наприклад: про команду, про завдання, про навчання</div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Ja, ich hätte eine Frage: Wie groß ist das Team, in dem ich arbeiten würde? Und gibt es Möglichkeiten, sich weiterzubilden?</div>
-      </div>
-    </div>
-
-    <!-- End -->
-    <div class="dialog-line" style="margin-top:10px;">
-      <span class="dialog-speaker a">M:</span>
-      <span class="dialog-text">Wunderbar! Wir melden uns in den nächsten Tagen bei Ihnen. Vielen Dank!</span>
-    </div>
-    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
-      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
-      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Подякуй і попрощайся</div>
-        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
-        <div class="fehler-solution">Vielen Dank, Herr Müller! Es war mir eine Freude. Ich freue mich darauf, von Ihnen zu hören!</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════ -->
-<!-- ABSCHNITT 7: ВПРАВИ З ПІДРУЧНИКА -->
+<!-- ABSCHNITT 6: ВПРАВИ З ПІДРУЧНИКА -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="section-card" id="s-book">
   <div class="section-header">
-    <div class="section-num">7</div>
+    <div class="section-num">6</div>
     <div>
       <div class="section-title">Вправи з підручника 📗</div>
       <div class="section-subtitle">Grammatik aktiv A1-B1 — Kapitel 68, 69 & 74: Infinitivsätze</div>
@@ -1062,6 +903,165 @@ body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);mi
   </div>
 
 </section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 7: DIALOG -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-dialog">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div>
+      <div class="section-title">Діалог — Vorstellungsgespräch 🎭</div>
+      <div class="section-subtitle">Відповідай сам(а) — партнер читає питання, ти думаєш відповідь</div>
+    </div>
+  </div>
+
+  <div class="role-tip">
+    <span class="role-badge a">👤 Herr Müller — Personalchef <em style="font-weight:400">(партнер читає)</em></span>
+    <span class="role-badge b">💬 Du — Bewerberin/Bewerber <em style="font-weight:400">(ти відповідаєш)</em></span>
+  </div>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-style:italic;">Ти прийшов(ла) на Vorstellungsgespräch у німецьку фірму. Партнер грає роль Herr Müller і читає його репліки вголос. Ти відповідаєш своїми словами — підказки допоможуть!</p>
+
+  <div class="dialog-card">
+
+    <!-- 1 -->
+    <div class="dialog-line">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Guten Tag! Schön, dass Sie gekommen sind. Bitte setzen Sie sich.</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Привітайся і подякуй за запрошення</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Guten Tag, Herr Müller! Vielen Dank für die Einladung zum Vorstellungsgespräch.</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Erzählen Sie mir bitte kurz etwas über sich. Woher kommen Sie und was haben Sie bisher gemacht?</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви країну, скільки ти в Німеччині, попередню роботу або навчання</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich komme aus der Ukraine und lebe seit zwei Jahren in Deutschland. Ich habe eine Ausbildung als Bürokauffrau gemacht, um meine Chancen auf dem Arbeitsmarkt zu verbessern.</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Warum haben Sie sich um diese Stelle bei uns beworben?</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Використай <strong>um...zu</strong>: <em>„Ich habe mich beworben, um ... zu ..."</em></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich habe mich beworben, um in einem internationalen Team zu arbeiten und neue Erfahrungen zu sammeln.</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Was sind Ihre größten Stärken?</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви 2–3 якості + <strong>zu + Inf</strong>: <em>„Ich versuche immer, ... zu ..."</em> / <em>„ohne ... zu ..."</em></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich bin sehr organisiert und versuche immer, meine Aufgaben pünktlich zu erledigen, ohne die Qualität zu vernachlässigen. Außerdem bin ich es gewohnt, selbstständig zu arbeiten.</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Haben Sie Erfahrung mit Computerprogrammen oder anderen technischen Tools?</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Ja/Nein + що саме. Спробуй <strong>anstatt...zu</strong> або <strong>ohne...zu</strong></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ja, während meiner Ausbildung habe ich gelernt, mit verschiedenen Programmen umzugehen. Anstatt nur Theorie zu lernen, haben wir viel praktisch gearbeitet.</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Was sind Ihre Gehaltsvorstellungen?</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Використай <strong>hoffen + zu</strong>: <em>„Ich hoffe, ... zu bekommen"</em> + що ще важливо для тебе</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich hoffe, ein marktübliches Gehalt zu bekommen. Für mich ist es aber auch wichtig, gute Entwicklungsmöglichkeiten zu haben.</div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Wann könnten Sie bei uns anfangen?</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви дату або місяць: <em>„Ich könnte ab ... anfangen"</em></div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ich könnte ab nächstem Monat anfangen. Ich freue mich sehr darauf, in Ihrem Team zu arbeiten!</div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Sehr gut! Haben Sie noch Fragen an uns?</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Постав своє запитання! Наприклад: про команду, про завдання, про навчання</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Ja, ich hätte eine Frage: Wie groß ist das Team, in dem ich arbeiten würde? Und gibt es Möglichkeiten, sich weiterzubilden?</div>
+      </div>
+    </div>
+
+    <!-- End -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">M:</span>
+      <span class="dialog-text">Wunderbar! Wir melden uns in den nächsten Tagen bei Ihnen. Vielen Dank!</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Du:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Подякуй і попрощайся</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">Vielen Dank, Herr Müller! Es war mir eine Freude. Ich freue mich darauf, von Ihnen zu hören!</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABSCHNITT 8: ПІДСУМОК -->
