@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Deutsch A2–B1 — Gesundheit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-deep:#0a5c42;--green-mid:#1D9E75;--green-light:#5DCAA5;--green-pale:#E1F5EE;--green-border:#9FE1CB;
+  --blue-mid:#378ADD;--blue-pale:#E6F1FB;
+  --amber-mid:#BA7517;--amber-pale:#FAEEDA;
+  --purple-mid:#7C4DBC;--purple-pale:#F0E8FF;
+  --red-mid:#C0392B;--red-pale:#FDECEA;
+  --text-dark:#1a1a18;--text-mid:#4a4a46;--text-muted:#888780;
+  --bg-page:#f5f3ed;--bg-card:#ffffff;--bg-section:#fafaf7;
+  --border:rgba(0,0,0,0.09);
+  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif
+}
+body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);min-height:100vh;padding:2rem 1rem 4rem;position:relative}
+.page{max-width:780px;margin:0 auto;position:relative}
+
+/* ── AURORA ANIMATED BACKGROUND ── */
+.aurora{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-2;overflow:hidden}
+.aurora-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:auroraMove 12s ease-in-out infinite alternate}
+.aurora-blob:nth-child(1){width:500px;height:500px;background:linear-gradient(135deg,#5DCAA5,#1D9E75);top:-10%;left:-5%;animation-duration:14s}
+.aurora-blob:nth-child(2){width:400px;height:400px;background:linear-gradient(135deg,#378ADD,#7C4DBC);top:40%;right:-8%;animation-delay:-4s;animation-duration:16s}
+.aurora-blob:nth-child(3){width:350px;height:350px;background:linear-gradient(135deg,#E91E8C,#BA7517);bottom:-5%;left:20%;animation-delay:-8s;animation-duration:18s}
+@keyframes auroraMove{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(60px,-40px) rotate(15deg) scale(1.1)}66%{transform:translate(-40px,50px) rotate(-10deg) scale(.9)}100%{transform:translate(30px,20px) rotate(5deg) scale(1.05)}}
+
+/* ── FLOATING EMOJI ── */
+.emoji-float{position:fixed;pointer-events:none;z-index:-1;font-size:24px;opacity:0;animation:emojiRise linear infinite}
+@keyframes emojiRise{0%{opacity:0;transform:translateY(0) rotate(0deg) scale(.5)}10%{opacity:.15}50%{opacity:.12}90%{opacity:.05}100%{opacity:0;transform:translateY(-100vh) rotate(360deg) scale(1)}}
+
+/* ── SECTION CARD ENHANCEMENTS ── */
+.section-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;border:1.5px solid var(--border)}
+.section-card:hover{box-shadow:0 12px 40px rgba(10,92,66,.1);transform:translateY(-3px);border-color:var(--green-border)}
+.section-card .section-num{transition:transform .3s ease,box-shadow .3s ease}
+.section-card:hover .section-num{transform:scale(1.15) rotate(-5deg);box-shadow:0 4px 12px rgba(10,92,66,.25)}
+
+/* ── GLOW EFFECT ON SUMMARY ── */
+.summary-card{animation:summaryPulse 4s ease-in-out infinite;border:none}
+@keyframes summaryPulse{0%,100%{box-shadow:0 4px 20px rgba(10,92,66,.15)}50%{box-shadow:0 8px 40px rgba(29,158,117,.3)}}
+
+/* ── SCROLL REVEAL ── */
+.section-card,.mosaic-nav{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.section-card.revealed,.mosaic-nav.revealed{opacity:1;transform:translateY(0)}
+.section-card:nth-child(even).revealed{transition-delay:.1s}
+
+/* ── SECTION DIVIDERS ── */
+.section-card+.section-card::before{content:'';display:block;width:40px;height:3px;background:linear-gradient(90deg,var(--green-light),var(--green-mid));border-radius:3px;margin:-0.7rem auto 0;opacity:0;transition:opacity .5s}
+.section-card.revealed+.section-card.revealed::before{opacity:.5}
+
+/* Hero */
+.hero{position:relative;background:var(--green-deep);border-radius:20px;padding:2.5rem 2.5rem 2rem;margin-bottom:2rem;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(93,202,165,0.12)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:60px;width:180px;height:180px;border-radius:50%;background:rgba(93,202,165,0.07)}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green-light);margin-bottom:.6rem}
+.hero-title{font-family:var(--serif);font-size:clamp(28px,5vw,40px);font-weight:600;color:#fff;line-height:1.15;margin-bottom:.8rem;position:relative;z-index:1}
+.hero-title em{font-style:italic;color:var(--green-light)}
+.hero-subtitle{font-size:14px;color:rgba(255,255,255,0.7);position:relative;z-index:1}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;position:relative;z-index:1}
+.hero-tag{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:12px;color:rgba(255,255,255,0.85);font-weight:500}
+.hero-tag.accent{background:rgba(93,202,165,0.25);border-color:var(--green-light);color:var(--green-light)}
+
+/* Section cards */
+.section-card{background:var(--bg-card);border-radius:16px;border:1px solid var(--border);padding:1.8rem;margin-bottom:1.4rem;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
+.section-num{width:32px;height:32px;border-radius:50%;background:var(--green-pale);color:var(--green-deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-title{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--text-dark)}
+.section-subtitle{font-size:12px;color:var(--text-muted);margin-top:2px}
+
+/* Vocab table */
+.vocab-table{width:100%;border-collapse:collapse;font-size:14px}
+.vocab-table thead tr{background:var(--green-pale);border-radius:8px}
+.vocab-table th{padding:8px 12px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--green-deep)}
+.vocab-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.vocab-table tbody tr:last-child td{border-bottom:none}
+.vocab-table tbody tr:hover{background:var(--bg-section)}
+.vocab-art{color:var(--text-muted);font-size:12px;font-style:italic}
+.vocab-word{font-weight:600;color:var(--text-dark)}
+.vocab-ru{color:var(--text-mid)}
+.vocab-ex{color:var(--text-muted);font-style:italic;font-size:13px}
+.vocab-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;margin-left:4px}
+.vocab-badge.verb{background:var(--blue-pale);color:var(--blue-mid)}
+.vocab-badge.noun{background:var(--green-pale);color:var(--green-deep)}
+.vocab-badge.adj{background:var(--purple-pale);color:var(--purple-mid)}
+
+/* Questions */
+.frage-list{display:flex;flex-direction:column;gap:10px}
+.frage-item{display:flex;gap:12px;padding:12px 14px;background:var(--bg-section);border-radius:10px;border:1px solid var(--border);font-size:14px;line-height:1.6;color:var(--text-mid)}
+.frage-num{font-weight:700;color:var(--green-deep);flex-shrink:0;min-width:22px}
+
+/* Reading text */
+.text-block{background:var(--bg-section);border-radius:12px;padding:1.4rem;font-size:15px;line-height:1.85;color:var(--text-dark);border-left:4px solid var(--green-light)}
+.text-block p{margin-bottom:.9rem}
+.text-block p:last-child{margin-bottom:0}
+.text-block .highlight{background:rgba(29,158,117,0.12);border-radius:3px;padding:1px 3px}
+
+/* Answers (collapsible) */
+.qa-list{display:flex;flex-direction:column;gap:10px}
+.qa-item{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.qa-question{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;font-size:14px;line-height:1.5;color:var(--text-mid);background:var(--bg-section);cursor:pointer;user-select:none}
+.qa-question:hover{background:#f0ede5}
+.qa-qnum{font-weight:700;color:var(--green-deep);flex-shrink:0;min-width:22px}
+.qa-qtext{flex:1}
+.qa-toggle{font-size:12px;color:var(--text-muted);flex-shrink:0;margin-left:auto;padding-top:1px;transition:transform .2s}
+.qa-answer{display:none;padding:10px 14px 12px 48px;font-size:13px;color:var(--text-dark);background:#fff;border-top:1px solid var(--border);line-height:1.6}
+.qa-answer.open{display:block}
+.qa-answer strong{color:var(--green-deep)}
+
+/* Grammar */
+.gram-box{background:var(--blue-pale);border:1px solid #c4daf5;border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.2rem}
+.gram-title{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--blue-mid);margin-bottom:.7rem}
+.gram-rule{font-size:14px;line-height:1.7;color:var(--text-mid)}
+.gram-rule code{font-family:monospace;background:rgba(55,138,221,0.15);border-radius:4px;padding:2px 6px;color:#1a5fa8;font-size:13px}
+.gram-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:.8rem}
+.gram-table th{background:#ddeeff;padding:6px 10px;text-align:left;font-weight:600;color:var(--blue-mid)}
+.gram-table td{padding:6px 10px;border-bottom:1px solid #d0e6f8;vertical-align:middle}
+.gram-table tr:last-child td{border-bottom:none}
+.gram-table .key{font-weight:700;color:var(--green-deep)}
+
+/* Exercises */
+.ex-block{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px}
+.ex-header{background:var(--green-pale);padding:10px 14px;font-size:13px;font-weight:600;color:var(--green-deep);display:flex;align-items:center;gap:8px}
+.ex-header .ex-num{width:22px;height:22px;border-radius:50%;background:var(--green-deep);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ex-body{padding:12px 14px;background:#fff}
+.ex-task{font-size:14px;color:var(--text-mid);margin-bottom:10px;line-height:1.5;font-style:italic}
+.ex-items{display:flex;flex-direction:column;gap:8px}
+.ex-btn{margin-top:10px;padding:7px 16px;background:var(--green-mid);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .15s}
+.ex-btn:hover{background:var(--green-deep)}
+.ex-btn.secondary{background:transparent;color:var(--green-mid);border:1.5px solid var(--green-border)}
+.ex-btn.secondary:hover{background:var(--green-pale)}
+.ex-feedback{display:none;margin-top:10px;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600}
+.ex-feedback.ok{background:#d4edda;color:#155724;border:1px solid #28a745}
+.ex-feedback.fail{background:var(--red-pale);color:var(--red-mid);border:1px solid #e57373}
+
+.blank-sentence{font-size:15px;line-height:2;color:var(--text-dark);margin-bottom:10px}
+.blank-input{display:inline-block;border:none;border-bottom:2px solid var(--green-border);background:transparent;font-size:15px;font-family:var(--sans);color:var(--green-deep);padding:0 4px;min-width:50px;outline:none;text-align:center}
+.blank-input:focus{border-color:var(--green-mid)}
+
+/* Dialog */
+.dialog-card{background:var(--bg-section);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:.8rem}
+.dialog-line{display:flex;gap:12px;font-size:14px;line-height:1.7;margin-bottom:8px;align-items:flex-start}
+.dialog-line:last-child{margin-bottom:0}
+.dialog-speaker{font-weight:700;min-width:28px;flex-shrink:0;margin-top:2px}
+.dialog-speaker.a{color:var(--green-deep)}
+.dialog-speaker.b{color:var(--blue-mid)}
+.dialog-text{color:var(--text-mid)}
+.role-tip{display:flex;gap:20px;margin-bottom:1rem;font-size:13px;flex-wrap:wrap}
+.role-badge{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;font-weight:600}
+.role-badge.a{background:var(--green-pale);color:var(--green-deep)}
+.role-badge.b{background:var(--blue-pale);color:var(--blue-mid)}
+
+/* Fehler / collapsible sample */
+.fehler-toggle{font-size:12px;color:var(--green-mid);cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0;text-decoration:underline}
+.fehler-solution{display:none;margin-top:8px;font-size:13px;background:var(--green-pale);border-radius:6px;padding:8px 10px;color:var(--green-deep);line-height:1.5}
+.fehler-solution.open{display:block}
+
+/* Summary */
+.summary-card{background:linear-gradient(135deg,var(--green-deep) 0%,#0d7a5a 100%);border:none;color:#fff}
+.summary-card .section-title{color:#fff}
+.summary-card .section-num{background:rgba(255,255,255,0.2);color:#fff}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.2rem}
+.summary-stat{background:rgba(255,255,255,0.1);border-radius:12px;padding:12px 14px;text-align:center;border:1px solid rgba(255,255,255,0.15)}
+.summary-stat-num{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--green-light);line-height:1}
+.summary-stat-label{font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.summary-verbs{display:flex;flex-wrap:wrap;gap:6px;margin-top:.8rem}
+.summary-verb-chip{background:rgba(255,255,255,0.12);border:1px solid rgba(93,202,165,0.4);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--green-light);font-weight:500}
+.summary-msg{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;margin-top:1rem;background:rgba(255,255,255,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid var(--green-light)}
+
+/* Nav */
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);text-decoration:none;margin-bottom:1.2rem}
+.nav-back:hover{color:var(--green-mid)}
+.nav-back::before{content:'←';font-size:14px}
+
+.footer-tag{text-align:center;font-size:12px;color:var(--text-muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+
+/* ── SECTION MOSAIC NAV ── */
+.mosaic-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;padding:0}
+.mosaic-tile{flex:1 1 calc(33.33% - 8px);min-width:100px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;text-decoration:none;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+.mosaic-tile:hover{border-color:var(--green-mid);box-shadow:0 4px 16px rgba(10,92,66,.1);transform:translateY(-2px)}
+.mosaic-tile.active{border-color:var(--green-mid);background:var(--green-pale)}
+.mosaic-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.mosaic-icon.vocab{background:#E1F5EE;color:#0a5c42}
+.mosaic-icon.speak{background:#E6F1FB;color:#378ADD}
+.mosaic-icon.read{background:#FFF3E0;color:#E65100}
+.mosaic-icon.question{background:#FCE4EC;color:#C2185B}
+.mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
+.mosaic-icon.dialog{background:#E0F7FA;color:#00838F}
+.mosaic-icon.summary{background:#E8F5E9;color:#2E7D32}
+.mosaic-info{min-width:0}
+.mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
+.mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mosaic-tile:hover .mosaic-label{color:var(--green-deep)}
+
+/* ── STICKY PROGRESS BAR ── */
+.sticky-bar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;justify-content:center;transform:translateY(-100%);transition:transform .3s ease;pointer-events:none}
+.sticky-bar.visible{transform:translateY(0);pointer-events:auto}
+.sticky-pip{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s;border:2px solid transparent;background:var(--bg-section);position:relative;flex-shrink:0;text-decoration:none}
+.sticky-pip:hover{transform:scale(1.15);border-color:var(--green-border)}
+.sticky-pip.active{border-color:var(--green-mid);background:var(--green-pale);transform:scale(1.1);box-shadow:0 2px 8px rgba(29,158,117,.25)}
+.sticky-pip .pip-tooltip{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--green-deep);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+.sticky-pip:hover .pip-tooltip{opacity:1}
+.sticky-pip .pip-tooltip::before{content:'';position:absolute;top:-4px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid var(--green-deep)}
+.sticky-divider{width:1px;height:20px;background:var(--border);flex-shrink:0;margin:0 2px}
+.sticky-current{font-size:12px;font-weight:600;color:var(--green-deep);margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+
+/* Matching exercise */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:13px;margin-bottom:10px}
+.match-row{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg-section);border-radius:8px;border:1px solid var(--border)}
+.match-q{flex:0 0 auto;color:var(--text-dark);font-weight:500;min-width:0}
+.match-options{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.match-options label{display:flex;align-items:center;gap:3px;font-size:12px;color:var(--text-mid);cursor:pointer;white-space:nowrap}
+.match-options input[type=radio]{accent-color:var(--green-mid)}
+
+/* Responsive */
+@media(max-width:560px){
+  body{padding:1rem .6rem 3rem}
+  .section-card{padding:1.2rem}
+  .vocab-table .vocab-ex{display:none}
+  .hero{padding:1.8rem 1.4rem 1.5rem}
+  .role-tip{flex-wrap:wrap}
+  .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
+  .mosaic-icon{width:30px;height:30px;font-size:15px}
+  .mosaic-label{font-size:12px}
+  .sticky-pip{width:30px;height:30px;font-size:13px;border-radius:8px}
+  .sticky-current{display:none}
+  .sticky-divider{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ── AURORA BACKGROUND ── -->
+<div class="aurora">
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+</div>
+
+<!-- ── STICKY PROGRESS BAR ── -->
+<div class="sticky-bar" id="sticky-bar">
+  <a class="sticky-pip" href="#s-vocab" data-section="s-vocab">🔤<span class="pip-tooltip">Нові слова</span></a>
+  <a class="sticky-pip" href="#s-speak" data-section="s-speak">💬<span class="pip-tooltip">Розмова</span></a>
+  <a class="sticky-pip" href="#s-read" data-section="s-read">📖<span class="pip-tooltip">Читання</span></a>
+  <a class="sticky-pip" href="#s-question" data-section="s-question">❓<span class="pip-tooltip">Запитання</span></a>
+  <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Граматика</span></a>
+  <a class="sticky-pip" href="#s-book" data-section="s-book">📗<span class="pip-tooltip">З підручника</span></a>
+  <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
+  <a class="sticky-pip" href="#s-summary" data-section="s-summary">✅<span class="pip-tooltip">Підсумок</span></a>
+  <div class="sticky-divider"></div>
+  <span class="sticky-current" id="sticky-current"></span>
+</div>
+
+<div class="page">
+
+<a href="../index.html" class="nav-back">DeutschWeg — Усі теми</a>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-label">Thema 7 · A2–B1</div>
+  <h1 class="hero-title">🏥 Die <em>Gesundheit</em></h1>
+  <p class="hero-subtitle">Нові слова · Lesetext · Konversation · Wechselpräpositionen &amp; Lokale Präpositionen · Вправи з підручника</p>
+  <div class="hero-tags">
+    <span class="hero-tag">A2–B1-Niveau</span>
+    <span class="hero-tag accent">Grammatik: Wechselpräpositionen</span>
+    <span class="hero-tag">Вправи з підручника (Kap. 34–35)</span>
+    <span class="hero-tag">10 neue Wörter</span>
+  </div>
+</header>
+
+<!-- ── SECTION MOSAIC ── -->
+<nav class="mosaic-nav" id="mosaic-nav">
+  <a class="mosaic-tile" href="#s-vocab">
+    <div class="mosaic-icon vocab">🔤</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 1</div><div class="mosaic-label">Нові слова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-speak">
+    <div class="mosaic-icon speak">💬</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 2</div><div class="mosaic-label">Розмова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-read">
+    <div class="mosaic-icon read">📖</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 3</div><div class="mosaic-label">Читання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-question">
+    <div class="mosaic-icon question">❓</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 4</div><div class="mosaic-label">Запитання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-grammar">
+    <div class="mosaic-icon grammar">📐</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 5</div><div class="mosaic-label">Граматика</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-book">
+    <div class="mosaic-icon grammar">📗</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">З підручника</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-dialog">
+    <div class="mosaic-icon dialog">🎭</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">Діалог</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-summary">
+    <div class="mosaic-icon summary">✅</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 8</div><div class="mosaic-label">Підсумок</div></div>
+  </a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 1: НОВІ СЛОВА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-vocab">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div>
+      <div class="section-title">Нові слова 🔤</div>
+      <div class="section-subtitle">10 важливих слів на тему здоров'я — спочатку вивчи, потім читай!</div>
+    </div>
+  </div>
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Рід</th><th>Слово</th><th>Переклад</th><th>Приклад</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="vocab-art">der</td>
+        <td><span class="vocab-word">Arzt, -&#x308;e / die Ärztin, -nen</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">лікар / лікарка</td>
+        <td class="vocab-ex">Ich gehe zum Arzt, weil ich starke Kopfschmerzen habe.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">das</td>
+        <td><span class="vocab-word">Krankenhaus, -&#x308;er</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">лікарня</td>
+        <td class="vocab-ex">Das Krankenhaus, in dem meine Mutter arbeitet, ist sehr modern.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Apotheke, -n</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">аптека</td>
+        <td class="vocab-ex">In der Apotheke bekomme ich die Medikamente, die der Arzt verschrieben hat.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">das</td>
+        <td><span class="vocab-word">Medikament, -e</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">ліки</td>
+        <td class="vocab-ex">Du sollst das Medikament dreimal täglich nach dem Essen nehmen.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Erkältung, -en</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">застуда</td>
+        <td class="vocab-ex">Bei einer Erkältung hilft es, viel Tee zu trinken und im Bett zu bleiben.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">der</td>
+        <td><span class="vocab-word">Schmerz, -en</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">біль</td>
+        <td class="vocab-ex">Ich habe starke Schmerzen im Rücken und kann kaum schlafen.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">krank</span><span class="vocab-badge adj">Adj</span></td>
+        <td class="vocab-ru">хворий</td>
+        <td class="vocab-ex">Wenn du krank bist, sollst du zu Hause bleiben und dich ausruhen.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">gesund</span><span class="vocab-badge adj">Adj</span></td>
+        <td class="vocab-ru">здоровий</td>
+        <td class="vocab-ex">Sport und gesundes Essen helfen dir, gesund zu bleiben.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">sich erholen</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">відновлюватися</td>
+        <td class="vocab-ex">Nach der langen Krankheit muss er sich mehrere Wochen erholen.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">das</td>
+        <td><span class="vocab-word">Rezept, -e</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">рецепт</td>
+        <td class="vocab-ex">Ohne Rezept kann ich dieses Medikament nicht kaufen.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 2: РОЗМОВА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-speak">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div>
+      <div class="section-title">Запитання для розмови 💬</div>
+      <div class="section-subtitle">Відповідай вільно — мінімум 2–3 речення на кожне запитання</div>
+    </div>
+  </div>
+  <div class="frage-list">
+    <div class="frage-item"><span class="frage-num">1</span><span>Was machst du, wenn du krank bist?</span></div>
+    <div class="frage-item"><span class="frage-num">2</span><span>Gehst du oft zum Arzt? Hast du einen Hausarzt?</span></div>
+    <div class="frage-item"><span class="frage-num">3</span><span>Was hilft dir bei Erkältung oder Kopfschmerzen?</span></div>
+    <div class="frage-item"><span class="frage-num">4</span><span>Treibst du Sport, um gesund zu bleiben? Was machst du?</span></div>
+    <div class="frage-item"><span class="frage-num">5</span><span>Hast du schon mal im Krankenhaus gelegen? Erzähl davon.</span></div>
+    <div class="frage-item"><span class="frage-num">6</span><span>Was isst und trinkst du, wenn du auf deine Gesundheit achtest?</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 3: ЧИТАННЯ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-read">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div>
+      <div class="section-title">Текст для читання 📖</div>
+      <div class="section-subtitle">Читай уважно — зверни увагу на Wechselpräpositionen у тексті</div>
+    </div>
+  </div>
+  <p style="font-family:var(--serif);font-size:16px;font-weight:600;color:var(--text-dark);margin-bottom:1rem;">Ein Tag bei Dr. Meier</p>
+  <div class="text-block">
+    <p>Lena fühlt sich seit drei Tagen nicht gut. Sie hat Halsschmerzen, Husten und Fieber. Heute Morgen geht sie <strong class="highlight">zum Arzt</strong>.</p>
+    <p>In der Arztpraxis setzt sie sich <strong class="highlight">ins Wartezimmer</strong>. <strong class="highlight">An der Wand</strong> hängen Bilder von der Natur. <strong class="highlight">Auf dem Tisch</strong> liegen Zeitschriften. <strong class="highlight">Neben ihr</strong> sitzt ein alter Mann, der leise hustet.</p>
+    <p>Nach zwanzig Minuten ruft die Krankenschwester Lena <strong class="highlight">in das Sprechzimmer</strong>. Dr. Meier untersucht sie: Er schaut in den Mund, legt ein Thermometer <strong class="highlight">unter die Zunge</strong> und hört mit dem Stethoskop <strong class="highlight">auf die Lunge</strong>.</p>
+    <p>„Sie haben eine Erkältung", sagt er. „Gehen Sie <strong class="highlight">ins Bett</strong> und trinken Sie viel Wasser. Ich schreibe Ihnen ein Rezept für Medikamente. Sie können morgen <strong class="highlight">in die Apotheke</strong> gehen."</p>
+    <p>Lena ist froh. Es ist nichts Schlimmes. Sie geht nach Hause, legt sich <strong class="highlight">auf das Sofa</strong> und schläft fast den ganzen Tag.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 4: ЗАПИТАННЯ ДО ТЕКСТУ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-question">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div>
+      <div class="section-title">Запитання до тексту ❓</div>
+      <div class="section-subtitle">Клікни "Показати відповідь" — але спочатку спробуй сам(а)!</div>
+    </div>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">1</span>
+        <span class="qa-qtext">Wie fühlt sich Lena seit drei Tagen?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie fühlt sich nicht gut. Sie hat Halsschmerzen, Husten und Fieber.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">2</span>
+        <span class="qa-qtext">Wohin geht sie heute Morgen?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie geht zum Arzt / in die Arztpraxis.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">3</span>
+        <span class="qa-qtext">Was liegt auf dem Tisch im Wartezimmer?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Auf dem Tisch liegen Zeitschriften.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">4</span>
+        <span class="qa-qtext">Wer sitzt neben Lena?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Neben ihr sitzt ein alter Mann, der leise hustet.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">5</span>
+        <span class="qa-qtext">Was macht Dr. Meier bei der Untersuchung?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Er schaut in den Mund, legt ein Thermometer unter die Zunge und hört auf die Lunge.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">6</span>
+        <span class="qa-qtext">Was hat Lena laut Diagnose?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie hat eine Erkältung.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">7</span>
+        <span class="qa-qtext">Was empfiehlt ihr der Arzt?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie soll ins Bett gehen und viel Wasser trinken.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">8</span>
+        <span class="qa-qtext">Was macht Lena, nachdem sie nach Hause kommt?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie legt sich auf das Sofa und schläft fast den ganzen Tag.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 5: ГРАМАТИКА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-grammar">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div>
+      <div class="section-title">Граматика: Wechselpräpositionen 📐</div>
+      <div class="section-subtitle">Wechselpräpositionen + Lokale Präpositionen · Wo? → Dativ · Wohin? → Akkusativ</div>
+    </div>
+  </div>
+
+  <!-- Box 1 — Intro -->
+  <div class="gram-box" style="background:linear-gradient(135deg,#e8f5e9 0%,#e6f1fb 100%);border-color:#a5d6a7;">
+    <div class="gram-title" style="color:#2e7d32;">📍 Wechselpräpositionen — де і куди?</div>
+    <div class="gram-rule">
+      9 прийменників змінюють відмінок залежно від питання:<br><br>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="background:var(--green-pale);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          ✅ <strong style="color:var(--green-deep);">Wo?</strong> (де?) → <strong>Dativ</strong> &nbsp;—&nbsp; <em>Ich bin <strong>im</strong> Krankenhaus.</em>
+        </div>
+        <div style="background:var(--green-pale);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          ✅ <strong style="color:var(--green-deep);">Wohin?</strong> (куди?) → <strong>Akkusativ</strong> &nbsp;—&nbsp; <em>Ich gehe <strong>ins</strong> Krankenhaus.</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 2 — Die 9 Wechselpräpositionen -->
+  <div class="gram-box">
+    <div class="gram-title">📋 Die 9 Wechselpräpositionen</div>
+    <div class="gram-rule">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;">
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">in</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">an</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">auf</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">über</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">unter</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">vor</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">hinter</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">neben</span>
+        <span style="background:#ddeeff;border-radius:20px;padding:4px 14px;font-weight:700;color:var(--blue-mid);font-size:14px;">zwischen</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 3 — Examples table -->
+  <div class="gram-box">
+    <div class="gram-title">🔷 Приклади: Wohin? vs. Wo?</div>
+    <div class="gram-rule">
+      <table class="gram-table">
+        <thead>
+          <tr>
+            <th>Wohin? (→ Akk)</th>
+            <th>Wo? (→ Dat)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ich gehe <span class="key">ins</span> Krankenhaus.</td>
+            <td>Ich bin <span class="key">im</span> Krankenhaus.</td>
+          </tr>
+          <tr>
+            <td>Er legt das Buch <span class="key">auf den</span> Tisch.</td>
+            <td>Das Buch liegt <span class="key">auf dem</span> Tisch.</td>
+          </tr>
+          <tr>
+            <td>Sie stellt die Vase <span class="key">neben die</span> Lampe.</td>
+            <td>Die Vase steht <span class="key">neben der</span> Lampe.</td>
+          </tr>
+          <tr>
+            <td>Das Kind läuft <span class="key">hinter das</span> Haus.</td>
+            <td>Das Kind spielt <span class="key">hinter dem</span> Haus.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Box 4 — Contractions -->
+  <div class="gram-box" style="background:var(--amber-pale);border-color:#e5c882;">
+    <div class="gram-title" style="color:var(--amber-mid);">🔑 Zusammenziehungen (Contractions)</div>
+    <div class="gram-rule" style="font-size:14px;line-height:1.9;">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;">
+        <div style="background:#fff;border-radius:8px;padding:8px 14px;font-size:13px;">in + dem = <strong style="color:var(--green-deep);">im</strong></div>
+        <div style="background:#fff;border-radius:8px;padding:8px 14px;font-size:13px;">in + das = <strong style="color:var(--green-deep);">ins</strong></div>
+        <div style="background:#fff;border-radius:8px;padding:8px 14px;font-size:13px;">an + dem = <strong style="color:var(--green-deep);">am</strong></div>
+        <div style="background:#fff;border-radius:8px;padding:8px 14px;font-size:13px;">an + das = <strong style="color:var(--green-deep);">ans</strong></div>
+      </div>
+      <p style="margin-top:10px;font-size:13px;color:var(--text-muted);">(alle anderen Wechselpräpositionen: kein Zusammenzug)</p>
+    </div>
+  </div>
+
+  <!-- Box 5 — Wichtige Verben -->
+  <div class="gram-box" style="background:var(--purple-pale);border-color:#c9b0e8;">
+    <div class="gram-title" style="color:#7C4DBC;">⚡ Wichtige Verben</div>
+    <div class="gram-rule">
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+        <div style="background:rgba(255,255,255,0.6);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          <strong style="color:#7C4DBC;">Wohin? (Akk):</strong> legen, stellen, hängen, setzen, stecken, gehen, fahren, fliegen
+        </div>
+        <div style="background:rgba(255,255,255,0.6);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          <strong style="color:var(--green-deep);">Wo? (Dat):</strong> liegen, stehen, hängen (intr.), sitzen, stecken, sein, bleiben
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 6 — Lokale Präpositionen -->
+  <div class="gram-box">
+    <div class="gram-title">🗺️ Lokale Präpositionen (immer Dativ/fest)</div>
+    <div class="gram-rule">
+      <table class="gram-table">
+        <thead>
+          <tr>
+            <th>Frage</th>
+            <th>Präposition</th>
+            <th>Beispiel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Wo?</strong></td>
+            <td class="key">bei, in, an, auf</td>
+            <td>beim Arzt · in der Apotheke · am Strand · auf dem Markt</td>
+          </tr>
+          <tr>
+            <td><strong>Wohin?</strong></td>
+            <td class="key">zu, nach, in, an, auf</td>
+            <td>zum Arzt · nach Berlin · ins Kino · an den Strand · auf den Markt</td>
+          </tr>
+          <tr>
+            <td><strong>Woher?</strong></td>
+            <td class="key">aus, von</td>
+            <td>aus der Apotheke · vom Arzt</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Box 7 — Merkhilfe -->
+  <div class="gram-box" style="background:linear-gradient(135deg,#e8f5e9 0%,#fff8e1 100%);border-color:#a5d6a7;">
+    <div class="gram-title" style="color:#2e7d32;">💡 Merkhilfe</div>
+    <div class="gram-rule" style="font-size:14px;line-height:2;">
+      <strong style="color:var(--green-deep);">zu</strong> + Personen/Gebäuden: <em>zum Arzt, zur Apotheke, zu meiner Mutter</em><br>
+      <strong style="color:var(--green-deep);">nach</strong> + Städte/Länder (ohne Artikel): <em>nach Berlin, nach Deutschland, nach Hause</em><br>
+      <strong style="color:var(--green-deep);">in</strong> + Länder mit Artikel: <em>in die Schweiz, in die USA, in den Iran</em>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 6: ВПРАВИ З ПІДРУЧНИКА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-book">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div>
+      <div class="section-title">Вправи з підручника 📗</div>
+      <div class="section-subtitle">Grammatik aktiv A1–B1 — Kap. 34–35: Wechselpräpositionen &amp; Lokale Präpositionen</div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 1: Was passt zusammen? (Kap. 34, Üb. 3) ── -->
+  <div class="ex-block" id="bk-ex1">
+    <div class="ex-header"><span class="ex-num">1</span> Was passt zusammen? — Kombinieren Sie. (Kap. 34, Üb. 3)</div>
+    <div class="ex-body">
+      <div class="ex-task">З'єднай питання з відповіддю. Зверни увагу: <strong>Wo?</strong> → Dativ, <strong>Wohin?</strong> → Akkusativ.</div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;">
+        <!-- Options legend -->
+        <div style="flex:0 0 auto;background:var(--bg-section);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;line-height:1.9;">
+          <strong style="color:var(--green-deep);">Відповіді:</strong><br>
+          A. In Berlin.<br>
+          B. In die USA.<br>
+          C. In die Schule.<br>
+          D. Neben der Haustür.<br>
+          E. Ans Meer.<br>
+          F. Am Meer.<br>
+          G. In die Disko.
+        </div>
+        <!-- Questions with radio buttons -->
+        <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:8px;">
+          <div class="match-row">
+            <span class="match-q" style="min-width:220px;font-size:13px;">1. Wohin gehst du heute Abend?</span>
+            <div class="match-options">
+              <label><input type="radio" name="m1" value="A"> A</label>
+              <label><input type="radio" name="m1" value="B"> B</label>
+              <label><input type="radio" name="m1" value="C"> C</label>
+              <label><input type="radio" name="m1" value="D"> D</label>
+              <label><input type="radio" name="m1" value="E"> E</label>
+              <label><input type="radio" name="m1" value="F"> F</label>
+              <label><input type="radio" name="m1" value="G"> G</label>
+            </div>
+          </div>
+          <div class="match-row">
+            <span class="match-q" style="min-width:220px;font-size:13px;">2. Wo möchtest du studieren?</span>
+            <div class="match-options">
+              <label><input type="radio" name="m2" value="A"> A</label>
+              <label><input type="radio" name="m2" value="B"> B</label>
+              <label><input type="radio" name="m2" value="C"> C</label>
+              <label><input type="radio" name="m2" value="D"> D</label>
+              <label><input type="radio" name="m2" value="E"> E</label>
+              <label><input type="radio" name="m2" value="F"> F</label>
+              <label><input type="radio" name="m2" value="G"> G</label>
+            </div>
+          </div>
+          <div class="match-row">
+            <span class="match-q" style="min-width:220px;font-size:13px;">3. Wo ist das Bad?</span>
+            <div class="match-options">
+              <label><input type="radio" name="m3" value="A"> A</label>
+              <label><input type="radio" name="m3" value="B"> B</label>
+              <label><input type="radio" name="m3" value="C"> C</label>
+              <label><input type="radio" name="m3" value="D"> D</label>
+              <label><input type="radio" name="m3" value="E"> E</label>
+              <label><input type="radio" name="m3" value="F"> F</label>
+              <label><input type="radio" name="m3" value="G"> G</label>
+            </div>
+          </div>
+          <div class="match-row">
+            <span class="match-q" style="min-width:220px;font-size:13px;">4. Wohin bringst du die Kinder?</span>
+            <div class="match-options">
+              <label><input type="radio" name="m4" value="A"> A</label>
+              <label><input type="radio" name="m4" value="B"> B</label>
+              <label><input type="radio" name="m4" value="C"> C</label>
+              <label><input type="radio" name="m4" value="D"> D</label>
+              <label><input type="radio" name="m4" value="E"> E</label>
+              <label><input type="radio" name="m4" value="F"> F</label>
+              <label><input type="radio" name="m4" value="G"> G</label>
+            </div>
+          </div>
+          <div class="match-row">
+            <span class="match-q" style="min-width:220px;font-size:13px;">5. Wohin fahrt ihr im Sommer?</span>
+            <div class="match-options">
+              <label><input type="radio" name="m5" value="A"> A</label>
+              <label><input type="radio" name="m5" value="B"> B</label>
+              <label><input type="radio" name="m5" value="C"> C</label>
+              <label><input type="radio" name="m5" value="D"> D</label>
+              <label><input type="radio" name="m5" value="E"> E</label>
+              <label><input type="radio" name="m5" value="F"> F</label>
+              <label><input type="radio" name="m5" value="G"> G</label>
+            </div>
+          </div>
+          <div class="match-row">
+            <span class="match-q" style="min-width:220px;font-size:13px;">6. Wo kann man gut Fisch essen?</span>
+            <div class="match-options">
+              <label><input type="radio" name="m6" value="A"> A</label>
+              <label><input type="radio" name="m6" value="B"> B</label>
+              <label><input type="radio" name="m6" value="C"> C</label>
+              <label><input type="radio" name="m6" value="D"> D</label>
+              <label><input type="radio" name="m6" value="E"> E</label>
+              <label><input type="radio" name="m6" value="F"> F</label>
+              <label><input type="radio" name="m6" value="G"> G</label>
+            </div>
+          </div>
+          <div class="match-row">
+            <span class="match-q" style="min-width:220px;font-size:13px;">7. Wohin fliegt ihr nächstes Jahr?</span>
+            <div class="match-options">
+              <label><input type="radio" name="m7" value="A"> A</label>
+              <label><input type="radio" name="m7" value="B"> B</label>
+              <label><input type="radio" name="m7" value="C"> C</label>
+              <label><input type="radio" name="m7" value="D"> D</label>
+              <label><input type="radio" name="m7" value="E"> E</label>
+              <label><input type="radio" name="m7" value="F"> F</label>
+              <label><input type="radio" name="m7" value="G"> G</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="ex-btn" onclick="checkEx1()">Перевірити</button>
+      <div id="ex1-fb" class="ex-feedback"></div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 2: Wo oder wohin? (Kap. 34, Üb. 4) ── -->
+  <div class="ex-block" id="bk-ex2">
+    <div class="ex-header"><span class="ex-num">2</span> Wo oder wohin? — Ergänzen Sie. (Kap. 34, Üb. 4)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши <strong>wo</strong> або <strong>wohin</strong> і поясни вибір (Dativ чи Akkusativ):</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1. <input class="blank-input" id="bk2-1" placeholder="___" style="min-width:55px"> gehe ich? In die Schönhauser Straße.</div>
+        <div class="blank-sentence">2. <input class="blank-input" id="bk2-2" placeholder="___" style="min-width:55px"> gehen wir? In die Mediothek.</div>
+        <div class="blank-sentence">3. <input class="blank-input" id="bk2-3" placeholder="___" style="min-width:55px"> bin ich? Ich bin im Kino.</div>
+        <div class="blank-sentence">4. <input class="blank-input" id="bk2-4" placeholder="___" style="min-width:55px"> studieren wir? In München.</div>
+        <div class="blank-sentence">5. <input class="blank-input" id="bk2-5" placeholder="___" style="min-width:55px"> gehe ich? In die Küche, ich hole neuen Kaffee.</div>
+        <div class="blank-sentence">6. <input class="blank-input" id="bk2-6" placeholder="___" style="min-width:55px"> bin ich? In der Küche, ich mache neuen Kaffee.</div>
+        <div class="blank-sentence">7. <input class="blank-input" id="bk2-7" placeholder="___" style="min-width:55px"> spielen die Kinder? Auf dem Spielplatz.</div>
+        <div class="blank-sentence">8. <input class="blank-input" id="bk2-8" placeholder="___" style="min-width:55px"> bringt sie den Müll? In die Mülltonne.</div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(2)" id="bk-btn-2">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 3: Wo sind Sie? (Kap. 35, Üb. 1) ── -->
+  <div class="ex-block" id="bk-ex3">
+    <div class="ex-header"><span class="ex-num">3</span> Wo sind Sie? — Ergänzen Sie die Präposition. (Kap. 35, Üb. 1)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши правильний прийменник: <strong>am / im / in / auf / bei / zu</strong></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px 16px;">
+        <div class="blank-sentence"><input class="blank-input" id="bk3-1" placeholder="___" style="min-width:55px"> Meer</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-2" placeholder="___" style="min-width:55px"> Paris</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-3" placeholder="___" style="min-width:55px"> dem Tennisplatz</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-4" placeholder="___" style="min-width:55px"> Supermarkt</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-5" placeholder="___" style="min-width:55px"> H&amp;M</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-6" placeholder="___" style="min-width:55px"> dem Chef</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-7" placeholder="___" style="min-width:55px"> meiner Schwester</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-8" placeholder="___" style="min-width:55px"> London</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-9" placeholder="___" style="min-width:55px"> dem Strand</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-10" placeholder="___" style="min-width:55px"> dem Kino</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-11" placeholder="___" style="min-width:55px"> dem Berg</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-12" placeholder="___" style="min-width:55px"> den Bergen</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-13" placeholder="___" style="min-width:55px"> Hause</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-14" placeholder="___" style="min-width:55px"> dem Garten</div>
+        <div class="blank-sentence"><input class="blank-input" id="bk3-15" placeholder="___" style="min-width:55px"> Schwimmbad</div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(3)" id="bk-btn-3">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 4: Wohin gehen Sie? (Kap. 35, Üb. 2) ── -->
+  <div class="ex-block" id="bk-ex4">
+    <div class="ex-header"><span class="ex-num">4</span> Wohin gehen Sie? — Ergänzen Sie die Präposition. (Kap. 35, Üb. 2)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши правильний прийменник: <strong>ins / zum / zur / an den / auf den / zu / in den / nach / in die</strong></div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1. <input class="blank-input" id="bk4-1" placeholder="___" style="min-width:65px"> Theater</div>
+        <div class="blank-sentence">2. <input class="blank-input" id="bk4-2" placeholder="___" style="min-width:65px"> Arzt</div>
+        <div class="blank-sentence">3. <input class="blank-input" id="bk4-3" placeholder="___" style="min-width:65px"> Prüfung</div>
+        <div class="blank-sentence">4. <input class="blank-input" id="bk4-4" placeholder="___" style="min-width:65px"> Strand</div>
+        <div class="blank-sentence">5. <input class="blank-input" id="bk4-5" placeholder="___" style="min-width:65px"> Markt</div>
+        <div class="blank-sentence">6. <input class="blank-input" id="bk4-6" placeholder="___" style="min-width:65px"> meinem Vater</div>
+        <div class="blank-sentence">7. <input class="blank-input" id="bk4-7" placeholder="___" style="min-width:65px"> Park</div>
+        <div class="blank-sentence">8. <input class="blank-input" id="bk4-8" placeholder="___" style="min-width:65px"> London</div>
+        <div class="blank-sentence">9. <input class="blank-input" id="bk4-9" placeholder="___" style="min-width:65px"> USA</div>
+        <div class="blank-sentence">10. <input class="blank-input" id="bk4-10" placeholder="___" style="min-width:65px"> Mexiko</div>
+        <div class="blank-sentence">11. <input class="blank-input" id="bk4-11" placeholder="___" style="min-width:65px"> Fußballplatz</div>
+        <div class="blank-sentence">12. <input class="blank-input" id="bk4-12" placeholder="___" style="min-width:65px"> Hause</div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(4)" id="bk-btn-4">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 7: ДІАЛОГ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-dialog">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div>
+      <div class="section-title">Діалог 🎭 — Beim Arzt 🏥</div>
+      <div class="section-subtitle">Praktikuj rozmoву: Lena йде до лікаря</div>
+    </div>
+  </div>
+
+  <div class="role-tip">
+    <span class="role-badge a">👨‍⚕️ Dr. Meier <em style="font-weight:400">(партнер читає)</em></span>
+    <span class="role-badge b">🤒 Lena — пацієнтка <em style="font-weight:400">(ти відповідаєш)</em></span>
+  </div>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-style:italic;">Lena (пацієнтка) відвідує Dr. Meier. Партнер читає репліки лікаря вголос, ти відповідаєш своїми словами — підказки допоможуть!</p>
+
+  <div class="dialog-card">
+
+    <!-- 1 -->
+    <div class="dialog-line">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Guten Morgen! Setzen Sie sich bitte. Was fehlt Ihnen?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви симптоми (Halsschmerzen / Husten / Fieber / seit wann?)</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Guten Morgen, Herr Doktor. Ich fühle mich seit drei Tagen nicht gut. Ich habe Halsschmerzen und Husten, und seit gestern auch Fieber."</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Wie hoch ist das Fieber?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви температуру (38,5 Grad / fast 39 Grad)</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Das Fieber ist fast 39 Grad. Ich habe es heute Morgen gemessen."</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Haben Sie auch Kopfschmerzen oder Schmerzen im Körper?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Опиши додаткові симптоми або їх відсутність</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Ja, ich habe auch leichte Kopfschmerzen. Und mein ganzer Körper tut weh, besonders der Rücken."</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Ich schaue mir jetzt den Hals an. Machen Sie bitte den Mund auf." <em style="color:var(--text-muted);font-size:12px;">*untersucht*</em> „Der Hals ist gerötet. Ich höre auch die Lunge ab."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Запитай що він чує / як справи з легенями</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Ist mit der Lunge alles in Ordnung? Ich mache mir ein bisschen Sorgen."</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Die Lunge klingt gut. Es ist eine normale Erkältung, keine Grippe. Sie brauchen keine Antibiotika."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Зіти з полегшенням і запитай що робити</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Oh, das ist eine Erleichterung! Was soll ich jetzt machen? Muss ich im Bett bleiben?"</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Ja, bleiben Sie zwei bis drei Tage zu Hause. Trinken Sie viel Wasser und Tee. Ich schreibe Ihnen ein Rezept."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Запитай куди йти з рецептом і скільки разів приймати ліки</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Vielen Dank. Soll ich mit dem Rezept in die Apotheke gehen? Wie oft muss ich das Medikament nehmen?"</div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Ja, gehen Sie in die Apotheke hier um die Ecke. Das Medikament nehmen Sie dreimal täglich nach dem Essen."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Запитай скільки часу до одужання</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Wann werde ich wieder gesund? Ich habe nächste Woche einen wichtigen Termin."</div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„In fünf bis sieben Tagen sollte es Ihnen besser gehen. Kommen Sie wieder, wenn das Fieber nicht sinkt."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Подякуй лікарю</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Verstanden. Vielen Dank für Ihre Hilfe, Herr Doktor. Ich wünsche Ihnen noch einen schönen Tag!"</div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Dr.:</span>
+      <span class="dialog-text">„Gute Besserung! Und schonen Sie sich — Ruhe ist das Beste bei einer Erkältung!"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">L:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Попрощайся</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Danke schön! Auf Wiedersehen!"</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 8: ПІДСУМОК -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card summary-card" id="s-summary">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <div class="section-title">Підсумок — Що ти сьогодні вивчив(ла)? ✅</div>
+  </div>
+  <div class="summary-grid">
+    <div class="summary-stat">
+      <div class="summary-stat-num">10</div>
+      <div class="summary-stat-label">Нових слів</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">8</div>
+      <div class="summary-stat-label">Запитань</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">4</div>
+      <div class="summary-stat-label">Вправи з книги</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">9</div>
+      <div class="summary-stat-label">Обмін в діалозі</div>
+    </div>
+  </div>
+
+  <p style="color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;margin-bottom:.5rem;">Wechselpräpositionen — на пам'ять:</p>
+  <div class="summary-verbs">
+    <span class="summary-verb-chip">Wo? → Dativ</span>
+    <span class="summary-verb-chip">Wohin? → Akkusativ</span>
+    <span class="summary-verb-chip">in+dem=im · in+das=ins</span>
+    <span class="summary-verb-chip">an+dem=am · an+das=ans</span>
+    <span class="summary-verb-chip">zu + Person/Gebäude</span>
+    <span class="summary-verb-chip">nach + Stadt/Land</span>
+  </div>
+
+  <div class="summary-msg">
+    🎯 <strong>Граматична підказка на пам'ять:</strong><br>
+    1. <strong>Wo?</strong> (де?) → Dativ: <em>Ich bin <strong>im</strong> Krankenhaus. Das Buch liegt <strong>auf dem</strong> Tisch.</em><br>
+    2. <strong>Wohin?</strong> (куди?) → Akkusativ: <em>Ich gehe <strong>ins</strong> Krankenhaus. Er legt das Buch <strong>auf den</strong> Tisch.</em><br>
+    3. <strong>zu</strong> + Personen/Gebäude: <em>zum Arzt, zur Apotheke</em><br>
+    4. <strong>nach</strong> + Städte/Länder ohne Artikel: <em>nach Berlin, nach Hause</em><br>
+    5. <strong>in</strong> + Länder mit Artikel: <em>in die Schweiz, in die USA</em><br><br>
+    🎯 <strong>Тепер ти можеш говорити про здоров'я і орієнтуватися у просторі!</strong>
+  </div>
+</section>
+
+<footer class="footer-tag">DeutschWeg · Рівень A2–B1 · Тема 7: Gesundheit · Граматика: Wechselpräpositionen &amp; Lokale Präpositionen</footer>
+
+</div><!-- /page -->
+
+<script>
+// ─── ANSWER TOGGLE ───────────────────────────────
+function toggleAnswer(el) {
+  var ans = el.nextElementSibling;
+  var tog = el.querySelector('.qa-toggle');
+  if (ans.classList.contains('open')) {
+    ans.classList.remove('open');
+    tog.textContent = '▶ Відповідь';
+  } else {
+    ans.classList.add('open');
+    tog.textContent = '▼ Закрити';
+  }
+}
+
+function toggleFehler(btn) {
+  var sol = btn.nextElementSibling;
+  if (sol.classList.contains('open')) {
+    sol.classList.remove('open');
+    btn.textContent = '▶ Зразок';
+  } else {
+    sol.classList.add('open');
+    btn.textContent = '▼ Закрити';
+  }
+}
+
+// ─── CHECK EXERCISE 1 (matching) ───────────────────
+function checkEx1() {
+  var correct = {m1:'G',m2:'A',m3:'D',m4:'C',m5:'E',m6:'F',m7:'B'};
+  var right = 0;
+  for (var k in correct) {
+    var sel = document.querySelector('input[name="'+k+'"]:checked');
+    if (sel && sel.value === correct[k]) right++;
+  }
+  var fb = document.getElementById('ex1-fb');
+  if (right === 7) {
+    fb.className='ex-feedback ok'; fb.style.display='block';
+    fb.textContent='✅ Alle 7 richtig! Чудово!';
+  } else {
+    fb.className='ex-feedback fail'; fb.style.display='block';
+    fb.textContent='❌ ' + right + ' von 7 richtig. Перевір свої відповіді!';
+  }
+}
+
+// ─── BOOK EXERCISES (Kap. 34–35) ───────────────────
+var BK_SHOWN = {};
+var BK_ANSWERS = {
+  2: {
+    'bk2-1':'wohin',
+    'bk2-2':'wohin',
+    'bk2-3':'wo',
+    'bk2-4':'wo',
+    'bk2-5':'wohin',
+    'bk2-6':'wo',
+    'bk2-7':'wo',
+    'bk2-8':'wohin'
+  },
+  3: {
+    'bk3-1':'am',
+    'bk3-2':'in',
+    'bk3-3':'auf',
+    'bk3-4':'im',
+    'bk3-5':'bei',
+    'bk3-6':'beim',
+    'bk3-7':'bei',
+    'bk3-8':'in',
+    'bk3-9':'am',
+    'bk3-10':'im',
+    'bk3-11':'auf',
+    'bk3-12':'in',
+    'bk3-13':'zu',
+    'bk3-14':'im',
+    'bk3-15':'im'
+  },
+  4: {
+    'bk4-1':'ins',
+    'bk4-2':'zum',
+    'bk4-3':'zur',
+    'bk4-4':'an den',
+    'bk4-5':'auf den',
+    'bk4-6':'zu',
+    'bk4-7':'in den',
+    'bk4-8':'nach',
+    'bk4-9':'in die',
+    'bk4-10':'nach',
+    'bk4-11':'auf den',
+    'bk4-12':'nach'
+  }
+};
+
+function showBkAnswers(n) {
+  var answers = BK_ANSWERS[n];
+  if (!answers) return;
+  var btn = document.getElementById('bk-btn-' + n);
+  if (BK_SHOWN[n]) {
+    // hide answers
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = '';
+      inp.style.background = '';
+      inp.style.color = '';
+      inp.style.fontWeight = '';
+      inp.style.borderColor = '';
+    });
+    BK_SHOWN[n] = false;
+    if (btn) btn.textContent = 'Відповіді ▼';
+  } else {
+    // show answers
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = answers[id];
+      inp.style.background = '#d4edda';
+      inp.style.color = '#155724';
+      inp.style.fontWeight = '700';
+      inp.style.borderColor = '#28a745';
+    });
+    BK_SHOWN[n] = true;
+    if (btn) btn.textContent = 'Сховати відповіді ▲';
+  }
+}
+
+// ── SCROLL REVEAL ──
+(function(){
+  var els = document.querySelectorAll('.section-card, .mosaic-nav');
+  els.forEach(function(el){
+    var rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight + 60) el.classList.add('revealed');
+  });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('revealed');observer.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(el){if(!el.classList.contains('revealed'))observer.observe(el);});
+})();
+
+// ── FLOATING EMOJI ──
+(function(){
+  var emojis = ['🏥','💊','🩺','🩹','🌡️','💉','🧬','🫁','❤️','🍵','🛌','🏃','🥗','🌿','💪'];
+  var maxEmoji = 12;
+  function spawnEmoji(){
+    if(document.querySelectorAll('.emoji-float').length >= maxEmoji) return;
+    var el = document.createElement('div');
+    el.className = 'emoji-float';
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = (Math.random()*90+5)+'%';
+    el.style.bottom = '-40px';
+    el.style.fontSize = (18+Math.random()*16)+'px';
+    el.style.animationDuration = (12+Math.random()*18)+'s';
+    el.style.animationDelay = (Math.random()*2)+'s';
+    document.body.appendChild(el);
+    setTimeout(function(){el.remove();},(14+20)*1000);
+  }
+  for(var i=0;i<5;i++) setTimeout(spawnEmoji, i*800);
+  setInterval(spawnEmoji, 3000);
+})();
+
+// ── MOSAIC NAV + STICKY BAR ──
+(function(){
+  var tiles = document.querySelectorAll('.mosaic-tile');
+  var pips = document.querySelectorAll('.sticky-pip');
+  var stickyBar = document.getElementById('sticky-bar');
+  var mosaicNav = document.getElementById('mosaic-nav');
+  var stickyCurrent = document.getElementById('sticky-current');
+  var labels = {};
+  tiles.forEach(function(t){ var h=t.getAttribute('href'); if(h) labels[h]=t.querySelector('.mosaic-label').textContent; });
+
+  var sections = [];
+  tiles.forEach(function(t){
+    var id = t.getAttribute('href');
+    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el,id:id});}
+  });
+
+  function updateActive(){
+    var scrollY=window.scrollY+120;
+    var active=null;
+    for(var i=sections.length-1;i>=0;i--){
+      if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
+    }
+    // mosaic tiles
+    tiles.forEach(function(t){t.classList.remove('active');});
+    if(active)active.tile.classList.add('active');
+    // sticky pips
+    pips.forEach(function(p){p.classList.remove('active');});
+    if(active){
+      pips.forEach(function(p){if(p.getAttribute('href')===active.id)p.classList.add('active');});
+      if(stickyCurrent) stickyCurrent.textContent=labels[active.id]||'';
+    }
+    // show/hide sticky bar
+    if(mosaicNav && stickyBar){
+      var mosaicBottom = mosaicNav.getBoundingClientRect().bottom;
+      stickyBar.classList.toggle('visible', mosaicBottom < 0);
+    }
+  }
+
+  window.addEventListener('scroll',updateActive,{passive:true});
+  updateActive();
+
+  // smooth scroll for mosaic tiles
+  tiles.forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(t.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  // smooth scroll for sticky pips
+  pips.forEach(function(p){
+    p.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(p.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Deutsch A2–B1 — Freunde &amp; Beziehungen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-deep:#0a5c42;--green-mid:#1D9E75;--green-light:#5DCAA5;--green-pale:#E1F5EE;--green-border:#9FE1CB;
+  --blue-mid:#378ADD;--blue-pale:#E6F1FB;
+  --amber-mid:#BA7517;--amber-pale:#FAEEDA;
+  --purple-mid:#7C4DBC;--purple-pale:#F0E8FF;
+  --red-mid:#C0392B;--red-pale:#FDECEA;
+  --text-dark:#1a1a18;--text-mid:#4a4a46;--text-muted:#888780;
+  --bg-page:#f5f3ed;--bg-card:#ffffff;--bg-section:#fafaf7;
+  --border:rgba(0,0,0,0.09);
+  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif
+}
+body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);min-height:100vh;padding:2rem 1rem 4rem;position:relative}
+.page{max-width:780px;margin:0 auto;position:relative}
+
+/* ── AURORA ANIMATED BACKGROUND ── */
+.aurora{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-2;overflow:hidden}
+.aurora-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:auroraMove 12s ease-in-out infinite alternate}
+.aurora-blob:nth-child(1){width:500px;height:500px;background:linear-gradient(135deg,#5DCAA5,#1D9E75);top:-10%;left:-5%;animation-duration:14s}
+.aurora-blob:nth-child(2){width:400px;height:400px;background:linear-gradient(135deg,#378ADD,#7C4DBC);top:40%;right:-8%;animation-delay:-4s;animation-duration:16s}
+.aurora-blob:nth-child(3){width:350px;height:350px;background:linear-gradient(135deg,#E91E8C,#BA7517);bottom:-5%;left:20%;animation-delay:-8s;animation-duration:18s}
+@keyframes auroraMove{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(60px,-40px) rotate(15deg) scale(1.1)}66%{transform:translate(-40px,50px) rotate(-10deg) scale(.9)}100%{transform:translate(30px,20px) rotate(5deg) scale(1.05)}}
+
+/* ── FLOATING EMOJI ── */
+.emoji-float{position:fixed;pointer-events:none;z-index:-1;font-size:24px;opacity:0;animation:emojiRise linear infinite}
+@keyframes emojiRise{0%{opacity:0;transform:translateY(0) rotate(0deg) scale(.5)}10%{opacity:.15}50%{opacity:.12}90%{opacity:.05}100%{opacity:0;transform:translateY(-100vh) rotate(360deg) scale(1)}}
+
+/* ── SECTION CARD ENHANCEMENTS ── */
+.section-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;border:1.5px solid var(--border)}
+.section-card:hover{box-shadow:0 12px 40px rgba(10,92,66,.1);transform:translateY(-3px);border-color:var(--green-border)}
+.section-card .section-num{transition:transform .3s ease,box-shadow .3s ease}
+.section-card:hover .section-num{transform:scale(1.15) rotate(-5deg);box-shadow:0 4px 12px rgba(10,92,66,.25)}
+
+/* ── GLOW EFFECT ON SUMMARY ── */
+.summary-card{animation:summaryPulse 4s ease-in-out infinite;border:none}
+@keyframes summaryPulse{0%,100%{box-shadow:0 4px 20px rgba(10,92,66,.15)}50%{box-shadow:0 8px 40px rgba(29,158,117,.3)}}
+
+/* ── SCROLL REVEAL ── */
+.section-card,.mosaic-nav{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.section-card.revealed,.mosaic-nav.revealed{opacity:1;transform:translateY(0)}
+.section-card:nth-child(even).revealed{transition-delay:.1s}
+
+/* ── SECTION DIVIDERS ── */
+.section-card+.section-card::before{content:'';display:block;width:40px;height:3px;background:linear-gradient(90deg,var(--green-light),var(--green-mid));border-radius:3px;margin:-0.7rem auto 0;opacity:0;transition:opacity .5s}
+.section-card.revealed+.section-card.revealed::before{opacity:.5}
+
+/* Hero */
+.hero{position:relative;background:var(--green-deep);border-radius:20px;padding:2.5rem 2.5rem 2rem;margin-bottom:2rem;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(93,202,165,0.12)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:60px;width:180px;height:180px;border-radius:50%;background:rgba(93,202,165,0.07)}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green-light);margin-bottom:.6rem}
+.hero-title{font-family:var(--serif);font-size:clamp(28px,5vw,40px);font-weight:600;color:#fff;line-height:1.15;margin-bottom:.8rem;position:relative;z-index:1}
+.hero-title em{font-style:italic;color:var(--green-light)}
+.hero-subtitle{font-size:14px;color:rgba(255,255,255,0.7);position:relative;z-index:1}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;position:relative;z-index:1}
+.hero-tag{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:12px;color:rgba(255,255,255,0.85);font-weight:500}
+.hero-tag.accent{background:rgba(93,202,165,0.25);border-color:var(--green-light);color:var(--green-light)}
+
+/* Section cards */
+.section-card{background:var(--bg-card);border-radius:16px;border:1px solid var(--border);padding:1.8rem;margin-bottom:1.4rem;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
+.section-num{width:32px;height:32px;border-radius:50%;background:var(--green-pale);color:var(--green-deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-title{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--text-dark)}
+.section-subtitle{font-size:12px;color:var(--text-muted);margin-top:2px}
+
+/* Vocab table */
+.vocab-table{width:100%;border-collapse:collapse;font-size:14px}
+.vocab-table thead tr{background:var(--green-pale);border-radius:8px}
+.vocab-table th{padding:8px 12px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--green-deep)}
+.vocab-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.vocab-table tbody tr:last-child td{border-bottom:none}
+.vocab-table tbody tr:hover{background:var(--bg-section)}
+.vocab-art{color:var(--text-muted);font-size:12px;font-style:italic}
+.vocab-word{font-weight:600;color:var(--text-dark)}
+.vocab-ru{color:var(--text-mid)}
+.vocab-ex{color:var(--text-muted);font-style:italic;font-size:13px}
+.vocab-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;margin-left:4px}
+.vocab-badge.verb{background:var(--blue-pale);color:var(--blue-mid)}
+.vocab-badge.noun{background:var(--green-pale);color:var(--green-deep)}
+.vocab-badge.adj{background:var(--purple-pale);color:var(--purple-mid)}
+
+/* Questions */
+.frage-list{display:flex;flex-direction:column;gap:10px}
+.frage-item{display:flex;gap:12px;padding:12px 14px;background:var(--bg-section);border-radius:10px;border:1px solid var(--border);font-size:14px;line-height:1.6;color:var(--text-mid)}
+.frage-num{font-weight:700;color:var(--green-deep);flex-shrink:0;min-width:22px}
+
+/* Reading text */
+.text-block{background:var(--bg-section);border-radius:12px;padding:1.4rem;font-size:15px;line-height:1.85;color:var(--text-dark);border-left:4px solid var(--green-light)}
+.text-block p{margin-bottom:.9rem}
+.text-block p:last-child{margin-bottom:0}
+.text-block .highlight{background:rgba(29,158,117,0.12);border-radius:3px;padding:1px 3px}
+
+/* Answers (collapsible) */
+.qa-list{display:flex;flex-direction:column;gap:10px}
+.qa-item{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.qa-question{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;font-size:14px;line-height:1.5;color:var(--text-mid);background:var(--bg-section);cursor:pointer;user-select:none}
+.qa-question:hover{background:#f0ede5}
+.qa-qnum{font-weight:700;color:var(--green-deep);flex-shrink:0;min-width:22px}
+.qa-qtext{flex:1}
+.qa-toggle{font-size:12px;color:var(--text-muted);flex-shrink:0;margin-left:auto;padding-top:1px;transition:transform .2s}
+.qa-answer{display:none;padding:10px 14px 12px 48px;font-size:13px;color:var(--text-dark);background:#fff;border-top:1px solid var(--border);line-height:1.6}
+.qa-answer.open{display:block}
+.qa-answer strong{color:var(--green-deep)}
+
+/* Grammar */
+.gram-box{background:var(--blue-pale);border:1px solid #c4daf5;border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.2rem}
+.gram-title{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--blue-mid);margin-bottom:.7rem}
+.gram-rule{font-size:14px;line-height:1.7;color:var(--text-mid)}
+.gram-rule code{font-family:monospace;background:rgba(55,138,221,0.15);border-radius:4px;padding:2px 6px;color:#1a5fa8;font-size:13px}
+.gram-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:.8rem}
+.gram-table th{background:#ddeeff;padding:6px 10px;text-align:left;font-weight:600;color:var(--blue-mid)}
+.gram-table td{padding:6px 10px;border-bottom:1px solid #d0e6f8;vertical-align:middle}
+.gram-table tr:last-child td{border-bottom:none}
+.gram-table .key{font-weight:700;color:var(--green-deep)}
+
+/* Exercises */
+.ex-block{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px}
+.ex-header{background:var(--green-pale);padding:10px 14px;font-size:13px;font-weight:600;color:var(--green-deep);display:flex;align-items:center;gap:8px}
+.ex-header .ex-num{width:22px;height:22px;border-radius:50%;background:var(--green-deep);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ex-body{padding:12px 14px;background:#fff}
+.ex-task{font-size:14px;color:var(--text-mid);margin-bottom:10px;line-height:1.5;font-style:italic}
+.ex-items{display:flex;flex-direction:column;gap:8px}
+.ex-btn{margin-top:10px;padding:7px 16px;background:var(--green-mid);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .15s}
+.ex-btn:hover{background:var(--green-deep)}
+.ex-btn.secondary{background:transparent;color:var(--green-mid);border:1.5px solid var(--green-border)}
+.ex-btn.secondary:hover{background:var(--green-pale)}
+.ex-feedback{display:none;margin-top:10px;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600}
+.ex-feedback.ok{background:#d4edda;color:#155724;border:1px solid #28a745}
+.ex-feedback.fail{background:var(--red-pale);color:var(--red-mid);border:1px solid #e57373}
+
+.blank-sentence{font-size:15px;line-height:2;color:var(--text-dark);margin-bottom:10px}
+.blank-input{display:inline-block;border:none;border-bottom:2px solid var(--green-border);background:transparent;font-size:15px;font-family:var(--sans);color:var(--green-deep);padding:0 4px;min-width:50px;outline:none;text-align:center}
+.blank-input:focus{border-color:var(--green-mid)}
+
+/* Dialog */
+.dialog-card{background:var(--bg-section);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:.8rem}
+.dialog-line{display:flex;gap:12px;font-size:14px;line-height:1.7;margin-bottom:8px;align-items:flex-start}
+.dialog-line:last-child{margin-bottom:0}
+.dialog-speaker{font-weight:700;min-width:28px;flex-shrink:0;margin-top:2px}
+.dialog-speaker.a{color:var(--green-deep)}
+.dialog-speaker.b{color:var(--blue-mid)}
+.dialog-text{color:var(--text-mid)}
+.role-tip{display:flex;gap:20px;margin-bottom:1rem;font-size:13px;flex-wrap:wrap}
+.role-badge{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;font-weight:600}
+.role-badge.a{background:var(--green-pale);color:var(--green-deep)}
+.role-badge.b{background:var(--blue-pale);color:var(--blue-mid)}
+
+/* Fehler / collapsible sample */
+.fehler-toggle{font-size:12px;color:var(--green-mid);cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0;text-decoration:underline}
+.fehler-solution{display:none;margin-top:8px;font-size:13px;background:var(--green-pale);border-radius:6px;padding:8px 10px;color:var(--green-deep);line-height:1.5}
+.fehler-solution.open{display:block}
+
+/* Summary */
+.summary-card{background:linear-gradient(135deg,var(--green-deep) 0%,#0d7a5a 100%);border:none;color:#fff}
+.summary-card .section-title{color:#fff}
+.summary-card .section-num{background:rgba(255,255,255,0.2);color:#fff}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.2rem}
+.summary-stat{background:rgba(255,255,255,0.1);border-radius:12px;padding:12px 14px;text-align:center;border:1px solid rgba(255,255,255,0.15)}
+.summary-stat-num{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--green-light);line-height:1}
+.summary-stat-label{font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.summary-verbs{display:flex;flex-wrap:wrap;gap:6px;margin-top:.8rem}
+.summary-verb-chip{background:rgba(255,255,255,0.12);border:1px solid rgba(93,202,165,0.4);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--green-light);font-weight:500}
+.summary-msg{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;margin-top:1rem;background:rgba(255,255,255,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid var(--green-light)}
+
+/* Nav */
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);text-decoration:none;margin-bottom:1.2rem}
+.nav-back:hover{color:var(--green-mid)}
+.nav-back::before{content:'←';font-size:14px}
+
+.footer-tag{text-align:center;font-size:12px;color:var(--text-muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+
+/* ── SECTION MOSAIC NAV ── */
+.mosaic-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;padding:0}
+.mosaic-tile{flex:1 1 calc(33.33% - 8px);min-width:100px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;text-decoration:none;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+.mosaic-tile:hover{border-color:var(--green-mid);box-shadow:0 4px 16px rgba(10,92,66,.1);transform:translateY(-2px)}
+.mosaic-tile.active{border-color:var(--green-mid);background:var(--green-pale)}
+.mosaic-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.mosaic-icon.vocab{background:#E1F5EE;color:#0a5c42}
+.mosaic-icon.speak{background:#E6F1FB;color:#378ADD}
+.mosaic-icon.read{background:#FFF3E0;color:#E65100}
+.mosaic-icon.question{background:#FCE4EC;color:#C2185B}
+.mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
+.mosaic-icon.dialog{background:#E0F7FA;color:#00838F}
+.mosaic-icon.summary{background:#E8F5E9;color:#2E7D32}
+.mosaic-info{min-width:0}
+.mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
+.mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mosaic-tile:hover .mosaic-label{color:var(--green-deep)}
+
+/* ── STICKY PROGRESS BAR ── */
+.sticky-bar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;justify-content:center;transform:translateY(-100%);transition:transform .3s ease;pointer-events:none}
+.sticky-bar.visible{transform:translateY(0);pointer-events:auto}
+.sticky-pip{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s;border:2px solid transparent;background:var(--bg-section);position:relative;flex-shrink:0;text-decoration:none}
+.sticky-pip:hover{transform:scale(1.15);border-color:var(--green-border)}
+.sticky-pip.active{border-color:var(--green-mid);background:var(--green-pale);transform:scale(1.1);box-shadow:0 2px 8px rgba(29,158,117,.25)}
+.sticky-pip .pip-tooltip{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--green-deep);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+.sticky-pip:hover .pip-tooltip{opacity:1}
+.sticky-pip .pip-tooltip::before{content:'';position:absolute;top:-4px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid var(--green-deep)}
+.sticky-divider{width:1px;height:20px;background:var(--border);flex-shrink:0;margin:0 2px}
+.sticky-current{font-size:12px;font-weight:600;color:var(--green-deep);margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+
+/* Matching exercise */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:13px;margin-bottom:10px}
+.match-row{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg-section);border-radius:8px;border:1px solid var(--border)}
+.match-q{flex:0 0 auto;color:var(--text-dark);font-weight:500;min-width:0}
+.match-options{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.match-options label{display:flex;align-items:center;gap:3px;font-size:12px;color:var(--text-mid);cursor:pointer;white-space:nowrap}
+.match-options input[type=radio]{accent-color:var(--green-mid)}
+
+/* Responsive */
+@media(max-width:560px){
+  body{padding:1rem .6rem 3rem}
+  .section-card{padding:1.2rem}
+  .vocab-table .vocab-ex{display:none}
+  .hero{padding:1.8rem 1.4rem 1.5rem}
+  .role-tip{flex-wrap:wrap}
+  .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
+  .mosaic-icon{width:30px;height:30px;font-size:15px}
+  .mosaic-label{font-size:12px}
+  .sticky-pip{width:30px;height:30px;font-size:13px;border-radius:8px}
+  .sticky-current{display:none}
+  .sticky-divider{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ── AURORA BACKGROUND ── -->
+<div class="aurora">
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+</div>
+
+<!-- ── STICKY PROGRESS BAR ── -->
+<div class="sticky-bar" id="sticky-bar">
+  <a class="sticky-pip" href="#s-vocab" data-section="s-vocab">🔤<span class="pip-tooltip">Нові слова</span></a>
+  <a class="sticky-pip" href="#s-speak" data-section="s-speak">💬<span class="pip-tooltip">Розмова</span></a>
+  <a class="sticky-pip" href="#s-read" data-section="s-read">📖<span class="pip-tooltip">Читання</span></a>
+  <a class="sticky-pip" href="#s-question" data-section="s-question">❓<span class="pip-tooltip">Запитання</span></a>
+  <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Граматика</span></a>
+  <a class="sticky-pip" href="#s-book" data-section="s-book">📗<span class="pip-tooltip">З підручника</span></a>
+  <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
+  <a class="sticky-pip" href="#s-summary" data-section="s-summary">✅<span class="pip-tooltip">Підсумок</span></a>
+  <div class="sticky-divider"></div>
+  <span class="sticky-current" id="sticky-current"></span>
+</div>
+
+<div class="page">
+
+<a href="../index.html" class="nav-back">DeutschWeg — Усі теми</a>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-label">Thema 8 · A2–B1</div>
+  <h1 class="hero-title">🤝 Freunde &amp; <em>Beziehungen</em></h1>
+  <p class="hero-subtitle">Нові слова · Lesetext · Konversation · Komparativ &amp; Superlativ · Вправи з підручника</p>
+  <div class="hero-tags">
+    <span class="hero-tag">A2–B1-Niveau</span>
+    <span class="hero-tag accent">Grammatik: Komparativ &amp; Superlativ</span>
+    <span class="hero-tag">Вправи з підручника (Kap. 38–39)</span>
+    <span class="hero-tag">10 neue Wörter</span>
+  </div>
+</header>
+
+<!-- ── SECTION MOSAIC ── -->
+<nav class="mosaic-nav" id="mosaic-nav">
+  <a class="mosaic-tile" href="#s-vocab">
+    <div class="mosaic-icon vocab">🔤</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 1</div><div class="mosaic-label">Нові слова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-speak">
+    <div class="mosaic-icon speak">💬</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 2</div><div class="mosaic-label">Розмова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-read">
+    <div class="mosaic-icon read">📖</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 3</div><div class="mosaic-label">Читання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-question">
+    <div class="mosaic-icon question">❓</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 4</div><div class="mosaic-label">Запитання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-grammar">
+    <div class="mosaic-icon grammar">📐</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 5</div><div class="mosaic-label">Граматика</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-book">
+    <div class="mosaic-icon grammar">📗</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">З підручника</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-dialog">
+    <div class="mosaic-icon dialog">🎭</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">Діалог</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-summary">
+    <div class="mosaic-icon summary">✅</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 8</div><div class="mosaic-label">Підсумок</div></div>
+  </a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 1: НОВІ СЛОВА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-vocab">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div>
+      <div class="section-title">Нові слова 🔤</div>
+      <div class="section-subtitle">10 важливих слів на тему дружби — спочатку вивчи, потім читай!</div>
+    </div>
+  </div>
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Рід</th><th>Слово</th><th>Переклад</th><th>Приклад</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="vocab-art">der</td>
+        <td><span class="vocab-word">Freund, -e / die Freundin, -nen</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">друг / подруга</td>
+        <td class="vocab-ex">Meine beste Freundin kennt mich besser als ich mich selbst.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Beziehung, -en</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">стосунки</td>
+        <td class="vocab-ex">Eine gute Beziehung braucht Vertrauen, Ehrlichkeit und Zeit.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">vertrauen</span> <span style="font-size:12px;color:var(--text-muted);">(+Dat)</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">довіряти</td>
+        <td class="vocab-ex">Ich vertraue meiner Freundin mehr als jedem anderen Menschen.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">ehrlich</span><span class="vocab-badge adj">Adj</span></td>
+        <td class="vocab-ru">чесний</td>
+        <td class="vocab-ex">Ehrliche Freunde sagen dir die Wahrheit, auch wenn sie manchmal schwer zu hören ist.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">zuverlässig</span><span class="vocab-badge adj">Adj</span></td>
+        <td class="vocab-ru">надійний</td>
+        <td class="vocab-ex">Der zuverlässigste Mensch in meinem Leben ist meine Schwester.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">sich streiten</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">сваритися</td>
+        <td class="vocab-ex">Manchmal streiten sich auch die besten Freunde — aber sie versöhnen sich auch schneller.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Gemeinsamkeit, -en</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">спільна риса</td>
+        <td class="vocab-ex">Je mehr Gemeinsamkeiten man hat, desto leichter ist eine Freundschaft.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">unterstützen</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">підтримувати</td>
+        <td class="vocab-ex">Wahre Freunde unterstützen dich am meisten, wenn es dir schlecht geht.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">der</td>
+        <td><span class="vocab-word">Unterschied, -e</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">відмінність</td>
+        <td class="vocab-ex">Obwohl wir viele Unterschiede haben, sind wir die besten Freunde.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">sich verstehen</span> <span style="font-size:12px;color:var(--text-muted);">(mit +Dat)</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">порозумітися</td>
+        <td class="vocab-ex">Ich verstehe mich am besten mit Menschen, die ähnliche Interessen haben.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 2: РОЗМОВА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-speak">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div>
+      <div class="section-title">Запитання для розмови 💬</div>
+      <div class="section-subtitle">Відповідай вільно — мінімум 2–3 речення на кожне запитання</div>
+    </div>
+  </div>
+  <div class="frage-list">
+    <div class="frage-item"><span class="frage-num">1</span><span>Wie ist dein bester Freund / deine beste Freundin? Beschreibe ihn/sie.</span></div>
+    <div class="frage-item"><span class="frage-num">2</span><span>Was ist dir in einer Freundschaft am wichtigsten — Ehrlichkeit, Humor oder Loyalität?</span></div>
+    <div class="frage-item"><span class="frage-num">3</span><span>Hast du eher viele Bekannte oder wenige, aber enge Freunde?</span></div>
+    <div class="frage-item"><span class="frage-num">4</span><span>Streitet ihr euch manchmal? Worüber und wie löst ihr Konflikte?</span></div>
+    <div class="frage-item"><span class="frage-num">5</span><span>Was macht ihr am liebsten zusammen?</span></div>
+    <div class="frage-item"><span class="frage-num">6</span><span>Bist du heute genauso gesellig wie früher oder hast du sich das verändert?</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 3: ЧИТАННЯ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-read">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div>
+      <div class="section-title">Текст для читання 📖</div>
+      <div class="section-subtitle">Читай уважно — зверни увагу на Komparativ і Superlativ у тексті</div>
+    </div>
+  </div>
+  <p style="font-family:var(--serif);font-size:16px;font-weight:600;color:var(--text-dark);margin-bottom:1rem;">Zwei Freundinnen — so verschieden und doch beste Freundinnen</p>
+  <div class="text-block">
+    <p>Mia und Lisa sind seit der Schulzeit befreundet — das sind jetzt fast fünfzehn Jahre. Auf den ersten Blick sind sie sehr verschieden: Mia ist <strong class="highlight">größer als</strong> Lisa, aber Lisa ist <strong class="highlight">sportlicher</strong>. Mia läuft <strong class="highlight">lieber</strong> ins Museum, während Lisa <strong class="highlight">am liebsten</strong> ins Fitnessstudio geht.</p>
+    <p>Im Beruf ist Mia <strong class="highlight">ehrgeiziger als</strong> Lisa. Sie arbeitet <strong class="highlight">länger</strong>, schläft <strong class="highlight">kürzer</strong> und hat mehr Stress. Lisa findet ihr Leben <strong class="highlight">entspannter</strong>: Sie sagt immer, sie sei zwar nicht die <strong class="highlight">Erfolgreichste</strong>, aber dafür die <strong class="highlight">Glücklichste</strong>.</p>
+    <p>Trotz aller Unterschiede verstehen sie sich <strong class="highlight">am besten</strong> unter allen Freundinnen, die sie haben. Lisa sagt: „Mia ist <strong class="highlight">ehrlicher als</strong> die meisten Menschen, die ich kenne. Und das ist mir <strong class="highlight">am wichtigsten</strong>." Mia antwortet: „Und Lisa ist die <strong class="highlight">loyalste</strong> Person in meinem Leben — <strong class="highlight">loyaler als</strong> mein eigener Bruder!"</p>
+    <p>Sie streiten sich selten, und wenn, dann versöhnen sie sich <strong class="highlight">schneller als</strong> andere. Ihre Freundschaft ist eine der <strong class="highlight">stärksten</strong>, die man sich vorstellen kann.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 4: ЗАПИТАННЯ ДО ТЕКСТУ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-question">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div>
+      <div class="section-title">Запитання до тексту ❓</div>
+      <div class="section-subtitle">Клікни "Показати відповідь" — але спочатку спробуй сам(а)!</div>
+    </div>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">1</span>
+        <span class="qa-qtext">Seit wann sind Mia und Lisa befreundet?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Seit der Schulzeit, das sind fast fünfzehn Jahre.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">2</span>
+        <span class="qa-qtext">Wer ist sportlicher — Mia oder Lisa?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Lisa ist sportlicher als Mia.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">3</span>
+        <span class="qa-qtext">Wohin geht Mia lieber, und wohin geht Lisa am liebsten?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Mia läuft lieber ins Museum. Lisa geht am liebsten ins Fitnessstudio.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">4</span>
+        <span class="qa-qtext">Wie beschreibt Mia ihren Beruf?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie ist ehrgeiziger, arbeitet länger, schläft kürzer und hat mehr Stress.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">5</span>
+        <span class="qa-qtext">Was sagt Lisa über ihr Leben?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie findet ihr Leben entspannter. Sie ist die Glücklichste, auch wenn nicht die Erfolgreichste.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">6</span>
+        <span class="qa-qtext">Was schätzt Lisa an Mia am meisten?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Dass Mia ehrlicher als die meisten Menschen ist.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">7</span>
+        <span class="qa-qtext">Was sagt Mia über Lisa?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Lisa ist die loyalste Person in ihrem Leben — loyaler als ihr eigener Bruder.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">8</span>
+        <span class="qa-qtext">Wie streiten sie sich, und wie versöhnen sie sich?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Sie streiten sich selten, und wenn, versöhnen sie sich schneller als andere.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 5: ГРАМАТИКА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-grammar">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div>
+      <div class="section-title">Граматика: Komparativ &amp; Superlativ 📐</div>
+      <div class="section-subtitle">Komparativ (порівняння) · Superlativ (найвищий ступінь) · als / genauso ... wie</div>
+    </div>
+  </div>
+
+  <!-- Box 1 — Intro Komparativ -->
+  <div class="gram-box" style="background:linear-gradient(135deg,#e8f5e9 0%,#e6f1fb 100%);border-color:#a5d6a7;">
+    <div class="gram-title" style="color:#2e7d32;">📊 Komparativ — порівнюємо людей і речі</div>
+    <div class="gram-rule">
+      Komparativ утворюється додаванням <strong>-er</strong> до прикметника. Використовується з <strong>als</strong> (ніж) або з <strong>genauso ... wie</strong> (так само ... як).<br><br>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="background:var(--green-pale);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          ✅ <em>Lisa ist <strong style="color:var(--green-deep);">sportlicher als</strong> Mia.</em> &nbsp;→&nbsp; нерівність: <strong>als</strong>
+        </div>
+        <div style="background:var(--green-pale);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          ✅ <em>Mia ist <strong style="color:var(--green-deep);">genauso intelligent wie</strong> Lisa.</em> &nbsp;→&nbsp; рівність: <strong>genauso ... wie</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 2 — Bildung Komparativ -->
+  <div class="gram-box">
+    <div class="gram-title">📋 Bildung Komparativ</div>
+    <div class="gram-rule">
+      <table class="gram-table">
+        <thead>
+          <tr><th>Grundform</th><th>Komparativ</th><th>Besonderheit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>klein</td><td class="key">klein<strong>er</strong></td><td>регулярний</td></tr>
+          <tr><td>langsam</td><td class="key">langsam<strong>er</strong></td><td>регулярний</td></tr>
+          <tr><td>groß</td><td class="key">gr<strong>öß</strong>er</td><td>Umlaut!</td></tr>
+          <tr><td>jung</td><td class="key">j<strong>ü</strong>nger</td><td>Umlaut!</td></tr>
+          <tr><td>alt</td><td class="key"><strong>ä</strong>lter</td><td>Umlaut!</td></tr>
+          <tr><td>gut</td><td class="key"><strong>besser</strong></td><td>нерегулярний</td></tr>
+          <tr><td>viel</td><td class="key"><strong>mehr</strong></td><td>нерегулярний</td></tr>
+          <tr><td>gern</td><td class="key"><strong>lieber</strong></td><td>нерегулярний</td></tr>
+          <tr><td>hoch</td><td class="key"><strong>höher</strong></td><td>нерегулярний</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Box 3 — Vergleichssätze -->
+  <div class="gram-box" style="background:var(--amber-pale);border-color:#e5c882;">
+    <div class="gram-title" style="color:var(--amber-mid);">🔷 Vergleichssätze: als vs. genauso ... wie</div>
+    <div class="gram-rule">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px;">
+        <div style="background:#fff;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.8;">
+          <strong style="color:var(--amber-mid);">als</strong> → нерівність:<br>
+          <em>Lisa ist sportlicher <strong>als</strong> Mia.</em><br>
+          <em>Er schläft kürzer <strong>als</strong> sie.</em>
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.8;">
+          <strong style="color:var(--amber-mid);">genauso ... wie</strong> → рівність:<br>
+          <em>Mia ist genauso intelligent <strong>wie</strong> Lisa.</em><br>
+          <em>Er läuft genauso schnell <strong>wie</strong> ich.</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 4 — Superlativ -->
+  <div class="gram-box" style="background:var(--purple-pale);border-color:#c9b0e8;">
+    <div class="gram-title" style="color:#7C4DBC;">🏆 Superlativ — вираження найвищого ступеня</div>
+    <div class="gram-rule">
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+        <div style="background:rgba(255,255,255,0.6);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          <strong style="color:#7C4DBC;">з іменником</strong> (з артиклем): der/die/das + <strong>-ste(n)</strong><br>
+          <em>der schnellste Läufer · die beste Freundin · das schönste Lied</em>
+        </div>
+        <div style="background:rgba(255,255,255,0.6);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7;">
+          <strong style="color:#7C4DBC;">без іменника</strong> (am ...sten):<br>
+          <em>Er läuft am schnellsten. · Sie singt am schönsten.</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 5 — Umlaut im Superlativ -->
+  <div class="gram-box">
+    <div class="gram-title">📋 Umlaut im Superlativ — нерегулярні форми</div>
+    <div class="gram-rule">
+      <table class="gram-table">
+        <thead>
+          <tr><th>Grundform</th><th>Komparativ</th><th>Superlativ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>gut</td><td class="key">besser</td><td>am besten / der beste</td></tr>
+          <tr><td>viel</td><td class="key">mehr</td><td>am meisten / die meisten</td></tr>
+          <tr><td>gern</td><td class="key">lieber</td><td>am liebsten / das liebste</td></tr>
+          <tr><td>groß</td><td class="key">größer</td><td>am größten / der größte</td></tr>
+          <tr><td>hoch</td><td class="key">höher</td><td>am höchsten / das höchste</td></tr>
+          <tr><td>lang</td><td class="key">länger</td><td>am längsten / der längste</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Box 6 — Adjektivendungen -->
+  <div class="gram-box" style="background:linear-gradient(135deg,#e8f5e9 0%,#fff8e1 100%);border-color:#a5d6a7;">
+    <div class="gram-title" style="color:#2e7d32;">💡 Adjektivendungen im Komparativ/Superlativ</div>
+    <div class="gram-rule" style="font-size:14px;line-height:2;">
+      Das Adjektiv im Komparativ/Superlativ nimmt weiterhin die normalen Adjektivendungen:<br>
+      ein <strong style="color:var(--green-deep);">schnellerer</strong> Läufer (Komp. + Endung -er)<br>
+      der <strong style="color:var(--green-deep);">schnellste</strong> Läufer (Sup. + Endung -e)<br>
+      die <strong style="color:var(--green-deep);">ältesten</strong> Freunde (Sup. + Endung -en)
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 6: ВПРАВИ З ПІДРУЧНИКА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-book">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div>
+      <div class="section-title">Вправи з підручника 📗</div>
+      <div class="section-subtitle">Grammatik aktiv A1–B1 — Kap. 38–39: Komparativ &amp; Superlativ</div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 1: Komparativ (Kap. 38, Üb. 1) ── -->
+  <div class="ex-block" id="bk-ex1">
+    <div class="ex-header"><span class="ex-num">1</span> Ergänzen Sie den Komparativ. (Kap. 38, Üb. 1)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши форму Komparativ.</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px 16px;">
+        <div class="blank-sentence">klein → <input class="blank-input" id="bk1-1" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">langsam → <input class="blank-input" id="bk1-2" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">interessant → <input class="blank-input" id="bk1-3" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">schlecht → <input class="blank-input" id="bk1-4" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">alt → <input class="blank-input" id="bk1-5" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">gesund → <input class="blank-input" id="bk1-6" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">groß → <input class="blank-input" id="bk1-7" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">hoch → <input class="blank-input" id="bk1-8" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">gut → <input class="blank-input" id="bk1-9" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">viel → <input class="blank-input" id="bk1-10" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">gern → <input class="blank-input" id="bk1-11" placeholder="___" style="min-width:90px"></div>
+        <div class="blank-sentence">teuer → <input class="blank-input" id="bk1-12" placeholder="___" style="min-width:90px"></div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(1)" id="bk-btn-1">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 2: Komparativ im Text (Kap. 38, Üb. 2) ── -->
+  <div class="ex-block" id="bk-ex2">
+    <div class="ex-header"><span class="ex-num">2</span> Deutschland und Europa — Ergänzen Sie den Komparativ. (Kap. 38, Üb. 2)</div>
+    <div class="ex-body">
+      <div class="ex-task">Заповни пропуски формою Komparativ прикметників у дужках.</div>
+      <div style="font-size:15px;line-height:2.4;color:var(--text-dark);">
+        Österreich ist größer als die Schweiz, aber
+        <input class="blank-input" id="bk2-1" placeholder="___" style="min-width:70px">
+        <span style="font-size:12px;color:var(--text-muted);">(klein)</span>
+        als Deutschland.
+        Deutschland hat
+        <input class="blank-input" id="bk2-2" placeholder="___" style="min-width:60px">
+        <span style="font-size:12px;color:var(--text-muted);">(viel)</span>
+        Einwohner als die beiden anderen deutschsprachigen Länder.
+        Das Leben in der Schweiz ist
+        <input class="blank-input" id="bk2-3" placeholder="___" style="min-width:70px">
+        <span style="font-size:12px;color:var(--text-muted);">(teuer)</span>
+        als in Deutschland. Aber die Gehälter sind in der Schweiz auch
+        <input class="blank-input" id="bk2-4" placeholder="___" style="min-width:70px">
+        <span style="font-size:12px;color:var(--text-muted);">(hoch)</span>
+        als in Deutschland und Österreich.
+        In der Schweiz und in Österreich gibt es
+        <input class="blank-input" id="bk2-5" placeholder="___" style="min-width:60px">
+        <span style="font-size:12px;color:var(--text-muted);">(viel)</span>
+        Berge als in Deutschland.
+        Die österreichische Küche ist sicher
+        <input class="blank-input" id="bk2-6" placeholder="___" style="min-width:80px">
+        <span style="font-size:12px;color:var(--text-muted);">(lecker)</span>
+        als die schweizerische Küche.
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(2)" id="bk-btn-2">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 3: Vergleichssätze (Kap. 38, Üb. 4) ── -->
+  <div class="ex-block" id="bk-ex3">
+    <div class="ex-header"><span class="ex-num">3</span> Schreiben Sie Vergleichssätze mit wie und als. (Kap. 38, Üb. 4)</div>
+    <div class="ex-body">
+      <div class="ex-task">Склади речення порівняння. Використай <strong>als</strong> (нерівність) або <strong>genauso ... wie</strong> (рівність). Клікни «Зразок» для порівняння.</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+
+        <!-- 1 -->
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;"><strong>1.</strong> <em>Meurt und Sami laufen genauso schnell. / Marco läuft schneller.</em> <span style="color:var(--text-muted);font-size:13px;">(schnell laufen)</span></div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Meurt läuft genauso schnell wie Sami. / Marco läuft schneller als Meurt und Sami.</div>
+        </div>
+
+        <!-- 2 -->
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;"><strong>2.</strong> <em>In meiner Tasse ist mehr Kaffee. In deiner Tasse ist weniger Kaffee.</em> <span style="color:var(--text-muted);font-size:13px;">(viel Kaffee, sein)</span></div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">In meiner Tasse ist mehr Kaffee als in deiner Tasse.</div>
+        </div>
+
+        <!-- 3 -->
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;"><strong>3.</strong> <em>Lena schläft kürzer als Jonas. Mia schläft am längsten.</em> <span style="color:var(--text-muted);font-size:13px;">(lange schlafen)</span></div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Lena schläft kürzer als Jonas. Mia schläft länger als Lena und Jonas.</div>
+        </div>
+
+        <!-- 4 -->
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;"><strong>4.</strong> <em>Das Hochhaus ist größer als der Kirchturm. Der Messeturm ist am größten.</em> <span style="color:var(--text-muted);font-size:13px;">(groß sein)</span></div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Das Hochhaus ist größer als der Kirchturm. Der Messeturm ist am größten / größer als das Hochhaus.</div>
+        </div>
+
+        <!-- 5 -->
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;"><strong>5.</strong> <em>Meine Schwester singt genauso gut wie ich.</em> <span style="color:var(--text-muted);font-size:13px;">(gut singen)</span></div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Meine Schwester singt genauso gut wie ich.</div>
+        </div>
+
+        <!-- 6 -->
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;color:var(--text-dark);margin-bottom:6px;"><strong>6.</strong> <em>Im Sommer ist es wärmer als im Frühling. Im Winter ist es am kältesten.</em> <span style="color:var(--text-muted);font-size:13px;">(warm/kalt sein)</span></div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Im Sommer ist es wärmer als im Frühling. Im Winter ist es am kältesten.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 4: Superlativ Tabelle (Kap. 39, Üb. 1) ── -->
+  <div class="ex-block" id="bk-ex4">
+    <div class="ex-header"><span class="ex-num">4</span> Ergänzen Sie die fehlenden Formen. (Kap. 39, Üb. 1)</div>
+    <div class="ex-body">
+      <div class="ex-task">Заповни таблицю: Grundform → Komparativ → Superlativ (з am) → Superlativ (з Artikel).</div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="background:var(--green-pale);">
+              <th style="padding:8px 10px;text-align:left;color:var(--green-deep);font-weight:600;">Grundform</th>
+              <th style="padding:8px 10px;text-align:left;color:var(--green-deep);font-weight:600;">Komparativ</th>
+              <th style="padding:8px 10px;text-align:left;color:var(--green-deep);font-weight:600;">am ...sten</th>
+              <th style="padding:8px 10px;text-align:left;color:var(--green-deep);font-weight:600;">der/die/das ...ste</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:8px 10px;">freundlich</td>
+              <td style="padding:8px 10px;">freundlicher</td>
+              <td style="padding:8px 10px;">am freundlichsten</td>
+              <td style="padding:8px 10px;">der freundlichste Mann</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:8px 10px;"><input class="blank-input" id="bk4-1" placeholder="___" style="min-width:90px"></td>
+              <td style="padding:8px 10px;">weiter</td>
+              <td style="padding:8px 10px;">am weitesten</td>
+              <td style="padding:8px 10px;">die weiteste <input class="blank-input" id="bk4-2" placeholder="___" style="min-width:60px"></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:8px 10px;">groß</td>
+              <td style="padding:8px 10px;"><input class="blank-input" id="bk4-3" placeholder="___" style="min-width:90px"></td>
+              <td style="padding:8px 10px;">am <input class="blank-input" id="bk4-4" placeholder="___" style="min-width:90px"></td>
+              <td style="padding:8px 10px;">der <input class="blank-input" id="bk4-5" placeholder="___" style="min-width:90px"> Mann</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:8px 10px;"><input class="blank-input" id="bk4-6" placeholder="___" style="min-width:60px"></td>
+              <td style="padding:8px 10px;">mehr</td>
+              <td style="padding:8px 10px;">am meisten</td>
+              <td style="padding:8px 10px;">die meisten <input class="blank-input" id="bk4-7" placeholder="___" style="min-width:60px"></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:8px 10px;"><input class="blank-input" id="bk4-8" placeholder="___" style="min-width:60px"></td>
+              <td style="padding:8px 10px;">lieber</td>
+              <td style="padding:8px 10px;">am liebsten</td>
+              <td style="padding:8px 10px;">das <input class="blank-input" id="bk4-9" placeholder="___" style="min-width:90px"> Kleid</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:8px 10px;">hoch</td>
+              <td style="padding:8px 10px;"><input class="blank-input" id="bk4-10" placeholder="___" style="min-width:90px"></td>
+              <td style="padding:8px 10px;">am <input class="blank-input" id="bk4-11" placeholder="___" style="min-width:90px"></td>
+              <td style="padding:8px 10px;">das <input class="blank-input" id="bk4-12" placeholder="___" style="min-width:90px"> Haus</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;"><input class="blank-input" id="bk4-13" placeholder="___" style="min-width:60px"></td>
+              <td style="padding:8px 10px;">teurer</td>
+              <td style="padding:8px 10px;">am teuersten</td>
+              <td style="padding:8px 10px;">die <input class="blank-input" id="bk4-14" placeholder="___" style="min-width:110px"> Schuhe</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(4)" id="bk-btn-4">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 5: am oder der/die/das (Kap. 39, Üb. 6) ── -->
+  <div class="ex-block" id="bk-ex5">
+    <div class="ex-header"><span class="ex-num">5</span> Ergänzen Sie am oder der, die, das — und beantworte die Fragen. (Kap. 39, Üb. 6)</div>
+    <div class="ex-body">
+      <div class="ex-task">Яку форму Superlativ використати? Впиши <strong>am</strong> або <strong>der/die/das</strong>.</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="blank-sentence">1. Welches Tier kann <input class="blank-input" id="bk5-1" placeholder="___" style="min-width:50px"> schnellsten laufen?</div>
+        <div class="blank-sentence">2. Wie heißt <input class="blank-input" id="bk5-2" placeholder="___" style="min-width:50px"> höchste Berg der Erde?</div>
+        <div class="blank-sentence">3. Welches Land hat <input class="blank-input" id="bk5-3" placeholder="___" style="min-width:50px"> meisten Einwohner?</div>
+        <div class="blank-sentence">4. Welches Land ist <input class="blank-input" id="bk5-4" placeholder="___" style="min-width:50px"> kleinsten?</div>
+        <div class="blank-sentence">5. Wo regnet es <input class="blank-input" id="bk5-5" placeholder="___" style="min-width:50px"> meisten?</div>
+        <div class="blank-sentence">6. Kennen Sie <input class="blank-input" id="bk5-6" placeholder="___" style="min-width:50px"> kleinste Land Europas?</div>
+        <div class="blank-sentence">7. Welcher Mann ist <input class="blank-input" id="bk5-7" placeholder="___" style="min-width:50px"> meisten bezahlt?</div>
+        <div class="blank-sentence">8. Welcher Fluss ist <input class="blank-input" id="bk5-8" placeholder="___" style="min-width:50px"> längste Fluss der Welt?</div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(5)" id="bk-btn-5">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 7: ДІАЛОГ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-dialog">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div>
+      <div class="section-title">Діалог 🎭 — Über Freundschaft sprechen 💬</div>
+      <div class="section-subtitle">Praktikuj розмову: два друзі порівнюють свої характери</div>
+    </div>
+  </div>
+
+  <div class="role-tip">
+    <span class="role-badge a">😊 Sofia <em style="font-weight:400">(партнер читає)</em></span>
+    <span class="role-badge b">🤔 Tom — <em style="font-weight:400">(ти відповідаєш)</em></span>
+  </div>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-style:italic;">Sofia і Tom (Studenten, alte Freunde) порівнюють свої характери. Партнер читає репліки Sofii, ти відповідаєш за Tom — підказки допоможуть!</p>
+
+  <div class="dialog-card">
+
+    <!-- 1 -->
+    <div class="dialog-line">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Hey Tom! Ich habe gerade ein Quiz gemacht — 'Wer ist extrovertierter — du oder ich?' Und rate mal, wer gewonnen hat!"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Здогадайся і запитай результат (Ich glaube, du bist extrovertierter als ich...)</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Ich glaube, du bist extrovertierter als ich! Du sprichst immer viel mehr als ich. Was hat das Quiz gesagt?"</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Natürlich ich! Aber interessant: Das Quiz sagt, du bist zuverlässiger als ich. Das stimmt, glaube ich."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Погодься або не погодься і поясни чому</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Na ja, vielleicht. Ich halte meine Versprechen lieber als du — aber du bist spontaner und das macht das Leben interessanter!"</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Stimmt! Und wer ist deiner Meinung nach freundlicher — du, ich oder unser Freund Jonas?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Порівняй всіх трьох (Jonas ist am freundlichsten / freundlicher als...)</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Jonas ist definitiv am freundlichsten von uns dreien. Aber du bist freundlicher als ich — ich bin manchmal zu direkt."</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Ha, das stimmt! Aber direkt sein ist doch gut! Was schätzt du am meisten an unserer Freundschaft?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Назви найважливішу рису (Ehrlichkeit / Humor / Vertrauen / am meisten...)</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Am meisten schätze ich, dass wir uns alles sagen können. Du bist ehrlicher als die meisten Menschen, die ich kenne."</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Danke! Das bedeutet mir viel. Aber wir streiten uns auch manchmal — zum Beispiel über Filme. Du magst Actionfilme lieber, ich mag Dramen."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Погодься і порівняй смаки</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Ja, genau! Ich finde Actionfilme spannender als Dramen. Aber wenn du einen Film wählst, ist er meistens besser als ich gedacht hätte."</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Schön! Übrigens — erinnerst du dich, wer in der Schule besser in Mathe war? Du oder ich?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Порівняй успіхи в школі з гумором</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Du warst eindeutig besser als ich! Du hast genauso fleißig gelernt wie unsere Lehrerin unterrichtet hat — also sehr fleißig."</div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Ha! Und jetzt? Ich denke, ich bin fauler geworden. Du arbeitest viel mehr als ich."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Заперечи або погодься, додай порівняння</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Vielleicht, aber du bist kreativer als ich. Kreativität ist genauso wichtig wie Fleiß — manchmal sogar wichtiger!"</div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Das ist der netteste Satz, den du je gesagt hast! Wir sollten öfter solche Gespräche führen."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Погодься і запропонуй щось разом зробити</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Absolut! Am liebsten würde ich das jede Woche machen. Sollen wir das nächste Mal Jonas mitbringen? Er ist am interessantesten von uns!"</div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Sofia:</span>
+      <span class="dialog-text">„Perfekte Idee! Er diskutiert genauso gern wie wir — vielleicht sogar noch lieber!"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Tom:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Закінчи розмову радісно</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Super! Dann schreibe ich ihm gleich. Das wird das beste Gespräch aller Zeiten!"</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 8: ПІДСУМОК -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card summary-card" id="s-summary">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <div class="section-title">Підсумок — Що ти сьогодні вивчив(ла)? ✅</div>
+  </div>
+  <div class="summary-grid">
+    <div class="summary-stat">
+      <div class="summary-stat-num">10</div>
+      <div class="summary-stat-label">Нових слів</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">8</div>
+      <div class="summary-stat-label">Запитань</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">5</div>
+      <div class="summary-stat-label">Вправи з книги</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">9</div>
+      <div class="summary-stat-label">Обмін в діалозі</div>
+    </div>
+  </div>
+
+  <p style="color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;margin-bottom:.5rem;">Komparativ &amp; Superlativ — на пам'ять:</p>
+  <div class="summary-verbs">
+    <span class="summary-verb-chip">Komparativ: Adj + -er</span>
+    <span class="summary-verb-chip">Superlativ: am ...sten</span>
+    <span class="summary-verb-chip">als → нерівність</span>
+    <span class="summary-verb-chip">genauso ... wie → рівність</span>
+    <span class="summary-verb-chip">gut → besser → am besten</span>
+    <span class="summary-verb-chip">viel → mehr → am meisten</span>
+    <span class="summary-verb-chip">gern → lieber → am liebsten</span>
+  </div>
+
+  <div class="summary-msg">
+    🎯 <strong>Граматична підказка на пам'ять:</strong><br>
+    1. <strong>Komparativ</strong>: Adj + <strong>-er</strong> + <strong>als</strong>: <em>Lisa ist sportlicher <strong>als</strong> Mia.</em><br>
+    2. <strong>Рівність</strong>: <strong>genauso</strong> + Adj + <strong>wie</strong>: <em>Er läuft genauso schnell <strong>wie</strong> ich.</em><br>
+    3. <strong>Superlativ без Nomen</strong>: <strong>am</strong> + Adj + <strong>-sten</strong>: <em>Sie singt <strong>am schönsten</strong>.</em><br>
+    4. <strong>Superlativ mit Nomen</strong>: <strong>der/die/das</strong> + Adj + <strong>-ste</strong>: <em>die <strong>beste</strong> Freundin.</em><br>
+    5. Нерегулярні: <em>gut → besser → am besten · viel → mehr → am meisten · gern → lieber → am liebsten</em><br><br>
+    🎯 <strong>Тепер ти можеш порівнювати людей, речі та ситуації!</strong>
+  </div>
+</section>
+
+<footer class="footer-tag">DeutschWeg · Рівень A2–B1 · Тема 8: Freunde &amp; Beziehungen · Граматика: Komparativ &amp; Superlativ</footer>
+
+</div><!-- /page -->
+
+<script>
+// ─── ANSWER TOGGLE ───────────────────────────────
+function toggleAnswer(el) {
+  var ans = el.nextElementSibling;
+  var tog = el.querySelector('.qa-toggle');
+  if (ans.classList.contains('open')) {
+    ans.classList.remove('open');
+    tog.textContent = '▶ Відповідь';
+  } else {
+    ans.classList.add('open');
+    tog.textContent = '▼ Закрити';
+  }
+}
+
+function toggleFehler(btn) {
+  var sol = btn.nextElementSibling;
+  if (sol.classList.contains('open')) {
+    sol.classList.remove('open');
+    btn.textContent = '▶ Зразок';
+  } else {
+    sol.classList.add('open');
+    btn.textContent = '▼ Закрити';
+  }
+}
+
+// ─── BOOK EXERCISES (Kap. 38–39) ───────────────────
+var BK_SHOWN = {};
+var BK_ANSWERS = {
+  1: {
+    'bk1-1':'kleiner',
+    'bk1-2':'langsamer',
+    'bk1-3':'interessanter',
+    'bk1-4':'schlechter',
+    'bk1-5':'älter',
+    'bk1-6':'gesünder',
+    'bk1-7':'größer',
+    'bk1-8':'höher',
+    'bk1-9':'besser',
+    'bk1-10':'mehr',
+    'bk1-11':'lieber',
+    'bk1-12':'teurer'
+  },
+  2: {
+    'bk2-1':'kleiner',
+    'bk2-2':'mehr',
+    'bk2-3':'teurer',
+    'bk2-4':'höher',
+    'bk2-5':'mehr',
+    'bk2-6':'leckerer'
+  },
+  4: {
+    'bk4-1':'weit',
+    'bk4-2':'Frau',
+    'bk4-3':'größer',
+    'bk4-4':'größten',
+    'bk4-5':'größte',
+    'bk4-6':'viel',
+    'bk4-7':'Leute',
+    'bk4-8':'gern',
+    'bk4-9':'liebste',
+    'bk4-10':'höher',
+    'bk4-11':'höchsten',
+    'bk4-12':'höchste',
+    'bk4-13':'teuer',
+    'bk4-14':'teuersten'
+  },
+  5: {
+    'bk5-1':'am',
+    'bk5-2':'der',
+    'bk5-3':'die',
+    'bk5-4':'am',
+    'bk5-5':'am',
+    'bk5-6':'das',
+    'bk5-7':'am',
+    'bk5-8':'der'
+  }
+};
+
+function showBkAnswers(n) {
+  var answers = BK_ANSWERS[n];
+  if (!answers) return;
+  var btn = document.getElementById('bk-btn-' + n);
+  if (BK_SHOWN[n]) {
+    // hide answers
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = '';
+      inp.style.background = '';
+      inp.style.color = '';
+      inp.style.fontWeight = '';
+      inp.style.borderColor = '';
+    });
+    BK_SHOWN[n] = false;
+    if (btn) btn.textContent = 'Відповіді ▼';
+  } else {
+    // show answers
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = answers[id];
+      inp.style.background = '#d4edda';
+      inp.style.color = '#155724';
+      inp.style.fontWeight = '700';
+      inp.style.borderColor = '#28a745';
+    });
+    BK_SHOWN[n] = true;
+    if (btn) btn.textContent = 'Сховати відповіді ▲';
+  }
+}
+
+// ── SCROLL REVEAL ──
+(function(){
+  var els = document.querySelectorAll('.section-card, .mosaic-nav');
+  els.forEach(function(el){
+    var rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight + 60) el.classList.add('revealed');
+  });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('revealed');observer.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(el){if(!el.classList.contains('revealed'))observer.observe(el);});
+})();
+
+// ── FLOATING EMOJI ──
+(function(){
+  var emojis = ['💬','🤝','❤️','👫','🌟','😊','🎉','💪','🙌','👭','👬','💖','✨','🫂','😄'];
+  var maxEmoji = 12;
+  function spawnEmoji(){
+    if(document.querySelectorAll('.emoji-float').length >= maxEmoji) return;
+    var el = document.createElement('div');
+    el.className = 'emoji-float';
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = (Math.random()*90+5)+'%';
+    el.style.bottom = '-40px';
+    el.style.fontSize = (18+Math.random()*16)+'px';
+    el.style.animationDuration = (12+Math.random()*18)+'s';
+    el.style.animationDelay = (Math.random()*2)+'s';
+    document.body.appendChild(el);
+    setTimeout(function(){el.remove();},(14+20)*1000);
+  }
+  for(var i=0;i<5;i++) setTimeout(spawnEmoji, i*800);
+  setInterval(spawnEmoji, 3000);
+})();
+
+// ── MOSAIC NAV + STICKY BAR ──
+(function(){
+  var tiles = document.querySelectorAll('.mosaic-tile');
+  var pips = document.querySelectorAll('.sticky-pip');
+  var stickyBar = document.getElementById('sticky-bar');
+  var mosaicNav = document.getElementById('mosaic-nav');
+  var stickyCurrent = document.getElementById('sticky-current');
+  var labels = {};
+  tiles.forEach(function(t){ var h=t.getAttribute('href'); if(h) labels[h]=t.querySelector('.mosaic-label').textContent; });
+
+  var sections = [];
+  tiles.forEach(function(t){
+    var id = t.getAttribute('href');
+    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el,id:id});}
+  });
+
+  function updateActive(){
+    var scrollY=window.scrollY+120;
+    var active=null;
+    for(var i=sections.length-1;i>=0;i--){
+      if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
+    }
+    // mosaic tiles
+    tiles.forEach(function(t){t.classList.remove('active');});
+    if(active)active.tile.classList.add('active');
+    // sticky pips
+    pips.forEach(function(p){p.classList.remove('active');});
+    if(active){
+      pips.forEach(function(p){if(p.getAttribute('href')===active.id)p.classList.add('active');});
+      if(stickyCurrent) stickyCurrent.textContent=labels[active.id]||'';
+    }
+    // show/hide sticky bar
+    if(mosaicNav && stickyBar){
+      var mosaicBottom = mosaicNav.getBoundingClientRect().bottom;
+      stickyBar.classList.toggle('visible', mosaicBottom < 0);
+    }
+  }
+
+  window.addEventListener('scroll',updateActive,{passive:true});
+  updateActive();
+
+  // smooth scroll for mosaic tiles
+  tiles.forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(t.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  // smooth scroll for sticky pips
+  pips.forEach(function(p){
+    p.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(p.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
