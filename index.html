@@ -200,6 +200,26 @@
     .dialog-link-arrow { color: var(--rose); font-size: 16px; margin-left: 4px; transition: transform 0.2s; }
     .dialog-link:hover .dialog-link-arrow { transform: translateX(3px); }
 
+    /* ── QUIZ HUB ── */
+    .quiz-hub { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 1.8rem 2rem; margin-bottom: 1.4rem; }
+    .quiz-hub-header { display: flex; align-items: center; gap: 12px; margin-bottom: 0.6rem; }
+    .quiz-hub-icon { font-size: 28px; }
+    .quiz-hub-title { font-size: 18px; font-weight: 600; color: var(--text-dark); }
+    .quiz-hub-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1.2rem; }
+    .quiz-cta-link {
+      display: flex; align-items: center; gap: 14px; padding: 18px 20px;
+      background: var(--amber-pale); border: 1.5px solid var(--amber-border); border-radius: 14px;
+      text-decoration: none; transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+    }
+    .quiz-cta-link:hover { border-color: var(--amber-mid); box-shadow: 0 4px 16px rgba(186,117,23,0.12); transform: translateX(4px); }
+    .quiz-cta-icon { font-size: 28px; flex-shrink: 0; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 12px; }
+    .quiz-cta-info { flex: 1; }
+    .quiz-cta-name { font-size: 16px; font-weight: 600; color: var(--text-dark); display: block; }
+    .quiz-cta-desc { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+    .quiz-cta-badge { font-size: 11px; font-weight: 600; color: var(--amber-mid); background: #fff; border: 1px solid var(--amber-border); padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+    .quiz-cta-arrow { color: var(--amber-mid); font-size: 18px; margin-left: 4px; transition: transform 0.2s; }
+    .quiz-cta-link:hover .quiz-cta-arrow { transform: translateX(3px); }
+
     /* ── HOW IT WORKS ── */
     .steps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .steps-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: var(--text-mid); padding: 14px 16px; background: var(--bg-section); border: 1px solid var(--border); border-radius: 12px; line-height: 1.55; transition: transform 0.15s, box-shadow 0.15s; }
@@ -269,7 +289,7 @@
               <li><a href="lessons/freunde.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#128107;</span><span class="nav-topic-name">Freunde &amp; Beziehungen</span><span class="nav-topic-check">&#10003;</span></a></li>
               <li><a href="lessons/familie.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#128106;</span><span class="nav-topic-name">Die Familie</span><span class="nav-topic-check">&#10003;</span></a></li>
               <li><a href="lessons/gesundheit.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#127973;</span><span class="nav-topic-name">Gesundheit</span><span class="nav-topic-check">&#10003;</span></a></li>
-              <li><span class="nav-topic-link upcoming" role="menuitem"><span class="nav-topic-emoji">&#128250;</span><span class="nav-topic-name">Medien &amp; Nachrichten</span><span class="nav-topic-badge">bald</span></span></li>
+              <li><a href="lessons/medien.html" class="nav-topic-link done" role="menuitem"><span class="nav-topic-emoji">&#128250;</span><span class="nav-topic-name">Medien &amp; Nachrichten</span><span class="nav-topic-check">&#10003;</span></a></li>
             </ul>
           </div>
         </div>
@@ -288,7 +308,7 @@
         <a href="lessons/freunde.html" class="nav-mobile-link">&#128107; Freunde &amp; Beziehungen <span>&#10003;</span></a>
         <a href="lessons/familie.html" class="nav-mobile-link">&#128106; Die Familie <span>&#10003;</span></a>
         <a href="lessons/gesundheit.html" class="nav-mobile-link">&#127973; Gesundheit <span>&#10003;</span></a>
-        <span class="nav-mobile-link disabled">&#128250; Medien &amp; Nachrichten</span>
+        <a href="lessons/medien.html" class="nav-mobile-link">&#128250; Medien &amp; Nachrichten &#10003;</a>
       </div>
     </nav>
 
@@ -517,6 +537,15 @@
             <span class="grammar-link-badge">A1&ndash;A2</span>
             <span class="grammar-link-arrow">&rarr;</span>
           </a>
+          <a href="lessons/medien.html#s-grammar" class="grammar-link">
+            <span class="grammar-link-icon">&#128250;</span>
+            <div class="grammar-link-info">
+              <span class="grammar-link-name">Passiv (Pr&auml;sens, Pr&auml;teritum, Perfekt &amp; mit Modalverb)</span>
+              <span class="grammar-link-desc">wird gemacht · wurde gemacht · ist gemacht worden &mdash; Lektion: Medien &amp; Nachrichten</span>
+            </div>
+            <span class="grammar-link-badge">B1</span>
+            <span class="grammar-link-arrow">&rarr;</span>
+          </a>
         </li>
       </ul>
     </div>
@@ -633,8 +662,39 @@
             <span class="dialog-link-badge">A1&ndash;A2</span>
             <span class="dialog-link-arrow">&rarr;</span>
           </a>
+          <a href="lessons/medien.html#s-dialog" class="dialog-link">
+            <span class="dialog-link-icon">&#128250;</span>
+            <div class="dialog-link-info">
+              <span class="dialog-link-name">&Uuml;ber Medien diskutieren</span>
+              <span class="dialog-link-desc">Mia und Jonas diskutieren &uuml;ber Medienkonsum &mdash; Lektion: Medien &amp; Nachrichten</span>
+              <div class="dialog-link-roles">
+                <span class="dialog-link-role">&#128100; Mia</span>
+                <span class="dialog-link-role">&#128100; Jonas</span>
+              </div>
+            </div>
+            <span class="dialog-link-badge">B1</span>
+            <span class="dialog-link-arrow">&rarr;</span>
+          </a>
         </li>
       </ul>
+    </div>
+
+    <!-- QUIZ HUB -->
+    <div class="quiz-hub fade-in">
+      <div class="quiz-hub-header">
+        <span class="quiz-hub-icon">&#127981;</span>
+        <span class="quiz-hub-title">Sprechübung</span>
+      </div>
+      <p class="quiz-hub-sub">Übe, dich auf Deutsch vorzustellen — 5 zufällige Fragen pro Runde</p>
+      <a href="quiz.html" class="quiz-cta-link">
+        <span class="quiz-cta-icon">&#127981;</span>
+        <div class="quiz-cta-info">
+          <span class="quiz-cta-name">Stell dich vor!</span>
+          <span class="quiz-cta-desc">40 Fragen über Alltag, Hobbys & Kennenlernen — antworte frei auf Deutsch</span>
+        </div>
+        <span class="quiz-cta-badge">A1–B1</span>
+        <span class="quiz-cta-arrow">&rarr;</span>
+      </a>
     </div>
 
     <!-- HOW IT WORKS -->
@@ -667,7 +727,7 @@
         <a href="lessons/freunde.html" class="topic-card done"><span class="topic-emoji">&#128107;</span><div class="topic-info"><span class="topic-name">Freunde &amp; Beziehungen</span><span class="topic-level">A2&ndash;B1 &middot; Komparativ &amp; Superlativ</span></div><span class="topic-badge done-badge">&#10003;</span></a>
         <a href="lessons/familie.html" class="topic-card done"><span class="topic-emoji">&#128106;</span><div class="topic-info"><span class="topic-name">Die Familie</span><span class="topic-level">A1&ndash;A2 &middot; Possessivartikel</span></div><span class="topic-badge done-badge">&#10003;</span></a>
         <a href="lessons/gesundheit.html" class="topic-card done"><span class="topic-emoji">&#127973;</span><div class="topic-info"><span class="topic-name">Gesundheit</span><span class="topic-level">A2&ndash;B1 &middot; Wechselpr&auml;positionen</span></div><span class="topic-badge done-badge">&#10003;</span></a>
-        <a href="#" class="topic-card"><span class="topic-emoji">&#128250;</span><div class="topic-info"><span class="topic-name">Medien &amp; Nachrichten</span><span class="topic-level">B1 &middot; Passiv</span></div><span class="topic-badge todo-badge">bald</span></a>
+        <a href="lessons/medien.html" class="topic-card done"><span class="topic-emoji">&#128250;</span><div class="topic-info"><span class="topic-name">Medien &amp; Nachrichten</span><span class="topic-level">B1 &middot; Passiv</span></div><span class="topic-badge done-badge">&#10003;</span></a>
       </div>
     </div>
 

@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Deutsch B1 — Medien &amp; Nachrichten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-deep:#0a5c42;--green-mid:#1D9E75;--green-light:#5DCAA5;--green-pale:#E1F5EE;--green-border:#9FE1CB;
+  --blue-mid:#378ADD;--blue-pale:#E6F1FB;
+  --amber-mid:#BA7517;--amber-pale:#FAEEDA;
+  --purple-mid:#7C4DBC;--purple-pale:#F0E8FF;
+  --red-mid:#C0392B;--red-pale:#FDECEA;
+  --text-dark:#1a1a18;--text-mid:#4a4a46;--text-muted:#888780;
+  --bg-page:#f5f3ed;--bg-card:#ffffff;--bg-section:#fafaf7;
+  --border:rgba(0,0,0,0.09);
+  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif
+}
+body{font-family:var(--sans);background:var(--bg-page);color:var(--text-dark);min-height:100vh;padding:2rem 1rem 4rem;position:relative}
+.page{max-width:780px;margin:0 auto;position:relative}
+
+/* ── AURORA ANIMATED BACKGROUND ── */
+.aurora{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-2;overflow:hidden}
+.aurora-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:auroraMove 12s ease-in-out infinite alternate}
+.aurora-blob:nth-child(1){width:500px;height:500px;background:linear-gradient(135deg,#5DCAA5,#1D9E75);top:-10%;left:-5%;animation-duration:14s}
+.aurora-blob:nth-child(2){width:400px;height:400px;background:linear-gradient(135deg,#378ADD,#7C4DBC);top:40%;right:-8%;animation-delay:-4s;animation-duration:16s}
+.aurora-blob:nth-child(3){width:350px;height:350px;background:linear-gradient(135deg,#E91E8C,#BA7517);bottom:-5%;left:20%;animation-delay:-8s;animation-duration:18s}
+@keyframes auroraMove{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(60px,-40px) rotate(15deg) scale(1.1)}66%{transform:translate(-40px,50px) rotate(-10deg) scale(.9)}100%{transform:translate(30px,20px) rotate(5deg) scale(1.05)}}
+
+/* ── FLOATING EMOJI ── */
+.emoji-float{position:fixed;pointer-events:none;z-index:-1;font-size:24px;opacity:0;animation:emojiRise linear infinite}
+@keyframes emojiRise{0%{opacity:0;transform:translateY(0) rotate(0deg) scale(.5)}10%{opacity:.15}50%{opacity:.12}90%{opacity:.05}100%{opacity:0;transform:translateY(-100vh) rotate(360deg) scale(1)}}
+
+/* ── SECTION CARD ENHANCEMENTS ── */
+.section-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;border:1.5px solid var(--border)}
+.section-card:hover{box-shadow:0 12px 40px rgba(10,92,66,.1);transform:translateY(-3px);border-color:var(--green-border)}
+.section-card .section-num{transition:transform .3s ease,box-shadow .3s ease}
+.section-card:hover .section-num{transform:scale(1.15) rotate(-5deg);box-shadow:0 4px 12px rgba(10,92,66,.25)}
+
+/* ── GLOW EFFECT ON SUMMARY ── */
+.summary-card{animation:summaryPulse 4s ease-in-out infinite;border:none}
+@keyframes summaryPulse{0%,100%{box-shadow:0 4px 20px rgba(10,92,66,.15)}50%{box-shadow:0 8px 40px rgba(29,158,117,.3)}}
+
+/* ── SCROLL REVEAL ── */
+.section-card,.mosaic-nav{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.section-card.revealed,.mosaic-nav.revealed{opacity:1;transform:translateY(0)}
+.section-card:nth-child(even).revealed{transition-delay:.1s}
+
+/* ── SECTION DIVIDERS ── */
+.section-card+.section-card::before{content:'';display:block;width:40px;height:3px;background:linear-gradient(90deg,var(--green-light),var(--green-mid));border-radius:3px;margin:-0.7rem auto 0;opacity:0;transition:opacity .5s}
+.section-card.revealed+.section-card.revealed::before{opacity:.5}
+
+/* Hero */
+.hero{position:relative;background:var(--green-deep);border-radius:20px;padding:2.5rem 2.5rem 2rem;margin-bottom:2rem;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(93,202,165,0.12)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:60px;width:180px;height:180px;border-radius:50%;background:rgba(93,202,165,0.07)}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green-light);margin-bottom:.6rem}
+.hero-title{font-family:var(--serif);font-size:clamp(28px,5vw,40px);font-weight:600;color:#fff;line-height:1.15;margin-bottom:.8rem;position:relative;z-index:1}
+.hero-title em{font-style:italic;color:var(--green-light)}
+.hero-subtitle{font-size:14px;color:rgba(255,255,255,0.7);position:relative;z-index:1}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;position:relative;z-index:1}
+.hero-tag{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:12px;color:rgba(255,255,255,0.85);font-weight:500}
+.hero-tag.accent{background:rgba(93,202,165,0.25);border-color:var(--green-light);color:var(--green-light)}
+
+/* Section cards */
+.section-card{background:var(--bg-card);border-radius:16px;border:1px solid var(--border);padding:1.8rem;margin-bottom:1.4rem;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
+.section-num{width:32px;height:32px;border-radius:50%;background:var(--green-pale);color:var(--green-deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-title{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--text-dark)}
+.section-subtitle{font-size:12px;color:var(--text-muted);margin-top:2px}
+
+/* Vocab table */
+.vocab-table{width:100%;border-collapse:collapse;font-size:14px}
+.vocab-table thead tr{background:var(--green-pale);border-radius:8px}
+.vocab-table th{padding:8px 12px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--green-deep)}
+.vocab-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.vocab-table tbody tr:last-child td{border-bottom:none}
+.vocab-table tbody tr:hover{background:var(--bg-section)}
+.vocab-art{color:var(--text-muted);font-size:12px;font-style:italic}
+.vocab-word{font-weight:600;color:var(--text-dark)}
+.vocab-ru{color:var(--text-mid)}
+.vocab-ex{color:var(--text-muted);font-style:italic;font-size:13px}
+.vocab-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;margin-left:4px}
+.vocab-badge.verb{background:var(--blue-pale);color:var(--blue-mid)}
+.vocab-badge.noun{background:var(--green-pale);color:var(--green-deep)}
+.vocab-badge.adj{background:var(--purple-pale);color:var(--purple-mid)}
+
+/* Questions */
+.frage-list{display:flex;flex-direction:column;gap:10px}
+.frage-item{display:flex;gap:12px;padding:12px 14px;background:var(--bg-section);border-radius:10px;border:1px solid var(--border);font-size:14px;line-height:1.6;color:var(--text-mid)}
+.frage-num{font-weight:700;color:var(--green-deep);flex-shrink:0;min-width:22px}
+
+/* Reading text */
+.text-block{background:var(--bg-section);border-radius:12px;padding:1.4rem;font-size:15px;line-height:1.85;color:var(--text-dark);border-left:4px solid var(--green-light)}
+.text-block p{margin-bottom:.9rem}
+.text-block p:last-child{margin-bottom:0}
+.text-block .highlight{background:rgba(29,158,117,0.12);border-radius:3px;padding:1px 3px}
+
+/* Answers (collapsible) */
+.qa-list{display:flex;flex-direction:column;gap:10px}
+.qa-item{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.qa-question{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;font-size:14px;line-height:1.5;color:var(--text-mid);background:var(--bg-section);cursor:pointer;user-select:none}
+.qa-question:hover{background:#f0ede5}
+.qa-qnum{font-weight:700;color:var(--green-deep);flex-shrink:0;min-width:22px}
+.qa-qtext{flex:1}
+.qa-toggle{font-size:12px;color:var(--text-muted);flex-shrink:0;margin-left:auto;padding-top:1px;transition:transform .2s}
+.qa-answer{display:none;padding:10px 14px 12px 48px;font-size:13px;color:var(--text-dark);background:#fff;border-top:1px solid var(--border);line-height:1.6}
+.qa-answer.open{display:block}
+.qa-answer strong{color:var(--green-deep)}
+
+/* Grammar */
+.gram-box{background:var(--blue-pale);border:1px solid #c4daf5;border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.2rem}
+.gram-title{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--blue-mid);margin-bottom:.7rem}
+.gram-rule{font-size:14px;line-height:1.7;color:var(--text-mid)}
+.gram-rule code{font-family:monospace;background:rgba(55,138,221,0.15);border-radius:4px;padding:2px 6px;color:#1a5fa8;font-size:13px}
+.gram-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:.8rem}
+.gram-table th{background:#ddeeff;padding:6px 10px;text-align:left;font-weight:600;color:var(--blue-mid)}
+.gram-table td{padding:6px 10px;border-bottom:1px solid #d0e6f8;vertical-align:middle}
+.gram-table tr:last-child td{border-bottom:none}
+.gram-table .key{font-weight:700;color:var(--green-deep)}
+
+/* Exercises */
+.ex-block{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px}
+.ex-header{background:var(--green-pale);padding:10px 14px;font-size:13px;font-weight:600;color:var(--green-deep);display:flex;align-items:center;gap:8px}
+.ex-header .ex-num{width:22px;height:22px;border-radius:50%;background:var(--green-deep);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ex-body{padding:12px 14px;background:#fff}
+.ex-task{font-size:14px;color:var(--text-mid);margin-bottom:10px;line-height:1.5;font-style:italic}
+.ex-items{display:flex;flex-direction:column;gap:8px}
+.ex-btn{margin-top:10px;padding:7px 16px;background:var(--green-mid);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .15s}
+.ex-btn:hover{background:var(--green-deep)}
+.ex-btn.secondary{background:transparent;color:var(--green-mid);border:1.5px solid var(--green-border)}
+.ex-btn.secondary:hover{background:var(--green-pale)}
+.ex-feedback{display:none;margin-top:10px;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600}
+.ex-feedback.ok{background:#d4edda;color:#155724;border:1px solid #28a745}
+.ex-feedback.fail{background:var(--red-pale);color:var(--red-mid);border:1px solid #e57373}
+
+.blank-sentence{font-size:15px;line-height:2;color:var(--text-dark);margin-bottom:10px}
+.blank-input{display:inline-block;border:none;border-bottom:2px solid var(--green-border);background:transparent;font-size:15px;font-family:var(--sans);color:var(--green-deep);padding:0 4px;min-width:55px;outline:none;text-align:center}
+.blank-input:focus{border-color:var(--green-mid)}
+
+/* Dialog */
+.dialog-card{background:var(--bg-section);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:.8rem}
+.dialog-line{display:flex;gap:12px;font-size:14px;line-height:1.7;margin-bottom:8px;align-items:flex-start}
+.dialog-line:last-child{margin-bottom:0}
+.dialog-speaker{font-weight:700;min-width:28px;flex-shrink:0;margin-top:2px}
+.dialog-speaker.a{color:var(--green-deep)}
+.dialog-speaker.b{color:var(--blue-mid)}
+.dialog-text{color:var(--text-mid)}
+.role-tip{display:flex;gap:20px;margin-bottom:1rem;font-size:13px;flex-wrap:wrap}
+.role-badge{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;font-weight:600}
+.role-badge.a{background:var(--green-pale);color:var(--green-deep)}
+.role-badge.b{background:var(--blue-pale);color:var(--blue-mid)}
+
+/* Fehler / collapsible sample */
+.fehler-toggle{font-size:12px;color:var(--green-mid);cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0;text-decoration:underline}
+.fehler-solution{display:none;margin-top:8px;font-size:13px;background:var(--green-pale);border-radius:6px;padding:8px 10px;color:var(--green-deep);line-height:1.5}
+.fehler-solution.open{display:block}
+
+/* Summary */
+.summary-card{background:linear-gradient(135deg,var(--green-deep) 0%,#0d7a5a 100%);border:none;color:#fff}
+.summary-card .section-title{color:#fff}
+.summary-card .section-num{background:rgba(255,255,255,0.2);color:#fff}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.2rem}
+.summary-stat{background:rgba(255,255,255,0.1);border-radius:12px;padding:12px 14px;text-align:center;border:1px solid rgba(255,255,255,0.15)}
+.summary-stat-num{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--green-light);line-height:1}
+.summary-stat-label{font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.summary-verbs{display:flex;flex-wrap:wrap;gap:6px;margin-top:.8rem}
+.summary-verb-chip{background:rgba(255,255,255,0.12);border:1px solid rgba(93,202,165,0.4);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--green-light);font-weight:500}
+.summary-msg{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;margin-top:1rem;background:rgba(255,255,255,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid var(--green-light)}
+
+/* Nav */
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);text-decoration:none;margin-bottom:1.2rem}
+.nav-back:hover{color:var(--green-mid)}
+.nav-back::before{content:'←';font-size:14px}
+
+.footer-tag{text-align:center;font-size:12px;color:var(--text-muted);margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+
+/* ── SECTION MOSAIC NAV ── */
+.mosaic-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;padding:0}
+.mosaic-tile{flex:1 1 calc(33.33% - 8px);min-width:100px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;text-decoration:none;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+.mosaic-tile:hover{border-color:var(--green-mid);box-shadow:0 4px 16px rgba(10,92,66,.1);transform:translateY(-2px)}
+.mosaic-tile.active{border-color:var(--green-mid);background:var(--green-pale)}
+.mosaic-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.mosaic-icon.vocab{background:#E1F5EE;color:#0a5c42}
+.mosaic-icon.speak{background:#E6F1FB;color:#378ADD}
+.mosaic-icon.read{background:#FFF3E0;color:#E65100}
+.mosaic-icon.question{background:#FCE4EC;color:#C2185B}
+.mosaic-icon.grammar{background:#F0E8FF;color:#7C4DBC}
+.mosaic-icon.dialog{background:#E0F7FA;color:#00838F}
+.mosaic-icon.summary{background:#E8F5E9;color:#2E7D32}
+.mosaic-info{min-width:0}
+.mosaic-step{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);line-height:1}
+.mosaic-label{font-size:13px;font-weight:600;color:var(--text-dark);line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mosaic-tile:hover .mosaic-label{color:var(--green-deep)}
+
+/* ── STICKY PROGRESS BAR ── */
+.sticky-bar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:6px;justify-content:center;transform:translateY(-100%);transition:transform .3s ease;pointer-events:none}
+.sticky-bar.visible{transform:translateY(0);pointer-events:auto}
+.sticky-pip{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s;border:2px solid transparent;background:var(--bg-section);position:relative;flex-shrink:0;text-decoration:none}
+.sticky-pip:hover{transform:scale(1.15);border-color:var(--green-border)}
+.sticky-pip.active{border-color:var(--green-mid);background:var(--green-pale);transform:scale(1.1);box-shadow:0 2px 8px rgba(29,158,117,.25)}
+.sticky-pip .pip-tooltip{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--green-deep);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+.sticky-pip:hover .pip-tooltip{opacity:1}
+.sticky-pip .pip-tooltip::before{content:'';position:absolute;top:-4px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid var(--green-deep)}
+.sticky-divider{width:1px;height:20px;background:var(--border);flex-shrink:0;margin:0 2px}
+.sticky-current{font-size:12px;font-weight:600;color:var(--green-deep);margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+
+/* Matching exercise */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:13px;margin-bottom:10px}
+.match-row{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg-section);border-radius:8px;border:1px solid var(--border)}
+.match-q{flex:0 0 auto;color:var(--text-dark);font-weight:500;min-width:0}
+.match-options{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.match-options label{display:flex;align-items:center;gap:3px;font-size:12px;color:var(--text-mid);cursor:pointer;white-space:nowrap}
+.match-options input[type=radio]{accent-color:var(--green-mid)}
+
+/* Responsive */
+@media(max-width:560px){
+  body{padding:1rem .6rem 3rem}
+  .section-card{padding:1.2rem}
+  .vocab-table .vocab-ex{display:none}
+  .hero{padding:1.8rem 1.4rem 1.5rem}
+  .role-tip{flex-wrap:wrap}
+  .mosaic-tile{flex:1 1 calc(50% - 8px);min-width:80px;padding:10px 12px}
+  .mosaic-icon{width:30px;height:30px;font-size:15px}
+  .mosaic-label{font-size:12px}
+  .sticky-pip{width:30px;height:30px;font-size:13px;border-radius:8px}
+  .sticky-current{display:none}
+  .sticky-divider{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ── AURORA BACKGROUND ── -->
+<div class="aurora">
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+  <div class="aurora-blob"></div>
+</div>
+
+<!-- ── STICKY PROGRESS BAR ── -->
+<div class="sticky-bar" id="sticky-bar">
+  <a class="sticky-pip" href="#s-vocab" data-section="s-vocab">🔤<span class="pip-tooltip">Нові слова</span></a>
+  <a class="sticky-pip" href="#s-speak" data-section="s-speak">💬<span class="pip-tooltip">Розмова</span></a>
+  <a class="sticky-pip" href="#s-read" data-section="s-read">📖<span class="pip-tooltip">Читання</span></a>
+  <a class="sticky-pip" href="#s-question" data-section="s-question">❓<span class="pip-tooltip">Запитання</span></a>
+  <a class="sticky-pip" href="#s-grammar" data-section="s-grammar">📐<span class="pip-tooltip">Граматика</span></a>
+  <a class="sticky-pip" href="#s-book" data-section="s-book">📗<span class="pip-tooltip">З підручника</span></a>
+  <a class="sticky-pip" href="#s-dialog" data-section="s-dialog">🎭<span class="pip-tooltip">Діалог</span></a>
+  <a class="sticky-pip" href="#s-summary" data-section="s-summary">✅<span class="pip-tooltip">Підсумок</span></a>
+  <div class="sticky-divider"></div>
+  <span class="sticky-current" id="sticky-current"></span>
+</div>
+
+<div class="page">
+
+<a href="../index.html" class="nav-back">DeutschWeg — Усі теми</a>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-label">Thema 10 · B1</div>
+  <h1 class="hero-title">📺 Medien &amp; <em>Nachrichten</em></h1>
+  <p class="hero-subtitle">Нові слова · Lesetext · Konversation · Passiv (Präsens, Präteritum, Perfekt) · Вправи з підручника</p>
+  <div class="hero-tags">
+    <span class="hero-tag">B1-Niveau</span>
+    <span class="hero-tag accent">Grammatik: Passiv</span>
+    <span class="hero-tag">Вправи з підручника (Kap. 57–58)</span>
+    <span class="hero-tag">10 neue Wörter</span>
+  </div>
+</header>
+
+<!-- ── SECTION MOSAIC ── -->
+<nav class="mosaic-nav" id="mosaic-nav">
+  <a class="mosaic-tile" href="#s-vocab">
+    <div class="mosaic-icon vocab">🔤</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 1</div><div class="mosaic-label">Нові слова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-speak">
+    <div class="mosaic-icon speak">💬</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 2</div><div class="mosaic-label">Розмова</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-read">
+    <div class="mosaic-icon read">📖</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 3</div><div class="mosaic-label">Читання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-question">
+    <div class="mosaic-icon question">❓</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 4</div><div class="mosaic-label">Запитання</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-grammar">
+    <div class="mosaic-icon grammar">📐</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 5</div><div class="mosaic-label">Граматика</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-book">
+    <div class="mosaic-icon grammar">📗</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 6</div><div class="mosaic-label">З підручника</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-dialog">
+    <div class="mosaic-icon dialog">🎭</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 7</div><div class="mosaic-label">Діалог</div></div>
+  </a>
+  <a class="mosaic-tile" href="#s-summary">
+    <div class="mosaic-icon summary">✅</div>
+    <div class="mosaic-info"><div class="mosaic-step">Крок 8</div><div class="mosaic-label">Підсумок</div></div>
+  </a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 1: НОВІ СЛОВА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-vocab">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div>
+      <div class="section-title">Нові слова 🔤</div>
+      <div class="section-subtitle">10 важливих слів на тему медіа — спочатку вивчи, потім читай!</div>
+    </div>
+  </div>
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Рід</th><th>Слово</th><th>Переклад</th><th>Приклад</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Nachricht, -en</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">новина</td>
+        <td class="vocab-ex">Die wichtigsten Nachrichten des Tages werden jeden Abend im Fernsehen gezeigt.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">das</td>
+        <td><span class="vocab-word">Medium / die Medien (Pl.)</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">ЗМІ / медіа</td>
+        <td class="vocab-ex">Durch soziale Medien werden Informationen sehr schnell verbreitet.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">berichten</span> <span style="font-size:12px;color:var(--text-muted);">(über +Akk)</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">повідомляти</td>
+        <td class="vocab-ex">In der Zeitung wird über den neuen Bürgermeister berichtet.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Meinung, -en</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">думка</td>
+        <td class="vocab-ex">In einer Demokratie darf jeder seine Meinung frei äußern.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">veröffentlichen</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">публікувати</td>
+        <td class="vocab-ex">Der Artikel wurde gestern Abend im Internet veröffentlicht.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Schlagzeile, -n</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">заголовок</td>
+        <td class="vocab-ex">Die Schlagzeile wurde von Millionen Menschen gelesen und geteilt.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">das</td>
+        <td><span class="vocab-word">Interview, -s</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">інтерв'ю</td>
+        <td class="vocab-ex">Der Politiker wurde gestern Abend live im Fernsehen interviewt.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">aktuell</span><span class="vocab-badge adj">Adj</span></td>
+        <td class="vocab-ru">актуальний</td>
+        <td class="vocab-ex">Es ist wichtig, sich über aktuelle Ereignisse informiert zu halten.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">die</td>
+        <td><span class="vocab-word">Sendung, -en</span><span class="vocab-badge noun">Nomen</span></td>
+        <td class="vocab-ru">передача</td>
+        <td class="vocab-ex">Diese Sendung wird jeden Montag um 20 Uhr ausgestrahlt.</td>
+      </tr>
+      <tr>
+        <td class="vocab-art">—</td>
+        <td><span class="vocab-word">kritisieren</span><span class="vocab-badge verb">Verb</span></td>
+        <td class="vocab-ru">критикувати</td>
+        <td class="vocab-ex">Die neue Medienpolitik wird von vielen Journalisten scharf kritisiert.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 2: РОЗМОВА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-speak">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div>
+      <div class="section-title">Запитання для розмови 💬</div>
+      <div class="section-subtitle">Відповідай вільно — мінімум 2–3 речення на кожне запитання</div>
+    </div>
+  </div>
+  <div class="frage-list">
+    <div class="frage-item"><span class="frage-num">1</span><span>Wie informierst du dich über aktuelle Nachrichten — Zeitung, TV, Internet oder Social Media?</span></div>
+    <div class="frage-item"><span class="frage-num">2</span><span>Welchen Medien vertraust du am meisten? Warum?</span></div>
+    <div class="frage-item"><span class="frage-num">3</span><span>Gibt es Nachrichten, die dich besonders beeindruckt oder schockiert haben?</span></div>
+    <div class="frage-item"><span class="frage-num">4</span><span>Wie oft schaust du Nachrichten? Hast du Lieblingssendungen?</span></div>
+    <div class="frage-item"><span class="frage-num">5</span><span>Was hältst du von sozialen Medien als Informationsquelle — hilfreich oder gefährlich?</span></div>
+    <div class="frage-item"><span class="frage-num">6</span><span>Welche Nachrichten aus deinem Land würdest du einem Deutschen erklären?</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 3: ЧИТАННЯ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-read">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div>
+      <div class="section-title">Текст для читання 📖</div>
+      <div class="section-subtitle">Читай уважно — зверни увагу на Passiv у тексті</div>
+    </div>
+  </div>
+  <p style="font-family:var(--serif);font-size:16px;font-weight:600;color:var(--text-dark);margin-bottom:1rem;">Wie werden Nachrichten heute konsumiert?</p>
+  <div class="text-block">
+    <p>Die Art, wie Nachrichten <span class="highlight">konsumiert werden</span>, hat sich in den letzten Jahren stark verändert. Früher <span class="highlight">wurden</span> Zeitungen morgens nach Hause <span class="highlight">geliefert</span>, und abends <span class="highlight">wurden</span> die Nachrichten im Fernsehen <span class="highlight">verfolgt</span>. Heute <span class="highlight">werden</span> Informationen rund um die Uhr über Smartphones und soziale Netzwerke <span class="highlight">verbreitet</span>.</p>
+    <p>Studien zeigen, dass immer weniger junge Menschen traditionelle Medien nutzen. Tageszeitungen <span class="highlight">werden</span> seltener <span class="highlight">gekauft</span>, Nachrichtensendungen <span class="highlight">werden</span> weniger <span class="highlight">geschaut</span>. Stattdessen <span class="highlight">werden</span> kurze Videos und Beiträge in sozialen Netzwerken <span class="highlight">bevorzugt</span>.</p>
+    <p>Das hat jedoch Vor- und Nachteile. Einerseits können Nachrichten sofort <span class="highlight">geteilt werden</span> — ein Ereignis <span class="highlight">wird</span> binnen Minuten weltweit bekannt <span class="highlight">gemacht</span>. Andererseits können auch Falschmeldungen schnell <span class="highlight">verbreitet werden</span>. Es <span class="highlight">wird</span> deshalb immer wichtiger, Informationen zu überprüfen, bevor sie geglaubt oder weitergeleitet <span class="highlight">werden</span>.</p>
+    <p>Qualitätsjournalismus muss heute hart <span class="highlight">erkämpft werden</span>. Gute Journalisten müssen <span class="highlight">ausgebildet</span>, faire Löhne müssen <span class="highlight">gezahlt</span> und unabhängige Redaktionen müssen <span class="highlight">finanziert werden</span>. Nur so kann eine freie Presse <span class="highlight">geschützt werden</span>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 4: ЗАПИТАННЯ ДО ТЕКСТУ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-question">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div>
+      <div class="section-title">Запитання до тексту ❓</div>
+      <div class="section-subtitle">Клікни "Показати відповідь" — але спочатку спробуй сам(а)!</div>
+    </div>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">1</span>
+        <span class="qa-qtext">Wie wurden Nachrichten früher konsumiert?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Zeitungen wurden nach Hause geliefert, abends wurden die Nachrichten im Fernsehen verfolgt.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">2</span>
+        <span class="qa-qtext">Wie werden Informationen heute verbreitet?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Rund um die Uhr über Smartphones und soziale Netzwerke.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">3</span>
+        <span class="qa-qtext">Was zeigen Studien über junge Menschen?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Immer weniger junge Menschen nutzen traditionelle Medien.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">4</span>
+        <span class="qa-qtext">Was wird seltener gekauft und geschaut?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Tageszeitungen werden seltener gekauft, Nachrichtensendungen werden weniger geschaut.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">5</span>
+        <span class="qa-qtext">Was ist ein Vorteil der sozialen Medien?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Nachrichten können sofort geteilt werden — ein Ereignis wird binnen Minuten weltweit bekannt.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">6</span>
+        <span class="qa-qtext">Was ist ein Nachteil?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Falschmeldungen können schnell verbreitet werden.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">7</span>
+        <span class="qa-qtext">Was wird immer wichtiger?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Informationen zu überprüfen, bevor sie geglaubt oder weitergeleitet werden.</strong></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="qa-qnum">8</span>
+        <span class="qa-qtext">Was muss für einen guten Journalismus gemacht werden?</span>
+        <span class="qa-toggle">▶ Відповідь</span>
+      </div>
+      <div class="qa-answer"><strong>Journalisten müssen ausgebildet, Löhne gezahlt und Redaktionen finanziert werden.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 5: ГРАМАТИКА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-grammar">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div>
+      <div class="section-title">Граматика: Passiv 📐</div>
+      <div class="section-subtitle">Präsens · Präteritum · Perfekt · Modalverben · von + Dativ</div>
+    </div>
+  </div>
+
+  <!-- Box 1 — Intro -->
+  <div class="gram-box" style="background:linear-gradient(135deg,#e8f5e9 0%,#e6f1fb 100%);border-color:#a5d6a7;">
+    <div class="gram-title" style="color:#2e7d32;">📰 Passiv — дія важливіша за виконавця</div>
+    <div class="gram-rule">
+      У Passiv важлива <strong>дія</strong>, а не хто її виконує. Виконавець або невідомий, або неважливий, або зрозумілий з контексту.
+      <div style="margin-top:10px;line-height:2;">
+        <strong>Aktiv:</strong> Der Journalist <strong>schreibt</strong> den Artikel.<br>
+        <strong>Passiv:</strong> Der Artikel <strong>wird</strong> geschrieben. <span style="color:var(--text-muted);font-size:13px;">(von wem — неважливо)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 2 — Bildung Passiv Präsens -->
+  <div class="gram-box">
+    <div class="gram-title">📋 Bildung Passiv Präsens: <code>werden</code> (конюгований) + Partizip II</div>
+    <div class="gram-rule">
+      <div style="overflow-x:auto;">
+        <table class="gram-table">
+          <thead>
+            <tr><th>Person</th><th>werden</th><th>Beispiel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="key">ich</td><td><strong>werde</strong></td><td>Ich werde gefragt.</td></tr>
+            <tr><td class="key">du</td><td><strong>wirst</strong></td><td>Du wirst informiert.</td></tr>
+            <tr><td class="key">er/sie/es</td><td><strong>wird</strong></td><td>Der Artikel wird gelesen.</td></tr>
+            <tr><td class="key">wir</td><td><strong>werden</strong></td><td>Wir werden eingeladen.</td></tr>
+            <tr><td class="key">ihr</td><td><strong>werdet</strong></td><td>Ihr werdet benachrichtigt.</td></tr>
+            <tr><td class="key">sie/Sie</td><td><strong>werden</strong></td><td>Die Nachrichten werden gesendet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 3 — Passiv Präteritum -->
+  <div class="gram-box" style="background:var(--amber-pale);border-color:#e5c882;">
+    <div class="gram-title" style="color:var(--amber-mid);">🔷 Passiv Präteritum: <code>wurde/wurden</code> + Partizip II</div>
+    <div class="gram-rule">
+      <div style="overflow-x:auto;">
+        <table class="gram-table">
+          <thead>
+            <tr><th></th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="key">Singular</td><td>Das Buch <strong>wurde</strong> veröffentlicht.</td></tr>
+            <tr><td class="key">Plural</td><td>Die Artikel <strong>wurden</strong> geschrieben.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px;font-size:13px;color:var(--text-mid);">
+        Präteritum von <em>werden</em>: ich/er/sie/es <strong>wurde</strong> · du <strong>wurdest</strong> · wir/sie/Sie <strong>wurden</strong> · ihr <strong>wurdet</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 4 — Passiv Perfekt -->
+  <div class="gram-box" style="background:var(--red-pale);border-color:#e57373;">
+    <div class="gram-title" style="color:var(--red-mid);">⚠️ Passiv Perfekt: <code>sein</code> (конюгований) + Partizip II + <code>worden</code></div>
+    <div class="gram-rule" style="font-size:14px;line-height:1.9;">
+      ⚠️ NICHT „geworden" — im Passiv Perfekt immer <strong>worden</strong> (ohne ge-):<br>
+      Der Artikel ist veröffentlicht <strong style="color:var(--green-deep);">worden</strong>. ✅<br>
+      <span style="color:var(--red-mid);">❌ Der Artikel ist veröffentlicht <s>geworden</s>.</span>
+    </div>
+  </div>
+
+  <!-- Box 5 — Passiv mit Modalverb -->
+  <div class="gram-box" style="background:var(--purple-pale);border-color:#c9b0e8;">
+    <div class="gram-title" style="color:var(--purple-mid);">🔵 Passiv mit Modalverb (Präsens): Modalverb + Partizip II + <code>werden</code> (Infinitiv am Ende)</div>
+    <div class="gram-rule">
+      <div style="overflow-x:auto;">
+        <table class="gram-table">
+          <thead>
+            <tr><th>Beispiel</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Der Artikel <strong>muss</strong> überprüft <strong>werden</strong>.</td><td style="color:var(--text-muted);">треба перевірити</td></tr>
+            <tr><td>Die Sendung <strong>kann</strong> aufgezeichnet <strong>werden</strong>.</td><td style="color:var(--text-muted);">можна записати</td></tr>
+            <tr><td>Hier <strong>darf</strong> nicht geraucht <strong>werden</strong>.</td><td style="color:var(--text-muted);">не можна курити</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box 6 — von + Dativ -->
+  <div class="gram-box" style="background:linear-gradient(135deg,#e8f5e9 0%,#fff8e1 100%);border-color:#a5d6a7;">
+    <div class="gram-title" style="color:#2e7d32;">💡 von + Dativ (Urheber angeben)</div>
+    <div class="gram-rule" style="font-size:14px;line-height:2.1;">
+      Wenn der Handelnde wichtig ist → <strong>von + Dativ</strong>:<br>
+      Der Artikel wurde <strong style="color:var(--green-deep);">vom Journalisten</strong> geschrieben.<br>
+      Die Sendung wird <strong style="color:var(--green-deep);">von Millionen Menschen</strong> gesehen.
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 6: ВПРАВИ З ПІДРУЧНИКА -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-book">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div>
+      <div class="section-title">Вправи з підручника 📗</div>
+      <div class="section-subtitle">Grammatik aktiv B1 — Kap. 57–58: Passiv</div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 1 ── -->
+  <div class="ex-block" id="bk-ex1">
+    <div class="ex-header"><span class="ex-num">1</span> Ergänzen Sie die richtige Form von „werden" im Passiv Präsens. (Kap. 57, Üb. 1)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши правильну форму <strong>werden</strong> у Passiv Präsens.</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="blank-sentence">1. Das Paket <input class="blank-input" id="bk1-1" placeholder="___"> gesendet.</div>
+        <div class="blank-sentence">2. Ihr <input class="blank-input" id="bk1-2" placeholder="___"> informiert.</div>
+        <div class="blank-sentence">3. Die Getränke <input class="blank-input" id="bk1-3" placeholder="___"> verkauft.</div>
+        <div class="blank-sentence">4. Du <input class="blank-input" id="bk1-4" placeholder="___"> nach Hause gebracht.</div>
+        <div class="blank-sentence">5. Sie (formal) <input class="blank-input" id="bk1-5" placeholder="___"> abgeholt.</div>
+        <div class="blank-sentence">6. Der Olympiasieger <input class="blank-input" id="bk1-6" placeholder="___"> gefeiert.</div>
+        <div class="blank-sentence">7. Die Pizza <input class="blank-input" id="bk1-7" placeholder="___"> bestellt.</div>
+        <div class="blank-sentence">8. Ich <input class="blank-input" id="bk1-8" placeholder="___"> vom Arzt behandelt.</div>
+        <div class="blank-sentence">9. Wir <input class="blank-input" id="bk1-9" placeholder="___"> untersucht.</div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(1)" id="bk-btn-1">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 2 ── -->
+  <div class="ex-block" id="bk-ex2">
+    <div class="ex-header"><span class="ex-num">2</span> Ergänzen Sie das Modalverb im Passiv. (Kap. 57, Üb. 2)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши правильне Modalverb зі скобок.</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="blank-sentence">1. Ich <input class="blank-input" id="bk2-1" placeholder="___"> operiert werden. (müssen)</div>
+        <div class="blank-sentence">2. Das Museum <input class="blank-input" id="bk2-2" placeholder="___"> kontrolliert werden. (müssen)</div>
+        <div class="blank-sentence">3. Du <input class="blank-input" id="bk2-3" placeholder="___"> vom Arzt behandelt werden. (sollen)</div>
+        <div class="blank-sentence">4. Wir <input class="blank-input" id="bk2-4" placeholder="___"> untersucht werden. (müssen)</div>
+        <div class="blank-sentence">5. Hier <input class="blank-input" id="bk2-5" placeholder="___"> nicht gegessen werden. (dürfen)</div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(2)" id="bk-btn-2">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 3 ── -->
+  <div class="ex-block" id="bk-ex3">
+    <div class="ex-header"><span class="ex-num">3</span> Ergänzen Sie „wurde" oder „wurden" im Passiv Präteritum. (Kap. 58, Üb. 1a)</div>
+    <div class="ex-body">
+      <div class="ex-task">Впиши правильну форму: <strong>wurde</strong> (Singular) або <strong>wurden</strong> (Plural / ich / du / wir).</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="blank-sentence">1. Die Zeitung <input class="blank-input" id="bk3-1" placeholder="___"> gelesen.</div>
+        <div class="blank-sentence">2. Eine Mail <input class="blank-input" id="bk3-2" placeholder="___"> geschrieben.</div>
+        <div class="blank-sentence">3. Ich <input class="blank-input" id="bk3-3" placeholder="___"> operiert.</div>
+        <div class="blank-sentence">4. Du <input class="blank-input" id="bk3-4" placeholder="___" style="min-width:80px;"> zur Party eingeladen.</div>
+        <div class="blank-sentence">5. Wir <input class="blank-input" id="bk3-5" placeholder="___"> gut behandelt.</div>
+        <div class="blank-sentence">6. Diese Kinder <input class="blank-input" id="bk3-6" placeholder="___"> schlecht erzogen.</div>
+      </div>
+      <div style="margin-top:12px;">
+        <button class="ex-btn secondary" onclick="showBkAnswers(3)" id="bk-btn-3">Відповіді ▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 4 ── -->
+  <div class="ex-block" id="bk-ex4">
+    <div class="ex-header"><span class="ex-num">4</span> Deutsche Geschichte — Schreiben Sie Sätze im Passiv Präteritum. (Kap. 58, Üb. 2)</div>
+    <div class="ex-body">
+      <div class="ex-task">Склади речення у Passiv Präteritum з кожної нотатки. Клікни «Зразок» для порівняння.</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:6px;font-style:italic;">1945: der Krieg / beenden</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">1945 wurde der Krieg beendet.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:6px;font-style:italic;">nach dem Krieg: Deutschland / in zwei Staaten / teilen</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Nach dem Krieg wurde Deutschland in zwei Staaten geteilt.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:6px;font-style:italic;">1949: der erste Bundestag / wählen</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">1949 wurde der erste Bundestag gewählt.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:6px;font-style:italic;">1961: die Mauer / bauen</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">1961 wurde die Mauer gebaut.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:6px;font-style:italic;">am 9. November 1989: die Mauer in Berlin / öffnen</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Am 9. November 1989 wurde die Mauer in Berlin geöffnet.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:6px;font-style:italic;">am 3. Oktober 1990: die beiden deutschen Staaten / wiedervereinigen</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Am 3. Oktober 1990 wurden die beiden deutschen Staaten wiedervereinigt.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Вправа 5 ── -->
+  <div class="ex-block" id="bk-ex5">
+    <div class="ex-header"><span class="ex-num">5</span> Aus der Zeitung — Schreiben Sie je zwei Passivsätze (Präteritum und Perfekt). (Kap. 58, Üb. 7)</div>
+    <div class="ex-body">
+      <div class="ex-task">Для кожного газетного заголовку напиши 2 речення: одне у <strong>Passiv Präteritum</strong> і одне у <strong>Passiv Perfekt</strong>.</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="background:#fff3e0;border-left:4px solid #e65100;border-radius:8px;padding:8px 12px;font-weight:700;font-size:15px;margin-bottom:6px;">🗞️ Neuer Saturmond entdeckt!</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Ein neuer Saturmond <strong>wurde</strong> entdeckt. / Ein neuer Saturmond <strong>ist</strong> entdeckt <strong>worden</strong>.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="background:#fff3e0;border-left:4px solid #e65100;border-radius:8px;padding:8px 12px;font-weight:700;font-size:15px;margin-bottom:6px;">🗞️ Bank im Zentrum überfallen</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Eine Bank im Zentrum <strong>wurde</strong> überfallen. / Eine Bank im Zentrum <strong>ist</strong> überfallen <strong>worden</strong>.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="background:#fff3e0;border-left:4px solid #e65100;border-radius:8px;padding:8px 12px;font-weight:700;font-size:15px;margin-bottom:6px;">🗞️ Neues Schwimmbad eröffnet</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Ein neues Schwimmbad <strong>wurde</strong> eröffnet. / Ein neues Schwimmbad <strong>ist</strong> eröffnet <strong>worden</strong>.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="background:#fff3e0;border-left:4px solid #e65100;border-radius:8px;padding:8px 12px;font-weight:700;font-size:15px;margin-bottom:6px;">🗞️ Baby von Schwan gebissen</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Ein Baby <strong>wurde</strong> von einem Schwan gebissen. / Ein Baby <strong>ist</strong> von einem Schwan gebissen <strong>worden</strong>.</div>
+        </div>
+
+        <div style="background:var(--bg-section);border-radius:10px;border:1px solid var(--border);padding:12px 14px;">
+          <div style="background:#fff3e0;border-left:4px solid #e65100;border-radius:8px;padding:8px 12px;font-weight:700;font-size:15px;margin-bottom:6px;">🗞️ Präsident mit großer Mehrheit gewählt</div>
+          <button class="fehler-toggle" onclick="toggleFehler(this)">▶ Зразок</button>
+          <div class="fehler-solution">Der Präsident <strong>wurde</strong> mit großer Mehrheit gewählt. / Der Präsident <strong>ist</strong> mit großer Mehrheit gewählt <strong>worden</strong>.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 7: ДІАЛОГ -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card" id="s-dialog">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div>
+      <div class="section-title">Діалог 🎭 — Über Medien diskutieren 📺</div>
+      <div class="section-subtitle">Praktikuj розмову: zwei Freunde diskutieren über Nachrichten</div>
+    </div>
+  </div>
+
+  <div class="role-tip">
+    <span class="role-badge a">👩 Mia <em style="font-weight:400">(партнер читає)</em></span>
+    <span class="role-badge b">🧑 Jonas — <em style="font-weight:400">(ти відповідаєш)</em></span>
+  </div>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-style:italic;">Mia і Jonas (Studenten) — обговорюють медіа і нову Mediensteuer. Партнер читає репліки Mia, ти відповідаєш за Jonas — підказки допоможуть!</p>
+
+  <div class="dialog-card">
+
+    <!-- 1 -->
+    <div class="dialog-line">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Jonas, hast du schon die Nachrichten von heute gelesen? Die neue Mediensteuer wird eingeführt — das ist überall berichtet worden!"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Реагуй здивовано і запитай подробиці</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Was? Das wird ja überall diskutiert! Weißt du, warum diese Steuer eingeführt wird?"</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Es heißt, damit soll der öffentliche Rundfunk finanziert werden. Sender wie ARD und ZDF werden dadurch unterstützt."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Висловлення думки — погодься або не погодься, поясни чому</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Ich finde das sinnvoll. Qualitätsjournalismus muss irgendwie finanziert werden — sonst wird nur noch Werbung gesendet."</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Stimmt. Aber viele Leute ärgern sich, weil sie kaum noch Fernsehen schauen. Sie informieren sich lieber über Social Media."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Порівняй соцмедіа і традиційні медіа</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Das verstehe ich. Auf Social Media werden Informationen viel schneller verbreitet. Aber dort werden auch viele Falschmeldungen geteilt."</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Genau! Letzten Monat wurde eine komplett falsche Geschichte über unsere Uni millionenfach geteilt — und niemand hat sie überprüft."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Реагуй обурено і запитай що потім сталося</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Das ist unglaublich! Wurde die Geschichte dann irgendwann korrigiert? Wer hat das herausgefunden?"</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Ja, nach zwei Tagen wurde sie von einem Journalisten als Falschmeldung entlarvt. Aber der Schaden war schon angerichtet."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Скажи що треба робити — перевіряти інформацію перед поширенням</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Deshalb sollten Nachrichten immer von mehreren Quellen überprüft werden, bevor sie geteilt werden. Das wird leider oft vergessen."</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Du hast recht. Übrigens — welche Medien nutzt du selbst am liebsten? Wirst du täglich über Nachrichten informiert?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Розкажи які медіа ти особисто використовуєш</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Ich lese täglich eine Onlinezeitung und höre morgens Radio. Abends wird bei uns manchmal die Tagesschau geschaut."</div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Ich schaue keine klassischen Sendungen mehr. Ich werde meistens durch Instagram-Posts oder Podcasts informiert."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Запитай чи це достатньо для повної картини</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Werden durch Podcasts wirklich alle wichtigen Themen abgedeckt? Ich frage mich, ob man dadurch ein vollständiges Bild bekommt."</div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Gute Frage. Ich glaube, man muss verschiedene Quellen nutzen. Nur so kann man gut informiert werden."</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Погодься і запропонуй разом переглянути якусь передачу або прочитати статтю</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Da hast du absolut recht. Sollen wir heute Abend zusammen die Reportage schauen, die gestern im Fernsehen ausgestrahlt wurde?"</div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="dialog-line" style="margin-top:10px;">
+      <span class="dialog-speaker a">Mia:</span>
+      <span class="dialog-text">„Super Idee! Die wurde ja von allen empfohlen. Um wie viel Uhr fängt sie an?"</span>
+    </div>
+    <div class="dialog-line" style="align-items:flex-start;gap:12px;">
+      <span class="dialog-speaker b" style="margin-top:10px;">Jonas:</span>
+      <div style="flex:1;background:var(--blue-pale);border:1.5px dashed var(--blue-mid);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:18px;letter-spacing:4px;color:var(--blue-mid);font-weight:700;">. . .</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">💡 Дай відповідь і підтвердь план</div>
+        <button class="fehler-toggle" style="margin-top:6px;" onclick="toggleFehler(this)">▶ Зразок</button>
+        <div class="fehler-solution">„Sie wird um 20:15 Uhr gesendet. Ich komme um 20 Uhr zu dir — dann können wir vorher noch kurz über alles reden."</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ABSCHNITT 8: ПІДСУМОК -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-card summary-card" id="s-summary">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <div class="section-title">Підсумок — Що ти сьогодні вивчив(ла)? ✅</div>
+  </div>
+  <div class="summary-grid">
+    <div class="summary-stat">
+      <div class="summary-stat-num">10</div>
+      <div class="summary-stat-label">Нових слів</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">8</div>
+      <div class="summary-stat-label">Запитань</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">5</div>
+      <div class="summary-stat-label">Вправи з книги</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-stat-num">9</div>
+      <div class="summary-stat-label">Обмін в діалозі</div>
+    </div>
+  </div>
+
+  <p style="color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;margin-bottom:.5rem;">Passiv — на пам'ять:</p>
+  <div class="summary-verbs">
+    <span class="summary-verb-chip">Passiv Präsens: wird + PP</span>
+    <span class="summary-verb-chip">Passiv Präteritum: wurde + PP</span>
+    <span class="summary-verb-chip">Passiv Perfekt: ist + PP + worden</span>
+    <span class="summary-verb-chip">Modalverb: muss + PP + werden</span>
+    <span class="summary-verb-chip">von + Dativ → Urheber</span>
+    <span class="summary-verb-chip">worden (nicht geworden!)</span>
+  </div>
+
+  <div class="summary-msg">
+    🎯 <strong>Граматична підказка на пам'ять:</strong><br>
+    1. <strong>Passiv Präsens</strong>: Der Artikel wird gelesen. / Die Nachrichten werden gesendet.<br>
+    2. <strong>Passiv Präteritum</strong>: Das Buch wurde veröffentlicht. / Die Artikel wurden geschrieben.<br>
+    3. <strong>Passiv Perfekt</strong>: Der Artikel ist veröffentlicht <strong>worden</strong>. (NICHT geworden!)<br>
+    4. <strong>Modalverb + Passiv</strong>: Das muss überprüft werden. / Hier darf nicht geraucht werden.<br>
+    5. <strong>von + Dativ</strong>: Der Film wurde von Millionen Menschen gesehen.<br><br>
+    🎯 <strong>Тепер ти вмієш говорити про дії у Passiv на рівні B1!</strong>
+  </div>
+</section>
+
+<footer class="footer-tag">DeutschWeg · Рівень B1 · Тема 10: Medien &amp; Nachrichten · Граматика: Passiv</footer>
+
+</div><!-- /page -->
+
+<script>
+// ─── ANSWER TOGGLE ───────────────────────────────
+function toggleAnswer(el) {
+  var ans = el.nextElementSibling;
+  var tog = el.querySelector('.qa-toggle');
+  if (ans.classList.contains('open')) {
+    ans.classList.remove('open');
+    tog.textContent = '▶ Відповідь';
+  } else {
+    ans.classList.add('open');
+    tog.textContent = '▼ Закрити';
+  }
+}
+
+function toggleFehler(btn) {
+  var sol = btn.nextElementSibling;
+  if (sol.classList.contains('open')) {
+    sol.classList.remove('open');
+    btn.textContent = '▶ Зразок';
+  } else {
+    sol.classList.add('open');
+    btn.textContent = '▼ Закрити';
+  }
+}
+
+// ─── BOOK EXERCISES (Kap. 57–58) ───────────────────
+var BK_SHOWN = {};
+var BK_ANSWERS = {
+  1: {
+    'bk1-1':'wird',
+    'bk1-2':'werdet',
+    'bk1-3':'werden',
+    'bk1-4':'wirst',
+    'bk1-5':'werden',
+    'bk1-6':'wird',
+    'bk1-7':'wird',
+    'bk1-8':'werde',
+    'bk1-9':'werden'
+  },
+  2: {
+    'bk2-1':'muss',
+    'bk2-2':'muss',
+    'bk2-3':'sollst',
+    'bk2-4':'müssen',
+    'bk2-5':'darf'
+  },
+  3: {
+    'bk3-1':'wurde',
+    'bk3-2':'wurde',
+    'bk3-3':'wurde',
+    'bk3-4':'wurdest',
+    'bk3-5':'wurden',
+    'bk3-6':'wurden'
+  }
+};
+
+function showBkAnswers(n) {
+  var answers = BK_ANSWERS[n];
+  if (!answers) return;
+  var btn = document.getElementById('bk-btn-' + n);
+  if (BK_SHOWN[n]) {
+    // hide answers
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = '';
+      inp.style.background = '';
+      inp.style.color = '';
+      inp.style.fontWeight = '';
+      inp.style.borderColor = '';
+    });
+    BK_SHOWN[n] = false;
+    if (btn) btn.textContent = 'Відповіді ▼';
+  } else {
+    // show answers
+    Object.keys(answers).forEach(function(id) {
+      var inp = document.getElementById(id);
+      if (!inp) return;
+      inp.value = answers[id];
+      inp.style.background = '#d4edda';
+      inp.style.color = '#155724';
+      inp.style.fontWeight = '700';
+      inp.style.borderColor = '#28a745';
+    });
+    BK_SHOWN[n] = true;
+    if (btn) btn.textContent = 'Сховати відповіді ▲';
+  }
+}
+
+// ── SCROLL REVEAL ──
+(function(){
+  var els = document.querySelectorAll('.section-card, .mosaic-nav');
+  els.forEach(function(el){
+    var rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight + 60) el.classList.add('revealed');
+  });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('revealed');observer.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(el){if(!el.classList.contains('revealed'))observer.observe(el);});
+})();
+
+// ── FLOATING EMOJI ──
+(function(){
+  var emojis = ['📺','📰','🎙️','📡','🗞️','💬','📱','🖥️','📻','✍️','🔍','📲','💡','🌐','📊'];
+  var maxEmoji = 12;
+  function spawnEmoji(){
+    if(document.querySelectorAll('.emoji-float').length >= maxEmoji) return;
+    var el = document.createElement('div');
+    el.className = 'emoji-float';
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = (Math.random()*90+5)+'%';
+    el.style.bottom = '-40px';
+    el.style.fontSize = (18+Math.random()*16)+'px';
+    el.style.animationDuration = (12+Math.random()*18)+'s';
+    el.style.animationDelay = (Math.random()*2)+'s';
+    document.body.appendChild(el);
+    setTimeout(function(){el.remove();},(14+20)*1000);
+  }
+  for(var i=0;i<5;i++) setTimeout(spawnEmoji, i*800);
+  setInterval(spawnEmoji, 3000);
+})();
+
+// ── MOSAIC NAV + STICKY BAR ──
+(function(){
+  var tiles = document.querySelectorAll('.mosaic-tile');
+  var pips = document.querySelectorAll('.sticky-pip');
+  var stickyBar = document.getElementById('sticky-bar');
+  var mosaicNav = document.getElementById('mosaic-nav');
+  var stickyCurrent = document.getElementById('sticky-current');
+  var labels = {};
+  tiles.forEach(function(t){ var h=t.getAttribute('href'); if(h) labels[h]=t.querySelector('.mosaic-label').textContent; });
+
+  var sections = [];
+  tiles.forEach(function(t){
+    var id = t.getAttribute('href');
+    if(id){var el=document.querySelector(id);if(el)sections.push({tile:t,el:el,id:id});}
+  });
+
+  function updateActive(){
+    var scrollY=window.scrollY+120;
+    var active=null;
+    for(var i=sections.length-1;i>=0;i--){
+      if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
+    }
+    // mosaic tiles
+    tiles.forEach(function(t){t.classList.remove('active');});
+    if(active)active.tile.classList.add('active');
+    // sticky pips
+    pips.forEach(function(p){p.classList.remove('active');});
+    if(active){
+      pips.forEach(function(p){if(p.getAttribute('href')===active.id)p.classList.add('active');});
+      if(stickyCurrent) stickyCurrent.textContent=labels[active.id]||'';
+    }
+    // show/hide sticky bar
+    if(mosaicNav && stickyBar){
+      var mosaicBottom = mosaicNav.getBoundingClientRect().bottom;
+      stickyBar.classList.toggle('visible', mosaicBottom < 0);
+    }
+  }
+
+  window.addEventListener('scroll',updateActive,{passive:true});
+  updateActive();
+
+  // smooth scroll for mosaic tiles
+  tiles.forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(t.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  // smooth scroll for sticky pips
+  pips.forEach(function(p){
+    p.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=document.querySelector(p.getAttribute('href'));
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
