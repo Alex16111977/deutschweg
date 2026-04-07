@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meine Antworten A2 — DeutschWeg</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-deep: #0a5c42;
+      --green-mid: #1D9E75;
+      --green-light: #5DCAA5;
+      --green-pale: #E1F5EE;
+      --green-border: #9FE1CB;
+      --text-dark: #1a1a18;
+      --text-mid: #4a4a46;
+      --text-muted: #888780;
+      --bg-page: #f5f3ed;
+      --bg-card: #ffffff;
+      --bg-answer: #f0faf6;
+      --border: rgba(0,0,0,0.09);
+      --serif: Georgia, serif;
+      --sans: system-ui, sans-serif;
+    }
+    body {
+      font-family: var(--sans);
+      background: var(--bg-page);
+      color: var(--text-dark);
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 5rem;
+    }
+    /* HEADER */
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--green-border);
+    }
+    .header-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 0.5rem;
+    }
+    .header h1 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 5vw, 34px);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+    .header h1 em { font-style: italic; color: var(--green-deep); }
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    /* CONTROLS */
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .ctrl-btn {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid var(--green-border);
+      border-radius: 10px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      background: var(--green-pale);
+      color: var(--green-deep);
+    }
+    .ctrl-btn:hover { background: var(--green-border); }
+    .ctrl-btn.active { background: var(--green-mid); color: #fff; border-color: var(--green-mid); }
+    .search-box {
+      flex: 1;
+      min-width: 180px;
+      font-family: var(--sans);
+      font-size: 14px;
+      padding: 8px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-card);
+      color: var(--text-dark);
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--green-mid); }
+    /* PROGRESS */
+    .progress-bar-wrap {
+      background: #e0e0e0;
+      border-radius: 10px;
+      height: 6px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: var(--green-mid);
+      border-radius: 10px;
+      transition: width 0.4s;
+    }
+    .progress-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      text-align: right;
+    }
+    /* QUESTION CARD */
+    .q-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .q-card.learned {
+      border-color: var(--green-light);
+      box-shadow: 0 0 0 2px rgba(93,202,165,0.18);
+    }
+    .q-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 18px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .q-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      min-width: 22px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+    .q-texts { flex: 1; }
+    .q-de {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .q-ru {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .q-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .btn-learned {
+      font-size: 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.4;
+      transition: opacity 0.18s, transform 0.18s;
+    }
+    .btn-learned:hover { opacity: 0.8; }
+    .q-card.learned .btn-learned { opacity: 1; }
+    .q-arrow {
+      font-size: 14px;
+      color: var(--text-muted);
+      transition: transform 0.25s;
+      display: inline-block;
+    }
+    .q-card.open .q-arrow { transform: rotate(180deg); }
+    /* ANSWERS PANEL */
+    .q-answers {
+      display: none;
+      padding: 0 18px 18px 52px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    .q-card.open .q-answers { display: block; }
+    .answers-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 10px;
+    }
+    .answer-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--bg-answer);
+      border: 1px solid var(--green-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 7px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .answer-item:hover { background: #d4f2e7; border-color: var(--green-light); }
+    .answer-item.picked {
+      background: #c2eddd;
+      border-color: var(--green-mid);
+    }
+    .ans-letter {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green-deep);
+      min-width: 18px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+    .ans-texts { flex: 1; }
+    .ans-de {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+    .ans-ru {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    /* STATS */
+    .stats-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 24px;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; flex: 1; }
+    .stat-num { font-size: 26px; font-weight: 700; color: var(--green-mid); line-height: 1; }
+    .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    /* HIDDEN */
+    .hidden { display: none !important; }
+    @media (max-width: 480px) {
+      .q-de { font-size: 16px; }
+      .q-answers { padding-left: 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-label">Уровень А2 • Deutsch lernen</div>
+    <h1>Meine <em>Antworten</em></h1>
+    <p>52 вопроса · 5 вариантов ответа каждый · Нажми на вопрос чтобы открыть ответы</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num" id="statTotal">52</div><div class="stat-label">Всего вопросов</div></div>
+    <div class="stat"><div class="stat-num" id="statLearned">0</div><div class="stat-label">Выучено ✓</div></div>
+    <div class="stat"><div class="stat-num" id="statLeft">52</div><div class="stat-label">Осталось</div></div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-label"><span id="pctLabel">0%</span> выучено</div>
+  <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <input class="search-box" type="search" placeholder="🔍 Поиск вопроса..." id="searchInput" oninput="filterCards()"/>
+    <button class="ctrl-btn active" id="btnAll" onclick="setFilter('all')">Все</button>
+    <button class="ctrl-btn" id="btnOpen" onclick="setFilter('open')">Не выучены</button>
+    <button class="ctrl-btn" id="btnDone" onclick="setFilter('done')">Выучены</button>
+    <button class="ctrl-btn" onclick="expandAll()">Раскрыть все</button>
+    <button class="ctrl-btn" onclick="collapseAll()">Свернуть</button>
+  </div>
+
+  <!-- CARDS -->
+  <div id="cardList"></div>
+
+</div>
+
+<script>
+const DATA = [
+  {
+    de: "Wie heißt du?",
+    ru: "Как тебя зовут?",
+    answers: [
+      { de: "Ich heiße Alex.", ru: "Меня зовут Алекс." },
+      { de: "Mein Name ist Alex Müller.", ru: "Моё имя — Алекс Мюллер." },
+      { de: "Ich bin Alex, angenehm.", ru: "Я Алекс, приятно познакомиться." },
+      { de: "Man nennt mich Alex.", ru: "Меня называют Алекс." },
+      { de: "Alex — so heiße ich.", ru: "Алекс — так меня зовут." }
+    ]
+  },
+  {
+    de: "Woher kommst du?",
+    ru: "Откуда ты?",
+    answers: [
+      { de: "Ich komme aus der Ukraine.", ru: "Я из Украины." },
+      { de: "Ich bin aus Kyjiw.", ru: "Я из Киева." },
+      { de: "Meine Heimat ist die Ukraine.", ru: "Моя родина — Украина." },
+      { de: "Ursprünglich komme ich aus Kyjiw.", ru: "Я родом из Киева." },
+      { de: "Ich bin Ukrainer von Geburt.", ru: "Я украинец по рождению." }
+    ]
+  },
+  {
+    de: "Wo wohnst du gerade?",
+    ru: "Где ты сейчас живёшь?",
+    answers: [
+      { de: "Ich wohne in Kyjiw.", ru: "Я живу в Киеве." },
+      { de: "Zurzeit lebe ich in Kyjiw.", ru: "Сейчас я живу в Киеве." },
+      { de: "Ich wohne in einer Wohnung.", ru: "Я живу в квартире." },
+      { de: "Ich lebe in der Stadtmitte.", ru: "Я живу в центре города." },
+      { de: "Ich wohne alleine in Kyjiw.", ru: "Я живу один в Киеве." }
+    ]
+  },
+  {
+    de: "Wie alt bist du?",
+    ru: "Сколько тебе лет?",
+    answers: [
+      { de: "Ich bin 47 Jahre alt.", ru: "Мне 47 лет." },
+      { de: "Ich bin Mitte vierzig.", ru: "Мне за сорок." },
+      { de: "Ich bin 47.", ru: "Мне 47." },
+      { de: "Im April werde ich 48.", ru: "В апреле мне будет 48." },
+      { de: "Ich bin schon fast fünfzig.", ru: "Мне уже почти пятьдесят." }
+    ]
+  },
+  {
+    de: "Was machst du beruflich?",
+    ru: "Чем ты занимаешься профессионально?",
+    answers: [
+      { de: "Ich bin IT-Spezialist.", ru: "Я IT-специалист." },
+      { de: "Ich arbeite als Programmierer.", ru: "Я работаю программистом." },
+      { de: "Ich bin Systemadministrator.", ru: "Я системный администратор." },
+      { de: "Ich arbeite in der IT-Branche.", ru: "Я работаю в сфере IT." },
+      { de: "Ich entwickle Software.", ru: "Я разрабатываю программное обеспечение." }
+    ]
+  },
+  {
+    de: "Was studierst du?",
+    ru: "Что ты изучаешь?",
+    answers: [
+      { de: "Ich studiere nicht mehr.", ru: "Я больше не учусь." },
+      { de: "Ich lerne Deutsch.", ru: "Я учу немецкий язык." },
+      { de: "Ich bilde mich selbst weiter.", ru: "Я занимаюсь самообразованием." },
+      { de: "Ich lerne online Informatik.", ru: "Я учу информатику онлайн." },
+      { de: "Ich habe schon studiert.", ru: "Я уже получил образование." }
+    ]
+  },
+  {
+    de: "Was sind deine Hobbys?",
+    ru: "Какие у тебя хобби?",
+    answers: [
+      { de: "Ich lese gern Bücher.", ru: "Я люблю читать книги." },
+      { de: "Ich lerne Sprachen.", ru: "Я учу языки." },
+      { de: "Mein Hobby ist Programmieren.", ru: "Моё хобби — программирование." },
+      { de: "Ich mag Musik und Lesen.", ru: "Мне нравится музыка и чтение." },
+      { de: "Ich surfe gern im Internet.", ru: "Я люблю сёрфить в интернете." }
+    ]
+  },
+  {
+    de: "Was machst du in deiner Freizeit?",
+    ru: "Чем ты занимаешься в свободное время?",
+    answers: [
+      { de: "Ich lese Bücher.", ru: "Я читаю книги." },
+      { de: "Ich lerne Deutsch.", ru: "Я учу немецкий." },
+      { de: "Ich schaue Serien.", ru: "Я смотрю сериалы." },
+      { de: "Ich gehe manchmal spazieren.", ru: "Иногда я хожу гулять." },
+      { de: "Ich entspanne mich zuhause.", ru: "Я отдыхаю дома." }
+    ]
+  },
+  {
+    de: "Hast du Geschwister?",
+    ru: "Есть ли у тебя братья или сёстры?",
+    answers: [
+      { de: "Ja, ich habe einen Bruder.", ru: "Да, у меня есть брат." },
+      { de: "Nein, ich bin Einzelkind.", ru: "Нет, я единственный ребёнок." },
+      { de: "Ich habe eine Schwester.", ru: "У меня есть сестра." },
+      { de: "Ich habe zwei Geschwister.", ru: "У меня двое братьев и сестёр." },
+      { de: "Ich habe keine Geschwister.", ru: "У меня нет братьев и сестёр." }
+    ]
+  },
+  {
+    de: "Wie ist deine Familie?",
+    ru: "Какая у тебя семья?",
+    answers: [
+      { de: "Meine Familie ist klein.", ru: "Моя семья небольшая." },
+      { de: "Wir sind eine normale Familie.", ru: "Мы обычная семья." },
+      { de: "Ich habe eine große Familie.", ru: "У меня большая семья." },
+      { de: "Wir sind sehr eng verbunden.", ru: "Мы очень близки друг с другом." },
+      { de: "Meine Familie lebt in Kyjiw.", ru: "Моя семья живёт в Киеве." }
+    ]
+  },
+  {
+    de: "Hast du Haustiere?",
+    ru: "Есть ли у тебя домашние животные?",
+    answers: [
+      { de: "Nein, ich habe keine Haustiere.", ru: "Нет, у меня нет домашних животных." },
+      { de: "Ja, ich habe eine Katze.", ru: "Да, у меня есть кошка." },
+      { de: "Ja, ich habe einen Hund.", ru: "Да, у меня есть собака." },
+      { de: "Leider nicht, ich mag sie.", ru: "К сожалению, нет, хотя я их люблю." },
+      { de: "Früher hatte ich einen Hund.", ru: "Раньше у меня была собака." }
+    ]
+  },
+  {
+    de: "Was ist dein Lieblingsessen?",
+    ru: "Какая у тебя любимая еда?",
+    answers: [
+      { de: "Ich mag Borschtsch sehr.", ru: "Я очень люблю борщ." },
+      { de: "Mein Lieblingsessen ist Pizza.", ru: "Моя любимая еда — пицца." },
+      { de: "Ich esse gern Pasta.", ru: "Я люблю пасту." },
+      { de: "Am liebsten esse ich Fleisch.", ru: "Больше всего я люблю мясо." },
+      { de: "Ich mag ukrainische Küche.", ru: "Мне нравится украинская кухня." }
+    ]
+  },
+  {
+    de: "Was trinkst du am liebsten?",
+    ru: "Что ты больше всего любишь пить?",
+    answers: [
+      { de: "Ich trinke am liebsten Kaffee.", ru: "Больше всего я люблю кофе." },
+      { de: "Ich mag Tee sehr.", ru: "Я очень люблю чай." },
+      { de: "Ich trinke viel Wasser.", ru: "Я пью много воды." },
+      { de: "Manchmal trinke ich Saft.", ru: "Иногда я пью сок." },
+      { de: "Am liebsten trinke ich Tee.", ru: "Больше всего я люблю чай." }
+    ]
+  },
+  {
+    de: "Welche Musik magst du?",
+    ru: "Какую музыку ты любишь?",
+    answers: [
+      { de: "Ich mag Rockmusik.", ru: "Я люблю рок-музыку." },
+      { de: "Ich höre gern Jazz.", ru: "Я люблю слушать джаз." },
+      { de: "Ich mag klassische Musik.", ru: "Мне нравится классическая музыка." },
+      { de: "Pop und Rock gefallen mir.", ru: "Мне нравится поп и рок." },
+      { de: "Musik ist mir nicht wichtig.", ru: "Музыка не так важна для меня." }
+    ]
+  },
+  {
+    de: "Was ist dein Lieblingsfilm oder deine Lieblingsserie?",
+    ru: "Какой твой любимый фильм или сериал?",
+    answers: [
+      { de: "Ich mag Krimis sehr.", ru: "Я очень люблю детективы." },
+      { de: "Mein Lieblingsfilm ist Inception.", ru: "Мой любимый фильм — Начало." },
+      { de: "Ich sehe gern Dokumentarfilme.", ru: "Я люблю смотреть документальные фильмы." },
+      { de: "Breaking Bad gefällt mir gut.", ru: "Мне очень нравится Во все тяжкие." },
+      { de: "Ich habe keine Lieblingsserie.", ru: "У меня нет любимого сериала." }
+    ]
+  },
+  {
+    de: "Liest du gern? Was liest du?",
+    ru: "Ты любишь читать? Что ты читаешь?",
+    answers: [
+      { de: "Ja, ich lese gern Romane.", ru: "Да, я люблю читать романы." },
+      { de: "Ich lese Bücher auf Englisch.", ru: "Я читаю книги на английском." },
+      { de: "Ich mag Maugham sehr gern.", ru: "Мне очень нравится Моэм." },
+      { de: "Ich lese Bücher und Artikel.", ru: "Я читаю книги и статьи." },
+      { de: "Zurzeit lese ich Proust.", ru: "Сейчас я читаю Пруста." }
+    ]
+  },
+  {
+    de: "Machst du Sport? Welchen?",
+    ru: "Ты занимаешься спортом? Каким?",
+    answers: [
+      { de: "Ja, ich gehe manchmal laufen.", ru: "Да, иногда я бегаю." },
+      { de: "Ich mache manchmal Yoga.", ru: "Иногда я занимаюсь йогой." },
+      { de: "Nein, ich mache keinen Sport.", ru: "Нет, я не занимаюсь спортом." },
+      { de: "Ich gehe manchmal schwimmen.", ru: "Иногда я хожу плавать." },
+      { de: "Ich fahre gern Fahrrad.", ru: "Я люблю кататься на велосипеде." }
+    ]
+  },
+  {
+    de: "Wohin reist du gern?",
+    ru: "Куда ты любишь путешествовать?",
+    answers: [
+      { de: "Ich reise gern nach Europa.", ru: "Я люблю путешествовать по Европе." },
+      { de: "Ich mag Städtereisen.", ru: "Мне нравятся поездки в города." },
+      { de: "Am liebsten nach Deutschland.", ru: "Больше всего — в Германию." },
+      { de: "Ich reise gern ans Meer.", ru: "Я люблю путешествовать к морю." },
+      { de: "Ich reise leider selten.", ru: "К сожалению, я редко путешествую." }
+    ]
+  },
+  {
+    de: "Welche Länder hast du schon besucht?",
+    ru: "Какие страны ты уже посетил?",
+    answers: [
+      { de: "Ich war in Deutschland.", ru: "Я был в Германии." },
+      { de: "Ich habe Polen besucht.", ru: "Я посетил Польшу." },
+      { de: "Ich war in mehreren Ländern.", ru: "Я был в нескольких странах." },
+      { de: "Ich war in Österreich.", ru: "Я был в Австрии." },
+      { de: "Ich bin noch nicht viel gereist.", ru: "Я ещё не много путешествовал." }
+    ]
+  },
+  {
+    de: "Was magst du an Deutschland?",
+    ru: "Что тебе нравится в Германии?",
+    answers: [
+      { de: "Die Ordnung gefällt mir sehr.", ru: "Мне очень нравится порядок." },
+      { de: "Ich mag die deutsche Sprache.", ru: "Мне нравится немецкий язык." },
+      { de: "Die Kultur ist interessant.", ru: "Культура очень интересная." },
+      { de: "Die Städte sind sehr schön.", ru: "Города очень красивые." },
+      { de: "Das Essen schmeckt mir gut.", ru: "Мне нравится немецкая еда." }
+    ]
+  },
+  {
+    de: "Warum lernst du Deutsch?",
+    ru: "Почему ты учишь немецкий?",
+    answers: [
+      { de: "Ich möchte in Deutschland leben.", ru: "Я хочу жить в Германии." },
+      { de: "Ich mag die Sprache.", ru: "Мне нравится этот язык." },
+      { de: "Deutsch ist nützlich für Arbeit.", ru: "Немецкий полезен для работы." },
+      { de: "Ich lerne es aus Interesse.", ru: "Я учу из интереса." },
+      { de: "Für meine Karriere ist es wichtig.", ru: "Это важно для моей карьеры." }
+    ]
+  },
+  {
+    de: "Seit wann lernst du Deutsch?",
+    ru: "С каких пор ты учишь немецкий?",
+    answers: [
+      { de: "Seit einem Jahr lerne ich Deutsch.", ru: "Я учу немецкий уже год." },
+      { de: "Ich lerne seit zwei Jahren.", ru: "Я учу уже два года." },
+      { de: "Seit einigen Monaten.", ru: "Уже несколько месяцев." },
+      { de: "Ich habe erst angefangen.", ru: "Я только начал." },
+      { de: "Seit letztem Jahr lerne ich.", ru: "Я учу с прошлого года." }
+    ]
+  },
+  {
+    de: "Welche Sprachen sprichst du?",
+    ru: "На каких языках ты говоришь?",
+    answers: [
+      { de: "Ich spreche Ukrainisch und Russisch.", ru: "Я говорю по-украински и по-русски." },
+      { de: "Ich spreche auch Englisch.", ru: "Я также говорю по-английски." },
+      { de: "Ich lerne gerade Deutsch.", ru: "Я сейчас учу немецкий." },
+      { de: "Ich spreche drei Sprachen.", ru: "Я говорю на трёх языках." },
+      { de: "Meine Muttersprache ist Russisch.", ru: "Мой родной язык — русский." }
+    ]
+  },
+  {
+    de: "Lebst du alleine oder mit jemandem zusammen?",
+    ru: "Ты живёшь один или с кем-то вместе?",
+    answers: [
+      { de: "Ich lebe alleine.", ru: "Я живу один." },
+      { de: "Ich wohne mit meiner Familie.", ru: "Я живу с семьёй." },
+      { de: "Ich lebe mit meinem Partner.", ru: "Я живу с партнёром." },
+      { de: "Ich wohne mit Mitbewohnern.", ru: "Я живу с соседями по квартире." },
+      { de: "Zurzeit wohne ich allein.", ru: "Сейчас я живу один." }
+    ]
+  },
+  {
+    de: "Was ist deine Lieblingsstadt?",
+    ru: "Какой твой любимый город?",
+    answers: [
+      { de: "Meine Lieblingsstadt ist Kyjiw.", ru: "Мой любимый город — Киев." },
+      { de: "Ich mag Berlin sehr.", ru: "Мне очень нравится Берлин." },
+      { de: "Ich liebe Wien.", ru: "Я люблю Вену." },
+      { de: "Am liebsten mag ich Kyjiw.", ru: "Больше всего мне нравится Киев." },
+      { de: "Ich habe keine Lieblingsstadt.", ru: "У меня нет любимого города." }
+    ]
+  },
+  {
+    de: "Bist du eher introvertiert oder extrovertiert?",
+    ru: "Ты скорее интроверт или экстраверт?",
+    answers: [
+      { de: "Ich bin eher introvertiert.", ru: "Я скорее интроверт." },
+      { de: "Ich bin extrovertiert.", ru: "Я экстраверт." },
+      { de: "Ich bin beides ein bisschen.", ru: "Я немного и то, и другое." },
+      { de: "Je nach Situation bin ich anders.", ru: "Зависит от ситуации." },
+      { de: "Ich bin lieber allein.", ru: "Я предпочитаю быть один." }
+    ]
+  },
+  {
+    de: "Was ist dir im Leben wichtig?",
+    ru: "Что тебе важно в жизни?",
+    answers: [
+      { de: "Gesundheit ist mir sehr wichtig.", ru: "Здоровье для меня очень важно." },
+      { de: "Familie steht an erster Stelle.", ru: "Семья на первом месте." },
+      { de: "Frieden ist mir wichtig.", ru: "Мне важен мир." },
+      { de: "Freiheit ist mir sehr wichtig.", ru: "Свобода для меня очень важна." },
+      { de: "Arbeit und Familie sind wichtig.", ru: "Работа и семья важны." }
+    ]
+  },
+  {
+    de: "Hast du einen Traumjob? Was ist das?",
+    ru: "Есть ли у тебя работа мечты? Что это?",
+    answers: [
+      { de: "Ich arbeite schon im Traumjob.", ru: "Я уже работаю на работе мечты." },
+      { de: "Mein Traumjob ist IT-Entwickler.", ru: "Моя работа мечты — IT-разработчик." },
+      { de: "Ich möchte selbstständig sein.", ru: "Я хочу быть самозанятым." },
+      { de: "Ich habe keinen Traumjob.", ru: "У меня нет работы мечты." },
+      { de: "Ich möchte im Ausland arbeiten.", ru: "Я хочу работать за рубежом." }
+    ]
+  },
+  {
+    de: "Was willst du in Zukunft machen?",
+    ru: "Что ты хочешь делать в будущем?",
+    answers: [
+      { de: "Ich möchte Deutsch fließend sprechen.", ru: "Я хочу свободно говорить по-немецки." },
+      { de: "Ich will nach Deutschland ziehen.", ru: "Я хочу переехать в Германию." },
+      { de: "Ich möchte mehr reisen.", ru: "Я хочу больше путешествовать." },
+      { de: "Ich will meine Karriere entwickeln.", ru: "Я хочу развивать карьеру." },
+      { de: "Ich möchte ruhig leben.", ru: "Я хочу жить спокойно." }
+    ]
+  },
+  {
+    de: "Was machst du am Wochenende?",
+    ru: "Что ты делаешь на выходных?",
+    answers: [
+      { de: "Ich lese und entspanne mich.", ru: "Я читаю и отдыхаю." },
+      { de: "Ich lerne Deutsch.", ru: "Я учу немецкий." },
+      { de: "Ich gehe manchmal spazieren.", ru: "Иногда я гуляю." },
+      { de: "Ich treffe Freunde manchmal.", ru: "Иногда я встречаюсь с друзьями." },
+      { de: "Ich schaue Serien zuhause.", ru: "Я смотрю сериалы дома." }
+    ]
+  },
+  {
+    de: "Kochst du gern? Was kochst du?",
+    ru: "Ты любишь готовить? Что ты готовишь?",
+    answers: [
+      { de: "Ja, ich koche gern Suppe.", ru: "Да, я люблю готовить суп." },
+      { de: "Ich koche manchmal Pasta.", ru: "Иногда я готовлю пасту." },
+      { de: "Nicht so gern, aber ich kann.", ru: "Не очень, но умею." },
+      { de: "Ich koche einfache Gerichte.", ru: "Я готовлю простые блюда." },
+      { de: "Nein, ich bestelle lieber.", ru: "Нет, я предпочитаю заказывать." }
+    ]
+  },
+  {
+    de: "Was schaust du gern im Internet?",
+    ru: "Что ты любишь смотреть в интернете?",
+    answers: [
+      { de: "Ich schaue YouTube-Videos.", ru: "Я смотрю видео на YouTube." },
+      { de: "Ich lese Nachrichten online.", ru: "Я читаю новости онлайн." },
+      { de: "Ich schaue Tutorials gern.", ru: "Я люблю смотреть туториалы." },
+      { de: "Ich schaue Dokumentarfilme.", ru: "Я смотрю документальные фильмы." },
+      { de: "Ich surfe in sozialen Netzwerken.", ru: "Я сижу в социальных сетях." }
+    ]
+  },
+  {
+    de: "Bist du verheiratet oder hast du einen Partner / eine Partnerin?",
+    ru: "Ты женат/замужем или у тебя есть партнёр?",
+    answers: [
+      { de: "Ich bin verheiratet.", ru: "Я женат/замужем." },
+      { de: "Ich bin ledig.", ru: "Я холост/не замужем." },
+      { de: "Ich habe eine Partnerin.", ru: "У меня есть партнёрша." },
+      { de: "Ich bin geschieden.", ru: "Я разведён(а)." },
+      { de: "Das ist privat für mich.", ru: "Это для меня личное." }
+    ]
+  },
+  {
+    de: "Wie sieht dein typischer Tag aus?",
+    ru: "Как выглядит твой обычный день?",
+    answers: [
+      { de: "Ich stehe früh auf.", ru: "Я встаю рано." },
+      { de: "Ich arbeite von zu Hause.", ru: "Я работаю из дома." },
+      { de: "Morgens trinke ich Kaffee.", ru: "Утром я пью кофе." },
+      { de: "Ich arbeite und lerne Deutsch.", ru: "Я работаю и учу немецкий." },
+      { de: "Abends lese ich ein Buch.", ru: "Вечером я читаю книгу." }
+    ]
+  },
+  {
+    de: "Wo bist du aufgewachsen?",
+    ru: "Где ты вырос?",
+    answers: [
+      { de: "Ich bin in Kyjiw aufgewachsen.", ru: "Я вырос в Киеве." },
+      { de: "Ich bin auf dem Land aufgewachsen.", ru: "Я вырос в деревне." },
+      { de: "Ich habe in der Ukraine gelebt.", ru: "Я жил в Украине." },
+      { de: "Ich bin in einer Stadt aufgewachsen.", ru: "Я вырос в городе." },
+      { de: "Meine Kindheit war in Kyjiw.", ru: "Моё детство прошло в Киеве." }
+    ]
+  },
+  {
+    de: "Was nervt dich?",
+    ru: "Что тебя раздражает?",
+    answers: [
+      { de: "Unpünktlichkeit nervt mich.", ru: "Меня раздражает непунктуальность." },
+      { de: "Lärm stört mich sehr.", ru: "Меня очень беспокоит шум." },
+      { de: "Unordnung nervt mich manchmal.", ru: "Иногда меня раздражает беспорядок." },
+      { de: "Unhöfliche Menschen nerven mich.", ru: "Грубые люди меня раздражают." },
+      { de: "Langsames Internet nervt mich.", ru: "Медленный интернет меня раздражает." }
+    ]
+  },
+  {
+    de: "Was macht dich glücklich?",
+    ru: "Что делает тебя счастливым?",
+    answers: [
+      { de: "Bücher machen mich glücklich.", ru: "Книги делают меня счастливым." },
+      { de: "Meine Familie macht mich glücklich.", ru: "Моя семья делает меня счастливым." },
+      { de: "Gutes Wetter macht mich froh.", ru: "Хорошая погода делает меня радостным." },
+      { de: "Lernen macht mich glücklich.", ru: "Обучение делает меня счастливым." },
+      { de: "Frieden macht mich glücklich.", ru: "Мир делает меня счастливым." }
+    ]
+  },
+  {
+    de: "Hast du eine beste Freundin oder einen besten Freund?",
+    ru: "Есть ли у тебя лучшая подруга или лучший друг?",
+    answers: [
+      { de: "Ja, ich habe einen besten Freund.", ru: "Да, у меня есть лучший друг." },
+      { de: "Ja, eine beste Freundin.", ru: "Да, лучшая подруга." },
+      { de: "Ich habe viele gute Freunde.", ru: "У меня много хороших друзей." },
+      { de: "Ich bin ein Einzelgänger.", ru: "Я одиночка." },
+      { de: "Ich habe wenige, aber gute Freunde.", ru: "У меня мало, но хороших друзей." }
+    ]
+  },
+  {
+    de: "Was hast du gestern gemacht?",
+    ru: "Что ты делал вчера?",
+    answers: [
+      { de: "Ich habe gearbeitet.", ru: "Я работал." },
+      { de: "Ich habe ein Buch gelesen.", ru: "Я читал книгу." },
+      { de: "Ich habe Deutsch gelernt.", ru: "Я учил немецкий." },
+      { de: "Ich habe zu Hause entspannt.", ru: "Я отдыхал дома." },
+      { de: "Ich habe einen Film gesehen.", ru: "Я смотрел фильм." }
+    ]
+  },
+  {
+    de: "Was planst du für dieses Jahr?",
+    ru: "Что ты планируешь на этот год?",
+    answers: [
+      { de: "Ich möchte Deutsch B1 erreichen.", ru: "Я хочу достичь уровня B1." },
+      { de: "Ich plane mehr zu reisen.", ru: "Я планирую больше путешествовать." },
+      { de: "Ich möchte gesünder leben.", ru: "Я хочу жить здоровее." },
+      { de: "Ich plane beruflich zu wachsen.", ru: "Я планирую профессиональный рост." },
+      { de: "Ich möchte mehr Bücher lesen.", ru: "Я хочу читать больше книг." }
+    ]
+  },
+  {
+    de: "Wann ist dein Geburtstag?",
+    ru: "Когда твой день рождения?",
+    answers: [
+      { de: "Mein Geburtstag ist im April.", ru: "Мой день рождения в апреле." },
+      { de: "Ich bin im Sommer geboren.", ru: "Я родился летом." },
+      { de: "Am fünfzehnten März.", ru: "Пятнадцатого марта." },
+      { de: "Im Winter, im Dezember.", ru: "Зимой, в декабре." },
+      { de: "Ich habe bald Geburtstag.", ru: "У меня скоро день рождения." }
+    ]
+  },
+  {
+    de: "Hast du viele deutsche Freunde?",
+    ru: "Есть ли у тебя много немецких друзей?",
+    answers: [
+      { de: "Nein, leider nicht.", ru: "Нет, к сожалению, нет." },
+      { de: "Ich habe ein paar Bekannte.", ru: "У меня есть несколько знакомых." },
+      { de: "Noch nicht, aber ich lerne.", ru: "Ещё нет, но я учусь." },
+      { de: "Ja, einige deutsche Kollegen.", ru: "Да, несколько немецких коллег." },
+      { de: "Ich kenne wenige Deutsche.", ru: "Я знаю мало немцев." }
+    ]
+  },
+  {
+    de: "Was ist dein Hobby?",
+    ru: "Какое у тебя хобби?",
+    answers: [
+      { de: "Mein Hobby ist Lesen.", ru: "Моё хобби — чтение." },
+      { de: "Ich programmiere in der Freizeit.", ru: "В свободное время я программирую." },
+      { de: "Ich lerne Sprachen.", ru: "Я учу языки." },
+      { de: "Ich mag Musik hören.", ru: "Я люблю слушать музыку." },
+      { de: "Ich spaziere gern draußen.", ru: "Я люблю гулять на улице." }
+    ]
+  },
+  {
+    de: "Was machst du vom Beruf?",
+    ru: "Кем ты работаешь?",
+    answers: [
+      { de: "Ich bin IT-Spezialist.", ru: "Я IT-специалист." },
+      { de: "Ich arbeite als Entwickler.", ru: "Я работаю разработчиком." },
+      { de: "Ich bin Programmierer.", ru: "Я программист." },
+      { de: "Ich bin Systemadministrator.", ru: "Я системный администратор." },
+      { de: "Ich arbeite in der Informatik.", ru: "Я работаю в сфере информатики." }
+    ]
+  },
+  {
+    de: "Hast du Kinder?",
+    ru: "Есть ли у тебя дети?",
+    answers: [
+      { de: "Ja, ich habe Kinder.", ru: "Да, у меня есть дети." },
+      { de: "Nein, ich habe keine Kinder.", ru: "Нет, у меня нет детей." },
+      { de: "Ich habe einen Sohn.", ru: "У меня есть сын." },
+      { de: "Ich habe eine Tochter.", ru: "У меня есть дочь." },
+      { de: "Noch keine, vielleicht später.", ru: "Пока нет, может, позже." }
+    ]
+  },
+  {
+    de: "Wo wohnst du hier in München?",
+    ru: "Где ты живёшь здесь, в Мюнхене?",
+    answers: [
+      { de: "Ich wohne im Zentrum.", ru: "Я живу в центре." },
+      { de: "Ich wohne im Norden.", ru: "Я живу на севере." },
+      { de: "Ich lebe in Schwabing.", ru: "Я живу в Швабинге." },
+      { de: "Nicht weit vom Bahnhof.", ru: "Недалеко от вокзала." },
+      { de: "Ich wohne in der Nähe.", ru: "Я живу неподалёку." }
+    ]
+  },
+  {
+    de: "Müssen Sie Miete zahlen?",
+    ru: "Вам нужно платить арендную плату?",
+    answers: [
+      { de: "Ja, ich zahle Miete.", ru: "Да, я плачу аренду." },
+      { de: "Ich zahle 600 Euro Miete.", ru: "Я плачу 600 евро аренды." },
+      { de: "Nein, ich wohne bei Eltern.", ru: "Нет, я живу у родителей." },
+      { de: "Ja, die Miete ist hoch.", ru: "Да, аренда высокая." },
+      { de: "Ich habe eine eigene Wohnung.", ru: "У меня своя квартира." }
+    ]
+  },
+  {
+    de: "Wo kaufen Sie Ihre Kleidung?",
+    ru: "Где вы покупаете одежду?",
+    answers: [
+      { de: "Ich kaufe online.", ru: "Я покупаю онлайн." },
+      { de: "Ich gehe in Geschäfte.", ru: "Я хожу в магазины." },
+      { de: "Meistens im Internet.", ru: "В основном в интернете." },
+      { de: "Ich kaufe in H&M.", ru: "Я покупаю в H&M." },
+      { de: "Selten, ich habe genug Kleidung.", ru: "Редко, у меня достаточно одежды." }
+    ]
+  },
+  {
+    de: "Was machen Sie oft am Wochenende?",
+    ru: "Что вы часто делаете на выходных?",
+    answers: [
+      { de: "Ich lese und entspanne.", ru: "Я читаю и отдыхаю." },
+      { de: "Ich lerne Deutsch.", ru: "Я учу немецкий." },
+      { de: "Ich treffe meine Familie.", ru: "Я встречаюсь с семьёй." },
+      { de: "Ich gehe spazieren.", ru: "Я хожу гулять." },
+      { de: "Ich schlafe länger.", ru: "Я сплю дольше." }
+    ]
+  },
+  {
+    de: "Was machen Sie, wenn Sie Ihre Familie besuchen?",
+    ru: "Что вы делаете, когда навещаете семью?",
+    answers: [
+      { de: "Wir essen zusammen.", ru: "Мы едим вместе." },
+      { de: "Wir reden und lachen.", ru: "Мы разговариваем и смеёмся." },
+      { de: "Wir kochen gemeinsam.", ru: "Мы вместе готовим." },
+      { de: "Wir spazieren oft zusammen.", ru: "Мы часто вместе гуляем." },
+      { de: "Wir sehen Fotos zusammen.", ru: "Мы вместе смотрим фотографии." }
+    ]
+  },
+  {
+    de: "Wann hast du Zeit?",
+    ru: "Когда у тебя есть время?",
+    answers: [
+      { de: "Am Abend habe ich Zeit.", ru: "Вечером у меня есть время." },
+      { de: "Am Wochenende bin ich frei.", ru: "На выходных я свободен." },
+      { de: "Meistens nach der Arbeit.", ru: "В основном после работы." },
+      { de: "Morgens habe ich manchmal Zeit.", ru: "Иногда у меня есть время утром." },
+      { de: "Am Freitagabend bin ich frei.", ru: "В пятницу вечером я свободен." }
+    ]
+  },
+  {
+    de: "Was möchten Sie kaufen?",
+    ru: "Что вы хотите купить?",
+    answers: [
+      { de: "Ich möchte Bücher kaufen.", ru: "Я хочу купить книги." },
+      { de: "Ich brauche neue Kleidung.", ru: "Мне нужна новая одежда." },
+      { de: "Ich möchte ein Laptop kaufen.", ru: "Я хочу купить ноутбук." },
+      { de: "Ich suche ein Geschenk.", ru: "Я ищу подарок." },
+      { de: "Ich brauche nichts Besonderes.", ru: "Мне ничего особенного не нужно." }
+    ]
+  }
+];
+
+let learnedSet = new Set(JSON.parse(localStorage.getItem('learned') || '[]'));
+let currentFilter = 'all';
+
+function saveState() {
+  localStorage.setItem('learned', JSON.stringify([...learnedSet]));
+}
+
+function toggleLearned(idx) {
+  if (learnedSet.has(idx)) learnedSet.delete(idx);
+  else learnedSet.add(idx);
+  saveState();
+  renderAll();
+}
+
+function toggleCard(idx) {
+  const card = document.getElementById('card-' + idx);
+  card.classList.toggle('open');
+}
+
+function pickAnswer(cardIdx, ansIdx) {
+  document.querySelectorAll(`#card-${cardIdx} .answer-item`).forEach((el, i) => {
+    el.classList.toggle('picked', i === ansIdx);
+  });
+}
+
+function renderAll() {
+  const list = document.getElementById('cardList');
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  list.innerHTML = '';
+  let shown = 0;
+  DATA.forEach((item, idx) => {
+    const isLearned = learnedSet.has(idx);
+    if (currentFilter === 'done' && !isLearned) return;
+    if (currentFilter === 'open' && isLearned) return;
+    if (query && !item.de.toLowerCase().includes(query) && !item.ru.toLowerCase().includes(query)) return;
+
+    shown++;
+    const card = document.createElement('div');
+    card.className = 'q-card' + (isLearned ? ' learned' : '');
+    card.id = 'card-' + idx;
+
+    const answers = item.answers.map((a, ai) => `
+      <div class="answer-item" onclick="pickAnswer(${idx},${ai})">
+        <span class="ans-letter">${String.fromCharCode(65+ai)}.</span>
+        <div class="ans-texts">
+          <div class="ans-de">${a.de}</div>
+          <div class="ans-ru">${a.ru}</div>
+        </div>
+      </div>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="q-header" onclick="toggleCard(${idx})">
+        <span class="q-num">${idx+1}</span>
+        <div class="q-texts">
+          <div class="q-de">${item.de}</div>
+          <div class="q-ru">${item.ru}</div>
+        </div>
+        <div class="q-right">
+          <button class="btn-learned" onclick="event.stopPropagation();toggleLearned(${idx})" title="Выучено">
+            ${isLearned ? '✅' : '⬜'}
+          </button>
+          <span class="q-arrow">▼</span>
+        </div>
+      </div>
+      <div class="q-answers">
+        <div class="answers-label">5 вариантов ответа:</div>
+        ${answers}
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  updateStats();
+}
+
+function updateStats() {
+  const total = DATA.length;
+  const learned = learnedSet.size;
+  const left = total - learned;
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statLearned').textContent = learned;
+  document.getElementById('statLeft').textContent = left;
+  const pct = Math.round((learned / total) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('pctLabel').textContent = pct + '%';
+}
+
+function setFilter(f) {
+  currentFilter = f;
+  ['btnAll','btnOpen','btnDone'].forEach(id => document.getElementById(id).classList.remove('active'));
+  document.getElementById(f === 'all' ? 'btnAll' : f === 'open' ? 'btnOpen' : 'btnDone').classList.add('active');
+  renderAll();
+}
+
+function filterCards() { renderAll(); }
+
+function expandAll() {
+  document.querySelectorAll('.q-card').forEach(c => c.classList.add('open'));
+}
+function collapseAll() {
+  document.querySelectorAll('.q-card').forEach(c => c.classList.remove('open'));
+}
+
+renderAll();
+</script>
+</body>
+</html>
