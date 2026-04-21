@@ -720,7 +720,9 @@ body::before {
 .dialog-avatar { width: 44px; height: 44px; border-radius: 50%; border: 3px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; background: var(--sun); }
 .dialog-line.right .dialog-avatar { background: var(--mint); }
 .dialog-bubble { background: var(--surface); border: 3px solid var(--border); border-radius: 18px; padding: 12px 16px; max-width: 70%; position: relative; }
-.dialog-line.right .dialog-bubble { background: var(--lime); }
+.dialog-line.right .dialog-bubble { background: var(--lime); color: #0B0B0A; }
+.dialog-line.right .dialog-bubble p,
+.dialog-line.right .dialog-bubble .ua { color: #0B0B0A; }
 .dialog-bubble p { font-size: 15px; line-height: 1.5; }
 .dialog-bubble .ua { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; font-style: italic; }
 
@@ -797,10 +799,11 @@ body::before {
   padding: 8px 12px;
 }
 .gram-tip {
-  background: var(--lime); border: 3px solid var(--border); border-radius: 14px;
+  background: var(--lime); color: #0B0B0A; border: 3px solid var(--border); border-radius: 14px;
   padding: 14px 18px; font-weight: 600; font-size: 15px;
   margin-bottom: 22px; box-shadow: 4px 4px 0 var(--border);
 }
+.gram-rule-num { color: #0B0B0A; }
 .gram-miniquiz {
   background: var(--surface); border: 3px solid var(--border); border-radius: 16px;
   padding: 18px; box-shadow: 4px 4px 0 var(--border);
@@ -830,7 +833,7 @@ body::before {
 #grammarBody > * + * { margin-top: 14px; }
 #grammarBody h3, #grammarBody h4 { font-family: var(--display); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 18px 0 8px; }
 #grammarBody p { margin: 10px 0; line-height: 1.7; }
-#grammarBody code { background: var(--sun); padding: 2px 6px; border-radius: 4px; font-family: var(--mono); font-size: 13px; }
+#grammarBody code { background: var(--sun); color: #0B0B0A; padding: 2px 6px; border-radius: 4px; font-family: var(--mono); font-size: 13px; }
 #grammarBody .grammar-chip { display: inline-block; background: var(--sun); border: 2.5px solid var(--border); border-radius: 999px; padding: 6px 14px; font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 14px; }
 #grammarBody .grammar-note { background: var(--cream, var(--bg-soft)); border: 2px solid var(--border); border-radius: 12px; padding: 14px 18px; font-size: 14px; }
 #grammarBody .grammar-note strong { font-weight: 700; }
@@ -839,14 +842,14 @@ body::before {
 #grammarBody .case-box p { font-size: 14px; line-height: 1.65; margin: 6px 0; }
 #grammarBody .case-box strong { font-weight: 700; }
 #grammarBody .examples { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-#grammarBody .examples li { padding: 10px 14px; background: var(--lime); border-left: 4px solid var(--ink); border-radius: 0 10px 10px 0; font-size: 15px; line-height: 1.45; }
-#grammarBody .examples li em { display: block; font-size: 12.5px; color: var(--muted); font-style: italic; margin-top: 3px; }
+#grammarBody .examples li { padding: 10px 14px; background: var(--lime); color: #0B0B0A; border-left: 4px solid var(--ink); border-radius: 0 10px 10px 0; font-size: 15px; line-height: 1.45; }
+#grammarBody .examples li em { display: block; font-size: 12.5px; color: #4A4A44; font-style: italic; margin-top: 3px; }
 #grammarBody .rule-table, #grammarBody .grammar-table, #grammarBody .gram-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 6px 0; background: var(--surface); border: 2.5px solid var(--border); border-radius: 12px; overflow: hidden; }
 #grammarBody .rule-table th, #grammarBody .grammar-table th, #grammarBody .gram-table th { text-align: left; font-family: var(--display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bg); background: var(--ink); padding: 8px 12px; }
 #grammarBody .rule-table td, #grammarBody .grammar-table td, #grammarBody .gram-table td { padding: 8px 12px; border-top: 1.5px solid var(--border); vertical-align: top; }
 #grammarBody .rule-table tbody tr:hover, #grammarBody .grammar-table tbody tr:hover, #grammarBody .gram-table tbody tr:hover { background: var(--bg-soft); }
 #grammarBody .rule-table td:first-child { font-weight: 700; color: var(--ink); width: 160px; }
-#grammarBody .rule-table code, #grammarBody .case-box code, #grammarBody .grammar-note code, #grammarBody .grammar-table code { background: var(--sun); border-radius: 4px; padding: 2px 6px; font-family: var(--mono); font-size: 13px; font-weight: 600; }
+#grammarBody .rule-table code, #grammarBody .case-box code, #grammarBody .grammar-note code, #grammarBody .grammar-table code { background: var(--sun); color: #0B0B0A; border-radius: 4px; padding: 2px 6px; font-family: var(--mono); font-size: 13px; font-weight: 600; }
 #grammarBody .divider { height: 2px; background: var(--border); border: 0; margin: 20px 0; border-radius: 2px; }
 #grammarBody .task-label { font-family: var(--display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
 #grammarBody .gram-box { background: var(--surface); border: 2.5px solid var(--border); border-radius: 14px; padding: 16px 20px; }
@@ -854,10 +857,10 @@ body::before {
 #grammarBody .gram-rule { font-size: 14.5px; line-height: 1.65; display: block; background: transparent; border: 0; padding: 0; box-shadow: none; grid-template-columns: none; }
 #grammarBody .gram-rule > div { margin-top: 8px; }
 #grammarBody .gram-rule em { color: var(--muted); }
-#grammarBody .gram-rule .key { background: var(--sun); padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+#grammarBody .gram-rule .key { background: var(--sun); color: #0B0B0A; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
 #grammarBody .sich { display: inline-block; background: var(--pink); color: #fff; padding: 1px 8px; border-radius: 999px; font-weight: 700; font-size: 13px; margin: 0 1px; }
-#grammarBody .ending { background: var(--lime); padding: 1px 6px; border-radius: 4px; font-weight: 700; color: var(--ink); }
-#grammarBody .ending-en { background: var(--sun); padding: 1px 6px; border-radius: 4px; font-weight: 700; color: var(--ink); }
+#grammarBody .ending { background: var(--lime); padding: 1px 6px; border-radius: 4px; font-weight: 700; color: #0B0B0A; }
+#grammarBody .ending-en { background: var(--sun); padding: 1px 6px; border-radius: 4px; font-weight: 700; color: #0B0B0A; }
 #grammarBody .ending-special { background: var(--pink); padding: 1px 6px; border-radius: 4px; font-weight: 700; color: #fff; }
 #grammarBody ol { padding-left: 22px; line-height: 1.65; }
 #grammarBody ol li { margin: 4px 0; }
@@ -866,9 +869,45 @@ body::before {
 .sprech-card { background: var(--lilac); border: 3px solid var(--border); border-radius: 18px; padding: 28px; }
 .sprech-list { list-style: none; counter-reset: sprech; display: grid; gap: 14px; margin-bottom: 24px; }
 .sprech-list li { counter-increment: sprech; position: relative; padding: 16px 20px 16px 64px; background: var(--surface); border: 2.5px solid var(--border); border-radius: 14px; font-size: 16px; line-height: 1.5; transition: transform .15s; }
-.sprech-list li:hover { transform: translateY(-2px); background: var(--sun); }
+.sprech-list li:hover { transform: translateY(-2px); background: var(--sun); color: #0B0B0A; }
 .sprech-list li::before { content: counter(sprech); position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 15px; }
 .sprech-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; }
+
+/* dark/neon contrast: bright accent backgrounds always need dark text */
+[data-theme="dark"] .lesson-chip.solid,
+[data-theme="dark"] .top-link:hover,
+[data-theme="dark"] .word-btn:hover,
+[data-theme="dark"] .vocab-card:hover,
+[data-theme="dark"] .vocab-card:hover .vocab-art,
+[data-theme="dark"] .vocab-card:hover .vocab-word,
+[data-theme="dark"] .vocab-card:hover .vocab-ua,
+[data-theme="dark"] .vocab-card:hover .vocab-ex,
+[data-theme="dark"] .quiz-opt:hover,
+[data-theme="dark"] .quiz-opt.right,
+[data-theme="dark"] .dnd-zone.over,
+[data-theme="dark"] .dnd-chip.correct,
+[data-theme="dark"] .race-input:focus,
+[data-theme="dark"] .text-box mark,
+[data-theme="dark"] .text-box mark:hover,
+[data-theme="dark"] .dialog-avatar,
+[data-theme="dark"] .topic-check,
+[data-theme="dark"] .bento .c-streak,
+[data-theme="dark"] .bento .c-race,
+[data-theme="dark"] .sticker,
+[data-theme="dark"] .word-ex b,
+[data-theme="neon"] .lesson-chip.solid,
+[data-theme="neon"] .top-link:hover,
+[data-theme="neon"] .word-btn:hover,
+[data-theme="neon"] .vocab-card:hover,
+[data-theme="neon"] .quiz-opt:hover,
+[data-theme="neon"] .quiz-opt.right,
+[data-theme="neon"] .dnd-zone.over,
+[data-theme="neon"] .dnd-chip.correct,
+[data-theme="neon"] .text-box mark,
+[data-theme="neon"] .text-box mark:hover,
+[data-theme="neon"] .bento .c-streak,
+[data-theme="neon"] .bento .c-race,
+[data-theme="neon"] .sticker { color: #0B0B0A; }
 
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
