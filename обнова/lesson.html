@@ -31,7 +31,7 @@
     <div class="lesson-emoji-big" id="heroEmoji">🍳</div>
     <div class="lesson-hero-meta" style="margin-bottom:20px">
       <span class="lesson-chip solid" id="heroChip">THEMA 01 · A2</span>
-      <span class="lesson-chip">~18 min</span>
+      <span class="lesson-chip" id="heroDuration">~18 min</span>
       <span class="lesson-chip" id="heroWords">10 Wörter</span>
     </div>
     <h1 id="heroTitle">Essen &amp;<br><em>Kochen</em> 🍳</h1>
@@ -43,10 +43,11 @@
     <button class="ltab active" data-p="p1"><span class="ltab-num">01</span>💾 Wortschatz</button>
     <button class="ltab" data-p="p2"><span class="ltab-num">02</span>🃏 Flip Cards</button>
     <button class="ltab" data-p="p3"><span class="ltab-num">03</span>🎯 Der/Die/Das</button>
-    <button class="ltab" data-p="p4"><span class="ltab-num">04</span>📖 Lesen</button>
-    <button class="ltab" data-p="p5"><span class="ltab-num">05</span>📐 Grammatik</button>
-    <button class="ltab" data-p="p6"><span class="ltab-num">06</span>💬 Dialog</button>
-    <button class="ltab" data-p="p7"><span class="ltab-num">07</span>🧠 Quiz</button>
+    <button class="ltab" data-p="pSprech"><span class="ltab-num">04</span>💬 Sprechen</button>
+    <button class="ltab" data-p="p4"><span class="ltab-num">05</span>📖 Lesen</button>
+    <button class="ltab" data-p="p6"><span class="ltab-num">06</span>🗨 Dialog</button>
+    <button class="ltab" data-p="p5"><span class="ltab-num">07</span>📐 Grammatik</button>
+    <button class="ltab" data-p="p7"><span class="ltab-num">08</span>🧠 Quiz</button>
   </div>
 
   <!-- PANE 1: VOCAB -->
@@ -113,11 +114,29 @@
     </div>
   </div>
 
+  <!-- PANE SPRECH: SPRECHÜBUNG -->
+  <div class="lpane" id="pSprech">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 4</span>
+        <h2 class="section-title">Sprech<em>übung</em> 🏭</h2>
+      </div>
+      <span class="tiny-note" id="sprechNote">Übe, dich auf Deutsch vorzustellen — 5 zufällige Fragen pro Runde</span>
+    </div>
+    <div class="sprech-card">
+      <ul class="sprech-list" id="sprechList"></ul>
+      <div class="sprech-actions">
+        <button class="btn pink" onclick="sprechShuffle()">🎲 Neue Runde</button>
+        <button class="word-btn" onclick="sprechReadAll()">🔊 Alle vorlesen</button>
+      </div>
+    </div>
+  </div>
+
   <!-- PANE 4: READING -->
   <div class="lpane" id="p4">
     <div class="section-head">
       <div>
-        <span class="section-label">// Schritt 4</span>
+        <span class="section-label">// Schritt 5</span>
         <h2 class="section-title" id="textTitle">Lesetext</h2>
       </div>
       <span class="tiny-note">🖍 Gelbe Wörter = Vokabeln. Hover für Übersetzung.</span>
@@ -126,39 +145,33 @@
       <button class="word-btn" onclick="speak(document.getElementById('textBox').innerText)">🔊 Vorlesen</button>
       <button class="word-btn" id="btnTrans" onclick="toggleTrans()">🇺🇦 Untertitel</button>
     </div>
-    <div class="text-box" id="textBox"></div>
+    <div class="text-box" id="textBox"><div id="textBody"></div></div>
     <p class="ua-line" id="uaLine" style="display:none;font-style:italic;color:var(--muted);font-size:14px;border-top:2px dashed var(--border);padding-top:14px;margin-top:18px"></p>
   </div>
 
-  <!-- PANE 5: GRAMMATIK -->
+  <!-- PANE 5: GRAMMATIK (rich HTML) -->
   <div class="lpane" id="p5">
     <div class="section-head">
       <div>
-        <span class="section-label">// Schritt 5</span>
-        <h2 class="section-title" id="gramTitle">Grammatik</h2>
+        <span class="section-label">// Schritt 7</span>
+        <h2 class="section-title"><em>Grammatik</em> 📐</h2>
       </div>
-      <span class="tiny-note">📐 Правило дня</span>
+      <span class="tiny-note" id="grammarChip"></span>
     </div>
-    <p class="gram-intro" id="gramIntro"></p>
-    <div class="gram-rules" id="gramRules"></div>
-    <div class="gram-tip" id="gramTip"></div>
-    <div class="gram-miniquiz">
-      <h4>Schnell-Check ⚡</h4>
-      <div id="gramMiniQuiz"></div>
-    </div>
+    <div class="card" id="grammarBody"></div>
   </div>
 
   <!-- PANE 6: DIALOG -->
   <div class="lpane" id="p6">
     <div class="section-head">
       <div>
-        <span class="section-label">// Schritt 5</span>
-        <h2 class="section-title" id="dialogTitle">Dialog</h2>
+        <span class="section-label">// Schritt 6</span>
+        <h2 class="section-title" id="dialogTitle">Dialog 💬</h2>
       </div>
       <span class="tiny-note">👂 Drück „Abspielen" und hör zu</span>
     </div>
     <div style="margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap">
-      <button class="btn pink" onclick="alert('🔊 Playing audio mix…')">▶ Abspielen</button>
+      <button class="btn pink" onclick="playDialog()">▶ Abspielen</button>
       <button class="word-btn" id="btnDialogUa" onclick="toggleDialogUa()">🇺🇦 Показати</button>
     </div>
     <div id="dialog"></div>
@@ -168,7 +181,7 @@
   <div class="lpane" id="p7">
     <div class="section-head">
       <div>
-        <span class="section-label">// Schritt 6</span>
+        <span class="section-label">// Schritt 8</span>
         <h2 class="section-title">Quick <em>Quiz</em> 🧠</h2>
       </div>
       <span class="tiny-note" id="quizProg">Frage 1 / 5</span>
@@ -197,8 +210,8 @@
   </footer>
 </div>
 
-<script src="app.js?v=6"></script>
-<script src="topics.js?v=3"></script>
-<script src="lesson.js?v=8"></script>
+<script src="data/lessons.js?v=1"></script>
+<script src="app.js?v=7"></script>
+<script src="lesson.js?v=9"></script>
 </body>
 </html>
