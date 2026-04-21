@@ -40,7 +40,7 @@ function renderThemen(topics){
     grid.className = 'themen-grid' + (view === 'list' ? ' list' : '');
     grid.style.gridTemplateColumns = view === 'list' ? '1fr' : '';
     grid.innerHTML = filtered.map((t,i) => `
-      <a class="theme-tile ${t.status} ${view==='list'?'list-view':''}" href="lesson.html#t=${t.id}" style="background: ${t.color}">
+      <a class="theme-tile ${t.status} ${view==='list'?'list-view':''}" href="lesson.html?topic=${t.id}" style="background: ${t.color}">
         <div class="tt-badge">${t.status === 'done' ? '✓ durch' : t.status === 'new' ? '✨ NEU' : '🔥 offen'}</div>
         <div class="tt-top">
           <div>
