@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeutschWeg — Profil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="pages.css?v=2">
+</head>
+<body data-theme="light">
+
+<div class="container">
+
+  <div class="topbar">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Deutsch<span class="brand-weg">Weg</span></a>
+    <nav class="top-nav">
+      <a class="top-link" href="themen.html">📚 Themen</a>
+      <a class="top-link" href="woerter.html">💾 Wörter</a>
+      <a class="top-link" href="community.html">👯 Community</a>
+      <a class="top-link" href="profile.html">🧑 Profil</a>
+      <div class="theme-switch">
+        <button class="theme-btn active" data-t="light">☀</button>
+        <button class="theme-btn" data-t="dark">🌙</button>
+        <button class="theme-btn" data-t="neon">⚡</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- PROFILE HEADER -->
+  <div class="profile-hero" style="background: var(--lime)">
+    <div class="avatar-block">
+      <div class="avatar-big" id="avatar">🦊</div>
+      <button class="avatar-edit" onclick="cycleAvatar()">✎</button>
+    </div>
+    <div class="profile-meta">
+      <span class="page-label">// Lvl 4 · Sprach-Nerd</span>
+      <h1 class="page-h1" id="userName" contenteditable="true" spellcheck="false">Anna</h1>
+      <p class="profile-tag">🇺🇦 Kyiv → 🇩🇪 Berlin · <em>lernt seit 87 Tagen</em></p>
+      <div class="stat-row" style="margin-top:16px">
+        <div class="stat-pill big"><b>12</b><span>🔥 Tage Streak</span></div>
+        <div class="stat-pill big"><b>247</b><span>📘 Wörter</span></div>
+        <div class="stat-pill big"><b>5/10</b><span>🎯 Themen</span></div>
+        <div class="stat-pill big"><b>A2+</b><span>📊 Level</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL PROGRESS -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Der Weg zum Ziel</span>
+        <h2 class="section-title">Noch <em>42%</em> bis B1 ⚡</h2>
+      </div>
+      <span class="tiny-note">pace: ~3 Wochen bei 15 min/day</span>
+    </div>
+
+    <div class="xp-bar-big">
+      <div class="xp-bar-fill" style="width: 58%"></div>
+      <div class="xp-milestones">
+        <span class="ms done" style="left:0%"><i></i>A1</span>
+        <span class="ms done" style="left:25%"><i></i>A2</span>
+        <span class="ms now" style="left:58%"><i></i>du bist hier</span>
+        <span class="ms" style="left:85%"><i></i>B1</span>
+        <span class="ms" style="left:100%"><i></i>🎉</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STREAK CAL -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Letzte 16 Wochen</span>
+        <h2 class="section-title">Deine <em>Aktivität</em> 🔥</h2>
+      </div>
+      <div class="legend-row">
+        <span class="lg-item"><i class="lg l0"></i>0</span>
+        <span class="lg-item"><i class="lg l1"></i>1-5</span>
+        <span class="lg-item"><i class="lg l2"></i>5-15</span>
+        <span class="lg-item"><i class="lg l3"></i>15-30</span>
+        <span class="lg-item"><i class="lg l4"></i>30+ min</span>
+      </div>
+    </div>
+    <div class="heatmap-wrap">
+      <div class="dows"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+      <div class="heatmap" id="heatmap"></div>
+    </div>
+    <div class="streak-summary">
+      <div class="ss-box"><span class="ss-n">12</span><span>🔥 current</span></div>
+      <div class="ss-box"><span class="ss-n">28</span><span>⭐ longest</span></div>
+      <div class="ss-box"><span class="ss-n">87</span><span>📅 total</span></div>
+      <div class="ss-box"><span class="ss-n">21h</span><span>⏱ 30-day</span></div>
+    </div>
+  </section>
+
+  <!-- BADGES -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// 8 / 24 Badges</span>
+        <h2 class="section-title">Deine <em>Achievements</em> 🏆</h2>
+      </div>
+      <a class="top-link" href="#">Alle 24 →</a>
+    </div>
+    <div class="badges-grid">
+      <div class="badge unlocked" style="background:var(--pink); color:#fff">
+        <div class="b-ic">🔥</div><div class="b-name">Streak Rookie</div><div class="b-sub">7 Tage in Folge</div>
+      </div>
+      <div class="badge unlocked" style="background:var(--blue); color:#fff">
+        <div class="b-ic">💾</div><div class="b-name">Wort-Sammler</div><div class="b-sub">100 Wörter gelernt</div>
+      </div>
+      <div class="badge unlocked" style="background:var(--sun)">
+        <div class="b-ic">🎯</div><div class="b-name">Perfekt!</div><div class="b-sub">5× Quiz 100%</div>
+      </div>
+      <div class="badge unlocked" style="background:var(--mint)">
+        <div class="b-ic">🌍</div><div class="b-name">Weltenbummler</div><div class="b-sub">Reisen-Thema durch</div>
+      </div>
+      <div class="badge unlocked" style="background:var(--lilac)">
+        <div class="b-ic">🌳</div><div class="b-name">Grüner Daumen</div><div class="b-sub">Umwelt-Thema durch</div>
+      </div>
+      <div class="badge unlocked" style="background:var(--peach)">
+        <div class="b-ic">⚡</div><div class="b-name">Early Bird</div><div class="b-sub">5× vor 8 Uhr lernen</div>
+      </div>
+      <div class="badge unlocked" style="background:var(--lime)">
+        <div class="b-ic">🥐</div><div class="b-name">Neugierig</div><div class="b-sub">3 Stories am Tag</div>
+      </div>
+      <div class="badge unlocked" style="background:#C4F83C">
+        <div class="b-ic">🎭</div><div class="b-name">Slang-Master</div><div class="b-sub">10 Slang-Wörter</div>
+      </div>
+      <div class="badge locked">
+        <div class="b-ic">🏆</div><div class="b-name">Streak-Hero</div><div class="b-sub">30 Tage · ⏳ noch 18</div>
+      </div>
+      <div class="badge locked">
+        <div class="b-ic">💎</div><div class="b-name">B1-Level</div><div class="b-sub">Alle Themen · 🔒</div>
+      </div>
+      <div class="badge locked">
+        <div class="b-ic">🎤</div><div class="b-name">Gesprächig</div><div class="b-sub">10 Dialoge · 4/10</div>
+      </div>
+      <div class="badge locked">
+        <div class="b-ic">📚</div><div class="b-name">Wort-Titan</div><div class="b-sub">500 Wörter · 247/500</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAILY GOAL + SETTINGS -->
+  <section class="section two-col">
+    <div class="card c-goal" style="background: var(--sun)">
+      <span class="card-tag">🎯 Tagesziel</span>
+      <div class="goal-current">
+        <div class="goal-ring" style="--p: 80">
+          <span class="goal-min"><b>12</b>/15<small>min</small></span>
+        </div>
+        <div class="goal-meta">
+          <p>Noch <b>3 Minuten</b> für heute!</p>
+          <p class="muted">Streak +1 🔥 wartet schon.</p>
+          <div style="display:flex;gap:8px;margin-top:14px">
+            <button class="chip active" data-g="5">5 min</button>
+            <button class="chip active solid" data-g="15">15 min</button>
+            <button class="chip" data-g="30">30 min</button>
+            <button class="chip" data-g="60">60 min</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="background: var(--surface)">
+      <span class="card-tag">⚙ Settings</span>
+      <div class="settings-list">
+        <div class="set-row"><span>🔔 Daily reminder</span><label class="switch"><input type="checkbox" checked><span></span></label></div>
+        <div class="set-row"><span>📢 Sound effects</span><label class="switch"><input type="checkbox" checked><span></span></label></div>
+        <div class="set-row"><span>🇺🇦 Default translation</span><select class="mini-sel"><option>Ukrainisch</option><option>English</option><option>Deutsch only</option></select></div>
+        <div class="set-row"><span>⏰ Reminder time</span><select class="mini-sel"><option>19:00</option><option>08:00</option><option>12:00</option><option>21:00</option></select></div>
+        <div class="set-row"><span>🎨 Theme</span>
+          <div class="theme-switch" style="border-color: var(--ink)">
+            <button class="theme-btn active" data-t="light">☀</button>
+            <button class="theme-btn" data-t="dark">🌙</button>
+            <button class="theme-btn" data-t="neon">⚡</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRIENDS LEADERBOARD -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Mini Leaderboard</span>
+        <h2 class="section-title">Freunde <em>diese Woche</em> 🏁</h2>
+      </div>
+      <button class="btn ghost">+ Freund hinzufügen</button>
+    </div>
+    <div class="lb">
+      <div class="lb-row me">
+        <span class="lb-rank">#3</span>
+        <div class="lb-ava" style="background:var(--lime)">🦊</div>
+        <div class="lb-info"><b>Du</b><span>12 🔥 · 247 📘</span></div>
+        <div class="lb-bar"><div style="width:72%; background: var(--ink)"></div></div>
+        <span class="lb-pts">420</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank gold">#1</span>
+        <div class="lb-ava" style="background:var(--pink)">🐙</div>
+        <div class="lb-info"><b>Leon_1999</b><span>21 🔥 · 310 📘</span></div>
+        <div class="lb-bar"><div style="width:100%; background: var(--pink)"></div></div>
+        <span class="lb-pts">580</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank silver">#2</span>
+        <div class="lb-ava" style="background:var(--blue); color:#fff">🦁</div>
+        <div class="lb-info"><b>mira.k</b><span>14 🔥 · 280 📘</span></div>
+        <div class="lb-bar"><div style="width:85%; background: var(--blue)"></div></div>
+        <span class="lb-pts">490</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank">#4</span>
+        <div class="lb-ava" style="background:var(--sun)">🐸</div>
+        <div class="lb-info"><b>tom.exe</b><span>8 🔥 · 190 📘</span></div>
+        <div class="lb-bar"><div style="width:58%; background: var(--sun)"></div></div>
+        <span class="lb-pts">340</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank">#5</span>
+        <div class="lb-ava" style="background:var(--mint)">🐧</div>
+        <div class="lb-info"><b>nata.berlin</b><span>4 🔥 · 120 📘</span></div>
+        <div class="lb-bar"><div style="width:38%; background: var(--mint)"></div></div>
+        <span class="lb-pts">220</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><div class="footer-mark">DeutschWeg</div>Anna · 87 Tage · Lvl 4 · A2+</div>
+    <div><a href="index.html">← Home</a></div>
+  </footer>
+</div>
+
+<script src="pages.js?v=3"></script>
+<script>renderHeatmap();</script>
+</body>
+</html>

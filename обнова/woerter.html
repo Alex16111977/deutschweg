@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeutschWeg — Meine Wörter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="pages.css?v=2">
+</head>
+<body data-theme="light">
+
+<div class="container">
+
+  <div class="topbar">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Deutsch<span class="brand-weg">Weg</span></a>
+    <nav class="top-nav">
+      <a class="top-link" href="themen.html">📚 Themen</a>
+      <a class="top-link" href="woerter.html">💾 Wörter</a>
+      <a class="top-link" href="community.html">👯 Community</a>
+      <a class="top-link" href="profile.html">🧑 Profil</a>
+      <div class="theme-switch">
+        <button class="theme-btn active" data-t="light">☀</button>
+        <button class="theme-btn" data-t="dark">🌙</button>
+        <button class="theme-btn" data-t="neon">⚡</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <div class="page-hero" style="background: var(--lilac)">
+    <div class="page-hero-side">
+      <span class="page-label">// Dein Wortschatz</span>
+      <h1 class="page-h1"><em>247</em> Wörter gesammelt 💾</h1>
+      <p class="page-sub">Swipe, hör, lerne. Jedes Wort lebt in deiner Sammlung — du kannst sie mixen, üben oder exportieren.</p>
+      <div class="stat-row">
+        <div class="stat-pill"><b>247</b> insgesamt</div>
+        <div class="stat-pill"><b>89</b> gemeistert</div>
+        <div class="stat-pill"><b>34</b> diese Woche</div>
+        <div class="stat-pill"><b>18</b> brauchen Wdh.</div>
+      </div>
+    </div>
+    <div class="page-hero-graphic">
+      <div class="word-float" style="background:var(--sun); transform:rotate(-4deg)">das Rezept</div>
+      <div class="word-float" style="background:var(--pink); color:#fff; transform:rotate(3deg) translate(20px,20px)">die Fernweh</div>
+      <div class="word-float" style="background:var(--mint); transform:rotate(-2deg) translate(-10px,50px)">der Feierabend</div>
+      <div class="word-float" style="background:var(--blue); color:#fff; transform:rotate(5deg) translate(30px,70px)">die Zutat</div>
+    </div>
+  </div>
+
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <a class="btn pink" href="#practice">⚡ Üben (18 Wdh.)</a>
+    <button class="btn ghost" onclick="alert('CSV exportiert 📄')">📥 Export CSV</button>
+    <button class="btn ghost" onclick="shuffleWords()">🎲 Mischen</button>
+    <button class="btn ghost" onclick="alert('Anki deck ready 🎴')">🎴 Anki Deck</button>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="search-wrap">
+      <span class="search-ic">🔍</span>
+      <input id="wSearch" class="search-input" placeholder="Wort suchen… auf Deutsch oder Ukrainisch">
+    </div>
+    <div class="chip-row">
+      <button class="chip active" data-f="all">Alle</button>
+      <button class="chip" data-f="der">DER 🔵</button>
+      <button class="chip" data-f="die">DIE 🩷</button>
+      <button class="chip" data-f="das">DAS 🟡</button>
+      <button class="chip" data-f="verb">Verben ⚡</button>
+    </div>
+    <div class="chip-row">
+      <button class="chip ghost active" data-m="all">Status: alle</button>
+      <button class="chip ghost" data-m="new">✨ neu</button>
+      <button class="chip ghost" data-m="learning">🔄 lernen</button>
+      <button class="chip ghost" data-m="mastered">✓ gemeistert</button>
+    </div>
+  </div>
+
+  <!-- WORD SRS CARD (practice) -->
+  <section class="section" id="practice">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Spaced Repetition</span>
+        <h2 class="section-title">Üb die <em>18 fälligen</em> 🔁</h2>
+      </div>
+      <span class="tiny-note" id="srsCount">1 / 18</span>
+    </div>
+    <div class="srs-stage">
+      <div class="srs-card" id="srsCard">
+        <div class="srs-meta">
+          <span class="srs-chip">Essen &amp; Kochen</span>
+          <span class="srs-chip">🔁 3. Wdh.</span>
+          <span class="srs-chip warn">fällig</span>
+        </div>
+        <div class="srs-word">
+          <span class="art" id="srsArt">die</span>
+          <span id="srsWord">Mahlzeit</span>
+        </div>
+        <button class="word-btn" onclick="speak(document.getElementById('srsWord').textContent)">🔊 hören</button>
+        <div class="srs-answer" id="srsAnswer">
+          <div class="srs-ua">прийом їжі</div>
+          <div class="srs-ex">«Das Mittagessen ist die wichtigste Mahlzeit des Tages.»</div>
+        </div>
+        <button class="btn" id="srsReveal" onclick="srsReveal()">👀 Antwort zeigen</button>
+        <div class="srs-rate" id="srsRate" style="display:none">
+          <button class="rate-btn bad" onclick="srsNext('bad')">🫠<br><b>Vergessen</b><small>+1 Tag</small></button>
+          <button class="rate-btn mid" onclick="srsNext('mid')">😐<br><b>Schwer</b><small>+3 Tage</small></button>
+          <button class="rate-btn ok"  onclick="srsNext('ok')">🙂<br><b>OK</b><small>+1 Woche</small></button>
+          <button class="rate-btn good" onclick="srsNext('good')">🔥<br><b>Easy!</b><small>+2 Wochen</small></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Nach Thema</span>
+        <h2 class="section-title">Deine <em>Sammlungen</em> 📚</h2>
+      </div>
+      <span class="tiny-note">👆 tap für alle Wörter</span>
+    </div>
+    <div class="coll-grid">
+      <a class="coll-card" style="background: var(--sun)" href="#all"><div class="coll-ic">🍳</div><div class="coll-n">Essen &amp; Kochen</div><div class="coll-c">42 Wörter · 12 neu</div></a>
+      <a class="coll-card" style="background: var(--mint)" href="#all"><div class="coll-ic">🌳</div><div class="coll-n">Umwelt</div><div class="coll-c">38 Wörter · ✓ durch</div></a>
+      <a class="coll-card" style="background: var(--lilac)" href="#all"><div class="coll-ic">✈</div><div class="coll-n">Reisen</div><div class="coll-c">35 Wörter · ✓ durch</div></a>
+      <a class="coll-card" style="background: var(--peach)" href="#all"><div class="coll-ic">🎮</div><div class="coll-n">Freizeit</div><div class="coll-c">28 Wörter · 8 neu</div></a>
+      <a class="coll-card" style="background: var(--pink); color:#fff" href="#all"><div class="coll-ic">🎭</div><div class="coll-n">Slang</div><div class="coll-c">22 Wörter · curated</div></a>
+      <a class="coll-card" style="background: var(--blue); color:#fff" href="#all"><div class="coll-ic">⭐</div><div class="coll-n">Favoriten</div><div class="coll-c">14 Wörter</div></a>
+    </div>
+  </section>
+
+  <!-- WORD LIST -->
+  <section class="section" id="all">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Alle Wörter</span>
+        <h2 class="section-title">Complete <em>Wordlist</em></h2>
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" data-v="table">☰ Tabelle</button>
+        <button class="view-btn" data-v="cards">▦ Karten</button>
+      </div>
+    </div>
+    <div class="word-table" id="wordTable"></div>
+  </section>
+
+  <footer class="footer">
+    <div><div class="footer-mark">DeutschWeg</div>247 Wörter · 89 gemeistert · 12 Tage Streak</div>
+    <div><a href="index.html">← Home</a></div>
+  </footer>
+</div>
+
+<script src="pages.js?v=3"></script>
+<script>
+const allWords = [
+  { art:'die', w:'Fernweh',        ua:'туга за мандрами', topic:'🎭 Slang',   status:'mastered', added:'vor 2 Std' },
+  { art:'der', w:'Feierabend',     ua:'кінець роб. дня',  topic:'💼 Arbeit',  status:'mastered', added:'vor 1 Tag' },
+  { art:'die', w:'Gemütlichkeit',  ua:'затишок',          topic:'🎭 Slang',   status:'learning', added:'vor 1 Tag' },
+  { art:'das', w:'Gericht',        ua:'страва',           topic:'🍳 Kochen',  status:'learning', added:'vor 2 T.' },
+  { art:'die', w:'Zutat',          ua:'інгредієнт',       topic:'🍳 Kochen',  status:'new',      added:'vor 3 T.' },
+  { art:'der', w:'Geschmack',      ua:'смак',             topic:'🍳 Kochen',  status:'learning', added:'vor 3 T.' },
+  { art:'die', w:'Pfanne',         ua:'сковорідка',       topic:'🍳 Kochen',  status:'new',      added:'vor 4 T.' },
+  { art:'der', w:'Topf',           ua:'каструля',         topic:'🍳 Kochen',  status:'learning', added:'vor 4 T.' },
+  { art:'das', w:'Rezept',         ua:'рецепт',           topic:'🍳 Kochen',  status:'mastered', added:'vor 5 T.' },
+  { art:'die', w:'Mahlzeit',       ua:'прийом їжі',       topic:'🍳 Kochen',  status:'learning', added:'vor 5 T.' },
+  { art:'der', w:'Kummerspeck',    ua:'жир від смутку',   topic:'🎭 Slang',   status:'new',      added:'vor 6 T.' },
+  { art:'die', w:'Schadenfreude',  ua:'зловтіха',         topic:'🎭 Slang',   status:'mastered', added:'vor 1 W.' },
+  { art:'der', w:'Bahnhof',        ua:'вокзал',           topic:'✈ Reisen', status:'mastered', added:'vor 1 W.' },
+  { art:'die', w:'Umwelt',         ua:'довкілля',         topic:'🌳 Umwelt',  status:'mastered', added:'vor 2 W.' },
+  { art:'der', w:'Müll',           ua:'сміття',           topic:'🌳 Umwelt',  status:'mastered', added:'vor 2 W.' },
+  { art:'das', w:'Fingerspitzengefühl', ua:'тонке чуття', topic:'🎭 Slang',   status:'learning', added:'vor 2 W.' },
+  { art:'die', w:'Eselsbrücke',    ua:'мнемоніка',        topic:'🎭 Slang',   status:'learning', added:'vor 3 W.' },
+  { art:'der', w:'Kater',          ua:'кіт / похмілля',   topic:'🎭 Slang',   status:'mastered', added:'vor 3 W.' },
+];
+renderWordTable(allWords);
+</script>
+</body>
+</html>

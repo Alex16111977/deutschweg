@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeutschWeg — Lektion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+
+<div class="container">
+
+  <div class="topbar">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Deutsch<span class="brand-weg">Weg</span></a>
+    <nav class="top-nav">
+      <a class="top-link" href="index.html">← Home</a>
+      <div class="theme-switch">
+        <button class="theme-btn active" data-t="light">☀</button>
+        <button class="theme-btn" data-t="dark">🌙</button>
+        <button class="theme-btn" data-t="neon">⚡</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- LESSON HERO -->
+  <div class="lesson-hero">
+    <div class="lesson-emoji-big" id="heroEmoji">📚</div>
+    <div class="lesson-hero-meta" style="margin-bottom:20px">
+      <span class="lesson-chip solid" id="heroChipMain">THEMA · LEVEL</span>
+      <span class="lesson-chip" id="heroChipDuration">~15 min</span>
+      <span class="lesson-chip" id="heroChipWords">10 Wörter</span>
+    </div>
+    <h1 id="heroTitle">Lektion</h1>
+    <p id="heroIntro" style="font-size:18px;margin-top:16px;max-width:600px;opacity:.95"></p>
+  </div>
+
+  <!-- TABS -->
+  <div class="ltabs" id="ltabs">
+    <button class="ltab active" data-p="p1"><span class="ltab-num">01</span>💾 Wortschatz</button>
+    <button class="ltab" data-p="p2"><span class="ltab-num">02</span>🃏 Flip Cards</button>
+    <button class="ltab" data-p="p3"><span class="ltab-num">03</span>🎯 Der/Die/Das</button>
+    <button class="ltab" data-p="pSprech"><span class="ltab-num">04</span>💬 Sprechen</button>
+    <button class="ltab" data-p="p4"><span class="ltab-num">05</span>📖 Lesen</button>
+    <button class="ltab" data-p="p5"><span class="ltab-num">06</span>🗨 Dialog</button>
+    <button class="ltab" data-p="p6"><span class="ltab-num">07</span>📐 Grammatik</button>
+    <button class="ltab" data-p="p7"><span class="ltab-num">08</span>🧠 Quiz</button>
+  </div>
+
+  <!-- PANE 1: VOCAB -->
+  <div class="lpane active" id="p1">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 1</span>
+        <h2 class="section-title">10 neue <em>Wörter</em></h2>
+      </div>
+      <span class="tiny-note">👆 Tap auf eine Karte für Beispiel · 🔊 hört das Wort</span>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </div>
+
+  <!-- PANE 2: FLIP -->
+  <div class="lpane" id="p2">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 2</span>
+        <h2 class="section-title">Karten <em>durchgehen</em></h2>
+      </div>
+      <span class="tiny-note" id="flipCounter">1 / 10</span>
+    </div>
+    <div style="max-width:520px;margin:0 auto">
+      <div class="flip-stage" id="lFlipStage" style="height:280px">
+        <div class="flip-inner" id="lFlipInner">
+          <div class="flip-face front" style="background:var(--sun)">
+            <div class="flip-word" id="lFront">—</div>
+            <div class="flip-hint">tap to flip</div>
+          </div>
+          <div class="flip-face back" style="background:var(--pink);color:#fff">
+            <div class="flip-back-trans" id="lBack">—</div>
+            <div class="flip-back-ex" id="lEx">—</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:12px;margin-top:20px">
+        <button class="word-btn" onclick="lPrev()">← zurück</button>
+        <button class="word-btn" onclick="lShuffle()">🎲 mischen</button>
+        <button class="word-btn" onclick="lNext()">weiter →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANE 3: DRAG N DROP -->
+  <div class="lpane" id="p3">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 3</span>
+        <h2 class="section-title">Artikel <em>sortieren</em></h2>
+      </div>
+      <span class="tiny-note">🖱 Ziehe jedes Wort in die richtige Schublade</span>
+    </div>
+    <div class="dnd-pool" id="dndPool"></div>
+    <div class="dnd-pools" style="margin-top:16px">
+      <div class="dnd-zone der" data-art="der"><h4>DER 🔵</h4></div>
+      <div class="dnd-zone die" data-art="die"><h4>DIE 🩷</h4></div>
+      <div class="dnd-zone das" data-art="das"><h4>DAS 🟡</h4></div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <button class="btn pink" onclick="dndCheck()">Prüfen ✓</button>
+      <button class="word-btn" onclick="dndReset()">🔄 Reset</button>
+      <span class="tiny-note" id="dndScore"></span>
+    </div>
+  </div>
+
+  <!-- PANE SPRECH: SPRECHÜBUNG -->
+  <div class="lpane" id="pSprech">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 4</span>
+        <h2 class="section-title">Sprech<em>übung</em> 🏭</h2>
+      </div>
+      <span class="tiny-note" id="sprechNote">Übe, dich auf Deutsch vorzustellen — 5 zufällige Fragen pro Runde</span>
+    </div>
+    <div class="sprech-card">
+      <ul class="sprech-list" id="sprechList"></ul>
+      <div class="sprech-actions">
+        <button class="btn pink" onclick="sprechShuffle()">🎲 Neue Runde</button>
+        <button class="word-btn" onclick="sprechReadAll()">🔊 Alle vorlesen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANE 4: READING -->
+  <div class="lpane" id="p4">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 4</span>
+        <h2 class="section-title">Kurzer <em>Text</em></h2>
+      </div>
+      <span class="tiny-note">🖍 Gelbe Wörter = Vokabeln. Hover für Übersetzung.</span>
+    </div>
+    <div class="text-toolbar">
+      <button class="word-btn" onclick="speak(document.getElementById('textBody').innerText)">🔊 Vorlesen</button>
+      <button class="word-btn" id="btnTrans" onclick="toggleTrans()">🇺🇦 Untertitel</button>
+    </div>
+    <div class="text-box" id="textBox">
+      <div id="textBody"></div>
+      <p class="ua-line" id="uaLine" style="display:none;font-style:italic;color:var(--muted);font-size:14px;border-top:2px dashed var(--border);padding-top:14px;margin-top:18px"></p>
+    </div>
+  </div>
+
+  <!-- PANE 5: DIALOG -->
+  <div class="lpane" id="p5">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 5</span>
+        <h2 class="section-title"><em>Dialog</em> 💬</h2>
+      </div>
+      <span class="tiny-note">👂 Lies laut vor!</span>
+    </div>
+    <div style="margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn pink" onclick="playDialog()">▶ Abspielen</button>
+      <button class="word-btn" id="btnDialogUa" onclick="toggleDialogUa()">🇺🇦 Показати</button>
+    </div>
+    <div id="dialog"></div>
+  </div>
+
+  <!-- PANE 6: GRAMMAR -->
+  <div class="lpane" id="p6">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 6</span>
+        <h2 class="section-title"><em>Grammatik</em> 📐</h2>
+      </div>
+      <span class="tiny-note" id="grammarChip"></span>
+    </div>
+    <div class="card" id="grammarBody" style="padding:28px"></div>
+  </div>
+
+  <!-- PANE 7: QUIZ -->
+  <div class="lpane" id="p7">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 7</span>
+        <h2 class="section-title">Quick <em>Quiz</em> 🧠</h2>
+      </div>
+      <span class="tiny-note" id="quizProg">Frage 1 / 5</span>
+    </div>
+    <div class="card" id="quizCard">
+      <div class="quiz-q" id="quizQ"></div>
+      <div class="quiz-options" id="quizOpts"></div>
+      <div class="quiz-feedback" id="quizFb"></div>
+    </div>
+    <div id="quizDone" style="display:none;text-align:center;padding:40px">
+      <div style="font-size:120px;line-height:1">🎉</div>
+      <h2 class="section-title" style="margin:14px 0">Krass! <em id="quizScore">5 / 5</em></h2>
+      <p style="font-size:17px;color:var(--muted);margin-bottom:20px">Du bist ready für das nächste Thema!</p>
+      <a href="index.html" class="btn">Nächstes Abenteuer → </a>
+    </div>
+  </div>
+
+  <!-- NAV BOTTOM -->
+  <div class="lesson-nav-bottom">
+    <a href="index.html" class="word-btn">← Home</a>
+    <button class="btn pink" onclick="nextTab()">Weiter →</button>
+  </div>
+
+  <footer class="footer">
+    <div><div class="footer-mark">DeutschWeg</div><span id="footTopicMeta"></span></div>
+    <div>© 2026 · Made für die Jugend 🚀</div>
+  </footer>
+</div>
+
+<script src="data/lessons.js?v=6"></script>
+<script src="app.js?v=6"></script>
+<script src="lesson.js?v=6"></script>
+</body>
+</html>

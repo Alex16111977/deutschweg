@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeutschWeg — Alle Themen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="pages.css?v=2">
+</head>
+<body data-theme="light">
+
+<div class="container">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Deutsch<span class="brand-weg">Weg</span></a>
+    <nav class="top-nav">
+      <a class="top-link" href="themen.html">📚 Themen</a>
+      <a class="top-link" href="woerter.html">💾 Wörter</a>
+      <a class="top-link" href="community.html">👯 Community</a>
+      <a class="top-link" href="profile.html">🧑 Profil</a>
+      <div class="theme-switch">
+        <button class="theme-btn active" data-t="light">☀</button>
+        <button class="theme-btn" data-t="dark">🌙</button>
+        <button class="theme-btn" data-t="neon">⚡</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="background: var(--mint)">
+    <div class="page-hero-side">
+      <span class="page-label">// Katalog · 10 Themen</span>
+      <h1 class="page-h1">Alle <em>Themen</em> auf einen Blick 📚</h1>
+      <p class="page-sub">A2 → B1. Start wo du willst — jedes Thema ist ein eigenes Abenteuer mit 10 Wörtern, Text, Dialog &amp; Quiz.</p>
+      <div class="stat-row">
+        <div class="stat-pill"><b>10</b> Themen</div>
+        <div class="stat-pill"><b>100+</b> Wörter</div>
+        <div class="stat-pill"><b>2</b> Levels</div>
+        <div class="stat-pill"><b>~15</b> min · Thema</div>
+      </div>
+    </div>
+    <div class="page-hero-graphic">
+      <div class="stack-card" style="background: var(--sun); transform: rotate(-6deg)">🍳</div>
+      <div class="stack-card" style="background: var(--pink); color:#fff; transform: rotate(4deg) translate(10px,-10px)">✈</div>
+      <div class="stack-card" style="background: var(--blue); color:#fff; transform: rotate(-2deg) translate(-20px,10px)">📱</div>
+      <div class="stack-card" style="background: var(--lilac); transform: rotate(8deg) translate(24px,4px)">🎮</div>
+    </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="search-wrap">
+      <span class="search-ic">🔍</span>
+      <input id="search" class="search-input" placeholder="Thema suchen… (z.B. Essen, Reisen)" spellcheck="false">
+    </div>
+    <div class="chip-row" id="levelChips">
+      <button class="chip active" data-f="all">Alle</button>
+      <button class="chip" data-f="A1">A1</button>
+      <button class="chip" data-f="A2">A2</button>
+      <button class="chip" data-f="B1">B1</button>
+    </div>
+    <div class="chip-row" id="statusChips">
+      <button class="chip ghost active" data-s="all">alle</button>
+      <button class="chip ghost" data-s="done">✓ durch</button>
+      <button class="chip ghost" data-s="prog">🔥 offen</button>
+      <button class="chip ghost" data-s="new">✨ neu</button>
+    </div>
+    <div class="view-toggle" id="viewToggle">
+      <button class="view-btn active" data-v="grid">▦ Grid</button>
+      <button class="view-btn" data-v="list">≡ Liste</button>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <section class="section" style="margin-top:24px">
+    <div class="themen-grid" id="themenGrid"></div>
+    <div class="empty-state" id="emptyState" style="display:none">
+      <div style="font-size:80px">🤷</div>
+      <h3>Nichts gefunden</h3>
+      <p>Keine Themen matchen deine Filter. Versuch's nochmal!</p>
+    </div>
+  </section>
+
+  <!-- PATH / ROADMAP -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Deine Route</span>
+        <h2 class="section-title">Der <em>Weg</em> zu B1</h2>
+      </div>
+      <span class="tiny-note">👆 tap jedes Thema für Details</span>
+    </div>
+    <div class="roadmap">
+      <div class="road-line"></div>
+      <div class="road-stop done"   data-i="1"><div class="road-dot">✓</div><div class="road-lbl">Umwelt</div></div>
+      <div class="road-stop done"   data-i="2"><div class="road-dot">✓</div><div class="road-lbl">Reisen</div></div>
+      <div class="road-stop now"    data-i="3"><div class="road-dot">🍳</div><div class="road-lbl">Kochen</div></div>
+      <div class="road-stop locked" data-i="4"><div class="road-dot">🎮</div><div class="road-lbl">Freizeit</div></div>
+      <div class="road-stop locked" data-i="5"><div class="road-dot">💼</div><div class="road-lbl">Arbeit</div></div>
+      <div class="road-stop locked" data-i="6"><div class="road-dot">📱</div><div class="road-lbl">Tech</div></div>
+      <div class="road-stop locked" data-i="7"><div class="road-dot">👯</div><div class="road-lbl">Freunde</div></div>
+      <div class="road-stop locked" data-i="8"><div class="road-dot">👨‍👩‍👧</div><div class="road-lbl">Familie</div></div>
+      <div class="road-stop locked" data-i="9"><div class="road-dot">🏥</div><div class="road-lbl">Gesund.</div></div>
+      <div class="road-stop finish" data-i="10"><div class="road-dot">🎉</div><div class="road-lbl">B1!</div></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><div class="footer-mark">DeutschWeg © 2026</div>10 Themen · A2 → B1 · Made mit ❤</div>
+    <div><a href="index.html">← Home</a> · <a href="woerter.html">Wörter</a> · <a href="community.html">Community</a></div>
+  </footer>
+</div>
+
+<script src="pages.js?v=3"></script>
+<script>
+const topics = [
+  { id:'kochen',  emoji:'🍳', name:'Essen & Kochen',    level:'A2', gram:'Verben mit Präpositionen', words:10, prog:35, status:'prog', color:'var(--sun)' },
+  { id:'umwelt',  emoji:'🌳', name:'Die Umwelt',         level:'A2', gram:'Modalverben',              words:10, prog:100,status:'done', color:'var(--mint)' },
+  { id:'reisen',  emoji:'✈',  name:'Das Reisen',         level:'A2', gram:'Reflexivverben',           words:10, prog:100,status:'done', color:'var(--lilac)' },
+  { id:'freizeit',emoji:'🎮', name:'Freizeit',           level:'A2', gram:'Adjektivdeklination',      words:10, prog:40, status:'prog', color:'var(--peach)' },
+  { id:'arbeit',  emoji:'💼', name:'Arbeit & Beruf',     level:'B1', gram:'Infinitivsätze',           words:12, prog:12, status:'prog', color:'var(--lime)' },
+  { id:'tech',    emoji:'📱', name:'Internet & Tech',    level:'B1', gram:'Relativsätze',             words:12, prog:0,  status:'new',  color:'var(--blue)' },
+  { id:'freunde', emoji:'👯', name:'Freunde & Beziehungen', level:'A2', gram:'Komparativ',           words:10, prog:0,  status:'new',  color:'var(--pink)' },
+  { id:'familie', emoji:'👨‍👩‍👧', name:'Die Familie',    level:'A1', gram:'Possessivartikel',         words:8,  prog:0,  status:'new',  color:'var(--sun)' },
+  { id:'gesund',  emoji:'🏥', name:'Gesundheit',         level:'A2', gram:'Wechselpräpositionen',     words:10, prog:0,  status:'new',  color:'var(--mint)' },
+  { id:'medien',  emoji:'📺', name:'Medien & News',      level:'B1', gram:'Passiv',                    words:12, prog:0,  status:'new',  color:'var(--lilac)' },
+];
+renderThemen(topics);
+</script>
+</body>
+</html>
