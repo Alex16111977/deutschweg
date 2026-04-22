@@ -39,7 +39,7 @@ function getTopicColor(s){
     freizeit:'var(--peach)', beruf:'var(--lime)', arbeit:'var(--lime)',
     technik:'var(--blue)', tech:'var(--blue)', freunde:'var(--pink)',
     familie:'var(--sun)', gesundheit:'var(--mint)', gesund:'var(--mint)',
-    medien:'var(--lilac)'
+    medien:'var(--lilac)', erinnerungen:'var(--lilac)'
   };
   return map[s] || 'var(--sun)';
 }
