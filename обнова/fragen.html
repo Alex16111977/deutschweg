@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeutschWeg — Stell dich vor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="pages.css?v=3">
+<style>
+  /* Sprech-Page specific */
+  .mode-switch { display: flex; gap: 6px; background: var(--surface); border: 3px solid var(--border); border-radius: 999px; padding: 6px; margin: 0 0 24px; box-shadow: var(--shadow-hard); }
+  .mode-btn { flex: 1; border: 0; background: transparent; font-family: var(--display); font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 999px; cursor: pointer; color: var(--ink); transition: background .15s; }
+  .mode-btn:hover { background: var(--bg-soft); }
+  .mode-btn.active { background: var(--ink); color: var(--bg); }
+
+  .mode-pane { display: none; }
+  .mode-pane.active { display: block; animation: slideIn .35s cubic-bezier(.22,1,.36,1); }
+
+  /* TAB 1: list */
+  .q-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .q-list { display: grid; gap: 12px; }
+  .q-row { display: grid; grid-template-columns: 42px 1fr 44px; gap: 14px; align-items: center; background: var(--surface); border: 2.5px solid var(--border); border-radius: 14px; padding: 14px 16px; box-shadow: 3px 3px 0 var(--border); transition: transform .15s; }
+  .q-row:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--border); }
+  .q-num { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--muted); text-align: right; }
+  .q-text { font-family: var(--display); font-size: 16px; line-height: 1.45; font-weight: 500; color: var(--ink); }
+  .q-text.swapped { animation: pop .35s ease; }
+  @keyframes pop { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  .q-swap { width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--border); background: var(--bg-soft); cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: transform .2s, background .15s; }
+  .q-swap:hover { background: var(--sun); color: #0B0B0A; transform: rotate(20deg); }
+
+  /* TAB 2: practice card */
+  .p-dots { display: flex; justify-content: center; gap: 10px; margin-bottom: 28px; }
+  .p-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--bg-soft); border: 2px solid var(--border); transition: background .3s, transform .3s; }
+  .p-dot.active { background: var(--pink); transform: scale(1.3); }
+  .p-dot.done { background: var(--mint); }
+
+  .p-card { background: var(--lilac); border: 3px solid var(--border); border-radius: 22px; padding: 40px 28px 32px; box-shadow: var(--shadow-hard); text-align: center; animation: fadeUp .4s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .p-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .p-label { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+  .p-swap { width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: transform .2s, background .15s; }
+  .p-swap:hover { background: var(--sun); color: #0B0B0A; transform: rotate(20deg); }
+  .p-question { font-family: var(--display); font-size: clamp(22px, 5vw, 30px); font-weight: 600; line-height: 1.3; color: var(--ink); margin: 16px 0 36px; letter-spacing: -0.01em; }
+
+  .p-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .p-counter { font-family: var(--mono); font-size: 14px; color: var(--ink); font-weight: 600; }
+  .p-new-round { text-align: center; margin-top: 16px; }
+  .p-new-round button { font-family: var(--mono); font-size: 13px; color: var(--muted); background: none; border: 0; cursor: pointer; text-decoration: underline; padding: 8px; }
+  .p-new-round button:hover { color: var(--ink); }
+
+  .p-done { display: none; text-align: center; }
+  .p-done.visible { display: block; animation: fadeUp .4s ease; }
+  .p-done-card { background: var(--mint); border: 3px solid var(--border); border-radius: 22px; padding: 48px 28px; box-shadow: var(--shadow-hard); }
+  .p-done-emoji { font-size: 80px; margin-bottom: 16px; }
+  .p-done-title { font-family: var(--display); font-size: 32px; font-weight: 700; color: #0B0B0A; margin-bottom: 8px; }
+  .p-done-title em { color: var(--pink); font-style: italic; }
+  .p-done-sub { font-size: 16px; color: #2A2A26; margin-bottom: 24px; }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="container">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Deutsch<span class="brand-weg">Weg</span></a>
+    <nav class="top-nav">
+      <a class="top-link" href="themen.html">📚 Themen</a>
+      <a class="top-link" href="fragen.html">🗣 Sprechen</a>
+      <a class="top-link" href="woerter.html">💾 Wörter</a>
+      <a class="top-link" href="community.html">👯 Community</a>
+      <a class="top-link" href="profile.html">🧑 Profil</a>
+      <div class="theme-switch">
+        <button class="theme-btn active" data-t="light">☀</button>
+        <button class="theme-btn" data-t="dark">🌙</button>
+        <button class="theme-btn" data-t="neon">⚡</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="background: var(--sun)">
+    <div class="page-hero-side">
+      <span class="page-label">// Sprechübung · 52 Fragen</span>
+      <h1 class="page-h1">Stell dich <em>vor!</em> 🗣</h1>
+      <p class="page-sub">Alle klassischen A1–A2 Fragen, die du im Prüfungs-Sprechen und im echten Leben brauchst. Übe alle auf einmal — oder pack dir 5 zufällige als Mini-Runde.</p>
+      <div class="stat-row">
+        <div class="stat-pill"><b>52</b> Fragen</div>
+        <div class="stat-pill"><b>A1–A2</b> Level</div>
+        <div class="stat-pill"><b>~5</b> min · Runde</div>
+      </div>
+    </div>
+    <div class="page-hero-graphic">
+      <div class="word-float" style="background:var(--pink); color:#fff; transform:rotate(-3deg) translate(-40px,-60px)">Wie heißt du?</div>
+      <div class="word-float" style="background:var(--mint); transform:rotate(2deg) translate(30px,-20px)">Woher kommst du?</div>
+      <div class="word-float" style="background:var(--lilac); transform:rotate(-2deg) translate(-20px,40px)">Hobbys?</div>
+      <div class="word-float" style="background:var(--blue); color:#fff; transform:rotate(4deg) translate(40px,80px)">Warum Deutsch?</div>
+    </div>
+  </div>
+
+  <!-- MODE SWITCH -->
+  <div class="mode-switch" id="modeSwitch">
+    <button class="mode-btn active" data-m="all">📋 Alle 52 Fragen</button>
+    <button class="mode-btn" data-m="round">🎯 Runde von 5</button>
+  </div>
+
+  <!-- MODE 1: ALL -->
+  <div class="mode-pane active" id="modeAll">
+    <div class="q-toolbar">
+      <span class="tiny-note">👆 Tap auf 🔀 um ein Einzel-Fragen zu tauschen</span>
+      <button class="btn pink" onclick="shuffleAll()" style="font-size:14px;padding:10px 18px">🔀 Alle mischen</button>
+    </div>
+    <div class="q-list" id="qList"></div>
+  </div>
+
+  <!-- MODE 2: PRACTICE -->
+  <div class="mode-pane" id="modeRound">
+    <div id="practiceWrap">
+      <div class="p-dots" id="pDots"></div>
+      <div class="p-card" id="pCard">
+        <div class="p-head">
+          <span class="p-label">Frage <span id="pNum">1</span> von 5</span>
+          <button class="p-swap" onclick="swapCurrent()" title="Neue Frage">🔀</button>
+        </div>
+        <div class="p-question" id="pQuestion">—</div>
+        <div class="p-nav">
+          <button class="word-btn" id="btnPrev" onclick="prevQ()" disabled>← zurück</button>
+          <span class="p-counter" id="pCounter">1 / 5</span>
+          <button class="btn pink" id="btnPNext" onclick="nextQ()">Weiter →</button>
+        </div>
+      </div>
+      <div class="p-new-round">
+        <button onclick="newRound()">🎲 Neue 5 Fragen</button>
+      </div>
+    </div>
+    <div class="p-done" id="pDone">
+      <div class="p-done-card">
+        <div class="p-done-emoji">🎉</div>
+        <div class="p-done-title">Gut <em>gemacht!</em></div>
+        <div class="p-done-sub">Alle 5 Fragen durch. Nochmal?</div>
+        <button class="btn pink" onclick="newRound()">🎲 Neue Runde</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div><div class="footer-mark">DeutschWeg © 2026</div>Sprechübung · A1–A2 · 52 Fragen</div>
+    <div><a href="index.html">← Home</a> · <a href="themen.html">Themen</a> · <a href="woerter.html">Wörter</a></div>
+  </footer>
+</div>
+
+<script src="pages.js?v=4"></script>
+<script>
+const ALL_QUESTIONS = [
+  // Teil 1 — persönlich
+  "Wie heißt du?",
+  "Woher kommst du?",
+  "Wo wohnst du gerade?",
+  "Wie alt bist du?",
+  "Wann ist dein Geburtstag?",
+  "Was machst du beruflich?",
+  "Was studierst du?",
+  "Was sind deine Hobbys?",
+  "Was machst du in deiner Freizeit?",
+  "Hast du Geschwister?",
+  "Wie ist deine Familie?",
+  "Hast du Kinder?",
+  "Hast du Haustiere?",
+  "Bist du verheiratet oder hast du einen Partner / eine Partnerin?",
+  "Lebst du alleine oder mit jemandem zusammen?",
+  "Wo bist du aufgewachsen?",
+  // Essen & Alltag
+  "Was ist dein Lieblingsessen?",
+  "Was trinkst du am liebsten?",
+  "Kochst du gern? Was kochst du?",
+  "Wie sieht dein typischer Tag aus?",
+  "Was machst du am Wochenende?",
+  "Was hast du gestern gemacht?",
+  // Kultur & Interessen
+  "Welche Musik magst du?",
+  "Was ist dein Lieblingsfilm oder deine Lieblingsserie?",
+  "Liest du gern? Was liest du?",
+  "Was schaust du gern im Internet?",
+  "Machst du Sport? Welchen?",
+  // Reisen & Länder
+  "Wohin reist du gern?",
+  "Welche Länder hast du schon besucht?",
+  "Was ist deine Lieblingsstadt?",
+  "Was magst du an Deutschland?",
+  // Deutsch lernen
+  "Warum lernst du Deutsch?",
+  "Seit wann lernst du Deutsch?",
+  "Welche Sprachen sprichst du?",
+  "Hast du viele deutsche Freunde?",
+  "Wo wohnst du hier in Deutschland?",
+  // Persönlichkeit & Zukunft
+  "Bist du eher introvertiert oder extrovertiert?",
+  "Was ist dir im Leben wichtig?",
+  "Was nervt dich?",
+  "Was macht dich glücklich?",
+  "Hast du einen Traumjob? Was ist das?",
+  "Was willst du in Zukunft machen?",
+  "Was planst du für dieses Jahr?",
+  "Hast du eine beste Freundin oder einen besten Freund?",
+  // Teil 2 — formal (Sie)
+  "Müssen Sie Miete zahlen?",
+  "Wo kaufen Sie Ihre Kleidung?",
+  "Was machen Sie oft am Wochenende?",
+  "Was machen Sie, wenn Sie Ihre Familie besuchen?",
+  // Teil 3 — kurz
+  "Wann hast du Zeit?",
+  "Was möchten Sie kaufen?",
+  "Was ist dein Hobby?",
+  "Was machst du vom Beruf?"
+];
+
+function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+/* ===== MODE SWITCH ===== */
+document.querySelectorAll('#modeSwitch .mode-btn').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#modeSwitch .mode-btn').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.mode-pane').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.m === 'all' ? 'modeAll' : 'modeRound').classList.add('active');
+  if(b.dataset.m === 'round' && practiceList.length === 0) newRound();
+}));
+
+/* ===== TAB 1: ALL QUESTIONS LIST ===== */
+let displayed = [...Array(ALL_QUESTIONS.length).keys()];
+
+function renderList(){
+  const list = document.getElementById('qList');
+  list.innerHTML = displayed.map((qi, pos) => `
+    <div class="q-row">
+      <span class="q-num">${String(pos+1).padStart(2,'0')}</span>
+      <span class="q-text" id="qt-${pos}">${ALL_QUESTIONS[qi]}</span>
+      <button class="q-swap" onclick="swapOne(${pos})" title="Neue Frage">🔀</button>
+    </div>`).join('');
+}
+
+function swapOne(pos){
+  const usedSet = new Set(displayed);
+  const pool = ALL_QUESTIONS.map((_,i)=>i).filter(i => !usedSet.has(i));
+  let newIdx;
+  if(pool.length > 0){
+    newIdx = pool[Math.floor(Math.random()*pool.length)];
+  } else {
+    const cur = displayed[pos];
+    const alt = ALL_QUESTIONS.map((_,i)=>i).filter(i => i !== cur);
+    newIdx = alt[Math.floor(Math.random()*alt.length)];
+  }
+  displayed[pos] = newIdx;
+  const el = document.getElementById('qt-' + pos);
+  el.textContent = ALL_QUESTIONS[newIdx];
+  el.classList.remove('swapped'); void el.offsetWidth; el.classList.add('swapped');
+}
+
+function shuffleAll(){
+  displayed = shuffle([...Array(ALL_QUESTIONS.length).keys()]);
+  renderList();
+}
+
+/* ===== TAB 2: PRACTICE ROUND OF 5 ===== */
+let practiceList = [];
+let practiceIdx = 0;
+
+function newRound(){
+  practiceList = shuffle([...ALL_QUESTIONS]).slice(0, 5);
+  practiceIdx = 0;
+  document.getElementById('practiceWrap').style.display = '';
+  document.getElementById('pDone').classList.remove('visible');
+  buildPDots();
+  renderPractice();
+}
+
+function buildPDots(){
+  const wrap = document.getElementById('pDots');
+  wrap.innerHTML = Array.from({length: 5}, (_,i) => `<div class="p-dot" id="pdot${i}"></div>`).join('');
+}
+
+function renderPractice(){
+  const i = practiceIdx;
+  document.getElementById('pQuestion').textContent = practiceList[i];
+  document.getElementById('pNum').textContent = i + 1;
+  document.getElementById('pCounter').textContent = `${i + 1} / 5`;
+  document.getElementById('btnPrev').disabled = i === 0;
+  document.getElementById('btnPNext').textContent = i === 4 ? 'Fertig ✓' : 'Weiter →';
+  for(let j = 0; j < 5; j++){
+    document.getElementById('pdot' + j).className = 'p-dot' + (j === i ? ' active' : j < i ? ' done' : '');
+  }
+  const card = document.getElementById('pCard');
+  card.style.animation = 'none'; void card.offsetWidth; card.style.animation = 'fadeUp .3s ease';
+}
+
+function nextQ(){
+  if(practiceIdx < 4){ practiceIdx++; renderPractice(); }
+  else {
+    document.getElementById('practiceWrap').style.display = 'none';
+    document.getElementById('pDone').classList.add('visible');
+  }
+}
+function prevQ(){ if(practiceIdx > 0){ practiceIdx--; renderPractice(); } }
+function swapCurrent(){
+  const usedSet = new Set(practiceList);
+  const pool = ALL_QUESTIONS.filter(q => !usedSet.has(q));
+  const newQ = pool.length > 0 ? pool[Math.floor(Math.random()*pool.length)] : ALL_QUESTIONS[Math.floor(Math.random()*ALL_QUESTIONS.length)];
+  practiceList[practiceIdx] = newQ;
+  renderPractice();
+}
+
+/* INIT */
+renderList();
+</script>
+</body>
+</html>
