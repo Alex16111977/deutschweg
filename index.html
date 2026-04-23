@@ -7,7 +7,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
+<style>
+  /* 52 Typische Fragen — inline list styles */
+  .fragen-toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:18px; }
+  .fragen-list { list-style:none; counter-reset:fq; display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:10px; padding:0; margin:0; }
+  .fragen-list li { counter-increment:fq; position:relative; padding:14px 16px 14px 56px; background:var(--surface); border:2.5px solid var(--border); border-radius:12px; font-size:15px; line-height:1.45; cursor:pointer; transition:transform .15s, background .15s; }
+  .fragen-list li:hover { transform:translateY(-2px); background:var(--lime); }
+  .fragen-list li::before { content:counter(fq); position:absolute; left:10px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; background:var(--ink); color:var(--bg); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; font-size:12px; }
+  .fragen-list li.swapped { background:var(--sun); font-style:italic; }
+  .fragen-group { margin-top:28px; }
+  .fragen-group-label { font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px; display:block; }
+</style>
 </head>
 <body data-theme="light">
 
@@ -20,7 +31,7 @@
     </a>
     <nav class="top-nav">
       <a class="top-link" href="#themen">📚 Lektionen</a>
-      <a class="top-link" href="quiz.html">🗣 Sprechen</a>
+      <a class="top-link" href="#fragen">🗣 Sprechen</a>
       <a class="top-link" href="#words">🔥 Wörter</a>
       <a class="top-link" href="#progress">📈 Progress</a>
       <div class="theme-switch" role="tablist" aria-label="Theme">
@@ -276,6 +287,100 @@
     </div>
   </section>
 
+  <!-- 52 TYPISCHE FRAGEN -->
+  <section class="section" id="fragen">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Sprechübung · 52 Fragen</span>
+        <h2 class="section-title">Typische <em>Fragen</em> 🗣</h2>
+      </div>
+      <span class="tiny-note">👆 Tap auf eine Frage → <b>du ↔ Sie</b> umschalten · Training-Modus: <a href="quiz.html" style="text-decoration:underline">quiz.html</a></span>
+    </div>
+
+    <div class="fragen-toolbar">
+      <button class="btn pink" onclick="fragenShuffle()">🎲 Mischen</button>
+      <button class="word-btn" onclick="fragenReset()">🔄 Reset</button>
+      <button class="word-btn" onclick="fragenRandom5()">✨ 5 zufällige</button>
+      <span class="tiny-note" style="margin-left:auto">Alle klassischen A1–A2 Fragen, die du für Prüfung &amp; echtes Leben brauchst</span>
+    </div>
+
+    <div class="fragen-group">
+      <span class="fragen-group-label">// Teil 1 — Persönlich &amp; Alltag</span>
+      <ul class="fragen-list" id="fragenList1">
+        <li>Wie heißt du?</li>
+        <li>Woher kommst du?</li>
+        <li>Wo wohnst du gerade?</li>
+        <li>Wie alt bist du?</li>
+        <li>Wann ist dein Geburtstag?</li>
+        <li>Was machst du beruflich?</li>
+        <li>Was studierst du?</li>
+        <li>Was sind deine Hobbys?</li>
+        <li>Was machst du in deiner Freizeit?</li>
+        <li>Hast du Geschwister?</li>
+        <li>Wie ist deine Familie?</li>
+        <li>Hast du Kinder?</li>
+        <li>Hast du Haustiere?</li>
+        <li>Bist du verheiratet oder hast du einen Partner / eine Partnerin?</li>
+        <li>Lebst du alleine oder mit jemandem zusammen?</li>
+        <li>Wo bist du aufgewachsen?</li>
+        <li>Was ist dein Lieblingsessen?</li>
+        <li>Was trinkst du am liebsten?</li>
+        <li>Kochst du gern? Was kochst du?</li>
+        <li>Wie sieht dein typischer Tag aus?</li>
+        <li>Was machst du am Wochenende?</li>
+        <li>Was hast du gestern gemacht?</li>
+      </ul>
+    </div>
+
+    <div class="fragen-group">
+      <span class="fragen-group-label">// Kultur, Reisen &amp; Interessen</span>
+      <ul class="fragen-list" id="fragenList2" style="counter-reset:fq 22">
+        <li>Welche Musik magst du?</li>
+        <li>Was ist dein Lieblingsfilm oder deine Lieblingsserie?</li>
+        <li>Liest du gern? Was liest du?</li>
+        <li>Was schaust du gern im Internet?</li>
+        <li>Machst du Sport? Welchen?</li>
+        <li>Wohin reist du gern?</li>
+        <li>Welche Länder hast du schon besucht?</li>
+        <li>Was ist deine Lieblingsstadt?</li>
+        <li>Was magst du an Deutschland?</li>
+        <li>Warum lernst du Deutsch?</li>
+        <li>Seit wann lernst du Deutsch?</li>
+        <li>Welche Sprachen sprichst du?</li>
+        <li>Hast du viele deutsche Freunde?</li>
+        <li>Wo wohnst du hier in Deutschland?</li>
+      </ul>
+    </div>
+
+    <div class="fragen-group">
+      <span class="fragen-group-label">// Persönlichkeit &amp; Zukunft</span>
+      <ul class="fragen-list" id="fragenList3" style="counter-reset:fq 36">
+        <li>Bist du eher introvertiert oder extrovertiert?</li>
+        <li>Was ist dir im Leben wichtig?</li>
+        <li>Was nervt dich?</li>
+        <li>Was macht dich glücklich?</li>
+        <li>Hast du einen Traumjob? Was ist das?</li>
+        <li>Was willst du in Zukunft machen?</li>
+        <li>Was planst du für dieses Jahr?</li>
+        <li>Hast du eine beste Freundin oder einen besten Freund?</li>
+      </ul>
+    </div>
+
+    <div class="fragen-group">
+      <span class="fragen-group-label">// Teil 2 &amp; 3 — Formal &amp; kurz</span>
+      <ul class="fragen-list" id="fragenList4" style="counter-reset:fq 44">
+        <li>Müssen Sie Miete zahlen?</li>
+        <li>Wo kaufen Sie Ihre Kleidung?</li>
+        <li>Was machen Sie oft am Wochenende?</li>
+        <li>Was machen Sie, wenn Sie Ihre Familie besuchen?</li>
+        <li>Wann hast du Zeit?</li>
+        <li>Was möchten Sie kaufen?</li>
+        <li>Was ist dein Hobby?</li>
+        <li>Was machst du vom Beruf?</li>
+      </ul>
+    </div>
+  </section>
+
   <footer class="footer">
     <div>
       <div class="footer-mark">DeutschWeg © 2026</div>
@@ -298,5 +403,60 @@
 </div>
 
 <script src="app.js"></script>
+<script>
+  /* ===== 52 TYPISCHE FRAGEN — du ↔ Sie toggle + Mischen ===== */
+  (() => {
+    const duToSie = s => s
+      .replace(/\bdu hast\b/gi,'haben Sie').replace(/\bdu bist\b/gi,'sind Sie')
+      .replace(/\bdu magst\b/gi,'mögen Sie').replace(/\bmachst du\b/gi,'machen Sie')
+      .replace(/\bmagst du\b/gi,'mögen Sie').replace(/\bkochst du\b/gi,'kochen Sie')
+      .replace(/\bliest du\b/gi,'lesen Sie').replace(/\bheißt du\b/gi,'heißen Sie')
+      .replace(/\bkommst du\b/gi,'kommen Sie').replace(/\bwohnst du\b/gi,'wohnen Sie')
+      .replace(/\bstudierst du\b/gi,'studieren Sie').replace(/\blernst du\b/gi,'lernen Sie')
+      .replace(/\bsprichst du\b/gi,'sprechen Sie').replace(/\bwillst du\b/gi,'wollen Sie')
+      .replace(/\bplanst du\b/gi,'planen Sie').replace(/\bschaust du\b/gi,'schauen Sie')
+      .replace(/\breist du\b/gi,'reisen Sie').replace(/\bbist du\b/gi,'sind Sie')
+      .replace(/\bhast du\b/gi,'haben Sie').replace(/\bdeine\b/g,'Ihre')
+      .replace(/\bdeinen\b/g,'Ihren').replace(/\bdein\b/g,'Ihr').replace(/\bdich\b/g,'Sie')
+      .replace(/\bdir\b/g,'Ihnen').replace(/\bdu\b/g,'Sie');
+
+    const allItems = () => document.querySelectorAll('#fragen .fragen-list li');
+
+    allItems().forEach(li => {
+      li.dataset.du = li.textContent;
+      li.addEventListener('click', () => {
+        const swapped = li.classList.toggle('swapped');
+        li.textContent = swapped ? duToSie(li.dataset.du) : li.dataset.du;
+      });
+    });
+
+    window.fragenReset = () => {
+      allItems().forEach(li => {
+        li.classList.remove('swapped');
+        li.textContent = li.dataset.du;
+      });
+    };
+
+    window.fragenShuffle = () => {
+      document.querySelectorAll('#fragen .fragen-list').forEach(ul => {
+        const items = Array.from(ul.children);
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          ul.insertBefore(items[i], items[j]);
+          [items[i], items[j]] = [items[j], items[i]];
+        }
+      });
+    };
+
+    window.fragenRandom5 = () => {
+      const items = Array.from(allItems());
+      const picked = [];
+      while (picked.length < 5 && items.length) {
+        picked.push(items.splice(Math.floor(Math.random() * items.length), 1)[0].dataset.du);
+      }
+      alert('🎯 Deine 5 zufälligen Fragen:\n\n' + picked.map((q, i) => `${i+1}. ${q}`).join('\n'));
+    };
+  })();
+</script>
 </body>
 </html>
