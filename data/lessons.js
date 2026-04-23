@@ -639,6 +639,73 @@ window.LESSONS = {
       { q:'Як перекладається «veröffentlichen»?',                                 opts:['критикувати','повідомляти','публікувати','читати'],                      a:2 },
       { q:'«Hier ___ nicht gegessen werden» — Modalverb',                         opts:['darf','kann','muss','wird'],                                           a:0 }
     ]
+  },
+
+  /* ============================================================
+   * 11 · ERINNERUNGEN — Storytelling · B1
+   * ============================================================ */
+  erinnerungen: {
+    slug: 'erinnerungen',
+    emoji: '💭',
+    title: 'Erinnerungen',
+    titleHtml: 'Er<em>innerungen</em> 💭',
+    level: 'B1',
+    duration: '~20 min',
+    idx: '11',
+    intro: 'Manche Wörter riechst du, andere schmeckst du. Hier lernst du die, die dich zurück in die Vergangenheit bringen. 🕰',
+    speakQuestions: [
+      'Was ist deine früheste Erinnerung? Erzähl mir davon.',
+      'Welcher Duft erinnert dich sofort an deine Kindheit?',
+      'Gibt es ein Lied, das für dich mit einem bestimmten Moment verknüpft ist?',
+      'Welchen Augenblick möchtest du nie vergessen?',
+      'Was vermisst du am meisten aus deiner Kindheit?',
+      'Gibt es einen Ort, der dich immer an damals erinnert?',
+      'Welche Erinnerung bringt dich sofort zum Lachen — oder zum Weinen?',
+      'Was war deine schönste Erinnerung aus dem letzten Jahr?'
+    ],
+    vocab: [
+      { art:'—',   w:'sich erinnern an', ua:'згадувати про',    ex:'Ich erinnere mich noch genau an diesen Sommer.' },
+      { art:'die', w:'Erinnerung',       ua:'спогад',           ex:'Das ist meine schönste Erinnerung.' },
+      { art:'der', w:'Moment',           ua:'мить, момент',     ex:'In diesem Moment wusste ich alles.' },
+      { art:'der', w:'Duft',             ua:'аромат',           ex:'Der Duft von Kaffee weckt alte Erinnerungen.' },
+      { art:'das', w:'Gefühl',           ua:'почуття',          ex:'Ich hatte ein warmes Gefühl im Bauch.' },
+      { art:'die', w:'Kindheit',         ua:'дитинство',        ex:'In meiner Kindheit gab es keine Handys.' },
+      { art:'—',   w:'vermissen',        ua:'сумувати за',      ex:'Ich vermisse diese Zeit wirklich.' },
+      { art:'—',   w:'verknüpft mit',    ua:'пов\'язане з',      ex:'Dieses Lied ist mit meiner ersten Liebe verknüpft.' },
+      { art:'—',   w:'damals',           ua:'тоді, колись',     ex:'Damals war alles noch einfacher.' },
+      { art:'—',   w:'für immer',        ua:'назавжди',         ex:'Dieses Bild bleibt für immer in meinem Kopf.' }
+    ],
+    reading: {
+      paragraphs: [
+        'Es war ein Sommerabend im Juli. Ich war sieben Jahre alt, und die Luft roch nach frisch geschnittenem Gras. Mein Opa saß auf der Veranda, eine alte Gitarre in den Händen. Er spielte ein Lied, das ich heute noch kenne — und jedes Mal, wenn ich es höre, bin ich wieder dort. Wieder sieben. Wieder dieser Sommerabend. Wieder dieser warme Wind im Haar.',
+        'Damals lebte unsere ganze Familie auf dem Land. Wir hatten ein kleines Holzhaus mit blauen Fensterläden und einem riesigen Apfelbaum im Garten. Im Sommer kletterten wir Kinder auf den Baum, aßen die ersten grünen Äpfel und lachten, bis uns der Bauch wehtat. Meine Cousine Anna war meine beste Freundin — wir waren unzertrennlich.',
+        'Das ist das Geheimnis der <mark title="спогадів">Erinnerungen</mark>: Sie leben nicht nur im Kopf. Sie leben im <mark title="аромат">Duft</mark> von Regen auf heißem Asphalt, im <mark title="почуття">Gefühl</mark> einer Umarmung, im Geschmack von Omas Apfelkuchen. Du kannst sie nicht festhalten. Aber sie tauchen plötzlich auf — beim Spazierengehen, beim Kochen, mitten in der Nacht.',
+        '<mark title="тоді">Damals</mark>, in meiner <mark title="дитинство">Kindheit</mark>, wusste ich nicht, dass diese <mark title="миті">Momente</mark> so kostbar waren. Ich dachte, sie kommen wieder. Ich dachte, der Sommer ist endlos und die Großeltern bleiben für immer da. Heute weiß ich: Sie kommen nicht wieder. Aber sie bleiben — <mark title="назавжди">für immer</mark> in mir.',
+        'Es gibt Lieder, Gerüche, Orte, die <mark title="пов&#39;язані з">verknüpft mit</mark> einem bestimmten Moment sind. Du hörst drei Töne — und plötzlich bist du neunzehn, sitzt im alten Auto deines Vaters und fährst in den ersten Urlaub ohne Eltern. Du riechst ein Parfum — und deine Großmutter ist wieder da, obwohl sie seit zehn Jahren nicht mehr lebt. Diese Erinnerungen sind wie kleine Geschenke, die uns das Leben heimlich in die Tasche steckt.',
+        'Manche Erinnerungen tun weh. Der erste Abschied vom besten Freund, der in eine andere Stadt zog. Der letzte Sommer mit Opa, bevor er krank wurde. Das Telefonat mit Mama, als sie weinend sagte, dass Oma in der Nacht gestorben war. Ich war zwanzig und konnte nicht glauben, dass jemand so wichtig einfach <strong>weg</strong> sein konnte.',
+        'Aber die meisten Erinnerungen machen mich glücklich. Der Geschmack von Omas Borschtsch. Das Gefühl, wenn Papa mich abends in die Luft warf und ich vor Lachen quietschte. Der Klang der Glocken in unserem Dorf am Sonntagmorgen. Der erste Kuss in der Schulpause hinter der Turnhalle. Der Moment, als ich meinen Schulabschluss in der Hand hielt und wusste: jetzt fängt etwas Neues an.',
+        'Ich <mark title="сумую">vermisse</mark> diese Zeit. Aber ich <mark title="згадую">erinnere mich</mark> — jeden Tag, in tausend kleinen Augenblicken. Und solange ich mich erinnere, ist nichts wirklich vorbei. Vielleicht ist das der größte Trost: Was wir geliebt haben, geht nie ganz verloren. Es lebt weiter — in uns, in unseren Geschichten, in den Liedern, die wir summen, ohne zu wissen, warum.'
+      ],
+      uaSummary: '🇺🇦 Літній вечір. Мені сім. Дідусь грає на гітарі — ту саму мелодію, яку я досі знаю. Ми жили в маленькому будиночку на селі, лазили по яблуні з кузиною Анею і реготали до болю в животі. Спогади живуть не лише в голові: вони в запаху дощу, в обіймах, у смаку бабусиного пирога. Деякі спогади болять — перше прощання з другом, останнє літо з дідусем, дзвінок мами, коли померла бабуся. Але більшість роблять щасливим: смак борщу, тато, що підкидає в повітря, перший поцілунок у школі. Тоді я не знав, що ці миті — дорогоцінні. Сьогодні знаю: вони не повертаються. Але залишаються — назавжди в мені. Поки я пам\'ятаю — нічого не зникло.'
+    },
+    dialog: [
+      { who:'🧑', de:'Hey, hast du heute Morgen auch diesen Geruch gerochen? Nasser Asphalt nach dem Regen — genau wie früher.', ua:'Гей, ти теж сьогодні вранці відчула цей запах? Мокрий асфальт після дощу — точно як колись.' },
+      { who:'👩', de:'Oh ja! Das ist mein Sommer-Duft aus der Kindheit. Ich erinnere mich sofort an unser altes Haus.',           ua:'О так! Це мій літній аромат з дитинства. Я одразу згадую наш старий дім.' },
+      { who:'🧑', de:'Wahnsinn, oder? Manche Momente sind so mit Gerüchen verknüpft, dass man sie nie vergisst.',                 ua:'Божевілля, правда? Деякі миті так пов\'язані із запахами, що їх ніколи не забудеш.' },
+      { who:'👩', de:'Genau. Für mich ist es auch dieses Lied — «Wonderwall». Damals in der 8. Klasse… das war meine ganze Welt.', ua:'Саме так. Для мене це ще й та пісня — «Wonderwall». Тоді у 8-му класі… це був весь мій світ.' },
+      { who:'🧑', de:'Krass. Solche Erinnerungen bleiben für immer. Ich glaube, das sind die einzigen Dinge, die wirklich zählen.', ua:'Круто. Такі спогади лишаються назавжди. Думаю, це єдине, що справді важливо.' }
+    ],
+    grammar: {
+      chip: 'Präteritum — Zeit zum Erzählen (war, hatte, dachte, kannte …)',
+      html: `<div class="case-box"><div class="case-box-title">Крок 1 — Präteritum = час оповіді</div><p>Коли ти <strong>розповідаєш історію</strong> про минуле — особливо емоційну, про дитинство, спогади, враження — використовуй <strong>Präteritum</strong>. Це «літературний» минулий час. У розмові про вчорашній день німці використовують <em>Perfekt</em>, але для оповіді — завжди <strong>Präteritum</strong>.</p></div><div class="grammar-note"><strong>📌 Різниця на прикладі:</strong><br>• <em>Perfekt (розмова):</em> Ich <strong>habe</strong> ihn gestern <strong>gesehen</strong>.<br>• <em>Präteritum (оповідь):</em> Es war Sommer. Ich <strong>sah</strong> ihn zum ersten Mal — und ich <strong>wusste</strong>, alles würde anders.</div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 1: sein, haben, werden — ЗАВЖДИ в Präteritum</div><p>Ці три дієслова використовують Präteritum навіть у звичайній розмові. Вчи напам'ять — це твій фундамент для будь-якої історії.</p></div><table class="rule-table"><thead><tr><th>Infinitiv</th><th>ich / er / sie / es</th><th>Приклад з історії</th></tr></thead><tbody><tr><td>sein</td><td><code>war</code></td><td>Ich <strong>war</strong> sieben Jahre alt.</td></tr><tr><td>haben</td><td><code>hatte</code></td><td>Ich <strong>hatte</strong> ein warmes Gefühl.</td></tr><tr><td>werden</td><td><code>wurde</code></td><td>Es <strong>wurde</strong> plötzlich still.</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Випадок 2: Сильні дієслова — змінюють корінь</div><p>Ці форми треба запам'ятати. Ось TOP-6 для оповіді про спогади:</p></div><table class="rule-table"><thead><tr><th>Infinitiv</th><th>Präteritum</th><th>Приклад</th></tr></thead><tbody><tr><td>sehen</td><td><code>sah</code></td><td>Ich <strong>sah</strong> ihn zum ersten Mal.</td></tr><tr><td>gehen</td><td><code>ging</code></td><td>Wir <strong>gingen</strong> durch den Park.</td></tr><tr><td>kommen</td><td><code>kam</code></td><td>Sie <strong>kam</strong> plötzlich zurück.</td></tr><tr><td>wissen</td><td><code>wusste</code></td><td>Ich <strong>wusste</strong> nichts davon.</td></tr><tr><td>denken</td><td><code>dachte</code></td><td>Ich <strong>dachte</strong> an meine Oma.</td></tr><tr><td>geben</td><td><code>gab</code></td><td>Es <strong>gab</strong> einmal einen Sommer…</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Випадок 3: Слабкі дієслова — додай <code>-te</code></div><p>Більшість дієслів «слабкі»: до кореня додається <code>-te</code> + особове закінчення. Це <strong>90% усіх дієслів</strong>.</p></div><ul class="examples"><li>spielen → ich <strong>spielte</strong> <em>(грав)</em></li><li>lachen → ich <strong>lachte</strong> <em>(сміявся)</em></li><li>fühlen → ich <strong>fühlte</strong> <em>(відчував)</em></li><li>hören → ich <strong>hörte</strong> <em>(чув)</em></li><li>riechen → ich <strong>roch</strong> <em>(нюхав — сильне!)</em></li></ul><div class="divider"></div><div class="grammar-note"><strong>💡 Лайфгак для відповіді партнеру:</strong><br>Коли партнер питає «Was ist deine früheste Erinnerung?», починай з одного з цих шаблонів — і слухач одразу втягнеться в історію:<br><br>• <code>Ich war … Jahre alt, als …</code> <em>(Мені було … років, коли…)</em><br>• <code>Damals hatte ich …</code> <em>(Тоді в мене було…)</em><br>• <code>Es war ein … Tag. Ich …</code> <em>(Був … день. Я…)</em><br>• <code>Ich erinnere mich noch genau an …</code> <em>(Я досі чітко пам'ятаю…)</em></div>`
+    },
+    quiz: [
+      { q:'Was bedeutet «der Duft»?',                                          opts:['запах / аромат','почуття','спогад','мить'],                                           a:0 },
+      { q:'Wie sagt man «згадувати про щось» auf Deutsch?',                    opts:['vergessen','sich erinnern an','vermissen','verknüpfen'],                              a:1 },
+      { q:'«Ich ___ sieben Jahre alt.» — Präteritum von sein:',                opts:['war','hatte','wurde','bin'],                                                           a:0 },
+      { q:'Welches Wort passt zu «назавжди»?',                                 opts:['damals','für immer','plötzlich','in diesem Moment'],                                   a:1 },
+      { q:'«Dieses Lied ist ___ meiner ersten Liebe verknüpft.»',              opts:['an','mit','bei','von'],                                                                a:1 }
+    ]
   }
 
 };
