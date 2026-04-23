@@ -706,6 +706,73 @@ window.LESSONS = {
       { q:'Welches Wort passt zu «назавжди»?',                                 opts:['damals','für immer','plötzlich','in diesem Moment'],                                   a:1 },
       { q:'«Dieses Lied ist ___ meiner ersten Liebe verknüpft.»',              opts:['an','mit','bei','von'],                                                                a:1 }
     ]
+  },
+
+  /* ============================================================
+   * 12 · SINNE & FARBEN — Assoziationen · B1
+   * ============================================================ */
+  sinne: {
+    slug: 'sinne',
+    emoji: '🌈',
+    title: 'Sinne & Farben',
+    titleHtml: 'Sinne &amp; <em>Farben</em> 🌈',
+    level: 'B1',
+    duration: '~20 min',
+    idx: '12',
+    intro: 'Warum fühlt sich Blau kühl an? Warum riecht Rot nach Zimt? Hier lernst du die Sprache der Sinne — und wie du Gefühle in Worte fasst. 🎨',
+    speakQuestions: [
+      'Welche Farbe hat für dich der Montag?',
+      'Wenn Glück ein Geschmack wäre — wie würde es schmecken?',
+      'Welches Geräusch gibt dir sofort ein warmes Gefühl?',
+      'Gibt es einen Duft, der dich traurig macht? Warum?',
+      'Welche Farbe passt zu deiner Kindheit?',
+      'Wenn deine beste Freundin eine Farbe wäre, welche?',
+      'Welches Lied fühlt sich an, als wäre es nur für dich geschrieben?',
+      'Was ist für dich der Geschmack von «zu Hause»?'
+    ],
+    vocab: [
+      { art:'der', w:'Sinn',             ua:'відчуття; сенс',         ex:'Der Mensch hat fünf Sinne: Sehen, Hören, Riechen, Schmecken, Fühlen.' },
+      { art:'die', w:'Farbe',            ua:'колір',                  ex:'Blau ist meine Lieblingsfarbe.' },
+      { art:'—',   w:'verbinden mit',    ua:'пов\'язувати з',          ex:'Ich verbinde Gelb mit Sommer und Zitronen.' },
+      { art:'die', w:'Assoziation',      ua:'асоціація',              ex:'Welche Assoziation hast du mit dem Wort «Freiheit»?' },
+      { art:'die', w:'Stimmung',         ua:'настрій',                ex:'Die Farbe verändert sofort meine Stimmung.' },
+      { art:'—',   w:'wirken',           ua:'діяти; справляти враження', ex:'Grün wirkt beruhigend auf mich.' },
+      { art:'—',   w:'auslösen',         ua:'викликати (почуття)',    ex:'Dieser Geruch löst in mir eine tiefe Traurigkeit aus.' },
+      { art:'die', w:'Wahrnehmung',      ua:'сприйняття',             ex:'Jeder hat eine andere Wahrnehmung von Farben.' },
+      { art:'—',   w:'sich anfühlen',    ua:'відчуватися',            ex:'Es fühlt sich an, als wäre ich wieder zehn.' },
+      { art:'—',   w:'als ob',           ua:'ніби; наче',             ex:'Rot schmeckt für mich, als ob es Zimt wäre.' }
+    ],
+    reading: {
+      paragraphs: [
+        'Hast du schon einmal einen Montag geschmeckt? Für mich ist Montag <strong>grau</strong> mit einem Hauch Kaffee. Dienstag ist <strong>dunkelblau</strong> und riecht nach Bürofluren. Mittwoch ist <strong>senfgelb</strong> — nicht schön, aber ehrlich. Freitag? Freitag ist <strong>pink</strong> und schmeckt nach Sekt und Freiheit.',
+        'Das klingt vielleicht verrückt, aber viele Menschen erleben die Welt so. Die Wissenschaft nennt das <strong>Synästhesie</strong> — wenn zwei <mark title="відчуття">Sinne</mark> sich vermischen. Manche hören Farben, andere sehen Musik, wieder andere schmecken Wörter. Aber eigentlich machen wir das alle — nur ein bisschen weniger extrem.',
+        'Denk mal nach: Warum <mark title="діє">wirkt</mark> <strong>Blau</strong> kühl und <strong>Rot</strong> warm? Warum <mark title="викликає">löst</mark> der Geruch von frischem Brot ein Gefühl von Geborgenheit <mark title="викликає">aus</mark>? Warum ist die <mark title="сприйняття">Wahrnehmung</mark> von «leise» bei jedem Menschen anders?',
+        'Unser Gehirn ist ein Meister der <mark title="асоціацій">Assoziationen</mark>. Es <mark title="пов&#39;язує">verbindet</mark> jede Erfahrung mit allem, was gerade passiert — Licht, Geräusch, Duft, Temperatur, Gefühl. Deshalb hat jede Erinnerung eine <mark title="колір">Farbe</mark>, einen Soundtrack, manchmal sogar einen Geschmack.',
+        'Meine Großmutter war <strong>Ockergelb</strong>. Warm, alt, geborgen — wie eine Decke im Herbst. Mein erster Schultag war <strong>grellrot</strong> und klang wie ein Alarm. Meine beste Freundin aus der fünften Klasse ist <strong>Türkis</strong> — kühl, klar, ein bisschen traurig. Sie zog nach Berlin, als wir dreizehn waren, und seitdem ist Türkis meine «Heimweh-Farbe».',
+        'Gerüche sind die stärksten Trigger. Die Nase hat eine direkte Verbindung zum emotionalen Gehirn — stärker als Augen oder Ohren. Wenn ich irgendwo den Geruch von Sonnencreme und Chlor rieche, bin ich sofort wieder sieben. Freibad. Pommes rot-weiß. Der Sommer, als mein Cousin mir das Schwimmen beibrachte und ich zum ersten Mal keine Angst hatte.',
+        'Musik funktioniert genauso. Ich höre drei Töne von «Mr. Brightside» — und es <mark title="відчувається">fühlt</mark> sich <mark title="відчувається">an</mark>, <mark title="ніби">als ob</mark> ich wieder neunzehn wäre. Mit meinem ersten Freund im Auto, Fenster auf, viel zu laut, endlos Sommer. Die Lieder lügen nicht. Sie tragen die <mark title="настрій">Stimmung</mark> eines ganzen Jahres in sich — und öffnen sie in drei Sekunden.',
+        'Deshalb lohnt es sich, die Sprache der Sinne zu lernen. Wer weiß, wie Glück <em>schmeckt</em> und wie Traurigkeit <em>riecht</em>, kann Gefühle besser verstehen — die eigenen und die anderer. Und wenn das nächste Mal jemand fragt «Wie geht es dir?», sagst du vielleicht nicht «gut», sondern: «Heute fühle ich mich wie ein warmer Dienstagnachmittag im Oktober.»'
+      ],
+      uaSummary: '🇺🇦 Чи куштував ти колись понеділок? Для мене він сірий з нотками кави, вівторок — темно-синій, а п\'ятниця — рожева і пахне шампанським. Це синестезія: коли відчуття змішуються. Мозок пов\'язує кожен момент із кольором, звуком, ароматом. Моя бабуся — вохра. Перший шкільний день — яскраво-червоний. Запахи — найсильніший тригер: запах хлору і крему від сонця — і мені знов сім. Музика так само: три ноти, і ти знов маєш дев\'ятнадцять. Варто вчити мову відчуттів — щоб краще розуміти себе й інших.'
+    },
+    dialog: [
+      { who:'👩', de:'Sag mal, was für eine Farbe ist für dich eigentlich Freitag?',                                     ua:'Слухай, а якого кольору для тебе п\'ятниця?' },
+      { who:'🧑', de:'Pink. Ganz klar. Und du? Du wirkst heute irgendwie… blau.',                                          ua:'Рожева. Однозначно. А ти? Ти сьогодні якась… синя.' },
+      { who:'👩', de:'Voll getroffen! Es fühlt sich an, als ob ich unter Wasser wäre. Zu viel los diese Woche.',            ua:'У десятку! Почуваюся, ніби під водою. Забагато всього цього тижня.' },
+      { who:'🧑', de:'Weißt du, was hilft? Orange. Ein Tee mit Zimt, ein Film von früher — löst sofort ein warmes Gefühl aus.', ua:'Знаєш, що допомагає? Помаранчеве. Чай із корицею, старий фільм — одразу викликає тепле почуття.' },
+      { who:'👩', de:'Ha, du bist verrückt. Aber okay — ich verbinde das jetzt mit Freundschaft. Danke, mein gelber Tag.',  ua:'Ха, ти божевільний. Але добре — тепер це в мене асоціація з дружбою. Дякую, мій жовтий день.' }
+    ],
+    grammar: {
+      chip: 'Konjunktiv II + «als ob» — die Sprache der Assoziationen (als wäre, als hätte, als würde …)',
+      html: `<div class="case-box"><div class="case-box-title">Крок 1 — «als ob» = «ніби / наче»</div><p>Коли ти описуєш <strong>асоціацію</strong> або <strong>нереальне враження</strong> («виглядає, ніби…», «почуваюся, наче…»), німці використовують конструкцію <strong>«als ob» + Konjunktiv II</strong> (умовний спосіб).</p><p>Це не реальність — це <em>твоє сприйняття</em>. Саме тому дієслово йде в <strong>Konjunktiv II</strong>: воно каже «так, ніби це було б правдою, але це не так».</p></div><div class="grammar-note"><strong>📌 Порівняй:</strong><br>• <em>Indikativ (реально):</em> Es <strong>ist</strong> kalt. <em>(Холодно.)</em><br>• <em>Konjunktiv II (асоціація):</em> Es fühlt sich an, <strong>als ob</strong> es Winter <strong>wäre</strong>. <em>(Відчувається, ніби зима.)</em></div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 1 — TOP-5 форм Konjunktiv II напам'ять</div><p>Ці п'ять форм покривають <strong>80% всього</strong>, що ти скажеш про відчуття та асоціації. Вчи як мантру.</p></div><table class="rule-table"><thead><tr><th>Infinitiv</th><th>Konjunktiv II</th><th>Приклад</th></tr></thead><tbody><tr><td>sein</td><td><code>wäre</code></td><td>…als ob ich wieder zehn <strong>wäre</strong>.</td></tr><tr><td>haben</td><td><code>hätte</code></td><td>…als ob ich keine Sorgen <strong>hätte</strong>.</td></tr><tr><td>werden</td><td><code>würde</code></td><td>…als ob alles gut <strong>werden würde</strong>.</td></tr><tr><td>können</td><td><code>könnte</code></td><td>…als ob ich fliegen <strong>könnte</strong>.</td></tr><tr><td>wissen</td><td><code>wüsste</code></td><td>…als ob sie alles <strong>wüsste</strong>.</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Випадок 2 — «als ob» vs «als» (без «ob»)</div><p>Обидва варіанти означають одне й те саме — АЛЕ <strong>порядок слів різний</strong>!</p></div><table class="rule-table"><thead><tr><th>Форма</th><th>Порядок</th><th>Приклад</th></tr></thead><tbody><tr><td><code>als ob</code></td><td>дієслово <strong>в кінці</strong></td><td>Es sieht aus, <strong>als ob</strong> es regnen <strong>würde</strong>.</td></tr><tr><td><code>als</code> (без ob)</td><td>дієслово <strong>одразу після «als»</strong> (Inversion)</td><td>Es sieht aus, <strong>als würde</strong> es regnen.</td></tr></tbody></table><div class="grammar-note">💡 <strong>Порада:</strong> на початку вчи <code>als ob</code> — правило простіше (дієслово в кінець, як у звичайному підрядному). А <code>als</code> без «ob» — це літературний варіант, звучить елегантніше.</div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 3 — шаблони для асоціацій (вчи як формули)</div><p>Ось 6 шаблонів, які одразу звучать як носій. Зубри їх:</p></div><ul class="examples"><li>Es fühlt sich an, <strong>als ob</strong> … <em>(Відчувається, ніби…)</em></li><li>Es sieht aus, <strong>als ob</strong> … <em>(Виглядає, ніби…)</em></li><li>Es klingt, <strong>als ob</strong> … <em>(Звучить, ніби…)</em></li><li>Es schmeckt, <strong>als ob</strong> … <em>(На смак, ніби…)</em></li><li>Es riecht, <strong>als ob</strong> … <em>(Пахне, ніби…)</em></li><li>Es ist, <strong>als ob</strong> … <em>(Таке враження, наче…)</em></li></ul><div class="case-box"><div class="case-box-title">Випадок 4 — «als» з інверсією (елегантний варіант)</div><p>Якщо прибираєш «ob», дієслово одразу стрибає на друге місце — як у питанні.</p></div><ul class="examples"><li>…<strong>als wäre</strong> ich wieder zehn. <em>(ніби мені знов десять)</em></li><li>…<strong>als hätte</strong> ich nie geschlafen. <em>(ніби я взагалі не спав)</em></li><li>…<strong>als könnte</strong> ich die Welt umarmen. <em>(ніби я можу обійняти весь світ)</em></li><li>…<strong>als würde</strong> die Zeit stehenbleiben. <em>(ніби час зупинився)</em></li></ul><div class="divider"></div><div class="grammar-note"><strong>💡 Лайфгак для Sprechen:</strong><br>Коли партнер питає «Wie fühlst du dich?», використовуй Konjunktiv II — і ти одразу звучиш як B1/B2. Приклади відповідей:<br><br>• <code>Ich fühle mich, als ob ich alles schaffen könnte.</code><br>• <code>Es ist, als wäre heute ein besonderer Tag.</code><br>• <code>Montag klingt für mich, als würde jemand einen alten Wecker stellen.</code><br>• <code>Dieses Lied fühlt sich an, als hätte es jemand nur für mich geschrieben.</code></div>`
+    },
+    quiz: [
+      { q:'Was bedeutet «die Wahrnehmung»?',                                      opts:['колір','сприйняття','настрій','відчуття дотику'],                                  a:1 },
+      { q:'Wie sagt man «викликати почуття» auf Deutsch?',                        opts:['verbinden','auslösen','wirken','anfühlen'],                                       a:1 },
+      { q:'«Es fühlt sich an, als ob ich wieder zehn ___.» — Konjunktiv II von sein:', opts:['bin','war','wäre','werde'],                                                 a:2 },
+      { q:'«Als ob»: wo steht das Verb?',                                         opts:['sofort nach «als ob»','in der Mitte','am Ende','egal'],                           a:2 },
+      { q:'«Grün ___ beruhigend auf mich.»',                                      opts:['verbindet','wirkt','löst','fühlt'],                                               a:1 }
+    ]
   }
 
 };
