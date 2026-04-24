@@ -18,6 +18,18 @@
   .fragen-list li.swapped { background:var(--sun); font-style:italic; }
   .fragen-group { margin-top:28px; }
   .fragen-group-label { font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px; display:block; }
+  /* Random-5 panel */
+  .fragen-r5 { display:none; background:var(--lilac); border:3px solid var(--border); border-radius:18px; padding:22px 24px; margin-bottom:22px; position:relative; animation: r5fade .3s ease; }
+  .fragen-r5.show { display:block; }
+  @keyframes r5fade { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+  .fragen-r5-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+  .fragen-r5-title { font-family:var(--display); font-size:22px; font-weight:700; letter-spacing:-0.01em; }
+  .fragen-r5-close { background:var(--ink); color:var(--bg); border:0; border-radius:999px; width:34px; height:34px; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .fragen-r5-close:hover { background:var(--pink); }
+  .fragen-r5-list { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+  .fragen-r5-list li { background:#fff; border:2.5px solid var(--border); border-radius:12px; padding:14px 16px 14px 56px; font-size:16px; line-height:1.45; position:relative; }
+  .fragen-r5-list li::before { content:attr(data-n); position:absolute; left:10px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; background:var(--pink); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:14px; }
+  .fragen-r5-foot { display:flex; gap:8px; justify-content:flex-end; margin-top:14px; }
 </style>
 </head>
 <body data-theme="light">
@@ -312,6 +324,18 @@
       <span class="tiny-note" style="margin-left:auto">Alle klassischen A1–A2 Fragen, die du für Prüfung &amp; echtes Leben brauchst</span>
     </div>
 
+    <!-- Random-5 panel (inline, not alert) -->
+    <div class="fragen-r5" id="fragenR5">
+      <div class="fragen-r5-head">
+        <div class="fragen-r5-title">🎯 Deine 5 zufälligen Fragen</div>
+        <button class="fragen-r5-close" onclick="fragenR5Close()" title="schließen">✕</button>
+      </div>
+      <ol class="fragen-r5-list" id="fragenR5List"></ol>
+      <div class="fragen-r5-foot">
+        <button class="word-btn" onclick="fragenRandom5()">🎲 Neue 5</button>
+      </div>
+    </div>
+
     <div class="fragen-group">
       <span class="fragen-group-label">// Teil 1 — Persönlich &amp; Alltag</span>
       <ul class="fragen-list" id="fragenList1">
@@ -462,7 +486,17 @@
       while (picked.length < 5 && items.length) {
         picked.push(items.splice(Math.floor(Math.random() * items.length), 1)[0].dataset.du);
       }
-      alert('🎯 Deine 5 zufälligen Fragen:\n\n' + picked.map((q, i) => `${i+1}. ${q}`).join('\n'));
+      const list = document.getElementById('fragenR5List');
+      list.innerHTML = picked.map((q, i) =>
+        `<li data-n="${i+1}">${q}</li>`
+      ).join('');
+      const panel = document.getElementById('fragenR5');
+      panel.classList.add('show');
+      panel.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+
+    window.fragenR5Close = () => {
+      document.getElementById('fragenR5').classList.remove('show');
     };
   })();
 </script>
