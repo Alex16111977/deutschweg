@@ -36,6 +36,48 @@ function nextTab(){
   if(nxt && nxt.classList.contains('ltab')) nxt.click();
 }
 
+/* ---- IDIOM-KINO (flip card carousel, lesson-conditional) ---- */
+if(LESSON.idioms && LESSON.idioms.length){
+  const tab = document.getElementById('tabKino');
+  if(tab) tab.style.display = '';
+  const card = document.getElementById('kinoCard');
+  const counter = document.getElementById('kinoCounter');
+  let kIdx = 0;
+  function renderKino(){
+    const it = LESSON.idioms[kIdx];
+    document.getElementById('kinoEmoji').textContent = it.emoji;
+    document.getElementById('kinoPhrase').textContent = it.de;
+    document.getElementById('kinoLit').textContent = '«' + it.lit + '»';
+    document.getElementById('kinoMeaning').textContent = it.meaning;
+    document.getElementById('kinoExample').textContent = '« ' + it.example + ' »';
+    document.getElementById('kinoWhen').textContent = it.when;
+    document.getElementById('kinoUa').textContent = '🇺🇦 ' + it.ua;
+    counter.textContent = `${kIdx+1} / ${LESSON.idioms.length}`;
+    card.classList.remove('flipped');
+  }
+  window.kinoNext = () => { kIdx = (kIdx+1) % LESSON.idioms.length; renderKino(); };
+  window.kinoPrev = () => { kIdx = (kIdx-1+LESSON.idioms.length) % LESSON.idioms.length; renderKino(); };
+  window.kinoRandom = () => { let n = kIdx; while(LESSON.idioms.length > 1 && n === kIdx) n = Math.floor(Math.random()*LESSON.idioms.length); kIdx = n; renderKino(); };
+  if(card) card.addEventListener('click', () => card.classList.toggle('flipped'));
+  renderKino();
+}
+
+/* ---- MEMORY ANCHORS (silent sensory triggers) ---- */
+if(LESSON.memoryAnchors){
+  const box = document.getElementById('memoryAnchors');
+  if(box){
+    const m = LESSON.memoryAnchors;
+    box.innerHTML = `
+      <div class="anchors-title">${m.title}</div>
+      <div class="anchors-hint">${m.hint}</div>
+      <div class="anchors-grid">
+        ${m.items.map(a => `<div class="anchor-chip"><span class="anchor-emoji">${a.emoji}</span><span>${a.de}</span></div>`).join('')}
+      </div>
+    `;
+    box.style.display = 'block';
+  }
+}
+
 /* ---- VOCAB GRID ---- */
 const vocab = LESSON.vocab;
 const grid = document.getElementById('vocabGrid');

@@ -23,6 +23,18 @@ window.LESSONS = {
     duration: '~18 min',
     idx: '01',
     intro: 'Brot, Brezeln und Butter — und die Wörter, mit denen du im Supermarkt NICHT mehr dumm dastehst. 🥨',
+    memoryAnchors: {
+      title: 'Riech mal kurz hin 👃',
+      hint: 'Welches Essen bringt dich sofort irgendwohin? Schließ die Augen.',
+      items: [
+        { emoji: '🍜', de: 'Warme Nudelsuppe an kalten Tagen' },
+        { emoji: '🥐', de: 'Duft von frischem Croissant am Morgen' },
+        { emoji: '🌿', de: 'Basilikum frisch vom Fenster' },
+        { emoji: '🍫', de: 'Schokolade, die langsam schmilzt' },
+        { emoji: '🧄', de: 'Knoblauch in der Pfanne mit Olivenöl' },
+        { emoji: '🍋', de: 'Zitrone über warmem Fisch' }
+      ]
+    },
     speakQuestions: [
       'Was isst du am liebsten? Hast du ein Lieblingsgericht?',
       'Kochst du oft zu Hause oder isst du lieber im Restaurant?',
@@ -149,6 +161,18 @@ window.LESSONS = {
     duration: '~18 min',
     idx: '03',
     intro: 'Flüge buchen, Züge nehmen, Hotels finden — alles, was du brauchst, um die Welt zu entdecken. 🗺️',
+    memoryAnchors: {
+      title: 'Dein Lieblingsmoment unterwegs ✈️',
+      hint: 'Schließ kurz die Augen. Wo bist du gerade?',
+      items: [
+        { emoji: '🗺', de: 'Der erste Blick auf eine fremde Stadt' },
+        { emoji: '☕', de: 'Kaffee in einem Café, das keiner kennt' },
+        { emoji: '🏖', de: 'Sand zwischen den Zehen am Morgen' },
+        { emoji: '🚂', de: 'Das Rattern eines Zuges durch Felder' },
+        { emoji: '🌅', de: 'Sonnenaufgang, den du fast verschlafen hast' },
+        { emoji: '🧳', de: 'Der Moment, wenn der Koffer endlich zu ist' }
+      ]
+    },
     speakQuestions: [
       'Beschreibe deine beste Reise in drei Sätzen: Wohin bist du gefahren, wie war es und was war das Schönste?',
       'Was ist dir bei einer Reise am wichtigsten — das Hotel, das Essen oder die Sehenswürdigkeiten?',
@@ -401,6 +425,18 @@ window.LESSONS = {
     duration: '~19 min',
     idx: '07',
     intro: 'Wer ist dein Lieblingsmensch? Hier lernst du, ihn zu beschreiben und zu vergleichen. 💛',
+    memoryAnchors: {
+      title: 'Dein Mensch fürs Leben 💞',
+      hint: 'An wen denkst du zuerst? Lass das Bild einfach kommen.',
+      items: [
+        { emoji: '📱', de: 'Eine Nachricht, die dich immer zum Lächeln bringt' },
+        { emoji: '🎵', de: 'Ein Lied, das nur für euch zwei ist' },
+        { emoji: '🍕', de: 'Pizza mitten in der Nacht' },
+        { emoji: '🚶', de: 'Ein Spaziergang, bei dem ihr stundenlang redet' },
+        { emoji: '🎬', de: 'Ein Film, den ihr zu oft gesehen habt' },
+        { emoji: '☕', de: 'Ein Kaffee, der drei Stunden dauert' }
+      ]
+    },
     speakQuestions: [
       'Wie ist dein bester Freund oder deine beste Freundin? Beschreibe ihn oder sie.',
       'Was ist dir in einer Freundschaft am wichtigsten — Ehrlichkeit, Humor oder Loyalität?',
@@ -464,6 +500,18 @@ window.LESSONS = {
     duration: '~15 min',
     idx: '08',
     intro: 'Mutter, Vater, Bruder, Schwester — und wie man über sie spricht. Possessivartikel inklusive! 💞',
+    memoryAnchors: {
+      title: 'Dein Zuhause im Herzen 🏡',
+      hint: 'Welches Bild taucht zuerst auf? Nur fühlen — nichts sagen.',
+      items: [
+        { emoji: '🍳', de: 'Sonntagmorgen in der Küche' },
+        { emoji: '😂', de: 'Ein Witz, über den nur ihr lacht' },
+        { emoji: '📞', de: 'Mamas Stimme am Telefon' },
+        { emoji: '🧸', de: 'Dein Lieblingsstofftier aus Kindertagen' },
+        { emoji: '🎂', de: 'Ein Geburtstag mit selbstgemachtem Kuchen' },
+        { emoji: '🚗', de: 'Lange Autofahrten mit Musik von früher' }
+      ]
+    },
     speakQuestions: [
       'Wie groß ist deine Familie? Hast du Geschwister?',
       'Wie oft siehst du deine Familie? Was macht ihr zusammen?',
@@ -653,14 +701,26 @@ window.LESSONS = {
     duration: '~20 min',
     idx: '11',
     intro: 'Manche Wörter riechst du, andere schmeckst du. Hier lernst du die, die dich zurück in die Vergangenheit bringen. 🕰',
+    memoryAnchors: {
+      title: 'Schließ kurz die Augen 👁',
+      hint: 'Welches Bild taucht auf? Nichts sagen — nur ein Blitz im Kopf reicht.',
+      items: [
+        { emoji: '🍞', de: 'Duft von frisch gebackenem Brot' },
+        { emoji: '☀️', de: 'Erster Sonnenstrahl nach langem Winter' },
+        { emoji: '🍓', de: 'Geschmack der ersten reifen Erdbeere' },
+        { emoji: '🌧', de: 'Regen auf heißem Asphalt im Sommer' },
+        { emoji: '🎵', de: 'Drei Töne eines alten Lieblingslieds' },
+        { emoji: '🤲', de: 'Warme Umarmung einer vertrauten Person' }
+      ]
+    },
     speakQuestions: [
       'Was ist deine früheste Erinnerung? Erzähl mir davon.',
       'Welcher Duft erinnert dich sofort an deine Kindheit?',
       'Gibt es ein Lied, das für dich mit einem bestimmten Moment verknüpft ist?',
       'Welchen Augenblick möchtest du nie vergessen?',
-      'Was vermisst du am meisten aus deiner Kindheit?',
+      'Welcher Geschmack bringt dich sofort zurück in die Kindheit?',
       'Gibt es einen Ort, der dich immer an damals erinnert?',
-      'Welche Erinnerung bringt dich sofort zum Lachen — oder zum Weinen?',
+      'Welche Erinnerung bringt dich jedes Mal zum Lachen?',
       'Was war deine schönste Erinnerung aus dem letzten Jahr?'
     ],
     vocab: [
@@ -720,6 +780,18 @@ window.LESSONS = {
     duration: '~20 min',
     idx: '12',
     intro: 'Warum fühlt sich Blau kühl an? Warum riecht Rot nach Zimt? Hier lernst du die Sprache der Sinne — und wie du Gefühle in Worte fasst. 🎨',
+    memoryAnchors: {
+      title: 'Welche Farbe siehst du? 🎨',
+      hint: 'Atme kurz ein. Jede Farbe hat einen Klang, einen Duft, ein Gefühl.',
+      items: [
+        { emoji: '💛', de: 'Senfgelb wie ein Dienstagnachmittag' },
+        { emoji: '🩷', de: 'Rosa wie ein Freitag voller Pläne' },
+        { emoji: '💙', de: 'Tiefblau wie stille Morgen am Meer' },
+        { emoji: '💚', de: 'Waldgrün nach dem Sommerregen' },
+        { emoji: '🧡', de: 'Orange wie Zimt im warmen Tee' },
+        { emoji: '🤍', de: 'Weiß wie frischer Schnee im Park' }
+      ]
+    },
     speakQuestions: [
       'Welche Farbe hat für dich der Montag?',
       'Wenn Glück ein Geschmack wäre — wie würde es schmecken?',
@@ -772,6 +844,159 @@ window.LESSONS = {
       { q:'«Es fühlt sich an, als ob ich wieder zehn ___.» — Konjunktiv II von sein:', opts:['bin','war','wäre','werde'],                                                 a:2 },
       { q:'«Als ob»: wo steht das Verb?',                                         opts:['sofort nach «als ob»','in der Mitte','am Ende','egal'],                           a:2 },
       { q:'«Grün ___ beruhigend auf mich.»',                                      opts:['verbindet','wirkt','löst','fühlt'],                                               a:1 }
+    ]
+  },
+
+  /* ============================================================
+   * 13 · REDEWENDUNGEN — Idiome & Bilder · B1
+   * ============================================================ */
+  redewendungen: {
+    slug: 'redewendungen',
+    emoji: '🎭',
+    title: 'Redewendungen',
+    titleHtml: 'Rede<em>wendungen</em> 🎭',
+    level: 'B1',
+    duration: '~25 min',
+    idx: '13',
+    intro: 'Deutsch hat hunderte kleiner Bilder, die in Sätzen versteckt sind. Hier lernst du acht davon — und plötzlich klingst du nicht mehr wie ein Lehrbuch. 🎬',
+    memoryAnchors: {
+      title: 'Kleines Kopfkino 🎬',
+      hint: 'Stell dir jedes Bild kurz vor. Nicht übersetzen — nur sehen.',
+      items: [
+        { emoji: '🍅👀', de: 'Tomaten direkt vor den Augen' },
+        { emoji: '🤞', de: 'Zwei fest gedrückte Daumen' },
+        { emoji: '🐷🍀', de: 'Ein Schwein mit Glücksklee' },
+        { emoji: '☁️7️⃣', de: 'Schweben auf Wolke Nummer sieben' },
+        { emoji: '🐻🎀', de: 'Ein Bär mit bunter Schleife' },
+        { emoji: '🏊❄️', de: 'Sprung ins eiskalte Wasser' }
+      ]
+    },
+    speakQuestions: [
+      'Welche Redewendung aus deiner Sprache liebst du besonders?',
+      'Wann hast du zuletzt Schwein gehabt?',
+      'Hat dir schon mal jemand einen Bären aufgebunden?',
+      'Wobei drückst du anderen oft die Daumen?',
+      'Wann bist du zuletzt aus dem Häuschen gewesen?',
+      'Bist du eher jemand, der ins kalte Wasser springt — oder vorsichtig testet?',
+      'Welches Gefühl beschreibt für dich «auf Wolke sieben»?',
+      'Hast du manchmal das Gefühl, Tomaten auf den Augen zu haben?'
+    ],
+    vocab: [
+      { art:'die', w:'Redewendung',     ua:'фразеологізм; ідіома',   ex:'«Tomaten auf den Augen haben» ist eine bekannte Redewendung.' },
+      { art:'die', w:'Bedeutung',       ua:'значення',               ex:'Die Bedeutung ist meistens nicht wörtlich.' },
+      { art:'—',   w:'wörtlich',        ua:'буквально',              ex:'Wörtlich ergibt das keinen Sinn — es ist ein Bild.' },
+      { art:'—',   w:'bildlich',        ua:'образно',                ex:'Das ist bildlich gemeint, nicht echt.' },
+      { art:'—',   w:'meinen',          ua:'мати на увазі',          ex:'Was meinst du damit genau?' },
+      { art:'der', w:'Ausdruck',        ua:'вираз',                  ex:'Das ist ein typischer Ausdruck aus dem Alltag.' },
+      { art:'—',   w:'verwenden',       ua:'використовувати',        ex:'Diese Redewendung verwende ich oft.' },
+      { art:'die', w:'Situation',       ua:'ситуація',               ex:'In welcher Situation sagt man das?' },
+      { art:'—',   w:'witzig',          ua:'дотепний, смішний',      ex:'Deutsche Redewendungen sind oft richtig witzig.' },
+      { art:'—',   w:'passen zu',       ua:'пасувати до',            ex:'Diese Redewendung passt perfekt zu deiner Situation.' }
+    ],
+    idioms: [
+      {
+        de: 'Tomaten auf den Augen haben',
+        emoji: '🍅👀',
+        lit: 'мати помідори на очах',
+        meaning: 'etwas Offensichtliches übersehen oder nicht bemerken',
+        example: 'Deine Brille liegt direkt vor dir — hast du Tomaten auf den Augen?',
+        when: 'Wenn jemand das Offensichtliche nicht sieht.',
+        ua: 'Не помічати очевидного'
+      },
+      {
+        de: 'Die Daumen drücken',
+        emoji: '🤞',
+        lit: 'тиснути великі пальці',
+        meaning: 'jemandem Glück wünschen — wie «тримати кулачки»',
+        example: 'Morgen hast du die Prüfung? Ich drücke dir ganz fest die Daumen!',
+        when: 'Wenn du jemandem Erfolg wünschst.',
+        ua: 'Тримати кулачки'
+      },
+      {
+        de: 'Schwein haben',
+        emoji: '🐷🍀',
+        lit: 'мати свиню',
+        meaning: 'großes Glück haben — ganz zufällig',
+        example: 'Der Zug war schon weg, aber er hatte Verspätung. Ich hatte echt Schwein.',
+        when: 'Wenn du unerwartet Glück hast.',
+        ua: 'Пощастити, підфартило'
+      },
+      {
+        de: 'Auf Wolke sieben schweben',
+        emoji: '☁️7️⃣',
+        lit: 'ширяти на хмарі номер сім',
+        meaning: 'überglücklich oder verliebt sein',
+        example: 'Seit sie ihren Traumjob hat, schwebt sie auf Wolke sieben.',
+        when: 'Wenn jemand vor Glück strahlt.',
+        ua: 'Бути на сьомому небі'
+      },
+      {
+        de: 'Zwei Fliegen mit einer Klappe schlagen',
+        emoji: '🪰🪰🧹',
+        lit: 'убити двох мух одним ляпанцем',
+        meaning: 'zwei Dinge mit einer Handlung gleichzeitig erledigen',
+        example: 'Ich gehe zum Supermarkt und treffe dort Anna — zwei Fliegen mit einer Klappe.',
+        when: 'Wenn eine Aktion zwei Ziele auf einmal erreicht.',
+        ua: 'Убити двох зайців'
+      },
+      {
+        de: 'Aus dem Häuschen sein',
+        emoji: '🏠🎉',
+        lit: 'бути поза маленьким будиночком',
+        meaning: 'extrem begeistert oder aufgeregt sein',
+        example: 'Als sie die Tickets bekommen hat, war sie völlig aus dem Häuschen.',
+        when: 'Wenn jemand vor Freude nicht mehr stillsitzen kann.',
+        ua: 'Бути в захваті, аж стрибати'
+      },
+      {
+        de: 'Jemandem einen Bären aufbinden',
+        emoji: '🐻🎀',
+        lit: 'прив\'язати комусь ведмедя',
+        meaning: 'jemandem eine unwahre Geschichte erzählen — zum Spaß',
+        example: 'Ein Hai im Schwimmbad? Du willst mir einen Bären aufbinden!',
+        when: 'Wenn jemand dir eine lustige, unglaubwürdige Geschichte erzählt.',
+        ua: 'Вішати локшину на вуха'
+      },
+      {
+        de: 'Ins kalte Wasser springen',
+        emoji: '🏊❄️',
+        lit: 'стрибнути в холодну воду',
+        meaning: 'etwas Neues einfach wagen, ohne lange zu überlegen',
+        example: 'Ich spreche noch nicht perfekt Deutsch, aber ich springe einfach ins kalte Wasser.',
+        when: 'Wenn du einen mutigen Schritt ohne lange Vorbereitung machst.',
+        ua: 'Кинутися у вир з головою'
+      }
+    ],
+    reading: {
+      paragraphs: [
+        'Stell dir vor, du sitzt im Café mit einer deutschen Freundin. Sie sagt: «Ich hatte gestern so ein <mark title="пощастило">Schwein</mark>!» Du schaust sie verwirrt an. Welches Schwein? Wo?',
+        'Willkommen in der Welt der <mark title="фразеологізмів">Redewendungen</mark>. Jede Sprache hat ihre eigenen kleinen Bilder, die <mark title="буквально">wörtlich</mark> keinen Sinn ergeben — aber <mark title="образно">bildlich</mark> sagen sie mehr als tausend Wörter. «Schwein haben» heißt nicht, dass du ein Tier besitzt. Es heißt: du hattest großes Glück.',
+        'Das Coole an Redewendungen: sie funktionieren wie <strong>kleine Filme im Kopf</strong>. Wenn jemand sagt «Ich schwebe auf Wolke sieben», siehst du sofort jemanden, der vor Glück fast fliegt. Das Bild bleibt — und damit auch das Wort.',
+        'Deutsche Redewendungen sind oft richtig <mark title="смішні">witzig</mark>. «Tomaten auf den Augen haben» — kannst du dir das vorstellen? Jemand mit zwei roten Tomaten direkt auf den Augen, der natürlich nichts sieht. Genau das ist die <mark title="значення">Bedeutung</mark>: du siehst das Offensichtliche nicht.',
+        'Manche Redewendungen haben fast wörtliche Übersetzungen in anderen Sprachen. «Zwei Fliegen mit einer Klappe schlagen» ist im Englischen «two birds with one stone», im Ukrainischen «двох зайців одним пострілом». Die Idee ist die gleiche — nur die Tiere wechseln.',
+        'Andere sind typisch deutsch. «Jemandem einen Bären aufbinden» kommt aus dem 17. Jahrhundert — und niemand weiß genau, warum ein Bär. Heute sagen Deutsche es einfach, wenn jemand eine lustige, unglaubwürdige Geschichte erzählt.',
+        'Der Trick, um Redewendungen zu lernen: <strong>das Bild sehen, nicht die Wörter übersetzen</strong>. Dein Gehirn speichert Bilder hundertmal besser als abstrakte Regeln. Deshalb bleibt «auf Wolke sieben» hängen — du siehst die Wolke, du siehst das Glück, und plötzlich ist der ganze Satz deiner.',
+        'Also: wenn du das nächste Mal Deutsch hörst und ein Satz komplett verrückt klingt — nicht in Panik geraten. Es ist wahrscheinlich eine Redewendung. Frag einfach: «Was meinst du damit?» Der Muttersprachler freut sich, dir ein neues Kopfkino zu zeigen.'
+      ],
+      uaSummary: '🇺🇦 Уяви: німкеня у кафе каже «я вчора мала свиню!» Ти у шоці. Яку свиню? Це — ідіома. У кожній мові є маленькі картинки, які буквально не мають сенсу, але образно кажуть більше тисячі слів. «Schwein haben» — це не про тварин, а «мати щастя». Круто в ідіомах те, що вони як маленькі фільми у голові: чуєш «на сьомій хмарі» — одразу бачиш людину, яка летить від щастя. Це допомагає запам\'ятати. Німецькі ідіоми часто реально смішні: «помідори на очах» — уяви собі двох помідорів прямо на очах, звісно людина нічого не бачить. Частина ідіом є й у інших мовах («двох зайців»), частина чисто німецька («ведмеді» — ніхто не знає чому). Секрет: <strong>бачити картинку, не перекладати</strong>. Мозок краще пам\'ятає образи.'
+    },
+    dialog: [
+      { who:'🧑', de:'Hey, ich hatte heute so Schwein — ich bin den Bus gerade noch erwischt!',                                ua:'Слухай, мені сьогодні так пощастило — ледве встиг на автобус!' },
+      { who:'👩', de:'Oh, cool! Ich drücke dir für morgen die Daumen — du hast doch dieses Vorstellungsgespräch, oder?',        ua:'О, круто! Я триматиму кулачки на завтра — у тебе ж співбесіда, так?' },
+      { who:'🧑', de:'Stimmt! Ich bin schon halb aus dem Häuschen vor Aufregung. Und meine Brille hab ich auch wieder verloren…', ua:'Точно! Я вже наполовину божеволію від хвилювання. І окуляри знов загубив…' },
+      { who:'👩', de:'Haha, die liegen doch direkt vor dir! Du hast Tomaten auf den Augen, ehrlich.',                            ua:'Ха, вони ж прямо перед тобою! Ти реально сліпий як кріт.' },
+      { who:'🧑', de:'Oh krass, stimmt! Na dann — ich spring ins kalte Wasser. Alles wird gut.',                                 ua:'Ого, точно! Ну що ж — кинуся з головою. Все буде добре.' }
+    ],
+    grammar: {
+      chip: 'Feste Wendungen — warum Präpositionen nicht wörtlich übersetzt werden',
+      html: `<div class="case-box"><div class="case-box-title">Крок 1 — Redewendungen = фіксовані конструкції</div><p>Ідіоми — це <strong>застиглі шаблони</strong>. У них не можна міняти прийменник, відмінок або артикль, навіть якщо тобі здається, що «логічніше» інакше. Вчи ідіому цілком — як одне велике слово.</p></div><div class="grammar-note"><strong>📌 Приклад:</strong> «Tomaten <strong>auf</strong> den Augen haben» — не <em>in</em>, не <em>über</em>. Тільки <strong>auf + Akkusativ</strong>. Без варіантів.</div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 1 — типові прийменники в ідіомах</div><p>Ось найчастіші схеми. Не переклад — а <strong>образ</strong>. Звикай сприймати одразу цілим.</p></div><table class="rule-table"><thead><tr><th>Прийменник</th><th>Приклад</th><th>Буквальний образ</th></tr></thead><tbody><tr><td><code>auf + Akk</code></td><td>auf Wolke sieben schweben</td><td>на (зверху) хмарі</td></tr><tr><td><code>aus + Dat</code></td><td>aus dem Häuschen sein</td><td>з (зсередини) будиночка</td></tr><tr><td><code>ins (in+das)</code></td><td>ins kalte Wasser springen</td><td>у (рух всередину) воду</td></tr><tr><td><code>mit + Dat</code></td><td>mit einer Klappe schlagen</td><td>за допомогою ляпанця</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Випадок 2 — дієслова «haben», «sein», «machen» — головні героі ідіом</div><p>85% ідіом будуються з цих трьох дієслів. Запам\'ятай комбінацію «дієслово + іменник» як одне ціле.</p></div><ul class="examples"><li><strong>haben:</strong> Schwein haben · Glück haben · Tomaten auf den Augen haben</li><li><strong>sein:</strong> aus dem Häuschen sein · auf Wolke sieben sein · fix und fertig sein</li><li><strong>drücken / schlagen / springen:</strong> конкретні дії як метафори</li></ul><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 3 — давальний для людини (Dativ)</div><p>Коли ідіома стосується іншої людини («комусь тиснути кулачки», «комусь вішати лапшу на вуха»), використовуй <strong>Dativ</strong>.</p></div><table class="rule-table"><thead><tr><th>Ідіома</th><th>Кому?</th><th>Приклад</th></tr></thead><tbody><tr><td>die Daumen drücken</td><td><code>jemandem</code> (Dat)</td><td>Ich drücke <strong>dir</strong> die Daumen.</td></tr><tr><td>einen Bären aufbinden</td><td><code>jemandem</code> (Dat)</td><td>Du willst <strong>mir</strong> einen Bären aufbinden!</td></tr></tbody></table><div class="grammar-note"><strong>💡 Лайфгак:</strong> не перекладай ідіому слово за словом. Дивись на <strong>картинку</strong> (як у Kopfkino), і відчуй настрій. Тоді прийменник прилипає сам — бо ти пам\'ятаєш сцену, а не правило.</div>`
+    },
+    quiz: [
+      { q:'«Schwein haben» bedeutet:',                                     opts:['ein Tier haben','Glück haben','hungrig sein','dumm sein'],                      a:1 },
+      { q:'Wenn du jemandem Glück wünschst, sagst du auf Deutsch:',        opts:['Tomaten auf den Augen','die Daumen drücken','aus dem Häuschen','Bären aufbinden'], a:1 },
+      { q:'«Auf Wolke sieben schweben» passt zu dieser Situation:',        opts:['Krankheit','großer Streit','tiefes Glück','Langeweile'],                         a:2 },
+      { q:'«Tomaten auf den Augen haben» heißt:',                          opts:['hungrig sein','etwas Offensichtliches übersehen','traurig sein','schlafen'],    a:1 },
+      { q:'Welche Präposition passt? «___ Wolke sieben schweben»:',        opts:['in','auf','über','bei'],                                                          a:1 }
     ]
   }
 

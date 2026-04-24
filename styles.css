@@ -824,6 +824,169 @@ body::before {
 .tiny-note { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .05em; }
 .lesson-nav-bottom { display: flex; justify-content: space-between; margin-top: 40px; gap: 14px; flex-wrap: wrap; }
 
+/* memory anchors — silent sensory triggers */
+.memory-anchors {
+  background: var(--lilac);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-hard);
+}
+.anchors-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.anchors-hint {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.anchors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.anchor-emoji { font-size: 18px; }
+
+/* idiom cinema — flip card carousel */
+.kino-stage {
+  max-width: 560px;
+  margin: 0 auto;
+  perspective: 1400px;
+  padding: 10px 0 6px;
+}
+.kino-card {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  transform-style: preserve-3d;
+  transition: transform .55s cubic-bezier(.2,.8,.2,1);
+  cursor: pointer;
+}
+.kino-card.flipped { transform: rotateY(180deg); }
+.kino-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 3px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  box-shadow: var(--shadow-hard);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.kino-front {
+  background: linear-gradient(145deg, var(--sun) 0%, var(--peach) 100%);
+  color: var(--ink);
+  justify-content: center;
+}
+.kino-back {
+  background: var(--surface);
+  color: var(--ink);
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  text-align: left;
+  gap: 8px;
+}
+.kino-emoji {
+  font-size: 96px;
+  line-height: 1;
+  margin-bottom: 14px;
+  filter: drop-shadow(3px 3px 0 rgba(0,0,0,.18));
+}
+.kino-phrase {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  max-width: 480px;
+}
+.kino-lit {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: .78;
+  margin-bottom: 18px;
+}
+.kino-flip-hint {
+  margin-top: auto;
+  font-size: 13px;
+  color: var(--ink);
+  opacity: .65;
+  font-style: italic;
+}
+.kino-meaning-label, .kino-example-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 700;
+  margin-top: 4px;
+}
+.kino-meaning {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.35;
+}
+.kino-example {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+.kino-when {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 10px 14px;
+  border-left: 3px solid var(--blue);
+  background: var(--bg-soft);
+  border-radius: 0 10px 10px 0;
+  margin-top: 6px;
+}
+.kino-ua {
+  margin-top: auto;
+  align-self: flex-end;
+  background: var(--lime);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.kino-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+[data-theme="dark"] .kino-front,
+[data-theme="neon"] .kino-front { color: #111; }
+
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }

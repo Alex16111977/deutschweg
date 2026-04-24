@@ -47,6 +47,7 @@
     <button class="ltab" data-p="p5"><span class="ltab-num">06</span>🗨 Dialog</button>
     <button class="ltab" data-p="p6"><span class="ltab-num">07</span>📐 Grammatik</button>
     <button class="ltab" data-p="p7"><span class="ltab-num">08</span>🧠 Quiz</button>
+    <button class="ltab" data-p="pKino" id="tabKino" style="display:none"><span class="ltab-num">09</span>🎬 Kino</button>
   </div>
 
   <!-- PANE 1: VOCAB -->
@@ -58,6 +59,7 @@
       </div>
       <span class="tiny-note">👆 Tap auf eine Karte für Beispiel · 🔊 hört das Wort</span>
     </div>
+    <div class="memory-anchors" id="memoryAnchors" style="display:none"></div>
     <div class="vocab-grid" id="vocabGrid"></div>
   </div>
 
@@ -197,6 +199,40 @@
       <h2 class="section-title" style="margin:14px 0">Krass! <em id="quizScore">5 / 5</em></h2>
       <p style="font-size:17px;color:var(--muted);margin-bottom:20px">Du bist ready für das nächste Thema!</p>
       <a href="index.html" class="btn">Nächstes Abenteuer → </a>
+    </div>
+  </div>
+
+  <!-- PANE KINO: IDIOM CINEMA (conditional on LESSON.idioms) -->
+  <div class="lpane" id="pKino">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Bonus · Kino 🎬</span>
+        <h2 class="section-title">Idiom<em>-Kino</em> 🎬</h2>
+      </div>
+      <span class="tiny-note" id="kinoCounter">1 / 8</span>
+    </div>
+    <div class="kino-stage" id="kinoStage">
+      <div class="kino-card" id="kinoCard">
+        <div class="kino-face kino-front">
+          <div class="kino-emoji" id="kinoEmoji">🎬</div>
+          <div class="kino-phrase" id="kinoPhrase">—</div>
+          <div class="kino-lit" id="kinoLit">—</div>
+          <div class="kino-flip-hint">👆 tap für die Bedeutung</div>
+        </div>
+        <div class="kino-face kino-back">
+          <div class="kino-meaning-label">Bedeutung</div>
+          <div class="kino-meaning" id="kinoMeaning">—</div>
+          <div class="kino-example-label">So sagt man es</div>
+          <div class="kino-example" id="kinoExample">—</div>
+          <div class="kino-when" id="kinoWhen">—</div>
+          <div class="kino-ua" id="kinoUa">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="kino-controls">
+      <button class="word-btn" onclick="kinoPrev()">← zurück</button>
+      <button class="btn pink" onclick="kinoRandom()">🎲 überrasch mich</button>
+      <button class="word-btn" onclick="kinoNext()">weiter →</button>
     </div>
   </div>
 
