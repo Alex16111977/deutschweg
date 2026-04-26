@@ -998,6 +998,73 @@ window.LESSONS = {
       { q:'«Tomaten auf den Augen haben» heißt:',                          opts:['hungrig sein','etwas Offensichtliches übersehen','traurig sein','schlafen'],    a:1 },
       { q:'Welche Präposition passt? «___ Wolke sieben schweben»:',        opts:['in','auf','über','bei'],                                                          a:1 }
     ]
+  },
+
+  /* ============================================================
+   * 14 · KLASSIKER · neu gelesen — Literatur ohne Staub · B1
+   * ============================================================ */
+  klassiker: {
+    slug: 'klassiker',
+    emoji: '✒',
+    title: 'Klassiker · neu',
+    titleHtml: 'Klas<em>siker</em> · neu ✒',
+    level: 'B1',
+    duration: '~22 min',
+    idx: '14',
+    intro: 'Goethe hat geghostet. Werther war der erste Bro mit «main character syndrome». Kafka hatte Existenzkrise vor TikTok. Hier — die deutschen Klassiker, aber ohne Staub. 📜',
+    speakQuestions: [
+      'Welches Buch hast du als letztes gelesen — und ehrlich: war es gut?',
+      'Welches «klassische» Buch wolltest du immer lesen, hast es aber nie geschafft?',
+      'Welche Figur aus einem Buch oder Film fühlt sich für dich am ähnlichsten?',
+      'Liest du lieber auf Papier, digital oder als Hörbuch?',
+      'Welcher Autor oder welche Autorin würde heute wohl einen viralen Tweet schreiben?',
+      'Glaubst du, in 200 Jahren liest noch jemand Harry Potter?',
+      'Welches Buch hat dich wirklich verändert?',
+      'Was war das letzte Buch, das du nicht zu Ende gelesen hast — und warum?'
+    ],
+    vocab: [
+      { art:'der', w:'Roman',          ua:'роман',                  ex:'Goethes Roman «Werther» wurde sofort ein Bestseller.' },
+      { art:'die', w:'Autorin / der Autor', ua:'авторка / автор',   ex:'Die Autorin schreibt seit zwanzig Jahren.' },
+      { art:'das', w:'Werk',           ua:'твір; робота',           ex:'«Faust» ist Goethes berühmtestes Werk.' },
+      { art:'die', w:'Figur',          ua:'персонаж',               ex:'Die Hauptfigur ist jung, klug und ein bisschen verloren.' },
+      { art:'die', w:'Handlung',       ua:'сюжет; дія',             ex:'Die Handlung spielt im 18. Jahrhundert.' },
+      { art:'der', w:'Held / die Heldin', ua:'герой / героїня',     ex:'Der tragische Held verliert am Ende alles.' },
+      { art:'—',   w:'veröffentlichen', ua:'публікувати',           ex:'Kafka veröffentlichte zu Lebzeiten kaum etwas.' },
+      { art:'—',   w:'behaupten',      ua:'стверджувати',           ex:'Der Autor behauptet, er habe das Buch in einer Nacht geschrieben.' },
+      { art:'die', w:'Aussage',        ua:'висловлювання; тeza',    ex:'Die Aussage des Romans ist zeitlos.' },
+      { art:'die', w:'Epoche',         ua:'епоха',                  ex:'Goethe gehört zur Epoche der Klassik.' }
+    ],
+    reading: {
+      paragraphs: [
+        'Stell dir vor: Du bist 25, frisch verliebt, sie ist verlobt mit einem anderen, du schreibst ihr 200 Seiten <mark title="лист">Brief</mark> über deine Gefühle, sie liest sie nicht — und am Ende ziehst du dir blaue Klamotten an und ballerst dich selbst mit einer geliehenen Pistole ab. Glückwunsch: Du bist Werther. Goethes <mark title="роман">Roman</mark> «Die Leiden des jungen Werthers» (1774) war der erste internationale Bestseller — und der erste «main character syndrome» auf 200 Seiten.',
+        'Damals war das so krass, dass junge Männer in ganz Europa anfingen, sich blau anzuziehen und sich selbst zu erschießen. Echt jetzt. Die Wissenschaft nennt das heute «<strong>Werther-Effekt</strong>». 1774 war Goethes Buch das, was wir heute «virale Romantisierung» nennen würden.',
+        'Springen wir 50 Jahre weiter: Goethe ist alt, berühmt, lebt in Weimar wie ein Influencer mit Hofstaat. Er <mark title="публікує">veröffentlicht</mark> «Faust» — die Story von einem Wissenschaftler, der einen Deal mit dem Teufel macht, weil ihm das Leben zu langweilig ist. Klingt wie eine Netflix-Serie? Ist es auch — wurde 47-mal verfilmt. Der <mark title="герой">Held</mark> Faust will <em>alles</em> wissen, alles fühlen, alles haben. Sehr 2026.',
+        'Dann kommt die nächste <mark title="епоха">Epoche</mark>: <strong>Romantik</strong>. Friedrich Schiller, Heinrich Heine, die Brüder Grimm. Sie schreiben über Wälder, Mondlicht, gebrochene Herzen und tote Mädchen. Sehr aesthetic, sehr Tumblr-2014. Heine ist der schärfste Tweet-Schreiber des 19. Jahrhunderts: «Wo man Bücher verbrennt, verbrennt man am Ende auch Menschen.» — geschrieben 1820. Hat er ungelogen vorhergesagt.',
+        'Hundert Jahre später, Prag, 1915. Ein Versicherungs-Beamter namens <strong>Franz Kafka</strong> wacht auf und schreibt: «Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt.» Der Typ wird zur Kakerlake. Seine Familie ekelt sich. Niemand fragt, <em>warum</em>. Das ganze Buch ist eine einzige Existenzkrise — geschrieben, bevor Existenzkrise ein Wort war.',
+        'Kafka <mark title="стверджував">behauptete</mark>, seine Bücher seien Müll, und bat seinen Freund Max Brod, alles nach seinem Tod zu verbrennen. Brod ignorierte das komplett. Heute kennt jeder das Wort «kafkaesk» — wenn die Welt absurd, bürokratisch und unheimlich ist. Spoiler: das ist das Finanzamt.',
+        'Und dann <strong>Bertolt Brecht</strong> — der Punk unter den Klassikern. Er schrieb in den 1920ern Stücke, in denen die Schauspieler plötzlich aufhörten zu spielen und das Publikum direkt anredeten. «Hey, das ist nur Theater. Denkt nach!» Sein berühmtester Song: «Mackie Messer» aus der «Dreigroschenoper». Du kennst die Melodie — alle kennen sie. Brecht hat den ersten Anti-Held der modernen Bühne erfunden — und ganz nebenbei das Theater neu definiert.',
+        'Was sie alle gemeinsam haben? Sie schrieben über Leute, die nicht klar kommen. Werther, Faust, Gregor Samsa, Mackie Messer — keiner von denen ist «happy». Aber genau deshalb funktioniert deutsche Literatur immer noch: weil sie ehrlich ist über das Chaos im Kopf. Klassiker sind keine alten weißen Bücher in Bibliotheken. Sie sind die ersten Memes der Menschheit — nur länger und besser geschrieben. 📚'
+      ],
+      uaSummary: '🇺🇦 Уяви: тобі 25, ти закоханий у заручену, пишеш їй 200 сторінок листів, вона їх не читає — і ти стріляєшся в синій куртці. Вітаю, ти Вертер (Гете, 1774). Це був перший вірусний роман — після нього молоді чоловіки масово копіювали самогубство. Далі Гете пише «Фауст» — про вченого, що уклав угоду з дияволом. Шиллер, Гайне, брати Грімм пишуть про темні ліси й розбиті серця. Гайне передбачає 1933: «Де палять книги, там палять і людей». Кафка перетворює свого героя на жука — це один великий екзистенційний кризис. Брехт винаходить театр, у якому актори говорять до глядачів напряму. Усі ці автори писали про людей, які не справляються — і саме тому вони працюють досі. Класика — це не нудні книжки в бібліотеці. Це перші меми людства, тільки довші й краще написані.'
+    },
+    dialog: [
+      { who:'🧑', de:'Hast du «Werther» wirklich freiwillig gelesen? Ehrlich?',                                                ua:'Ти серйозно «Вертера» сам прочитав? Чесно?' },
+      { who:'👩', de:'Ehrlich gesagt: ja. Aber nur, weil mein Lehrer behauptet hat, es sei der erste Influencer-Roman.',         ua:'Чесно — так. Але тільки тому, що вчитель казав, що це перший «інфлюенсер-роман».' },
+      { who:'🧑', de:'Ha! Trotzdem mega cringe. Der Typ heult 200 Seiten lang, weil eine Frau ihn nicht will.',                  ua:'Ха! Все одно крінж. Чувак 200 сторінок ниє, бо дівчина його не хоче.' },
+      { who:'👩', de:'Genau das ist ja der Punkt! Goethe sagt, jeder von uns sei manchmal Werther — nur ohne die Pistole.',     ua:'Саме в цьому фішка! Гете каже, що кожен із нас іноді Вертер — тільки без пістолета.' },
+      { who:'🧑', de:'Okay, fair. Aber ich lese trotzdem lieber Kafka. Der hat wenigstens Humor in seinen Existenzkrisen.',     ua:'Ок, справедливо. Але я все одно більше Кафку люблю. У нього хоч гумор у тих його екзистенційних кризах.' }
+    ],
+    grammar: {
+      chip: 'Konjunktiv I — indirekte Rede («Goethe sagt, er sei… / habe… / werde…»)',
+      html: `<div class="case-box"><div class="case-box-title">Крок 1 — навіщо взагалі Konjunktiv I?</div><p>Коли ти <strong>переказуєш чужі слова</strong> — особливо в новинах, статтях, аналізі літератури — німці використовують <strong>Konjunktiv I</strong>. Це сигналізує: «це не моя думка, це він/вона так сказав/ла».</p><p>Це звучить дуже літературно і академічно. Тому ідеально пасує до розмов про авторів та літературу.</p></div><div class="grammar-note"><strong>📌 Порівняй:</strong><br>• <em>Indikativ (твоя думка):</em> Goethe <strong>ist</strong> der größte Dichter. <em>(Гете — найбільший поет.)</em><br>• <em>Konjunktiv I (переказ):</em> Schiller sagte, Goethe <strong>sei</strong> der größte Dichter. <em>(Шиллер казав, що Гете — найбільший поет.)</em></div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 1 — TOP-6 форм Konjunktiv I напам'ять</div><p>Як і Konjunktiv II, ці форми треба знати назубок. Вони покривають 90% переказу.</p></div><table class="rule-table"><thead><tr><th>Infinitiv</th><th>Konjunktiv I (er/sie/es)</th><th>Приклад</th></tr></thead><tbody><tr><td>sein</td><td><code>sei</code></td><td>Kafka sagt, das Leben <strong>sei</strong> absurd.</td></tr><tr><td>haben</td><td><code>habe</code></td><td>Goethe behauptet, er <strong>habe</strong> Werther in 4 Wochen geschrieben.</td></tr><tr><td>werden</td><td><code>werde</code></td><td>Brecht meint, das Theater <strong>werde</strong> politisch.</td></tr><tr><td>können</td><td><code>könne</code></td><td>Heine schreibt, jeder <strong>könne</strong> ein Gedicht verstehen.</td></tr><tr><td>müssen</td><td><code>müsse</code></td><td>Schiller sagt, Kunst <strong>müsse</strong> frei sein.</td></tr><tr><td>wollen</td><td><code>wolle</code></td><td>Faust sagt, er <strong>wolle</strong> alles wissen.</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Випадок 2 — коли Konjunktiv I = Indikativ → бери Konjunktiv II</div><p>Проблема: у формах <code>wir / sie / Sie</code> Konjunktiv I часто виглядає так само, як звичайний Indikativ. Тоді переходь на <strong>Konjunktiv II</strong> (або форму з <code>würde</code>) — щоб не плутати.</p></div><table class="rule-table"><thead><tr><th>Person</th><th>Indikativ</th><th>Konjunktiv I</th><th>→ берем Konj. II</th></tr></thead><tbody><tr><td>sie (Plural)</td><td>haben</td><td><em>haben</em> ❌</td><td><code>hätten</code> ✅</td></tr><tr><td>wir</td><td>gehen</td><td><em>gehen</em> ❌</td><td><code>würden gehen</code> ✅</td></tr><tr><td>sie (Plural)</td><td>wollen</td><td><em>wollen</em> ❌</td><td><code>wollten</code> ✅</td></tr></tbody></table><div class="grammar-note">💡 <strong>Просте правило:</strong> якщо Konjunktiv I звучить точно як звичайний теперішній час — заміняй на <strong>Konjunktiv II</strong>. Слухач одразу зрозуміє, що це переказ.</div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 3 — шаблони для розмов про літературу</div><p>Зубри ці фрази — і ти одразу звучиш як критик або філолог.</p></div><ul class="examples"><li>Der Autor <strong>sagt</strong>, … <em>(Автор каже, що…)</em></li><li>Die Autorin <strong>behauptet</strong>, … <em>(Авторка стверджує, що…)</em></li><li>Im Buch <strong>heißt es</strong>, … <em>(У книжці сказано, що…)</em></li><li>Der Held <strong>meint</strong>, … <em>(Герой вважає, що…)</em></li><li>Kafka <strong>schreibt</strong>, das Leben <strong>sei</strong> absurd.</li><li>Goethe <strong>betont</strong>, die Liebe <strong>könne</strong> alles ändern.</li></ul><div class="case-box"><div class="case-box-title">Випадок 4 — переказ запитання («ob» / W-Wort)</div><p>Коли переказуєш питання — використовуй <code>ob</code> (так/ні) або W-слово (was, wer, wann, warum…).</p></div><ul class="examples"><li>Sie fragte: «Liest du gern?» → Sie fragte, <strong>ob</strong> ich gern <strong>lese</strong>.</li><li>Er fragte: «Was hast du gelesen?» → Er fragte, <strong>was</strong> ich gelesen <strong>habe</strong>.</li></ul><div class="divider"></div><div class="grammar-note"><strong>💡 Лайфгак для Sprechen про книжки:</strong><br>Замість «Я думаю, що автор каже X», скажи: <code>Der Autor sagt, … sei / habe / werde …</code> — і ти одразу звучиш як B2 у літературній розмові:<br><br>• <code>Goethe behauptet, die Liebe sei stärker als der Tod.</code><br>• <code>Kafka schreibt, der Mensch sei ein Insekt im System.</code><br>• <code>Die Autorin meint, jeder Roman habe eine geheime Aussage.</code><br>• <code>Im Werk heißt es, der Held wolle die Welt verändern.</code></div>`
+    },
+    quiz: [
+      { q:'Was bedeutet «das Werk»?',                                              opts:['робота / твір','герой','розділ','епоха'],                                          a:0 },
+      { q:'Wer schrieb «Die Leiden des jungen Werthers»?',                         opts:['Kafka','Schiller','Goethe','Brecht'],                                              a:2 },
+      { q:'«Goethe sagt, er ___ alles wissen.» — Konjunktiv I von wollen:',        opts:['will','wolle','wollte','würde wollen'],                                            a:1 },
+      { q:'Konjunktiv I von «sein» (er/sie/es):',                                  opts:['ist','sei','wäre','war'],                                                          a:1 },
+      { q:'«Kafka behauptet, seine Bücher ___ Müll.» — wir nehmen Konj. II, weil Konj. I = Indikativ:', opts:['sind','seien','wären','sein'],                                  a:2 }
+    ]
   }
 
 };
