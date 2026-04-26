@@ -858,145 +858,148 @@ window.LESSONS = {
     level: 'B1',
     duration: '~25 min',
     idx: '13',
-    intro: 'Deutsch hat hunderte kleiner Bilder, die in Sätzen versteckt sind. Hier lernst du acht davon — und plötzlich klingst du nicht mehr wie ein Lehrbuch. 🎬',
+    intro: 'Sonntagmorgen in einer Berliner WG-Küche. Lukas hat Kater, Mia ist sauer — und in fünf Minuten fliegen acht Redewendungen, die du wirklich jeden Tag hörst. Kein Lehrbuch-Deutsch. 🥱☕',
     memoryAnchors: {
       title: 'Kleines Kopfkino 🎬',
       hint: 'Stell dir jedes Bild kurz vor. Nicht übersetzen — nur sehen.',
       items: [
-        { emoji: '🍅👀', de: 'Tomaten direkt vor den Augen' },
-        { emoji: '🤞', de: 'Zwei fest gedrückte Daumen' },
-        { emoji: '🐷🍀', de: 'Ein Schwein mit Glücksklee' },
-        { emoji: '☁️7️⃣', de: 'Schweben auf Wolke Nummer sieben' },
-        { emoji: '🐻🎀', de: 'Ein Bär mit bunter Schleife' },
-        { emoji: '🏊❄️', de: 'Sprung ins eiskalte Wasser' }
+        { emoji: '🍪😤', de: 'auf den Keks — etwas nervt' },
+        { emoji: '🐐0️⃣', de: 'null Bock — keine Lust' },
+        { emoji: '👃😮‍💨', de: 'Nase voll — satthaben' },
+        { emoji: '🗺️❌', de: 'kein Plan — keine Ahnung' },
+        { emoji: '🌭🤷', de: 'Wurst — egal' },
+        { emoji: '💩🔨', de: 'Mist bauen — vermasseln' },
+        { emoji: '🐱🎒', de: 'Katze aus dem Sack — Geheimnis raus' },
+        { emoji: '💬✨', de: 'Tacheles — ehrlich reden' }
       ]
     },
     speakQuestions: [
-      'Welche Redewendung aus deiner Sprache liebst du besonders?',
-      'Wann hast du zuletzt Schwein gehabt?',
-      'Hat dir schon mal jemand einen Bären aufgebunden?',
-      'Wobei drückst du anderen oft die Daumen?',
-      'Wann bist du zuletzt aus dem Häuschen gewesen?',
-      'Bist du eher jemand, der ins kalte Wasser springt — oder vorsichtig testet?',
-      'Welches Gefühl beschreibt für dich «auf Wolke sieben»?',
-      'Hast du manchmal das Gefühl, Tomaten auf den Augen zu haben?'
+      'Was geht dir gerade richtig auf den Keks?',
+      'Auf was hast du heute null Bock?',
+      'Wovon hast du langsam die Nase voll?',
+      'In welcher Situation hast du oft keinen Plan?',
+      'Was ist dir komplett Wurst — auch wenn andere sich aufregen?',
+      'Wann hast du zuletzt richtig Mist gebaut?',
+      'Welches Geheimnis hast du letzte Woche aus dem Sack gelassen?',
+      'Mit wem solltest du dringend mal Tacheles reden?'
     ],
     vocab: [
-      { art:'die', w:'Redewendung',     ua:'фразеологізм; ідіома',   ex:'«Tomaten auf den Augen haben» ist eine bekannte Redewendung.' },
-      { art:'die', w:'Bedeutung',       ua:'значення',               ex:'Die Bedeutung ist meistens nicht wörtlich.' },
-      { art:'—',   w:'wörtlich',        ua:'буквально',              ex:'Wörtlich ergibt das keinen Sinn — es ist ein Bild.' },
-      { art:'—',   w:'bildlich',        ua:'образно',                ex:'Das ist bildlich gemeint, nicht echt.' },
-      { art:'—',   w:'meinen',          ua:'мати на увазі',          ex:'Was meinst du damit genau?' },
-      { art:'der', w:'Ausdruck',        ua:'вираз',                  ex:'Das ist ein typischer Ausdruck aus dem Alltag.' },
-      { art:'—',   w:'verwenden',       ua:'використовувати',        ex:'Diese Redewendung verwende ich oft.' },
-      { art:'die', w:'Situation',       ua:'ситуація',               ex:'In welcher Situation sagt man das?' },
-      { art:'—',   w:'witzig',          ua:'дотепний, смішний',      ex:'Deutsche Redewendungen sind oft richtig witzig.' },
-      { art:'—',   w:'passen zu',       ua:'пасувати до',            ex:'Diese Redewendung passt perfekt zu deiner Situation.' }
+      { art:'die', w:'WG',          ua:'спільна квартира',   ex:'Ich wohne in einer WG mit zwei Leuten.' },
+      { art:'der', w:'Streit',      ua:'суперечка, сварка',  ex:'Schon am Morgen hatten sie wieder Streit.' },
+      { art:'der', w:'Kater',       ua:'похмілля',           ex:'Lukas hat heute einen üblen Kater.' },
+      { art:'—',   w:'nerven',      ua:'дратувати, бісити',  ex:'Das nervt mich richtig.' },
+      { art:'—',   w:'sauer',       ua:'злий, ображений',    ex:'Mia ist sauer auf Lukas.' },
+      { art:'—',   w:'aufräumen',   ua:'прибирати',          ex:'Niemand will die Küche aufräumen.' },
+      { art:'—',   w:'spülen',      ua:'мити посуд',         ex:'Spülen ist sein absoluter Hassjob.' },
+      { art:'der', w:'Quatsch',     ua:'дурня, нісенітниця', ex:'Red doch nicht so einen Quatsch!' },
+      { art:'—',   w:'ehrlich',     ua:'чесно, чесний',      ex:'Ehrlich gesagt, ich bin total fertig.' },
+      { art:'—',   w:'zugeben',     ua:'визнати',            ex:'Ich gebe es zu — ich hab Mist gebaut.' }
     ],
     idioms: [
       {
-        de: 'Tomaten auf den Augen haben',
-        emoji: '🍅👀',
-        lit: 'мати помідори на очах',
-        meaning: 'etwas Offensichtliches übersehen oder nicht bemerken',
-        example: 'Deine Brille liegt direkt vor dir — hast du Tomaten auf den Augen?',
-        when: 'Wenn jemand das Offensichtliche nicht sieht.',
-        ua: 'Не помічати очевидного'
+        de: 'Das geht mir auf den Keks',
+        emoji: '🍪😤',
+        lit: 'це йде мені на печиво',
+        meaning: 'etwas oder jemand nervt total',
+        example: 'Das laute Auto vor dem Fenster geht mir voll auf den Keks.',
+        when: 'Wenn dich etwas richtig nervt.',
+        ua: 'Дратує, бісить'
       },
       {
-        de: 'Die Daumen drücken',
-        emoji: '🤞',
-        lit: 'тиснути великі пальці',
-        meaning: 'jemandem Glück wünschen — wie «тримати кулачки»',
-        example: 'Morgen hast du die Prüfung? Ich drücke dir ganz fest die Daumen!',
-        when: 'Wenn du jemandem Erfolg wünschst.',
-        ua: 'Тримати кулачки'
+        de: 'Null Bock haben',
+        emoji: '🐐0️⃣',
+        lit: 'мати нуль козла',
+        meaning: 'gar keine Lust haben',
+        example: 'Heute hab ich null Bock auf Uni — ich bleib im Bett.',
+        when: 'Wenn du absolut keine Lust auf etwas hast.',
+        ua: 'Немає жодного бажання, впадло'
       },
       {
-        de: 'Schwein haben',
-        emoji: '🐷🍀',
-        lit: 'мати свиню',
-        meaning: 'großes Glück haben — ganz zufällig',
-        example: 'Der Zug war schon weg, aber er hatte Verspätung. Ich hatte echt Schwein.',
-        when: 'Wenn du unerwartet Glück hast.',
-        ua: 'Пощастити, підфартило'
+        de: 'Die Nase voll haben',
+        emoji: '👃😮‍💨',
+        lit: 'мати повний ніс',
+        meaning: 'etwas satt haben, genug haben',
+        example: 'Ich hab die Nase voll von diesem Regenwetter.',
+        when: 'Wenn dich etwas dauerhaft genervt hat.',
+        ua: 'Дістало, заколебало'
       },
       {
-        de: 'Auf Wolke sieben schweben',
-        emoji: '☁️7️⃣',
-        lit: 'ширяти на хмарі номер сім',
-        meaning: 'überglücklich oder verliebt sein',
-        example: 'Seit sie ihren Traumjob hat, schwebt sie auf Wolke sieben.',
-        when: 'Wenn jemand vor Glück strahlt.',
-        ua: 'Бути на сьомому небі'
+        de: 'Keinen Plan haben',
+        emoji: '🗺️❌',
+        lit: 'не мати плану',
+        meaning: 'keine Ahnung haben',
+        example: 'Wann der Bus kommt? Keinen Plan, ehrlich.',
+        when: 'Wenn du wirklich nichts weißt.',
+        ua: 'Без поняття, не в курсі'
       },
       {
-        de: 'Zwei Fliegen mit einer Klappe schlagen',
-        emoji: '🪰🪰🧹',
-        lit: 'убити двох мух одним ляпанцем',
-        meaning: 'zwei Dinge mit einer Handlung gleichzeitig erledigen',
-        example: 'Ich gehe zum Supermarkt und treffe dort Anna — zwei Fliegen mit einer Klappe.',
-        when: 'Wenn eine Aktion zwei Ziele auf einmal erreicht.',
-        ua: 'Убити двох зайців'
+        de: 'Das ist mir Wurst',
+        emoji: '🌭🤷',
+        lit: 'це мені сосиска',
+        meaning: 'es ist mir völlig egal',
+        example: 'Pizza oder Pasta? Ist mir Wurst, beides ok.',
+        when: 'Wenn dir eine Wahl wirklich egal ist.',
+        ua: 'Мені пофіг'
       },
       {
-        de: 'Aus dem Häuschen sein',
-        emoji: '🏠🎉',
-        lit: 'бути поза маленьким будиночком',
-        meaning: 'extrem begeistert oder aufgeregt sein',
-        example: 'Als sie die Tickets bekommen hat, war sie völlig aus dem Häuschen.',
-        when: 'Wenn jemand vor Freude nicht mehr stillsitzen kann.',
-        ua: 'Бути в захваті, аж стрибати'
+        de: 'Mist bauen',
+        emoji: '💩🔨',
+        lit: 'будувати гній',
+        meaning: 'einen Fehler machen, etwas vermasseln',
+        example: 'Ich hab im Job ziemlich Mist gebaut — der Chef ist sauer.',
+        when: 'Wenn du etwas verbockt hast.',
+        ua: 'Накосячити, налажати'
       },
       {
-        de: 'Jemandem einen Bären aufbinden',
-        emoji: '🐻🎀',
-        lit: 'прив\'язати комусь ведмедя',
-        meaning: 'jemandem eine unwahre Geschichte erzählen — zum Spaß',
-        example: 'Ein Hai im Schwimmbad? Du willst mir einen Bären aufbinden!',
-        when: 'Wenn jemand dir eine lustige, unglaubwürdige Geschichte erzählt.',
-        ua: 'Вішати локшину на вуха'
+        de: 'Die Katze aus dem Sack lassen',
+        emoji: '🐱🎒',
+        lit: 'випустити кота з мішка',
+        meaning: 'ein Geheimnis verraten',
+        example: 'Jetzt lass endlich die Katze aus dem Sack — was ist passiert?',
+        when: 'Wenn jemand endlich ein Geheimnis verrät.',
+        ua: 'Розкрити карти, проговоритись'
       },
       {
-        de: 'Ins kalte Wasser springen',
-        emoji: '🏊❄️',
-        lit: 'стрибнути в холодну воду',
-        meaning: 'etwas Neues einfach wagen, ohne lange zu überlegen',
-        example: 'Ich spreche noch nicht perfekt Deutsch, aber ich springe einfach ins kalte Wasser.',
-        when: 'Wenn du einen mutigen Schritt ohne lange Vorbereitung machst.',
-        ua: 'Кинутися у вир з головою'
+        de: 'Tacheles reden',
+        emoji: '💬✨',
+        lit: 'говорити «таХелес» (їдиш — суть, діло)',
+        meaning: 'offen und direkt über ein Problem sprechen',
+        example: 'Wir müssen mal Tacheles reden — so geht das nicht weiter.',
+        when: 'Wenn ein ehrliches, klares Gespräch nötig ist.',
+        ua: 'Поговорити начистоту'
       }
     ],
     reading: {
       paragraphs: [
-        'Stell dir vor, du sitzt im Café mit einer deutschen Freundin. Sie sagt: «Ich hatte gestern so ein <mark title="пощастило">Schwein</mark>!» Du schaust sie verwirrt an. Welches Schwein? Wo?',
-        'Willkommen in der Welt der <mark title="фразеологізмів">Redewendungen</mark>. Jede Sprache hat ihre eigenen kleinen Bilder, die <mark title="буквально">wörtlich</mark> keinen Sinn ergeben — aber <mark title="образно">bildlich</mark> sagen sie mehr als tausend Wörter. «Schwein haben» heißt nicht, dass du ein Tier besitzt. Es heißt: du hattest großes Glück.',
-        'Das Coole an Redewendungen: sie funktionieren wie <strong>kleine Filme im Kopf</strong>. Wenn jemand sagt «Ich schwebe auf Wolke sieben», siehst du sofort jemanden, der vor Glück fast fliegt. Das Bild bleibt — und damit auch das Wort.',
-        'Deutsche Redewendungen sind oft richtig <mark title="смішні">witzig</mark>. «Tomaten auf den Augen haben» — kannst du dir das vorstellen? Jemand mit zwei roten Tomaten direkt auf den Augen, der natürlich nichts sieht. Genau das ist die <mark title="значення">Bedeutung</mark>: du siehst das Offensichtliche nicht.',
-        'Manche Redewendungen haben fast wörtliche Übersetzungen in anderen Sprachen. «Zwei Fliegen mit einer Klappe schlagen» ist im Englischen «two birds with one stone», im Ukrainischen «двох зайців одним пострілом». Die Idee ist die gleiche — nur die Tiere wechseln.',
-        'Andere sind typisch deutsch. «Jemandem einen Bären aufbinden» kommt aus dem 17. Jahrhundert — und niemand weiß genau, warum ein Bär. Heute sagen Deutsche es einfach, wenn jemand eine lustige, unglaubwürdige Geschichte erzählt.',
-        'Der Trick, um Redewendungen zu lernen: <strong>das Bild sehen, nicht die Wörter übersetzen</strong>. Dein Gehirn speichert Bilder hundertmal besser als abstrakte Regeln. Deshalb bleibt «auf Wolke sieben» hängen — du siehst die Wolke, du siehst das Glück, und plötzlich ist der ganze Satz deiner.',
-        'Also: wenn du das nächste Mal Deutsch hörst und ein Satz komplett verrückt klingt — nicht in Panik geraten. Es ist wahrscheinlich eine Redewendung. Frag einfach: «Was meinst du damit?» Der Muttersprachler freut sich, dir ein neues Kopfkino zu zeigen.'
+        'Sonntag, halb elf. Mia steht in der WG-Küche und schaut auf die <mark title="мийка">Spüle</mark>. Drei Pizzakartons, leere Flaschen, irgendwo zwischen den Tellern eine halbe Avocado. Sie atmet tief ein.',
+        'Lukas schlurft rein, T-Shirt schief, Haare wild — <mark title="похмілля">Kater</mark> der Stufe sieben. Er murmelt «Morgen» und greift nach der Kaffeekanne. Leer. Natürlich.',
+        '«Lukas, ehrlich. Das geht mir <mark title="бісить">auf den Keks</mark>», sagt Mia ruhig. Und das ist die ruhige Stimme, die noch gefährlicher ist als Schreien. «Jeden Sonntag dasselbe. Ich hab die <mark title="заколебало">Nase voll</mark>.»',
+        '«Sorry, echt», nuschelt Lukas. «Ich hab grad <mark title="нема бажання">null Bock</mark> auf Streit. Und ehrlich — ich hab <mark title="без поняття">keinen Plan</mark>, was nach Mitternacht passiert ist.»',
+        'Mia verschränkt die Arme. «Genau das ist das Problem. Du baust am Wochenende <mark title="накосячити">Mist</mark>, und am Sonntag <mark title="прибираю">räume</mark> ich auf. Pizza oder Pasta gestern — das war mir <mark title="пофіг">Wurst</mark>. Aber das hier?» Sie zeigt auf die Spüle.',
+        'Lukas seufzt, setzt sich hin. «Okay. Lass uns mal <mark title="чесно поговорити">Tacheles reden</mark>. Ich räum jetzt auf, und wir machen einen <mark title="графік миття">Spülplan</mark>. Versprochen.»',
+        '«Gut.» Mia drückt ihm einen Kaffee in die Hand. «Aber jetzt lass auch mal die <mark title="секрет">Katze aus dem Sack</mark> — was war eigentlich mit Tom gestern? Er war so komisch drauf.»',
+        'Lukas grinst zum ersten Mal an diesem Morgen. «Du, das wirst du nicht glauben. Tom hat sich verlobt. Heimlich. Niemand sollte es wissen — aber jetzt weißt du\'s.» Er nimmt einen Schluck. «Und jetzt — wo ist der Spüllappen?»'
       ],
-      uaSummary: '🇺🇦 Уяви: німкеня у кафе каже «я вчора мала свиню!» Ти у шоці. Яку свиню? Це — ідіома. У кожній мові є маленькі картинки, які буквально не мають сенсу, але образно кажуть більше тисячі слів. «Schwein haben» — це не про тварин, а «мати щастя». Круто в ідіомах те, що вони як маленькі фільми у голові: чуєш «на сьомій хмарі» — одразу бачиш людину, яка летить від щастя. Це допомагає запам\'ятати. Німецькі ідіоми часто реально смішні: «помідори на очах» — уяви собі двох помідорів прямо на очах, звісно людина нічого не бачить. Частина ідіом є й у інших мовах («двох зайців»), частина чисто німецька («ведмеді» — ніхто не знає чому). Секрет: <strong>бачити картинку, не перекладати</strong>. Мозок краще пам\'ятає образи.'
+      uaSummary: '🇺🇦 Неділя, пів на одинадцяту. Мія стоїть на кухні WG і дивиться на гору посуду після вечірки. Заходить Лукас з похміллям, шукає каву — пусто. Мія тихо: «Лукасе, мене це реально бісить (geht mir auf den Keks). Кожної неділі те саме. Я заколебалась (Nase voll)». Лукас бурмоче: «Вибач, у мене немає сили (null Bock) на сварку, і я навіть без поняття (keinen Plan), що було після півночі». Мія: «Ти косячиш (baust Mist), а я прибираю. Що було їсти — пофіг (war mir Wurst), але це вже занадто». Лукас сідає: «Окей, поговоримо начистоту (Tacheles reden), складемо графік миття». Мія дає йому каву: «А тепер розкажи нарешті (lass die Katze aus dem Sack) — що було з Томом?» Лукас усміхається: «Він заручився. Таємно. Ніхто не мав знати — але тепер ти знаєш».'
     },
     dialog: [
-      { who:'🧑', de:'Hey, ich hatte heute so Schwein — ich bin den Bus gerade noch erwischt!',                                ua:'Слухай, мені сьогодні так пощастило — ледве встиг на автобус!' },
-      { who:'👩', de:'Oh, cool! Ich drücke dir für morgen die Daumen — du hast doch dieses Vorstellungsgespräch, oder?',        ua:'О, круто! Я триматиму кулачки на завтра — у тебе ж співбесіда, так?' },
-      { who:'🧑', de:'Stimmt! Ich bin schon halb aus dem Häuschen vor Aufregung. Und meine Brille hab ich auch wieder verloren…', ua:'Точно! Я вже наполовину божеволію від хвилювання. І окуляри знов загубив…' },
-      { who:'👩', de:'Haha, die liegen doch direkt vor dir! Du hast Tomaten auf den Augen, ehrlich.',                            ua:'Ха, вони ж прямо перед тобою! Ти реально сліпий як кріт.' },
-      { who:'🧑', de:'Oh krass, stimmt! Na dann — ich spring ins kalte Wasser. Alles wird gut.',                                 ua:'Ого, точно! Ну що ж — кинуся з головою. Все буде добре.' }
+      { who:'👩', de:'Lukas, ehrlich — das geht mir voll auf den Keks. Die Küche ist ein Albtraum.',                       ua:'Лукасе, чесно — мене це реально бісить. На кухні якесь жахіття.' },
+      { who:'🧑', de:'Sorry… ich hab grad null Bock auf Streit. Und keinen Plan, was gestern passiert ist.',              ua:'Вибач… у мене зараз нема сил на сварку. І без поняття, що було вчора.' },
+      { who:'👩', de:'Ich hab echt die Nase voll. Du baust Mist, ich räum auf — jedes Wochenende dasselbe.',              ua:'Я реально вже заколебалась. Ти косячиш, я прибираю — кожні вихідні те саме.' },
+      { who:'🧑', de:'Du, das ist mir nicht Wurst, ehrlich. Lass uns Tacheles reden, ich räum sofort auf.',                ua:'Слухай, мені не пофіг, чесно. Давай поговоримо начистоту, я зараз приберу.' },
+      { who:'👩', de:'Okay. Aber jetzt lass auch mal die Katze aus dem Sack — was war gestern mit Tom?',                  ua:'Окей. Але тепер давай — розкажи нарешті, що було з Томом.' },
+      { who:'🧑', de:'Du wirst lachen — er hat sich verlobt. Heimlich. Eigentlich sollte es keiner wissen.',              ua:'Ти не повіриш — він заручився. Таємно. Взагалі ніхто не мав знати.' }
     ],
     grammar: {
-      chip: 'Feste Wendungen — warum Präpositionen nicht wörtlich übersetzt werden',
-      html: `<div class="case-box"><div class="case-box-title">Крок 1 — Redewendungen = фіксовані конструкції</div><p>Ідіоми — це <strong>застиглі шаблони</strong>. У них не можна міняти прийменник, відмінок або артикль, навіть якщо тобі здається, що «логічніше» інакше. Вчи ідіому цілком — як одне велике слово.</p></div><div class="grammar-note"><strong>📌 Приклад:</strong> «Tomaten <strong>auf</strong> den Augen haben» — не <em>in</em>, не <em>über</em>. Тільки <strong>auf + Akkusativ</strong>. Без варіантів.</div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 1 — типові прийменники в ідіомах</div><p>Ось найчастіші схеми. Не переклад — а <strong>образ</strong>. Звикай сприймати одразу цілим.</p></div><table class="rule-table"><thead><tr><th>Прийменник</th><th>Приклад</th><th>Буквальний образ</th></tr></thead><tbody><tr><td><code>auf + Akk</code></td><td>auf Wolke sieben schweben</td><td>на (зверху) хмарі</td></tr><tr><td><code>aus + Dat</code></td><td>aus dem Häuschen sein</td><td>з (зсередини) будиночка</td></tr><tr><td><code>ins (in+das)</code></td><td>ins kalte Wasser springen</td><td>у (рух всередину) воду</td></tr><tr><td><code>mit + Dat</code></td><td>mit einer Klappe schlagen</td><td>за допомогою ляпанця</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Випадок 2 — дієслова «haben», «sein», «machen» — головні героі ідіом</div><p>85% ідіом будуються з цих трьох дієслів. Запам\'ятай комбінацію «дієслово + іменник» як одне ціле.</p></div><ul class="examples"><li><strong>haben:</strong> Schwein haben · Glück haben · Tomaten auf den Augen haben</li><li><strong>sein:</strong> aus dem Häuschen sein · auf Wolke sieben sein · fix und fertig sein</li><li><strong>drücken / schlagen / springen:</strong> конкретні дії як метафори</li></ul><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 3 — давальний для людини (Dativ)</div><p>Коли ідіома стосується іншої людини («комусь тиснути кулачки», «комусь вішати лапшу на вуха»), використовуй <strong>Dativ</strong>.</p></div><table class="rule-table"><thead><tr><th>Ідіома</th><th>Кому?</th><th>Приклад</th></tr></thead><tbody><tr><td>die Daumen drücken</td><td><code>jemandem</code> (Dat)</td><td>Ich drücke <strong>dir</strong> die Daumen.</td></tr><tr><td>einen Bären aufbinden</td><td><code>jemandem</code> (Dat)</td><td>Du willst <strong>mir</strong> einen Bären aufbinden!</td></tr></tbody></table><div class="grammar-note"><strong>💡 Лайфгак:</strong> не перекладай ідіому слово за словом. Дивись на <strong>картинку</strong> (як у Kopfkino), і відчуй настрій. Тоді прийменник прилипає сам — бо ти пам\'ятаєш сцену, а не правило.</div>`
+      chip: 'Розмовні ідіоми — Dativ для емоцій + типові дієслова',
+      html: `<div class="case-box"><div class="case-box-title">Крок 1 — Розмовні ідіоми = Dativ для емоцій</div><p>У живій німецькій більшість ідіом, що описують <strong>як ти почуваєшся</strong>, мають конструкцію з <strong>Dativ</strong>. Особа, якій щось набридло, байдуже або дратує — у давальному відмінку.</p></div><div class="grammar-note"><strong>📌 Шаблон:</strong> Das geht <strong>mir</strong> auf den Keks · Das ist <strong>mir</strong> Wurst · <strong>Mir</strong> reicht's · <strong>Mir</strong> ist schlecht.</div><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 1 — займенники у Dativ</div><p>Запам'ятай раз і назавжди — у цих ідіомах займенник <strong>обов'язково</strong> у Dativ. Не «mich», не «ich» — тільки <code>mir</code>.</p></div><table class="rule-table"><thead><tr><th>Хто</th><th>Nominativ</th><th>Dativ (для ідіом)</th></tr></thead><tbody><tr><td>я</td><td>ich</td><td><code>mir</code></td></tr><tr><td>ти</td><td>du</td><td><code>dir</code></td></tr><tr><td>він</td><td>er</td><td><code>ihm</code></td></tr><tr><td>вона</td><td>sie</td><td><code>ihr</code></td></tr><tr><td>ми</td><td>wir</td><td><code>uns</code></td></tr></tbody></table><div class="case-box"><div class="case-box-title">Випадок 2 — типові дієслова розмовних ідіом</div><p>На відміну від «літературних» ідіом (де домінує <em>haben</em>), у щоденній мові правлять інші дієслова. Вчи дієслово разом з іменником — як одне ціле.</p></div><ul class="examples"><li><strong>gehen + auf:</strong> Das geht mir auf den Keks · auf die Nerven</li><li><strong>sein + Dativ:</strong> Das ist mir Wurst · Mir ist schlecht</li><li><strong>haben + Akk:</strong> null Bock haben · die Nase voll haben · keinen Plan haben</li><li><strong>bauen / lassen / reden:</strong> Mist bauen · die Katze aus dem Sack lassen · Tacheles reden</li></ul><div class="divider"></div><div class="case-box"><div class="case-box-title">Випадок 3 — порядок слів з відокремлюваними дієсловами</div><p>У дієсловах типу <em>aufräumen</em>, <em>zugeben</em> префікс <strong>летить у кінець</strong> речення. Це звучить дивно для українського вуха — але саме це й робить німецьку німецькою.</p></div><table class="rule-table"><thead><tr><th>Інфінітив</th><th>У реченні</th></tr></thead><tbody><tr><td>aufräumen</td><td>Ich räume die Küche <strong>auf</strong>.</td></tr><tr><td>zugeben</td><td>Ich gebe es <strong>zu</strong> — ich hab Mist gebaut.</td></tr><tr><td>aus·lassen</td><td>Lass die Katze endlich aus dem Sack!</td></tr></tbody></table><div class="grammar-note"><strong>💡 Лайфгак:</strong> у живій мові ідіоми йдуть <strong>пакетом з вигуком</strong>: «Boah, geht mir auf den Keks!», «Ach, ist mir Wurst!». Вчи їх з вигуком на початку — і одразу звучатимеш як носій, а не як підручник.</div>`
     },
     quiz: [
-      { q:'«Schwein haben» bedeutet:',                                     opts:['ein Tier haben','Glück haben','hungrig sein','dumm sein'],                      a:1 },
-      { q:'Wenn du jemandem Glück wünschst, sagst du auf Deutsch:',        opts:['Tomaten auf den Augen','die Daumen drücken','aus dem Häuschen','Bären aufbinden'], a:1 },
-      { q:'«Auf Wolke sieben schweben» passt zu dieser Situation:',        opts:['Krankheit','großer Streit','tiefes Glück','Langeweile'],                         a:2 },
-      { q:'«Tomaten auf den Augen haben» heißt:',                          opts:['hungrig sein','etwas Offensichtliches übersehen','traurig sein','schlafen'],    a:1 },
-      { q:'Welche Präposition passt? «___ Wolke sieben schweben»:',        opts:['in','auf','über','bei'],                                                          a:1 }
+      { q:'«Das geht mir auf den Keks» bedeutet:',                          opts:['Ich habe Hunger','Ich finde es lustig','Es nervt mich total','Ich liebe es'],                  a:2 },
+      { q:'Wenn jemand «null Bock» hat, dann …',                           opts:['hat er viel Lust','hat er gar keine Lust','ist er hungrig','ist er sauer'],                    a:1 },
+      { q:'«Mist bauen» heißt:',                                           opts:['putzen','einen Fehler machen','kochen','lügen'],                                                 a:1 },
+      { q:'«Tacheles reden» passt zu dieser Situation:',                   opts:['Smalltalk auf der Party','ein offenes, ehrliches Gespräch','ein Vortrag','Klatsch und Tratsch'], a:1 },
+      { q:'Welche Form ist richtig? «Das ist ___ Wurst.»',                 opts:['ich','mich','mir','mein'],                                                                       a:2 }
     ]
   },
 
