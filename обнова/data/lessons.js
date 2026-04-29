@@ -703,6 +703,98 @@ window.LESSONS = {
       { q:'Welches Wort passt zu «назавжди»?',                                 opts:['damals','für immer','plötzlich','in diesem Moment'],                                   a:1 },
       { q:'«Dieses Lied ist ___ meiner ersten Liebe verknüpft.»',              opts:['an','mit','bei','von'],                                                                a:1 }
     ]
+  },
+
+  /* ============================================================
+   * 12 · WOHNEN — Eine neue Wohnung · B1
+   * ============================================================ */
+  wohnen: {
+    slug: 'wohnen',
+    emoji: '🏠',
+    title: 'Eine neue Wohnung',
+    titleHtml: 'Eine neue <em>Wohnung</em> 🏠',
+    level: 'B1',
+    duration: '~20 min',
+    idx: '12',
+    intro: 'Kaution, Mietvertrag, WG oder eigene Bude — alles, was du brauchst, wenn du in Deutschland eine Wohnung suchst. 🔑',
+    speakQuestions: [
+      'Wohnst du alleine oder mit anderen zusammen? Wie gefällt dir das?',
+      'Was ist dir bei einer Wohnung am wichtigsten — Lage, Größe oder Preis?',
+      'Hast du schon mal eine Wohnung gesucht? Wie war das?',
+      'Was sind die Vor- und Nachteile einer WG gegenüber einer eigenen Wohnung?',
+      'Wie hoch sind die Mieten in deiner Stadt? Sind sie teuer?',
+      'Was würdest du in deiner Traumwohnung haben wollen?',
+      'Hast du schon mal umgezogen? Wie war der Umzug?',
+      'Was machst du, wenn der Vermieter eine defekte Heizung nicht repariert?'
+    ],
+    vocab: [
+      { art:'die', w:'Miete',             ua:'орендна плата',         ex:'Die Miete für diese Wohnung beträgt 800 Euro.' },
+      { art:'der', w:'Vermieter',         ua:'орендодавець',          ex:'Der Vermieter ist sehr freundlich und hilfsbereit.' },
+      { art:'die', w:'Kaution',           ua:'застава / завдаток',    ex:'Beim Einzug muss man drei Monatsmieten als Kaution zahlen.' },
+      { art:'der', w:'Mietvertrag',       ua:'договір оренди',        ex:'Ich habe den Mietvertrag heute unterschrieben.' },
+      { art:'die', w:'Wohngemeinschaft',  ua:'спільна квартира (WG)', ex:'In einer WG teilt man Küche und Bad mit anderen.' },
+      { art:'die', w:'Nebenkosten',       ua:'комунальні витрати',    ex:'Die Nebenkosten für Strom und Wasser kommen noch dazu.' },
+      { art:'der', w:'Umzug',             ua:'переїзд',               ex:'Der Umzug war stressig, aber jetzt bin ich happy!' },
+      { art:'—',   w:'renovieren',        ua:'робити ремонт',         ex:'Die Küche muss vor dem Einzug renoviert werden.' },
+      { art:'die', w:'Nachbarschaft',     ua:'сусідство / район',     ex:'Die Nachbarschaft hier ist ruhig und sehr nett.' },
+      { art:'die', w:'Kündigung',         ua:'розірвання договору',   ex:'Die Kündigung muss drei Monate vorher eingereicht werden.' }
+    ],
+    reading: {
+      paragraphs: [
+        'Niklas ist 24 Jahre alt und zieht bald nach Berlin. Er studiert dort ab Oktober — und braucht dringend eine Wohnung. Das Problem: Die <mark title="орендна плата">Mieten</mark> in Berlin sind in den letzten Jahren stark gestiegen. Eine 2-Zimmer-Wohnung kostet oft zwischen 900 und 1.300 Euro — <mark title="без комунальних витрат">ohne Nebenkosten</mark>.',
+        'Niklas schaut auf Portalen wie ImmoScout24 und WG-Gesucht. Er findet viele Angebote, aber die meisten sind schon vergeben oder viel zu teuer. Nach zwei Wochen hat er Glück: Ein Zimmer in einer <mark title="спільна квартира">Wohngemeinschaft</mark> ist noch frei — 480 Euro <mark title="тепла оренда, включно з опаленням">warm</mark>. Das ist viel günstiger als eine eigene Wohnung.',
+        'Beim Einzug muss Niklas eine <mark title="застава">Kaution</mark> zahlen — zwei Monatsmieten, also 960 Euro. Er unterschreibt den <mark title="договір оренди">Mietvertrag</mark> und bekommt seine Schlüssel. Der <mark title="орендодавець">Vermieter</mark> erklärt ihm alles und hilft ihm am ersten Tag.',
+        'Jetzt lebt Niklas in einer WG mit zwei anderen Studenten. Sie kochen manchmal zusammen, putzen abwechselnd und verstehen sich gut. Die <mark title="сусідство">Nachbarschaft</mark> ist ruhig. Niklas ist froh: Nach dem stressigen <mark title="переїзд">Umzug</mark> fühlt er sich endlich zu Hause.'
+      ],
+      uaSummary: '🇺🇦 Ніклас переїжджає до Берліна і шукає квартиру. Оренда в Берліні дорога — 900–1300 € за двокімнатну. Після двох тижнів пошуків він знаходить кімнату в спільній квартирі за 480 € на місяць. Платить заставу, підписує договір. Тепер живе з двома студентами — все добре!'
+    },
+    dialog: [
+      { who:'📞', de:'Guten Tag, ich rufe wegen der Wohnung auf ImmoScout an — ist sie noch frei?', ua:'Добрий день, я дзвоню щодо квартири на ImmoScout — вона ще вільна?' },
+      { who:'🏠', de:'Ja, sie ist noch frei! Wann könnten Sie vorbeikommen?', ua:'Так, вона вільна! Коли б ви могли приїхати подивитися?' },
+      { who:'📞', de:'Am Samstagnachmittag würde gut passen. Und — darf ich fragen, wie hoch ist die Kaution?', ua:'Субота після обіду підійшла б. Можна запитати — яка застава?' },
+      { who:'🏠', de:'Zwei Monatsmieten. Das sind 1.400 Euro. Und wir brauchen eine Schufa-Auskunft.', ua:'Два місячних платежі. Це 1400 €. І нам потрібна довідка Schufa.' },
+      { who:'📞', de:'Alles klar! Ich bringe alles mit. Ich freue mich auf die Besichtigung! 😊', ua:'Добре! Я все принесу. Чекаю на перегляд квартири!' }
+    ],
+    grammar: {
+      chip: 'Konjunktiv II — höflich fragen & Wünsche ausdrücken (hätte, wäre, könnte, würde …)',
+      html: `<div class="case-box"><div class="case-box-title">Крок 1 — Навіщо Konjunktiv II?</div><p>Коли ти шукаєш квартиру, пишеш орендодавцю або телефонуєш — <strong>Konjunktiv II робить тебе ввічливим</strong>. Порівняй:</p></div><ul class="examples"><li>❌ «Ich will die Wohnung sehen.» <em>(звучить грубо — «Я хочу»)</em></li><li>✅ «Ich <strong>würde</strong> die Wohnung gerne sehen.» <em>(ввічливо — «Я б хотів»)</em></li><li>✅ «<strong>Könnte</strong> ich am Samstag vorbeikommen?» <em>(дуже ввічливо — «Чи міг би я?»)</em></li></ul><div class="divider"></div><div class="case-box"><div class="case-box-title">Крок 2 — 4 форми, які вирішують усе</div><p>Вчи ці чотири форми — і ти звучатимеш природно в будь-якій ситуації.</p></div><table class="rule-table"><thead><tr><th>Infinitiv</th><th>Konjunktiv II (ich/er/sie)</th><th>Приклад</th></tr></thead><tbody><tr><td>sein</td><td><code>wäre</code></td><td>Das <strong>wäre</strong> super! / <strong>Wäre</strong> die Wohnung noch frei?</td></tr><tr><td>haben</td><td><code>hätte</code></td><td>Ich <strong>hätte</strong> gerne ein ruhiges Zimmer.</td></tr><tr><td>können</td><td><code>könnte</code></td><td><strong>Könnte</strong> ich die Wohnung besichtigen?</td></tr><tr><td>alle anderen</td><td><code>würde + Infinitiv</code></td><td>Ich <strong>würde</strong> den Vertrag sofort unterschreiben.</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Крок 3 — Живі шаблони для пошуку квартири</div></div><ul class="examples"><li>«Ich <strong>hätte</strong> Interesse an der Wohnung.» <em>(Я б зацікавився квартирою.)</em></li><li>«<strong>Wäre</strong> ein Besichtigung am Wochenende möglich?» <em>(Чи можливий перегляд у вихідні?)</em></li><li>«<strong>Könnten</strong> Sie mir mehr Fotos schicken?» <em>(Чи не могли б ви надіслати більше фото?)</em></li><li>«Ich <strong>würde</strong> gerne so bald wie möglich einziehen.» <em>(Я б хотів заїхати якомога швидше.)</em></li><li>«<strong>Wäre</strong> die Kaution verhandelbar?» <em>(Застава підлягає обговоренню?)</em></li></ul><div class="grammar-note"><strong>📌 Запам'ятай:</strong> для всіх «звичайних» дієслів (nicht sein/haben/können/müssen) → <code>würde + Infinitiv</code>. Це найлегший і найчастіший спосіб!</div>`
+    },
+    quiz: [
+      { q:'Was bedeutet «die Kaution»?',                                     opts:['орендна плата','застава','переїзд','договір'],            a:1 },
+      { q:'«Ich ___ gerne die Wohnung besichtigen.» — Konjunktiv II:',        opts:['will','möchte','würde','kann'],                           a:2 },
+      { q:'Was ist eine WG?',                                                opts:['eine Villa','eine Wohngemeinschaft','ein Vermieter','eine Kündigung'], a:1 },
+      { q:'Welcher Artikel: ___ Mietvertrag?',                               opts:['der','die','das','—'],                                    a:0 },
+      { q:'Was bedeutet «renovieren»?',                                      opts:['виїжджати','економити','робити ремонт','орендувати'],     a:2 }
+    ],
+    leseverstehen: {
+      teil1: {
+        title: 'Lesen — Teil 1: Richtig oder Falsch?',
+        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Klicken Sie auf Ihre Antwort.',
+        statements: [
+          { s: 'Wohnungen in Berlin sind meistens sehr günstig.',                          correct: false },
+          { s: 'Niklas sucht eine Wohnung auf Internetportalen wie ImmoScout.',            correct: true  },
+          { s: 'Niklas findet in der ersten Woche sofort eine passende Wohnung.',          correct: false },
+          { s: 'Niklas muss beim Einzug eine Kaution zahlen.',                             correct: true  },
+          { s: 'Der Vermieter ist unhöflich und hilft Niklas nicht.',                      correct: false }
+        ]
+      },
+      teil2: {
+        title: 'Lesen — Teil 2: Wohnungsanzeigen',
+        instruction: 'Lesen Sie die vier Anzeigen (A–D) und die Beschreibungen der vier Personen. Welche Wohnung passt zu welcher Person? Wählen Sie für jede Person die passende Anzeige.',
+        ads: [
+          { id: 'A', text: '2-Zi.-Whg., 55 m², 3. OG, keine Haustiere, ruhige Wohnlage, Nebenkosten 120 €, ab sofort frei. Monatsmiete 720 €.' },
+          { id: 'B', text: 'Helles Zimmer in 3er-WG, 18 m², eigenes Bad, WLAN inklusive, Nichtraucher-WG, ab 1. Mai. Miete 430 € warm.' },
+          { id: 'C', text: 'Möbliertes Studio, 30 m², Erdgeschoss, Haustiere erlaubt, Parkplatz vorhanden, Kurzzeitmiete (1–6 Monate) möglich. 650 €.' },
+          { id: 'D', text: '4-Zi.-Familienwohnung, 95 m², Balkon, Keller, großer Garten, Spielplatz direkt im Hof. 1.300 € warm.' }
+        ],
+        people: [
+          { name: 'Lena', desc: '23, Studentin, sucht günstiges Zimmer mit Internet. Raucht nicht und hat kein Haustier.', answer: 'B' },
+          { name: 'Familie Bauer', desc: 'Eltern + 2 Kinder + Hund. Suchen viel Platz und einen Bereich zum Spielen draußen.', answer: 'D' },
+          { name: 'Julia',  desc: 'Kommt für 4 Monate für ein Praktikum. Braucht etwas Möbliertes und nimmt ihre Katze mit.', answer: 'C' },
+          { name: 'Thomas', desc: 'Single, arbeitet Vollzeit, mag Ruhe, keine Haustiere, braucht keine große Wohnung.', answer: 'A' }
+        ]
+      }
+    }
   }
 
 };

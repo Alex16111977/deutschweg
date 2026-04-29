@@ -49,6 +49,7 @@
     <button class="ltab" data-p="p6"><span class="ltab-num">06</span>🗨 Dialog</button>
     <button class="ltab" data-p="p5"><span class="ltab-num">07</span>📐 Grammatik</button>
     <button class="ltab" data-p="p7"><span class="ltab-num">08</span>🧠 Quiz</button>
+    <button class="ltab" data-p="pLese"><span class="ltab-num">09</span>📝 Prüfung</button>
   </div>
 
   <!-- PANE 1: VOCAB -->
@@ -148,6 +149,7 @@
     </div>
     <div class="text-box" id="textBox"><div id="textBody"></div></div>
     <p class="ua-line" id="uaLine" style="display:none;font-style:italic;color:var(--muted);font-size:14px;border-top:2px dashed var(--border);padding-top:14px;margin-top:18px"></p>
+    <div id="readingQuestions"></div>
   </div>
 
   <!-- PANE 5: GRAMMATIK (rich HTML) -->
@@ -198,6 +200,25 @@
       <p style="font-size:17px;color:var(--muted);margin-bottom:20px">Du bist ready für das nächste Thema!</p>
       <a href="themen.html" class="btn">Nächstes Abenteuer → </a>
     </div>
+  </div>
+
+  <!-- PANE LESE: LESEVERSTEHEN PRÜFUNG -->
+  <div class="lpane" id="pLese">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schritt 9</span>
+        <h2 class="section-title">Prüfungs<em>aufgaben</em> 📝</h2>
+      </div>
+      <span class="tiny-note">Wie bei der echten B1-Prüfung</span>
+    </div>
+
+    <!-- Teil 1 -->
+    <div class="card lv-card" id="lese1">
+      <p style="color:var(--muted);font-style:italic">Dieses Thema hat keine Prüfungsaufgaben.</p>
+    </div>
+
+    <!-- Teil 2 -->
+    <div class="card lv-card" id="lese2" style="margin-top:24px"></div>
   </div>
 
   <div class="lesson-nav-bottom">
