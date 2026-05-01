@@ -290,3 +290,178 @@ function renderQuiz(){
   }));
 }
 renderQuiz();
+
+/* ---- LESEVERSTEHEN ---- */
+(function initLeseverstehen(){
+  const lv = LESSON.leseverstehen;
+  if(!lv) return;
+
+  const tabLese = document.getElementById('tabLese');
+  if(tabLese) tabLese.style.display = '';
+
+  // inline R/F under reading text
+  const rqBox = document.getElementById('readingQuestions');
+  if(rqBox && lv.teil1){
+    const t1 = lv.teil1;
+    rqBox.innerHTML = `
+      <div class="rq-wrap">
+        <div class="lv-teil-head">
+          <span class="lv-badge">Verständnisfragen</span>
+          <h3 class="lv-title" style="margin-top:8px">Richtig oder Falsch?</h3>
+          <p class="lv-instr">${t1.instruction}</p>
+        </div>
+        ${t1.statements.map((s,i)=>`
+          <div class="rf-item" id="rq${i}" data-correct="${s.correct}">
+            <span class="rf-num">${i+1}.</span>
+            <span class="rf-text">${s.s}</span>
+            <div class="rf-btns">
+              <button class="rf-btn" onclick="answerRQ(${i},true)">✓ Richtig</button>
+              <button class="rf-btn" onclick="answerRQ(${i},false)">✗ Falsch</button>
+            </div>
+          </div>`).join('')}
+        <div class="lv-actions">
+          <button class="btn pink" onclick="checkRQ()">Auswerten ✓</button>
+          <button class="word-btn" onclick="resetRQ()">🔄 Reset</button>
+          <span class="tiny-note" id="rqScore"></span>
+        </div>
+      </div>`;
+  }
+
+  // full Prüfung pane — Teil 1
+  const lese1 = document.getElementById('lese1');
+  if(lese1 && lv.teil1){
+    const t1 = lv.teil1;
+    lese1.innerHTML = `
+      <div class="lv-teil-head">
+        <span class="lv-badge">Teil 1</span>
+        <h3 class="lv-title" style="margin-top:8px">Richtig oder Falsch?</h3>
+        <p class="lv-instr">${t1.instruction}</p>
+      </div>
+      ${t1.statements.map((s,i)=>`
+        <div class="rf-item" id="lv1rf${i}" data-correct="${s.correct}">
+          <span class="rf-num">${i+1}.</span>
+          <span class="rf-text">${s.s}</span>
+          <div class="rf-btns">
+            <button class="rf-btn" onclick="answerLV1(${i},true)">✓ Richtig</button>
+            <button class="rf-btn" onclick="answerLV1(${i},false)">✗ Falsch</button>
+          </div>
+        </div>`).join('')}
+      <div class="lv-actions">
+        <button class="btn pink" onclick="checkLV1()">Auswerten ✓</button>
+        <button class="word-btn" onclick="resetLV1()">🔄 Reset</button>
+        <span class="tiny-note" id="lv1Score"></span>
+      </div>`;
+  }
+
+  // full Prüfung pane — Teil 2
+  const lese2 = document.getElementById('lese2');
+  if(lese2 && lv.teil2){
+    const t2 = lv.teil2;
+    lese2.innerHTML = `
+      <div class="lv-teil-head">
+        <span class="lv-badge" style="background:var(--blue);color:#fff">Teil 2</span>
+        <h3 class="lv-title" style="margin-top:8px">Anzeigen zuordnen</h3>
+        <p class="lv-instr">${t2.instruction}</p>
+      </div>
+      <div class="lv2-ads">
+        ${t2.ads.map(ad=>`
+          <div class="lv2-ad">
+            <div class="lv2-ad-id">${ad.id}</div>
+            <p>${ad.text}</p>
+          </div>`).join('')}
+      </div>
+      <div class="lv2-people">
+        ${t2.people.map((p,i)=>`
+          <div class="lv2-person" id="lv2p${i}" data-answer="${p.answer}">
+            <div class="lv2-person-name">👤 ${p.name}</div>
+            <p class="lv2-person-desc">${p.desc}</p>
+            <select class="lv2-select" id="lv2sel${i}">
+              <option value="">— Anzeige wählen —</option>
+              ${t2.ads.map(ad=>`<option value="${ad.id}">Anzeige ${ad.id}</option>`).join('')}
+            </select>
+          </div>`).join('')}
+      </div>
+      <div class="lv-actions">
+        <button class="btn pink" onclick="checkLV2()">Auswerten ✓</button>
+        <button class="word-btn" onclick="resetLV2()">🔄 Reset</button>
+        <span class="tiny-note" id="lv2Score"></span>
+      </div>`;
+  }
+})();
+
+const rqState={};
+function answerRQ(i,val){
+  rqState[i]=val;
+  const el=document.getElementById(`rq${i}`);
+  el.querySelectorAll('.rf-btn').forEach(b=>b.classList.remove('selected'));
+  el.querySelectorAll('.rf-btn')[val?0:1].classList.add('selected');
+  el.classList.remove('rf-correct','rf-wrong');
+}
+function checkRQ(){
+  const stmts=LESSON.leseverstehen?.teil1?.statements; if(!stmts) return;
+  let ok=0;
+  stmts.forEach((s,i)=>{
+    const el=document.getElementById(`rq${i}`); if(!el) return;
+    el.classList.remove('rf-correct','rf-wrong');
+    if(rqState[i]===undefined) return;
+    if(rqState[i]===s.correct){el.classList.add('rf-correct');ok++;}
+    else el.classList.add('rf-wrong');
+  });
+  document.getElementById('rqScore').textContent=`✓ ${ok}/${stmts.length}${ok===stmts.length?' — Perfekt! 🎉':''}`;
+}
+function resetRQ(){
+  Object.keys(rqState).forEach(k=>delete rqState[k]);
+  document.querySelectorAll('[id^="rq"]').forEach(el=>{
+    el.classList.remove('rf-correct','rf-wrong');
+    el.querySelectorAll('.rf-btn').forEach(b=>b.classList.remove('selected'));
+  });
+  const sc=document.getElementById('rqScore'); if(sc) sc.textContent='';
+}
+
+const lv1State={};
+function answerLV1(i,val){
+  lv1State[i]=val;
+  const el=document.getElementById(`lv1rf${i}`);
+  el.querySelectorAll('.rf-btn').forEach(b=>b.classList.remove('selected'));
+  el.querySelectorAll('.rf-btn')[val?0:1].classList.add('selected');
+  el.classList.remove('rf-correct','rf-wrong');
+}
+function checkLV1(){
+  const stmts=LESSON.leseverstehen?.teil1?.statements; if(!stmts) return;
+  let ok=0;
+  stmts.forEach((s,i)=>{
+    const el=document.getElementById(`lv1rf${i}`); if(!el) return;
+    el.classList.remove('rf-correct','rf-wrong');
+    if(lv1State[i]===undefined) return;
+    if(lv1State[i]===s.correct){el.classList.add('rf-correct');ok++;}
+    else el.classList.add('rf-wrong');
+  });
+  document.getElementById('lv1Score').textContent=`✓ ${ok}/${stmts.length}${ok===stmts.length?' — Perfekt! 🎉':''}`;
+}
+function resetLV1(){
+  Object.keys(lv1State).forEach(k=>delete lv1State[k]);
+  document.querySelectorAll('[id^="lv1rf"]').forEach(el=>{
+    el.classList.remove('rf-correct','rf-wrong');
+    el.querySelectorAll('.rf-btn').forEach(b=>b.classList.remove('selected'));
+  });
+  const sc=document.getElementById('lv1Score'); if(sc) sc.textContent='';
+}
+function checkLV2(){
+  const people=LESSON.leseverstehen?.teil2?.people; if(!people) return;
+  let ok=0;
+  people.forEach((p,i)=>{
+    const sel=document.getElementById(`lv2sel${i}`);
+    const el=document.getElementById(`lv2p${i}`);
+    if(!sel||!el) return;
+    el.classList.remove('rf-correct','rf-wrong');
+    if(!sel.value) return;
+    if(sel.value===p.answer){el.classList.add('rf-correct');ok++;}
+    else el.classList.add('rf-wrong');
+  });
+  document.getElementById('lv2Score').textContent=`✓ ${ok}/${people.length}${ok===people.length?' — Genial! 🎉':''}`;
+}
+function resetLV2(){
+  document.querySelectorAll('[id^="lv2p"]').forEach(el=>el.classList.remove('rf-correct','rf-wrong'));
+  document.querySelectorAll('[id^="lv2sel"]').forEach(sel=>sel.value='');
+  const sc=document.getElementById('lv2Score'); if(sc) sc.textContent='';
+}

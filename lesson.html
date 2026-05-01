@@ -48,6 +48,7 @@
     <button class="ltab" data-p="p6"><span class="ltab-num">07</span>📐 Grammatik</button>
     <button class="ltab" data-p="p7"><span class="ltab-num">08</span>🧠 Quiz</button>
     <button class="ltab" data-p="pKino" id="tabKino" style="display:none"><span class="ltab-num">09</span>🎬 Kino</button>
+    <button class="ltab" data-p="pLese" id="tabLese" style="display:none"><span class="ltab-num">10</span>📝 Prüfung</button>
   </div>
 
   <!-- PANE 1: VOCAB -->
@@ -149,7 +150,21 @@
     <div class="text-box" id="textBox">
       <div id="textBody"></div>
       <p class="ua-line" id="uaLine" style="display:none;font-style:italic;color:var(--muted);font-size:14px;border-top:2px dashed var(--border);padding-top:14px;margin-top:18px"></p>
+      <div id="readingQuestions"></div>
     </div>
+  </div>
+
+  <!-- PANE LESE: LESEVERSTEHEN PRÜFUNG -->
+  <div class="lpane" id="pLese">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Bonus · Prüfung 📝</span>
+        <h2 class="section-title">Prüfungs<em>aufgaben</em> 📝</h2>
+      </div>
+      <span class="tiny-note">Wie bei der echten B1-Prüfung</span>
+    </div>
+    <div class="card" id="lese1" style="padding:28px;margin-bottom:24px"></div>
+    <div class="card" id="lese2" style="padding:28px"></div>
   </div>
 
   <!-- PANE 5: DIALOG -->
