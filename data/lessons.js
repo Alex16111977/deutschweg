@@ -1106,12 +1106,15 @@ window.LESSONS = {
     ],
     reading: {
       paragraphs: [
-        'Niklas ist 24 Jahre alt und zieht bald nach Berlin. Er studiert dort ab Oktober — und braucht dringend eine Wohnung. Das Problem: Die <mark title="орендна плата">Mieten</mark> in Berlin sind in den letzten Jahren stark gestiegen. Eine 2-Zimmer-Wohnung kostet oft zwischen 900 und 1.300 Euro — <mark title="без комунальних витрат">ohne Nebenkosten</mark>.',
-        'Niklas schaut auf Portalen wie ImmoScout24 und WG-Gesucht. Er findet viele Angebote, aber die meisten sind schon vergeben oder viel zu teuer. Nach zwei Wochen hat er Glück: Ein Zimmer in einer <mark title="спільна квартира">Wohngemeinschaft</mark> ist noch frei — 480 Euro <mark title="тепла оренда, включно з опаленням">warm</mark>. Das ist viel günstiger als eine eigene Wohnung.',
-        'Beim Einzug muss Niklas eine <mark title="застава">Kaution</mark> zahlen — zwei Monatsmieten, also 960 Euro. Er unterschreibt den <mark title="договір оренди">Mietvertrag</mark> und bekommt seine Schlüssel. Der <mark title="орендодавець">Vermieter</mark> erklärt ihm alles und hilft ihm am ersten Tag.',
-        'Jetzt lebt Niklas in einer WG mit zwei anderen Studenten. Sie kochen manchmal zusammen, putzen abwechselnd und verstehen sich gut. Die <mark title="сусідство">Nachbarschaft</mark> ist ruhig. Niklas ist froh: Nach dem stressigen <mark title="переїзд">Umzug</mark> fühlt er sich endlich zu Hause.'
+        'Niklas ist 24 Jahre alt und studiert ab Oktober Informatik an der Humboldt-Universität in Berlin. Dafür muss er aus Hannover in die Hauptstadt ziehen — und braucht dringend eine Wohnung. Das Problem: Die <mark title="орендна плата">Mieten</mark> in Berlin sind in den letzten Jahren stark gestiegen. Eine 2-Zimmer-Wohnung kostet oft zwischen 900 und 1.300 Euro <mark title="холодна оренда — без комунальних">kalt</mark> — also ohne <mark title="комунальні витрати">Nebenkosten</mark> wie Strom, Wasser und Heizung. Mit allem zusammen kann das schnell 1.500 Euro im Monat werden.',
+        'Um überhaupt eine Chance auf eine Wohnung zu haben, braucht man in Deutschland die richtigen Unterlagen: eine <mark title="довідка про кредитоспроможність">Schufa-Auskunft</mark>, Kopien der letzten drei Gehaltsabrechnungen und einen Personalausweis. Für Studenten ist das schwierig — sie haben oft kein regelmäßiges Einkommen. Deshalb müssen viele Eltern als <mark title="поручитель">Bürgen</mark> unterschreiben. Auch Niklas bittet seinen Vater darum.',
+        'Niklas schaut täglich auf Portalen wie ImmoScout24, WG-Gesucht und Kleinanzeigen. Er bewirbt sich auf viele Angebote — aber die meisten sind schon vergeben oder viel zu teuer. Die wenigen, bei denen er eine Antwort bekommt, enden in <mark title="перегляди квартир">Besichtigungen</mark> mit zehn bis zwanzig anderen Bewerbern. Einmal fragt ihn ein Vermieter direkt: «Warum sollten wir gerade Ihnen die Wohnung geben?» Auf Empfehlung einer Freundin schreibt Niklas danach persönliche Briefe an jeden Vermieter — mit ein paar Sätzen darüber, wer er ist und warum ihm die Wohnung wichtig ist.',
+        'Nach drei Wochen hat er endlich Glück: Ein Zimmer in einer <mark title="спільна квартира">Wohngemeinschaft</mark> in Prenzlauer Berg ist noch frei — 480 Euro <mark title="тепла оренда — комунальні вже включені">warm</mark>, also mit Nebenkosten. Das Zimmer liegt nur zehn Minuten vom Campus entfernt — mit dem Fahrrad. Aber erst muss Niklas ein WG-Gespräch führen: Die beiden Mitbewohner Sandra und Tobias wollen wissen, ob er zu ihnen passt. Sie kochen gerne, sind ordentlich und mögen keine lauten Partys. Niklas passt gut dazu — und bekommt das Zimmer.',
+        'Beim Einzug zahlt Niklas eine <mark title="застава">Kaution</mark> — zwei Monatsmieten, also 960 Euro. Er unterschreibt den <mark title="договір оренди">Mietvertrag</mark> und bekommt seine Schlüssel. Wichtig: Im Vertrag steht eine <mark title="термін повідомлення про розірвання">Kündigungsfrist</mark> von drei Monaten. Das bedeutet: Wenn Niklas ausziehen will, muss er das drei Monate im Voraus ankündigen. Außerdem gibt es einen Putzplan — jede Woche putzt jemand anderes das Bad und die Küche.',
+        'Am ersten Tag macht Niklas mit dem <mark title="орендодавець">Vermieter</mark> ein <mark title="акт приймання-передачі квартири">Übergabeprotokoll</mark>: Sie gehen durch alle Räume und schreiben auf, welche Schäden schon vorher da waren — ein Kratzer an der Tür, ein Fleck an der Wand. Das ist wichtig, damit Niklas am Ende nicht für alte Schäden zahlen muss. Der Vermieter erklärt ihm außerdem, wie die Heizung funktioniert, wo der Sicherungskasten ist und wie man in diesem Haus den Müll trennt.',
+        'Einen Monat später ist Niklas angekommen. Die <mark title="сусідство, квартал">Nachbarschaft</mark> in Prenzlauer Berg ist ruhig: alte Häuser, ein kleiner Park um die Ecke, ein türkischer Supermarkt nebenan. Sandra kocht manchmal für alle drei, Tobias repariert gerne Dinge in der Wohnung. Abends sitzen sie manchmal auf dem Balkon und reden. Nach dem stressigen <mark title="переїзд">Umzug</mark> und der langen Suche fühlt Niklas sich endlich zu Hause — auch wenn ihm die 960 Euro Kaution noch lange im Kopf bleiben.'
       ],
-      uaSummary: '🇺🇦 Ніклас переїжджає до Берліна і шукає квартиру. Оренда в Берліні дорога — 900–1300 € за двокімнатну. Після двох тижнів пошуків він знаходить кімнату в спільній квартирі за 480 € на місяць. Платить заставу, підписує договір. Тепер живе з двома студентами — все добре!'
+      uaSummary: '🇺🇦 Ніклас переїжджає з Ганновера до Берліна на навчання. Оренда в Берліні дорога — до 1500 € з комунальними. Щоб зняти житло, потрібні: Schufa, довідки про зарплату, посвідчення особи. Студентам часто потрібен поручитель. Після 3 тижнів пошуків і безлічі переглядів він знаходить кімнату в WG за 480 € warm. Проходить WG-розмову, платить 960 € заставу, підписує договір із 3-місячним терміном повідомлення. Разом з орендодавцем складають Übergabeprotokoll — фіксують наявні пошкодження. Тепер живе з Сандрою та Тобіасом — і нарешті вдома.'
     },
     dialog: [
       { who:'📞', de:'Guten Tag, ich rufe wegen der Wohnung auf ImmoScout an — ist sie noch frei?', ua:'Добрий день, я дзвоню щодо квартири на ImmoScout — вона ще вільна?' },
@@ -1125,36 +1128,53 @@ window.LESSONS = {
       html: `<div class="case-box"><div class="case-box-title">Крок 1 — Навіщо Konjunktiv II?</div><p>Коли ти шукаєш квартиру, пишеш орендодавцю або телефонуєш — <strong>Konjunktiv II робить тебе ввічливим</strong>. Порівняй:</p></div><ul class="examples"><li>❌ «Ich will die Wohnung sehen.» <em>(звучить грубо — «Я хочу»)</em></li><li>✅ «Ich <strong>würde</strong> die Wohnung gerne sehen.» <em>(ввічливо — «Я б хотів»)</em></li><li>✅ «<strong>Könnte</strong> ich am Samstag vorbeikommen?» <em>(дуже ввічливо — «Чи міг би я?»)</em></li></ul><div class="divider"></div><div class="case-box"><div class="case-box-title">Крок 2 — 4 форми, які вирішують усе</div></div><table class="rule-table"><thead><tr><th>Infinitiv</th><th>Konjunktiv II (ich/er/sie)</th><th>Приклад</th></tr></thead><tbody><tr><td>sein</td><td><code>wäre</code></td><td><strong>Wäre</strong> die Wohnung noch frei?</td></tr><tr><td>haben</td><td><code>hätte</code></td><td>Ich <strong>hätte</strong> gerne ein ruhiges Zimmer.</td></tr><tr><td>können</td><td><code>könnte</code></td><td><strong>Könnte</strong> ich die Wohnung besichtigen?</td></tr><tr><td>alle anderen</td><td><code>würde + Infinitiv</code></td><td>Ich <strong>würde</strong> den Vertrag sofort unterschreiben.</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Крок 3 — Живі шаблони для пошуку квартири</div></div><ul class="examples"><li>«Ich <strong>hätte</strong> Interesse an der Wohnung.»</li><li>«<strong>Wäre</strong> eine Besichtigung am Wochenende möglich?»</li><li>«<strong>Könnten</strong> Sie mir mehr Fotos schicken?»</li><li>«Ich <strong>würde</strong> gerne so bald wie möglich einziehen.»</li><li>«<strong>Wäre</strong> die Kaution verhandelbar?»</li></ul><div class="grammar-note"><strong>📌 Запам'ятай:</strong> для всіх «звичайних» дієслів → <code>würde + Infinitiv</code>. Це найлегший і найчастіший спосіб!</div>`
     },
     quiz: [
-      { q:'Was bedeutet «die Kaution»?',                                     opts:['орендна плата','застава','переїзд','договір'],            a:1 },
-      { q:'«Ich ___ gerne die Wohnung besichtigen.» — Konjunktiv II:',        opts:['will','möchte','würde','kann'],                           a:2 },
-      { q:'Was ist eine WG?',                                                opts:['eine Villa','eine Wohngemeinschaft','ein Vermieter','eine Kündigung'], a:1 },
-      { q:'Welcher Artikel: ___ Mietvertrag?',                               opts:['der','die','das','—'],                                    a:0 },
-      { q:'Was bedeutet «renovieren»?',                                      opts:['виїжджати','економити','робити ремонт','орендувати'],     a:2 }
+      { q:'Niklas zahlt 480 Euro «warm» für sein WG-Zimmer. Was bedeutet «warm» beim Mietpreis?',
+        opts:['Die Heizung ist extra zu bezahlen','Nebenkosten wie Strom und Heizung sind im Preis enthalten','Der Preis gilt nur im Winter','Es gibt keine Kaution'],
+        a:1 },
+      { q:'Warum müssen viele Studenten ihre Eltern als Bürgen eintragen lassen?',
+        opts:['Weil Studenten keine Schufa beantragen dürfen','Weil Vermieter keine jungen Mieter mögen','Weil Studenten oft kein regelmäßiges Einkommen haben','Weil es so im Gesetz steht'],
+        a:2 },
+      { q:'Was ist ein Übergabeprotokoll und wofür braucht man es?',
+        opts:['Eine Liste der Hausregeln für alle Mieter','Ein Dokument, das bestehende Schäden beim Einzug festhält — Schutz für den Mieter','Ein Formular für die Ummeldung beim Einwohnermeldeamt','Eine Quittung für die bezahlte Kaution'],
+        a:1 },
+      { q:'«___ eine Besichtigung am Samstag möglich?» — höflichste Form (Konjunktiv II):',
+        opts:['Ist','War','Wäre','Wird'],
+        a:2 },
+      { q:'Im Mietvertrag steht eine Kündigungsfrist von drei Monaten. Was bedeutet das für Niklas?',
+        opts:['Er kann nach drei Monaten kostenlos ausziehen','Er muss drei Monate im Voraus kündigen, bevor er auszieht','Er zahlt drei Monate extra, wenn er kündigt','Der Vermieter kann ihn nach drei Monaten rauswerfen'],
+        a:1 },
+      { q:'Warum schreibt Niklas persönliche Briefe an die Vermieter?',
+        opts:['Weil er kein Telefon hatte','Weil er kein Deutsch sprechen konnte','Weil der Vermieter es verlangt hat','Weil eine Freundin ihm das empfohlen hat, um ernsthaftes Interesse zu zeigen'],
+        a:3 },
+      { q:'«Ich ___ gerne so bald wie möglich einziehen.» — richtige Konjunktiv-II-Form:',
+        opts:['will','möchte','würde','werde'],
+        a:2 }
     ],
     leseverstehen: {
       teil1: {
-        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>?',
+        instruction: 'Lesen Sie den Text sorgfältig. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
         statements: [
-          { s: 'Wohnungen in Berlin sind meistens sehr günstig.',                correct: false },
-          { s: 'Niklas sucht eine Wohnung auf Internetportalen wie ImmoScout.',  correct: true  },
-          { s: 'Niklas findet in der ersten Woche sofort eine passende Wohnung.',correct: false },
-          { s: 'Niklas muss beim Einzug eine Kaution zahlen.',                   correct: true  },
-          { s: 'Der Vermieter ist unhöflich und hilft Niklas nicht.',            correct: false }
+          { s: 'Niklas zieht von Berlin nach Hannover um, um dort zu studieren.',                                                      correct: false },
+          { s: 'Die Miete für eine 2-Zimmer-Wohnung in Berlin beträgt inklusive Nebenkosten oft bis zu 1.500 Euro.',                  correct: true  },
+          { s: 'Das WG-Zimmer kostet 480 Euro kalt — Nebenkosten werden separat berechnet.',                                          correct: false },
+          { s: 'Niklas muss vor dem Einzug ein Gespräch mit seinen zukünftigen Mitbewohnern führen.',                                 correct: true  },
+          { s: 'Die Kündigungsfrist in Niklas\' Mietvertrag beträgt vier Monate.',                                                    correct: false },
+          { s: 'Das Übergabeprotokoll schützt Niklas davor, am Auszug für Schäden zu zahlen, die schon vorher da waren.',             correct: true  }
         ]
       },
       teil2: {
-        instruction: 'Welche Wohnung passt zu welcher Person? Ordnen Sie die Anzeigen (A–D) zu.',
+        instruction: 'Welche Anzeige (A–D) passt zu welcher Person? Lesen Sie alle Details genau — nicht jedes Merkmal passt auf den ersten Blick!',
         ads: [
-          { id: 'A', text: '2-Zi.-Whg., 55 m², 3. OG, keine Haustiere, ruhige Lage, NK 120 €, ab sofort. Miete 720 €.' },
-          { id: 'B', text: 'Helles Zimmer in 3er-WG, 18 m², eigenes Bad, WLAN inkl., Nichtraucher, ab 1. Mai. 430 € warm.' },
-          { id: 'C', text: 'Möbliertes Studio, 30 m², EG, Haustiere erlaubt, Kurzzeitmiete (1–6 Monate) möglich. 650 €.' },
-          { id: 'D', text: '4-Zi.-Familienwohnung, 95 m², Balkon, Garten, Spielplatz im Hof. 1.300 € warm.' }
+          { id: 'A', text: '1-Zi.-Whg., 38 m², 4. OG ohne Aufzug, vollmöbliert, keine Haustiere, Kurzzeitmiete (bis 6 Monate) möglich. NK inkl. 590 €.' },
+          { id: 'B', text: 'WG-Zimmer, 16 m², 5er-WG, Gemeinschaftsküche, WLAN inkl., Raucher willkommen, ab sofort. 350 € warm.' },
+          { id: 'C', text: '3-Zi.-Whg., 75 m², Erdgeschoss, großer Garten, Haustiere ausdrücklich erlaubt, unbefristeter Vertrag. 1.050 € kalt + NK.' },
+          { id: 'D', text: 'Möbliertes Zimmer in 2er-WG, ruhige Lage, Nicht-Raucher, berufstätige Mitbewohnerin. Keine Studenten. 490 € warm.' }
         ],
         people: [
-          { name: 'Lena',         desc: 'Studentin, sucht günstiges Zimmer mit WLAN. Raucht nicht.',                            answer: 'B' },
-          { name: 'Familie Bauer',desc: 'Eltern + 2 Kinder + Hund. Suchen viel Platz und Außenbereich.',                       answer: 'D' },
-          { name: 'Julia',        desc: '4-Monate-Praktikum, braucht Möbliertes, nimmt Katze mit.',                             answer: 'C' },
-          { name: 'Thomas',       desc: 'Single, Vollzeit, mag Ruhe, keine Haustiere, braucht keine große Wohnung.',            answer: 'A' }
+          { name: 'Oksana',        desc: 'Kommt für 4 Monate als Austauschstudentin. Hat keine eigenen Möbel, raucht gelegentlich, sehr kleines Budget.',  answer: 'B' },
+          { name: 'Herr Vogel',    desc: '65 Jahre, pensioniert, hat einen Labrador. Sucht ruhige Erdgeschosswohnung, möchte unbefristet wohnen.',           answer: 'C' },
+          { name: 'Lisa',          desc: 'Berufseinsteigerin, braucht Unterkunft nur für ihr 5-Monate-Projekt, hat keine Möbel dabei, keine Haustiere.',     answer: 'A' },
+          { name: 'Mohammed',      desc: 'Arbeitet Vollzeit im Büro, raucht nicht, mag es ruhig, sucht WG ohne Studenten, Budget bis 550 €.',                answer: 'D' }
         ]
       }
     }
