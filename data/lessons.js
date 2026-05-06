@@ -1178,6 +1178,117 @@ window.LESSONS = {
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 16 · BEWERBUNG — Die Bewerbung · B1
+   * ============================================================ */
+  bewerbung: {
+    slug: 'bewerbung',
+    emoji: '💼',
+    title: 'Die Bewerbung',
+    titleHtml: 'Die <em>Bewerbung</em> 💼',
+    level: 'B1',
+    duration: '~22 min',
+    idx: '16',
+    intro: 'Lebenslauf, Vorstellungsgespräch, Probezeit — alles, was du brauchst, um deinen ersten Job in Deutschland zu bekommen. 🖊️',
+    speakQuestions: [
+      'Hast du schon mal ein Vorstellungsgespräch auf Deutsch gehabt? Wie war es?',
+      'Was ist für dich beim Job am wichtigsten — Gehalt, Atmosphäre oder Aufgaben?',
+      'Wie schreibt man einen guten Lebenslauf? Was darf nicht fehlen?',
+      'Was machst du, wenn du im Interview eine schwierige Frage bekommst?',
+      'Was sind deiner Meinung nach deine größten Stärken im Beruf?',
+      'Hast du schon mal einen Job gewechselt? Was hat dich dazu bewogen?',
+      'Was ist die Probezeit und wozu dient sie?',
+      'Würdest du lieber selbstständig arbeiten oder als Angestellter? Warum?'
+    ],
+    vocab: [
+      { art:'die', w:'Bewerbung',              ua:'заявка на роботу',       ex:'Ich schicke heute meine Bewerbung ab.' },
+      { art:'das', w:'Vorstellungsgespräch',   ua:'співбесіда',             ex:'Das Vorstellungsgespräch war auf Englisch und Deutsch.' },
+      { art:'der', w:'Lebenslauf',             ua:'резюме',                 ex:'Mein Lebenslauf ist zwei Seiten lang.' },
+      { art:'die', w:'Stelle',                 ua:'посада / вакансія',      ex:'Ich bewerbe mich auf eine Stelle als Marketingassistentin.' },
+      { art:'der', w:'Arbeitgeber',            ua:'роботодавець',           ex:'Der Arbeitgeber bietet flexible Arbeitszeiten an.' },
+      { art:'die', w:'Erfahrung',              ua:'досвід',                 ex:'Ich habe drei Jahre Erfahrung im Kundenkontakt.' },
+      { art:'—',   w:'kündigen',               ua:'звільнятися / розривати договір', ex:'Sie hat gekündigt, weil sie eine bessere Stelle gefunden hat.' },
+      { art:'—',   w:'einstellen',             ua:'наймати на роботу',      ex:'Die Firma stellt ab Januar neue Mitarbeiter ein.' },
+      { art:'das', w:'Gehalt',                 ua:'зарплата',               ex:'Das Gehalt beträgt 2.400 Euro brutto pro Monat.' },
+      { art:'die', w:'Probezeit',              ua:'випробувальний термін',  ex:'Die Probezeit dauert sechs Monate.' }
+    ],
+    reading: {
+      paragraphs: [
+        'Mia ist 27 Jahre alt und arbeitet seit drei Jahren als Kellnerin in Köln. Sie hat Wirtschaftswissenschaften studiert — und möchte endlich im Büro arbeiten. Eines Morgens sieht sie auf einer Jobplattform eine <mark title="вакансія">Stelle</mark> als Marketingassistentin in einer kleinen Agentur. Sie liest die Beschreibung zweimal. Dann schreibt sie ihrer Freundin Jana: «Ich glaube, das bin ich.»',
+        'Jana gibt ihr Tipps für die <mark title="заявка на роботу">Bewerbung</mark>: «Kein Urlaubsfoto im <mark title="резюме">Lebenslauf</mark>. Schreib alle relevanten Praktika rein. Und lies das Anschreiben dreimal Korrektur — Tippfehler sind ein No-Go.» Das Anschreiben ist das Schwierigste: Man muss auf einer Seite erklären, warum genau diese Stelle und warum genau diese Firma. Mia schreibt vier Versionen, bevor sie zufrieden ist.',
+        'Nach einer Woche kommt eine E-Mail: «Wir freuen uns, Sie zu einem <mark title="співбесіда">Vorstellungsgespräch</mark> einzuladen.» Mia atmet tief aus. Dann beginnt die Vorbereitung. Sie sucht Informationen über die Agentur, übt typische Fragen vor dem Spiegel und legt am Abend vorher ihre Kleidung raus.',
+        'Am Morgen des Gesprächs kommt Mia fünf Minuten früher — nicht zu früh, nicht zu spät. Zwei Personen sitzen ihr gegenüber: Herr Bauer, der Geschäftsführer, und Frau Koch, die Teamleiterin. Die Fragen klingen vertraut: «Erzählen Sie uns von sich.» «Was sind Ihre Stärken?» «Wo sehen Sie sich in fünf Jahren?» Mia antwortet ruhig und konkret.',
+        'Eine Frage überrascht sie: «Warum möchten Sie die Gastronomie gegen einen Bürojob tauschen?» Mia denkt kurz nach. «Als Kellnerin habe ich gelernt, unter Druck zu arbeiten und Kundenwünsche schnell zu verstehen. Diese <mark title="досвід">Erfahrung</mark> möchte ich jetzt in einem anderen Umfeld einsetzen.» Herr Bauer nickt. Frau Koch macht sich eine Notiz.',
+        'Drei Tage später klingelt Mias Handy. Es ist Frau Koch: «Wir würden Sie gerne <mark title="наймати">einstellen</mark>.» Das <mark title="зарплата">Gehalt</mark> beträgt 2.400 Euro brutto, mit einer sechsmonatigen <mark title="випробувальний термін">Probezeit</mark>. Mia sagt zu. Danach ruft sie Jana an. Sie lacht und weint ein bisschen gleichzeitig.',
+        'Am ersten Arbeitstag fühlt sich Mia fremd zwischen den Kollegen. Frau Koch zeigt ihr den Arbeitsplatz, erklärt die Tools und stellt sie dem Team vor. «Frag einfach, wenn du etwas nicht weißt», sagt sie zum Schluss. Das klingt simpel. Aber nach drei Jahren als Kellnerin weiß Mia: Das ist eigentlich der wichtigste Satz.'
+      ],
+      uaSummary: '🇺🇦 Міа, 27, три роки пропрацювала офіціанткою, хоча вивчала економіку. Вона подає заявку на посаду маркетинг-асистентки. Подруга Яна допомагає їй із резюме та супровідним листом. Після тижня очікування — запрошення на співбесіду. На інтерв'ю Міа відповідає чесно: досвід офіціантки навчив її працювати під тиском. Через три дні — дзвінок із пропозицією роботи. 2400 € бруто, 6 місяців випробувального терміну. Перший день у новому офісі — все незнайоме, але вона вже вдома.'
+    },
+    dialog: [
+      { who:'👔', de:'Erzählen Sie uns bitte kurz von sich — Ausbildung, Erfahrung, was Sie hierher bringt.',            ua:'Розкажіть трохи про себе — освіта, досвід, що привело вас до нас.' },
+      { who:'💼', de:'Ich habe Wirtschaftswissenschaften studiert und danach drei Jahre in der Gastronomie gearbeitet. Jetzt möchte ich meine Erfahrung im Büroumfeld einsetzen.',  ua:'Я вивчала економіку, потім три роки працювала в ресторані. Тепер хочу застосувати свій досвід у офісному середовищі.' },
+      { who:'👔', de:'Was würden Sie sagen — was sind Ihre größten Stärken?',                                             ua:'Як би ви описали свої найбільші сильні сторони?' },
+      { who:'💼', de:'Ich arbeite gut unter Druck, bin sehr organisiert und lerne schnell neue Software. Außerdem kommuniziere ich gerne direkt.',  ua:'Я добре працюю під тиском, дуже організована і швидко вчуся. Плюс — мені подобається пряма комунікація.' },
+      { who:'👔', de:'Haben Sie noch Fragen an uns?',                                                                    ua:'У вас є запитання до нас?' },
+      { who:'💼', de:'Ja — wie sieht ein typischer Arbeitstag in dieser Position aus?',                                  ua:'Так — як виглядає типовий робочий день на цій посаді?' }
+    ],
+    grammar: {
+      chip: 'Präteritum — die Vergangenheit erzählen (war, hatte, arbeitete, kam …)',
+      html: `<div class="case-box"><div class="case-box-title">Навіщо Präteritum?</div><p>У співбесіді та резюме ти розповідаєш про минуле. Для письма і формальних розмов — <strong>Präteritum</strong>, не Perfekt:</p><ul class="examples"><li>❌ «Ich habe drei Jahre gearbeitet.» <em>(розмовний, прийнятний — але...)</em></li><li>✅ «Ich <strong>arbeitete</strong> drei Jahre als Assistentin.» <em>(офіційно, у резюме)</em></li><li>✅ «Sie <strong>war</strong> sehr nervös, aber <strong>antwortete</strong> ruhig.» <em>(оповідь)</em></li></ul></div><div class="divider"></div><div class="case-box"><div class="case-box-title">Ключові неправильні дієслова (B1 must-know)</div></div><table class="rule-table"><thead><tr><th>Infinitiv</th><th>Präteritum (ich/er/sie)</th><th>Приклад</th></tr></thead><tbody><tr><td>sein</td><td><code>war</code></td><td>Das Interview <strong>war</strong> schwierig.</td></tr><tr><td>haben</td><td><code>hatte</code></td><td>Sie <strong>hatte</strong> viel Erfahrung.</td></tr><tr><td>kommen</td><td><code>kam</code></td><td>Sie <strong>kam</strong> pünktlich an.</td></tr><tr><td>gehen</td><td><code>ging</code></td><td>Er <strong>ging</strong> zur Arbeit.</td></tr><tr><td>finden</td><td><code>fand</code></td><td>Sie <strong>fand</strong> die Stelle online.</td></tr><tr><td>sagen</td><td><code>sagte</code></td><td>Er <strong>sagte</strong> «Herzlich willkommen».</td></tr></tbody></table><div class="case-box"><div class="case-box-title">Правильні дієслова — схема</div></div><div class="gram-rule">Основа + <strong>-te</strong> (ich/er/sie) / <strong>-ten</strong> (wir/sie/Sie):<ul class="examples"><li>arbeiten → <strong>arbeitete</strong> / arbeiteten</li><li>lernen → <strong>lernte</strong> / lernten</li><li>machen → <strong>machte</strong> / machten</li><li>fragen → <strong>fragte</strong> / fragten</li></ul></div><div class="grammar-note"><strong>📌 Запам'ятай:</strong> sein і haben — завжди <code>war / hatte</code>, ніяких виключень. Вивчи їх першими — вони зустрічаються в кожному тексті!</div>`
+    },
+    quiz: [
+      { q:'Was bedeutet «die Probezeit»?',
+        opts:['Urlaub nach dem ersten Monat','Випробувальний термін перед постійним договором','Надбавка до зарплати','Термін подачі заявки'],
+        a:1 },
+      { q:'Mia sagt: «Ich möchte meine Erfahrung im neuen Umfeld einsetzen.» Was meint sie?',
+        opts:['Sie möchte die Gastronomie nicht verlassen','Sie will ihre bisherigen Fähigkeiten in einem anderen Bereich nutzen','Sie hat keine Erfahrung und will etwas lernen','Sie sucht eine Stelle in einem Restaurant'],
+        a:1 },
+      { q:'«Das Interview ___ schwierig, aber sie ___ ruhig.» — Präteritum (sein / antworten):',
+        opts:['war / antwortete','ist / antwortete','war / hat geantwortet','wäre / antwortete'],
+        a:0 },
+      { q:'Wie lange ist Mias Probezeit?',
+        opts:['3 Monate','6 Monate','1 Jahr','Es gibt keine Probezeit'],
+        a:1 },
+      { q:'Was empfiehlt Jana beim Lebenslauf?',
+        opts:['Ein schönes Urlaubsfoto beifügen','Das Anschreiben dreimal auf Fehler prüfen','Nur den letzten Job angeben','Keine Praktika erwähnen'],
+        a:1 },
+      { q:'«Sie ___ eine bessere Stelle und ___ bei der alten Firma.» — Präteritum (finden / kündigen):',
+        opts:['fand / kündigte','gefunden / hat gekündigt','findet / kündigt','fand / hat gekündigt'],
+        a:0 },
+      { q:'Welche Form ist Präteritum von «gehen»?',
+        opts:['geht','gegangen','ging','ist gegangen'],
+        a:2 }
+    ],
+    leseverstehen: {
+      teil1: {
+        instruction: 'Lesen Sie den Text sorgfältig. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Mia hat Wirtschaft studiert und danach sofort eine Bürostelle gefunden.',                                              correct: false },
+          { s: 'Jana rät Mia, das Anschreiben mehrmals auf Tippfehler zu prüfen.',                                                    correct: true  },
+          { s: 'Beim Vorstellungsgespräch kommt Mia absichtlich zehn Minuten zu früh, um einen guten Eindruck zu machen.',            correct: false },
+          { s: 'Mia erklärt, dass ihre Zeit als Kellnerin ihr geholfen hat, unter Druck zu arbeiten.',                                correct: true  },
+          { s: 'Die Stelle wird Mia noch am Ende des Gesprächs direkt angeboten.',                                                    correct: false },
+          { s: 'Mias Vertrag enthält eine sechsmonatige Probezeit.',                                                                  correct: true  }
+        ]
+      },
+      teil2: {
+        instruction: 'Welche Stellenanzeige (A–D) passt zu welcher Person? Lesen Sie alle Details genau — Budget, Erfahrung und Bedingungen zählen!',
+        ads: [
+          { id: 'A', text: 'Marketingassistenz (m/w/d), Vollzeit, Köln. Erfahrung im Kundenkontakt von Vorteil. Gehalt: 2.200–2.600 € brutto. Probezeit 6 Monate.' },
+          { id: 'B', text: 'Senior-Softwareentwickler:in, 100% remote möglich. Min. 4 Jahre Erfahrung in Python. Gehalt ab 4.800 € brutto.' },
+          { id: 'C', text: 'Werkstudent:in Grafikdesign, 20 Std./Woche, München. Für Studierende ab dem 3. Semester. Vergütung: 14 €/Std.' },
+          { id: 'D', text: 'Vertriebsleiter:in, Reisebereitschaft 60%, Frankfurt. Führungserfahrung erforderlich. Gehalt ab 5.200 € brutto + Bonus.' }
+        ],
+        people: [
+          { name: 'Mia',   desc: 'Wirtschaftsabsolventin, Erfahrung im Kundenkontakt, sucht Bürostelle in Vollzeit, wohnt in Köln.',                      answer: 'A' },
+          { name: 'Jonas', desc: 'Informatik-Student im 4. Semester in München, sucht Nebenjob, kann nicht mehr als 20 Std./Woche arbeiten.',               answer: 'C' },
+          { name: 'Elena', desc: '12 Jahre Vertriebserfahrung, hat ein Team von 10 Personen geführt, reist gerne, sucht eine Führungsposition.',            answer: 'D' },
+          { name: 'Tobias',desc: 'Python-Entwickler mit 5 Jahren Erfahrung, möchte vollständig von zu Hause aus arbeiten, erwartet hohes Gehalt.',          answer: 'B' }
+        ]
+      }
+    }
   }
 
 };
