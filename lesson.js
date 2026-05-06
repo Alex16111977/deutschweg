@@ -291,6 +291,134 @@ function renderQuiz(){
 }
 renderQuiz();
 
+/* ---- GEMEINSAM PLANEN ---- */
+(function initPlannung(){
+  const pl = LESSON.plannung;
+  if(!pl) return;
+  const tab = document.getElementById('tabPlan');
+  if(tab) tab.style.display = '';
+
+  document.getElementById('planScenario').innerHTML = `
+    <div class="plan-scenario">
+      <div class="plan-scenario-emoji">${pl.emoji}</div>
+      <div>
+        <div class="plan-scenario-title">${pl.title}</div>
+        <p class="plan-scenario-text">${pl.scenario}</p>
+      </div>
+    </div>`;
+
+  document.getElementById('planPunkte').innerHTML = `
+    <div class="plan-sub">Diskutiert diese Punkte — klick zum Aufklappen:</div>
+    <div class="plan-punkte">
+      ${pl.punkte.map(p => `
+        <div class="plan-punkt">
+          <div class="plan-punkt-head" onclick="this.parentElement.classList.toggle('open')">
+            <span class="plan-punkt-icon">${p.icon}</span>
+            <div>
+              <div class="plan-punkt-label">${p.label}</div>
+              <div class="plan-punkt-q">${p.q}</div>
+            </div>
+            <span class="plan-punkt-arrow">▸</span>
+          </div>
+          <div class="plan-punkt-body">
+            ${p.starters.map(s => `<div class="plan-starter" onclick="speak('${s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">🔊 ${s}</div>`).join('')}
+          </div>
+        </div>`).join('')}
+    </div>`;
+
+  document.getElementById('planPhrases').innerHTML = `
+    <div class="plan-sub">Nützliche Ausdrücke — klick zum Vorlesen 🔊</div>
+    <div class="plan-phrases">
+      ${pl.phrases.map(p => `
+        <div class="plan-phrase" onclick="speak('${p.de.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">
+          <div class="plan-phrase-de">${p.de}</div>
+          <div class="plan-phrase-ua">${p.ua}</div>
+        </div>`).join('')}
+    </div>`;
+
+  document.getElementById('planRollen').innerHTML = `
+    <div class="plan-sub">Eure Rollen:</div>
+    <div class="plan-rollen">
+      <div class="plan-rolle" style="--rolle-color:var(--blue)">
+        <div class="plan-rolle-label">${pl.rolleA.label}</div>
+        ${pl.rolleA.infos.map(i => `<div class="plan-rolle-info">• ${i}</div>`).join('')}
+      </div>
+      <div class="plan-rolle" style="--rolle-color:var(--pink)">
+        <div class="plan-rolle-label">${pl.rolleB.label}</div>
+        ${pl.rolleB.infos.map(i => `<div class="plan-rolle-info">• ${i}</div>`).join('')}
+      </div>
+    </div>`;
+})();
+
+/* ---- SCHREIBEN ---- */
+(function initSchreiben(){
+  const s = LESSON.schreiben;
+  if(!s) return;
+  const tab = document.getElementById('tabSchreib');
+  if(tab) tab.style.display = '';
+  const el = document.getElementById('schreibContent');
+  if(!el) return;
+
+  el.innerHTML = `
+    <div class="schreib-situation">
+      <div class="schreib-situation-label">📋 Situation</div>
+      <p>${s.situation}</p>
+    </div>
+
+    <div class="schreib-aufgaben">
+      <div class="schreib-block-title">Schreiben Sie:</div>
+      <ul>${s.aufgaben.map(a=>`<li>${a}</li>`).join('')}</ul>
+    </div>
+
+    <details class="schreib-redemittel">
+      <summary>💬 Redemittel anzeigen</summary>
+      <div class="schreib-redemittel-list">
+        ${s.redemittel.map(r=>`
+          <div class="schreib-phrase" onclick="speak('${r.de.replace(/'/g,"\\'")}')" title="${r.ua}">
+            <span class="schreib-phrase-de">${r.de}</span>
+            <span class="schreib-phrase-ua">${r.ua}</span>
+          </div>`).join('')}
+      </div>
+    </details>
+
+    <div class="schreib-composer">
+      <div class="schreib-composer-row">
+        <span class="schreib-label">An:</span>
+        <span class="schreib-fixed">${s.an}</span>
+      </div>
+      <div class="schreib-composer-row">
+        <span class="schreib-label">Betreff:</span>
+        <input class="schreib-input" id="schreibBetreff" placeholder="Betreff eingeben …" />
+      </div>
+      <textarea class="schreib-body" id="schreibBody" placeholder="Ihre E-Mail …" rows="12"></textarea>
+      <div class="schreib-toolbar">
+        <span class="schreib-counter" id="schreibCounter">0 Wörter</span>
+        <button class="word-btn" onclick="toggleMuster()">👁 Musterlösung</button>
+        <button class="word-btn" onclick="document.getElementById('schreibBody').value='';document.getElementById('schreibBetreff').value='';updateCounter()">🗑 Leeren</button>
+      </div>
+    </div>
+
+    <div class="schreib-muster" id="schreibMuster" style="display:none">
+      <div class="schreib-muster-label">✅ Musterlösung</div>
+      <div class="schreib-muster-subject"><strong>Betreff:</strong> ${s.example.subject}</div>
+      <pre class="schreib-muster-body">${s.example.body}</pre>
+    </div>`;
+
+  const body = document.getElementById('schreibBody');
+  const counter = document.getElementById('schreibCounter');
+  window.updateCounter = function(){
+    const words = body.value.trim().split(/\s+/).filter(Boolean).length;
+    counter.textContent = words + ' Wörter' + (s.minWords ? ` (mind. ${s.minWords})` : '');
+    counter.style.color = s.minWords && words < s.minWords ? 'var(--pink)' : 'var(--muted)';
+  };
+  body.addEventListener('input', updateCounter);
+
+  window.toggleMuster = function(){
+    const m = document.getElementById('schreibMuster');
+    m.style.display = m.style.display === 'none' ? '' : 'none';
+  };
+})();
+
 /* ---- ANZEIGE ---- */
 (function initAnzeige(){
   const az = LESSON.anzeige;

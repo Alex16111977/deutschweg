@@ -47,10 +47,12 @@
     <button class="ltab" data-p="p5"><span class="ltab-num">06</span>🗨 Dialog</button>
     <button class="ltab" data-p="p6"><span class="ltab-num">07</span>📐 Grammatik</button>
     <button class="ltab" data-p="p7"><span class="ltab-num">08</span>🧠 Quiz</button>
-    <button class="ltab" data-p="pAnzeige" id="tabAnzeige" style="display:none"><span class="ltab-num">09</span>📋 Anzeige</button>
-    <button class="ltab" data-p="pWort" id="tabWort" style="display:none"><span class="ltab-num">10</span>✏️ Wortschatz+</button>
-    <button class="ltab" data-p="pKino" id="tabKino" style="display:none"><span class="ltab-num">11</span>🎬 Kino</button>
-    <button class="ltab" data-p="pLese" id="tabLese" style="display:none"><span class="ltab-num">12</span>📝 Prüfung</button>
+    <button class="ltab" data-p="pSchreib" id="tabSchreib" style="display:none"><span class="ltab-num">09</span>✍️ Schreiben</button>
+    <button class="ltab" data-p="pPlan" id="tabPlan" style="display:none"><span class="ltab-num">10</span>🗓 Planen</button>
+    <button class="ltab" data-p="pAnzeige" id="tabAnzeige" style="display:none"><span class="ltab-num">10</span>📋 Anzeige</button>
+    <button class="ltab" data-p="pWort" id="tabWort" style="display:none"><span class="ltab-num">11</span>✏️ Wortschatz+</button>
+    <button class="ltab" data-p="pKino" id="tabKino" style="display:none"><span class="ltab-num">12</span>🎬 Kino</button>
+    <button class="ltab" data-p="pLese" id="tabLese" style="display:none"><span class="ltab-num">13</span>📝 Prüfung</button>
   </div>
 
   <!-- PANE 1: VOCAB -->
@@ -216,6 +218,33 @@
       <p style="font-size:17px;color:var(--muted);margin-bottom:20px">Du bist ready für das nächste Thema!</p>
       <a href="index.html" class="btn">Nächstes Abenteuer → </a>
     </div>
+  </div>
+
+  <!-- PANE SCHREIB: E-Mail schreiben (conditional on LESSON.schreiben) -->
+  <div class="lpane" id="pSchreib">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Schreiben ✍️</span>
+        <h2 class="section-title">E-Mail <em>schreiben</em></h2>
+      </div>
+      <span class="tiny-note">Wie bei der echten B1-Prüfung</span>
+    </div>
+    <div id="schreibContent"></div>
+  </div>
+
+  <!-- PANE PLAN: Gemeinsam planen B1 (conditional on LESSON.plannung) -->
+  <div class="lpane" id="pPlan">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Sprechen B1 🗓</span>
+        <h2 class="section-title">Gemeinsam <em>planen</em></h2>
+      </div>
+      <span class="tiny-note">Diskutiert jeden Punkt — klick auf Sätze zum Vorlesen</span>
+    </div>
+    <div id="planScenario"></div>
+    <div id="planPunkte"></div>
+    <div id="planPhrases"></div>
+    <div id="planRollen"></div>
   </div>
 
   <!-- PANE ANZEIGE: interactive ad reading (conditional on LESSON.anzeige) -->

@@ -1014,21 +1014,91 @@ body::before {
 }
 .rf-btn:hover    { background:var(--lime); transform:translate(-2px,-2px); }
 .rf-btn.selected { background:var(--ink); color:var(--bg); }
-.lv2-ads { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:20px; }
-.lv2-ad  { border:2px solid var(--border); border-radius:var(--radius-sm); padding:14px; background:var(--bg-soft); font-size:14px; line-height:1.5; }
-.lv2-ad-id { font-family:var(--mono); font-size:22px; font-weight:700; color:var(--pink); margin-bottom:8px; }
-.lv2-people { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
-.lv2-person { border:2px solid var(--border); border-radius:var(--radius-sm); padding:14px; background:var(--surface); transition:background .2s; }
+.lv2-ads { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-bottom:24px; }
+.lv2-ad  { border:2px solid var(--border); border-radius:var(--radius-sm); padding:20px 22px; background:var(--bg-soft); font-size:15px; line-height:1.7; }
+.lv2-ad em { display:block; margin-top:10px; font-size:13px; color:var(--muted); font-style:normal; border-top:1px dashed var(--border); padding-top:8px; }
+.lv2-ad-id { font-family:var(--mono); font-size:26px; font-weight:700; color:var(--pink); margin-bottom:10px; }
+.lv2-people { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+.lv2-person { border:2px solid var(--border); border-radius:var(--radius-sm); padding:18px; background:var(--surface); transition:background .2s; }
 .lv2-person.rf-correct { background:var(--mint); }
 .lv2-person.rf-wrong   { background:var(--peach); }
-.lv2-person-name { font-weight:700; font-size:15px; margin-bottom:6px; }
-.lv2-person-desc { font-size:13px; color:var(--muted); line-height:1.4; margin-bottom:10px; }
+.lv2-person-name { font-weight:700; font-size:16px; margin-bottom:8px; }
+.lv2-person-desc { font-size:14px; color:var(--muted); line-height:1.55; margin-bottom:12px; }
 .lv2-select {
   width:100%; font-family:var(--mono); font-size:13px; font-weight:600;
   padding:8px 10px; border:2px solid var(--border); border-radius:8px;
   background:var(--bg); color:var(--ink); cursor:pointer;
 }
 .lv-actions { margin-top:18px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+
+/* =====================================================
+ * GEMEINSAM PLANEN — B1 Sprechen Teil 2
+ * ===================================================== */
+.plan-scenario {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 22px 26px;
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  margin-bottom: 24px;
+}
+.plan-scenario-emoji { font-size: 52px; line-height: 1; flex-shrink: 0; }
+.plan-scenario-title { font-family: var(--display); font-weight: 700; font-size: 20px; margin-bottom: 8px; }
+.plan-scenario-text  { font-size: 15px; line-height: 1.7; }
+.plan-sub { font-family: var(--mono); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin: 24px 0 12px; color: var(--muted); }
+.plan-punkte { display: flex; flex-direction: column; gap: 10px; }
+.plan-punkt { border: 2px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); overflow: hidden; }
+.plan-punkt-head {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; cursor: pointer;
+  transition: background .15s;
+  user-select: none;
+}
+.plan-punkt-head:hover { background: var(--bg-soft); }
+.plan-punkt-icon  { font-size: 26px; flex-shrink: 0; }
+.plan-punkt-label { font-weight: 700; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+.plan-punkt-q     { font-size: 16px; font-weight: 600; }
+.plan-punkt-arrow { margin-left: auto; font-size: 16px; transition: transform .2s; color: var(--muted); flex-shrink: 0; }
+.plan-punkt.open .plan-punkt-arrow { transform: rotate(90deg); }
+.plan-punkt-body  { display: none; padding: 4px 18px 14px 58px; }
+.plan-punkt.open .plan-punkt-body { display: block; }
+.plan-starter {
+  padding: 9px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--bg-soft);
+  transition: background .15s, transform .1s, box-shadow .1s;
+  font-style: italic;
+}
+.plan-starter:hover { background: var(--lime); transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--border); }
+.plan-phrases { display: flex; flex-wrap: wrap; gap: 10px; }
+.plan-phrase {
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  cursor: pointer;
+  transition: background .15s, transform .1s, box-shadow .1s;
+  min-width: 190px;
+  flex: 1;
+}
+.plan-phrase:hover { background: var(--sun); transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--border); }
+.plan-phrase-de { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.plan-phrase-ua { font-size: 13px; color: var(--muted); }
+.plan-rollen { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 4px; }
+@media (max-width: 560px) { .plan-rollen { grid-template-columns: 1fr; } }
+.plan-rolle {
+  border: 3px solid var(--rolle-color, var(--border));
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  background: var(--surface);
+}
+.plan-rolle-label { font-weight: 700; font-size: 16px; margin-bottom: 12px; color: var(--rolle-color, var(--ink)); }
+.plan-rolle-info  { font-size: 14px; line-height: 1.6; padding: 8px 0; border-bottom: 1px dashed var(--border); }
+.plan-rolle-info:last-child { border-bottom: none; }
 
 /* =====================================================
  * ANZEIGE — read a real ad, answer questions
@@ -1143,4 +1213,146 @@ body::before {
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
+}
+
+/* ---- SCHREIBEN ---- */
+.schreib-situation {
+  background: var(--sun);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.schreib-situation-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: .7;
+}
+.schreib-aufgaben {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  margin-bottom: 20px;
+}
+.schreib-block-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: var(--display);
+}
+.schreib-aufgaben ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.schreib-aufgaben li { font-size: 15px; line-height: 1.5; }
+
+.schreib-redemittel {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.schreib-redemittel summary {
+  padding: 14px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-soft);
+  list-style: none;
+  user-select: none;
+}
+.schreib-redemittel summary::-webkit-details-marker { display: none; }
+.schreib-redemittel[open] summary { border-bottom: 2px solid var(--border); }
+.schreib-redemittel-list { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+.schreib-phrase {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .15s;
+  border: 1.5px solid transparent;
+}
+.schreib-phrase:hover { background: var(--bg-soft); border-color: var(--border); }
+.schreib-phrase-de { font-weight: 500; font-size: 14px; }
+.schreib-phrase-ua { font-size: 12px; color: var(--muted); }
+
+.schreib-composer {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-hard);
+}
+.schreib-composer-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--bg-soft);
+}
+.schreib-label { font-family: var(--mono); font-size: 12px; font-weight: 600; min-width: 60px; opacity: .6; }
+.schreib-fixed { font-size: 14px; color: var(--muted); }
+.schreib-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+}
+.schreib-body {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--surface);
+  resize: vertical;
+  outline: none;
+  min-height: 220px;
+}
+.schreib-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: var(--bg-soft);
+  border-top: 1.5px solid var(--border);
+  flex-wrap: wrap;
+}
+.schreib-counter { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-right: auto; }
+
+.schreib-muster {
+  border: 2px solid var(--mint);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.schreib-muster-label {
+  background: var(--mint);
+  padding: 10px 20px;
+  font-weight: 700;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.schreib-muster-subject {
+  padding: 12px 20px;
+  border-bottom: 1.5px solid var(--border);
+  font-size: 14px;
+  background: var(--surface);
+}
+.schreib-muster-body {
+  padding: 18px 20px;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  background: var(--surface);
 }

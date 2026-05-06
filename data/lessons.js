@@ -1315,18 +1315,28 @@ window.LESSONS = {
         ]
       },
       teil2: {
-        instruction: 'Welche Stellenanzeige (A–D) passt zu welcher Person? Lesen Sie alle Details genau — Budget, Erfahrung und Bedingungen zählen!',
+        instruction: 'Welche Stellenanzeige (A–J) passt zu welcher Person? Achtung: Zwei Anzeigen passen zu keiner Person! Lesen Sie alle Details genau.',
         ads: [
-          { id: 'A', text: 'Marketingassistenz (m/w/d), Vollzeit, Köln. Erfahrung im Kundenkontakt von Vorteil. Gehalt: 2.200–2.600 € brutto. Probezeit 6 Monate.' },
-          { id: 'B', text: 'Senior-Softwareentwickler:in, 100% remote möglich. Min. 4 Jahre Erfahrung in Python. Gehalt ab 4.800 € brutto.' },
-          { id: 'C', text: 'Werkstudent:in Grafikdesign, 20 Std./Woche, München. Für Studierende ab dem 3. Semester. Vergütung: 14 €/Std.' },
-          { id: 'D', text: 'Vertriebsleiter:in, Reisebereitschaft 60%, Frankfurt. Führungserfahrung erforderlich. Gehalt ab 5.200 € brutto + Bonus.' }
+          { id: 'A', text: '<strong>Marketingassistenz (m/w/d) — Vollzeit, Köln</strong><br>Wir sind eine kreative Werbeagentur im Herzen Kölns und suchen Unterstützung für unser Team. Zu deinen Aufgaben gehören die Betreuung von Kundenprojekten, die Pflege von Social-Media-Kanälen und die Vorbereitung von Präsentationen. Erfahrung im Kundenkontakt ist von Vorteil, aber kein Muss. <em>Gehalt: 2.200–2.600 € brutto · Probezeit 6 Monate · Vollzeit</em>' },
+          { id: 'B', text: '<strong>Senior-Softwareentwickler:in — 100 % remote</strong><br>Du arbeitest eigenverantwortlich an komplexen Backend-Systemen und bringst mindestens 4 Jahre Erfahrung in Python mit. Das gesamte Team arbeitet remote-first — Büropflicht gibt es bei uns nicht. Wir bieten moderne Tools, flache Hierarchien und ein attraktives Gehalt. <em>Gehalt ab 4.800 € brutto · keine Reisepflicht · Homeoffice 100 %</em>' },
+          { id: 'C', text: '<strong>Werkstudent:in Grafikdesign — München (20 Std./Woche)</strong><br>Du studierst mindestens im 3. Semester und interessierst dich für Visual Design und Branding? Wir geben dir die Möglichkeit, echte Kundenprojekte zu begleiten — von der Idee bis zum fertigen Produkt. Vorkenntnisse in Adobe Creative Suite sind ein Plus. <em>Vergütung: 14 €/Std. · max. 20 Std./Woche · Studierende bevorzugt</em>' },
+          { id: 'D', text: '<strong>Vertriebsleiter:in — Frankfurt, Reisebereitschaft erforderlich</strong><br>Du leitest ein regionales Vertriebsteam, entwickelst Verkaufsstrategien und baust Kundenbeziehungen auf. Reisebereitschaft von ca. 60 % ist für diese Position notwendig — du besuchst Kunden bundesweit. Mehrjährige Führungserfahrung wird vorausgesetzt. <em>Gehalt ab 5.200 € brutto + Bonus · Firmenwagen · Führungserfahrung Pflicht</em>' },
+          { id: 'E', text: '<strong>Pflegefachkraft (m/w/d) — Teilzeit, Hamburg</strong><br>Für unser Pflegezentrum in Hamburg-Altona suchen wir eine examinierte Pflegefachkraft für 25 Stunden pro Woche. Die Arbeit umfasst Früh- und Spätschichten sowie Wochenenddienste im Wechsel. Ein staatlich anerkannter Berufsabschluss in der Pflege ist Voraussetzung. <em>Gehalt: 2.800 € brutto bei Vollzeit anteilig · Teilzeit 25 Std. · Wochenendarbeit</em>' },
+          { id: 'F', text: '<strong>Übersetzer:in Deutsch–Spanisch — Freelance, remote</strong><br>Wir vergeben regelmäßig Übersetzungsaufträge (Verträge, Marketing, Fachtexte) an freie Mitarbeiter:innen. Voraussetzung: C1-Niveau in beiden Sprachen, sorgfältige Arbeitsweise, Zuverlässigkeit bei Deadlines. Du arbeitest selbstständig von überall — kein fester Standort nötig. <em>Honorar: 0,12 €/Wort · flexible Arbeitszeiten · selbstständige Tätigkeit</em>' },
+          { id: 'G', text: '<strong>Barista & Servicekraft — Minijob, Berlin-Mitte</strong><br>Unser Café im Prenzlauer Berg sucht freundliche Aushilfen für Abendschichten und Wochenenden. Keine Vorerfahrung notwendig — wir schulen dich gerne ein. Ideal für Studierende, die flexible Einsatzzeiten suchen und gerne mit Menschen arbeiten. <em>450 € Minijob · abends & Wochenende · keine Erfahrung nötig</em>' },
+          { id: 'H', text: '<strong>Projektmanager:in IT — Vollzeit, hybrid</strong><br>Du steuerst IT-Projekte von der Planung bis zum Go-Live, koordinierst interdisziplinäre Teams und kommunizierst mit Stakeholdern auf allen Ebenen. Mindestens 3 Jahre Erfahrung im Projektmanagement, idealerweise mit SCRUM oder PMP-Zertifizierung. <em>Gehalt: 4.200–4.800 € brutto · 2 Tage Homeoffice · Vollzeit</em>' },
+          { id: 'I', text: '<strong>Köchin / Koch — Vollzeit, Stuttgart</strong><br>Für unser Restaurant im Zentrum Stuttgarts suchen wir eine erfahrene Köchin oder einen erfahrenen Koch für die Mittags- und Abendküche. Du arbeitest im Team, planst Menüs mit und sorgst für gleichbleibend hohe Qualität. Berufserfahrung in der Gastronomie mindestens 2 Jahre. <em>Gehalt: 2.400–2.900 € brutto · Vollzeit inkl. Wochenende · kein Homeoffice</em>' },
+          { id: 'J', text: '<strong>Kindergartenpädagog:in — Vollzeit, Wien</strong><br>Wir suchen eine engagierte pädagogische Fachkraft für unsere Kindertagesstätte in Wien. Du betreust Kinder im Alter von 3–6 Jahren, planst kreative Aktivitäten und arbeitest eng mit den Eltern zusammen. Abschluss in frühkindlicher Pädagogik erforderlich. Stelle ab September verfügbar. <em>Gehalt: 2.600 € brutto · Vollzeit · Wien, Österreich</em>' }
         ],
         people: [
-          { name: 'Mia',   desc: 'Wirtschaftsabsolventin, Erfahrung im Kundenkontakt, sucht Bürostelle in Vollzeit, wohnt in Köln.',                      answer: 'A' },
-          { name: 'Jonas', desc: 'Informatik-Student im 4. Semester in München, sucht Nebenjob, kann nicht mehr als 20 Std./Woche arbeiten.',               answer: 'C' },
-          { name: 'Elena', desc: '12 Jahre Vertriebserfahrung, hat ein Team von 10 Personen geführt, reist gerne, sucht eine Führungsposition.',            answer: 'D' },
-          { name: 'Tobias',desc: 'Python-Entwickler mit 5 Jahren Erfahrung, möchte vollständig von zu Hause aus arbeiten, erwartet hohes Gehalt.',          answer: 'B' }
+          { name: 'Mia',     desc: 'Hat gerade ihr Studium abgeschlossen und möchte endlich vom Tresen weg. Bleibt lieber in ihrer Heimatstadt und sucht etwas Langfristiges im Bürobereich.',  answer: 'A' },
+          { name: 'Jonas',   desc: 'Sitzt tagsüber in Vorlesungen und lernt abends für Klausuren — aber das Konto ist leer. Sucht etwas, das sich mit dem Stundenplan verträgt.',               answer: 'C' },
+          { name: 'Elena',   desc: 'Kennt jeden Autobahnabschnitt zwischen Hamburg und München. Hat jahrelang Menschen geführt und will jetzt, dass das auch im Gehalt sichtbar wird.',          answer: 'D' },
+          { name: 'Tobias',  desc: 'Sein bestes Werkzeug ist der Laptop, sein Lieblingsort die eigene Wohnung. Hat schon für drei verschiedene Firmen gearbeitet — alle remote.',                answer: 'B' },
+          { name: 'Leila',   desc: 'Hat eine dreijährige Ausbildung hinter sich und viele Nächte in der Klinik. Will nicht aufhören zu arbeiten — aber auch nicht mehr Vollzeit. Zieht nicht um.',  answer: 'E' },
+          { name: 'Carlos',  desc: 'In Madrid aufgewachsen, seit zehn Jahren in Deutschland. Übersetzt Texte am liebsten morgens im Café — Hauptsache, niemand schreibt ihm vor, wann er anfängt.', answer: 'F' },
+          { name: 'Sophie',  desc: 'Ist erst seit zwei Monaten in Berlin und hat das Studentenleben noch nicht ganz verstanden — aber Geld für nächsten Monat braucht sie schon.',               answer: 'G' },
+          { name: 'Markus',  desc: 'Navigiert Teams durch chaotische Projekte und hat dabei gelernt, wann man ins Büro muss und wann nicht. Freitags will er zu Hause sein.',                    answer: 'H' }
         ]
       }
     },
@@ -1380,6 +1390,120 @@ window.LESSONS = {
           { pre: 'Sie hat', blank: 'gekündigt', post: ', weil sie eine bessere Stelle gefunden hat.' },
           { pre: 'Die Firma möchte ab Januar fünf neue Mitarbeiter', blank: 'einstellen', post: '.' }
         ]
+      }
+    },
+    plannung: {
+      title: 'Ein Vorstellungsgespräch vorbereiten',
+      emoji: '💼',
+      scenario: 'Ihr seid beide Bewerber:innen und bereitet euch gemeinsam auf ein Vorstellungsgespräch bei einer deutschen Firma vor. Besprecht alle wichtigen Punkte — was fragt man, wie antwortet man, was zieht man an?',
+      punkte: [
+        { icon: '👔', label: 'Outfit?', q: 'Was zieht man zum Vorstellungsgespräch an?',
+          starters: [
+            'Ich würde einen Anzug / ein Kostüm tragen, weil ...',
+            'Was hältst du von Smart Casual — ist das okay?',
+            'Kommt es auf die Branche an — in einer Kreativagentur ...'
+          ]
+        },
+        { icon: '⏰', label: 'Wann ankommen?', q: 'Wie früh soll man da sein?',
+          starters: [
+            'Ich schlage vor, fünf Minuten vorher zu kommen, weil ...',
+            'Zu früh ist auch nicht gut — ich denke ...',
+            'Was machst du, wenn du im Stau steckst oder der Zug Verspätung hat?'
+          ]
+        },
+        { icon: '🗣️', label: 'Selbstvorstellung?', q: 'Wie stellt man sich vor — was sagt man?',
+          starters: [
+            'Ich würde mit meinem Namen und meinem Studium beginnen ...',
+            'Wie lang sollte die Selbstvorstellung sein — eine oder zwei Minuten?',
+            'Was hältst du von diesem Satz: «Meine größte Stärke ist ...»?'
+          ]
+        },
+        { icon: '❓', label: 'Schwierige Fragen?', q: 'Was antwortest du auf «Was ist Ihre größte Schwäche»?',
+          starters: [
+            'Ich würde sagen: «Ich bin manchmal zu perfektionistisch, aber ich arbeite daran.»',
+            'Könnten wir diese Antwort zusammen üben?',
+            'Was ist eine gute Antwort auf «Wo sehen Sie sich in 5 Jahren?»'
+          ]
+        },
+        { icon: '💰', label: 'Gehalt?', q: 'Wann und wie spricht man über das Gehalt?',
+          starters: [
+            'Ich würde auf das Thema warten, bis der Interviewer es anspricht.',
+            'Was wäre ein guter Satz, um Gehaltsvorstellungen zu nennen?',
+            'Wäre es möglich, nach dem Gehaltsspielraum zu fragen?'
+          ]
+        },
+        { icon: '🙋', label: 'Eigene Fragen?', q: 'Welche Fragen stellt ihr an das Unternehmen?',
+          starters: [
+            'Ich würde fragen: «Wie sieht ein typischer Arbeitstag aus?»',
+            'Was hältst du von der Frage nach den Entwicklungsmöglichkeiten?',
+            'Ist es okay zu fragen, wie das Team zusammengesetzt ist?'
+          ]
+        }
+      ],
+      phrases: [
+        { de: 'Ich schlage vor, dass ...',          ua: 'Я пропоную, щоб ...' },
+        { de: 'Was hältst du von ...?',             ua: 'Що ти думаєш про ...?' },
+        { de: 'Das klingt überzeugend!',            ua: 'Це звучить переконливо!' },
+        { de: 'Ich würde lieber ... sagen.',        ua: 'Я б краще сказав(-ла) ...' },
+        { de: 'Könnten wir das zusammen üben?',     ua: 'Можемо це разом відпрацювати?' },
+        { de: 'Das finde ich zu direkt / zu vage.', ua: 'Мені здається це занадто прямо / розмито.' },
+        { de: 'Einverstanden!',                     ua: 'Згоден / Згодна!' },
+        { de: 'Wäre es besser, wenn ...?',          ua: 'Чи краще було б, якщо ...?' },
+        { de: 'Ich bin der Meinung, dass ...',      ua: 'Я вважаю, що ...' },
+        { de: 'Kommt darauf an, ob ...',            ua: 'Залежить від того, чи ...' }
+      ],
+      rolleA: {
+        label: '👩‍🏫 Lehrkraft',
+        infos: [
+          'Du bewirbst dich auf eine Stelle als Projektmanagerin in einer IT-Firma.',
+          'Du hast 3 Jahre Erfahrung, aber eine Lücke im Lebenslauf (Elternzeit).',
+          'Du möchtest unbedingt über das Thema Gehaltsverhandlung sprechen — das fällt dir schwer.'
+        ]
+      },
+      rolleB: {
+        label: '🧑‍💻 Lernende:r',
+        infos: [
+          'Du bewirbst dich als Marketingassistent:in — dein erstes Gespräch auf Deutsch!',
+          'Du bist sehr nervös und weißt nicht, was du auf die Schwächen-Frage antworten sollst.',
+          'Du hast eine Liste von Fragen vorbereitet, aber weißt nicht, welche du stellen sollst.'
+        ]
+      }
+    },
+    schreiben: {
+      an: 'personal@kreativwerk-koeln.de',
+      minWords: 80,
+      situation: 'Sie haben sich vor drei Wochen auf die Stelle als Marketingassistentin bei der Agentur Kreativwerk GmbH beworben. Bis heute haben Sie keine Antwort erhalten — weder eine Absage noch eine Einladung. Schreiben Sie eine höfliche E-Mail an die Personalabteilung und fragen Sie nach dem Stand Ihrer Bewerbung.',
+      aufgaben: [
+        'Schreiben Sie eine passende <strong>Anrede</strong>',
+        'Erklären Sie, <strong>warum</strong> Sie schreiben und auf <strong>welche Stelle</strong> Sie sich beworben haben',
+        'Fragen Sie höflich nach dem <strong>aktuellen Stand</strong> des Bewerbungsverfahrens',
+        'Bitten Sie um eine <strong>kurze Rückmeldung</strong>',
+        'Schreiben Sie eine passende <strong>Grußformel</strong> mit Ihrem Namen'
+      ],
+      redemittel: [
+        { de: 'Sehr geehrte Damen und Herren,',                             ua: 'Шановні пані та панове,' },
+        { de: 'ich schreibe Ihnen bezüglich meiner Bewerbung vom [Datum].', ua: 'пишу з приводу моєї заявки від [дата]' },
+        { de: 'Ich habe mich auf die Stelle als … beworben.',               ua: 'я подав(ла) заявку на посаду ...' },
+        { de: 'Da ich bislang noch keine Rückmeldung erhalten habe, …',     ua: 'оскільки я досі не отримав(ла) відповіді...' },
+        { de: 'Ich würde gerne höflich nachfragen, ob …',                   ua: 'хотів(ла) б ввічливо уточнити, чи...' },
+        { de: 'Sind meine Unterlagen vollständig bei Ihnen angekommen?',    ua: 'Чи отримали ви всі мої документи?' },
+        { de: 'Für Rückfragen stehe ich jederzeit zur Verfügung.',          ua: 'для запитань завжди на зв\'язку' },
+        { de: 'Ich freue mich auf Ihre Antwort.',                           ua: 'з нетерпінням чекаю на вашу відповідь' },
+        { de: 'Mit freundlichen Grüßen,',                                   ua: 'з повагою,' }
+      ],
+      example: {
+        subject: 'Nachfrage: Bewerbung als Marketingassistentin — Mia Hofmann',
+        body: `Sehr geehrte Damen und Herren,
+
+mein Name ist Mia Hofmann und ich habe mich am 14. April auf die Stelle als Marketingassistentin in Ihrer Agentur beworben.
+
+Da ich bislang noch keine Rückmeldung erhalten habe, würde ich gerne höflich nachfragen, ob meine Bewerbungsunterlagen vollständig bei Ihnen angekommen sind und wie der aktuelle Stand des Auswahlverfahrens ist.
+
+Ich bin nach wie vor sehr an der Stelle interessiert und freue mich auf ein mögliches Gespräch. Für Rückfragen stehe ich jederzeit gerne zur Verfügung.
+
+Mit freundlichen Grüßen
+Mia Hofmann
+mia.hofmann@email.de · 0176 123 456 78`
       }
     }
   }
