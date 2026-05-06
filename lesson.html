@@ -47,8 +47,10 @@
     <button class="ltab" data-p="p5"><span class="ltab-num">06</span>🗨 Dialog</button>
     <button class="ltab" data-p="p6"><span class="ltab-num">07</span>📐 Grammatik</button>
     <button class="ltab" data-p="p7"><span class="ltab-num">08</span>🧠 Quiz</button>
-    <button class="ltab" data-p="pKino" id="tabKino" style="display:none"><span class="ltab-num">09</span>🎬 Kino</button>
-    <button class="ltab" data-p="pLese" id="tabLese" style="display:none"><span class="ltab-num">10</span>📝 Prüfung</button>
+    <button class="ltab" data-p="pAnzeige" id="tabAnzeige" style="display:none"><span class="ltab-num">09</span>📋 Anzeige</button>
+    <button class="ltab" data-p="pWort" id="tabWort" style="display:none"><span class="ltab-num">10</span>✏️ Wortschatz+</button>
+    <button class="ltab" data-p="pKino" id="tabKino" style="display:none"><span class="ltab-num">11</span>🎬 Kino</button>
+    <button class="ltab" data-p="pLese" id="tabLese" style="display:none"><span class="ltab-num">12</span>📝 Prüfung</button>
   </div>
 
   <!-- PANE 1: VOCAB -->
@@ -150,7 +152,6 @@
     <div class="text-box" id="textBox">
       <div id="textBody"></div>
       <p class="ua-line" id="uaLine" style="display:none;font-style:italic;color:var(--muted);font-size:14px;border-top:2px dashed var(--border);padding-top:14px;margin-top:18px"></p>
-      <div id="readingQuestions"></div>
     </div>
   </div>
 
@@ -214,6 +215,46 @@
       <h2 class="section-title" style="margin:14px 0">Krass! <em id="quizScore">5 / 5</em></h2>
       <p style="font-size:17px;color:var(--muted);margin-bottom:20px">Du bist ready für das nächste Thema!</p>
       <a href="index.html" class="btn">Nächstes Abenteuer → </a>
+    </div>
+  </div>
+
+  <!-- PANE ANZEIGE: interactive ad reading (conditional on LESSON.anzeige) -->
+  <div class="lpane" id="pAnzeige">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Bonus · Anzeige 📋</span>
+        <h2 class="section-title">Lies die <em>Anzeige</em></h2>
+      </div>
+      <span class="tiny-note">Lies genau — jedes Detail zählt!</span>
+    </div>
+    <div class="anzeige-card">
+      <div class="anzeige-badge" id="anzeigeB"></div>
+      <div class="anzeige-text" id="anzeigeText"></div>
+    </div>
+    <div id="anzeigeQuestions"></div>
+    <div class="az-actions">
+      <button class="btn pink" onclick="checkAnzeige()">Auswerten ✓</button>
+      <button class="word-btn" onclick="resetAnzeige()">🔄 Reset</button>
+      <span class="tiny-note" id="azScore"></span>
+    </div>
+  </div>
+
+  <!-- PANE WORT+: fill-in-the-blank (conditional on LESSON.wortschatzPlus) -->
+  <div class="lpane" id="pWort">
+    <div class="section-head">
+      <div>
+        <span class="section-label">// Bonus · Wortschatz+ ✏️</span>
+        <h2 class="section-title">Wörter <em>einsetzen</em></h2>
+      </div>
+      <span class="tiny-note">Wähle ein Wort → klick auf die Lücke</span>
+    </div>
+    <p class="lueck-intro" id="lueckIntro"></p>
+    <div class="lueck-words" id="lueckWords"></div>
+    <div id="lueckSents"></div>
+    <div class="lueck-actions">
+      <button class="btn pink" onclick="checkLueck()">Auswerten ✓</button>
+      <button class="word-btn" onclick="resetLueck()">🔄 Reset</button>
+      <span class="tiny-note" id="lueckScore"></span>
     </div>
   </div>
 

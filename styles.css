@@ -1030,6 +1030,116 @@ body::before {
 }
 .lv-actions { margin-top:18px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 
+/* =====================================================
+ * ANZEIGE — read a real ad, answer questions
+ * ===================================================== */
+.anzeige-card {
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+.anzeige-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--sun);
+  color: var(--ink);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 14px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.anzeige-text { font-size: 15px; line-height: 1.75; }
+.anzeige-text p  { margin-bottom: 10px; }
+.anzeige-text ul { margin: 6px 0 10px 20px; }
+.anzeige-text li { margin-bottom: 4px; }
+.anzeige-text strong { font-weight: 700; }
+.az-q-item {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  margin-bottom: 14px;
+  background: var(--surface);
+}
+.az-q-text { font-weight: 600; font-size: 15px; margin-bottom: 12px; }
+.az-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 520px) { .az-opts { grid-template-columns: 1fr; } }
+.az-opt {
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: var(--sans);
+  text-align: left;
+  transition: background .15s, transform .1s, box-shadow .1s;
+}
+.az-opt:hover    { background: var(--lime); transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--border); }
+.az-opt.selected { background: var(--ink); color: var(--bg); }
+.az-opt.correct  { background: var(--mint); }
+.az-opt.wrong    { background: var(--pink); color: #fff; }
+.az-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+
+/* =====================================================
+ * WORTSCHATZ+ — Lückentext (fill in the blank)
+ * ===================================================== */
+.lueck-intro { font-size: 14px; color: var(--muted); margin-bottom: 12px; font-style: italic; }
+.lueck-words {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 14px 16px;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  margin-bottom: 22px;
+  min-height: 52px;
+}
+.lueck-chip {
+  padding: 7px 16px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: var(--sun);
+  cursor: pointer;
+  font-weight: 700;
+  font-family: var(--sans);
+  font-size: 14px;
+  transition: background .15s, transform .1s, box-shadow .1s;
+}
+.lueck-chip:hover        { background: var(--lime); transform: scale(1.06); box-shadow: 3px 3px 0 var(--border); }
+.lueck-chip.chip-active  { background: var(--pink); color: #fff; box-shadow: 3px 3px 0 var(--border); transform: scale(1.06); }
+.lueck-chip.used         { opacity: .3; pointer-events: none; }
+.lueck-sent {
+  font-size: 16px;
+  line-height: 2.2;
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  margin-bottom: 12px;
+}
+.lueck-blank {
+  display: inline-block;
+  min-width: 110px;
+  border-bottom: 3px solid var(--pink);
+  padding: 1px 10px;
+  margin: 0 4px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--pink);
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background .15s, color .15s;
+}
+.lueck-blank:hover   { background: rgba(255,59,138,.08); }
+.lueck-blank.filled  { color: var(--blue); border-bottom-color: var(--blue); }
+.lueck-blank.correct { color: #1a7a4a; border-bottom-color: var(--mint); background: rgba(100,220,140,.12); }
+.lueck-blank.wrong   { color: #c0002a; border-bottom-color: var(--pink); background: rgba(255,59,138,.12); }
+.lueck-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }

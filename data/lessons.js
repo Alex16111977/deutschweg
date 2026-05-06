@@ -1177,6 +1177,47 @@ window.LESSONS = {
           { name: 'Mohammed',      desc: 'Arbeitet Vollzeit im Büro, raucht nicht, mag es ruhig, sucht WG ohne Studenten, Budget bis 550 €.',                answer: 'D' }
         ]
       }
+    },
+    anzeige: {
+      badge: '🏠 WG-Anzeige · WG-Gesucht.de',
+      text: `
+        <p><strong>WG-Zimmer in Prenzlauer Berg — ab 1. Oktober frei</strong></p>
+        <p>Wir sind Sandra (28, Lehrerin) und Tobias (30, Ingenieur) und suchen ein/e neue/n Mitbewohner/in für unser gemütliches Zimmer in einer ruhigen Seitenstraße.</p>
+        <p><strong>Das Zimmer:</strong> 16 m², vollständig möbliert (Bett, Schreibtisch, Kleiderschrank), 3. Etage (kein Aufzug), Blick in den Innenhof.</p>
+        <p><strong>Die Wohnung:</strong> 75 m² gesamt, große Küche, ein Badezimmer. WLAN inklusive. Rauchen nur draußen auf dem Balkon erlaubt. Haustiere leider nicht möglich.</p>
+        <p><strong>Kosten:</strong> 480 € warm (alle Nebenkosten inklusive). Kaution: 960 € (zwei Monatsmieten).</p>
+        <p><strong>Wir wünschen uns:</strong> jemanden, der ordentlich ist, gerne kocht und keine lauten Partys veranstaltet.</p>
+        <p><strong>Melde dich mit kurzem Vorstellungstext:</strong> wg-pbg@mail.de</p>`,
+      questions: [
+        { q: 'Wie viel kostet das Zimmer pro Monat?',
+          opts: ['350 € kalt', '480 € warm', '480 € kalt', '960 € warm'], a: 1 },
+        { q: 'Was ist in den 480 € enthalten?',
+          opts: ['Nur die Miete', 'Miete + alle Nebenkosten + WLAN', 'Miete + Strom, aber ohne WLAN', 'Nichts — alles extra'], a: 1 },
+        { q: 'Wie groß ist das angebotene Zimmer?',
+          opts: ['75 m²', '30 m²', '16 m²', '28 m²'], a: 2 },
+        { q: 'Was ist in der Wohnung NICHT erlaubt?',
+          opts: ['Kochen', 'Haustiere', 'Rauchen auf dem Balkon', 'WLAN nutzen'], a: 1 },
+        { q: 'Wie hoch ist die Kaution?',
+          opts: ['480 Euro', '750 Euro', '960 Euro', '1.200 Euro'], a: 2 },
+        { q: 'Wann ist das Zimmer frei?',
+          opts: ['Sofort', 'Ab 1. September', 'Ab 1. Oktober', 'Ab 1. November'], a: 2 }
+      ]
+    },
+    wortschatzPlus: {
+      lueckentext: {
+        intro: 'Wähle ein Wort aus dem Kasten und klick auf die passende Lücke — jedes Wort passt genau einmal.',
+        words: ['Miete', 'Kaution', 'Mietvertrag', 'Nebenkosten', 'Kündigung', 'Vermieter', 'Umzug', 'renovieren'],
+        sentences: [
+          { pre: 'Vor dem Einzug zahlt man zwei Monatsmieten als', blank: 'Kaution', post: '— das Geld bekommt man beim Auszug zurück.' },
+          { pre: 'Die', blank: 'Miete', post: 'für das WG-Zimmer beträgt 480 Euro warm.' },
+          { pre: 'Strom, Wasser und Heizung nennt man', blank: 'Nebenkosten', post: '— sie kommen zur Kaltmiete dazu.' },
+          { pre: 'Ich habe den', blank: 'Mietvertrag', post: 'sorgfältig gelesen und dann unterschrieben.' },
+          { pre: 'Der', blank: 'Vermieter', post: 'muss die kaputte Heizung reparieren — das ist gesetzlich seine Pflicht.' },
+          { pre: 'Die', blank: 'Kündigung', post: 'muss drei Monate im Voraus schriftlich eingereicht werden.' },
+          { pre: 'Der', blank: 'Umzug', post: 'war stressig, aber jetzt bin ich glücklich in meiner neuen Wohnung.' },
+          { pre: 'Vor dem Einzug muss die Küche noch', blank: 'renovieren', post: 'werden — die Wände sind ganz alt.' }
+        ]
+      }
     }
   },
 
@@ -1224,7 +1265,7 @@ window.LESSONS = {
         'Drei Tage später klingelt Mias Handy. Es ist Frau Koch: «Wir würden Sie gerne <mark title="наймати">einstellen</mark>.» Das <mark title="зарплата">Gehalt</mark> beträgt 2.400 Euro brutto, mit einer sechsmonatigen <mark title="випробувальний термін">Probezeit</mark>. Mia sagt zu. Danach ruft sie Jana an. Sie lacht und weint ein bisschen gleichzeitig.',
         'Am ersten Arbeitstag fühlt sich Mia fremd zwischen den Kollegen. Frau Koch zeigt ihr den Arbeitsplatz, erklärt die Tools und stellt sie dem Team vor. «Frag einfach, wenn du etwas nicht weißt», sagt sie zum Schluss. Das klingt simpel. Aber nach drei Jahren als Kellnerin weiß Mia: Das ist eigentlich der wichtigste Satz.'
       ],
-      uaSummary: '🇺🇦 Міа, 27, три роки пропрацювала офіціанткою, хоча вивчала економіку. Вона подає заявку на посаду маркетинг-асистентки. Подруга Яна допомагає їй із резюме та супровідним листом. Після тижня очікування — запрошення на співбесіду. На інтерв'ю Міа відповідає чесно: досвід офіціантки навчив її працювати під тиском. Через три дні — дзвінок із пропозицією роботи. 2400 € бруто, 6 місяців випробувального терміну. Перший день у новому офісі — все незнайоме, але вона вже вдома.'
+      uaSummary: '🇺🇦 Міа, 27, три роки пропрацювала офіціанткою, хоча вивчала економіку. Вона подає заявку на посаду маркетинг-асистентки. Подруга Яна допомагає їй із резюме та супровідним листом. Після тижня очікування — запрошення на співбесіду. На інтервʼю Міа відповідає чесно: досвід офіціантки навчив її працювати під тиском. Через три дні — дзвінок із пропозицією роботи. 2400 € бруто, 6 місяців випробувального терміну. Перший день у новому офісі — все незнайоме, але вона вже вдома.'
     },
     dialog: [
       { who:'👔', de:'Erzählen Sie uns bitte kurz von sich — Ausbildung, Erfahrung, was Sie hierher bringt.',            ua:'Розкажіть трохи про себе — освіта, досвід, що привело вас до нас.' },
@@ -1286,6 +1327,58 @@ window.LESSONS = {
           { name: 'Jonas', desc: 'Informatik-Student im 4. Semester in München, sucht Nebenjob, kann nicht mehr als 20 Std./Woche arbeiten.',               answer: 'C' },
           { name: 'Elena', desc: '12 Jahre Vertriebserfahrung, hat ein Team von 10 Personen geführt, reist gerne, sucht eine Führungsposition.',            answer: 'D' },
           { name: 'Tobias',desc: 'Python-Entwickler mit 5 Jahren Erfahrung, möchte vollständig von zu Hause aus arbeiten, erwartet hohes Gehalt.',          answer: 'B' }
+        ]
+      }
+    },
+    anzeige: {
+      badge: '💼 Stellenanzeige · jobs.de',
+      text: `
+        <p><strong>Marketingassistenz (m/w/d) — Agentur Kreativwerk GmbH, Köln</strong></p>
+        <p>Du liebst es, Ideen zu entwickeln und Projekte zu koordinieren? Wir suchen Verstärkung für unser kleines, motiviertes Team!</p>
+        <p><strong>Deine Aufgaben:</strong></p>
+        <ul>
+          <li>Unterstützung bei Planung und Durchführung von Marketingkampagnen</li>
+          <li>Pflege der Social-Media-Kanäle (Instagram, LinkedIn)</li>
+          <li>Kundenkommunikation per E-Mail und Telefon</li>
+          <li>Erstellung von Präsentationen und Reports</li>
+        </ul>
+        <p><strong>Dein Profil:</strong></p>
+        <ul>
+          <li>Abgeschlossenes Studium (Wirtschaft, Kommunikation o.Ä.) oder vergleichbare Ausbildung</li>
+          <li>Erfahrung im Kundenkontakt von Vorteil</li>
+          <li>Sicherer Umgang mit MS Office; Kenntnisse in Canva ein Plus</li>
+          <li>Sehr gute Deutschkenntnisse (mind. B2), Englischkenntnisse erwünscht</li>
+        </ul>
+        <p><strong>Wir bieten:</strong> Vollzeit · 2.200–2.600 € brutto · 6 Monate Probezeit · flexible Arbeitszeiten · modernes Büro im Herzen Kölns</p>
+        <p><strong>Bewerbung an:</strong> bewerbung@kreativwerk-koeln.de — bitte Lebenslauf und Anschreiben beifügen.</p>`,
+      questions: [
+        { q: 'In welcher Stadt befindet sich diese Stelle?',
+          opts: ['München', 'Berlin', 'Köln', 'Frankfurt'], a: 2 },
+        { q: 'Was gehört NICHT zu den genannten Aufgaben?',
+          opts: ['Social-Media-Pflege', 'Softwareentwicklung', 'Kundenkommunikation', 'Erstellung von Präsentationen'], a: 1 },
+        { q: 'Wie hoch ist das angebotene Gehalt?',
+          opts: ['1.800–2.200 € brutto', '2.200–2.600 € brutto', 'ab 3.000 € brutto', 'wird nicht genannt'], a: 1 },
+        { q: 'Welches Mindest-Sprachniveau Deutsch wird verlangt?',
+          opts: ['A2', 'B1', 'B2', 'C1'], a: 2 },
+        { q: 'Was muss man mit der Bewerbung einschicken?',
+          opts: ['Nur den Lebenslauf', 'Nur das Anschreiben', 'Lebenslauf und Anschreiben', 'Zeugnisse und Foto'], a: 2 },
+        { q: 'Wie lange dauert die Probezeit?',
+          opts: ['3 Monate', '6 Monate', '1 Jahr', 'keine Probezeit'], a: 1 }
+      ]
+    },
+    wortschatzPlus: {
+      lueckentext: {
+        intro: 'Wähle ein Wort aus dem Kasten und klick auf die passende Lücke — jedes Wort passt genau einmal.',
+        words: ['Bewerbung', 'Lebenslauf', 'Stelle', 'Probezeit', 'Gehalt', 'Erfahrung', 'kündigen', 'einstellen'],
+        sentences: [
+          { pre: 'Ich schicke heute meine', blank: 'Bewerbung', post: 'mit Anschreiben und Lebenslauf ab.' },
+          { pre: 'Mein', blank: 'Lebenslauf', post: 'ist zwei Seiten lang und enthält alle Praktika.' },
+          { pre: 'Ich bewerbe mich auf eine', blank: 'Stelle', post: 'als Marketingassistentin in Köln.' },
+          { pre: 'Das', blank: 'Gehalt', post: 'für diese Position beträgt 2.400 Euro brutto pro Monat.' },
+          { pre: 'Drei Jahre Arbeit im Restaurant sind wertvolle', blank: 'Erfahrung', post: 'im Kundenkontakt.' },
+          { pre: 'Die', blank: 'Probezeit', post: 'dauert sechs Monate — danach gibt es einen unbefristeten Vertrag.' },
+          { pre: 'Sie hat', blank: 'gekündigt', post: ', weil sie eine bessere Stelle gefunden hat.' },
+          { pre: 'Die Firma möchte ab Januar fünf neue Mitarbeiter', blank: 'einstellen', post: '.' }
         ]
       }
     }

@@ -291,6 +291,124 @@ function renderQuiz(){
 }
 renderQuiz();
 
+/* ---- ANZEIGE ---- */
+(function initAnzeige(){
+  const az = LESSON.anzeige;
+  if(!az) return;
+  const tab = document.getElementById('tabAnzeige');
+  if(tab) tab.style.display = '';
+  document.getElementById('anzeigeB').textContent = az.badge || '';
+  document.getElementById('anzeigeText').innerHTML = az.text || '';
+  const azState = {};
+  const qWrap = document.getElementById('anzeigeQuestions');
+  if(qWrap){
+    qWrap.innerHTML = az.questions.map((q,i) => `
+      <div class="az-q-item" id="azq${i}">
+        <div class="az-q-text">${i+1}. ${q.q}</div>
+        <div class="az-opts">${q.opts.map((o,j) =>
+          `<button class="az-opt" data-qi="${i}" data-oi="${j}">${o}</button>`).join('')}
+        </div>
+      </div>`).join('');
+    qWrap.querySelectorAll('.az-opt').forEach(btn => btn.addEventListener('click', () => {
+      const qi = +btn.dataset.qi;
+      azState[qi] = +btn.dataset.oi;
+      qWrap.querySelectorAll(`.az-opt[data-qi="${qi}"]`).forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    }));
+  }
+  window.checkAnzeige = function(){
+    let right = 0;
+    az.questions.forEach((q,i) => {
+      const btns = document.querySelectorAll(`.az-opt[data-qi="${i}"]`);
+      btns.forEach(b => b.classList.remove('correct','wrong'));
+      if(azState[i] === undefined) return;
+      btns[q.a].classList.add('correct');
+      if(azState[i] !== q.a) btns[azState[i]].classList.add('wrong');
+      else right++;
+    });
+    document.getElementById('azScore').textContent =
+      `✓ ${right} / ${az.questions.length}${right === az.questions.length ? ' — Perfekt! 🎉' : ''}`;
+  };
+  window.resetAnzeige = function(){
+    Object.keys(azState).forEach(k => delete azState[k]);
+    document.querySelectorAll('.az-opt').forEach(b => b.classList.remove('selected','correct','wrong'));
+    document.getElementById('azScore').textContent = '';
+  };
+})();
+
+/* ---- WORTSCHATZ+ (Lückentext) ---- */
+(function initWortschatzPlus(){
+  const wp = LESSON.wortschatzPlus;
+  if(!wp || !wp.lueckentext) return;
+  const tab = document.getElementById('tabWort');
+  if(tab) tab.style.display = '';
+  const lueck = wp.lueckentext;
+  const introEl = document.getElementById('lueckIntro');
+  if(introEl && lueck.intro) introEl.textContent = lueck.intro;
+  let selected = null;
+  const fillState = {};
+  const wordBank = document.getElementById('lueckWords');
+  const sentBox  = document.getElementById('lueckSents');
+  if(wordBank){
+    wordBank.innerHTML = lueck.words.map(w =>
+      `<button class="lueck-chip" data-w="${w}">${w}</button>`).join('');
+    wordBank.querySelectorAll('.lueck-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        if(chip.classList.contains('used')) return;
+        wordBank.querySelectorAll('.lueck-chip').forEach(c => c.classList.remove('chip-active'));
+        chip.classList.add('chip-active');
+        selected = chip.dataset.w;
+      });
+    });
+  }
+  if(sentBox){
+    sentBox.innerHTML = lueck.sentences.map((s,i) =>
+      `<div class="lueck-sent">${s.pre} <span class="lueck-blank" data-si="${i}">____</span> ${s.post}</div>`
+    ).join('');
+    sentBox.querySelectorAll('.lueck-blank').forEach(blank => {
+      blank.addEventListener('click', () => {
+        if(!selected) return;
+        const si = +blank.dataset.si;
+        if(fillState[si]){
+          const prev = wordBank.querySelector(`.lueck-chip[data-w="${fillState[si]}"]`);
+          if(prev) prev.classList.remove('used');
+        }
+        fillState[si] = selected;
+        blank.textContent = selected;
+        blank.classList.add('filled');
+        blank.classList.remove('correct','wrong');
+        const chip = wordBank.querySelector(`.lueck-chip[data-w="${selected}"]`);
+        if(chip){ chip.classList.remove('chip-active'); chip.classList.add('used'); }
+        selected = null;
+        wordBank.querySelectorAll('.lueck-chip').forEach(c => c.classList.remove('chip-active'));
+      });
+    });
+  }
+  window.checkLueck = function(){
+    let right = 0;
+    lueck.sentences.forEach((s,i) => {
+      const blank = document.querySelector(`.lueck-blank[data-si="${i}"]`);
+      if(!blank) return;
+      blank.classList.remove('correct','wrong');
+      if(!fillState[i]) return;
+      if(fillState[i] === s.blank){ blank.classList.add('correct'); right++; }
+      else blank.classList.add('wrong');
+    });
+    document.getElementById('lueckScore').textContent =
+      `✓ ${right} / ${lueck.sentences.length}${right === lueck.sentences.length ? ' — Perfekt! 🎉' : ''}`;
+  };
+  window.resetLueck = function(){
+    Object.keys(fillState).forEach(k => delete fillState[k]);
+    selected = null;
+    document.querySelectorAll('.lueck-blank').forEach(b => {
+      b.textContent = '____';
+      b.classList.remove('filled','correct','wrong');
+    });
+    document.querySelectorAll('.lueck-chip').forEach(c => c.classList.remove('used','chip-active'));
+    document.getElementById('lueckScore').textContent = '';
+  };
+})();
+
 /* ---- LESEVERSTEHEN ---- */
 (function initLeseverstehen(){
   const lv = LESSON.leseverstehen;
@@ -299,33 +417,6 @@ renderQuiz();
   const tabLese = document.getElementById('tabLese');
   if(tabLese) tabLese.style.display = '';
 
-  // inline R/F under reading text
-  const rqBox = document.getElementById('readingQuestions');
-  if(rqBox && lv.teil1){
-    const t1 = lv.teil1;
-    rqBox.innerHTML = `
-      <div class="rq-wrap">
-        <div class="lv-teil-head">
-          <span class="lv-badge">Verständnisfragen</span>
-          <h3 class="lv-title" style="margin-top:8px">Richtig oder Falsch?</h3>
-          <p class="lv-instr">${t1.instruction}</p>
-        </div>
-        ${t1.statements.map((s,i)=>`
-          <div class="rf-item" id="rq${i}" data-correct="${s.correct}">
-            <span class="rf-num">${i+1}.</span>
-            <span class="rf-text">${s.s}</span>
-            <div class="rf-btns">
-              <button class="rf-btn" onclick="answerRQ(${i},true)">✓ Richtig</button>
-              <button class="rf-btn" onclick="answerRQ(${i},false)">✗ Falsch</button>
-            </div>
-          </div>`).join('')}
-        <div class="lv-actions">
-          <button class="btn pink" onclick="checkRQ()">Auswerten ✓</button>
-          <button class="word-btn" onclick="resetRQ()">🔄 Reset</button>
-          <span class="tiny-note" id="rqScore"></span>
-        </div>
-      </div>`;
-  }
 
   // full Prüfung pane — Teil 1
   const lese1 = document.getElementById('lese1');
@@ -389,34 +480,6 @@ renderQuiz();
   }
 })();
 
-const rqState={};
-function answerRQ(i,val){
-  rqState[i]=val;
-  const el=document.getElementById(`rq${i}`);
-  el.querySelectorAll('.rf-btn').forEach(b=>b.classList.remove('selected'));
-  el.querySelectorAll('.rf-btn')[val?0:1].classList.add('selected');
-  el.classList.remove('rf-correct','rf-wrong');
-}
-function checkRQ(){
-  const stmts=LESSON.leseverstehen?.teil1?.statements; if(!stmts) return;
-  let ok=0;
-  stmts.forEach((s,i)=>{
-    const el=document.getElementById(`rq${i}`); if(!el) return;
-    el.classList.remove('rf-correct','rf-wrong');
-    if(rqState[i]===undefined) return;
-    if(rqState[i]===s.correct){el.classList.add('rf-correct');ok++;}
-    else el.classList.add('rf-wrong');
-  });
-  document.getElementById('rqScore').textContent=`✓ ${ok}/${stmts.length}${ok===stmts.length?' — Perfekt! 🎉':''}`;
-}
-function resetRQ(){
-  Object.keys(rqState).forEach(k=>delete rqState[k]);
-  document.querySelectorAll('[id^="rq"]').forEach(el=>{
-    el.classList.remove('rf-correct','rf-wrong');
-    el.querySelectorAll('.rf-btn').forEach(b=>b.classList.remove('selected'));
-  });
-  const sc=document.getElementById('rqScore'); if(sc) sc.textContent='';
-}
 
 const lv1State={};
 function answerLV1(i,val){
