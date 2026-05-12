@@ -16,11 +16,13 @@ document.title = `DeutschWeg — ${LESSON.title} · ${LESSON.level}`;
 document.getElementById('heroEmoji').textContent = LESSON.emoji;
 document.getElementById('heroChipMain').textContent = `THEMA ${LESSON.idx} · ${LESSON.level}`;
 document.getElementById('heroChipDuration').textContent = LESSON.duration;
-document.getElementById('heroChipWords').textContent = `${LESSON.vocab.length} Wörter`;
+document.getElementById('heroChipWords').textContent = LESSON.readingOnly
+  ? `${LESSON.reading?.paragraphs?.length || 0} Absätze`
+  : `${(LESSON.vocab || []).length} Wörter`;
 document.getElementById('heroTitle').innerHTML = LESSON.titleHtml || LESSON.title;
 document.getElementById('heroIntro').textContent = LESSON.intro;
 document.getElementById('footTopicMeta').textContent =
-  `${LESSON.title} · ${LESSON.vocab.length} Wörter · ${LESSON.level}`;
+  `${LESSON.title} · ${(LESSON.vocab||[]).length} Wörter · ${LESSON.level}`;
 
 /* ---- TABS ---- */
 document.querySelectorAll('.ltab').forEach(t => t.addEventListener('click', () => {
@@ -30,6 +32,15 @@ document.querySelectorAll('.ltab').forEach(t => t.addEventListener('click', () =
   document.getElementById(t.dataset.p).classList.add('active');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }));
+
+/* ---- READING-ONLY MODE ---- */
+if(LESSON.readingOnly){
+  const hide = ['p1','p2','p3','pSprech','p6','p5','p7'];
+  document.querySelectorAll('.ltab').forEach(tab => {
+    if(hide.includes(tab.dataset.p)) tab.style.display = 'none';
+  });
+  document.querySelector('.ltab[data-p="p4"]')?.click();
+}
 function nextTab(){
   const cur = document.querySelector('.ltab.active');
   const nxt = cur.nextElementSibling;
@@ -79,7 +90,7 @@ if(LESSON.memoryAnchors){
 }
 
 /* ---- VOCAB GRID ---- */
-const vocab = LESSON.vocab;
+const vocab = LESSON.vocab || [];
 const grid = document.getElementById('vocabGrid');
 if(grid){
   grid.innerHTML = vocab.map(v => `
@@ -100,6 +111,7 @@ const lBack = document.getElementById('lBack');
 const lExEl = document.getElementById('lEx');
 const flipCounter = document.getElementById('flipCounter');
 function renderL(){
+  if(!vocab.length) return;
   const v = vocab[lIdx];
   lFront.textContent = (v.art && v.art !== '—' ? v.art + ' ' : '') + v.w;
   lBack.textContent = v.ua;

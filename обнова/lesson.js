@@ -91,6 +91,7 @@ const lBackEl      = document.getElementById('lBack');
 const lExEl        = document.getElementById('lEx');
 const flipCounter  = document.getElementById('flipCounter');
 function renderL(){
+  if(!vocab.length) return;
   const v = vocab[lIdx];
   lFrontEl.textContent = (v.art && v.art !== '—' ? v.art + ' ' : '') + v.w;
   lBackEl.textContent  = v.ua;
