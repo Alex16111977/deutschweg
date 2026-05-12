@@ -795,6 +795,48 @@ window.LESSONS = {
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 13 · NEUSTART — Ein Brief aus Deutschland · B1 · readingOnly
+   * ============================================================ */
+  neustart: {
+    slug: 'neustart',
+    emoji: '📬',
+    title: 'Ein Brief aus Deutschland',
+    titleHtml: 'Ein Brief aus <em>Deutschland</em> 📬',
+    level: 'B1',
+    duration: '~12 min',
+    idx: '13',
+    readingOnly: true,
+    intro: 'Nur lesen, verstehen, nachdenken — ein echter Brief, eine echte Geschichte. 📖',
+    vocab: [],
+    speakQuestions: [],
+    reading: {
+      paragraphs: [
+        'Liebe Olena, ich weiß, ich schreibe selten — aber heute muss ich dir einfach erzählen, wie das Leben hier wirklich ist. Ich bin jetzt seit vier Monaten in Dortmund. Der erste <mark title="зима">Winter</mark> in Deutschland war ein Schock: nicht wegen der Kälte, sondern wegen der <mark title="тиша">Stille</mark>. Die Straßen werden um 18 Uhr dunkel und leer. Die Menschen gehen schnell nach Hause. Alles ist <mark title="охайний, впорядкований">ordentlich</mark> — aber irgendwie auch ein bisschen kalt. Nicht nur das Wetter.',
+        'In den ersten Wochen war der Supermarkt mein größtes Abenteuer. In Deutschland gibt es über 300 Sorten Brot — ich dachte, das wäre ein Witz! Ich stand einmal zehn Minuten vor dem Brotregal und konnte mich nicht <mark title="вирішити, визначитися">entscheiden</mark>. Die <mark title="касирка">Kassiererin</mark> hat mich freundlich angeschaut und gesagt: «Nehmen Sie einfach das Roggenbrot — das ist unser Klassiker.» So hatte ich meine erste echte <mark title="розмова">Unterhaltung</mark> auf Deutsch.',
+        'Die Sprache macht mir immer noch Mühe. Ich verstehe das meiste — aber wenn drei Deutsche schnell miteinander reden, verliere ich den Faden. Besonders der <mark title="діалект">Dialekt</mark> im Ruhrgebiet klingt anders als das Lehrbuch-Deutsch. Meine Kursleiterin Frau Hoffmann sagt: «Je mehr Fehler du machst, desto schneller lernst du.» Ich versuche, das zu glauben. Es hilft mir, <mark title="сміливіше">mutiger</mark> zu sprechen.',
+        'Vor drei Wochen habe ich endlich meine <mark title="сусідка">Nachbarin</mark> kennengelernt — Hana, aus Syrien, schon seit acht Jahren hier. Sie hat mir erklärt, wie <mark title="розподіл сміття">Mülltrennung</mark> funktioniert: Papier, Plastik, Biomüll, Restmüll — vier verschiedene Tonnen. Das klingt einfach, ist es aber nicht! Hana hat mir auch gezeigt, welcher Bus zum Amt fährt und wo man günstigen, guten Kaffee bekommt. Jetzt treffen wir uns einmal pro Woche — sie <mark title="виправляє мене">verbessert mich</mark>, ich bringe ihr Kuchen.',
+        'Manchmal <mark title="сумую за">vermisse</mark> ich Lwiw so sehr, dass es wehtut — das Frühstück mit Oma, die Musik im Alten Markt, die alte Straßenbahn. Aber dann gibt es Momente, in denen die Sonne über dem Kanal scheint und die ersten Frühlingsblumen blühen — und ich denke: Vielleicht ist das hier auch mein Zuhause. Noch nicht ganz. Aber ein bisschen schon.\n\nAlles Liebe, deine Natascha'
+      ],
+      uaSummary: '🇺🇦 Наташа пише подрузі Олені з Дортмунда. Вона тут 4 місяці. Перший шок — не холод, а тиша на вулицях ввечері. В супермаркеті відбулась перша розмова. Мова ще складна, особливо місцевий діалект. Сусідка Хана навчила розподіляти сміття та орієнтуватись у місті. Наташа сумує за Львовом, але починає відчувати Дортмунд своїм домом.'
+    },
+    leseverstehen: {
+      teil1: {
+        title: 'Nataschas Brief — Richtig oder Falsch?',
+        instruction: 'Lesen Sie den Brief noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Natascha lebt seit einem Jahr in Dortmund.',                                    correct: false },
+          { s: 'Der erste Winter war ein Schock wegen der starken Kälte.',                      correct: false },
+          { s: 'Natascha hatte ihre erste echte Unterhaltung auf Deutsch im Supermarkt.',       correct: true  },
+          { s: 'Frau Hoffmann empfiehlt Natascha, weniger Fehler zu machen.',                   correct: false },
+          { s: 'Hana lebt seit acht Jahren in Deutschland.',                                    correct: true  },
+          { s: 'In Deutschland muss man den Müll in drei verschiedene Tonnen trennen.',         correct: false },
+          { s: 'Am Ende des Briefes fühlt Natascha sich in Deutschland ein bisschen zu Hause.', correct: true  }
+        ]
+      }
+    }
   }
 
 };

@@ -26,7 +26,9 @@ if(!LESSON){
   document.getElementById('heroEmoji').textContent  = LESSON.emoji;
   document.getElementById('heroChip').textContent   = `THEMA ${LESSON.idx} · ${LESSON.level}`;
   document.getElementById('heroDuration').textContent = LESSON.duration;
-  document.getElementById('heroWords').textContent  = `${LESSON.vocab.length} Wörter`;
+  document.getElementById('heroWords').textContent  = LESSON.readingOnly
+    ? `${LESSON.reading?.paragraphs?.length || 0} Absätze`
+    : `${(LESSON.vocab || []).length} Wörter`;
   document.getElementById('heroTitle').innerHTML    = LESSON.titleHtml || LESSON.title;
   document.getElementById('heroTag').textContent    = LESSON.intro || '';
   const footerMeta = document.getElementById('footerMeta');
@@ -52,6 +54,15 @@ document.querySelectorAll('.ltab').forEach(t => t.addEventListener('click', () =
   document.getElementById(t.dataset.p).classList.add('active');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }));
+
+/* ---- READING-ONLY MODE ---- */
+if(LESSON.readingOnly){
+  const hide = ['p1','p2','p3','pSprech','p6','p5','p7'];
+  document.querySelectorAll('.ltab').forEach(tab => {
+    if(hide.includes(tab.dataset.p)) tab.style.display = 'none';
+  });
+  document.querySelector('.ltab[data-p="p4"]')?.click();
+}
 function nextTab(){
   const cur = document.querySelector('.ltab.active');
   const nxt = cur.nextElementSibling;
@@ -59,7 +70,7 @@ function nextTab(){
 }
 
 /* ---- 1. VOCAB GRID ---- */
-const vocab = LESSON.vocab.slice();
+const vocab = (LESSON.vocab || []).slice();
 const grid = document.getElementById('vocabGrid');
 if(grid){
   grid.innerHTML = vocab.map(v => `

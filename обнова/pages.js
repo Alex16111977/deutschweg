@@ -52,7 +52,7 @@ function renderThemen(topics){
         <div class="tt-gram">${t.gram}</div>
         <div class="tt-meta">
           <span class="tt-chip">${t.level}</span>
-          <span class="tt-chip">${t.words} Wörter</span>
+          <span class="tt-chip">${t.words ? t.words + ' Wörter' : 'Lesetext'}</span>
         </div>
         <div class="tt-bar"><div style="width:${t.prog}%"></div></div>
       </a>`).join('');
