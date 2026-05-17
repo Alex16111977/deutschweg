@@ -694,12 +694,12 @@ body::before {
 }
 .text-box p + p { margin-top: 14px; }
 .text-box mark {
-  background: var(--sun); padding: 0 3px;
+  background: rgba(255, 214, 10, 0.22); padding: 0 3px;
   border-radius: 3px; cursor: help;
   font-weight: 500;
   position: relative;
 }
-.text-box mark:hover { background: var(--lime); }
+.text-box mark:hover { background: rgba(196, 248, 60, 0.35); }
 .text-toolbar { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
 
 /* grammar */
