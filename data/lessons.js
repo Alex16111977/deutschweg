@@ -1548,6 +1548,52 @@ mia.hofmann@email.de · 0176 123 456 78`
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 18 · NACHRICHTEN — Die Vier-Tage-Woche · B1 · readingOnly
+   * ============================================================ */
+  nachrichten: {
+    slug: 'nachrichten',
+    emoji: '📰',
+    title: 'Nachrichten in einfacher Sprache',
+    titleHtml: 'Nachrichten in<br><em>einfacher Sprache</em> 📰',
+    level: 'B1',
+    duration: '~10 min',
+    idx: '18',
+    readingOnly: true,
+    intro: 'Eine echte Nachricht — kurze Sätze, klare Wörter, echte Fakten. Einfach lesen, einfach verstehen. 📰',
+    vocab: [],
+    speakQuestions: [],
+    reading: {
+      paragraphs: [
+        'Im Jahr 2024 haben viele Firmen in Deutschland etwas Neues <mark title="спробували">ausprobiert</mark>: die Vier-Tage-Woche. Das bedeutet: Die <mark title="співробітники">Mitarbeiter</mark> arbeiten nur vier Tage pro Woche — nicht fünf. Aber sie bekommen das gleiche <mark title="зарплата">Gehalt</mark> wie vorher. Das klingt gut — aber funktioniert es wirklich?',
+        'In anderen Ländern — zum Beispiel in Großbritannien und Island — hat man die Vier-Tage-Woche schon <mark title="протестовано">getestet</mark>. Die Ergebnisse waren positiv: Die Mitarbeiter waren weniger <mark title="в стресі">gestresst</mark>. Sie hatten weniger <mark title="дні відсутності (на роботі)">Fehltage</mark>. Und die <mark title="виробництво, продуктивність">Produktion</mark> ist nicht schlechter geworden. Jetzt will Deutschland das auch probieren.',
+        'Eine Firma in Hamburg — ein Software-Unternehmen mit 80 Mitarbeitern — hat die neue <mark title="робочий час">Arbeitszeit</mark> schon begonnen. Die Chefin, Frau Koch, sagt: «Unsere Mitarbeiter schlafen besser, sie haben mehr <mark title="енергія">Energie</mark> und sie machen weniger Fehler.» Einige Mitarbeiter nutzen den freien Tag für Sport oder Familie. Andere lernen etwas Neues — zum Beispiel eine Sprache.',
+        'Aber nicht alle sind <mark title="захоплені">begeistert</mark>. Manche <mark title="роботодавці">Arbeitgeber</mark> sagen: «In vier Tagen kann man nicht so viel <mark title="встигнути, зробити">leisten</mark> wie in fünf Tagen.» Es gibt auch <mark title="галузі">Branchen</mark>, wo die Vier-Tage-Woche schwierig ist — zum Beispiel in Krankenhäusern oder in der Gastronomie. Dort arbeiten die Menschen in <mark title="зміни (графік)">Schichten</mark> und können nicht einfach einen Tag weglassen.',
+        'Die <mark title="федеральний уряд">Bundesregierung</mark> beobachtet die Ergebnisse genau. Bis Ende 2025 sollen mehr als 50 Firmen an dem Projekt <mark title="брати участь">teilnehmen</mark>. Ob die Vier-Tage-Woche in ganz Deutschland kommt, ist noch nicht klar. Aber das Interesse ist groß — viele Deutsche <mark title="мріють про це">träumen schon davon</mark>.',
+        'Markus, 34 Jahre alt, arbeitet als <mark title="програміст">Programmierer</mark> in Hamburg. Er sagt: «Früher war ich freitags immer müde und <mark title="неуважний, незосереджений">unkonzentriert</mark>. Jetzt nutze ich den Freitag für meine Familie — wir gehen zusammen in den Park, ich koche für meine Kinder. Am Montag komme ich <mark title="відпочилий">ausgeruht</mark> ins Büro und bin viel produktiver.» Seine <mark title="колеги">Kollegen</mark> berichten Ähnliches: Sie fühlen sich weniger <mark title="вигорілий">ausgebrannt</mark> und sind motivierter.',
+        'Eine <mark title="дослідження">Studie</mark> der Universität Münster hat gezeigt: 72 Prozent der Deutschen würden gerne weniger arbeiten, wenn das Gehalt gleich bleibt. Besonders junge Menschen zwischen 25 und 35 Jahren wünschen sich mehr Zeit für <mark title="хобі">Hobbys</mark>, Familie und Gesundheit. Für viele ist die <mark title="баланс між роботою та особистим життям">Work-Life-Balance</mark> wichtiger als ein höheres Gehalt.',
+        'In Japan hat die Regierung schon 2021 <mark title="рекомендувала">empfohlen</mark>, die Vier-Tage-Woche einzuführen. Microsoft Japan hat es getestet — und die <mark title="продуктивність">Produktivität</mark> stieg um 40 Prozent. In Belgien haben <mark title="працівники">Arbeitnehmer</mark> seit 2022 das Recht, vier Tage pro Woche zu arbeiten, ohne weniger zu verdienen. Deutschland schaut genau, was in diesen Ländern passiert.',
+        'Die große Frage bleibt: Ist weniger Zeit <mark title="автоматично">automatisch</mark> bessere Arbeit? Viele <mark title="експерти">Experten</mark> sagen: Es kommt darauf an, wie man die Zeit <mark title="використовує">nutzt</mark>. Wenn man in vier Tagen genauso viel <mark title="встигає зробити">schafft</mark> wie in fünf — dann funktioniert das Modell. Wenn nicht, entsteht nur mehr Stress. Deutschland will das <mark title="з\'ясувати">herausfinden</mark> — und die Ergebnisse könnten das Arbeitsleben von Millionen Menschen <mark title="змінити">verändern</mark>.'
+      ],
+      uaSummary: '🇺🇦 Новина про чотириденний робочий тиждень у Німеччині. Деякі компанії тестують: 4 дні роботи — та сама зарплата. У Британії та Ісландії вже спробували — результати позитивні. Компанія в Гамбурзі (80 осіб) вже почала. Директорка Кох: «Люди сплять краще і роблять менше помилок». Програміст Маркус: у п\'ятницю — з родиною, у понеділок — більш продуктивний. 72% німців хочуть менше працювати. Японія і Бельгія вже ввели 4-денний тиждень. Головне питання: чи можна встигнути стільки само за 4 дні?'
+    },
+    leseverstehen: {
+      teil1: {
+        title: 'Die Vier-Tage-Woche — Richtig oder Falsch?',
+        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Bei der Vier-Tage-Woche bekommen die Mitarbeiter weniger Gehalt.',                        correct: false },
+          { s: 'In Island und Großbritannien hat die Vier-Tage-Woche schon funktioniert.',                correct: true  },
+          { s: 'Nach dem Test in anderen Ländern ist die Produktion deutlich schlechter geworden.',       correct: false },
+          { s: 'Die Firma in Hamburg hat 80 Mitarbeiter.',                                               correct: true  },
+          { s: 'Frau Koch sagt, ihre Mitarbeiter schlafen länger als vorher.',                           correct: false },
+          { s: 'In Krankenhäusern ist die Vier-Tage-Woche besonders leicht zu organisieren.',            correct: false },
+          { s: 'Bis Ende 2025 sollen mehr als 50 Firmen an dem Projekt teilnehmen.',                    correct: true  }
+        ]
+      }
+    }
   }
 
 };
