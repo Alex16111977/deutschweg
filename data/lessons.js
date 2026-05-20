@@ -1594,6 +1594,50 @@ mia.hofmann@email.de · 0176 123 456 78`
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 19 · EMOTIONEN — Lena und Sophie · B2 · readingOnly
+   * ============================================================ */
+  emotionen: {
+    slug: 'emotionen',
+    emoji: '💛',
+    title: 'Emotionen und Persönlichkeit',
+    titleHtml: 'Emotionen und<br><em>Persönlichkeit</em> 💛',
+    level: 'B2',
+    duration: '~12 min',
+    idx: '19',
+    readingOnly: true,
+    intro: 'Eine Geschichte über zwei Freundinnen, Eifersucht und einen schwierigen Moment — echte Emotionen, echtes Deutsch. 💛',
+    vocab: [],
+    speakQuestions: [],
+    reading: {
+      paragraphs: [
+        'Lena und Sophie kennen sich seit zehn Jahren. Lange war ihre <mark title="стосунки">Beziehung</mark> einfach: Sie haben sich gegenseitig vertraut, viel gelacht und über alles geredet. Dann hat Lena eine neue Stelle als Teamleiterin bekommen — und plötzlich war alles anders. Das Gleichgewicht zwischen den beiden hatte sich verschoben, ohne dass eine von ihnen es sofort <mark title="помітила, сприйняла">wahrgenommen</mark> hat.',
+        'Sophie war <mark title="ревнива">eifersüchtig</mark>, obwohl sie das nicht zugeben wollte. Lena wirkte auf einmal so <mark title="впевнена в собі">selbstbewusst</mark> und sicher — das hat Sophie <mark title="зробило невпевненою">verunsichert</mark>. Sie hat Lenas Erfolg falsch <mark title="сприйняла">wahrgenommen</mark>: nicht als gute Nachricht für eine Freundin, sondern als Beweis, dass sie selbst nicht gut genug ist. Solche Gedanken können eine Freundschaft stark <mark title="впливати">beeinflussen</mark> — oft ohne dass man es merkt.',
+        'Eines Tages hat Sophie einen Kommentar gemacht, den Lena <mark title="неправильно зрозуміла">missverstanden</mark> hat. Lena dachte, Sophie ist neidisch, und war <mark title="ображена">beleidigt</mark>. Sophie dagegen war <mark title="розчарована">enttäuscht</mark>, weil Lena keine Zeit mehr für sie zu haben schien. Beide haben sich plötzlich anders <mark title="поводилися">verhalten</mark> als sonst — weniger offen, weniger ehrlich, ein bisschen kälter.',
+        'Einige Wochen lang haben sie den Kontakt <mark title="уникали">vermieden</mark>. Lena hat Sophies Nachrichten spät beantwortet. Sophie hat Veranstaltungen abgesagt, wenn Lena dabei war. Beide haben gespürt, dass das nicht gut ist — aber keine wollte den ersten Schritt machen. Die Stille zwischen ihnen hat sich angefühlt wie eine Wand.',
+        'Schließlich hat Sophie Lena in ein Café eingeladen. Sie wollte eine <mark title="риса характеру">Eigenschaft</mark>, die sie immer an Lena geschätzt hatte, wieder spüren: ihre Ehrlichkeit. Sophie hat zugegeben, dass sie sich <mark title="невпевненою">unsicher</mark> fühlt — in der Arbeit, in der Freundschaft, in sich selbst. Es war schwer, das laut auszusprechen. Aber Lena hat zugehört, ohne zu urteilen.',
+        'Lena hat erzählt, welchen <mark title="враження">Eindruck</mark> Sophies Schweigen auf sie gemacht hatte — dass sie dachte, Sophie will die Freundschaft nicht mehr. So entstand das Missverständnis: Beide hatten Angst, <mark title="відповідальність">Verantwortung</mark> für ihre eigenen Gefühle zu übernehmen. Jetzt haben sie es endlich getan. Das Gespräch im Café hat mehr verändert als alle Wochen des Schweigens davor.',
+        'Was haben Lena und Sophie gelernt? Emotionen können eine <mark title="стосунки">Beziehung</mark> stark <mark title="впливати">beeinflussen</mark> — in beide Richtungen. Eine wichtige <mark title="риса характеру">Eigenschaft</mark> echter Freundschaft ist, <mark title="надійною">zuverlässig</mark> zu sein: nicht nur in guten Zeiten, sondern gerade dann, wenn es schwierig wird. Manchmal ist ehrlich reden schwerer als jede Prüfung — aber es lohnt sich immer.'
+      ],
+      uaSummary: '🇺🇦 Лена і Соф\'я дружать 10 років. Коли Лена отримала підвищення, Соф\'я відчула ревнощі й невпевненість. Вона неправильно сприйняла успіх подруги. Виникло непорозуміння — обидві ображені й розчаровані. Кілька тижнів уникали контакту. Нарешті Соф\'я запросила Лену в кафе, відкрилась. Лена теж розповіла про своє враження. Обидві взяли відповідальність за свої почуття. Висновок: справжня дружба потребує надійності та чесності — особливо в складні моменти.'
+    },
+    leseverstehen: {
+      teil1: {
+        title: 'Lena und Sophie — Richtig oder Falsch?',
+        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Lena und Sophie kennen sich seit fünf Jahren.',                                          correct: false },
+          { s: 'Sophie hat Lenas Erfolg als etwas Positives wahrgenommen.',                             correct: false },
+          { s: 'Lena war beleidigt, weil sie Sophies Kommentar missverstanden hat.',                    correct: true  },
+          { s: 'Beide haben für einige Wochen den Kontakt vermieden.',                                  correct: true  },
+          { s: 'Im Café hat Lena als Erste zugegeben, dass sie sich unsicher fühlt.',                   correct: false },
+          { s: 'Lena dachte, Sophies Schweigen bedeutet, dass Sophie die Freundschaft nicht mehr will.',correct: true  },
+          { s: 'Am Ende haben die beiden ihre Freundschaft beendet.',                                   correct: false }
+        ]
+      }
+    }
   }
 
 };
