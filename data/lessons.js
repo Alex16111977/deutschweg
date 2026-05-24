@@ -1638,6 +1638,49 @@ mia.hofmann@email.de · 0176 123 456 78`
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 20 · MARATHON — Zu ehrgeizig · B1 · readingOnly
+   * ============================================================ */
+  marathon: {
+    slug: 'marathon',
+    emoji: '🏃',
+    title: 'Zu ehrgeizig',
+    titleHtml: 'Zu <em>ehrgeizig</em> 🏃',
+    level: 'B1',
+    duration: '~10 min',
+    idx: '20',
+    readingOnly: true,
+    intro: 'Mia läuft. Immer. Auch wenn es wehtut. — Eine Geschichte über Sport, Schmerz und Zuhören. 🏃',
+    vocab: [],
+    speakQuestions: [],
+    reading: {
+      paragraphs: [
+        'Mia ist 28 Jahre alt und trainiert seit drei Jahren für Marathons. Sie ist <mark title="цілеспрямована, амбіційна">ehrgeizig</mark>: Wenn sie sich ein Ziel setzt, hört sie nicht auf. Morgens läuft sie vor der Arbeit, abends macht sie Krafttraining. Ihre Kollegen sagen manchmal: «Mia, das ist zu viel.» Mia sagt: «Ich bin jung. Es geht mir gut.»',
+        'Vor sechs Wochen ist sie beim Laufen umgeknickt. Der <mark title="щиколотка">Knöchel</mark> hat sofort geschwollen. Mia hat zehn Minuten pausiert — und ist dann weitergelaufen. Eine <mark title="травма">Verletzung</mark> so kurz vor dem Marathon? Das kam nicht infrage.',
+        'Zwei Wochen später kamen neue <mark title="скарги, симптоми">Beschwerden</mark>: Der <mark title="спина">Rücken</mark> schmerzte, die <mark title="плече">Schulter</mark> war steif, und die <mark title="суглоби">Gelenke</mark> im rechten Bein fühlten sich schwer an. Morgens hat sie die <mark title="лоб">Stirn</mark> gerunzelt und gedacht: Das wird schon. Aber es wurde nicht besser.',
+        'Schließlich ist sie zum Arzt gegangen. Doktor Reiner hat eine gründliche <mark title="обстеження">Untersuchung</mark> gemacht: <mark title="щиколотка">Knöchel</mark>, Knie, <mark title="спина">Rücken</mark>, <mark title="плече">Schulter</mark>. Dann hat er sie angeschaut: «Wie lange haben Sie schon <mark title="скарги">Beschwerden</mark>?» Mia hat die <mark title="щоки">Wangen</mark> gerötet: «Seit... sechs Wochen.» Der Arzt hat nichts gesagt. Nur genickt.',
+        'Die <mark title="лікування">Behandlung</mark> war klar: keine Wettkämpfe für zwei Monate, Physiotherapie für den <mark title="спина">Rücken</mark> und das <mark title="суглоб">Gelenk</mark>. «Ihr Körper muss sich <mark title="відновитися">erholen</mark>», hat Doktor Reiner gesagt. «<mark title="здоров\'я">Gesundheit</mark> ist kein Wettkampf.»',
+        'Die zwei Monate zu Hause waren <mark title="виснажливі">anstrengend</mark> — nicht körperlich, sondern im Kopf. Nicht laufen, nicht kämpfen, einfach ruhen. Aber langsam hat Mia etwas verstanden: Ein <mark title="збалансований">ausgewogener</mark> Alltag ist keine Schwäche. Es bedeutet, besser zuzuhören — auch dem eigenen Körper.'
+      ],
+      uaSummary: '🇺🇦 Міа — 28-річна бігунька, дуже амбіційна. Шість тижнів тому підвернула щиколотку — і побігла далі. Потім з\'явились болі в спині, плечі, суглобах. Нарешті пішла до лікаря. Доктор Райнер провів обстеження, запитав про симптоми — вона зніяковіла і зізналась. Лікування: два місяці без змагань. «Здоров\'я — не змагання». Вдома було важко психологічно. Але Міа зрозуміла: збалансоване життя — це не слабкість.'
+    },
+    leseverstehen: {
+      teil1: {
+        title: 'Mia und der Marathon — Richtig oder Falsch?',
+        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Mia trainiert seit einem Jahr für Marathons.',                                           correct: false },
+          { s: 'Nach der Verletzung am Knöchel ist Mia sofort zum Arzt gegangen.',                      correct: false },
+          { s: 'Nach zwei Wochen hatte Mia auch Beschwerden am Rücken und an der Schulter.',            correct: true  },
+          { s: 'Beim Arzt hat Mia zugegeben, dass sie seit zwei Wochen Beschwerden hat.',               correct: false },
+          { s: 'Die Behandlung erlaubt Mia, weiter an Wettkämpfen teilzunehmen.',                       correct: false },
+          { s: 'Doktor Reiner sagt: «Gesundheit ist kein Wettkampf.»',                                  correct: true  },
+          { s: 'Am Ende versteht Mia, dass ein ausgewogener Alltag keine Schwäche ist.',                 correct: true  }
+        ]
+      }
+    }
   }
 
 };
