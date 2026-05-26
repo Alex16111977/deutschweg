@@ -1681,6 +1681,50 @@ mia.hofmann@email.de · 0176 123 456 78`
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 21 · MEDIEN — Erst nach dem Kaffee · B1 · readingOnly
+   * ============================================================ */
+  medien: {
+    slug: 'medien',
+    emoji: '📱',
+    title: 'Erst nach dem Kaffee',
+    titleHtml: 'Erst nach dem <em>Kaffee</em> 📱',
+    level: 'B1',
+    duration: '~10 min',
+    idx: '21',
+    readingOnly: true,
+    intro: 'Felix schaut morgens zuerst aufs Handy. Dann passiert etwas im Restaurant. — Eine Geschichte über Bildschirme, Gewohnheiten und einen Monat ohne Instagram. 📱',
+    vocab: [],
+    speakQuestions: [],
+    reading: {
+      paragraphs: [
+        'Felix schaut sein Handy morgens als Erstes an — noch vor dem Kaffee. Nicht weil er eine wichtige <mark title="повідомлення">Nachricht</mark> erwartet. Es ist einfach <mark title="звичка">Gewohnheit</mark>. Scrollen, tippen, weiterscrollen. Manchmal weiß er danach nicht mal mehr, was er gesehen hat.',
+        'Eines Abends sitzt er mit seiner Freundin Nina im Restaurant. Sie redet. Er schaut auf das Handy — irgendein <mark title="пост, стаття">Beitrag</mark>, irgendeine <mark title="думка">Meinung</mark> von jemandem, den er kaum kennt. Nina hört auf zu reden. «Felix.» Nur sein Name. Er versteht sofort.',
+        'Zu Hause haben sie <mark title="обговорювали">diskutiert</mark>. Nicht gestritten — geredet. Nina hat gefragt: «Bist du eigentlich <mark title="залежний">abhängig</mark> von dem Ding?» Felix hat zuerst gelacht. Dann nicht mehr. Er hat nachgedacht, wie viele Stunden am Tag er in dem <mark title="мережа">Netzwerk</mark> verbringt. Drei? Vier? Mehr?',
+        'Felix hat eine Entscheidung getroffen: einen Monat ohne Instagram. Keine <mark title="пости публікувати">Beiträge veröffentlichen</mark>, keine <mark title="інформація">Informationen</mark> <mark title="ділитися">teilen</mark>, keine <mark title="думки">Meinungen</mark> lesen. Am ersten Tag war es schwer. Er hat das Handy fünfmal in der Hand gehabt und wieder weggelegt.',
+        'Nach zwei Wochen hat er bemerkt: Er schläft besser. Er liest wieder Bücher. Und die <mark title="реклама">Werbung</mark> — die überall war, in jedem Feed, auf jedem Kanal — hat ihn weniger <mark title="впливала">beeinflusst</mark>. Er kauft weniger Dinge, die er nicht braucht.',
+        'Am Ende des Monats hat Felix mit Nina geredet. Sie hat gefragt, was er gelernt hat. Felix hat gesagt: «Ich dachte, das <mark title="мережа">Netzwerk</mark> ist <mark title="розвага">Unterhaltung</mark>. Aber eigentlich war es Arbeit. Ich habe ständig konsumiert, reagiert, verglichen.» Nina: «Und jetzt?» Felix: «Jetzt bin ich wieder drin. Aber ich entscheide selbst, wie lange.»',
+        'Diese <mark title="досвід">Erfahrung</mark> hat Felix verändert. Er folgt jetzt nur noch Menschen, die er <mark title="достовірний">glaubwürdig</mark> findet — die über echte Dinge reden, nicht nur <mark title="реклама">Werbung</mark> machen. Und seine <mark title="звичка">Gewohnheit</mark>? Handy erst nach dem Kaffee.'
+      ],
+      uaSummary: '🇺🇦 Фелікс — перевіряє телефон ще до кави, просто за звичкою. Одного вечора в ресторані Ніна помічає, що він не слухає її — дивиться в телефон. Вдома вони поговорили: чи не залежний він від мережі? Фелікс вирішує: місяць без Instagram. Перший день важкий. Через два тижні — спить краще, менше піддається рекламі. Наприкінці місяця: «Я думав, це розвага. Але це була робота.» Повернувся в мережу — але тепер сам вирішує, скільки часу там проводить. Підписується лише на достовірних людей. Нова звичка: телефон — після кави.'
+    },
+    leseverstehen: {
+      teil1: {
+        title: 'Felix und sein Handy — Richtig oder Falsch?',
+        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Felix schaut sein Handy morgens als Erstes an.',                                         correct: true  },
+          { s: 'Im Restaurant hat Felix mit Nina über soziale Medien diskutiert.',                       correct: false },
+          { s: 'Nina hat Felix gefragt, ob er abhängig von seinem Handy ist.',                          correct: true  },
+          { s: 'Felix hat entschieden, einen Monat ohne Instagram zu leben.',                            correct: true  },
+          { s: 'Nach zwei Wochen kauft Felix mehr Dinge als vorher.',                                   correct: false },
+          { s: 'Felix denkt, das Netzwerk war für ihn Unterhaltung — aber eigentlich war es Arbeit.',   correct: true  },
+          { s: 'Am Ende des Monats löscht Felix Instagram für immer.',                                  correct: false }
+        ]
+      }
+    }
   }
 
 };
