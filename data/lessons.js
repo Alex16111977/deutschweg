@@ -1725,6 +1725,50 @@ mia.hofmann@email.de · 0176 123 456 78`
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 22 · FREUNDSCHAFT — Durch dick und dünn · B1 · readingOnly
+   * ============================================================ */
+  freundschaft: {
+    slug: 'freundschaft',
+    emoji: '🤝',
+    title: 'Durch dick und dünn',
+    titleHtml: 'Durch dick und <em>dünn</em> 🤝',
+    level: 'B1',
+    duration: '~10 min',
+    idx: '22',
+    readingOnly: true,
+    intro: 'Joanna und Sara haben sich im Deutschkurs kennengelernt. Dann gab es einen Streit. — Eine Geschichte darüber, was Freundschaft wirklich bedeutet. 🤝',
+    vocab: [],
+    speakQuestions: [],
+    reading: {
+      paragraphs: [
+        'Joanna und Sara kennen sich seit zwei Jahren — sie haben sich in einem Deutschkurs in München kennengelernt. Seitdem <mark title="проводять час разом">verbringen sie viel Zeit miteinander</mark>: Spaziergänge, Kino, manchmal gemeinsam kochen. Sie haben <mark title="мають добрі стосунки">eine gute Beziehung</mark>: Sie <mark title="ладнають одна з одною">verstehen sich gut miteinander</mark>, haben <mark title="спільні інтереси">gemeinsame Interessen</mark> und <mark title="покладаються одна на одну">verlassen sich aufeinander</mark>.',
+        'Im Februar haben sie <mark title="посварилися">einen Streit gehabt</mark>. Wegen einer Kleinigkeit: Sara hatte versprochen, bei Joannas Umzug zu helfen — und am Tag selbst wegen Kopfschmerzen abgesagt. Joanna hat nichts gesagt. Aber sie hat gedacht: Kann ich mich wirklich auf sie verlassen? Ist sie wirklich <mark title="надійна">zuverlässig</mark>?',
+        'Drei Wochen lang haben sie wenig geredet. Kurze Nachrichten, kein Treffen. Joanna war nicht sicher, wie sie das Thema ansprechen soll. Sara hat gemerkt, dass etwas nicht stimmt — aber auch sie hat geschwiegen. Die Freundschaft hing in der Luft.',
+        'Dann hat Sara geschrieben: «Können wir reden? Ich glaube, ich muss mich <mark title="вибачитися">entschuldigen</mark>.» Sie haben sich in ihrem Lieblingscafé getroffen. Sara war <mark title="чесна">ehrlich</mark>: «Ich hätte früher anrufen sollen. Das war nicht fair — und ich weiß, dass ich dich im Stich gelassen habe.»',
+        '«Ich war verletzt», hat Joanna gesagt. «Nicht wegen dem Umzug. Sondern weil ich das Gefühl hatte, ich kann mich nicht auf dich <mark title="покластися">verlassen</mark>.» Sara hat nicht protestiert. Sie hat gesagt: «Ich will eine Freundin sein, die dich wirklich <mark title="підтримує">unterstützt</mark> — auch wenn es unbequem ist.»',
+        'Seit diesem Gespräch haben sie mehr <mark title="довіри">Vertrauen</mark>. Sie reden offener — auch wenn es unangenehm ist. <mark title="бути чесною">Ehrlich sein</mark> ist manchmal schwerer als schweigen. Aber es macht die <mark title="дружба">Freundschaft</mark> stärker.',
+        'Heute sind Joanna und Sara noch in <mark title="на зв\'язку залишаються">Kontakt geblieben</mark>, auch als Joanna für drei Monate in eine andere Stadt gezogen ist. Sie schreiben, telefonieren, besuchen sich. Ob sie <mark title="друзі на все життя">Freunde fürs Leben</mark> sind? «Ich glaube schon», sagt Joanna. «Sie ist <mark title="пройшла зі мною через усе">durch dick und dünn mit mir gegangen</mark>. Das vergesse ich nicht.»'
+      ],
+      uaSummary: '🇺🇦 Йоанна і Сара познайомились на курсах німецької в Мюнхені. Мають спільні інтереси, добре ладнають. У лютому посварились: Сара пообіцяла допомогти з переїздом і скасувала в останній момент. Три тижні майже не спілкувались. Потім Сара написала: «Мушу вибачитись». Зустрілись у кафе, поговорили чесно. Йоанна сказала: «Я відчула, що не можу на тебе покластись». Сара не заперечувала — пообіцяла підтримувати. Відтоді більше довіри. Дружба стала міцнішою. Йоанна: «Вона пройшла зі мною через усе — це не забудеш».'
+    },
+    leseverstehen: {
+      teil1: {
+        title: 'Joanna und Sara — Richtig oder Falsch?',
+        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Joanna und Sara haben sich in einem Sprachkurs kennengelernt.',                          correct: true  },
+          { s: 'Sara hat beim Umzug geholfen, aber kam zu spät.',                                       correct: false },
+          { s: 'Joanna hat Sara sofort gesagt, dass sie verletzt ist.',                                  correct: false },
+          { s: 'Sara hat als Erste geschrieben und um ein Gespräch gebeten.',                            correct: true  },
+          { s: 'Joanna war verletzt, weil der Umzug ohne Hilfe schwierig war.',                         correct: false },
+          { s: 'Nach dem Gespräch haben die beiden mehr Vertrauen.',                                    correct: true  },
+          { s: 'Joanna sagt, Sara ist durch dick und dünn mit ihr gegangen.',                           correct: true  }
+        ]
+      }
+    }
   }
 
 };
