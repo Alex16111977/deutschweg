@@ -1744,28 +1744,31 @@ mia.hofmann@email.de · 0176 123 456 78`
     speakQuestions: [],
     reading: {
       paragraphs: [
-        'Joanna und Sara kennen sich seit zwei Jahren — sie haben sich in einem Deutschkurs in München kennengelernt. Seitdem <mark title="проводять час разом">verbringen sie viel Zeit miteinander</mark>: Spaziergänge, Kino, manchmal gemeinsam kochen. Sie haben <mark title="мають добрі стосунки">eine gute Beziehung</mark>: Sie <mark title="ладнають одна з одною">verstehen sich gut miteinander</mark>, haben <mark title="спільні інтереси">gemeinsame Interessen</mark> und <mark title="покладаються одна на одну">verlassen sich aufeinander</mark>.',
-        'Im Februar haben sie <mark title="посварилися">einen Streit gehabt</mark>. Wegen einer Kleinigkeit: Sara hatte versprochen, bei Joannas Umzug zu helfen — und am Tag selbst wegen Kopfschmerzen abgesagt. Joanna hat nichts gesagt. Aber sie hat gedacht: Kann ich mich wirklich auf sie verlassen? Ist sie wirklich <mark title="надійна">zuverlässig</mark>?',
-        'Drei Wochen lang haben sie wenig geredet. Kurze Nachrichten, kein Treffen. Joanna war nicht sicher, wie sie das Thema ansprechen soll. Sara hat gemerkt, dass etwas nicht stimmt — aber auch sie hat geschwiegen. Die Freundschaft hing in der Luft.',
-        'Dann hat Sara geschrieben: «Können wir reden? Ich glaube, ich muss mich <mark title="вибачитися">entschuldigen</mark>.» Sie haben sich in ihrem Lieblingscafé getroffen. Sara war <mark title="чесна">ehrlich</mark>: «Ich hätte früher anrufen sollen. Das war nicht fair — und ich weiß, dass ich dich im Stich gelassen habe.»',
-        '«Ich war verletzt», hat Joanna gesagt. «Nicht wegen dem Umzug. Sondern weil ich das Gefühl hatte, ich kann mich nicht auf dich <mark title="покластися">verlassen</mark>.» Sara hat nicht protestiert. Sie hat gesagt: «Ich will eine Freundin sein, die dich wirklich <mark title="підтримує">unterstützt</mark> — auch wenn es unbequem ist.»',
-        'Seit diesem Gespräch haben sie mehr <mark title="довіри">Vertrauen</mark>. Sie reden offener — auch wenn es unangenehm ist. <mark title="бути чесною">Ehrlich sein</mark> ist manchmal schwerer als schweigen. Aber es macht die <mark title="дружба">Freundschaft</mark> stärker.',
-        'Heute sind Joanna und Sara noch in <mark title="на зв\'язку залишаються">Kontakt geblieben</mark>, auch als Joanna für drei Monate in eine andere Stadt gezogen ist. Sie schreiben, telefonieren, besuchen sich. Ob sie <mark title="друзі на все життя">Freunde fürs Leben</mark> sind? «Ich glaube schon», sagt Joanna. «Sie ist <mark title="пройшла зі мною через усе">durch dick und dünn mit mir gegangen</mark>. Das vergesse ich nicht.»'
+        'Joanna und Sara <mark title="проводять час разом">verbringen Zeit miteinander</mark> —<br>sie gehen spazieren, ins Kino, manchmal einfach so.<br>Sie sitzen zusammen, sie lachen, sie reden.<br>Das Leben ist leichter, wenn jemand da ist.',
+        'Sie haben <mark title="мають добрі стосунки">eine gute Beziehung</mark>, die beiden.<br>Sie <mark title="ладнають одна з одною">verstehen sich gut miteinander</mark> — das spürt man.<br>Sie teilen <mark title="спільні інтереси">gemeinsame Interessen</mark> und Träume.<br>Kein Monat ohne Treffen, kein Tag ohne Nachrichten.',
+        'Und mehr noch: Sie können sich <mark title="покладаються одна на одну">aufeinander verlassen</mark>.<br>Wenn Sara sagt «Ich komme», dann kommt sie auch.<br>Wenn Joanna schreibt «Ich brauche dich», ist Sara da.<br>So war es immer. So dachten sie. Bis eines Tages...',
+        'Dann <mark title="посварилися">haben sie einen Streit gehabt</mark> — wegen nichts.<br>Sara hatte versprochen zu helfen — und kam nicht.<br>Joanna dachte: Kann ich ihr wirklich vertrauen?<br>Ist meine Freundin wirklich <mark title="надійна">zuverlässig</mark>?',
+        'Drei Wochen Schweigen. Kurze Nachrichten, kein Treffen.<br>Joanna wusste nicht, wie sie das Thema ansprechen soll.<br>Aber dann hat Sara als Erste geschrieben:<br>«Ich glaube, ich muss mich <mark title="вибачитися">entschuldigen</mark>.»',
+        'Sie trafen sich im Café. Sara war <mark title="чесна">ehrlich</mark>:<br>«Ich weiß, dass ich dich enttäuscht habe.<br>Das war falsch — du kannst dich auf mich <mark title="покластися">verlassen</mark>.<br>Ich zeige es dir. Das verspreche ich.»',
+        '«Ich war verletzt», hat Joanna endlich gesagt.<br>«Nicht wegen dem, was passiert ist.<br>Sondern weil ich das Gefühl hatte: Du <mark title="підтримує">unterstützt</mark> mich nicht.<br>Und das hat mir wehgetan — mehr als alles andere.»',
+        'Sara hat nicht protestiert, nicht diskutiert.<br>Sie hat einfach gesagt: «Ich verstehe dich.»<br>Seitdem haben sie mehr <mark title="довіри">Vertrauen</mark> füreinander<br>und reden offener — auch wenn es schwer ist.',
+        '<mark title="бути чесною">Ehrlich sein</mark> ist manchmal schwerer als schweigen.<br>Aber das ist es, was <mark title="дружба">Freundschaft</mark> wirklich bedeutet.<br>Sie bleiben <mark title="на зв\'язку залишаються">in Kontakt</mark>, egal wo sie sind —<br>sie sind <mark title="друзі на все життя">Freunde fürs Leben</mark>, daran zweifeln sie nicht.',
+        'Und Joanna sagt manchmal, wenn sie lacht:<br>«Du bist <mark title="пройшла зі мною через усе">durch dick und dünn mit mir gegangen</mark>.»<br>Sara nickt. Kein weiteres Wort ist nötig.<br>Manche Freundschaften brauchen keine Erklärung.'
       ],
-      uaSummary: '🇺🇦 Йоанна і Сара познайомились на курсах німецької в Мюнхені. Мають спільні інтереси, добре ладнають. У лютому посварились: Сара пообіцяла допомогти з переїздом і скасувала в останній момент. Три тижні майже не спілкувались. Потім Сара написала: «Мушу вибачитись». Зустрілись у кафе, поговорили чесно. Йоанна сказала: «Я відчула, що не можу на тебе покластись». Сара не заперечувала — пообіцяла підтримувати. Відтоді більше довіри. Дружба стала міцнішою. Йоанна: «Вона пройшла зі мною через усе — це не забудеш».'
+      uaSummary: '🇺🇦 Йоанна і Сара проводять час разом — прогулянки, кіно. Вони добре ладнають, мають спільні інтереси, покладаються одна на одну. Аж поки Сара не підвела — і між ними стало мовчання на три тижні. Потім Сара першою написала: «Мушу вибачитись». Зустрілись у кафе: Сара була чесна, Йоанна нарешті сказала правду — «Ти мене не підтримала». Сара не заперечувала. Відтоді — більше довіри. Бути чесною важче, ніж мовчати. Але саме це робить дружбу справжньою. Вони залишаються на зв\'язку, вони — друзі на все життя. «Ти пройшла зі мною через усе» — каже Йоанна.'
     },
     leseverstehen: {
       teil1: {
         title: 'Joanna und Sara — Richtig oder Falsch?',
-        instruction: 'Lesen Sie den Text noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        instruction: 'Lesen Sie das Gedicht noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
         statements: [
-          { s: 'Joanna und Sara haben sich in einem Sprachkurs kennengelernt.',                          correct: true  },
-          { s: 'Sara hat beim Umzug geholfen, aber kam zu spät.',                                       correct: false },
-          { s: 'Joanna hat Sara sofort gesagt, dass sie verletzt ist.',                                  correct: false },
-          { s: 'Sara hat als Erste geschrieben und um ein Gespräch gebeten.',                            correct: true  },
-          { s: 'Joanna war verletzt, weil der Umzug ohne Hilfe schwierig war.',                         correct: false },
-          { s: 'Nach dem Gespräch haben die beiden mehr Vertrauen.',                                    correct: true  },
-          { s: 'Joanna sagt, Sara ist durch dick und dünn mit ihr gegangen.',                           correct: true  }
+          { s: 'Joanna und Sara teilen gemeinsame Interessen.',                                   correct: true  },
+          { s: 'Joanna und Sara hatten niemals Streit.',                                          correct: false },
+          { s: 'Sara hat sich bei Joanna entschuldigt.',                                          correct: true  },
+          { s: 'Joanna hat sofort gesagt, dass sie sich nicht auf Sara verlassen konnte.',        correct: false },
+          { s: 'Ehrlich sein macht die Freundschaft stärker.',                                    correct: true  },
+          { s: 'Sie bleiben in Kontakt, auch wenn sie weit voneinander entfernt sind.',           correct: true  },
+          { s: 'Joanna sagt, Sara ist durch dick und dünn mit ihr gegangen.',                     correct: true  }
         ]
       }
     }
