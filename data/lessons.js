@@ -1772,6 +1772,53 @@ mia.hofmann@email.de · 0176 123 456 78`
         ]
       }
     }
+  },
+
+  /* ============================================================
+   * 23 · ABSCHIED — Jonas zieht weg · B1 · readingOnly
+   * ============================================================ */
+  abschied: {
+    slug: 'abschied',
+    emoji: '🧳',
+    title: 'Abschied und Neuanfang',
+    titleHtml: 'Abschied und <em>Neuanfang</em> 🧳',
+    level: 'B1',
+    duration: '~10 min',
+    idx: '23',
+    readingOnly: true,
+    intro: 'Jonas verlässt seine Heimatstadt und zieht nach Berlin. Ein Gedicht über Abschiede, Mut und neue Anfänge. 🧳',
+    vocab: [],
+    speakQuestions: [],
+    reading: {
+      paragraphs: [
+        'Jonas steht an der Tür mit einem Koffer in der Hand.<br>Er <mark title="прощається">verabschiedet sich</mark> — von allen, die er liebt.<br>Seine Mutter umarmt ihn länger als sonst.<br>Sein Vater sagt nichts. Aber sein Blick sagt alles.',
+        'Er lässt seine <mark title="батьківщина, рідне місце">Heimat</mark> <mark title="залишає позаду">zurück</mark> — die kleine Stadt,<br>die Straßen, die er seit der Kindheit kennt.<br>Das Café an der Ecke, der Park, die alte Schule.<br>All das bleibt — er aber geht.',
+        'Der Bus fährt los. Jonas schaut aus dem Fenster.<br>Er wird sie alle <mark title="сумуватиме за ними">vermissen</mark> — das weiß er schon.<br>Seine <mark title="спогади">Erinnerungen</mark> nimmt er mit — sie passen in keinen Koffer,<br>aber sie reisen immer mit.',
+        'Berlin. Die Stadt ist groß, laut und fremd.<br>Jonas steht am Bahnhof und weiß nicht, wo er anfangen soll.<br>Er hat <mark title="сміливість">Mut</mark> — aber auch Angst.<br>Beides ist normal. Beides ist menschlich.',
+        'Die ersten Wochen sind schwer.<br>Er <mark title="звикає до">gewöhnt sich an</mark> den Lärm, die Menschen, das Tempo.<br>Er kocht allein, schläft schlecht, schreibt nach Hause.<br>«Alles gut» — schreibt er. Aber noch nicht ganz.',
+        'Dann ein Café, ein Lächeln, ein Gespräch.<br>Eine neue Bekanntschaft — vielleicht mehr.<br>Jonas merkt: Das Leben <mark title="змінюється">verändert sich</mark> —<br>und das ist kein Fehler. Das ist das Ziel.',
+        'Er <mark title="вирушає, виходить">bricht auf</mark> jeden Morgen mit dem Fahrrad.<br>Die Stadt wird kleiner, wenn man sie kennt.<br><mark title="новий початок">Neuanfang</mark> bedeutet nicht: alles vergessen.<br>Es bedeutet: etwas Neues wagen.',
+        'Manchmal ruft er seine Mutter an.<br>Sie fragt: «Bist du glücklich?»<br>Er sagt: «Ich lerne gerade, es zu sein.»<br>Das ist vielleicht die ehrlichste Antwort.',
+        'Das <mark title="пригода">Abenteuer</mark> heißt: nicht wissen, was kommt.<br>Das Abenteuer heißt: trotzdem weitergehen.<br>Jonas weiß jetzt: <mark title="прибути / освоїтися">Ankommen</mark> braucht Zeit —<br>aber irgendwann fühlt sich jede Stadt wie Heimat an.',
+        'Und eines Abends, wenn die Stadt still ist,<br>denkt er an den Abschied, an seine Mutter, an den Bus.<br>Und er lächelt — nicht weil es einfach war.<br>Sondern weil es das Richtige war.'
+      ],
+      uaSummary: '🇺🇦 Йонас стоїть у дверях із валізою і прощається з усіма, кого любить. Він залишає свою батьківщину позаду — вулиці, кафе, парк зі шкільних часів. В автобусі він знає: буде сумувати. Спогади він бере із собою — вони не вміщаються у валізу, але завжди поруч. Берлін великий, гучний і чужий. Йонас має сміливість — але й страх. Першi тижні важкі: він звикає до шуму, міста, темпу. Пише додому «Все добре» — але ще не зовсім. Потім — нове знайомство, усмішка. Він помічає: все змінюється. Щоранку вирушає на велосипеді. Новий початок — це не забути минуле, а зважитися на нове. Пригода — це не знати, що буде далі, і все одно йти вперед. Освоїтися потребує часу. Одного вечора він думає про від\'їзд і посміхається. Не тому що було легко. Тому що це було правильно.'
+    },
+    leseverstehen: {
+      teil1: {
+        title: 'Jonas und sein Neuanfang — Richtig oder Falsch?',
+        instruction: 'Lesen Sie das Gedicht noch einmal. Sind die Aussagen <b>richtig (R)</b> oder <b>falsch (F)</b>? Achtung: Manche Aussagen sind fast richtig!',
+        statements: [
+          { s: 'Jonas zieht von einer kleinen Stadt nach Berlin.',              correct: true  },
+          { s: 'Der Abschied von der Familie fällt Jonas leicht.',             correct: false },
+          { s: 'Jonas nimmt seine Erinnerungen mit auf die Reise.',            correct: true  },
+          { s: 'Die ersten Wochen in Berlin sind einfach und schön.',          correct: false },
+          { s: 'Jonas lernt langsam, sich an das neue Leben zu gewöhnen.',     correct: true  },
+          { s: 'Neuanfang bedeutet laut dem Gedicht: alles vergessen.',        correct: false },
+          { s: 'Am Ende lächelt Jonas, weil es das Richtige war.',             correct: true  }
+        ]
+      }
+    }
   }
 
 };
